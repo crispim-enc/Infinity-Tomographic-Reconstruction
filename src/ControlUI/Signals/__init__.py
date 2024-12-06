@@ -1,0 +1,1 @@
+from .easypetwindow import SignalsConnectionFromEasyPetWindow
