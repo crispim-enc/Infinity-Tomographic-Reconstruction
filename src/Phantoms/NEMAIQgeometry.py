@@ -1,15 +1,18 @@
+
+#  Copyright (c) 2025. Pedro Encarnação . Universidade de Aveiro LICENSE: CC BY-NC-SA 4.0 # ****************************
+#
 """
 Created by Pedro Encarnação: Universidade de Aveiro 2023
 based on NEMA Specification NU 4-2008: Image Quality Phantom
 Geron Bindseil, Western University, 2012.
 """
+
 import os
 
 import numpy as np
 import matplotlib.pyplot as plt
 # from src.Geometry import GeometryDesigner
 from src.Phantoms import CylindricalStructure
-
 
 
 class NEMAIQ2008NU:

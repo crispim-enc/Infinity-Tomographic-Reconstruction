@@ -1,0 +1,79 @@
+#scanner2
+/gate/world/daughters/name                    scanner2
+/gate/world/daughters/systemType			  scanner
+/gate/world/daughters/insert                  cylinder
+/gate/scanner2/placement/setTranslation 0.0 0.0 0.0 cm
+/gate/scanner2/placement/alignToY
+/gate/scanner2/geometry/setPhiStart 90. deg
+/gate/scanner2/geometry/setDeltaPhi 180. deg
+/gate/scanner2/geometry/setRmax         70.0 mm 
+
+# cristals are separated by 57.7mm, so the radius is 28.85mm, and they have 20mm length. 
+#Considering the rotations, at least 55mm for exteral radius is needed 
+
+/gate/scanner2/geometry/setRmin         25.0 mm 
+
+#minimum distance between cristals is 57.7mm, so 23*2mm=46mm has a safety tolerance.  
+
+/gate/scanner2/geometry/setHeight       75 mm 
+/gate/scanner2/setMaterial              Air
+/gate/scanner2/vis/forceWireframe
+/gate/scanner2/vis/setColor             white
+
+#                                                                 #
+#-------------------oooooOOOOO00000OOOOOooooo---------------------#
+#	HEAD
+/gate/scanner2/daughters/name           head2
+/gate/scanner2/daughters/insert         box
+/gate/head2/placement/setTranslation           -45.0 0.0 0.0 mm
+/gate/head2/geometry/setXLength                30  mm
+/gate/head2/geometry/setYLength                4.91 mm
+/gate/head2/geometry/setZLength                73.24 mm
+/gate/head2/setMaterial                        Air
+/gate/head2/vis/setVisible                     1
+
+
+
+
+
+#	BLOCK
+/gate/head2/daughters/name                     block2
+/gate/head2/daughters/insert                   box
+/gate/block2/geometry/setXLength               30. mm
+/gate/block2/geometry/setYLength               4.91 mm
+/gate/block2/geometry/setZLength               37.0 mm
+/gate/block2/setMaterial                       Air
+/gate/block2/vis/setVisible                    1
+
+#	C R Y S T A L
+/gate/block2/daughters/name                    crystal2
+/gate/block2/daughters/insert                  box
+#/gate/crystal2/placement/setTranslation        0.0 0.175 0.14 mm
+/gate/crystal2/geometry/setXLength             30 mm
+/gate/crystal2/geometry/setYLength             2.0 mm
+/gate/crystal2/geometry/setZLength             2.0 mm
+/gate/crystal2/setMaterial                     LYSO
+/gate/crystal2/vis/setVisible                  1
+/gate/crystal2/vis/setColor                        cyan
+
+/gate/crystal2/repeaters/insert cubicArray
+/gate/crystal2/cubicArray/setRepeatNumberX 1
+/gate/crystal2/cubicArray/setRepeatNumberY 2
+/gate/crystal2/cubicArray/setRepeatNumberZ 16
+/gate/crystal2/cubicArray/setRepeatVector 0. 2.35 2.28 mm
+
+
+
+
+#	A T T A C H    S Y S T E M 
+/gate/systems/scanner2/level1/attach   head2
+/gate/systems/scanner2/level2/attach   block2
+/gate/systems/scanner2/level3/attach   crystal2
+
+
+
+#	A T T A C H    C R Y S T A L  SD
+
+/gate/crystal2/attachCrystalSD
+
+

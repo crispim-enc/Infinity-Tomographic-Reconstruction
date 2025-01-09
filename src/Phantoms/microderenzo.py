@@ -1,3 +1,10 @@
+#  Copyright (c) 2025. # *******************************************************
+#  * FILE: $FILENAME
+#  * AUTHOR: Pedro Encarnação
+#  * DATE: $CURRENT_DATE
+#  * LICENSE: CC BY-NC-SA 4.0
+#  *******************************************************
+
 import numpy as np
 import matplotlib.pyplot as plt
 from src.Phantoms import CylindricalStructure

@@ -6,7 +6,7 @@ import pandas as pd
 from src.ControlUI.UiFiles.preclinic_mainwindow import Ui_MainWindow
 from multiprocessing import Event
 from src.EasyPETLinkInitializer.Preprocessing import PrepareEasyPETdata
-from src.EasyPETLinkInitializer import ReconstructionInitializer
+from src.StandaloneInitializer import ReconstructionInitializer
 from ReconstructionManager import TabReconstruction, EnergyWindowVTKWidget
 from src.ControlUI.Toolbar.programaticaly_widgets import MainToolBar, Objects3DToolBar
 from src.ControlUI.Signals import SignalsConnectionFromEasyPetWindow
