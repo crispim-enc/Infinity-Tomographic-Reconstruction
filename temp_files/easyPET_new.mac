@@ -1,0 +1,183 @@
+#  *******************************************************
+#  * DISCLAIMER                                                        *
+#  *                                                                   *
+#  * Neither the authors of this software system, nor their employing  *
+#  * institutes, nor the agencies providing financial support for this *
+#  * work make any representation or warranty, express or implied,     *
+#  * regarding this software system or assume any liability for its    *
+#  * use.                                                              *
+#  *                                                                   *
+#  * This code implementation is the intellectual property of the      *
+#  * OpenGATE collaboration.                                           *
+#  * By copying, distributing or modifying the Program (or any work    *
+#  * based on the Program) you indicate your acceptance of this        *
+#  * statement, and all its terms.                                     *
+#  *********************************************************************
+#
+                                                          
+#-------------------oooooOOOOO00000OOOOOooooo---------------------#
+#
+#         D E F I N E   Y O U R   S C A N N E R   A N D       
+#                                                             
+#        Y O U R   C O M P L E T E   S I M U L A T I O N   
+#                                                             
+#        F O R   I M A G I N G    A P P L I CA T I O N S       
+#                                                     
+#-------------------oooooOOOOO00000OOOOOooooo---------------------#
+
+
+#=====================================================
+# VISUALISATION
+#=====================================================
+
+
+/vis/disable
+#/control/execute ./visu.mac
+
+#=====================================================
+# GEOMETRY
+#=====================================================
+
+
+/gate/geometry/setMaterialDatabase    ./GateMaterials.db
+
+
+#
+#     W O R L D
+#
+/gate/world/geometry/setXLength       20. cm
+/gate/world/geometry/setYLength       20. cm
+/gate/world/geometry/setZLength       20. cm
+/gate/world/setMaterial                 Air
+
+
+#-------------------oooooOOOOO00000OOOOOooooo---------------------#
+#                                                                 #
+#     D E F I N I T I O N   A N D   D E S C R I T I O N           #
+#        O F   Y O U R   P E T   D E V I C E                      ##	CYLINDRICAL
+
+#create geometry of the scanner1
+/control/execute scanner1.mac
+
+#create geometry of the scanner2
+/control/execute scanner2.mac
+
+#create the source enclosure
+#/control/execute source_enclosure.mac
+
+
+#Detector's motion
+
+/gate/head/moves/insert genericMove
+/gate/head/genericMove/setPlacementsFilename ./positions.mac
+
+/gate/scanner1/moves/insert genericMove
+/gate/scanner1/genericMove/setPlacementsFilename ./positionsScanner1.mac
+
+/gate/head2/moves/insert genericMove
+/gate/head2/genericMove/setPlacementsFilename ./positions2.mac
+
+/gate/scanner2/moves/insert genericMove
+/gate/scanner2/genericMove/setPlacementsFilename ./positionsScanner2.mac
+
+#Source container's motion
+#/gate/enclosure1/moves/insert genericMove
+#/gate/enclosure1/genericMove/setPlacementsFilename ./positions_source.mac
+
+#/gate/enclosure/moves/insert genericMove
+#/gate/enclosure/genericMove/setPlacementsFilename ./sourcepositionsbot.mac
+
+
+#Phantom 
+/control/execute wirephantom.mac
+#/gate/world/daughters/name moby
+#/gate/world/daughters/insert ImageNestedParametrisedVolume
+#/gate/moby/geometry/setImage moby_phantom_intmap_NaF_Tavares2021.h33
+#/gate/moby/geometry/setRangeToMaterialFile range_atten_moby.dat
+#/gate/moby/attachPhantomSD
+
+/gate/geometry/rebuild
+/vis/scene/add/volume
+
+#=====================================================
+# PHYSICS
+#=====================================================
+
+/gate/physics/addPhysicsList emstandard_opt1
+/gate/physics/addProcess Decay
+/gate/physics/addProcess RadioactiveDecay
+/gate/physics/addProcess PositronAnnihilation
+/gate/physics/addProcess Compton
+/gate/physics/addProcess PhotoElectric
+/gate/physics/addProcess PhotoElectric
+/gate/physics/addProcess GammaConversion
+/gate/physics/addProcess ElectronIonisation
+/gate/physics/addProcess Bremsstrahlung e-
+/gate/physics/addProcess Bremsstrahlung e+
+/gate/physics/addProcess eMultipleScattering e+
+/gate/physics/addProcess eMultipleScattering e-
+
+
+/gate/physics/processList Enabled
+/gate/physics/processList Initialized
+
+#=====================================================
+# CUTS
+#=====================================================
+
+/gate/physics/Gamma/SetCutInRegion      crystal 1.0 mm
+/gate/physics/Electron/SetCutInRegion   crystal 1.0 mm
+/gate/physics/Positron/SetCutInRegion   crystal 1.0 mm
+
+/gate/geometry/rebuild
+
+#=====================================================
+# SOURCE
+#=====================================================
+
+/control/execute Am241source-disk.mac
+#/control/execute spectrum_source.mac
+#/control/execute am241_radioactivedecay.mac
+
+#=====================================================
+# INITIALIZATION
+#=====================================================
+
+/gate/run/initialize
+
+
+#=====================================================
+#   D I G I T I Z E R: DETECTOR ELECTRONIC RESPONSE
+#=====================================================
+
+/control/execute ./digitizerScanner2.mac
+
+
+#=====================================================
+#  D A T A   O U T P U T   
+#=====================================================
+/gate/output/root/enable
+/gate/output/root/setFileName                ./phantomWP10
+/gate/output/root/setRootHitFlag              0
+/gate/output/root/setRootSinglesFlag          1
+
+#====================================================
+#  R A N D O M   E N G I N E  A N D  S E E D
+#====================================================
+# JamesRandom Ranlux64 MersenneTwister
+/gate/random/setEngineName MersenneTwister
+#/gate/random/setEngineSeed default
+/gate/random/setEngineSeed auto
+
+#====================================================
+#   M E A S U R E M E N T   S E T T I N G S   
+#====================================================
+
+/gate/application/setTimeSlice   0.005 s
+/gate/application/setTimeStart   0   s
+/gate/application/setTimeStop    480.995 s
+#/gate/application/setTimeStop    60 s
+#/gate/application/setTimeStop   0.01 s
+
+/gate/geometry/rebuild
+/gate/application/startDAQ

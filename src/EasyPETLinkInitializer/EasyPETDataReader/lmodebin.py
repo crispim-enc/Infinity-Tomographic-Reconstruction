@@ -10,7 +10,7 @@ from os.path import splitext
 import gc
 import json
 import logging
-from PyQt5 import QtWidgets
+# from PyQt5 import QtWidgets
 import platform
 try:
     from .calibration_points_upload import calibration_points_init

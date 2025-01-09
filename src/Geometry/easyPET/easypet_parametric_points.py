@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from src.Designer.geometricdesigner import GeometryDesigner
+# from src.Designer.geometricdesigner import GeometryDesigner
 
 
 class SetParametricCoordinates:
@@ -373,7 +373,7 @@ class SetParametricCoordinates:
         # t[:len(self.zi)] = rot_angle_init_points
         # t[len(self.zi):] = rot_angle_init_points
 
-        GeometryDesigner(geometry_vector=[x[0:dt], y[0:dt], z[0:dt]])
+        # GeometryDesigner(geometry_vector=[x[0:dt], y[0:dt], z[0:dt]])
 
     def _plots(self):
         print('plots')

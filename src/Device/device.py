@@ -1,15 +1,14 @@
 """
-
-
     Author: "P. M. C. C. Encarnação"
     Email: "pedro.encarnacao@ua.pt"
     Date: "2023-10-10"
-    Version: "1.0.0"
     Description: "This file is used to create a device object.
     This object is used to store the information about the device.
 
-
 """
+
+#  Copyright (c) 2025. Pedro Encarnação . Universidade de Aveiro LICENSE: CC BY-NC-SA 4.0 # ****************************
+#
 
 # Methods:
 # --------
