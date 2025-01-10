@@ -1,0 +1,30 @@
+name: Branch Name Check
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  check-branch-name:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Validate Branch Name
+      run: |
+        branch_name="${GITHUB_REF##*/}"
+        echo "Branch name: $branch_name"
+        
+        # Define branch naming pattern
+        branch_pattern="^(feature|bugfix|hotfix|docs|refactor|test|release)\/[0-9]+-[a-z0-9-]+$"
+        
+        if [[ ! $branch_name =~ $branch_pattern ]]; then
+          echo "Error: Branch name '$branch_name' does not follow the naming convention."
+          echo "Expected pattern: $branch_pattern"
+          exit 1
+        fi
