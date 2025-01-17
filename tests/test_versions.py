@@ -31,7 +31,7 @@ def get_package_info(package_name):
 
         # Get package version
         version = getattr(package, "__version__", "Unknown version")
-
+ 
         # List all functions in the package
         functions = [
             func_name for func_name, func_obj in inspect.getmembers(package)

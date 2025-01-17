@@ -1,6 +1,6 @@
 import os
 from src.EasyPETLinkInitializer.Preprocessing import PrepareEasyPETdata
-from src.StandaloneInitializer.reconstruction_initializer import ReconstructionInitializer
+from src.EasyPETLinkInitializer.reconstruction_initializer import ReconstructionInitializer
 from src.EasyPETLinkInitializer.Utilities.exceptions import OnlyOneIncompleteTurn
 
 

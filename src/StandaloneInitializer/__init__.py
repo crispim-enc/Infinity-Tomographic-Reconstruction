@@ -1,2 +1,1 @@
 from .standalone_initializer import ReconstructOpenFileTest
-from .reconstruction_initializer import ReconstructionInitializer

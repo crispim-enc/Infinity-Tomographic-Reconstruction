@@ -2,12 +2,12 @@ import os
 import pycuda.driver as cuda
 import numpy as np
 import matplotlib.pyplot as plt
-from src.Corrections.Projector.CT import PyramidalProjector
+from src.Corrections.PET.Projector import PyramidalProjector
 from src.Geometry.easyCT import SetParametricsPoints
 from src.Geometry.easyPET import MatrixGeometryCorrection
 from src.Optimizer import GPUSharedMemoryMultipleKernel
 from src.ImageReader.Interfile import InterfileWriter
-from src.Corrections.Normalization import NormalizationCT
+from src.Corrections.EasyPET.Normalization import NormalizationCT
 
 
 class ReconstructionCT:
@@ -65,23 +65,9 @@ class ReconstructionCT:
         print("IdA max: {}".format(listmode[:,2].max()))
         print("IdB min: {}".format(listmode[:,3].min()))
         print("IdB max: {}".format(listmode[:,3].max()))
-        # self.listMode = listmode[:100000]
-        # listmode = listmode[:10,:]
-        # listmode[:,5] = np.linspace(-54, 54, 10)
-        # #
-        # listmode[:,4] = np.ones(10)*180
-        # listmode[:,3] = 16
-        # listmode[:,5] = np.zeros(10)
-        self.listMode = listmode
-        # self.listmode = self.listmode[self.listmode[:, 2] < 64]
-        # self.listmode = self.listmode[self.listmode[:, 3] < 64]
-        # idA = np.copy(selistmode[:, 2])
-        # idB = np.copy(listmode[:, 3])
-        # self.listmode[:, 2] = idB
-        # self.listmode[:, 3] = idA
 
-        # self.listmode[:, 4] = np.round(self.listmode[:, 4], 2)
-        # self.listmode[:, 5] = np.round(self.listmode[:, 5], 3)
+        self.listMode = listmode
+
 
         MatrixCorrection = MatrixGeometryCorrection(operation='r',
                                                     file_path=os.path.join(os.path.dirname(
@@ -200,22 +186,7 @@ class ReconstructionCT:
         self.projector.pointCorner4List = self.parametric_coordinates.corner2list
         var_1 = 0
         var_2 = 1
-        # plt.plot(self.parametric_coordinates.sourceCenter[:, var_1],self.parametric_coordinates.sourceCenter[:,var_2], '.', label="source")
-        # # plt.plot(self.parametric_coordinates.center_face[:,0],self.parametric_coordinates.center_face[:,2], '.', label="source")
-        # plt.plot(self.parametric_coordinates.corner1list[:,var_1], self.parametric_coordinates.corner1list[:,var_2], '.', label="Corner1")
-        # plt.plot(self.parametric_coordinates.corner2list[:,var_1], self.parametric_coordinates.corner2list[:,var_2], '.', label="Corner2")
-        # plt.plot(self.parametric_coordinates.corner3list[:,var_1], self.parametric_coordinates.corner3list[:,var_2],  '.', label="Corner3")
-        # plt.plot(self.parametric_coordinates.corner4list[:,var_1], self.parametric_coordinates.corner4list[:,var_2],  '.', label="Corner4")
-        # plt.legend()
-        # plt.show()
 
-        #     # np.array([parametric_listMode.cx.values,
-        #                                       parametric_listMode.cy.values,
-        #                                       parametric_listMode.cz.values], dtype=np.float32).T
-        #
-        # self.projector.pointCorner1List = np.array([parametric_listMode.cx.values,
-        #                                        parametric_listMode.cy.values,
-        #                                        parametric_listMode.cz.values], dtype=np.float32).T
 
         self.projector.createVectorialSpace()
         self.projector.createPlanes()
@@ -240,7 +211,7 @@ filename = "../../allvalues.npy"
 output_path = "C:/Users/pedro/OneDrive/Ambiente de Trabalho/Iterations_test"
 if not os.path.exists(output_path):
     os.makedirs(output_path)
-voxelSize =[0.5,0.5,0.5]
+voxelSize = [0.5,0.5,0.5]
 
 r = ReconstructionCT(filename, iterations=10, subsets=1, algorithm="LM-MLEM",
                  voxelSize=voxelSize, radial_fov_range=None, energyregion=None, file_path_output=output_path)

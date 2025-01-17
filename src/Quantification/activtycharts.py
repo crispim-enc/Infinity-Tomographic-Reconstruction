@@ -3,10 +3,9 @@ import tkinter as tk
 from tkinter import filedialog
 import numpy as np
 import matplotlib.pyplot as plt
-from src.Quantification import FactorQuantificationFromUniformPhantom
 from src.ImageReader import RawDataSetter
 from src.EasyPETLinkInitializer.EasyPETDataReader import binary_data
-from src.Corrections.DecayCorrection import DecayCorrection
+from src.Corrections.PET.DecayCorrection import DecayCorrection
 
 
 class ActivityMeasuredVsTheo:

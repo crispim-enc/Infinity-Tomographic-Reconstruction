@@ -693,7 +693,7 @@ class binary_data:
                     print(e)
                     binary_file.seek(0)
                     header = np.fromfile(binary_file, dtype=np.float32, count=6)
-                    size_header=126
+                    size_header = 126
                     binary_file.seek(size_header)
                     reading_data = np.fromfile(binary_file,
                                                dtype=[('stepbot', np.int16), ('steptop', np.int16), ('idA', np.int16), ('idB', np.int16),
