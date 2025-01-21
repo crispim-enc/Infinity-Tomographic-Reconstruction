@@ -1052,7 +1052,7 @@ class PopulateMainWindowVTK(object):
     def design_stl_file(self, filename_stl, translate_x, translate_y, translate_z, rotate_x, rotate_y, rotate_z,
                         color_actor, opacity_actor):
         path_stl = os.path.dirname(os.path.abspath(__file__))
-        filename = os.path.join(path_stl, 'bin', "{}.stl".format(filename_stl))
+        filename = os.path.join(path_stl, 'dataFiles', "{}.stl".format(filename_stl))
 
         reader = vtk.vtkSTLReader()
         reader.SetFileName(filename)

@@ -487,7 +487,7 @@ class ValidationModule:
 
 if __name__ == "__main__":
     easy_pet_init = "C:\\Users\\pedro.encarnacao\\Documents\\GitHub\\easyPETtraining\\EasyPET training versions\\Acquisitions\\Easypet Scan 29 Dec 2020 - 19h 03m 00s\\Easypet Scan 29 Dec 2020 - 19h 03m 00s.easypet"
-    easy_pet_init = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))), "bin", "easypet_dummy_scan")
+    easy_pet_init = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))), "dataFiles", "easypet_dummy_scan")
     print(easy_pet_init)
     for file in os.listdir(easy_pet_init):
         print(file)

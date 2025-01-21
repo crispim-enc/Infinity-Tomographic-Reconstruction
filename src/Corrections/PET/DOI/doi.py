@@ -7,7 +7,7 @@ import os
 class AdaptativeDOIMapping:
     def __init__(self, listMode=None):
         self.main_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
-                                      "bin")
+                                      "dataFiles")
         self.m_values = None
         self.b_values = None
         self.max_D = None

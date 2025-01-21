@@ -1,0 +1,388 @@
+mode = 0		# program mode (0 = phantom, 1 = heart lesion, 2 = spherical lesion, 3 = plaque, 4 = vectors, 5 = save anatomical variation) SEE NOTE 0
+act_phan_each = 0	# activity_phantom_each_frame (1=save phantom to file, 0=don't save)
+atten_phan_each = 0	# attenuation_coeff_phantom_each_frame (1=save phantom to file, 0=don't save)
+act_phan_ave = 1	# activity_phantom_average    (1=save , 0=don't save) see NOTE 1
+atten_phan_ave = 1	# attenuation_coeff_phantom_average  (1=save, 0=don't save) see NOTE 1
+
+motion_option = 0	# motion_option  (0=beating heart only, 1=respiratory motion only, 2=both motions) see NOTE 2
+
+out_period = 0.171		# output_period (SECS) (if <= 0, then output_period=time_per_frame*output_frames)
+time_per_frame = 0	# time_per_frame (SECS) (**IGNORED unless output_period<=0**)
+out_frames = 8		# output_frames (# of output time frames )
+
+hrt_period = 0.171			# hrt_period (SECS) (length of beating heart cycle; normal = 1s) see NOTE 3 
+hrt_start_ph_index = 0.4	# hrt_start_phase_index (range=0 to 1; ED=0, ES=0.4) see NOTE 3 
+heart_base = moby_heart.nrb		# basename for heart files
+heart_curve_file = heart_curve.txt	# name for file containing time curve for heart
+
+resp_period = 0.37                 # resp_period (SECS) (length of respiratory cycle; normal breathing = 5s) see NOTE 3
+resp_start_ph_index = 0.4	# resp_start_phase_index (range=0 to 1, full exhale= 0.0, full inhale=0.4) see NOTE 3
+max_diaphragm_motion = 1.0	# max_diaphragm_motion  (extent in mm's of diaphragm motion; normal breathing = 1 mm) see NOTE 4
+max_AP_exp = 0.7		# max_AP_expansion  (extent in mm's of the AP expansion of the chest; normal breathing = 0.7 mm) see NOTE 4
+
+dia_filename = diaphragm_curve.dat	# name of curve defining diaphragm motion during respiration
+ap_filename = ap_curve.dat     		# name of curve defining chest anterior-posterior motion during respiration
+
+organ_file = moby.nrb			# name of organ file that defines all organs 
+
+diaph_scale = 1.0			# scales the diaphragm up or down
+
+phantom_long_axis_scale = 1.0		# phantom_long_axis_scale (scales phantom laterally - scales everything) SEE NOTE 5
+phantom_short_axis_scale = 1.0		# phantom_short_axis_scale (scales phantom AP - scales everything) SEE NOTE 5 
+phantom_height_scale = 1.0		# phantom_height_scale (scales phantom height - scales everything) SEE NOTE 5
+
+skin_long_axis_scale = 1.0		# skin_long_axis_scale (sets body transverse axis - scales only body outline) SEE NOTE 5
+skin_short_axis_scale = 1.0		# skin_short_axis_scale (sets body AP axis - scales only body outline) SEE NOTE 5
+
+bones_scale = 1.0			# scales the bones about their center axes SEE NOTE 5
+
+hrt_scale = 1.0			# hrt_scale  (scales heart in 3D) 
+
+vol_liver = 0.0			# sets liver volume (0 - do not change)
+vol_pancreas = 0.0		# sets pancreas volume (0 - do not change)
+vol_stomach = 0.0		# sets stomach volume (0 - do not change)
+vol_spleen = 0.0		# sets spleen volume (0 - do not change)
+vol_rkidney = 0.0 		# sets right kidney volume (0 - do not change)
+vol_lkidney = 0.0		# sets left kidney volume (0 - do not change)
+vol_bladder = 0.0		# sets bladder volume (0 - do not change)
+vol_testes = 0.0		# sets testes volume (0 - do not change)
+vol_small_intest = 0.0		# sets small intestine volume (0 - do not change)
+vol_large_intest = 0.0		# sets large intestine volume (0 - do not change)
+vol_trachea = 0.0		# sets trachea volume (0 - do not change)
+vol_thyroid = 0.0		# sets thyroid volume (0 - do not change)
+
+vessel_flag = 1			# vessel_flag (1 = include arteries and veins, 0 = do not include)
+papillary_flag = 0		# papillary_flag (1 = include papillary muscles in heart, 0 = do not include)
+
+frac_H2O = 0.5		# fraction (by weight) of water in wet bone and wet spine (used to calc. atten coeff)
+
+marrow_flag = 1			# render marrow (0 = no, 1 = yes)
+
+thickness_skin = 0.0		# thickness skin (mm)
+
+thickness_sternum = 0.4		# thickness sternum  (mm)
+thickness_scapula = 0.4		# thickness scapulas (mm)
+thickness_humerus = 0.45	# thickness humerus (mm)
+thickness_radius = 0.45		# thickness radius (mm)
+thickness_ulna = 0.45		# thickness ulna (mm)
+thickness_hand = 0.2		# thickness hand bones (mm)
+thickness_femur = 0.5		# thickness femur (mm)
+thickness_tibia = 0.75		# thickness tibia (mm)
+thickness_fibula = 0.45		# thickness fibula (mm)
+thickness_patella = 0.3		# thickness patella (mm)
+thickness_foot = 0.2		# thickness foot bones (mm)
+thickness_ribs = 0.3		# thickness ribs     (mm)
+thickness_backbone = 0.4	# thickness backbone (mm)
+thickness_pelvis = 0.4		# thickness pelvis (mm)
+thickness_skull = 0.4		# thickness skull (mm)
+thickness_collar = 0.35		# thickness collarbones (mm)
+thickness_si = 0.6	# thickness of small intestine wall (mm)
+thickness_li = 0.6	# thickness of large intestine wall (mm)
+
+pixel_width = 0.0145	# pixel width (cm);  see NOTE 7 
+slice_width = 0.0145	# slice width (cm);   
+array_size = 256		# array size   
+subvoxel_index = 1		# subvoxel_index (=1,2,3,4 -> 1,8,27,64 subvoxels/voxel, respectively) 
+startslice = 1		# start_slice;  
+endslice = 750		# end_slice; 
+
+d_ZY_rotation = 0	# change in zy_rotation (beta) in deg. (0); see NOTE 8
+d_XZ_rotation = 0	# change in xz_rotation ( phi) in deg. (0); 
+d_YX_rotation = 0	# change in yx_rotation ( psi) in deg. (0); 
+
+X_tr = 0.0	# x translation in mm ; 
+Y_tr = 0.0	# y translation in mm ;
+Z_tr = 0.0	# z translation in mm ;
+
+activity_unit = 0	# activity units (1= scale by voxel volume; 0= don't scale) 
+
+skin_activity = 1		# skin_activity
+
+hrt_myoLV_act = 2	# hrt_myoLV_act - activity in left ventricle myocardium
+hrt_myoRV_act = 3		# hrt_myoRV_act - activity in right ventricle myocardium
+hrt_myoLA_act = 4		# hrt_myoLA_act - activity in left atrium myocardium
+hrt_myoRA_act = 5		# hrt_myoRA_act - activity in right atrium myocardium
+hrt_bldplLV_act = 6		# hrt_bldplLV_act - activity in left ventricle chamber (blood pool)
+hrt_bldplRV_act = 7		# hrt_bldplRV_act - activity in right ventricle chamber (blood pool)
+hrt_bldplLA_act = 8		# hrt_bldplLA_act - activity in left atria chamber (blood pool)
+hrt_bldplRA_act = 9		# hrt_bldplRA_act - activity in right atria chamber (blood pool)
+body_activity = 10		# body_activity (background activity) ;
+liver_activity = 11		# liver_activity;
+gall_bladder_activity = 12	# gall_bladder_activity;
+lung_activity = 13		# lung_activity;
+airway_activity = 14		# airway activity;
+st_wall_activity = 15		# st_wall_activity;  (stomach wall)
+st_cnts_activity = 16		# st_cnts_activity;   (stomach contents)
+pancreas_activity = 17		# pancreas_activity;
+kidney_activity = 18		# kidney_activity;
+spleen_activity = 19		# spleen_activity;
+sm_intest_activity = 20		# small_intest_activity;
+large_intest_activity = 21	# large_intest_activity;
+bladder_activity = 22		# bladder_activity;
+vas_def_activity = 23		# vas_def_activity;
+testicular_activity = 24		# testicular_activity;
+rib_activity = 25		# rib_activity;
+spine_activity = 26		# spine_activity;
+skull_activity = 27		# skull_activity;
+
+humerus_activity = 28		# humerus_activity 
+radius_activity = 29		# radius_activity 
+ulna_activity = 30		# ulna_activity
+femur_activity = 31		# femur_activity
+fibula_activity = 32		# fibula_activity
+tibia_activity = 33		# tibia_activity
+patella_activity = 34		# patella_activity
+bone_activity = 35		# bone_activity (remaining bones) 
+
+brain_activity = 36		# brain_activity;
+cerebral_cortex_activity = 37	# cerebral_cortex_activity;
+cerebellum_activity = 38		# cerebellum_activity;
+corpus_callosum_activity = 39 	# corpus_callosum_activity;
+brainstem_activity = 40		# brainstem_activity;
+striatum_activity = 41		# striatum_activity;
+thal_activity = 42		# thal_activity;
+hippo_activity = 43		# hippo_activity;
+hypothalamus_activity = 44	# hypothalamus_activity;
+amygdala_activity = 45		# amygdala_activity;
+lateral_septal_nuclei_activity = 46 	# lateral_septal_nuclei_activity;
+anterior_commissure_activity = 47	# anterior_commissure_activity;
+anterior_pretectal_nucleus_activity = 48	# anterior_pretectal_nucleus_activity;
+periaqueductal_gray_activity = 49	# periaqueductal_gray_activity;
+aqueduct_activity = 50			# aqueduct_activity;
+cerebral_peduncle_activity = 51		# cerebral_peduncle_activity;
+cochlear_nuclei_activity = 52		# cochlear_nuclei_activity;
+deep_mesencephalic_nuclei_activity = 53	# deep_mesencephalic_nuclei_activity;
+fimbria_activity = 54			# fimbria_activity;
+fornix_activity = 55			# fornix_activity;
+globus_pallidus_activity = 56		# globus_pallidus_activity;
+inferior_colliculus_activity = 57	# inferior_colliculus_activity;
+internal_capsule_activity = 58		# internal_capsule_activity;
+interpeduncular_nucleus_activity = 59	# interpeduncular_nucleus_activity;
+lateral_dorsal_nucleus_of_thalamus_activity = 60	# lateral_dorsal_nucleus_of_thalamus_activity;
+lateral_geniculate_activity = 61		# lateral_geniculate_activity;
+lateral_lemniscus_activity = 62		# lateral_lemniscus_activity;
+medial_geniculate_activity = 63		# medial_geniculate_activity;
+nucleus_accumbens_activity = 64		# nucleus_accumbens_activity;
+olfactory_areas_activity = 65		# olfactory_areas_activity;
+optic_tract_activity = 66		# optic_tract_activity;
+pontine_gray_activity = 67		# pontine_gray_activity;
+spinal_trigeminal_tract_activity = 68	# spinal_trigeminal_tract_activity;
+substantia_nigra_activity = 69		# substantia_nigra_activity;
+superior_colliculus_activity = 70	# superior_colliculus_activity;
+pineal_gland_activity = 71		# pineal_gland_activity;
+ventral_thalamic_nuclei_activity = 72	# ventral_thalamic_nuclei_activity;
+ventricular_system_activity = 73		# ventricular_system_activity;
+
+
+thyroid_activity = 74		# thyroid activity;
+
+li_air_activity = 75	# large intestine air activity;
+si_air_activity = 76	# small intestine air activity;
+
+marrow_activity = 77	# bone marrow activity;
+
+lesn_activity = 78		# activity for heart lesion or plaque
+
+energy  = 511	# radionuclide energy in keV (range 1-40MeV, increments of 0.5 keV) ; for attn. map only
+
+#---------------------Heart lesion parameters------------------------------SEE NOTE 9
+ThetaCenter = 90.0		# theta center in deg. (between 0 and 360) 
+ThetaWidth = 100.0		# theta width in deg., total width (between 0 and 360 deg.)
+XCenterIndex = .5		# x center (0.0=base, 1.0=apex, other fractions=distances in between)
+XWidthIndex = 60		# x width, total in mm's
+Wall_fract = 1.0		# wall_fract, fraction of the outer wall transgressed by the lesion
+#--------------------------------------------------------------------------
+
+#---------------------Spherical lesion parameters--------------------------SEE NOTE 10
+x_location = 80			# x coordinate (pixels) to place lesion
+y_location = 67			# y coordinate (pixels) to place lesion
+z_location = 85			# z coordinate (pixels) to place lesion
+lesn_diameter = 1.0		# Diameter of lesion (mm)
+#--------------------------------------------------------------------------
+
+#---------------------Heart plaque parameters------------------------------SEE NOTE 11
+p_center_v = 0.35		# plaque center along the length of the artery (between 0 and 1)
+p_center_u = 0.5		# plaque center along the circumference of the artery (between 0 and 1)
+p_height = 1.0			# plaque thickness in mm.
+p_width = 2.0			# plaque width in mm.
+p_length = 2.0			# plaque length in mm.
+p_id = 1462			# vessel ID to place the plaque in 
+#--------------------------------------------------------------------------
+
+#---------------------Vector parameters------------------------------------SEE NOTE 12
+vec_factor = 2          # higher number will increase the precision of the vector output
+#--------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#This is a general parameter file for the DYNAMIC MOBY phatom, version 1.0
+#--------------------------------------------------------------------------
+#THE PARAMETERS CAN BE IN ANY ORDER. THE PROGRAM WILL SORT THEM.
+#--------------------------------------------------------------------------
+#                             NOTES:
+#--------------------------------------------------------------------------
+#NOTE 0: The phantom program can be run in different modes as follows.  
+#  Mode 0: standard phantom generation mode that will generate phantoms of the
+#          body.
+#  Mode 1: heart lesion generator that will create phantoms of only the user
+#          defined heart lesion. Subtract these phantoms from those of mode 0
+#          to place the defect in the body.
+#  Mode 2: spherical lesion generator that will create phantoms of only the
+#          user defined lesion. Add these phantoms to those of mode 0 to place
+#          the lesions in the body.
+#  Mode 3: cardiac plaque generator that will create phantoms of only the
+#          user defined plaque. Add these phantoms to those of mode 0 to place
+#          the plaques in the body.
+#  Mode 4: vector generator that will output motion vectors as determined from
+#          the phantom surfaces. The vectors will be output as text files.
+#  Mode 5: anatomy generator will save the phantom produced from the user-defined anatomy
+#          parameters. The phantom is saved as two files, the organ file and the heart_base
+#          file. The names of these files can then be specified in the parfile for later runs
+#          with the program not having to take the time to generate the anatomy again. In using
+#          a saved anatomy, be sure to set all scalings back to 1; otherwise, the anatomy will be
+#          scaled again.
+#
+#NOTE 1: The average phantom is the average ONLY OF THOSE FRAMES GENERATED. That is,
+#  if you specify that only 2 frames be generated, then the average phantom is
+#  just the average of those 2 frames.
+#  ***************************************************************************
+#  ** FOR A GOOD AVERAGE, generate at least 8-16 frames per 1 complete heart
+#  ** cycle and/or per 1 complete respiratory cycle.
+#  ***************************************************************************
+#
+#NOTE 2: Heart motion refers to heart BEATING or contraction, while resp.
+#  motion refers to organ motion due to breathing. Note that the entire heart is
+#  translated or rotated due to resp. motion, even if it is not contracting.
+#  ** IF motion_option=1 , THE HEART WILL MOVE (TRANSLATE) BUT NOT BEAT.****
+#
+#NOTE 3:   Users sets the length and starting phase of both the heart
+#          and respiratory cycles. NORMAL values for length of heart beat and
+#          respiratory are cycles are 1 sec. and 5 secs., respectively,
+#          BUT THESE CAN VARY AMONG PATIENTS and will increase if the patient
+#          is under stress.
+#
+#          An index value between 0 and 1 is used the specify the starting phase
+#          of the heart or resp cycles. IF NO MOTION IS SPECIFIED THEN THE STARTING
+#          PHASE IS USED AS THE SINGLE PHASE AT WHICH THE PHANTOM IS GENERATED.
+#          (see documentation for more details).
+#
+#NOTE 3A:  These parameters control the LV volume curve of the heart. The user can specify the LV
+#	   volume at 5 points in the cardiac cycle. Check the logfile to see what the default volumes 
+#          are.  The end-diastolic volume can only be reduced. The way to increase it would be to change
+#          the overall heart scale.  The end-systolic volume can be increased or reduced. The other volumes
+#          need to have values between the end-diastolic and end-systolic volumes.  The time durations for the
+#          different portions of the cardiac cycle must add up to a total of 1.
+#
+#          Changing these parameters will alter the heart_curve.  The altered curve and heart files can be output using
+#          mode = 5.
+#
+#NOTE 4:  These NORMAL values are for normal tidal breathing.
+#  ** Modeling a deep inhale may require higher values. **
+#
+#  The AP_expansion parameter controls the anteroposterior diameter of the ribcage, body,
+#  and lungs. The ribs rotate upward to expand the chest cavity by the amount indicated by the 
+#  AP_expansion parameter. The lungs and body move with the expanding ribs. There is maximum amount
+#  by which the AP diameter can expand, due to the size of the ribs (some expansions are impossible
+#  geometrically.) If the user specifies too great an expansion, the program will terminate with an
+#  error message. 
+#
+#  The diaphragm motion controls the motion of the heart, liver, the left diaphragm, stomach, spleen and
+#  all organs downstream from them. 
+#
+#
+#NOTE 5: The phantom program outputs statistics on these anatomical parameters in the logfile it generates.  The logfile is 
+#         named with the extension _log.  These statistics can be used to determine the amount of scaling desired. Be aware 
+#	  the phantom scaling parameters scale the entire phantom; therefore, any body, heart or breast scalings  will
+#         be additional to this base scaling.
+#
+#
+#NOTE 7:
+#        - The phantom dimensions do not necessarily have to be cubic. The array_size parameter 
+#          determines the x and y dimensions of the images.  The number of slices in the z dimension 
+#          is determined by the start_slice and end_slice parameters.  The total number of slices is
+#          end_slice - start_slice + 1.
+#
+#NOTE 8:
+#        - rotation parameters determine
+#          initial orientation of beating (dynamic) heart LV long axis
+#        - d_zy_rotation : +y-axis rotates toward +z-axis (about x-axis) by beta
+#          d_xz_rotation : +z-axis rotates toward +x-axis (about y-axis) by phi
+#          d_yx_rotation : +x-axis rotates toward +y-axis (about z-axis) by psi
+#
+#        - Based on patient data, the mean and SD heart orientations are:
+#                zy_rot = -110 degrees (no patient data for this rotation)
+#                xz_rot = 23 +- 10 deg.
+#                yx_rot = -52 +- 11 deg.
+#
+#	 Phantom will output total angles for the heart in the logfile
+#
+#NOTE 9: Creates lesion (defect) for the LEFT VENTRICLE ONLY.
+#
+#--------------------------------
+#  theta_center: location of lesion center in circumferential dimension
+#
+#  theta center =    0.0  => anterior wall
+#  theta center =  +90.0  => lateral   "
+#  theta center = +180.0  => inferior  "
+#  theta center = +270.0  => septal    "
+#--------------------------------
+#  theta_width : lesion width in circumferential dimension
+#
+#  TOTAL width of defect in degrees. So for example a width of 90 deg.
+#  means that the width is 45 deg. on either side of theta center.
+#--------------------------------
+#  x center :   lesion center in long-axis dimension
+#
+#  x center = 0    -> base of LV
+#  x center = 1.0  -> apex of LV
+#--------------------------------
+#  x width:  lesion width in long-axis dimension
+#
+#  total width. Defect extend half the total width on either side of the
+#  x_center.
+#
+#  NOTE: if the specified width extends beyond the boundaries of the LV
+#        then the defect is cut off and the effective width is less than the
+#        specified width. So for example...
+#
+#--------------------------------
+#  Wall_fract : fraction of the LV wall that the lesion transgresses
+#  Wall_fract = 0.0 => transgresses none of the wall
+#  Wall_fract = 0.5 => transgresses the inner half of the wall
+#  Wall_fract = 1.0 => trangresses the entire wall
+#--------------------------------
+#
+#
+#NOTE 10: Creates a spherical lesion in the MOBY phantom. Depending on where the lesion is placed, it will move with
+#         the respiratory motion. Location of the lesion is specified in pixel values. 
+#
+#
+#NOTE 11: Creates a plaque in the coronary vessel tree that will move with the cardiac/respiratory motion
+#
+#---------------------------------------------------------------------------
+#  plaque_center: location of plaque along the length of the specified artery
+#    center = 0    -> base of artery
+#    center = 1.0  -> apex of artery
+#
+#-------------------------------------------
+#  plaque_thickness : plaque thickness in mm.
+#
+#-------------------------------------------
+#  plaque_width :   plaque width in mm.
+#
+#-------------------------------------------
+#  plaque_length :  plaque length in mm.
+#
+#------------------------------------------------------
+#  plaque_id  :  vessel to place the plaque in
+#
+#        AORTA = 423 
+#------------------------------------------------------
+#
+#NOTE12:  Using mode = 4, vectors are output for each voxel of frame 1 to the current frame. The vectors show the motion
+#         from the 1st frame to frame N. The vectors are output as text files with the format of
+#         output_name_vec_frame1_frameN.txt.
+#         The output vectors are a combination of known sampled points from the phantom objects and vectors interpolated
+#         from these sampled points.  The known vectors are designated as such in the vector output.  You can increase
+#         the number of known points (and accuracy of the vector output) by increasing the parameter vec_factor.
+

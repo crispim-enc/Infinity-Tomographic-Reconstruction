@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/dataFiles/env python
 
 # A simple vtkInteractorStyleImage example for
 # 3D image viewing with the vtkImageResliceMapper.

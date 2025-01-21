@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/dataFiles/env python
 
 import vtk
 import numpy as np

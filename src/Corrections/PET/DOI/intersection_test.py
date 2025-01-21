@@ -459,8 +459,8 @@ if __name__ == "__main__":
     distance_plane3point = np.zeros((len(planes_init), len(p1_list)))
     distance_plane4point = np.zeros((len(planes_init), len(p1_list)))
     attenuation_coeff = 0.15391619493736075  # mm-1
-    main_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "bin")
-    att = np.loadtxt(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "bin",
+    main_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "dataFiles")
+    att = np.loadtxt(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "dataFiles",
                                   "LYSO_photoelectric_absortion_1x.csv"), delimiter=",")
 
     # plt.plot(att[att[:,0]>300,0], att[att[:,0]>300,1])
