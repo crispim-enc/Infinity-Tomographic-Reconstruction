@@ -162,11 +162,11 @@ class GPUSharedMemoryMultipleKernel:
                         if self.file_to_open[i]["Decay"] == self.decay_correction:
                             if self.file_to_open[i]["Random"] == self.random_correction:
                                 self.fw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                                                         "machine_code",
+                                                                         "PET",
                                                                          self.file_to_open[i]["File Folder"],
                                                                          self.file_to_open[i]["Filename Forward"])
                                 self.bw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                                                         "machine_code",
+                                                                         "PET",
                                                                          self.file_to_open[i]["File Folder"],
                                                                          self.file_to_open[i]["Filename Back"])
         print("Forward: {}".format(self.fw_source_model_file))

@@ -1,8 +1,7 @@
 import numpy as np
 import os
-import matplotlib.pyplot as plt
 import pycuda.driver as cuda
-from src.Corrections.Normalization import GenerateEveryPossibleVolumePositions
+from src.Corrections.EasyPET.Normalization import GenerateEveryPossibleVolumePositions
 from src.Geometry import SetParametricCoordinates, MatrixGeometryCorrection, ParallelepipedProjector
 from src.Optimizer import ROIEvents
 from src.Phantoms import PhantomGenerator

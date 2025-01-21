@@ -6,7 +6,7 @@ import pandas as pd
 from src.ControlUI.UiFiles.preclinic_mainwindow import Ui_MainWindow
 from multiprocessing import Event
 from src.EasyPETLinkInitializer.Preprocessing import PrepareEasyPETdata
-from src.StandaloneInitializer import ReconstructionInitializer
+# from src.EasyPETLinkInitializer import ReconstructionInitializer
 from ReconstructionManager import TabReconstruction, EnergyWindowVTKWidget
 from src.ControlUI.Toolbar.programaticaly_widgets import MainToolBar, Objects3DToolBar
 from src.ControlUI.Signals import SignalsConnectionFromEasyPetWindow
@@ -17,12 +17,6 @@ from src.ControlUI.SegmentationManager import SinogramVtk
 directory = os.path.dirname(os.path.abspath(__file__))
 time_stamp_debug_error = datetime.datetime.now()
 time_stamp_debug_error = time_stamp_debug_error.strftime('%d %b %Y - %Hh %Mm %Ss')
-# logging.basicConfig(
-#    level=logging.DEBUG,
-#    format='%(asctime)s:%(levelname)s:%(name)s:%(message)s',
-#    filename=directory+"//debug_errors//logfile " +time_stamp_debug_error+".log",
-# )
-# logging.debug('This message should go to the log file') # teste to see if logging is working
 
 
 class InfiniToRWindow(Ui_MainWindow):

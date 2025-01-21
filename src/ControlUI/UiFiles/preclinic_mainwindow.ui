@@ -2730,7 +2730,7 @@ QToolButton:disabled {
     <set>Qt::TopToolBarArea</set>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Vertical</enum>
    </property>
    <property name="iconSize">
     <size>
@@ -2832,7 +2832,7 @@ QToolButton:disabled {
         </sizepolicy>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab_17">
         <attribute name="title">
@@ -3069,8 +3069,8 @@ QToolButton:disabled {
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>85</width>
-                    <height>24</height>
+                    <width>111</width>
+                    <height>31</height>
                    </size>
                   </property>
                   <property name="maximumSize">
@@ -3124,8 +3124,8 @@ QToolButton:disabled {
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>85</width>
-                    <height>24</height>
+                    <width>111</width>
+                    <height>31</height>
                    </size>
                   </property>
                   <property name="maximumSize">
@@ -3179,8 +3179,8 @@ QToolButton:disabled {
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>85</width>
-                    <height>24</height>
+                    <width>111</width>
+                    <height>31</height>
                    </size>
                   </property>
                   <property name="maximumSize">
@@ -3307,8 +3307,8 @@ QToolButton:disabled {
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>85</width>
-                    <height>24</height>
+                    <width>111</width>
+                    <height>31</height>
                    </size>
                   </property>
                   <property name="maximumSize">
@@ -3365,8 +3365,8 @@ QToolButton:disabled {
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>85</width>
-                    <height>24</height>
+                    <width>111</width>
+                    <height>31</height>
                    </size>
                   </property>
                   <property name="maximumSize">
@@ -3423,8 +3423,8 @@ QToolButton:disabled {
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>85</width>
-                    <height>24</height>
+                    <width>111</width>
+                    <height>31</height>
                    </size>
                   </property>
                   <property name="maximumSize">
@@ -3631,8 +3631,8 @@ QToolButton:disabled {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>85</width>
-                       <height>24</height>
+                       <width>111</width>
+                       <height>31</height>
                       </size>
                      </property>
                      <property name="maximumSize">
@@ -3686,8 +3686,8 @@ QToolButton:disabled {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>85</width>
-                       <height>24</height>
+                       <width>111</width>
+                       <height>31</height>
                       </size>
                      </property>
                      <property name="maximumSize">
@@ -3741,8 +3741,8 @@ QToolButton:disabled {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>85</width>
-                       <height>24</height>
+                       <width>111</width>
+                       <height>31</height>
                       </size>
                      </property>
                      <property name="maximumSize">
@@ -3909,8 +3909,8 @@ QToolButton:disabled {
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>85</width>
-                  <height>24</height>
+                  <width>111</width>
+                  <height>31</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -4024,8 +4024,8 @@ QToolButton:disabled {
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>85</width>
-                    <height>24</height>
+                    <width>111</width>
+                    <height>31</height>
                    </size>
                   </property>
                   <property name="maximumSize">
@@ -4079,8 +4079,8 @@ QToolButton:disabled {
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>85</width>
-                    <height>24</height>
+                    <width>111</width>
+                    <height>31</height>
                    </size>
                   </property>
                   <property name="maximumSize">
@@ -4157,7 +4157,7 @@ QToolButton:disabled {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -4251,7 +4251,7 @@ QToolButton:disabled {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -4289,7 +4289,7 @@ QToolButton:disabled {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -4410,8 +4410,8 @@ QToolButton:disabled {
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>85</width>
-                  <height>24</height>
+                  <width>111</width>
+                  <height>31</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -4465,8 +4465,8 @@ QToolButton:disabled {
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>85</width>
-                  <height>24</height>
+                  <width>111</width>
+                  <height>31</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -4554,8 +4554,8 @@ QToolButton:disabled {
                    </property>
                    <property name="minimumSize">
                     <size>
-                     <width>85</width>
-                     <height>24</height>
+                     <width>111</width>
+                     <height>31</height>
                     </size>
                    </property>
                    <property name="maximumSize">
@@ -4609,8 +4609,8 @@ QToolButton:disabled {
                    </property>
                    <property name="minimumSize">
                     <size>
-                     <width>85</width>
-                     <height>24</height>
+                     <width>111</width>
+                     <height>31</height>
                     </size>
                    </property>
                    <property name="maximumSize">
@@ -4687,7 +4687,7 @@ QToolButton:disabled {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -4768,7 +4768,7 @@ QToolButton:disabled {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -5011,8 +5011,8 @@ QProgressBar::chunk {
              </property>
              <property name="minimumSize">
               <size>
-               <width>85</width>
-               <height>24</height>
+               <width>111</width>
+               <height>31</height>
               </size>
              </property>
              <property name="maximumSize">
@@ -5077,7 +5077,7 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -5141,7 +5141,7 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -5177,7 +5177,7 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -5225,7 +5225,7 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -5291,7 +5291,7 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -5378,7 +5378,7 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -5426,7 +5426,7 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -5462,7 +5462,7 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -5569,8 +5569,8 @@ QProgressBar::chunk {
                    </property>
                    <property name="minimumSize">
                     <size>
-                     <width>85</width>
-                     <height>24</height>
+                     <width>111</width>
+                     <height>31</height>
                     </size>
                    </property>
                    <property name="maximumSize">
@@ -5627,8 +5627,8 @@ QProgressBar::chunk {
                    </property>
                    <property name="minimumSize">
                     <size>
-                     <width>85</width>
-                     <height>24</height>
+                     <width>111</width>
+                     <height>31</height>
                     </size>
                    </property>
                    <property name="maximumSize">
@@ -5720,8 +5720,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -5787,7 +5787,7 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>51</width>
+                <width>66</width>
                 <height>30</height>
                </size>
               </property>
@@ -5856,8 +5856,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -5920,8 +5920,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -5976,8 +5976,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6031,8 +6031,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6086,8 +6086,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6141,8 +6141,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6195,8 +6195,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6250,8 +6250,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6327,8 +6327,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6385,8 +6385,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6443,8 +6443,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6498,8 +6498,8 @@ QProgressBar::chunk {
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
-                <height>24</height>
+                <width>111</width>
+                <height>31</height>
                </size>
               </property>
               <property name="maximumSize">

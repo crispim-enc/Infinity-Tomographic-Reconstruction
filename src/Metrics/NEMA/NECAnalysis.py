@@ -1,18 +1,13 @@
 import os
 import numpy as np
-import matplotlib
 import matplotlib.pyplot as plt
 from src.EasyPETLinkInitializer.EasyPETDataReader import binary_data
 import tkinter as tk
 from tkinter import filedialog
-import scipy
 from scipy.optimize import curve_fit
-from scipy import ndimage, misc
-from scipy.stats import binom, t
-from skimage import filters
 from src.Geometry import SetParametricCoordinates, MatrixGeometryCorrection
 from src.EasyPETLinkInitializer.Preprocessing import Sinogram
-from src.Corrections.DecayCorrection import DecayCorrection
+from src.Corrections.PET.DecayCorrection import DecayCorrection
 from src.EasyPETLinkInitializer.SimulationData import SimulationStatusData
 
 

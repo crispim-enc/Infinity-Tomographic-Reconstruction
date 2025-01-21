@@ -29,9 +29,9 @@ class GPUSharedMemorySingleKernel:
         self.im = EM_obj.im
         self.half_crystal_pitch_xy = EM_obj.half_crystal_pitch_xy
 
-        self.fw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "machine_code", "fw_single_kernel.c")
+        self.fw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "PET", "fw_single_kernel.c")
         self.fw_source_model = open(self.fw_source_model_file)
-        self.bw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "machine_code", "bw_single_kernel.c")
+        self.bw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "PET", "bw_single_kernel.c")
         self.bw_source_model = open(self.fw_source_model_file)
 
     def _load_machine_C_code(self):

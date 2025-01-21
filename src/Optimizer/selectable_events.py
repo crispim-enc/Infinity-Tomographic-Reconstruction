@@ -58,7 +58,7 @@ class ROIEvents:
         self.height = np.int32(self.A.shape[1])
         self.depth = np.int32(self.A.shape[2])
 
-        self.pixel2pos_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "machine_code", "mod_pixel2pos.c")
+        self.pixel2pos_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "PET", "mod_pixel2pos.c")
         self.pixel2pos_source_model = open(self.pixel2pos_source_model_file)
         self._load_machine_C_code()
 

@@ -1,17 +1,12 @@
 import os
 import numpy as np
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-import pylab as pl
 from matplotlib.backends.backend_pdf import PdfPages
 from src.EasyPETLinkInitializer.EasyPETDataReader import binary_data
 import tkinter as tk
 from tkinter import filedialog
-import scipy
-from scipy.optimize import curve_fit
-from scipy import ndimage, misc
-from scipy.stats import binom, t
-from src.Corrections.DecayCorrection import DecayCorrection
+from scipy.stats import t
+from src.Corrections.PET.DecayCorrection import DecayCorrection
 
 
 # def plt_configure():
