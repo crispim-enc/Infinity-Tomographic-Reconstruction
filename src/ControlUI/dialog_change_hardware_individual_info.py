@@ -693,7 +693,7 @@ class InformationWidgets:
         self.key_words = ['Model', 'Control_Module', 'Scanning_Model', 'Resistive_Chain_type', 'Bed_Version',
                           'Type_connection', 'Baudrate', 'Bot_motor', 'Top_motor', 'Bed_motor', 'Fourth_motor']
         self.directory = os.path.dirname(os.path.abspath(__file__))
-        self.file_path = '{}/bin/combobox_hardware_data.dat'.format(self.directory)
+        self.file_path = '{}/dataFiles/combobox_hardware_data.dat'.format(self.directory)
         if operation is None:
             return
 

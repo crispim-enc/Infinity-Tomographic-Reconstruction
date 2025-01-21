@@ -15,7 +15,7 @@ class ListModeGenerator:
         self.ctx = cuda.Device(0).make_context()
         self.device = self.ctx.get_device()
         self.cuda_drv = cuda
-        self.directory = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),"bin")
+        self.directory = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),"dataFiles")
 
         self.stepTopmotor = stepTopmotor
         self.stepBotMotor = stepBotMotor

@@ -53,10 +53,10 @@ class MobyPhantomMapGenerator:
         self.attenuation_table[:,3] = "false"
         self.attenuation_table[0, 0:3] = [0, 0,"Air"]
         self._densitiesFile = os.path.join(os.path.dirname(os.path.dirname(
-            os.path.dirname(os.path.abspath(__file__)))), "bin", "GateMaterials.db")
+            os.path.dirname(os.path.abspath(__file__)))), "dataFiles", "GateMaterials.db")
 
         self._mapMobyFile = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-                                           "bin", "Moby settings", "mapMobyToGate.dat")
+                                           "dataFiles", "Moby settings", "mapMobyToGate.dat")
 
         self._mapMobyToGate = None
         self._numberOfVoxelsPerOrgan = {}
@@ -346,12 +346,12 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.withdraw()
     # file_path = filedialog.askopenfilename()
-    file_path = "/home/crispim/Transferências/Moby_average_act_av.bin"
+    file_path = "/home/crispim/Transferências/Moby_average_act_av.dataFiles"
     file_path = "C:\\Users\\pedro\\OneDrive - Universidade de Aveiro\\PhD\\Resultados Organizar\\MOBY\\Moby_average_act_av.bin"
     main_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-                                            "bin", "suv_data")
+                                            "dataFiles", "suv_data")
     # human_excel_file_name = "SUV_values_backup.xlsx"
-    # human_excel_file_path = os.path.join(main_dir, "bin", human_excel_file_name)  # directory of excel file
+    # human_excel_file_path = os.path.join(main_dir, "dataFiles", human_excel_file_name)  # directory of excel file
 
     mice_excel_file_name = "SUV_values_brain.xlsx"
     mice_excel_file_path = os.path.join(main_dir,  mice_excel_file_name)  # directory of excel file

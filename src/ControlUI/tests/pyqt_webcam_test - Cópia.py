@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/dataFiles/env python
 # -*- coding: utf-8 -*-
 #
 # by Panos Mavrogiorgos, email : pmav99 >a< gmail

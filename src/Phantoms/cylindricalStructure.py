@@ -14,9 +14,9 @@ class CylindricalStructure:
         self._height = 80
         self._objectID = 1
         self._center = np.array([0, 0, 0], dtype=np.float32)
-        # self._densitiesFile = "../../bin/GateMaterials.db"
+        # self._densitiesFile = "../../dataFiles/GateMaterials.db"
         self._densitiesFile = os.path.join(os.path.dirname(os.path.dirname(
-            os.path.dirname(os.path.abspath(__file__)))), "bin", "GateMaterials.db")
+            os.path.dirname(os.path.abspath(__file__)))), "dataFiles", "GateMaterials.db")
         self._density = None
 
     @property

@@ -1,0 +1,18 @@
+Reconstruction performed on : 2022-01-26 15:47:24.v 
+Type of data: PET 
+Number of time segments := 0 
+Time Segments: []
+Pixel Size: [1.0, 1.0, 1.14]
+STATIC STUDY 
+Reconstruction Method: LM-MLEM 
+DYNAMIC STUDY: 
+Reconstruction Method: LM-MLEM
+Matrix axis label [1] := x 
+Matrix size [1] := 45
+Scaling factor (mm/pixel) [1] := 1.0 
+Matrix axis label [2] := y 
+Matrix size [2] := 45
+Scaling factor (mm/pixel) [2] := 1.0 
+Matrix axis label [3] := z 
+Matrix size [3] := 65
+Scaling factor (mm/pixel) [3] := 1.14 

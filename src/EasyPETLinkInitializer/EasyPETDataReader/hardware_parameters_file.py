@@ -10,7 +10,7 @@ class hardware_parameters:
     def __init__(self):
         logging.info('START')
         self.directory = os.path.dirname(os.path.abspath(__file__))
-        self.file_path = '{}/bin/hardware_parameters.dat'.format(self.directory)
+        self.file_path = '{}/dataFiles/hardware_parameters.dat'.format(self.directory)
         self.number_of_parameters = 25
         logging.info('PATH '+ self.file_path)
         logging.info('END')
@@ -155,7 +155,7 @@ class EasypetVersionHardware:
         self.serial_connection = serial_connection
         self.serial_number = serial_number
         self.directory = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-        self.file_path = '{}/bin/easypet_hardware_version.dat'.format(self.directory)
+        self.file_path = '{}/dataFiles/easypet_hardware_version.dat'.format(self.directory)
         self.updated_info = updated_info
         self.number_of_versions = None
         self.space_per_version = None
