@@ -1,0 +1,69 @@
+Phantoms package
+================
+
+Submodules
+----------
+
+Phantoms.NECPhantom module
+--------------------------
+
+.. automodule:: Phantoms.NECPhantom
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Phantoms.NEMAIQgeometry module
+------------------------------
+
+.. automodule:: Phantoms.NEMAIQgeometry
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Phantoms.cylindricalStructure module
+------------------------------------
+
+.. automodule:: Phantoms.cylindricalStructure
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Phantoms.data\_suv\_reader module
+---------------------------------
+
+.. automodule:: Phantoms.data_suv_reader
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Phantoms.listModeGenerator module
+---------------------------------
+
+.. automodule:: Phantoms.listModeGenerator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Phantoms.microderenzo module
+----------------------------
+
+.. automodule:: Phantoms.microderenzo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Phantoms.moby\_gate\_files\_generator module
+--------------------------------------------
+
+.. automodule:: Phantoms.moby_gate_files_generator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: Phantoms
+   :members:
+   :undoc-members:
+   :show-inheritance:

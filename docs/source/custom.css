@@ -1,0 +1,19 @@
+/*
+ * Copyright (c) 2025. Pedro Encarnação . Universidade de Aveiro LICENSE: CC BY-NC-SA 4.0 # ****************************
+ *
+ */
+
+/* custom.css */
+
+/* Adjust the logo in the top bar */
+.rst-content .wy-side-nav-search .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+img[alt="Logo"] {
+    height: 50px;  /* Adjust the height as needed */
+    width: auto;
+}
