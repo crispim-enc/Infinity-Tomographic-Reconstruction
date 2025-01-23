@@ -1,0 +1,994 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>src &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AnalyticalReconstruction package" href="AnalyticalReconstruction.html" />
+    <link rel="prev" title="Infinity Tomographic Reconstruction" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    src
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    src
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AnalyticalReconstruction.html">AnalyticalReconstruction package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ControlUI.html">ControlUI package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.InfoTab.html">ControlUI.InfoTab package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.ReconstructionManager.html">ControlUI.ReconstructionManager package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.Signals.html">ControlUI.Signals package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.Toolbar.html">ControlUI.Toolbar package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.Utils.html">ControlUI.Utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.Visualization.html">ControlUI.Visualization package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Corrections.html">Corrections package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.CT.html">Corrections.CT package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.CT.Projector.html">Corrections.CT.Projector package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.EasyPET.html">Corrections.EasyPET package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.Normalization.html">Corrections.EasyPET.Normalization package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.SystemFocus.html">Corrections.EasyPET.SystemFocus package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.PET.html">Corrections.PET package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Attenuation.html">Corrections.PET.Attenuation package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DOI.html">Corrections.PET.DOI package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DecayCorrection.html">Corrections.PET.DecayCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.EnergyCorrection.html">Corrections.PET.EnergyCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Projector.html">Corrections.PET.Projector package</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Detectors.html">Detectors package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Detectors.Collimators.html">Detectors.Collimators package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Detectors.Crystals.html">Detectors.Crystals package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Detectors.Modules.html">Detectors.Modules package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Detectors.SiPM.html">Detectors.SiPM package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="Device.html">Device package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="EasyPETLinkInitializer.html">EasyPETLinkInitializer package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html">EasyPETLinkInitializer.EasyPETDataReader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html">EasyPETLinkInitializer.Preprocessing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.SimulationData.html">EasyPETLinkInitializer.SimulationData package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html">EasyPETLinkInitializer.Utilities package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="GateLink.html">GateLink package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.GateToTor.html">GateLink.GateToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.RootToTor.html">GateLink.RootToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.ToRToGate.html">GateLink.ToRToGate package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Geometry.html">Geometry package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.LinearPET.html">Geometry.LinearPET package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.Standard.html">Geometry.Standard package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.easyCT.html">Geometry.easyCT package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.easyPET.html">Geometry.easyPET package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ImageReader.html">ImageReader package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.DICOM.html">ImageReader.DICOM package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.Interfile.html">ImageReader.Interfile package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.RawData.html">ImageReader.RawData package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="Manager.html">Manager package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Metrics.html">Metrics package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.ImageQuality.html">Metrics.ImageQuality package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.MetaDataAnalyser.html">Metrics.MetaDataAnalyser package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.NEMA.html">Metrics.NEMA package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="Optimizer.html">Optimizer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phantoms.html">Phantoms package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quantification.html">Quantification package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Segmentation.html">Segmentation package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StandaloneInitializer.html">StandaloneInitializer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TORFilesReader.html">TORFilesReader package</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">src</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="src">
+<h1>src<a class="headerlink" href="#src" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AnalyticalReconstruction.html">AnalyticalReconstruction package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="AnalyticalReconstruction.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AnalyticalReconstruction.html#analyticalreconstruction-initializer-module">AnalyticalReconstruction.initializer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AnalyticalReconstruction.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ControlUI.html">ControlUI package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ControlUI.InfoTab.html">ControlUI.InfoTab package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.InfoTab.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.InfoTab.html#module-ControlUI.InfoTab.headerinfotab">ControlUI.InfoTab.headerinfotab module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.InfoTab.html#module-ControlUI.InfoTab">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ControlUI.ReconstructionManager.html">ControlUI.ReconstructionManager package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.ReconstructionManager.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.ReconstructionManager.html#module-ControlUI.ReconstructionManager.TabReconstructionFile">ControlUI.ReconstructionManager.TabReconstructionFile module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.ReconstructionManager.html#module-ControlUI.ReconstructionManager">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ControlUI.Signals.html">ControlUI.Signals package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Signals.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Signals.html#controlui-signals-easypetwindow-module">ControlUI.Signals.easypetwindow module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Signals.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ControlUI.Toolbar.html">ControlUI.Toolbar package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Toolbar.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Toolbar.html#controlui-toolbar-programaticaly-widgets-module">ControlUI.Toolbar.programaticaly_widgets module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Toolbar.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ControlUI.Utils.html">ControlUI.Utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Utils.html#controlui-utils-openstudy-module">ControlUI.Utils.openstudy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Utils.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ControlUI.Visualization.html">ControlUI.Visualization package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Visualization.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Visualization.html#module-ControlUI.Visualization.camera">ControlUI.Visualization.camera module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Visualization.html#module-ControlUI.Visualization.dynamicvisualization">ControlUI.Visualization.dynamicvisualization module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Visualization.html#module-ControlUI.Visualization.mainvisualization">ControlUI.Visualization.mainvisualization module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Visualization.html#module-ControlUI.Visualization.mouseobserver_main">ControlUI.Visualization.mouseobserver_main module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Visualization.html#module-ControlUI.Visualization.typeofviews">ControlUI.Visualization.typeofviews module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Visualization.html#module-ControlUI.Visualization.viewPort">ControlUI.Visualization.viewPort module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.Visualization.html#module-ControlUI.Visualization">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.html#controlui-infinitytor-module">ControlUI.InfinityTOR module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.html#module-ControlUI.ResourcesImages_rc">ControlUI.ResourcesImages_rc module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ControlUI.html#ControlUI.ResourcesImages_rc.qCleanupResources"><code class="docutils literal notranslate"><span class="pre">qCleanupResources()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ControlUI.html#ControlUI.ResourcesImages_rc.qInitResources"><code class="docutils literal notranslate"><span class="pre">qInitResources()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.html#module-ControlUI.SegmentationManager">ControlUI.SegmentationManager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ControlUI.html#ControlUI.SegmentationManager.SinogramVtk"><code class="docutils literal notranslate"><span class="pre">SinogramVtk</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.html#ControlUI.SegmentationManager.SinogramVtk.numpy_array_as_vtk_image_data"><code class="docutils literal notranslate"><span class="pre">SinogramVtk.numpy_array_as_vtk_image_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.html#module-ControlUI.advance_parameters_gui">ControlUI.advance_parameters_gui module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ControlUI.html#ControlUI.advance_parameters_gui.Ui_advanced_parameters_Dialog"><code class="docutils literal notranslate"><span class="pre">Ui_advanced_parameters_Dialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.html#ControlUI.advance_parameters_gui.Ui_advanced_parameters_Dialog.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_advanced_parameters_Dialog.retranslateUi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ControlUI.html#ControlUI.advance_parameters_gui.Ui_advanced_parameters_Dialog.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_advanced_parameters_Dialog.setupUi()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.html#controlui-dialog-change-hardware-individual-info-module">ControlUI.dialog_change_hardware_individual_info module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ControlUI.html#module-ControlUI">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Corrections.html">Corrections package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.CT.html">Corrections.CT package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Corrections.CT.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Corrections.CT.html#module-Corrections.CT">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.html">Corrections.EasyPET package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Corrections.EasyPET.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Corrections.EasyPET.html#module-Corrections.EasyPET">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.html">Corrections.PET package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Corrections.PET.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Corrections.PET.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.html#module-Corrections">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Detectors.html">Detectors package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Detectors.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Detectors.Collimators.html">Detectors.Collimators package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.Collimators.html#module-Detectors.Collimators">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Detectors.Crystals.html">Detectors.Crystals package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.Crystals.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.Crystals.html#detectors-crystals-lyso-module">Detectors.Crystals.LYSO module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.Crystals.html#module-Detectors.Crystals.genericCrystal">Detectors.Crystals.genericCrystal module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.Crystals.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Detectors.Modules.html">Detectors.Modules package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.Modules.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.Modules.html#detectors-modules-petmodule-module">Detectors.Modules.PETModule module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.Modules.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Detectors.SiPM.html">Detectors.SiPM package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.SiPM.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.SiPM.html#detectors-sipm-hamamatsu-module">Detectors.SiPM.Hamamatsu module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.SiPM.html#module-Detectors.SiPM.generic">Detectors.SiPM.generic module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Detectors.SiPM.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Detectors.html#module-Detectors">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Device.html">Device package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Device.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Device.html#module-Device.device">Device.device module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Device.html#Device.device.Device"><code class="docutils literal notranslate"><span class="pre">Device</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.createDirectory"><code class="docutils literal notranslate"><span class="pre">Device.createDirectory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.deviceDirectory"><code class="docutils literal notranslate"><span class="pre">Device.deviceDirectory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.deviceName"><code class="docutils literal notranslate"><span class="pre">Device.deviceName</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.deviceType"><code class="docutils literal notranslate"><span class="pre">Device.deviceType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.deviceUUID"><code class="docutils literal notranslate"><span class="pre">Device.deviceUUID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.geometryObject"><code class="docutils literal notranslate"><span class="pre">Device.geometryObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.getDeviceName"><code class="docutils literal notranslate"><span class="pre">Device.getDeviceName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.getDeviceUUID"><code class="docutils literal notranslate"><span class="pre">Device.getDeviceUUID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.readDeviceProperties"><code class="docutils literal notranslate"><span class="pre">Device.readDeviceProperties()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.saveVarsDeviceToFile"><code class="docutils literal notranslate"><span class="pre">Device.saveVarsDeviceToFile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.setDeviceName"><code class="docutils literal notranslate"><span class="pre">Device.setDeviceName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.setDeviceType"><code class="docutils literal notranslate"><span class="pre">Device.setDeviceType()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.setDeviceUUID"><code class="docutils literal notranslate"><span class="pre">Device.setDeviceUUID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Device.html#Device.device.Device.setGeometryObject"><code class="docutils literal notranslate"><span class="pre">Device.setGeometryObject()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Device.html#module-Device">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="EasyPETLinkInitializer.html">EasyPETLinkInitializer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html">EasyPETLinkInitializer.EasyPETDataReader package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.calibration_points_upload">EasyPETLinkInitializer.EasyPETDataReader.calibration_points_upload module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.crystalsRC_client">EasyPETLinkInitializer.EasyPETDataReader.crystalsRC_client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.detect_peaks">EasyPETLinkInitializer.EasyPETDataReader.detect_peaks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.energyCorrection">EasyPETLinkInitializer.EasyPETDataReader.energyCorrection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#easypetlinkinitializer-easypetdatareader-energycorrection-calibration-module">EasyPETLinkInitializer.EasyPETDataReader.energyCorrection_calibration module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file">EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.indexToEnergyCorrection_client">EasyPETLinkInitializer.EasyPETDataReader.indexToEnergyCorrection_client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.lmodebin">EasyPETLinkInitializer.EasyPETDataReader.lmodebin module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.natural_sort">EasyPETLinkInitializer.EasyPETDataReader.natural_sort module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.peaksFile">EasyPETLinkInitializer.EasyPETDataReader.peaksFile module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.ratioEnergy_client">EasyPETLinkInitializer.EasyPETDataReader.ratioEnergy_client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.time_discrimination">EasyPETLinkInitializer.EasyPETDataReader.time_discrimination module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html">EasyPETLinkInitializer.Preprocessing package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html#easypetlinkinitializer-preprocessing-datatest-module">EasyPETLinkInitializer.Preprocessing.datatest module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html#easypetlinkinitializer-preprocessing-prepareeasypetdata-module">EasyPETLinkInitializer.Preprocessing.prepareeasypetdata module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html#easypetlinkinitializer-preprocessing-regularization-error-hist-module">EasyPETLinkInitializer.Preprocessing.regularization_error_hist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html#easypetlinkinitializer-preprocessing-sinogram-module">EasyPETLinkInitializer.Preprocessing.sinogram module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html#easypetlinkinitializer-preprocessing-sinogram-regularization-module">EasyPETLinkInitializer.Preprocessing.sinogram_regularization module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="EasyPETLinkInitializer.SimulationData.html">EasyPETLinkInitializer.SimulationData package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.SimulationData.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.SimulationData.html#easypetlinkinitializer-simulationdata-converter-simulation-data-to-easypet-mod-module">EasyPETLinkInitializer.SimulationData.converter_simulation_data_to_easypet_mod module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.SimulationData.html#easypetlinkinitializer-simulationdata-simulationdatastatus-module">EasyPETLinkInitializer.SimulationData.simulationdatastatus module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.SimulationData.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html">EasyPETLinkInitializer.Utilities package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html#easypetlinkinitializer-utilities-coincidencesroot2numpy-module">EasyPETLinkInitializer.Utilities.coincidencesRoot2Numpy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html#easypetlinkinitializer-utilities-convertoldfilesto-new-module">EasyPETLinkInitializer.Utilities.convertoldfilesto_new module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html#module-EasyPETLinkInitializer.Utilities.exceptions">EasyPETLinkInitializer.Utilities.exceptions module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html#easypetlinkinitializer-utilities-merge-easypet-files-module">EasyPETLinkInitializer.Utilities.merge_easypet_files module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html#module-EasyPETLinkInitializer.Utilities">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.html#easypetlinkinitializer-reconstruction-initializer-module">EasyPETLinkInitializer.reconstruction_initializer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.html#module-EasyPETLinkInitializer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GateLink.html">GateLink package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GateLink.GateToTor.html">GateLink.GateToTor package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.GateToTor.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.GateToTor.html#gatelink-gatetotor-gatetotor-module">GateLink.GateToTor.GateToTor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.GateToTor.html#gatelink-gatetotor-macparser-module">GateLink.GateToTor.MacParser module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.GateToTor.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="GateLink.RootToTor.html">GateLink.RootToTor package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.RootToTor.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.RootToTor.html#gatelink-roottotor-addanglestorootfile-module">GateLink.RootToTor.addanglestorootfile module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.RootToTor.html#gatelink-roottotor-findcoincidencesroot2numpy-module">GateLink.RootToTor.findcoincidencesRoot2Numpy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.RootToTor.html#gatelink-roottotor-readroot-module">GateLink.RootToTor.readroot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.RootToTor.html#gatelink-roottotor-recreatedata-module">GateLink.RootToTor.recreatedata module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.RootToTor.html#gatelink-roottotor-roottotor-module">GateLink.RootToTor.rootToTor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.RootToTor.html#gatelink-roottotor-rootjoiner-module">GateLink.RootToTor.rootjoiner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.RootToTor.html#gatelink-roottotor-singlesstruct-module">GateLink.RootToTor.singlesstruct module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.RootToTor.html#gatelink-roottotor-validation-plots-module">GateLink.RootToTor.validation_plots module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.RootToTor.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="GateLink.ToRToGate.html">GateLink.ToRToGate package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.ToRToGate.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.ToRToGate.html#gatelink-tortogate-tortogate-module">GateLink.ToRToGate.TorToGate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GateLink.ToRToGate.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Geometry.html">Geometry package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Geometry.LinearPET.html">Geometry.LinearPET package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.LinearPET.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.LinearPET.html#geometry-linearpet-linear-parametric-points-module">Geometry.LinearPET.linear_parametric_points module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.LinearPET.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Geometry.Standard.html">Geometry.Standard package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.Standard.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.Standard.html#geometry-standard-cylindrical-module">Geometry.Standard.cylindrical module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.Standard.html#geometry-standard-planar-module">Geometry.Standard.planar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.Standard.html#geometry-standard-polygonal-module">Geometry.Standard.polygonal module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.Standard.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Geometry.easyCT.html">Geometry.easyCT package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.easyCT.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.easyCT.html#geometry-easyct-easyct-parametric-points-module">Geometry.easyCT.easyct_parametric_points module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.easyCT.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Geometry.easyPET.html">Geometry.easyPET package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.easyPET.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.easyPET.html#geometry-easypet-easypet-parametric-points-module">Geometry.easyPET.easypet_parametric_points module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.easyPET.html#geometry-easypet-matrixgeometrycorrection-module">Geometry.easyPET.matrixgeometrycorrection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.easyPET.html#geometry-easypet-resetposition-module">Geometry.easyPET.resetposition module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.easyPET.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ImageReader.html">ImageReader package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ImageReader.DICOM.html">ImageReader.DICOM package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.DICOM.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.DICOM.html#imagereader-dicom-equipment-module">ImageReader.DICOM.equipment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.DICOM.html#imagereader-dicom-filesreader-module">ImageReader.DICOM.filesreader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.DICOM.html#imagereader-dicom-frameofreference-module">ImageReader.DICOM.frameofreference module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.DICOM.html#imagereader-dicom-image-module">ImageReader.DICOM.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.DICOM.html#imagereader-dicom-patient-module">ImageReader.DICOM.patient module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.DICOM.html#imagereader-dicom-series-module">ImageReader.DICOM.series module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.DICOM.html#imagereader-dicom-study-module">ImageReader.DICOM.study module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.DICOM.html#imagereader-dicom-submodule-module">ImageReader.DICOM.submodule module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.DICOM.html#imagereader-dicom-writedicom-module">ImageReader.DICOM.writeDicom module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.DICOM.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ImageReader.Interfile.html">ImageReader.Interfile package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.Interfile.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ImageReader.RawData.html">ImageReader.RawData package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.RawData.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.RawData.html#module-ImageReader.RawData.raw_data">ImageReader.RawData.raw_data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ImageReader.RawData.html#module-ImageReader.RawData">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Manager.html">Manager package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Manager.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Manager.html#module-Manager.ReconstructionManagerGeneral">Manager.ReconstructionManagerGeneral module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Manager.html#module-Manager">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Metrics.html">Metrics package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Metrics.ImageQuality.html">Metrics.ImageQuality package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.ImageQuality.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.ImageQuality.html#module-Metrics.ImageQuality.algortihmConvergency">Metrics.ImageQuality.algortihmConvergency module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.ImageQuality.html#module-Metrics.ImageQuality.image_metrics">Metrics.ImageQuality.image_metrics module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.ImageQuality.html#module-Metrics.ImageQuality">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Metrics.MetaDataAnalyser.html">Metrics.MetaDataAnalyser package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.MetaDataAnalyser.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.MetaDataAnalyser.html#metrics-metadataanalyser-reademetadados-module">Metrics.MetaDataAnalyser.reademetadados module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.MetaDataAnalyser.html#module-Metrics.MetaDataAnalyser">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Metrics.NEMA.html">Metrics.NEMA package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.NEMA.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.NEMA.html#metrics-nema-fwhm-estimator-module">Metrics.NEMA.FWHM_estimator module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.NEMA.html#metrics-nema-fwhmdicom-module">Metrics.NEMA.FWHMdicom module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.NEMA.html#metrics-nema-iq-analyisis-module">Metrics.NEMA.IQ_analyisis module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.NEMA.html#metrics-nema-iq-analysisfixed-module">Metrics.NEMA.IQ_analysisFixed module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.NEMA.html#metrics-nema-necanalysis-module">Metrics.NEMA.NECAnalysis module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.NEMA.html#metrics-nema-sensitivity-nema-module">Metrics.NEMA.sensitivity_nema module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.NEMA.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.html#module-Metrics.groundtruth">Metrics.groundtruth module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Metrics.html#Metrics.groundtruth.GroundTruth"><code class="docutils literal notranslate"><span class="pre">GroundTruth</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.html#Metrics.groundtruth.GroundTruth.applyEnergyWindow"><code class="docutils literal notranslate"><span class="pre">GroundTruth.applyEnergyWindow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.html#Metrics.groundtruth.GroundTruth.generateImageSameSize"><code class="docutils literal notranslate"><span class="pre">GroundTruth.generateImageSameSize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.html#Metrics.groundtruth.GroundTruth.groundTruth"><code class="docutils literal notranslate"><span class="pre">GroundTruth.groundTruth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Metrics.html#Metrics.groundtruth.GroundTruth.readAnhnilationData"><code class="docutils literal notranslate"><span class="pre">GroundTruth.readAnhnilationData()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.html#metrics-maskchart-module">Metrics.maskChart module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.html#metrics-roisinogram-module">Metrics.roisinogram module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.html#module-Metrics">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Optimizer.html">Optimizer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Optimizer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Optimizer.html#module-Optimizer.CPU">Optimizer.CPU module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Optimizer.html#Optimizer.CPU.IterativeAlgorithmCPU"><code class="docutils literal notranslate"><span class="pre">IterativeAlgorithmCPU</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Optimizer.html#optimizer-gpumanager-module">Optimizer.GPUManager module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Optimizer.html#module-Optimizer.GaussianFileGenarator">Optimizer.GaussianFileGenarator module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters"><code class="docutils literal notranslate"><span class="pre">GaussianParameters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.acceptableYDistance"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.acceptableYDistance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.acceptableZDistance"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.acceptableZDistance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.gaussian_y_fix_term"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.gaussian_y_fix_term</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.gaussian_z_fix_term"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.gaussian_z_fix_term</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.invert2timesigma_y_square"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.invert2timesigma_y_square</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.invert2timesigma_z_square"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.invert2timesigma_z_square</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.setShiftInvariantParameters"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.setShiftInvariantParameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.setShiftVariantParameters"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.setShiftVariantParameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.sigma_y_square"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.sigma_y_square</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.sigma_z_square"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.sigma_z_square</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Optimizer.html#module-Optimizer.gpu_multiple_kernel">Optimizer.gpu_multiple_kernel module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Optimizer.html#Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.map_events_gpu"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.map_events_gpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.multikernel_optimized_memory_reads"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.multikernel_optimized_memory_reads()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.multikernel_optimized_memory_reads_review"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.multikernel_optimized_memory_reads_review()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.multiplekernel"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.multiplekernel()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Optimizer.html#module-Optimizer.gpu_shared_memory">Optimizer.gpu_shared_memory module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Optimizer.html#Optimizer.gpu_shared_memory.GPUSharedMemorySingleKernel"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemorySingleKernel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Optimizer.html#module-Optimizer.kernelManager">Optimizer.kernelManager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Optimizer.html#Optimizer.kernelManager.GPUSharedMemoryMultipleKernel"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.kernelManager.GPUSharedMemoryMultipleKernel.map_events_gpu"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.map_events_gpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.kernelManager.GPUSharedMemoryMultipleKernel.multipleKernel"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.multipleKernel()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Optimizer.html#module-Optimizer.selectable_events">Optimizer.selectable_events module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Optimizer.html#Optimizer.selectable_events.ROIEvents"><code class="docutils literal notranslate"><span class="pre">ROIEvents</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.selectable_events.ROIEvents.generate_roi_listmode_data"><code class="docutils literal notranslate"><span class="pre">ROIEvents.generate_roi_listmode_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.selectable_events.ROIEvents.pixel2Position"><code class="docutils literal notranslate"><span class="pre">ROIEvents.pixel2Position()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Optimizer.html#Optimizer.selectable_events.ROIEvents.save_gpu_results"><code class="docutils literal notranslate"><span class="pre">ROIEvents.save_gpu_results()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Optimizer.html#module-Optimizer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Phantoms.html">Phantoms package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Phantoms.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Phantoms.html#phantoms-necphantom-module">Phantoms.NECPhantom module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Phantoms.html#phantoms-nemaiqgeometry-module">Phantoms.NEMAIQgeometry module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Phantoms.html#module-Phantoms.cylindricalStructure">Phantoms.cylindricalStructure module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.center"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.center</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.density"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.density</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.height"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.height</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.material"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.material</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.rMax"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.rMax</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.rMin"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.rMin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setCenter"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.setCenter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setDensity"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.setDensity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setHeight"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.setHeight()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setMaterial"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.setMaterial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setRMax"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.setRMax()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setRMin"><code class="docutils literal notranslate"><span class="pre">CylindricalStructure.setRMin()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Phantoms.html#phantoms-data-suv-reader-module">Phantoms.data_suv_reader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Phantoms.html#phantoms-listmodegenerator-module">Phantoms.listModeGenerator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Phantoms.html#phantoms-microderenzo-module">Phantoms.microderenzo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Phantoms.html#phantoms-moby-gate-files-generator-module">Phantoms.moby_gate_files_generator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Phantoms.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Quantification.html">Quantification package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Quantification.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quantification.html#quantification-activtycharts-module">Quantification.activtycharts module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quantification.html#module-Quantification.factor_calibration_phantom_uniform">Quantification.factor_calibration_phantom_uniform module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.apply_quantification_factor_to_image"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.apply_quantification_factor_to_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.calculation_radiotracer_factors"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.calculation_radiotracer_factors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.load_info"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.load_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.plt_segmented_image"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.plt_segmented_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.quantification_factor_calculation"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.quantification_factor_calculation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.save_info"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.save_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.segment_region_phantom"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.segment_region_phantom()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Quantification.html#module-Quantification">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Segmentation.html">Segmentation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Segmentation.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Segmentation.html#segmentation-derezo-simulation-cutter-module">Segmentation.derezo_simulation_cutter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Segmentation.html#module-Segmentation.findisosurface">Segmentation.findisosurface module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Segmentation.html#Segmentation.findisosurface.FindISOSurface"><code class="docutils literal notranslate"><span class="pre">FindISOSurface</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.apply_fov_cut"><code class="docutils literal notranslate"><span class="pre">FindISOSurface.apply_fov_cut()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.get_active_pixels"><code class="docutils literal notranslate"><span class="pre">FindISOSurface.get_active_pixels()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.plot2DISOSurface"><code class="docutils literal notranslate"><span class="pre">FindISOSurface.plot2DISOSurface()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.save_calculated_surface"><code class="docutils literal notranslate"><span class="pre">FindISOSurface.save_calculated_surface()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.threshold2DISOSurface"><code class="docutils literal notranslate"><span class="pre">FindISOSurface.threshold2DISOSurface()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.threshold3DISOSurface"><code class="docutils literal notranslate"><span class="pre">FindISOSurface.threshold3DISOSurface()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Segmentation.html#module-Segmentation.maskcreatdemo">Segmentation.maskcreatdemo module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator"><code class="docutils literal notranslate"><span class="pre">MaskCreator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.button_press_callback"><code class="docutils literal notranslate"><span class="pre">MaskCreator.button_press_callback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.button_release_callback"><code class="docutils literal notranslate"><span class="pre">MaskCreator.button_release_callback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.draw_callback"><code class="docutils literal notranslate"><span class="pre">MaskCreator.draw_callback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.get_ind_under_cursor"><code class="docutils literal notranslate"><span class="pre">MaskCreator.get_ind_under_cursor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.get_mask"><code class="docutils literal notranslate"><span class="pre">MaskCreator.get_mask()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.key_press_callback"><code class="docutils literal notranslate"><span class="pre">MaskCreator.key_press_callback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.motion_notify_callback"><code class="docutils literal notranslate"><span class="pre">MaskCreator.motion_notify_callback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.poly_changed"><code class="docutils literal notranslate"><span class="pre">MaskCreator.poly_changed()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.default_vertices"><code class="docutils literal notranslate"><span class="pre">default_vertices()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.dist"><code class="docutils literal notranslate"><span class="pre">dist()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.dist_point_to_segment"><code class="docutils literal notranslate"><span class="pre">dist_point_to_segment()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Segmentation.html#Segmentation.maskcreatdemo.mask_creator_demo"><code class="docutils literal notranslate"><span class="pre">mask_creator_demo()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Segmentation.html#module-Segmentation">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="StandaloneInitializer.html">StandaloneInitializer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="StandaloneInitializer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StandaloneInitializer.html#standaloneinitializer-angletoparametricmlem-module">StandaloneInitializer.angletoparametricMLEM module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StandaloneInitializer.html#standaloneinitializer-googledocs-link-module">StandaloneInitializer.googledocs_link module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StandaloneInitializer.html#standaloneinitializer-multiple-files-reconstruction-module">StandaloneInitializer.multiple_files_reconstruction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StandaloneInitializer.html#standaloneinitializer-standalone-initializer-module">StandaloneInitializer.standalone_initializer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StandaloneInitializer.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TORFilesReader.html">TORFilesReader package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TORFilesReader.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TORFilesReader.html#module-TORFilesReader.torfiles">TORFilesReader.torfiles module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TORFilesReader.html#TORFilesReader.torfiles.ToRFile"><code class="docutils literal notranslate"><span class="pre">ToRFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TORFilesReader.html#TORFilesReader.torfiles.ToRFile.read"><code class="docutils literal notranslate"><span class="pre">ToRFile.read()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="TORFilesReader.html#TORFilesReader.torfiles.ToRFile.write"><code class="docutils literal notranslate"><span class="pre">ToRFile.write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TORFilesReader.html#module-TORFilesReader">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Infinity Tomographic Reconstruction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="AnalyticalReconstruction.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AnalyticalReconstruction package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1871 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    src
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    src
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#Q"><strong>Q</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#X"><strong>X</strong></a>
+ | <a href="#Y"><strong>Y</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.acceptableYDistance">acceptableYDistance (Optimizer.GaussianFileGenarator.GaussianParameters property)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.acceptableZDistance">acceptableZDistance (Optimizer.GaussianFileGenarator.GaussianParameters property)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ActiveAreas">ActiveAreas (class in ControlUI.Visualization.typeofviews)</a>
+</li>
+      <li><a href="Corrections.EasyPET.Normalization.html#Corrections.EasyPET.Normalization.adaptative_normalization_matrix.AdaptiveNormalizationMatrix">AdaptiveNormalizationMatrix (class in Corrections.EasyPET.Normalization.adaptative_normalization_matrix)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK.addNewCutPlanesVtkWindow">addNewCutPlanesVtkWindow() (ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK.addNewDataToCurrentView">addNewDataToCurrentView() (ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK.addNewVolumeVtkWindow">addNewVolumeVtkWindow() (ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK method)</a>
+</li>
+      <li><a href="Metrics.ImageQuality.html#Metrics.ImageQuality.algortihmConvergency.AlgorithmConvergency">AlgorithmConvergency (class in Metrics.ImageQuality.algortihmConvergency)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.alphaRotation">alphaRotation (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.alphaRotation">(Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      </ul></li>
+      <li><a href="Corrections.CT.Projector.html#Corrections.CT.Projector.pyramidalprojector.PyramidalProjector.amplifyPointsToGPUCoordinateSystem">amplifyPointsToGPUCoordinateSystem() (Corrections.CT.Projector.pyramidalprojector.PyramidalProjector method)</a>
+</li>
+      <li><a href="Corrections.EasyPET.SystemFocus.html#Corrections.EasyPET.SystemFocus.SystemAligment.angle_correction">angle_correction() (in module Corrections.EasyPET.SystemFocus.SystemAligment)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.apply_fov_cut">apply_fov_cut() (Segmentation.findisosurface.FindISOSurface method)</a>
+</li>
+      <li><a href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.apply_quantification_factor_to_image">apply_quantification_factor_to_image() (Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom method)</a>
+</li>
+      <li><a href="Metrics.html#Metrics.groundtruth.GroundTruth.applyEnergyWindow">applyEnergyWindow() (Metrics.groundtruth.GroundTruth method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ActiveAreas.area3DView">area3DView (ControlUI.Visualization.typeofviews.ActiveAreas property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.betaRotation">betaRotation (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.betaRotation">(Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      </ul></li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data">binary_data (class in EasyPETLinkInitializer.EasyPETDataReader.lmodebin)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.EasypetVersionHardware.binary_file_creation">binary_file_creation() (EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.EasypetVersionHardware method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.blockSPiMArea">blockSPiMArea (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.blockSPiMDepth">blockSPiMDepth (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.blockSPiMHeight">blockSPiMHeight (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.blockSPiMWidth">blockSPiMWidth (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.borderSizeX">borderSizeX (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.borderSizeY">borderSizeY (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.button_press_callback">button_press_callback() (Segmentation.maskcreatdemo.MaskCreator method)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.button_release_callback">button_release_callback() (Segmentation.maskcreatdemo.MaskCreator method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mouseobserver_main.MouseObserverMainWindow.ButtonCallback">ButtonCallback() (ControlUI.Visualization.mouseobserver_main.MouseObserverMainWindow method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Corrections.CT.Projector.html#Corrections.CT.Projector.pyramidalprojector.PyramidalProjector.calcD">calcD() (Corrections.CT.Projector.pyramidalprojector.PyramidalProjector static method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ViewPortSelected.calculateRangeViewPort">calculateRangeViewPort() (ControlUI.Visualization.typeofviews.ViewPortSelected method)</a>
+</li>
+      <li><a href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.calculation_radiotracer_factors">calculation_radiotracer_factors() (Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom method)</a>
+</li>
+      <li><a href="Corrections.CT.Projector.html#Corrections.CT.Projector.pyramidalprojector.PyramidalProjector.calcVector">calcVector() (Corrections.CT.Projector.pyramidalprojector.PyramidalProjector static method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.calibration_points_upload.calibration_points_init">calibration_points_init() (in module EasyPETLinkInitializer.EasyPETDataReader.calibration_points_upload)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK.camera_initial_position">camera_initial_position() (ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK.camera_rotation">camera_rotation() (ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK method)</a>
+</li>
+      <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.center">center (Phantoms.cylindricalStructure.CylindricalStructure property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.centerSiPMModule">centerSiPMModule (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.centroid">centroid (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.hardware_parameters.change_parameters">change_parameters() (EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.hardware_parameters method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.channelCentrePosition">channelCentrePosition (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Metrics.ImageQuality.html#Metrics.ImageQuality.image_metrics.ImageMetrics.compare_images">compare_images() (Metrics.ImageQuality.image_metrics.ImageMetrics method)</a>
+</li>
+      <li><a href="Metrics.ImageQuality.html#Metrics.ImageQuality.image_metrics.ImageMetrics.compare_ssim">compare_ssim() (Metrics.ImageQuality.image_metrics.ImageMetrics method)</a>
+</li>
+      <li>
+    ControlUI
+
+      <ul>
+        <li><a href="ControlUI.html#module-ControlUI">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.advance_parameters_gui
+
+      <ul>
+        <li><a href="ControlUI.html#module-ControlUI.advance_parameters_gui">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.InfoTab
+
+      <ul>
+        <li><a href="ControlUI.InfoTab.html#module-ControlUI.InfoTab">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.InfoTab.headerinfotab
+
+      <ul>
+        <li><a href="ControlUI.InfoTab.html#module-ControlUI.InfoTab.headerinfotab">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.ReconstructionManager
+
+      <ul>
+        <li><a href="ControlUI.ReconstructionManager.html#module-ControlUI.ReconstructionManager">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.ReconstructionManager.TabReconstructionFile
+
+      <ul>
+        <li><a href="ControlUI.ReconstructionManager.html#module-ControlUI.ReconstructionManager.TabReconstructionFile">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.ResourcesImages_rc
+
+      <ul>
+        <li><a href="ControlUI.html#module-ControlUI.ResourcesImages_rc">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.SegmentationManager
+
+      <ul>
+        <li><a href="ControlUI.html#module-ControlUI.SegmentationManager">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.Visualization
+
+      <ul>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.Visualization.camera
+
+      <ul>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.camera">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.Visualization.dynamicvisualization
+
+      <ul>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.dynamicvisualization">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.Visualization.mainvisualization
+
+      <ul>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.mainvisualization">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.Visualization.mouseobserver_main
+
+      <ul>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.mouseobserver_main">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    ControlUI.Visualization.typeofviews
+
+      <ul>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.typeofviews">module</a>
+</li>
+      </ul></li>
+      <li>
+    ControlUI.Visualization.viewPort
+
+      <ul>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.viewPort">module</a>
+</li>
+      </ul></li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data.convertion_files_without_header">convertion_files_without_header() (EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data method)</a>
+</li>
+      <li>
+    Corrections
+
+      <ul>
+        <li><a href="Corrections.html#module-Corrections">module</a>
+</li>
+      </ul></li>
+      <li>
+    Corrections.CT
+
+      <ul>
+        <li><a href="Corrections.CT.html#module-Corrections.CT">module</a>
+</li>
+      </ul></li>
+      <li>
+    Corrections.CT.Projector
+
+      <ul>
+        <li><a href="Corrections.CT.Projector.html#module-Corrections.CT.Projector">module</a>
+</li>
+      </ul></li>
+      <li>
+    Corrections.CT.Projector.pyramidalprojector
+
+      <ul>
+        <li><a href="Corrections.CT.Projector.html#module-Corrections.CT.Projector.pyramidalprojector">module</a>
+</li>
+      </ul></li>
+      <li>
+    Corrections.EasyPET
+
+      <ul>
+        <li><a href="Corrections.EasyPET.html#module-Corrections.EasyPET">module</a>
+</li>
+      </ul></li>
+      <li>
+    Corrections.EasyPET.Normalization
+
+      <ul>
+        <li><a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization">module</a>
+</li>
+      </ul></li>
+      <li>
+    Corrections.EasyPET.Normalization.adaptative_normalization_matrix
+
+      <ul>
+        <li><a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization.adaptative_normalization_matrix">module</a>
+</li>
+      </ul></li>
+      <li>
+    Corrections.EasyPET.Normalization.generateallpositions
+
+      <ul>
+        <li><a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization.generateallpositions">module</a>
+</li>
+      </ul></li>
+      <li>
+    Corrections.EasyPET.Normalization.poissonmapgenerator
+
+      <ul>
+        <li><a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization.poissonmapgenerator">module</a>
+</li>
+      </ul></li>
+      <li>
+    Corrections.EasyPET.SystemFocus
+
+      <ul>
+        <li><a href="Corrections.EasyPET.SystemFocus.html#module-Corrections.EasyPET.SystemFocus">module</a>
+</li>
+      </ul></li>
+      <li>
+    Corrections.EasyPET.SystemFocus.SystemAligment
+
+      <ul>
+        <li><a href="Corrections.EasyPET.SystemFocus.html#module-Corrections.EasyPET.SystemFocus.SystemAligment">module</a>
+</li>
+      </ul></li>
+      <li><a href="Corrections.CT.Projector.html#Corrections.CT.Projector.pyramidalprojector.PyramidalProjector.countsPerPosition">countsPerPosition (Corrections.CT.Projector.pyramidalprojector.PyramidalProjector property)</a>
+</li>
+      <li><a href="Device.html#Device.device.Device.createDirectory">createDirectory() (Device.device.Device method)</a>
+</li>
+      <li><a href="Corrections.CT.Projector.html#Corrections.CT.Projector.pyramidalprojector.PyramidalProjector.createPlanes">createPlanes() (Corrections.CT.Projector.pyramidalprojector.PyramidalProjector method)</a>
+</li>
+      <li><a href="Corrections.CT.Projector.html#Corrections.CT.Projector.pyramidalprojector.PyramidalProjector.createVectorialSpace">createVectorialSpace() (Corrections.CT.Projector.pyramidalprojector.PyramidalProjector method)</a>
+</li>
+      <li><a href="Corrections.CT.Projector.html#Corrections.CT.Projector.pyramidalprojector.PyramidalProjector.crossProduct">crossProduct() (Corrections.CT.Projector.pyramidalprojector.PyramidalProjector static method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.crystalID">crystalID (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.crystalSizeX">crystalSizeX (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.crystalSizeY">crystalSizeY (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.crystalSizeZ">crystalSizeZ (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.crystalsRC_client.crystalsRC_client">crystalsRC_client() (in module EasyPETLinkInitializer.EasyPETDataReader.crystalsRC_client)</a>
+</li>
+      <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure">CylindricalStructure (class in Phantoms.cylindricalStructure)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data.data_preparation">data_preparation() (EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data.data_preparation_energyconversion">data_preparation_energyconversion() (EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data method)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.default_vertices">default_vertices() (in module Segmentation.maskcreatdemo)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.density">density (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+
+      <ul>
+        <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.density">(Phantoms.cylindricalStructure.CylindricalStructure property)</a>
+</li>
+      </ul></li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK.design_axes">design_axes() (ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK.design_scalar_bar">design_scalar_bar() (ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK.design_stl_file">design_stl_file() (ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.detect_peaks.detect_peaks">detect_peaks() (in module EasyPETLinkInitializer.EasyPETDataReader.detect_peaks)</a>
+</li>
+      <li>
+    Detectors
+
+      <ul>
+        <li><a href="Detectors.html#module-Detectors">module</a>
+</li>
+      </ul></li>
+      <li>
+    Detectors.Collimators
+
+      <ul>
+        <li><a href="Detectors.Collimators.html#module-Detectors.Collimators">module</a>
+</li>
+      </ul></li>
+      <li>
+    Detectors.Crystals.genericCrystal
+
+      <ul>
+        <li><a href="Detectors.Crystals.html#module-Detectors.Crystals.genericCrystal">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Detectors.SiPM.generic
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#module-Detectors.SiPM.generic">module</a>
+</li>
+      </ul></li>
+      <li>
+    Device
+
+      <ul>
+        <li><a href="Device.html#module-Device">module</a>
+</li>
+      </ul></li>
+      <li><a href="Device.html#Device.device.Device">Device (class in Device.device)</a>
+</li>
+      <li>
+    Device.device
+
+      <ul>
+        <li><a href="Device.html#module-Device.device">module</a>
+</li>
+      </ul></li>
+      <li><a href="Device.html#Device.device.Device.deviceDirectory">deviceDirectory (Device.device.Device property)</a>
+</li>
+      <li><a href="Device.html#Device.device.Device.deviceName">deviceName (Device.device.Device property)</a>
+</li>
+      <li><a href="Device.html#Device.device.Device.deviceType">deviceType (Device.device.Device property)</a>
+</li>
+      <li><a href="Device.html#Device.device.Device.deviceUUID">deviceUUID (Device.device.Device property)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.dist">dist() (in module Segmentation.maskcreatdemo)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.dist_point_to_segment">dist_point_to_segment() (in module Segmentation.maskcreatdemo)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.draw_callback">draw_callback() (Segmentation.maskcreatdemo.MaskCreator method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ControlUI.ReconstructionManager.html#ControlUI.ReconstructionManager.TabReconstructionFile.TabReconstruction.easypet_data_show_options">easypet_data_show_options() (ControlUI.ReconstructionManager.TabReconstructionFile.TabReconstruction method)</a>
+</li>
+      <li>
+    EasyPETLinkInitializer
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.html#module-EasyPETLinkInitializer">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader.calibration_points_upload
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.calibration_points_upload">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader.crystalsRC_client
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.crystalsRC_client">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader.detect_peaks
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.detect_peaks">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader.energyCorrection
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.energyCorrection">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader.indexToEnergyCorrection_client
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.indexToEnergyCorrection_client">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader.lmodebin
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.lmodebin">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader.natural_sort
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.natural_sort">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader.peaksFile
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.peaksFile">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader.ratioEnergy_client
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.ratioEnergy_client">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.EasyPETDataReader.time_discrimination
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.time_discrimination">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.Utilities
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.Utilities.html#module-EasyPETLinkInitializer.Utilities">module</a>
+</li>
+      </ul></li>
+      <li>
+    EasyPETLinkInitializer.Utilities.exceptions
+
+      <ul>
+        <li><a href="EasyPETLinkInitializer.Utilities.html#module-EasyPETLinkInitializer.Utilities.exceptions">module</a>
+</li>
+      </ul></li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.EasypetVersionHardware">EasypetVersionHardware (class in EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.EasypetVersionHardware.editing_hardware_file">editing_hardware_file() (EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.EasypetVersionHardware method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.effectiveAreaPerChannel">effectiveAreaPerChannel (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.effectiveHeight">effectiveHeight (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.effectiveWidth">effectiveWidth (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.energyCorrection.energyCorrection">energyCorrection() (in module EasyPETLinkInitializer.EasyPETDataReader.energyCorrection)</a>
+</li>
+      <li><a href="ControlUI.ReconstructionManager.html#ControlUI.ReconstructionManager.TabReconstructionFile.EnergyWindowVTKWidget">EnergyWindowVTKWidget (class in ControlUI.ReconstructionManager.TabReconstructionFile)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.externalBorderSizeX">externalBorderSizeX (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.externalBorderSizeY">externalBorderSizeY (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom">FactorQuantificationFromUniformPhantom (class in Quantification.factor_calibration_phantom_uniform)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.hardware_parameters.file_creation">file_creation() (EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.hardware_parameters method)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.findisosurface.FindISOSurface">FindISOSurface (class in Segmentation.findisosurface)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.gaussian_y_fix_term">gaussian_y_fix_term (Optimizer.GaussianFileGenarator.GaussianParameters property)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.gaussian_z_fix_term">gaussian_z_fix_term (Optimizer.GaussianFileGenarator.GaussianParameters property)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters">GaussianParameters (class in Optimizer.GaussianFileGenarator)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.selectable_events.ROIEvents.generate_roi_listmode_data">generate_roi_listmode_data() (Optimizer.selectable_events.ROIEvents method)</a>
+</li>
+      <li><a href="Corrections.EasyPET.Normalization.html#Corrections.EasyPET.Normalization.generateallpositions.GenerateEveryPossibleVolumePositions">GenerateEveryPossibleVolumePositions (class in Corrections.EasyPET.Normalization.generateallpositions)</a>
+</li>
+      <li><a href="Metrics.html#Metrics.groundtruth.GroundTruth.generateImageSameSize">generateImageSameSize() (Metrics.groundtruth.GroundTruth method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal">GenericCrystal (class in Detectors.Crystals.genericCrystal)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM">GenericSiPM (class in Detectors.SiPM.generic)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.geometricalFillFactor">geometricalFillFactor (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Device.html#Device.device.Device.geometryObject">geometryObject (Device.device.Device property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.get_active_pixels">get_active_pixels() (Segmentation.findisosurface.FindISOSurface method)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.get_ind_under_cursor">get_ind_under_cursor() (Segmentation.maskcreatdemo.MaskCreator method)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.get_mask">get_mask() (Segmentation.maskcreatdemo.MaskCreator method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.getCrystalShape">getCrystalShape() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+</li>
+      <li><a href="Device.html#Device.device.Device.getDeviceName">getDeviceName() (Device.device.Device method)</a>
+</li>
+      <li><a href="Device.html#Device.device.Device.getDeviceUUID">getDeviceUUID() (Device.device.Device method)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel">GPUSharedMemoryMultipleKernel (class in Optimizer.gpu_multiple_kernel)</a>
+
+      <ul>
+        <li><a href="Optimizer.html#Optimizer.kernelManager.GPUSharedMemoryMultipleKernel">(class in Optimizer.kernelManager)</a>
+</li>
+      </ul></li>
+      <li><a href="Optimizer.html#Optimizer.gpu_shared_memory.GPUSharedMemorySingleKernel">GPUSharedMemorySingleKernel (class in Optimizer.gpu_shared_memory)</a>
+</li>
+      <li><a href="Metrics.html#Metrics.groundtruth.GroundTruth">GroundTruth (class in Metrics.groundtruth)</a>
+</li>
+      <li><a href="Metrics.html#Metrics.groundtruth.GroundTruth.groundTruth">groundTruth (Metrics.groundtruth.GroundTruth property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.hardware_parameters">hardware_parameters (class in EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.height">height (Phantoms.cylindricalStructure.CylindricalStructure property)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK.hide_qt_buttons">hide_qt_buttons() (ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Metrics.ImageQuality.html#Metrics.ImageQuality.image_metrics.ImageMetrics">ImageMetrics (class in Metrics.ImageQuality.image_metrics)</a>
+</li>
+      <li>
+    ImageReader.RawData
+
+      <ul>
+        <li><a href="ImageReader.RawData.html#module-ImageReader.RawData">module</a>
+</li>
+      </ul></li>
+      <li>
+    ImageReader.RawData.raw_data
+
+      <ul>
+        <li><a href="ImageReader.RawData.html#module-ImageReader.RawData.raw_data">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.time_discrimination.index_end_turn">index_end_turn() (in module EasyPETLinkInitializer.EasyPETDataReader.time_discrimination)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.indexToEnergyCorrection_client.indexToEnergyCorrection_client">indexToEnergyCorrection_client() (in module EasyPETLinkInitializer.EasyPETDataReader.indexToEnergyCorrection_client)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.invert2timesigma_y_square">invert2timesigma_y_square (Optimizer.GaussianFileGenarator.GaussianParameters property)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.invert2timesigma_z_square">invert2timesigma_z_square (Optimizer.GaussianFileGenarator.GaussianParameters property)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.CPU.IterativeAlgorithmCPU">IterativeAlgorithmCPU (class in Optimizer.CPU)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.key_press_callback">key_press_callback() (Segmentation.maskcreatdemo.MaskCreator method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.load_info">load_info() (Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Manager
+
+      <ul>
+        <li><a href="Manager.html#module-Manager">module</a>
+</li>
+      </ul></li>
+      <li>
+    Manager.ReconstructionManagerGeneral
+
+      <ul>
+        <li><a href="Manager.html#module-Manager.ReconstructionManagerGeneral">module</a>
+</li>
+      </ul></li>
+      <li><a href="Optimizer.html#Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.map_events_gpu">map_events_gpu() (Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel method)</a>
+
+      <ul>
+        <li><a href="Optimizer.html#Optimizer.kernelManager.GPUSharedMemoryMultipleKernel.map_events_gpu">(Optimizer.kernelManager.GPUSharedMemoryMultipleKernel method)</a>
+</li>
+      </ul></li>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.mask_creator_demo">mask_creator_demo() (in module Segmentation.maskcreatdemo)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator">MaskCreator (class in Segmentation.maskcreatdemo)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.mass">mass (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+</li>
+      <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.material">material (Phantoms.cylindricalStructure.CylindricalStructure property)</a>
+</li>
+      <li><a href="Corrections.EasyPET.Normalization.html#Corrections.EasyPET.Normalization.generateallpositions.GenerateEveryPossibleVolumePositions.matrix_with_reduction">matrix_with_reduction() (Corrections.EasyPET.Normalization.generateallpositions.GenerateEveryPossibleVolumePositions method)</a>
+</li>
+      <li><a href="Corrections.EasyPET.Normalization.html#Corrections.EasyPET.Normalization.adaptative_normalization_matrix.AdaptiveNormalizationMatrix.matrix_without_reduction">matrix_without_reduction() (Corrections.EasyPET.Normalization.adaptative_normalization_matrix.AdaptiveNormalizationMatrix method)</a>
+
+      <ul>
+        <li><a href="Corrections.EasyPET.Normalization.html#Corrections.EasyPET.Normalization.generateallpositions.GenerateEveryPossibleVolumePositions.matrix_without_reduction">(Corrections.EasyPET.Normalization.generateallpositions.GenerateEveryPossibleVolumePositions method)</a>
+</li>
+      </ul></li>
+      <li><a href="Metrics.ImageQuality.html#Metrics.ImageQuality.image_metrics.ImageMetrics.mean_absolute_error">mean_absolute_error() (Metrics.ImageQuality.image_metrics.ImageMetrics method)</a>
+</li>
+      <li><a href="Metrics.ImageQuality.html#Metrics.ImageQuality.image_metrics.ImageMetrics.mean_absolute_percentage_error">mean_absolute_percentage_error() (Metrics.ImageQuality.image_metrics.ImageMetrics method)</a>
+</li>
+      <li><a href="Metrics.ImageQuality.html#Metrics.ImageQuality.image_metrics.ImageMetrics.mean_square_error">mean_square_error() (Metrics.ImageQuality.image_metrics.ImageMetrics method)</a>
+</li>
+      <li>
+    Metrics
+
+      <ul>
+        <li><a href="Metrics.html#module-Metrics">module</a>
+</li>
+      </ul></li>
+      <li>
+    Metrics.groundtruth
+
+      <ul>
+        <li><a href="Metrics.html#module-Metrics.groundtruth">module</a>
+</li>
+      </ul></li>
+      <li>
+    Metrics.ImageQuality
+
+      <ul>
+        <li><a href="Metrics.ImageQuality.html#module-Metrics.ImageQuality">module</a>
+</li>
+      </ul></li>
+      <li>
+    Metrics.ImageQuality.algortihmConvergency
+
+      <ul>
+        <li><a href="Metrics.ImageQuality.html#module-Metrics.ImageQuality.algortihmConvergency">module</a>
+</li>
+      </ul></li>
+      <li>
+    Metrics.ImageQuality.image_metrics
+
+      <ul>
+        <li><a href="Metrics.ImageQuality.html#module-Metrics.ImageQuality.image_metrics">module</a>
+</li>
+      </ul></li>
+      <li>
+    Metrics.MetaDataAnalyser
+
+      <ul>
+        <li><a href="Metrics.MetaDataAnalyser.html#module-Metrics.MetaDataAnalyser">module</a>
+</li>
+      </ul></li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.model">model (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="ControlUI.html#module-ControlUI">ControlUI</a>
+</li>
+        <li><a href="ControlUI.html#module-ControlUI.advance_parameters_gui">ControlUI.advance_parameters_gui</a>
+</li>
+        <li><a href="ControlUI.InfoTab.html#module-ControlUI.InfoTab">ControlUI.InfoTab</a>
+</li>
+        <li><a href="ControlUI.InfoTab.html#module-ControlUI.InfoTab.headerinfotab">ControlUI.InfoTab.headerinfotab</a>
+</li>
+        <li><a href="ControlUI.ReconstructionManager.html#module-ControlUI.ReconstructionManager">ControlUI.ReconstructionManager</a>
+</li>
+        <li><a href="ControlUI.ReconstructionManager.html#module-ControlUI.ReconstructionManager.TabReconstructionFile">ControlUI.ReconstructionManager.TabReconstructionFile</a>
+</li>
+        <li><a href="ControlUI.html#module-ControlUI.ResourcesImages_rc">ControlUI.ResourcesImages_rc</a>
+</li>
+        <li><a href="ControlUI.html#module-ControlUI.SegmentationManager">ControlUI.SegmentationManager</a>
+</li>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization">ControlUI.Visualization</a>
+</li>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.camera">ControlUI.Visualization.camera</a>
+</li>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.dynamicvisualization">ControlUI.Visualization.dynamicvisualization</a>
+</li>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.mainvisualization">ControlUI.Visualization.mainvisualization</a>
+</li>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.mouseobserver_main">ControlUI.Visualization.mouseobserver_main</a>
+</li>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.typeofviews">ControlUI.Visualization.typeofviews</a>
+</li>
+        <li><a href="ControlUI.Visualization.html#module-ControlUI.Visualization.viewPort">ControlUI.Visualization.viewPort</a>
+</li>
+        <li><a href="Corrections.html#module-Corrections">Corrections</a>
+</li>
+        <li><a href="Corrections.CT.html#module-Corrections.CT">Corrections.CT</a>
+</li>
+        <li><a href="Corrections.CT.Projector.html#module-Corrections.CT.Projector">Corrections.CT.Projector</a>
+</li>
+        <li><a href="Corrections.CT.Projector.html#module-Corrections.CT.Projector.pyramidalprojector">Corrections.CT.Projector.pyramidalprojector</a>
+</li>
+        <li><a href="Corrections.EasyPET.html#module-Corrections.EasyPET">Corrections.EasyPET</a>
+</li>
+        <li><a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization">Corrections.EasyPET.Normalization</a>
+</li>
+        <li><a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization.adaptative_normalization_matrix">Corrections.EasyPET.Normalization.adaptative_normalization_matrix</a>
+</li>
+        <li><a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization.generateallpositions">Corrections.EasyPET.Normalization.generateallpositions</a>
+</li>
+        <li><a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization.poissonmapgenerator">Corrections.EasyPET.Normalization.poissonmapgenerator</a>
+</li>
+        <li><a href="Corrections.EasyPET.SystemFocus.html#module-Corrections.EasyPET.SystemFocus">Corrections.EasyPET.SystemFocus</a>
+</li>
+        <li><a href="Corrections.EasyPET.SystemFocus.html#module-Corrections.EasyPET.SystemFocus.SystemAligment">Corrections.EasyPET.SystemFocus.SystemAligment</a>
+</li>
+        <li><a href="Detectors.html#module-Detectors">Detectors</a>
+</li>
+        <li><a href="Detectors.Collimators.html#module-Detectors.Collimators">Detectors.Collimators</a>
+</li>
+        <li><a href="Detectors.Crystals.html#module-Detectors.Crystals.genericCrystal">Detectors.Crystals.genericCrystal</a>
+</li>
+        <li><a href="Detectors.SiPM.html#module-Detectors.SiPM.generic">Detectors.SiPM.generic</a>
+</li>
+        <li><a href="Device.html#module-Device">Device</a>
+</li>
+        <li><a href="Device.html#module-Device.device">Device.device</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.html#module-EasyPETLinkInitializer">EasyPETLinkInitializer</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader">EasyPETLinkInitializer.EasyPETDataReader</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.calibration_points_upload">EasyPETLinkInitializer.EasyPETDataReader.calibration_points_upload</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.crystalsRC_client">EasyPETLinkInitializer.EasyPETDataReader.crystalsRC_client</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.detect_peaks">EasyPETLinkInitializer.EasyPETDataReader.detect_peaks</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.energyCorrection">EasyPETLinkInitializer.EasyPETDataReader.energyCorrection</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file">EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.indexToEnergyCorrection_client">EasyPETLinkInitializer.EasyPETDataReader.indexToEnergyCorrection_client</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.lmodebin">EasyPETLinkInitializer.EasyPETDataReader.lmodebin</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.natural_sort">EasyPETLinkInitializer.EasyPETDataReader.natural_sort</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.peaksFile">EasyPETLinkInitializer.EasyPETDataReader.peaksFile</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.ratioEnergy_client">EasyPETLinkInitializer.EasyPETDataReader.ratioEnergy_client</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#module-EasyPETLinkInitializer.EasyPETDataReader.time_discrimination">EasyPETLinkInitializer.EasyPETDataReader.time_discrimination</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.Utilities.html#module-EasyPETLinkInitializer.Utilities">EasyPETLinkInitializer.Utilities</a>
+</li>
+        <li><a href="EasyPETLinkInitializer.Utilities.html#module-EasyPETLinkInitializer.Utilities.exceptions">EasyPETLinkInitializer.Utilities.exceptions</a>
+</li>
+        <li><a href="ImageReader.RawData.html#module-ImageReader.RawData">ImageReader.RawData</a>
+</li>
+        <li><a href="ImageReader.RawData.html#module-ImageReader.RawData.raw_data">ImageReader.RawData.raw_data</a>
+</li>
+        <li><a href="Manager.html#module-Manager">Manager</a>
+</li>
+        <li><a href="Manager.html#module-Manager.ReconstructionManagerGeneral">Manager.ReconstructionManagerGeneral</a>
+</li>
+        <li><a href="Metrics.html#module-Metrics">Metrics</a>
+</li>
+        <li><a href="Metrics.html#module-Metrics.groundtruth">Metrics.groundtruth</a>
+</li>
+        <li><a href="Metrics.ImageQuality.html#module-Metrics.ImageQuality">Metrics.ImageQuality</a>
+</li>
+        <li><a href="Metrics.ImageQuality.html#module-Metrics.ImageQuality.algortihmConvergency">Metrics.ImageQuality.algortihmConvergency</a>
+</li>
+        <li><a href="Metrics.ImageQuality.html#module-Metrics.ImageQuality.image_metrics">Metrics.ImageQuality.image_metrics</a>
+</li>
+        <li><a href="Metrics.MetaDataAnalyser.html#module-Metrics.MetaDataAnalyser">Metrics.MetaDataAnalyser</a>
+</li>
+        <li><a href="Optimizer.html#module-Optimizer">Optimizer</a>
+</li>
+        <li><a href="Optimizer.html#module-Optimizer.CPU">Optimizer.CPU</a>
+</li>
+        <li><a href="Optimizer.html#module-Optimizer.GaussianFileGenarator">Optimizer.GaussianFileGenarator</a>
+</li>
+        <li><a href="Optimizer.html#module-Optimizer.gpu_multiple_kernel">Optimizer.gpu_multiple_kernel</a>
+</li>
+        <li><a href="Optimizer.html#module-Optimizer.gpu_shared_memory">Optimizer.gpu_shared_memory</a>
+</li>
+        <li><a href="Optimizer.html#module-Optimizer.kernelManager">Optimizer.kernelManager</a>
+</li>
+        <li><a href="Optimizer.html#module-Optimizer.selectable_events">Optimizer.selectable_events</a>
+</li>
+        <li><a href="Phantoms.html#module-Phantoms.cylindricalStructure">Phantoms.cylindricalStructure</a>
+</li>
+        <li><a href="Quantification.html#module-Quantification">Quantification</a>
+</li>
+        <li><a href="Quantification.html#module-Quantification.factor_calibration_phantom_uniform">Quantification.factor_calibration_phantom_uniform</a>
+</li>
+        <li><a href="Segmentation.html#module-Segmentation">Segmentation</a>
+</li>
+        <li><a href="Segmentation.html#module-Segmentation.findisosurface">Segmentation.findisosurface</a>
+</li>
+        <li><a href="Segmentation.html#module-Segmentation.maskcreatdemo">Segmentation.maskcreatdemo</a>
+</li>
+        <li><a href="TORFilesReader.html#module-TORFilesReader">TORFilesReader</a>
+</li>
+        <li><a href="TORFilesReader.html#module-TORFilesReader.torfiles">TORFilesReader.torfiles</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.motion_notify_callback">motion_notify_callback() (Segmentation.maskcreatdemo.MaskCreator method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mouseobserver_main.MouseObserverMainWindow.MouseMoveCallback">MouseMoveCallback() (ControlUI.Visualization.mouseobserver_main.MouseObserverMainWindow method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mouseobserver_main.MouseObserverMainWindow">MouseObserverMainWindow (class in ControlUI.Visualization.mouseobserver_main)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.multikernel_optimized_memory_reads">multikernel_optimized_memory_reads() (Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel method)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.multikernel_optimized_memory_reads_review">multikernel_optimized_memory_reads_review() (Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel method)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.multiplekernel">multiplekernel() (Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel method)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.kernelManager.GPUSharedMemoryMultipleKernel.multipleKernel">multipleKernel() (Optimizer.kernelManager.GPUSharedMemoryMultipleKernel method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.natural_sort.natural_sort">natural_sort() (in module EasyPETLinkInitializer.EasyPETDataReader.natural_sort)</a>
+</li>
+      <li><a href="Corrections.CT.Projector.html#Corrections.CT.Projector.pyramidalprojector.PyramidalProjector.norm">norm() (Corrections.CT.Projector.pyramidalprojector.PyramidalProjector static method)</a>
+</li>
+      <li><a href="Corrections.EasyPET.Normalization.html#Corrections.EasyPET.Normalization.adaptative_normalization_matrix.AdaptiveNormalizationMatrix.normalization_LM">normalization_LM() (Corrections.EasyPET.Normalization.adaptative_normalization_matrix.AdaptiveNormalizationMatrix method)</a>
+</li>
+      <li><a href="Metrics.ImageQuality.html#Metrics.ImageQuality.image_metrics.ImageMetrics.normalized_root_mean_square_error">normalized_root_mean_square_error() (Metrics.ImageQuality.image_metrics.ImageMetrics method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.numberOfChannelsX">numberOfChannelsX (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.numberOfChannelsY">numberOfChannelsY (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.numberPixelPerChannel">numberPixelPerChannel (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="ControlUI.ReconstructionManager.html#ControlUI.ReconstructionManager.TabReconstructionFile.EnergyWindowVTKWidget.numpy_array_as_vtk_image_data">numpy_array_as_vtk_image_data() (ControlUI.ReconstructionManager.TabReconstructionFile.EnergyWindowVTKWidget method)</a>
+
+      <ul>
+        <li><a href="ControlUI.html#ControlUI.SegmentationManager.SinogramVtk.numpy_array_as_vtk_image_data">(ControlUI.SegmentationManager.SinogramVtk static method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data.only_energycorrectionfactor">only_energycorrectionfactor() (EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.Utilities.html#EasyPETLinkInitializer.Utilities.exceptions.OnlyOneIncompleteTurn">OnlyOneIncompleteTurn</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data.open">open() (EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data.open_new_calibration_files">open_new_calibration_files() (EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data.open_original_data">open_original_data() (EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data method)</a>
+</li>
+      <li>
+    Optimizer
+
+      <ul>
+        <li><a href="Optimizer.html#module-Optimizer">module</a>
+</li>
+      </ul></li>
+      <li>
+    Optimizer.CPU
+
+      <ul>
+        <li><a href="Optimizer.html#module-Optimizer.CPU">module</a>
+</li>
+      </ul></li>
+      <li>
+    Optimizer.GaussianFileGenarator
+
+      <ul>
+        <li><a href="Optimizer.html#module-Optimizer.GaussianFileGenarator">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Optimizer.gpu_multiple_kernel
+
+      <ul>
+        <li><a href="Optimizer.html#module-Optimizer.gpu_multiple_kernel">module</a>
+</li>
+      </ul></li>
+      <li>
+    Optimizer.gpu_shared_memory
+
+      <ul>
+        <li><a href="Optimizer.html#module-Optimizer.gpu_shared_memory">module</a>
+</li>
+      </ul></li>
+      <li>
+    Optimizer.kernelManager
+
+      <ul>
+        <li><a href="Optimizer.html#module-Optimizer.kernelManager">module</a>
+</li>
+      </ul></li>
+      <li>
+    Optimizer.selectable_events
+
+      <ul>
+        <li><a href="Optimizer.html#module-Optimizer.selectable_events">module</a>
+</li>
+      </ul></li>
+      <li><a href="ControlUI.ReconstructionManager.html#ControlUI.ReconstructionManager.TabReconstructionFile.TabReconstruction.original_data_show_options">original_data_show_options() (ControlUI.ReconstructionManager.TabReconstructionFile.TabReconstruction method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.packageType">packageType (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Metrics.ImageQuality.html#Metrics.ImageQuality.image_metrics.ImageMetrics.peak_signal_noise_ratio">peak_signal_noise_ratio() (Metrics.ImageQuality.image_metrics.ImageMetrics method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.peaksFile.peaksFile">peaksFile() (in module EasyPETLinkInitializer.EasyPETDataReader.peaksFile)</a>
+</li>
+      <li>
+    Phantoms.cylindricalStructure
+
+      <ul>
+        <li><a href="Phantoms.html#module-Phantoms.cylindricalStructure">module</a>
+</li>
+      </ul></li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.photonDetectionEfficiencyAtPeak">photonDetectionEfficiencyAtPeak (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.selectable_events.ROIEvents.pixel2Position">pixel2Position() (Optimizer.selectable_events.ROIEvents method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.pixelArea">pixelArea (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.pixelDepth">pixelDepth (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.pixelHeight">pixelHeight (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.pixelHeightTolerance">pixelHeightTolerance (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.pixelPitch">pixelPitch (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.pixelSpacingX">pixelSpacingX (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.pixelSpacingY">pixelSpacingY (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.pixelWidth">pixelWidth (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.pixelWidthTolerance">pixelWidthTolerance (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.plot2DISOSurface">plot2DISOSurface() (Segmentation.findisosurface.FindISOSurface method)</a>
+</li>
+      <li><a href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.plt_segmented_image">plt_segmented_image() (Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom method)</a>
+</li>
+      <li><a href="Corrections.EasyPET.Normalization.html#Corrections.EasyPET.Normalization.poissonmapgenerator.PoissonMapGenerator.poisson_map_cpu">poisson_map_cpu() (Corrections.EasyPET.Normalization.poissonmapgenerator.PoissonMapGenerator method)</a>
+</li>
+      <li><a href="Corrections.EasyPET.Normalization.html#Corrections.EasyPET.Normalization.poissonmapgenerator.PoissonMapGenerator">PoissonMapGenerator (class in Corrections.EasyPET.Normalization.poissonmapgenerator)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.maskcreatdemo.MaskCreator.poly_changed">poly_changed() (Segmentation.maskcreatdemo.MaskCreator method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.dynamicvisualization.PopulateDynamicViewWindowVTK">PopulateDynamicViewWindowVTK (class in ControlUI.Visualization.dynamicvisualization)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK">PopulateMainWindowVTK (class in ControlUI.Visualization.mainvisualization)</a>
+</li>
+      <li><a href="Corrections.EasyPET.Normalization.html#Corrections.EasyPET.Normalization.adaptative_normalization_matrix.AdaptiveNormalizationMatrix.probability_uniform_phantom">probability_uniform_phantom() (Corrections.EasyPET.Normalization.adaptative_normalization_matrix.AdaptiveNormalizationMatrix method)</a>
+</li>
+      <li><a href="Corrections.CT.Projector.html#Corrections.CT.Projector.pyramidalprojector.PyramidalProjector">PyramidalProjector (class in Corrections.CT.Projector.pyramidalprojector)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ControlUI.html#ControlUI.ResourcesImages_rc.qCleanupResources">qCleanupResources() (in module ControlUI.ResourcesImages_rc)</a>
+</li>
+      <li><a href="ControlUI.html#ControlUI.ResourcesImages_rc.qInitResources">qInitResources() (in module ControlUI.ResourcesImages_rc)</a>
+</li>
+      <li>
+    Quantification
+
+      <ul>
+        <li><a href="Quantification.html#module-Quantification">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Quantification.factor_calibration_phantom_uniform
+
+      <ul>
+        <li><a href="Quantification.html#module-Quantification.factor_calibration_phantom_uniform">module</a>
+</li>
+      </ul></li>
+      <li><a href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.quantification_factor_calculation">quantification_factor_calculation() (Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ActiveAreas.quantity">quantity (ControlUI.Visualization.typeofviews.ActiveAreas property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.ratioEnergy_client.ratioEnergy_client">ratioEnergy_client() (in module EasyPETLinkInitializer.EasyPETDataReader.ratioEnergy_client)</a>
+</li>
+      <li><a href="ImageReader.RawData.html#ImageReader.RawData.raw_data.RawDataSetter">RawDataSetter (class in ImageReader.RawData.raw_data)</a>
+</li>
+      <li><a href="TORFilesReader.html#TORFilesReader.torfiles.ToRFile.read">read() (TORFilesReader.torfiles.ToRFile method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.EasypetVersionHardware.read_file">read_file() (EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.EasypetVersionHardware method)</a>
+</li>
+      <li><a href="ImageReader.RawData.html#ImageReader.RawData.raw_data.RawDataSetter.read_files">read_files() (ImageReader.RawData.raw_data.RawDataSetter method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.validationModule.read_header_v2">read_header_v2() (EasyPETLinkInitializer.EasyPETDataReader.lmodebin.validationModule method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.hardware_parameters.read_parameters">read_parameters() (EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file.hardware_parameters method)</a>
+</li>
+      <li><a href="Metrics.html#Metrics.groundtruth.GroundTruth.readAnhnilationData">readAnhnilationData() (Metrics.groundtruth.GroundTruth method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Device.html#Device.device.Device.readDeviceProperties">readDeviceProperties() (Device.device.Device method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK.remove_data_cut_planes_vtk_window">remove_data_cut_planes_vtk_window() (ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK.remove_volume_pet_vtk_window">remove_volume_pet_vtk_window() (ControlUI.Visualization.mainvisualization.PopulateMainWindowVTK method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.resinThickness">resinThickness (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="ControlUI.html#ControlUI.advance_parameters_gui.Ui_advanced_parameters_Dialog.retranslateUi">retranslateUi() (ControlUI.advance_parameters_gui.Ui_advanced_parameters_Dialog method)</a>
+</li>
+      <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.rMax">rMax (Phantoms.cylindricalStructure.CylindricalStructure property)</a>
+</li>
+      <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.rMin">rMin (Phantoms.cylindricalStructure.CylindricalStructure property)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.selectable_events.ROIEvents">ROIEvents (class in Optimizer.selectable_events)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.save_calculated_surface">save_calculated_surface() (Segmentation.findisosurface.FindISOSurface method)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.selectable_events.ROIEvents.save_gpu_results">save_gpu_results() (Optimizer.selectable_events.ROIEvents method)</a>
+</li>
+      <li><a href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.save_info">save_info() (Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data.save_listmode">save_listmode() (EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data.save_original_data">save_original_data() (EasyPETLinkInitializer.EasyPETDataReader.lmodebin.binary_data method)</a>
+</li>
+      <li><a href="Device.html#Device.device.Device.saveVarsDeviceToFile">saveVarsDeviceToFile() (Device.device.Device method)</a>
+</li>
+      <li><a href="Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.segment_region_phantom">segment_region_phantom() (Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom method)</a>
+</li>
+      <li>
+    Segmentation
+
+      <ul>
+        <li><a href="Segmentation.html#module-Segmentation">module</a>
+</li>
+      </ul></li>
+      <li>
+    Segmentation.findisosurface
+
+      <ul>
+        <li><a href="Segmentation.html#module-Segmentation.findisosurface">module</a>
+</li>
+      </ul></li>
+      <li>
+    Segmentation.maskcreatdemo
+
+      <ul>
+        <li><a href="Segmentation.html#module-Segmentation.maskcreatdemo">module</a>
+</li>
+      </ul></li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.series">series (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="ControlUI.ReconstructionManager.html#ControlUI.ReconstructionManager.TabReconstructionFile.TabReconstruction.set_temporal_cuts_values">set_temporal_cuts_values() (ControlUI.ReconstructionManager.TabReconstructionFile.TabReconstruction method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setAlphaRotation">setAlphaRotation() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setAlphaRotation">(Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      </ul></li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ActiveAreas.setArea3DView">setArea3DView() (ControlUI.Visualization.typeofviews.ActiveAreas method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ActiveAreas.setAxialView">setAxialView() (ControlUI.Visualization.typeofviews.ActiveAreas method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setBetaRotation">setBetaRotation() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setBetaRotation">(Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      </ul></li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setBlockSPiMArea">setBlockSPiMArea() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setBlockSPiMDepth">setBlockSPiMDepth() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setBlockSPiMHeight">setBlockSPiMHeight() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setBlockSPiMWidth">setBlockSPiMWidth() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setBorderSizeX">setBorderSizeX() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setBorderSizeY">setBorderSizeY() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setCenter">setCenter() (Phantoms.cylindricalStructure.CylindricalStructure method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setCenterSiPMModule">setCenterSiPMModule() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setCentroid">setCentroid() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setChannelCentrePosition">setChannelCentrePosition() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setChannelOriginalCentrePosition">setChannelOriginalCentrePosition() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ActiveAreas.setCoronalView">setCoronalView() (ControlUI.Visualization.typeofviews.ActiveAreas method)</a>
+</li>
+      <li><a href="Corrections.CT.Projector.html#Corrections.CT.Projector.pyramidalprojector.PyramidalProjector.setCountsPerPosition">setCountsPerPosition() (Corrections.CT.Projector.pyramidalprojector.PyramidalProjector method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setCristalSize">setCristalSize() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setCrystalID">setCrystalID() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setDensity">setDensity() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+
+      <ul>
+        <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setDensity">(Phantoms.cylindricalStructure.CylindricalStructure method)</a>
+</li>
+      </ul></li>
+      <li><a href="Device.html#Device.device.Device.setDeviceName">setDeviceName() (Device.device.Device method)</a>
+</li>
+      <li><a href="Device.html#Device.device.Device.setDeviceType">setDeviceType() (Device.device.Device method)</a>
+</li>
+      <li><a href="Device.html#Device.device.Device.setDeviceUUID">setDeviceUUID() (Device.device.Device method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setEffectiveAreaPerChannel">setEffectiveAreaPerChannel() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setEffectiveHeight">setEffectiveHeight() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setEffectiveWidth">setEffectiveWidth() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setExternalBorderSizeX">setExternalBorderSizeX() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setExternalBorderSizeY">setExternalBorderSizeY() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setGeometricalFillFactor">setGeometricalFillFactor() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Device.html#Device.device.Device.setGeometryObject">setGeometryObject() (Device.device.Device method)</a>
+</li>
+      <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setHeight">setHeight() (Phantoms.cylindricalStructure.CylindricalStructure method)</a>
+</li>
+      <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setMaterial">setMaterial() (Phantoms.cylindricalStructure.CylindricalStructure method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setModel">setModel() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setNumberOfChannelsX">setNumberOfChannelsX() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setNumberOfChannelsY">setNumberOfChannelsY() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setNumberPixelPerChannel">setNumberPixelPerChannel() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setPackageType">setPackageType() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setPhotonDetectionEfficiencyAtPeak">setPhotonDetectionEfficiencyAtPeak() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setPixelArea">setPixelArea() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setPixelDepth">setPixelDepth() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setPixelHeight">setPixelHeight() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setPixelHeightTolerance">setPixelHeightTolerance() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setPixelPitch">setPixelPitch() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setPixelSpacingX">setPixelSpacingX() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setPixelSpacingY">setPixelSpacingY() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setPixelWidth">setPixelWidth() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setPixelWidthTolerance">setPixelWidthTolerance() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setResinThickness">setResinThickness() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setRMax">setRMax() (Phantoms.cylindricalStructure.CylindricalStructure method)</a>
+</li>
+      <li><a href="Phantoms.html#Phantoms.cylindricalStructure.CylindricalStructure.setRMin">setRMin() (Phantoms.cylindricalStructure.CylindricalStructure method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ActiveAreas.setSagittalView">setSagittalView() (ControlUI.Visualization.typeofviews.ActiveAreas method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setSeries">setSeries() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.setShiftInvariantParameters">setShiftInvariantParameters() (Optimizer.GaussianFileGenarator.GaussianParameters method)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.setShiftVariantParameters">setShiftVariantParameters() (Optimizer.GaussianFileGenarator.GaussianParameters method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setSigmaRotation">setSigmaRotation() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setSigmaRotation">(Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      </ul></li>
+      <li><a href="ControlUI.html#ControlUI.advance_parameters_gui.Ui_advanced_parameters_Dialog.setupUi">setupUi() (ControlUI.advance_parameters_gui.Ui_advanced_parameters_Dialog method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setVendor">setVendor() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setVertices">setVertices() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setVerticesCrystalCoordinateSystem">setVerticesCrystalCoordinateSystem() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ViewPortSelected.setViewPort">setViewPort() (ControlUI.Visualization.typeofviews.ViewPortSelected method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setWindowRefractiveIndex">setWindowRefractiveIndex() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setWindowType">setWindowType() (Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setXTranslation">setXTranslation() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setXTranslation">(Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      </ul></li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setYTranslation">setYTranslation() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setYTranslation">(Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      </ul></li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.setZTranslation">setZTranslation() (Detectors.Crystals.genericCrystal.GenericCrystal method)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.setZTranslation">(Detectors.SiPM.generic.GenericSiPM method)</a>
+</li>
+      </ul></li>
+      <li><a href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.sigma_y_square">sigma_y_square (Optimizer.GaussianFileGenarator.GaussianParameters property)</a>
+</li>
+      <li><a href="Optimizer.html#Optimizer.GaussianFileGenarator.GaussianParameters.sigma_z_square">sigma_z_square (Optimizer.GaussianFileGenarator.GaussianParameters property)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.sigmaRotation">sigmaRotation (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.sigmaRotation">(Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      </ul></li>
+      <li><a href="ControlUI.html#ControlUI.SegmentationManager.SinogramVtk">SinogramVtk (class in ControlUI.SegmentationManager)</a>
+</li>
+      <li><a href="Metrics.ImageQuality.html#Metrics.ImageQuality.image_metrics.ImageMetrics.structural_similarity">structural_similarity() (Metrics.ImageQuality.image_metrics.ImageMetrics method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ControlUI.ReconstructionManager.html#ControlUI.ReconstructionManager.TabReconstructionFile.TabReconstruction">TabReconstruction (class in ControlUI.ReconstructionManager.TabReconstructionFile)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.threshold2DISOSurface">threshold2DISOSurface() (Segmentation.findisosurface.FindISOSurface method)</a>
+</li>
+      <li><a href="Segmentation.html#Segmentation.findisosurface.FindISOSurface.threshold3DISOSurface">threshold3DISOSurface() (Segmentation.findisosurface.FindISOSurface method)</a>
+</li>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.time_discrimination.time_discrimination">time_discrimination() (in module EasyPETLinkInitializer.EasyPETDataReader.time_discrimination)</a>
+</li>
+      <li><a href="TORFilesReader.html#TORFilesReader.torfiles.ToRFile">ToRFile (class in TORFilesReader.torfiles)</a>
+</li>
+      <li>
+    TORFilesReader
+
+      <ul>
+        <li><a href="TORFilesReader.html#module-TORFilesReader">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    TORFilesReader.torfiles
+
+      <ul>
+        <li><a href="TORFilesReader.html#module-TORFilesReader.torfiles">module</a>
+</li>
+      </ul></li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.totalNumberOfChannels">totalNumberOfChannels (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Corrections.CT.Projector.html#Corrections.CT.Projector.pyramidalprojector.PyramidalProjector.transformIntoPositivePoints">transformIntoPositivePoints() (Corrections.CT.Projector.pyramidalprojector.PyramidalProjector method)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ViewPortSelected.typeView">typeView (ControlUI.Visualization.typeofviews.ViewPortSelected property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ControlUI.html#ControlUI.advance_parameters_gui.Ui_advanced_parameters_Dialog">Ui_advanced_parameters_Dialog (class in ControlUI.advance_parameters_gui)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ViewPortBorder.updateViewPortBorder">updateViewPortBorder() (ControlUI.Visualization.typeofviews.ViewPortBorder method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ControlUI.ReconstructionManager.html#ControlUI.ReconstructionManager.TabReconstructionFile.TabReconstruction.updateVisible_algorithm_options">updateVisible_algorithm_options() (ControlUI.ReconstructionManager.TabReconstructionFile.TabReconstruction method)</a>
+</li>
+      <li><a href="ControlUI.ReconstructionManager.html#ControlUI.ReconstructionManager.TabReconstructionFile.TabReconstruction.updateVisible_buttons">updateVisible_buttons() (ControlUI.ReconstructionManager.TabReconstructionFile.TabReconstruction method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="EasyPETLinkInitializer.EasyPETDataReader.html#EasyPETLinkInitializer.EasyPETDataReader.lmodebin.validationModule">validationModule (class in EasyPETLinkInitializer.EasyPETDataReader.lmodebin)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.vendor">vendor (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.vertices">vertices (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ViewPortBorder">ViewPortBorder (class in ControlUI.Visualization.typeofviews)</a>
+</li>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.typeofviews.ViewPortSelected">ViewPortSelected (class in ControlUI.Visualization.typeofviews)</a>
+</li>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.volume">volume (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ControlUI.Visualization.html#ControlUI.Visualization.mouseobserver_main.MouseObserverMainWindow.wheelForwardCallback">wheelForwardCallback() (ControlUI.Visualization.mouseobserver_main.MouseObserverMainWindow method)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.windowRefractiveIndex">windowRefractiveIndex (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.windowType">windowType (Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="TORFilesReader.html#TORFilesReader.torfiles.ToRFile.write">write() (TORFilesReader.torfiles.ToRFile method)</a>
+</li>
+      <li><a href="ImageReader.RawData.html#ImageReader.RawData.raw_data.RawDataSetter.write_files_simple_binary">write_files_simple_binary() (ImageReader.RawData.raw_data.RawDataSetter method)</a>
+</li>
+      <li><a href="Corrections.EasyPET.Normalization.html#Corrections.EasyPET.Normalization.adaptative_normalization_matrix.AdaptiveNormalizationMatrix.write_probability_phantom">write_probability_phantom() (Corrections.EasyPET.Normalization.adaptative_normalization_matrix.AdaptiveNormalizationMatrix method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.xTranslation">xTranslation (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.xTranslation">(Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Y">Y</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.yTranslation">yTranslation (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.yTranslation">(Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Detectors.Crystals.html#Detectors.Crystals.genericCrystal.GenericCrystal.zTranslation">zTranslation (Detectors.Crystals.genericCrystal.GenericCrystal property)</a>
+
+      <ul>
+        <li><a href="Detectors.SiPM.html#Detectors.SiPM.generic.GenericSiPM.zTranslation">(Detectors.SiPM.generic.GenericSiPM property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -38,6 +38,10 @@ class Device:
     """
     Class that represents a device. It contains the information about the device.
 
+    example:
+
+    print("Device UUID: ", device.deviceUUID)
+
     """
     def __init__(self):
         self._deviceUUID = None
