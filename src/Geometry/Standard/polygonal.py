@@ -125,7 +125,7 @@ class RegularPolygonalGeometry(Device):
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
-    from src.Detectors.Modules import PETModule
+    from src.DetectionLayout.Modules import PETModule
     from src.Designer import DeviceDesignerStandalone
 
     # newDevice = Device()

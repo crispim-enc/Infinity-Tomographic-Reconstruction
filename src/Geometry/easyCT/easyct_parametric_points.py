@@ -6,6 +6,7 @@
 #  *******************************************************
 
 import numpy as np
+from src import Device
 
 
 class SetParametricsPoints:
@@ -279,3 +280,24 @@ class SetParametricsPoints:
         if np.min(z) < 0:
             self.zi = self.zi + np.abs(np.min(z) + crystal_width / 2)
             self.zf = self.zf + np.abs(np.min(z) + crystal_width / 2)
+
+
+
+class EasyCTGeometry(object):
+    def __init__(self, detector_module=None):
+        super().__init__()
+        if detector_module is None:
+            raise ValueError("Detector module is not defined. Please provice a detectorModule")
+        self._detector_module = detector_module
+
+
+
+if __name__ == "__main__":
+    from src.DetectionLayout.Modules import PETModule
+    _module = PETModule()
+
+    newDevice = EasyCTGeometry(detector_module=_module, x_ray_producer=None)
+    newDevice.setDeviceName("EasyCT")
+    print(newDevice.deviceName)
+
+    #

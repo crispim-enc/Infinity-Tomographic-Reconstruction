@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from src.SystemFiles import Device
+from src import Device
 
 
 class CylindricalGeometry(Device):
@@ -117,7 +117,7 @@ class CylindricalGeometry(Device):
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
-    from src.Detectors.Modules import PETModule
+    from src.DetectionLayout.Modules import PETModule
     from src.Designer import DeviceDesignerStandalone
 
     # newDevice = Device()
