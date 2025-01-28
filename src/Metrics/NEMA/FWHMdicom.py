@@ -2,17 +2,11 @@ import os.path
 import tkinter as tk
 from tkinter import filedialog
 from os import listdir, path
-from os.path import isfile, join
 import numpy as np
-from array import array
-import matplotlib
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
-from scipy import asarray as ar, exp
 from matplotlib.backends.backend_pdf import PdfPages
 from matplotlib.patches import FancyArrowPatch, ArrowStyle
-import matplotlib.style as style
-import re
 import pandas
 
 pandas.set_option('display.max_columns', 500)
