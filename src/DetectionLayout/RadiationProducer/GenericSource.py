@@ -12,6 +12,7 @@
 This functions create a generic source object for example x-ray emission.
 """
 import os
+import json5
 
 
 class GenericRadiativeSource:
@@ -22,54 +23,39 @@ class GenericRadiativeSource:
         self._sourceName = "Am-241"
         self._sourceHalfLife = 432.2  # years
         self._sourceActivity = 1.0 * 37000
-        self._sourceActivityUnit = "Bq"
-        self._focalSpot = [0, 0, 0] # mm
-        self._focalSpotDiameter = 2 # mm
+        self._focalSpotInitialPosition = [0, 0, 0]  # mm
+        self._focalSpotDiameter = 2  # mm
         self._shieldingShape = "Cylinder"
         self._shieldingMaterial = "Lead"
-        self._shieldingDensity = 11.34
+        self._shieldingDensity = 11.34 # g/cm3
         self._shieldingThickness = 0.5
         self._shieldingHeight = 2
         self._shieldingRadius = 2
-        self._gantryAngle = 30 # degrees
+        # self._gantryAngle = 30  # degrees
         self._mainEmissions = {1: {"energy": 59.54, "intensity": 0.36},
-                                2: {"energy": 26.34, "intensity": 0.024},
-                            }
+                               2: {"energy": 26.34, "intensity": 0.024},
+                               }
 
     def writeSourceInformation(self):
         """
-        Write the source information to a file
-        :param file_name: name of the file
-        :type file_name: str
+        Write the source information json file under the device directory.
         """
         file_name = os.path.join(self._device.deviceDirectory, "RadiativeSourceInformation.txt")
+        # create a json file with the source information
         with open(file_name, "w") as file:
-            file.write("Radioactive Source Name: {}\n".format(self._sourceName))
-            file.write("Radioative  Source Activity: {} {}\n".format(self._sourceActivity, self._sourceActivityUnit))
-            file.write("Focal Spot: {} mm\n".format(self._focalSpotDiameter))
-            file.write("Shielding Shape: {}\n".format(self._shieldingShape))
-            file.write("Shielding Material: {}\n".format(self._shieldingMaterial))
-            file.write("Shielding Density: {} g/cm3\n".format(self._shieldingDensity))
-            file.write("Shielding Thickness: {} mm\n".format(self._shieldingThickness))
-            file.write("Shielding Height: {} mm\n".format(self._shieldingHeight))
-            file.write("Shielding Radius: {} mm\n".format(self._shieldingRadius))
-            file.write("Gantry Angle: {} degrees\n".format(self._gantryAngle))
-            file.write("Main Emissions:\n")
-            for key, value in self._mainEmissions.items():
-                file.write("Energy: {} keV, Intensity: {}\n".format(value["energy"], value["intensity"]))
-
-
-    def readSourceInformation(self):
-        """
-        Read the source information from a file
-        :param file_name: name of the file
-        :type file_name: str
-        """
-        file_name = os.path.join(self._device.deviceDirectory, "RadiativeSourceInformation.txt")
-        with open(file_name, "r") as file:
-            for line in file:
-                print(line)
-
+            json5.dump({"sourceName": self._sourceName,
+                        "sourceActivity": self._sourceActivity,
+                        "focalSpot": self._focalSpot,
+                        "focalSpotDiameter": self._focalSpotDiameter,
+                        "shieldingShape": self._shieldingShape,
+                        "shieldingMaterial": self._shieldingMaterial,
+                        "shieldingDensity": self._shieldingDensity,
+                        "shieldingThickness": self._shieldingThickness,
+                        "shieldingHeight": self._shieldingHeight,
+                        "shieldingRadius": self._shieldingRadius,
+                        # "gantryAngle": self._gantryAngle,
+                        "mainEmissions": self._mainEmissions
+                        }, file)
 
     @property
     def sourceName(self):
@@ -78,11 +64,40 @@ class GenericRadiativeSource:
         """
         return self._sourceName
 
+    def setSourceName(self, value):
+        """
+        Sets the source name.
+        """
+        if value != self._sourceName:
+            self._sourceName = value
 
     def setSourceActivity(self, value):
         """
         Sets the source activity.
+        param: float(), units in Bq
         """
         if value != self._sourceActivity:
             self._sourceActivity = value
+
+    @property
+    def sourceActivity(self):
+        """
+        Returns the source activity.
+        """
+        return self._sourceActivity
+
+    @property
+    def focalSpotInitialPosition(self):
+        """
+        Returns the focal spot.
+        """
+        return self._focalSpotInitialPosition
+
+    def setFocalSpotInitialPosition(self, value):
+        """
+        Sets the focal spot. For easyCT geometries  the focal spot is set to the fan motor geometry
+        param: list(), units in mm
+        """
+        if value != self._focalSpotInitialPosition:
+            self._focalSpotInitialPosition = value
 

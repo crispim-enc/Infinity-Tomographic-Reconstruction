@@ -12,19 +12,4 @@ class LYSOCrystal(GenericCrystal):
         super(LYSOCrystal, self).__init__()
         self._density = 7.4
         self._crystalID = crystal_id
-        # self._crystalSizeX = 2  # mm
-        # self._crystalSizeY = 2  # mm
-        # self._crystalSizeZ = 20
-        # self._centroid = [0, 0, 0]
-        # self._vertices = np.array([[0, 0, 0],
-        #                            [0, 0, 0],
-        #                            [0, 0, 0],
-        #                            [0, 0, 0],
-        #                            [0, 0, 0],
-        #                            [0, 0, 0],
-        #                            [0, 0, 0],
-        #                            [0, 0, 0]])
-        #
-        # self._volume = self._crystalSizeX * self._crystalSizeY * self._crystalSizeZ * 1e-3
-        # self._mass = self._density * self._volume
 

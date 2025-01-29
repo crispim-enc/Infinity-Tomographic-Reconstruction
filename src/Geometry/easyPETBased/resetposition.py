@@ -1,5 +1,5 @@
 import numpy as np
-from src.Geometry.easyPET import MatrixGeometryCorrection
+from src.Geometry.easyPETBased import MatrixGeometryCorrection
 
 
 class ResetParametricPointsToOrigin:
@@ -137,7 +137,7 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
     from src.GateLink.RootToTor import ReadRootFile
-    from src.Geometry.easyPET import ResetParametricPointsToOrigin
+    from src.Geometry.easyPETBased import ResetParametricPointsToOrigin
 
     file_path = "C:\\Users\\pedro\\OneDrive - Universidade de Aveiro\\SimulacoesGATE\\EasyPET3D64\\" \
                 "FOV-UniformSource\\20-December-2022_17h23_8turn_0p005s_1p80bot_0p23top_range108\\" \

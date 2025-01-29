@@ -4,12 +4,10 @@
 # *******************************************************
 # * FILE: __init__.py
 # * AUTHOR: Pedro Encarnação
-# * DATE: 28/01/2025
+# * DATE: 29/01/2025
 # * LICENSE: "CC BY-NC-SA 4.0"
 # *******************************************************
 
 """
 Brief description of the file.
 """
-
-from .GenericSource import GenericRadiativeSource

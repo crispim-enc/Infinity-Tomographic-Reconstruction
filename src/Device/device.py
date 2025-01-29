@@ -32,6 +32,8 @@
 # deviceDirectory: returns the device directory
 
 import os
+import uuid
+import json5
 
 
 class Device:
@@ -64,7 +66,7 @@ class Device:
 
         # check if folder of device exists
         mainDirectory = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        self._deviceDirectory = os.path.join(mainDirectory, "configurations", objectName)
+        self._deviceDirectory = os.path.join(mainDirectory, "configurations", self._deviceUUID)
         if not os.path.exists(self._deviceDirectory):
             print("Error: device directory does not exist")
             return
@@ -82,16 +84,19 @@ class Device:
 
     @property
     def deviceUUID(self):
-
-        return self._deviceUUID
-
-    def getDeviceUUID(self):
         """ Returns the device UUID
 
-        :return: deviceUUID
-        """
-
+             :return: deviceUUID
+             """
         return self._deviceUUID
+
+    def generateDeviceUUID(self):
+        """
+        Generate a device Universally Unique Identifier (UUID) according to version 4
+
+        :return:
+        """
+        self._deviceUUID = str(uuid.uuid4())
 
     def setDeviceUUID(self, deviceUUID):
         """
@@ -133,7 +138,7 @@ class Device:
         """
         # create the directory if it does not exist in configurations with the id and name of the device
         mainDirectory = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        self._deviceDirectory = os.path.join(mainDirectory,"configurations", self._deviceUUID + "_" + self._deviceName)
+        self._deviceDirectory = os.path.join(mainDirectory, "configurations", self._deviceUUID + "_" + self._deviceName)
         if not os.path.exists(self._deviceDirectory):
             os.makedirs(self._deviceDirectory)
 
@@ -158,15 +163,14 @@ class Device:
         Also saves the geometry files  in the same folder
         :return:
         """
-        # save the variables to a file
-        file = open(os.path.join(self._deviceDirectory, "deviceID.txt"), "w")
-        file.write("deviceUUID: " + self._deviceUUID + "\n")
-        file.write("deviceName: " + self._deviceName + "\n")
-        file.write("deviceType: " + self._deviceType + "\n")
-        file.write("deviceDirectory: " + self._deviceDirectory + "\n")
-        file.close()
+        # save the variablesto a json5 file
+        file = open(os.path.join(self._deviceDirectory, "deviceVars.txt"), "w")
+        json5.dump({"deviceUUID": self._deviceUUID,
+                    "deviceName": self._deviceName,
+                    "deviceType": self._deviceType,
+                    "deviceDirectory": self._deviceDirectory}, file)
 
         # save the geometry vars to a file
-        self._geometryObject.saveVarsGeometryToFile()
+        # self._geometryObject.saveVarsGeometryToFile()
 
 

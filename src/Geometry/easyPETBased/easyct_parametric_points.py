@@ -6,7 +6,8 @@
 #  *******************************************************
 
 import numpy as np
-from src import Device
+from src.Device import Device
+from .dualrotationsystem import DualRotationSystem
 
 
 class SetParametricsPoints:
@@ -129,7 +130,7 @@ class SetParametricsPoints:
         # initial_point = np.array([point_rotation_to_center_crystal * np.cos(top + ang_to_crystal_center),
         #                           point_rotation_to_center_crystal * np.sin(top + ang_to_crystal_center)],
         #                          dtype=np.float32)
-        distance_to_correct=0
+        distance_to_correct = 0
         distance_to_crystal_point = np.sqrt(
             np.abs((crystal_distance_to_center_fov_sideA[1]) - source_width) ** 2
             + source_depth ** 2)
@@ -170,7 +171,7 @@ class SetParametricsPoints:
         vtr = np.float32(
             ((distance_crystals + half_crystal_depth) ** 2 + crystal_distance_to_center_fov_sideB[1] ** 2) ** 0.5)
 
-        A00, A01, B = SetParametricsPoints.dotAB(top + zav, vtr, bot)
+        A00, A01, B = DualRotationSystem.applyDualRotation(top + zav, vtr, bot, self._distanceBetweenMotors)
         x_corner = A00 * B[0] - A01 * B[1] + distance_between_motors * A00 * B[2]
         y_corner = A01 * B[0] + A00 * B[1] + distance_between_motors * A01 * B[2]
         z_corner = crystal_distance_to_center_fov_sideB[2] + half_crystal_height
@@ -282,22 +283,126 @@ class SetParametricsPoints:
             self.zf = self.zf + np.abs(np.min(z) + crystal_width / 2)
 
 
-
-class EasyCTGeometry(object):
-    def __init__(self, detector_module=None):
-        super().__init__()
-        if detector_module is None:
+class EasyCTGeometry(DualRotationSystem):
+    def __init__(self, detector_moduleA=None, x_ray_producer=None, model="Pyramidal"):
+        if detector_moduleA is None:
             raise ValueError("Detector module is not defined. Please provice a detectorModule")
-        self._detector_module = detector_module
+        super().__init__()
+        self._detectorModuleA = detector_moduleA
+        self._xRayProducer = x_ray_producer
+        self._sourceCenter = None
+        self._centerFace = None
+        self._model = model
+        if model == "Pyramidal":
+            self._corner1list = None
+            self._corner2list = None
+            self._corner3list = None
+            self._corner4list = None
 
+    def detectorSideACoordinatesAfterMovement(self, axialMotorAngle, fanMotorAngle, uniqueIdDetectorheader=None):
+        """
+        Load the list mode data np.array
+        """
+        fanMotorAngle = np.deg2rad(fanMotorAngle) + np.pi
+        axialMotorAngle = np.deg2rad(axialMotorAngle)
+        axialDetectorCoordinate = [geometry_file[(uniqueIdDetectorheader).astype(np.int32), i] for i in  range(3)]
+
+        half_crystal_depth = crystal_depth / 2
+        half_crystal_height = crystal_height / 2
+        half_crystal_width = crystal_width / 2
+        # End Points - Crystal on the other side of top motor positions
+        zav = np.float32(np.arctan(axialDetectorCoordinate / (distance_crystals + half_crystal_depth)))
+        vtr = np.float32(
+            ((distance_crystals + half_crystal_depth) ** 2 + crystal_distance_to_center_fov_sideB[1] ** 2) ** 0.5)
+
+        self.centerFace = DualRotationSystem.applyDualRotation(fanMotorAngle + zav, vtr, axialMotorAngle,
+                                                               self._distanceBetweenMotors, )
+        angle_to_vertice = np.float32(
+            np.arctan(half_crystal_width / (distance_crystals)))
+
+        distance_to_vertice_pos = np.float32(
+            ((distance_crystals) ** 2 + (crystal_distance_to_center_fov_sideB[1] + half_crystal_width) ** 2) ** 0.5)
+
+        distance_to_vertice_neg = np.float32(
+            ((distance_crystals) ** 2 + (crystal_distance_to_center_fov_sideB[1] - half_crystal_width) ** 2) ** 0.5)
+
+        A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle + angle_to_vertice, distance_to_vertice_pos, bot)
+        x_corner = A00 * B[0] - A01 * B[1] + self._distanceBetweenMotors * A00 * B[2]
+        y_corner = A01 * B[0] + A00 * B[1] + self._distanceBetweenMotors * A01 * B[2]
+        z_corner = crystal_distance_to_center_fov_sideB[2] + half_crystal_height
+
+        self._corner1list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
+
+        A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle - angle_to_vertice, distance_to_vertice_neg, bot)
+        x_corner = A00 * B[0] - A01 * B[1] + self._distanceBetweenMotors  * A00 * B[2]
+        y_corner = A01 * B[0] + A00 * B[1] + self._distanceBetweenMotors  * A01 * B[2]
+        z_corner = crystal_distance_to_center_fov_sideB[2] + half_crystal_height
+
+        self.corner2list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
+
+        A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle - angle_to_vertice, distance_to_vertice_neg, bot)
+        x_corner = A00 * B[0] - A01 * B[1] + distance_between_motors * A00 * B[2]
+        y_corner = A01 * B[0] + A00 * B[1] + distance_between_motors * A01 * B[2]
+        z_corner = crystal_distance_to_center_fov_sideB[2] - half_crystal_height
+
+        self.corner3list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
+
+        A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle + angle_to_vertice, distance_to_vertice_pos, bot)
+        x_corner = A00 * B[0] - A01 * B[1] + distance_between_motors * A00 * B[2]
+        y_corner = A01 * B[0] + A00 * B[1] + distance_between_motors * A01 * B[2]
+        z_corner = crystal_distance_to_center_fov_sideB[2] - half_crystal_height
+
+        self.corner4list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
+
+    def sourcePositionAfterMovement(self, axialMotorAngle, fanMotorAngle):
+        r_a = np.float32(self._distanceBetweenMotors)
+
+        distance_to_crystal_point = np.sqrt(
+            np.abs((self._xRayProducer.focalSpot[2]) - self._xRayProducer.focalSpot[1]) ** 2
+            + self._xRayProducer.focalSpot[0] ** 2)
+        ang_to_crystal_center = np.arctan((self._xRayProducer.focalSpot[2] -
+                                           self._xRayProducer.focalSpot[1] *
+                                           np.sign(self._xRayProducer.focalSpot[2])) / self._xRayProducer.focalSpot[0],
+                                          dtype=np.float32)
+
+        initial_point = np.array([distance_to_crystal_point * np.cos(fanMotorAngle + ang_to_crystal_center),
+             distance_to_crystal_point * np.sin(fanMotorAngle + ang_to_crystal_center)],
+            dtype=np.float32)
+
+        central_crystal_point = self._rotatePoint(axialMotorAngle, initial_point)
+
+        RP = np.array([r_a * np.cos(axialMotorAngle), r_a * np.sin(axialMotorAngle), np.zeros(axialMotorAngle.shape[0])],
+                      dtype=np.float32)  # rotation point
+        self._originSystemWZ = RP
+
+        sourceCenter = np.copy(RP)
+        sourceCenter[0] += central_crystal_point[0]
+        sourceCenter[1] += central_crystal_point[1]
+        sourceCenter[2] += self._xRayProducer.focalSpot[2]
+        self._sourceCenter = np.array([sourceCenter[0], sourceCenter[1], sourceCenter[2]], dtype=np.float32).T
+
+    @staticmethod
+    def _rotatePoint(angle, initial_point):
+        rotation_matrix = np.array([[np.cos(angle, dtype=np.float32), -np.sin(angle, dtype=np.float32)],
+                                    [np.sin(angle, dtype=np.float32), np.cos(angle, dtype=np.float32)]],
+                                   dtype=np.float32)
+
+        return np.array([rotation_matrix[0, 0] * initial_point[0] + rotation_matrix[0, 1] * initial_point[1],
+                         rotation_matrix[1, 0] * initial_point[0] + rotation_matrix[1, 1] * initial_point[1]],
+                        dtype=np.float32)
 
 
 if __name__ == "__main__":
-    from src.DetectionLayout.Modules import PETModule
-    _module = PETModule()
+    from src.DetectionLayout.Modules import PETModule, easyPETModule
+    from src.DetectionLayout.RadiationProducer import GenericRadiativeSource
+    _module = easyPETModule()
 
-    newDevice = EasyCTGeometry(detector_module=_module, x_ray_producer=None)
+    newDevice = EasyCTGeometry(detector_module=_module, x_ray_producer=GenericRadiativeSource)
     newDevice.setDeviceName("EasyCT")
+    newDevice.setDeviceType("CT")
+    # newDevice.generateDeviceUUID()
+    newDevice.createDirectory()
+    print(newDevice.deviceUUID)
     print(newDevice.deviceName)
 
     #

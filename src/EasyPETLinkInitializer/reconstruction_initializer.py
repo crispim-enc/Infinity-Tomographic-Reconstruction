@@ -8,8 +8,8 @@ import numpy as np
 import pycuda.driver as cuda
 from array import array
 from src.Corrections.EasyPET.Normalization import AdaptiveNormalizationMatrix
-from src.Geometry.easyPET.matrixgeometrycorrection import MatrixGeometryCorrection
-from src.Geometry.easyPET.easypet_parametric_points import SetParametricCoordinates
+from src.Geometry.easyPETBased.matrixgeometrycorrection import MatrixGeometryCorrection
+from src.Geometry.easyPETBased.easypet_parametric_points import SetParametricCoordinates
 from src.Corrections.PET.Projector import ParallelepipedProjector
 from src.Optimizer.GPUManager import EM
 from src.AnalyticalReconstruction.initializer import AnalyticalReconstruction

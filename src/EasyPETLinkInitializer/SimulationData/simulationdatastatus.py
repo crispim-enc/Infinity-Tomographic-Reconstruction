@@ -304,7 +304,7 @@ class SimulationStatusData:
                             alpha=0.15)
             el += 1
         ax.plot(40 * np.ones(10) * (10 ** (-9)), np.linspace(ax.get_ylim()[0], ax.get_ylim()[1], 10), "--",
-                label="$easyPET \, operation  \,mode$")
+                label="$easyPETBased \, operation  \,mode$")
         ax.set_xscale('log')
         # ax.set_yscale('log')
         ax.set_xlabel('$CTW, (s)$')
@@ -327,7 +327,7 @@ class SimulationStatusData:
         ax_norm.set_ylabel('$Bq/Bq$')
         ax_norm.plot(40 * np.ones(10) * (10 ** (-9)), np.linspace(ax_norm.get_ylim()[0], ax_norm.get_ylim()[1], 10),
                      "--",
-                     label="$easyPET \, operation  \,mode$")
+                     label="$easyPETBased \, operation  \,mode$")
 
         ax_norm.legend(loc=0)
 
@@ -356,7 +356,7 @@ class SimulationStatusData:
         ax_norm_plan.plot(40 * np.ones(10) * (10 ** (-9)),
                           np.linspace(ax_norm_plan.get_ylim()[0], ax_norm_plan.get_ylim()[1], 10),
                           "--",
-                          label="easyPET \n operation mode")
+                          label="easyPETBased \n operation mode")
         # add a fill region  between 214 and 300 ps
         ax_norm_plan.fill_between(x=[100*10 ** -12, 300* 10 ** -12], y1=[ax_norm_plan.get_ylim()[1], ax_norm_plan.get_ylim()[1]], alpha=0.15, label="State-of-the-art \n electronics", color="blue")
         #legend top left
@@ -367,7 +367,7 @@ class SimulationStatusData:
         ax_per.set_ylabel('$R_{trues + scattered}/R_{prompts} \, (\%)$')
         ax_per.plot(40 * np.ones(10) * (10 ** (-9)), np.linspace(ax_per.get_ylim()[0], ax_per.get_ylim()[1], 10),
                     "--",
-                    label="$easyPET \, operation  \,mode$")
+                    label="$easyPETBased \, operation  \,mode$")
 
 
 
