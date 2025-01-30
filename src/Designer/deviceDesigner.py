@@ -20,8 +20,14 @@ class DeviceDesignerStandalone:
         self.renderInteractor.Initialize()
 
     def addDevice(self):
-        for module in self.device.detectorModule:
-            self.addModule(module)
+        if self.device.geometryType == "cylindrical":
+            for module in self.device.detectorModule:
+                self.addModule(module)
+        elif self.device.geometryType == "dualRotationSystemGeneric":
+            for module in self.device._detectorModuleA:
+                self.addModule(module)
+            # for module in self.device._detectorModuleB:
+            #     self.addModule(module)
 
     def addModule(self, module):
         if module is None:

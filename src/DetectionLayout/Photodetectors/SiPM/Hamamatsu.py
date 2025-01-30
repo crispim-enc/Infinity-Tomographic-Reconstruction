@@ -121,6 +121,44 @@ class HamamatsuS14161Series(GenericSiPM):
             # self.setWindowRefractiveIndexTolerance(0.01)
 
 
+class HamamatsuS13360Series(GenericSiPM):
+    def __init__(self, idSiPM=0, model="1350PE"):
+        super(HamamatsuS13360Series, self).__init__()
+        self.idSiPM = idSiPM
+        self.setSeries("S13360 Series")
+        if model == "1350PE":
+            self.setModel("1350PE")
+            self.setVendor("Hamamatsu")
+            self.setPixelPitch(50)
+            self.setPixelWidth(50)
+            self.setPixelWidthTolerance(0.5)
+            self.setPixelHeight(50)
+            self.setPixelHeightTolerance(0.5)
+            self.setPixelDepth(0.0)
+            self.setPixelArea(self.pixelWidth * self.pixelHeight)
+            self.setPixelSpacingX(50)
+            self.setPixelSpacingY(50)
+            self.setBorderSizeX(0.2)
+            self.setBorderSizeY(0.2)
+            self.setResinThickness(0)
+            self.setGeometricalFillFactor(0.74)
+            self.setPhotonDetectionEfficiencyAtPeak(0.5)
+            self.setNumberOfChannelsX(1)
+            self.setNumberOfChannelsY(1)
+            # self.setTotalNumberOfChannels(4)
+            self.setEffectiveWidth(1.3)
+            self.setEffectiveHeight(1.3)
+            self.setEffectiveAreaPerChannel(self.effectiveHeight* self.effectiveWidth)
+            self.setPackageType("Surface Mount")
+            self.setWindowType("Silicone")
+            self.setWindowRefractiveIndex(1.57)
+            self.setBlockSPiMWidth(1.3)
+            self.setBlockSPiMHeight(1.3)
+            self.setBlockSPiMDepth(0.85)
+            # self.setBlockSPiMArea(665.64)
+            self.setExternalBorderSizeX(0.4)
+            self.setExternalBorderSizeY(0.4)
+            self.setChannelOriginalCentrePosition()
 
 
 if __name__ == "__main__":

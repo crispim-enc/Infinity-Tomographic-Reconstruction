@@ -13,17 +13,18 @@ This functions create a generic source object for example x-ray emission.
 """
 import os
 import json5
+import numpy as np
 
 
 class GenericRadiativeSource:
     def __init__(self, device=None):
-        if device is None:
-            raise ValueError("Device cannot be None. Please provide a Device object.")
+        # if device is None:
+        #     raise ValueError("Device cannot be None. Please provide a Device object.")
         self._device = device
         self._sourceName = "Am-241"
         self._sourceHalfLife = 432.2  # years
         self._sourceActivity = 1.0 * 37000
-        self._focalSpotInitialPosition = [0, 0, 0]  # mm
+        self._focalSpotInitialPosition = np.array([0, 0, 0], dtype=np.float32)  # mm
         self._focalSpotDiameter = 2  # mm
         self._shieldingShape = "Cylinder"
         self._shieldingMaterial = "Lead"

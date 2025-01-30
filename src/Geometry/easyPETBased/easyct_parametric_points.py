@@ -7,7 +7,7 @@
 
 import numpy as np
 from src.Device import Device
-from .dualrotationsystem import DualRotationSystem
+from src.Geometry.easyPETBased.dualrotationsystem import DualRotationSystem
 
 
 class SetParametricsPoints:
@@ -285,10 +285,11 @@ class SetParametricsPoints:
 
 class EasyCTGeometry(DualRotationSystem):
     def __init__(self, detector_moduleA=None, x_ray_producer=None, model="Pyramidal"):
+        super().__init__(detector_moduleA=detector_moduleA)
         if detector_moduleA is None:
             raise ValueError("Detector module is not defined. Please provice a detectorModule")
-        super().__init__()
-        self._detectorModuleA = detector_moduleA
+
+        # self._detectorModuleA = detector_moduleA
         self._xRayProducer = x_ray_producer
         self._sourceCenter = None
         self._centerFace = None
@@ -298,6 +299,15 @@ class EasyCTGeometry(DualRotationSystem):
             self._corner2list = None
             self._corner3list = None
             self._corner4list = None
+
+    # def generateInitialCoordinates(self):
+    #     """
+    #     Generate the initial coordinates of the system
+    #     """
+    #     # Detector Module A
+    #     self._detectorModuleA.setInitialGeometry()
+    #     # Detector Module B
+        # self._xRayProducer.focalSpotInitialPosition
 
     def detectorSideACoordinatesAfterMovement(self, axialMotorAngle, fanMotorAngle, uniqueIdDetectorheader=None):
         """
@@ -357,52 +367,75 @@ class EasyCTGeometry(DualRotationSystem):
     def sourcePositionAfterMovement(self, axialMotorAngle, fanMotorAngle):
         r_a = np.float32(self._distanceBetweenMotors)
 
-        distance_to_crystal_point = np.sqrt(
-            np.abs((self._xRayProducer.focalSpot[2]) - self._xRayProducer.focalSpot[1]) ** 2
-            + self._xRayProducer.focalSpot[0] ** 2)
-        ang_to_crystal_center = np.arctan((self._xRayProducer.focalSpot[2] -
-                                           self._xRayProducer.focalSpot[1] *
-                                           np.sign(self._xRayProducer.focalSpot[2])) / self._xRayProducer.focalSpot[0],
+        sourceDistanceToWZOrigin = np.sqrt(np.abs((self._xRayProducer.focalSpotInitialPosition[2]) - self._xRayProducer.focalSpotInitialPosition[1]) ** 2
+            + self._xRayProducer.focalSpotInitialPosition[0] ** 2)
+        angToFanPointOfRotationWZ = np.arctan((self._xRayProducer.focalSpotInitialPosition[2] -
+                                           self._xRayProducer.focalSpotInitialPosition[1] *
+                                           np.sign(self._xRayProducer.focalSpotInitialPosition[2])) / self._xRayProducer.focalSpotInitialPosition[0],
                                           dtype=np.float32)
-
-        initial_point = np.array([distance_to_crystal_point * np.cos(fanMotorAngle + ang_to_crystal_center),
-             distance_to_crystal_point * np.sin(fanMotorAngle + ang_to_crystal_center)],
-            dtype=np.float32)
-
-        central_crystal_point = self._rotatePoint(axialMotorAngle, initial_point)
-
-        RP = np.array([r_a * np.cos(axialMotorAngle), r_a * np.sin(axialMotorAngle), np.zeros(axialMotorAngle.shape[0])],
-                      dtype=np.float32)  # rotation point
+        RP = np.array(
+            [r_a * np.cos(axialMotorAngle), r_a * np.sin(axialMotorAngle), np.zeros(axialMotorAngle.shape[0])],
+            dtype=np.float32)  # rotation point
         self._originSystemWZ = RP
+        if sourceDistanceToWZOrigin == 0:
+            sourceCenter = np.copy(RP)
+            sourceCenter[2] += self._xRayProducer.focalSpotInitialPosition[2]
+        else:
+            initial_point = np.array([sourceDistanceToWZOrigin * np.cos(fanMotorAngle + angToFanPointOfRotationWZ),
+                 sourceDistanceToWZOrigin * np.sin(fanMotorAngle + angToFanPointOfRotationWZ)],
+                dtype=np.float32)
 
-        sourceCenter = np.copy(RP)
-        sourceCenter[0] += central_crystal_point[0]
-        sourceCenter[1] += central_crystal_point[1]
-        sourceCenter[2] += self._xRayProducer.focalSpot[2]
+            sourceCenterCorrectionDualRotation = DualRotationSystem._rotatePoint(axialMotorAngle, initial_point)
+            sourceCenter = np.copy(RP)
+            sourceCenter[0] += sourceCenterCorrectionDualRotation[0]
+            sourceCenter[1] += sourceCenterCorrectionDualRotation[1]
+            sourceCenter[2] += self._xRayProducer.focalSpotInitialPosition[2]
         self._sourceCenter = np.array([sourceCenter[0], sourceCenter[1], sourceCenter[2]], dtype=np.float32).T
 
-    @staticmethod
-    def _rotatePoint(angle, initial_point):
-        rotation_matrix = np.array([[np.cos(angle, dtype=np.float32), -np.sin(angle, dtype=np.float32)],
-                                    [np.sin(angle, dtype=np.float32), np.cos(angle, dtype=np.float32)]],
-                                   dtype=np.float32)
+    # @staticmethod
+    # def _rotatePoint(angle, initial_point):
+    #     rotation_matrix = np.array([[np.cos(angle, dtype=np.float32), -np.sin(angle, dtype=np.float32)],
+    #                                 [np.sin(angle, dtype=np.float32), np.cos(angle, dtype=np.float32)]],
+    #                                dtype=np.float32)
+    #
+    #     return np.array([rotation_matrix[0, 0] * initial_point[0] + rotation_matrix[0, 1] * initial_point[1],
+    #                      rotation_matrix[1, 0] * initial_point[0] + rotation_matrix[1, 1] * initial_point[1]],
+    #                     dtype=np.float32)
 
-        return np.array([rotation_matrix[0, 0] * initial_point[0] + rotation_matrix[0, 1] * initial_point[1],
-                         rotation_matrix[1, 0] * initial_point[0] + rotation_matrix[1, 1] * initial_point[1]],
-                        dtype=np.float32)
+    @property
+    def sourceCenter(self):
+        return self._sourceCenter
 
 
 if __name__ == "__main__":
     from src.DetectionLayout.Modules import PETModule, easyPETModule
     from src.DetectionLayout.RadiationProducer import GenericRadiativeSource
-    _module = easyPETModule()
+    from src.Designer import DeviceDesignerStandalone
+    import matplotlib.pyplot as plt
+    _module = easyPETModule
+    xrayproducer = GenericRadiativeSource()
 
-    newDevice = EasyCTGeometry(detector_module=_module, x_ray_producer=GenericRadiativeSource)
+    newDevice = EasyCTGeometry(detector_moduleA=_module, x_ray_producer=xrayproducer)
+    # newDevice
     newDevice.setDeviceName("EasyCT")
     newDevice.setDeviceType("CT")
+    newDevice.generateInitialCoordinates()
     # newDevice.generateDeviceUUID()
-    newDevice.createDirectory()
+    # newDevice.createDirectory()
     print(newDevice.deviceUUID)
     print(newDevice.deviceName)
+    #plot center of rotation axial
+    axial_motor_angles = np.deg2rad(np.linspace(0, 360, 8))
+    fan_motor_angles = np.deg2rad(np.linspace(-45, 45, 8))
+    newDevice.sourcePositionAfterMovement(axial_motor_angles, fan_motor_angles)
+
+    plt.plot(newDevice.originSystemWZ[0], newDevice.originSystemWZ[1], 'ro')
+    #plot source center
+    plt.plot(newDevice.sourceCenter[0], newDevice.sourceCenter[1], 'bo')
+    plt.show()
+
+    designer = DeviceDesignerStandalone(device=newDevice)
+    designer.addDevice()
+    designer.startRender()
 
     #

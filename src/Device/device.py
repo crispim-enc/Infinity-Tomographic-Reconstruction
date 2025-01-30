@@ -51,6 +51,7 @@ class Device:
         self._deviceType = None
         self._deviceDirectory = None
         self._geometryObject = None
+        self._geometryType = None
 
     def readDeviceProperties(self, objectName=None):
         """
@@ -129,6 +130,13 @@ class Device:
     @property
     def deviceDirectory(self):
         return self._deviceDirectory
+
+    @property
+    def geometryType(self):
+        return self._geometryType
+
+    def setGeometryType(self, geometry_type):
+        self._geometryType = geometry_type
 
     def createDirectory(self):
         """

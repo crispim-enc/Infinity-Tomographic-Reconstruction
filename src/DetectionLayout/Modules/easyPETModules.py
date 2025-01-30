@@ -14,6 +14,7 @@ Brief description of the file.
 import numpy as np
 from .PETModuleGeneric import PETModule
 from src.DetectionLayout.Photodetectors.Crystals import LYSOCrystal
+from src.DetectionLayout.Photodetectors.SiPM import HamamatsuS13360Series
 
 
 class easyPETModule(PETModule):
@@ -23,8 +24,9 @@ class easyPETModule(PETModule):
 
     """
     def __init__(self, module_id=1, model="easyPET.3D_32"):
-        super(easyPETModule, self).__init__()
-        self._idModule = module_id
+        # super(easyPETModule, self).__init__()
+        super().__init__(module_id)
+        # self._idModule = module_id
         if model == "easyPET.3D_32":
             self.model32()
 
@@ -32,8 +34,8 @@ class easyPETModule(PETModule):
         """
         Create the easyPETBased module with 32 detectors.
         """
-        self._numberVisibleLightSensorsX = int(1)
-        self._numberVisibleLightSensorsY = int(1)
+        self._numberVisibleLightSensorsX = int(2)
+        self._numberVisibleLightSensorsY = int(16)
         self._numberHighEnergyLightDetectorsX = int(2)
         self._numberHighEnergyLightDetectorsY = int(16)
         self._numberHighEnergyLightDetectors = None
@@ -41,10 +43,9 @@ class easyPETModule(PETModule):
         self._totalNumberHighEnergyLightDetectors = self._numberHighEnergyLightDetectorsX * self._numberHighEnergyLightDetectorsY
         self._reflectorThicknessX = 0.28
         self._reflectorThicknessY = 0.35
-        self._modelVisibleLightSensors = [HamamatsuS14161Series(i) for i in range(self._totalNumberVisibleLightSensors)]
-
+        self._modelVisibleLightSensors = [HamamatsuS13360Series(i) for i in range(self._totalNumberVisibleLightSensors)]
         self._shiftXBetweenVisibleAndHighEnergy = 0
-        self._shiftYBetweenVisibleAndHighEnergy = 0
+        self._shiftYBetweenVisibleAndHighEnergy = -30
         self._shiftZBetweenVisibleAndHighEnergy = 0
         self._modelHighEnergyLightDetectors = [LYSOCrystal(i) for i in range(self._totalNumberHighEnergyLightDetectors)]
         for i in range(self._totalNumberHighEnergyLightDetectors):

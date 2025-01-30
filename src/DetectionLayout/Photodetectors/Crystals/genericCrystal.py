@@ -117,7 +117,8 @@ class GenericCrystal:
         self._crystalSizeZ = sizez
         self._volume = self._crystalSizeX * self._crystalSizeY * self._crystalSizeZ * 1e-3
         self._mass = self._density * self._volume
-        self.setVertices()
+        self.setVerticesCrystalCoordinateSystem()
+        # self.setVertices()
 
     def getCrystalShape(self):
         return [self._crystalSizeX, self._crystalSizeY, self._crystalSizeZ]

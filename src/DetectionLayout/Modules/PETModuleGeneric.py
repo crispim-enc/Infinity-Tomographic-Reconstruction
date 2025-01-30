@@ -13,7 +13,7 @@ class PETModule:
         numberVisibleLightSensorsX (int): The number of visible light sensors in the x axis.
         numberVisibleLightSensorsY (int): The number of visible light sensors in the y axis.
         numberHighEnergyLightDetectors (int): The number of high energy light detectors.
-        modelVisibleLightSensors (str): The model of the visible light sensors.
+        modelVisibleLightSensors (): The model of the visible light sensors.
         modelHighEnergyLightDetectors (str): The model of the high energy light detectors.
         visibleLightSensorObject (object): The object that represents the visible light sensors.
 
@@ -47,8 +47,12 @@ class PETModule:
         self._yTranslation = 0
         self._zTranslation = 0
         self._detectorsPosition = None
-        self.setVisibleEnergyLightDetectorBlock(True)
-        self.setHighEnergyLightDetectorBlock(True)
+        self._blockCreationHighEnergyDetector = True
+        self._blockCreationVisibleLightSensor = True
+        self.setVisibleEnergyLightDetectorBlock()
+        self.setHighEnergyLightDetectorBlock()
+
+
 
     def setInitialGeometry(self):
         """
@@ -62,13 +66,31 @@ class PETModule:
     def highEnergyLightDetectorBlock(self):
         return self._modelHighEnergyLightDetectors
 
-    def setVisibleEnergyLightDetectorBlock(self, shiftSiPM=False):
-        for i in range(self._totalNumberVisibleLightSensors):
+    def setVisibleEnergyLightDetectorBlock(self):
+        if self._blockCreationVisibleLightSensor:
+            x_step = (self._modelVisibleLightSensors[0].blockSPiMWidth +
+                      self._modelVisibleLightSensors[0].externalBorderSizeX)
+            x_range = np.arange(0, self._numberVisibleLightSensorsX * x_step, x_step) - (
+                        self._numberVisibleLightSensorsX - 1) * x_step / 2
+            z_step = (self._modelVisibleLightSensors[0].blockSPiMHeight +
+                      self._modelVisibleLightSensors[0].externalBorderSizeY)
+            z_range = np.arange(0, self._numberVisibleLightSensorsY * z_step, z_step) - (
+                        self._numberVisibleLightSensorsY - 1) * z_step / 2
+            xx, zz = np.meshgrid(x_range, z_range)
 
-            center_to_rotate = self._modelVisibleLightSensors[i].centerSiPMModule
-            if shiftSiPM:
-                center_to_rotate[1] = (center_to_rotate[1] - self._modelHighEnergyLightDetectors[0].crystalSizeZ / 2 -
-                                       self._shiftYBetweenVisibleAndHighEnergy)
+            x_flat = xx.flatten()
+            y_flat = (np.zeros(self._numberVisibleLightSensorsX * self._numberVisibleLightSensorsY)+
+                      self._shiftYBetweenVisibleAndHighEnergy)
+            z_flat = zz.flatten()
+
+        for i in range(self._totalNumberVisibleLightSensors):
+            if self._blockCreationHighEnergyDetector:
+                center_to_rotate = np.array([x_flat[i], y_flat[i], z_flat[i]])
+            else:
+                center_to_rotate = self._modelVisibleLightSensors[i].centerSiPMModule
+
+            center_to_rotate[1] = (center_to_rotate[1] - self._modelHighEnergyLightDetectors[0].crystalSizeZ / 2 -
+                                   self._shiftYBetweenVisibleAndHighEnergy)
 
             self._modelVisibleLightSensors[i].setCenterSiPMModule(center_to_rotate)
             self._modelVisibleLightSensors[i].setChannelOriginalCentrePosition()
@@ -96,7 +118,7 @@ class PETModule:
             self._modelVisibleLightSensors[i].setYTranslation(self._yTranslation)
             self._modelVisibleLightSensors[i].setZTranslation(self._zTranslation)
 
-    def setHighEnergyLightDetectorBlock(self, block_creation=False):
+    def setHighEnergyLightDetectorBlock(self, block_creation=True):
         if block_creation:
             x_step = self._modelHighEnergyLightDetectors[0].crystalSizeX + self._reflectorThicknessX
             x_range = np.arange(0, self._numberHighEnergyLightDetectorsX * x_step, x_step) - (
@@ -112,6 +134,7 @@ class PETModule:
             x_flat = xx.flatten()
             y_flat = np.zeros(self._numberHighEnergyLightDetectorsX * self._numberHighEnergyLightDetectorsY)
             z_flat = zz.flatten()
+
         for i in range(self._totalNumberHighEnergyLightDetectors):
             self._modelHighEnergyLightDetectors[i].setCrystalID(i + self._idModule *
                                                                 self._totalNumberHighEnergyLightDetectors)
@@ -147,8 +170,6 @@ class PETModule:
                                                            z=self._zTranslation)
                 vertexes[vertex] = new_vertex
             self._modelHighEnergyLightDetectors[i].setVertices(vertexes)
-
-
 
     def rotateAndTranslateModule(self, point=None, alpha=0, beta=0, sigma=0, x=0, y=0, z=0, angunit="deg"):
 

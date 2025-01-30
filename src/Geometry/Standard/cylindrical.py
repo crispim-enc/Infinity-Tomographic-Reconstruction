@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from src import Device
+from src.Device import Device
 
 
 class CylindricalGeometry(Device):

@@ -7,8 +7,9 @@ class GenericSiPM:
     parameters:
     """
 
-    def __init__(self) -> object:
+    def __init__(self, idSiPM=0 ) -> object:
         # super().__init__(**kwargs)
+        self.idSiPM = idSiPM
         self._series = None
         self._model = None
         self._vendor = None

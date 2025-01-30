@@ -17,11 +17,10 @@ import numpy as np
 
 class DualRotationSystem(Device):
     def __init__(self, detector_moduleA=None, detector_moduleB=None):
-        if detector_moduleA is None:
-            raise ValueError("Detector module is not defined. Please provice a detectorModule")
         super().__init__()
-        self._detectorModuleA = detector_moduleA
-        self._detectorModuleB = detector_moduleB
+        self._geometryType = "dualRotationSystemGeneric"
+        self._detectorModuleObjA = detector_moduleA
+        self._detectorModuleObjB = detector_moduleB
         self._distanceBetweenMotors = 30
         self._distanceAxialMotorToDetectorModule = 30  # probably not needed
         self._distanceAxialMotorToRadioactiveSource = 30
@@ -31,15 +30,29 @@ class DualRotationSystem(Device):
         self._translationTangentialModuleA = 0
         self._translationAxialModuleA = 72.68/2
         self._originSystemWZ = np.array([0, 0, 0])
+        self._numberOfDetectorModulesSideA = 1
+        self._numberOfDetectorModulesSideB = 1
+        if self._detectorModuleObjA is not None:
+            self._detectorModuleA = [self._detectorModuleObjA(i) for i in range(self._numberOfDetectorModulesSideA)]
+
+        if self._detectorModuleObjB is not None:
+            self._detectorModuleB = [self._detectorModuleObjB(i) for i in range(self._numberOfDetectorModulesSideB)]
 
     def generateInitialCoordinates(self):
         """
         Generate the initial coordinates of the system
         """
+        if len(self._detectorModuleA) != 0:
         # Detector Module A
-        self._detectorModuleA.generateInitialCoordinates()
-        # Detector Module B
-        self._detectorModuleB.generateInitialCoordinates()
+            for i in range(self._numberOfDetectorModulesSideA):
+                self._detectorModuleA[i].setInitialGeometry()
+        try:
+            if len(self._detectorModuleB) != 0:
+                # Detector Module B
+                for i in range(self._numberOfDetectorModulesSideB):
+                    self._detectorModuleB[i].setInitialGeometry()
+        except AttributeError:
+            pass
 
     def detectorSideACoordinatesAfterMovement(self, axialMotorAngle, fanMotorAngle, uniqueIdDetectorheaderA=None):
         """
@@ -80,3 +93,7 @@ class DualRotationSystem(Device):
         z_corner = ZCoordinate
 
         return np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
+
+    @property
+    def originSystemWZ(self):
+        return self._originSystemWZ
