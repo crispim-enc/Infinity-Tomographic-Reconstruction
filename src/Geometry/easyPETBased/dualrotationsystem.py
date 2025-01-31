@@ -22,35 +22,31 @@ class DualRotationSystem(Device):
         self._detectorModuleObjA = detector_moduleA
         self._detectorModuleObjB = detector_moduleB
         self._distanceBetweenMotors = 30
-        self._distanceAxialMotorToDetectorModule = 30  # probably not needed
-        self._distanceAxialMotorToRadioactiveSource = 30
-        self._distanceFanMotorToDetectorModuleFaceA = 0
-        self._distanceFanMotorToDetectorModuleFaceB = 60
-        self._translationRadialModuleA = 15
-        self._translationTangentialModuleA = 0
-        self._translationAxialModuleA = 72.68/2
+        self._distanceFanMotorToDetectorModulesOnSideA = 0
+        self._distanceFanMotorToDetectorModulesOnSideB = 60
         self._originSystemWZ = np.array([0, 0, 0])
-        self._numberOfDetectorModulesSideA = 1
-        self._numberOfDetectorModulesSideB = 1
+        self._numberOfDetectorModulesSideA = 2
+        self._numberOfDetectorModulesSideB = 2
+
         if self._detectorModuleObjA is not None:
-            self._detectorModuleA = [self._detectorModuleObjA(i) for i in range(self._numberOfDetectorModulesSideA)]
+            self._detectorModulesSideA = [self._detectorModuleObjA(i) for i in range(self._numberOfDetectorModulesSideA)]
 
         if self._detectorModuleObjB is not None:
-            self._detectorModuleB = [self._detectorModuleObjB(i) for i in range(self._numberOfDetectorModulesSideB)]
+            self._detectorModulesSideB = [self._detectorModuleObjB(i) for i in range(self._numberOfDetectorModulesSideB)]
 
     def generateInitialCoordinates(self):
         """
         Generate the initial coordinates of the system
         """
-        if len(self._detectorModuleA) != 0:
+        if len(self._detectorModulesSideA) != 0:
         # Detector Module A
             for i in range(self._numberOfDetectorModulesSideA):
-                self._detectorModuleA[i].setInitialGeometry()
+                self._detectorModulesSideA[i].setInitialGeometry()
         try:
-            if len(self._detectorModuleB) != 0:
+            if len(self._detectorModulesSideB) != 0:
                 # Detector Module B
                 for i in range(self._numberOfDetectorModulesSideB):
-                    self._detectorModuleB[i].setInitialGeometry()
+                    self._detectorModulesSideB[i].setInitialGeometry()
         except AttributeError:
             pass
 
@@ -71,9 +67,6 @@ class DualRotationSystem(Device):
         rotation_matrix = np.array([[cos_angle, -sin_angle],
                                     [sin_angle, cos_angle]],
                                    dtype=np.float32)
-        # rotation_matrix = np.array([[np.cos(angle, dtype=np.float32), -np.sin(angle, dtype=np.float32)],
-        #                             [np.sin(angle, dtype=np.float32), np.cos(angle, dtype=np.float32)]],
-        #                            dtype=np.float32)
 
         return np.array([rotation_matrix[0, 0] * initial_point[0] + rotation_matrix[0, 1] * initial_point[1],
                          rotation_matrix[1, 0] * initial_point[0] + rotation_matrix[1, 1] * initial_point[1]],
@@ -97,3 +90,36 @@ class DualRotationSystem(Device):
     @property
     def originSystemWZ(self):
         return self._originSystemWZ
+
+    @property
+    def detectorModulesSideA(self):
+        return self._detectorModulesSideA
+
+    @property
+    def numberOfDetectorModulesSideA(self):
+        return self._numberOfDetectorModulesSideA
+
+    def setNumberOfDetectorModulesSideA(self, value):
+        self._numberOfDetectorModulesSideA = value
+
+        if self._detectorModuleObjA is not None:
+            self._detectorModulesSideA = [self._detectorModuleObjA(i) for i in range(self._numberOfDetectorModulesSideA)]
+        else:
+            raise AttributeError("Detector Module A is not defined")
+
+    @property
+    def detectorModulesSideB(self):
+        return self._detectorModulesSideB
+
+    @property
+    def numberOfDetectorModulesSideB(self):
+        return self._numberOfDetectorModulesSideB
+
+
+    def setNumberOfDetectorModulesSideB(self, value):
+        self._numberOfDetectorModulesSideB = value
+
+        if self._detectorModuleObjB is not None:
+            self._detectorModulesSideB = [self._detectorModuleObjB(i) for i in range(self._numberOfDetectorModulesSideB)]
+        else:
+            raise AttributeError("Detector Module B is not defined")

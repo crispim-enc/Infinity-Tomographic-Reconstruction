@@ -24,10 +24,31 @@ class DeviceDesignerStandalone:
             for module in self.device.detectorModule:
                 self.addModule(module)
         elif self.device.geometryType == "dualRotationSystemGeneric":
-            for module in self.device._detectorModuleA:
+            for module in self.device.detectorModulesSideA:
                 self.addModule(module)
-            # for module in self.device._detectorModuleB:
-            #     self.addModule(module)
+            for module in self.device.detectorModulesSideB:
+                self.addModule(module)
+    def addxRayProducerSource(self):
+        # cilinder around the focal point the
+        # Create a cylinder
+        cylinder = vtk.vtkCylinderSource()
+        cylinder.SetRadius(self.device.xRayProducer.shieldingRadius)
+        cylinder.SetHeight(self.device.xRayProducer.shieldingHeight)
+        #location of the cylinder
+        cylinder.SetCenter(self.device.xRayProducer.focalSpotInitialPositionXYSystem[0],
+                           self.device.xRayProducer.focalSpotInitialPositionXYSystem[2],
+                           self.device.xRayProducer.focalSpotInitialPositionXYSystem[1])
+        cylinder.SetResolution(100)
+        cylinder.Update()
+        #add the cylinder to the renderer
+        cylinderMapper = vtk.vtkPolyDataMapper()
+        cylinderMapper.SetInputConnection(cylinder.GetOutputPort())
+        cylinderActor = vtk.vtkActor()
+        cylinderActor.SetMapper(cylinderMapper)
+        cylinderActor.GetProperty().SetColor([0.5, 0.5, 0.5])
+        cylinderActor.GetProperty().SetOpacity(1)
+        self.ren.AddActor(cylinderActor)
+
 
     def addModule(self, module):
         if module is None:

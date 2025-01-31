@@ -24,14 +24,15 @@ class GenericRadiativeSource:
         self._sourceName = "Am-241"
         self._sourceHalfLife = 432.2  # years
         self._sourceActivity = 1.0 * 37000
-        self._focalSpotInitialPosition = np.array([0, 0, 0], dtype=np.float32)  # mm
-        self._focalSpotDiameter = 2  # mm
+        self._focalSpotInitialPositionWKSystem = np.array([0, 0, 0], dtype=np.float32)  # mm
+        self._focalSpotInitialPositionXYSystem = np.array([0, 0, 0], dtype=np.float32)
+        self._focalSpotDiameter = 1  # mm
         self._shieldingShape = "Cylinder"
         self._shieldingMaterial = "Lead"
         self._shieldingDensity = 11.34 # g/cm3
         self._shieldingThickness = 0.5
-        self._shieldingHeight = 2
-        self._shieldingRadius = 2
+        self._shieldingHeight = 3
+        self._shieldingRadius = 1.25
         # self._gantryAngle = 30  # degrees
         self._mainEmissions = {1: {"energy": 59.54, "intensity": 0.36},
                                2: {"energy": 26.34, "intensity": 0.024},
@@ -88,17 +89,134 @@ class GenericRadiativeSource:
         return self._sourceActivity
 
     @property
-    def focalSpotInitialPosition(self):
+    def focalSpotInitialPositionWKSystem(self):
         """
         Returns the focal spot.
         """
-        return self._focalSpotInitialPosition
+        return self._focalSpotInitialPositionWKSystem
 
-    def setFocalSpotInitialPosition(self, value):
+    def setFocalSpotInitialPositionWKSystem(self, value):
         """
         Sets the focal spot. For easyCT geometries  the focal spot is set to the fan motor geometry
-        param: list(), units in mm
+        param: list() or np.array(), units in mm
         """
-        if value != self._focalSpotInitialPosition:
-            self._focalSpotInitialPosition = value
+        # if list convert to np.array
+        if isinstance(value, list):
+            value = np.array(value, dtype=np.float32)
+
+            self._focalSpotInitialPositionWKSystem = value
+        elif isinstance(value, np.ndarray):
+            self._focalSpotInitialPositionWKSystem = value
+
+        else:
+            raise ValueError("Focal spot initial position must be a list or np.array.")
+
+    @property
+    def focalSpotInitialPositionXYSystem(self):
+        """
+        Returns the focal spot.
+        """
+        return self._focalSpotInitialPositionXYSystem
+
+    def setFocalSpotInitialPositionXYSystem(self, value):
+        """
+        Sets the focal spot. For easyCT geometries  the focal spot is set to the fan motor geometry
+        param: list() or np.array(), units in mm
+        """
+        # if list convert to np.array
+        if isinstance(value, list):
+            value = np.array(value, dtype=np.float32)
+
+            self._focalSpotIntialPositionXYSystem = value
+        elif isinstance(value, np.ndarray):
+            self._focalSpotIntialPositionXYSystem = value
+
+        else:
+            raise ValueError("Focal spot initial position must be a list or np.array.")
+
+    @property
+    def shieldingShape(self):
+        """
+        Returns the shielding shape.
+        """
+        return self._shieldingShape
+
+    def setShieldingShape(self, value):
+        """
+        Sets the shielding shape.
+        """
+        if value != self._shieldingShape:
+            self._shieldingShape = value
+
+    @property
+    def shieldingMaterial(self):
+        """
+        Returns the shielding material.
+        """
+        return self._shieldingMaterial
+
+    def setShieldingMaterial(self, value):
+        """
+        Sets the shielding material.
+        """
+        if value != self._shieldingMaterial:
+            self._shieldingMaterial = value
+
+    @property
+    def shieldingDensity(self):
+        """
+        Returns the shielding density.
+        """
+        return self._shieldingDensity
+
+    def setShieldingDensity(self, value):
+        """
+        Sets the shielding density.
+        """
+        if value != self._shieldingDensity:
+            self._shieldingDensity = value
+
+    @property
+    def shieldingThickness(self):
+        """
+        Returns the shielding thickness.
+        """
+        return self._shieldingThickness
+
+    def setShieldingThickness(self, value):
+        """
+        Sets the shielding thickness.
+        """
+        if value != self._shieldingThickness:
+            self._shieldingThickness = value
+
+    @property
+    def shieldingHeight(self):
+        """
+        Returns the shielding height.
+        """
+        return self._shieldingHeight
+
+    def setShieldingHeight(self, value):
+        """
+        Sets the shielding height.
+        """
+        if value != self._shieldingHeight:
+            self._shieldingHeight = value
+
+
+    @property
+    def shieldingRadius(self):
+        """
+        Returns the shielding radius in mm.
+        """
+        return self._shieldingRadius
+
+    def setShieldingRadius(self, value):
+        """
+        Sets the shielding radius.
+        param: float(), units in mm
+        """
+        if value != self._shieldingRadius:
+            self._shieldingRadius = value
 

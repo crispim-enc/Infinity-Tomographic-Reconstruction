@@ -52,8 +52,6 @@ class PETModule:
         self.setVisibleEnergyLightDetectorBlock()
         self.setHighEnergyLightDetectorBlock()
 
-
-
     def setInitialGeometry(self):
         """
         Sets the initial geometry of the module.
