@@ -9,7 +9,7 @@ This repository provides a robust and modular image reconstruction framework des
 
     Multi-Modality Support: Seamlessly handles PET, CT, and SPECT data.
     Customizable Pipelines: Modular design enables easy integration of new reconstruction algorithms.
-    GPU Acceleration: Optimized for high-performance computation using CUDA/OpenCL.
+    GPU Acceleration: Optimized for high-performance computation using CUDA
     AI-Driven Enhancements: Incorporates deep learning techniques to improve image resolution and reduce artifacts.
     Open Data Support: Compatible with DICOM, NIfTI, and other medical imaging standards.
     Cross-Platform Compatibility: Runs on Linux, Windows, and macOS.
@@ -29,49 +29,9 @@ Steps
 
     Clone this repository:
 
-git clone https://github.com/username/pet-ct-spect-framework.git
 
-Navigate to the project directory:
-
-cd pet-ct-spect-framework
-
-Install dependencies:
-
-    pip install -r requirements.txt
-
-📂 Directory Structure
-
-📁 pet-ct-spect-framework
-├── 📂 data               # Sample datasets and input files
-├── 📂 models             # Pre-trained models and configuration files
-├── 📂 src                # Source code for reconstruction algorithms
-├── 📂 tests              # Unit and integration tests
-├── 📂 docs               # Documentation and usage guides
-└── README.md             # Project overview and instructions
-
-🔍 Usage
-Command Line Interface (CLI)
-
-Run a PET/CT reconstruction using the CLI:
-
-python src/main.py --input data/sample_pet.dcm --output results/reconstructed_pet.dcm --mode pet
-
-Python API
-
-Use the framework in your custom scripts:
-
-from reconstruction_framework import PETReconstructor
-
-reconstructor = PETReconstructor(config="config/pet_config.json")
-image = reconstructor.reconstruct("data/sample_pet.dcm")
-image.save("results/reconstructed_pet.dcm")
 
 📊 Benchmarks
-Modality	Processing Time	SSIM Improvement	PSNR Improvement
-PET	3.5 sec/frame	+15%	+10 dB
-SPECT	4.2 sec/frame	+20%	+12 dB
-CT	2.1 sec/frame	+10%	+8 dB
-🤝 Contributing
 
 We welcome contributions! Check out the CONTRIBUTING.md file for guidelines.
 📖 Documentation
