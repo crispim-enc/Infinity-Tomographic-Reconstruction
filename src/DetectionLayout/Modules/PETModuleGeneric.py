@@ -77,7 +77,7 @@ class PETModule:
             xx, zz = np.meshgrid(x_range, z_range)
 
             x_flat = xx.flatten()
-            y_flat = (np.zeros(self._numberVisibleLightSensorsX * self._numberVisibleLightSensorsY)+
+            y_flat = (np.zeros(self._numberVisibleLightSensorsX * self._numberVisibleLightSensorsY) +
                       self._shiftYBetweenVisibleAndHighEnergy)
             z_flat = zz.flatten()
 

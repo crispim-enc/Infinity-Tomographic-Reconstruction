@@ -115,7 +115,6 @@ class DualRotationSystem(Device):
     def numberOfDetectorModulesSideB(self):
         return self._numberOfDetectorModulesSideB
 
-
     def setNumberOfDetectorModulesSideB(self, value):
         self._numberOfDetectorModulesSideB = value
 
