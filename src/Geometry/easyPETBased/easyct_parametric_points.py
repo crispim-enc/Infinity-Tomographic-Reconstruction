@@ -320,7 +320,6 @@ class EasyCTGeometry(DualRotationSystem):
         self._xRayProducer.setFocalSpotInitialPositionXYSystem(self.sourceCenter)
         # print warning if the command is not runned after sourcePositionAfterMovement
 
-
     def detectorSideACoordinatesAfterMovement(self, axialMotorAngle, fanMotorAngle, uniqueIdDetectorheader=None):
         """
         Load the list mode data np.array
@@ -427,6 +426,7 @@ if __name__ == "__main__":
     xrayproducer = GenericRadiativeSource()
 
     newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x_ray_producer=xrayproducer)
+
     #Set source
     newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([-2, 0, 36.2/2])
     newDevice.evaluateInitialSourcePosition()

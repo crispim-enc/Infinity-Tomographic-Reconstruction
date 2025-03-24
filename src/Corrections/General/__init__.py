@@ -4,11 +4,10 @@
 # *******************************************************
 # * FILE: __init__.py
 # * AUTHOR: Pedro Encarnação
-# * DATE: 16/01/2025
+# * DATE: 13/03/2025
 # * LICENSE: "CC BY-NC-SA 4.0"
 # *******************************************************
 
 """
 Brief description of the file.
 """
-from .pyramidalprojector import PyramidalProjector
