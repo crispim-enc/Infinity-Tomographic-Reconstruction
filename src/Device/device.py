@@ -165,18 +165,18 @@ class Device:
         """
         self._geometryObject = geometryObject
 
-    def saveVarsDeviceToFile(self):
-        """
-        Save the device variables to a file
-        Also saves the geometry files  in the same folder
-        :return:
-        """
-        # save the variablesto a json5 file
-        file = open(os.path.join(self._deviceDirectory, "deviceVars.txt"), "w")
-        json5.dump({"deviceUUID": self._deviceUUID,
-                    "deviceName": self._deviceName,
-                    "deviceType": self._deviceType,
-                    "deviceDirectory": self._deviceDirectory}, file)
+    # def saveVarsDeviceToFile(self):
+    #     """
+    #     Save the device variables to a file
+    #     Also saves the geometry files  in the same folder
+    #     :return:
+    #     """
+    #     # save the variablesto a json5 file
+    #     file = open(os.path.join(self._deviceDirectory, "deviceVars.txt"), "w")
+    #     json5.dump({"deviceUUID": self._deviceUUID,
+    #                 "deviceName": self._deviceName,
+    #                 "deviceType": self._deviceType,
+    #                 "deviceDirectory": self._deviceDirectory}, file)
 
         # save the geometry vars to a file
         # self._geometryObject.saveVarsGeometryToFile()

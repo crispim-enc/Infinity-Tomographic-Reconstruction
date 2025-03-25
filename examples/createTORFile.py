@@ -13,10 +13,8 @@ This is an example how to create a TOR file for easyPETCT
 """
 import os
 import numpy as np
-from src.Geometry.easyPETBased import EasyCTGeometry, testSourceDistance
-from src.DetectionLayout.Modules import PETModule, easyPETModule
-from src.DetectionLayout.RadiationProducer import GenericRadiativeSource
-from src.Designer import DeviceDesignerStandalone
+import matplotlib.pyplot as plt
+
 from src.TORFilesReader import ToRFile, AnimalType, PhantomType, AcquisitionInfo, Statistics, RadioisotopeInfo
 
 # filename = "../../allvalues.npy"
@@ -26,55 +24,7 @@ output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor"
 #     os.makedirs(output_path)
 
 
-# Set PET module type
-_module = easyPETModule
-# Set x-ray producer object
-xrayproducer = GenericRadiativeSource()
 
-# Set device
-newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x_ray_producer=xrayproducer)
-
-# Set source
-newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([-2, 0, 36.2 / 2])
-newDevice.evaluateInitialSourcePosition()
-
-# Set modules Side A
-newDevice.setNumberOfDetectorModulesSideA(2)
-moduleSideA_X_translation = np.array([-15, -15], dtype=np.float32)
-moduleSideA_Y_translation = np.array([-2.175, 2.175], dtype=np.float32)
-moduleSideA_Z_translation = np.array([36.2 / 2, 36.2 / 2], dtype=np.float32)
-moduleSideA_alpha_rotation = np.array([0, 0], dtype=np.float32)
-moduleSideA_beta_rotation = np.array([0, 0], dtype=np.float32)
-moduleSideA_sigma_rotation = np.array([-90, -90], dtype=np.float32)
-
-for i in range(newDevice.numberOfDetectorModulesSideA):
-    newDevice.detectorModulesSideA[i].setXTranslation(moduleSideA_X_translation[i])
-    newDevice.detectorModulesSideA[i].setYTranslation(moduleSideA_Y_translation[i])
-    newDevice.detectorModulesSideA[i].setZTranslation(moduleSideA_Z_translation[i])
-    newDevice.detectorModulesSideA[i].setAlphaRotation(moduleSideA_alpha_rotation[i])
-    newDevice.detectorModulesSideA[i].setBetaRotation(moduleSideA_beta_rotation[i])
-    newDevice.detectorModulesSideA[i].setSigmaRotation(moduleSideA_sigma_rotation[i])
-
-newDevice.setNumberOfDetectorModulesSideB(2)
-moduleSideB_X_translation = np.array([75, 75], dtype=np.float32)
-moduleSideB_Y_translation = np.array([-2.175, 2.175], dtype=np.float32)
-moduleSideB_Z_translation = np.array([36.2 / 2, 36.2 / 2], dtype=np.float32)
-moduleSideB_alpha_rotation = np.array([0, 0], dtype=np.float32)
-moduleSideB_beta_rotation = np.array([0, 0], dtype=np.float32)
-moduleSideB_sigma_rotation = np.array([90, 90], dtype=np.float32)
-
-for i in range(newDevice.numberOfDetectorModulesSideB):
-    newDevice.detectorModulesSideB[i].setXTranslation(moduleSideB_X_translation[i])
-    newDevice.detectorModulesSideB[i].setYTranslation(moduleSideB_Y_translation[i])
-    newDevice.detectorModulesSideB[i].setZTranslation(moduleSideB_Z_translation[i])
-    newDevice.detectorModulesSideB[i].setAlphaRotation(moduleSideB_alpha_rotation[i])
-    newDevice.detectorModulesSideB[i].setBetaRotation(moduleSideB_beta_rotation[i])
-    newDevice.detectorModulesSideB[i].setSigmaRotation(moduleSideB_sigma_rotation[i])
-
-# newDevice
-newDevice.setDeviceName("EasyCT")
-newDevice.setDeviceType("CT")
-newDevice.generateInitialCoordinates()
 #-----------------------------------------
 # create listMode
 subject = AnimalType()
@@ -101,10 +51,47 @@ ToRFile_creator.setAcquisitionInfo(scanHeader)
 ToRFile_creator.setListMode(listmode)
 ToRFile_creator.write()
 
-
+#######CHECK TESTS###################
+#######UNCOMMENT TO CHECK FILE AND GEOMETRY INTEGRATY############
 ToRFile_reader = ToRFile(filepath=output_path)
 ToRFile_reader.read()
 print(ToRFile_reader.systemInfo)
+
+deviceFromTOR = ToRFile_reader.systemInfo
+
+axial_motor_angles = np.deg2rad(np.arange(0, 360, 45))
+
+fan_motor_angles = np.deg2rad(np.arange(-45, 60, 15))
+# repeat the fan motor angles for each axial motor angle
+fan_motor_angles = np.repeat(fan_motor_angles, len(axial_motor_angles))
+axial_motor_angles = np.tile(axial_motor_angles, len(fan_motor_angles) // len(axial_motor_angles))
+
+deviceFromTOR.sourcePositionAfterMovement(axial_motor_angles, fan_motor_angles)
+plt.plot(deviceFromTOR.originSystemWZ[0], deviceFromTOR.originSystemWZ[1], 'ro', label='Origin Fan Motor')
+# plot source center
+plt.plot(deviceFromTOR.sourceCenter[:, 0], deviceFromTOR.sourceCenter[:, 1], 'bo', label='Source Center')
+# plot a line from the origin to the source center at fan motor angle 0
+testSourceDistance(deviceFromTOR.xRayProducer.focalSpotInitialPositionWKSystem, deviceFromTOR.sourceCenter,
+                   deviceFromTOR.originSystemWZ.T)
+index_fan_motor_angle_0 = np.where(fan_motor_angles == 0)
+source_center_fan_motor_angle_0 = deviceFromTOR.sourceCenter[index_fan_motor_angle_0]
+origin_fan_motor_angle_0 = deviceFromTOR.originSystemWZ.T[index_fan_motor_angle_0]
+
+# plt.plot(origin_fan_motor_angle_0[0], origin_fan_motor_angle_0[1], 'x')
+plt.plot(source_center_fan_motor_angle_0[:, 0], source_center_fan_motor_angle_0[:, 1], 'gx')
+
+plt.plot([origin_fan_motor_angle_0[:, 0], source_center_fan_motor_angle_0[:, 0]],
+         [origin_fan_motor_angle_0[:, 1], source_center_fan_motor_angle_0[:, 1]], '-')
+plt.legend()
+plt.title("Configuration Source side of detector module A")
+plt.title("Configuration Source in front module")
+plt.show()
+
+designer = DeviceDesignerStandalone(device=deviceFromTOR)
+designer.addDevice()
+designer.addxRayProducerSource()
+designer.startRender()
+
 # ToRFile_creator.setAcquisitionInfo(scanHeader)
 # ToRFile_creator.setListMode(listmode)
 
