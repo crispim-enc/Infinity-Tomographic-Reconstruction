@@ -264,7 +264,6 @@ class MobyPhantomMapGenerator:
         print("Volume_phantom: {} ml".format(self.volume_total_mice))
         print("weight_total_mice: {} g".format(self.weight_total_mice))
 
-
     def generate_new_activity_map(self):
         """ """
         self.load_s_values()

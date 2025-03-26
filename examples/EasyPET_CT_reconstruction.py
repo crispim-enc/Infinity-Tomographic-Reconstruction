@@ -59,37 +59,9 @@ class ReconstructionEasyPETCT:
         self.saved_image_by_iteration = True
         self.energyRegion = energyregion
         crystals_geometry = [32, 1]
-        listmode = np.load(file_path)
-        # listmode[:,2] += 1
-        # listmode[:,3] += 1
-        listmode = listmode[listmode[:, 2] < 64]
-        listmode = listmode[listmode[:, 3] < 64]
-        listmode = listmode[listmode[:,6] < 481]
-
-        idA = np.copy(listmode[:, 2])
-        idB = np.copy(listmode[:, 3])
-        listmode[:, 2] = idB
-        listmode[:, 3] = idA
-
-        print("Top min: {}".format(listmode[:,5].min()))
-        print("Top max: {}".format(listmode[:,5].max()))
-        print("Bot min: {}".format(listmode[:,4].min()))
-        print("Bot max: {}".format(listmode[:,4].max()))
-        print("IdA min: {}".format(listmode[:,2].min()))
-        print("IdA max: {}".format(listmode[:,2].max()))
-        print("IdB min: {}".format(listmode[:,3].min()))
-        print("IdB max: {}".format(listmode[:,3].max()))
-
-
-        #
 
         self.parametric_coordinates = SetParametricsPoints(listMode=self.listMode, geometry_file=self.geometry_file,
                                                       simulation_files=False)
-        # pointCenterlist = self.parametric_coordinates.sourceCenter
-        #  = self.parametric_coordinates.vertice1
-        # pointCorner2List = self.parametric_coordinates.vertice2
-        # pointCorner3List = self.parametric_coordinates.vertice3
-        # pointCorner4List = self.parametric_coordinates.vertice4
 
         radial_fov_range = [0, 23]
         self.projector = PyramidalProjector(voxelSize=voxelSize, FovRadialStart=radial_fov_range[0],
@@ -191,69 +163,6 @@ if not os.path.exists(output_path):
 
 voxelSize =[0.5,0.5,0.5]
 
-list_mode = np.load(filename)
-
-
-# Set PET module type
-_module = easyPETModule
-
-# Set x-ray producer object
-xrayproducer = GenericRadiativeSource()
-
-# Set device
-newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x_ray_producer=xrayproducer)
-
-# Set source
-newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([-2, 0, 36.2 / 2])
-newDevice.evaluateInitialSourcePosition()
-
-# Set modules Side A
-newDevice.setNumberOfDetectorModulesSideA(2)
-moduleSideA_X_translation = np.array([-15, -15], dtype=np.float32)
-moduleSideA_Y_translation = np.array([-2.175, 2.175], dtype=np.float32)
-moduleSideA_Z_translation = np.array([36.2 / 2, 36.2 / 2], dtype=np.float32)
-moduleSideA_alpha_rotation = np.array([0, 0], dtype=np.float32)
-moduleSideA_beta_rotation = np.array([0, 0], dtype=np.float32)
-moduleSideA_sigma_rotation = np.array([-90, -90], dtype=np.float32)
-
-for i in range(newDevice.numberOfDetectorModulesSideA):
-    newDevice.detectorModulesSideA[i].setXTranslation(moduleSideA_X_translation[i])
-    newDevice.detectorModulesSideA[i].setYTranslation(moduleSideA_Y_translation[i])
-    newDevice.detectorModulesSideA[i].setZTranslation(moduleSideA_Z_translation[i])
-    newDevice.detectorModulesSideA[i].setAlphaRotation(moduleSideA_alpha_rotation[i])
-    newDevice.detectorModulesSideA[i].setBetaRotation(moduleSideA_beta_rotation[i])
-    newDevice.detectorModulesSideA[i].setSigmaRotation(moduleSideA_sigma_rotation[i])
-
-newDevice.setNumberOfDetectorModulesSideB(2)
-moduleSideB_X_translation = np.array([75, 75], dtype=np.float32)
-moduleSideB_Y_translation = np.array([-2.175, 2.175], dtype=np.float32)
-moduleSideB_Z_translation = np.array([36.2 / 2, 36.2 / 2], dtype=np.float32)
-moduleSideB_alpha_rotation = np.array([0, 0], dtype=np.float32)
-moduleSideB_beta_rotation = np.array([0, 0], dtype=np.float32)
-moduleSideB_sigma_rotation = np.array([90, 90], dtype=np.float32)
-
-for i in range(newDevice.numberOfDetectorModulesSideB):
-    newDevice.detectorModulesSideB[i].setXTranslation(moduleSideB_X_translation[i])
-    newDevice.detectorModulesSideB[i].setYTranslation(moduleSideB_Y_translation[i])
-    newDevice.detectorModulesSideB[i].setZTranslation(moduleSideB_Z_translation[i])
-    newDevice.detectorModulesSideB[i].setAlphaRotation(moduleSideB_alpha_rotation[i])
-    newDevice.detectorModulesSideB[i].setBetaRotation(moduleSideB_beta_rotation[i])
-    newDevice.detectorModulesSideB[i].setSigmaRotation(moduleSideB_sigma_rotation[i])
-
-# S
-# newDevice
-newDevice.setDeviceName("EasyCT")
-newDevice.setDeviceType("CT")
-newDevice.generateInitialCoordinates()
-
-from src.TORFilesReader import ToRFile
-
-
-
-# newDevice.generateDeviceUUID()
-# newDevice.createDirectory()
-print(newDevice.deviceUUID)
-print(newDevice.deviceName)
 
 
 #TESTS
@@ -284,10 +193,6 @@ origin_fan_motor_angle_0 = newDevice.originSystemWZ.T[index_fan_motor_angle_0]
 # plt.show()
 
 # add visualization
-designer = DeviceDesignerStandalone(device=newDevice)
-designer.addDevice()
-designer.addxRayProducerSource()
-designer.startRender()
 
 r = ReconstructionEasyPETCT(filename, iterations=10, subsets=1, algorithm="LM-MLEM",
                  voxelSize=voxelSize, radial_fov_range=None, energyregion=None, file_path_output=output_path)

@@ -7,21 +7,38 @@
 # * DATE: 25/03/2025
 # * LICENSE: "CC BY-NC-SA 4.0"
 # *******************************************************
+
+"""
+This is an example how to create a new device. In this case a new system for EasyCT
+The device should be run only one time to create a new device.  A folder with a unique identifier will be created
+Afterwars the device can be read from the folder and added to the new TOR files created
+"""
 import numpy as np
 from src.Geometry.easyPETBased import EasyCTGeometry, testSourceDistance
 from src.DetectionLayout.Modules import PETModule, easyPETModule
 from src.DetectionLayout.RadiationProducer import GenericRadiativeSource
-from src.Device import StoreDeviceInFo
 from src.Designer import DeviceDesignerStandalone
+from src.Device import StoreDeviceInFo
 
 # Set PET module type
 _module = easyPETModule
 # Set x-ray producer object
 xrayproducer = GenericRadiativeSource()
+xrayproducer.setSourceName("Am-241")
+xrayproducer.setSourceActivity(1.0 * 37000)
+xrayproducer.setFocalSpotDiameter(1)
+xrayproducer.setShieldingShape("Cylinder")
+xrayproducer.setShieldingMaterial("Lead")
+xrayproducer.setShieldingDensity(11.34)
+xrayproducer.setShieldingThickness(0.5)
+xrayproducer.setShieldingHeight(3)
+xrayproducer.setShieldingRadius(1.25)
+xrayproducer.setMainEmissions({1: {"energy": 59.54, "intensity": 0.36},
+                                 2: {"energy": 26.34, "intensity": 0.024},
+                                 })
 
 # Set device
 newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x_ray_producer=xrayproducer)
-
 # Set source
 newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([-2, 0, 36.2 / 2])
 newDevice.evaluateInitialSourcePosition()
@@ -64,15 +81,19 @@ newDevice.setDeviceName("EasyCT")
 newDevice.setDeviceType("CT")
 newDevice.generateInitialCoordinates()
 
+device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT"
 # newDevice.generateDeviceUUID() # one time only
 # newDevice.createDirectory()  # one time only
-# storeDevice = StoreDeviceInFo(device_directory=newDevice.deviceDirectory)  # one time only
-# storeDevice.createDeviceInDirectory(object=newDevice)
-print(newDevice.deviceUUID)
-print(newDevice.deviceName)
 
-device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT"
+# storeDevice = StoreDeviceInFo(device_directory=newDevice.deviceDirectory)  # one time only
+storeDevice = StoreDeviceInFo(device_directory=device_path)  # one time only
+storeDevice.createDeviceInDirectory(object=newDevice)
 
 getDevice = StoreDeviceInFo(device_directory=device_path)
 deviceRead = getDevice.readDeviceFromDirectory()
 print(deviceRead)
+
+designer = DeviceDesignerStandalone(device=newDevice)
+designer.addDevice()
+designer.addxRayProducerSource()
+designer.startRender()

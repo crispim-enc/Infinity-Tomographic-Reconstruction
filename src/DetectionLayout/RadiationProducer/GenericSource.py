@@ -204,7 +204,6 @@ class GenericRadiativeSource:
         if value != self._shieldingHeight:
             self._shieldingHeight = value
 
-
     @property
     def shieldingRadius(self):
         """
@@ -220,3 +219,30 @@ class GenericRadiativeSource:
         if value != self._shieldingRadius:
             self._shieldingRadius = value
 
+    @property
+    def mainEmissions(self):
+        """
+        Returns the main emissions.
+        """
+        return self._mainEmissions
+
+    def setMainEmissions(self, value):
+        """
+        Sets the main emissions.
+        """
+        if value != self._mainEmissions:
+            self._mainEmissions = value
+
+    @property
+    def focalSpotDiameter(self):
+        """
+        Returns the focal spot diameter.
+        """
+        return self._focalSpotDiameter
+
+    def setFocalSpotDiameter(self, value):
+        """
+        Sets the focal spot diameter.
+        """
+        if value != self._focalSpotDiameter:
+            self._focalSpotDiameter = value

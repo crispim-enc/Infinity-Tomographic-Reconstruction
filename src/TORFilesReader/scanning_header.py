@@ -8,6 +8,13 @@
 # * LICENSE: "CC BY-NC-SA 4.0"
 # *******************************************************
 
+__author__ = "Pedro Encarnação"
+__license__ = "CC BY-NC-SA 4.0"
+__version__ = "0.1.0alpha"
+
+
+import time
+
 
 class AcquisitionInfo:
     def __init__(self):
@@ -84,18 +91,32 @@ class AcquisitionInfo:
     def radioisotope(self):
         return self._radioisotope
 
+    @property
+    def scanType(self):
+        return self._scanType
 
-class Statistics:
-    def __init__(self):
-        self._mean = None
-        self._std = None
-        self._min = None
-        self._max = None
-        self._median = None
-        self._mode = None
-        self._percentile = None
-        self._histogram = None
-        self._histogramBins = None
+    def setScanType(self, scanType):
+        self._scanType = scanType
+
+    def setTecnhician(self, tecnichian):
+        self._tecnhician = tecnichian
+
+    @property
+    def tecnichian(self):
+        return self._tecnhician
+
+    @property
+    def date(self):
+        return self._date
+
+    def setDate(self, date):
+        self._date = date
+
+        if  not isinstance(self._date, str):
+            raise ValueError("Date must be a time.time() obj or a string")
+
+
+
 
 
 

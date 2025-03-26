@@ -183,7 +183,7 @@ class ReconstructionInitializer:
         if live_normalization_pre_calculation is False:
             self.entry_im = None
             self.pixeltoangle = False
-            self.reading_data = Easypetdata.listMode
+            self.reading_data = Easypetdata.fileBodyData
             self.header = Easypetdata.header
             self.Version_binary = Easypetdata.Version_binary
             self.dates = Easypetdata.dates

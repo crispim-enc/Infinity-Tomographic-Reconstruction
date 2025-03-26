@@ -8,9 +8,6 @@
 # * LICENSE: "CC BY-NC-SA 4.0"
 # *******************************************************
 
-"""
-Brief description of the file.
-"""
 
 __version__ = "1.0.0"
 

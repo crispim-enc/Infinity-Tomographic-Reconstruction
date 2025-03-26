@@ -32,7 +32,7 @@ class GenerateCoincidencesAndAnhnilationsPositions(ReadRootFile):
             SameTime: the coincidence is generated when the events have the same time
         _coincidenceWindow: the coincidence window in nano seconds
         doubleScannerFormat: if the root file returns two arrays for the singles, one for each scanner
-        _listMode: the list mode data
+        _fileBodyData: the list mode data
         _coincidences: the coincidences data
         _anhnilations: the anhnilations data
         _singlesScanner1: the singles data for the first module

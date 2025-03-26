@@ -5,7 +5,7 @@ def angle_correction(self):
     # listmode = listmode[listmode[:,0] < 550]
     # listmode = listmode[listmode[:,1] > 400]
     # listmode = listmode[listmode[:,1] < 550]
-    listmode = self.listMode
+    listmode = self.fileBodyData
     bot = listmode[:, 4]
     top = listmode[:, 5]
 
