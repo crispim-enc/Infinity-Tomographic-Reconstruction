@@ -428,7 +428,7 @@ class NEMAIQ2008NU:
 
         i = 0
         for ob in self.objects:
-            print(ob.density)
+            # print(ob.density)
             image[((xxx - ob.center[0]) ** 2 + (yyy - ob.center[1]) ** 2 <= ob.rMax ** 2) &
                   ((xxx - ob.center[0]) ** 2 + (yyy - ob.center[1]) ** 2 >= ob.rMin ** 2) &
                   (zzz >= (ob.center[2] - ob.height / 2)) & (zzz <= (ob.center[2] + ob.height / 2))] = ob.density

@@ -65,7 +65,7 @@ tecnhician.setOrganization("Universidade de Aveiro")
 scanHeader = AcquisitionInfo()
 scanHeader.setId(1)
 scanHeader.setScanType("CT")
-scanHeader.setIndexesOfFrames([0, 1000])
+scanHeader.setIndexesOfFrames([0, 1000, 2000, 3000, 4000])
 scanHeader.setSubject(subject)
 scanHeader.setTecnhician(tecnhician)
 # scanHeader.setNumberOfFrames(1)
@@ -79,9 +79,10 @@ scanHeader.setDate(time.strftime("%Y-%m-%d %H:%M:%S"))
 listmode = np.load(filename) # should be a numpy array with the listmode data
 listModeBody = ListModeBody()
 listModeBody.setListmode(listmode)
-# listModeBody.setListModeFields(["energyA", "energyB", "IDA", "IDB", "AXIAL_MOTOR", "FAN_MOTOR", "TIME"])
-# listModeBody.setIndexesOfFrames(scanHeader.indexesOfFrames)
-# listModeBody.generateStatistics()
+listModeBody.setListmodeFields(["ENERGYA", "ENERGYB", "IDA", "IDB", "AXIAL_MOTOR", "FAN_MOTOR", "TIME"])
+listModeBody.setFrameStartIndexes(scanHeader.indexesOfFrames)
+listModeBody.generateStatistics()
+listModeBody.printStatistics()
 
 ToRFile_creator = ToRFile(filepath=output_path)
 ToRFile_creator.setSystemInfo(newDevice)
@@ -93,6 +94,13 @@ ToRFile_creator.write()
 #######UNCOMMENT TO CHECK FILE AND GEOMETRY INTEGRATY############
 ToRFile_reader = ToRFile(filepath=output_path)
 ToRFile_reader.read()
+listModeBody_read = ToRFile_reader.fileBodyData
+
+plt.hist(listModeBody_read["ENERGYA"], bins=500)
+plt.figure()
+plt.hist2d(listModeBody_read["AXIAL_MOTOR"], listModeBody_read["FAN_MOTOR"],
+           bins=(listModeBody_read.uniqueValuesCount[4], listModeBody_read.uniqueValuesCount[5]))
+plt.show()
 print(ToRFile_reader.systemInfo)
 
 deviceFromTOR = ToRFile_reader.systemInfo
