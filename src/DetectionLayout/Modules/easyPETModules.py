@@ -23,14 +23,59 @@ class easyPETModule(PETModule):
     Methods:
 
     """
-    def __init__(self, module_id=1, model="easyPET.3D_32"):
+    def __init__(self, module_id=1,*args, **kwargs):
         # super(easyPETModule, self).__init__()
         super().__init__(module_id)
-        # self._idModule = module_id
-        if model == "easyPET.3D_32":
-            self.model32()
+
+    def model32_2(self):
+        """
+            Create the easyPETBased module with 32 detectors.
+        """
+        self._numberVisibleLightSensorsX = int(2)
+        self._numberVisibleLightSensorsY = int(32)
+        self._numberHighEnergyLightDetectorsX = int(2)
+        self._numberHighEnergyLightDetectorsY = int(32)
+        self._numberHighEnergyLightDetectors = None
+        self._totalNumberVisibleLightSensors = self._numberVisibleLightSensorsX * self._numberVisibleLightSensorsY
+        self._totalNumberHighEnergyLightDetectors = self._numberHighEnergyLightDetectorsX * self._numberHighEnergyLightDetectorsY
+        self._reflectorThicknessX = 0.28
+        self._reflectorThicknessY = 0.35
+        self._modelVisibleLightSensors = [HamamatsuS13360Series(i) for i in
+                                          range(self._totalNumberVisibleLightSensors)]
+        self._shiftXBetweenVisibleAndHighEnergy = 0
+        self._shiftYBetweenVisibleAndHighEnergy = -30
+        self._shiftZBetweenVisibleAndHighEnergy = 0
+        self._modelHighEnergyLightDetectors = [LYSOCrystal(i) for i in
+                                               range(self._totalNumberHighEnergyLightDetectors)]
+        for i in range(self._totalNumberHighEnergyLightDetectors):
+            self._modelHighEnergyLightDetectors[i].setCrystalID(i)
+            self._modelHighEnergyLightDetectors[i].setCristalSize(2, 2, 30)
 
     def model32(self):
+        """
+            Create the easyPETBased module with 32 detectors.
+        """
+        self._numberVisibleLightSensorsX = int(1)
+        self._numberVisibleLightSensorsY = int(32)
+        self._numberHighEnergyLightDetectorsX = int(1)
+        self._numberHighEnergyLightDetectorsY = int(32)
+        self._numberHighEnergyLightDetectors = None
+        self._totalNumberVisibleLightSensors = self._numberVisibleLightSensorsX * self._numberVisibleLightSensorsY
+        self._totalNumberHighEnergyLightDetectors = self._numberHighEnergyLightDetectorsX * self._numberHighEnergyLightDetectorsY
+        self._reflectorThicknessX = 0.28
+        self._reflectorThicknessY = 0.35
+        self._modelVisibleLightSensors = [HamamatsuS13360Series(i) for i in
+                                          range(self._totalNumberVisibleLightSensors)]
+        self._shiftXBetweenVisibleAndHighEnergy = 0
+        self._shiftYBetweenVisibleAndHighEnergy = -30
+        self._shiftZBetweenVisibleAndHighEnergy = 0
+        self._modelHighEnergyLightDetectors = [LYSOCrystal(i) for i in
+                                               range(self._totalNumberHighEnergyLightDetectors)]
+        for i in range(self._totalNumberHighEnergyLightDetectors):
+            self._modelHighEnergyLightDetectors[i].setCrystalID(i)
+            self._modelHighEnergyLightDetectors[i].setCristalSize(2, 2, 30)
+
+    def model16_2(self):
         """
         Create the easyPETBased module with 32 detectors.
         """

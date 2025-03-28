@@ -35,9 +35,9 @@ class DeviceDesignerStandalone:
         cylinder.SetRadius(self.device.xRayProducer.shieldingRadius)
         cylinder.SetHeight(self.device.xRayProducer.shieldingHeight)
         #location of the cylinder
-        cylinder.SetCenter(self.device.xRayProducer.focalSpotInitialPositionXYSystem[0],
-                           self.device.xRayProducer.focalSpotInitialPositionXYSystem[2],
-                           self.device.xRayProducer.focalSpotInitialPositionXYSystem[1])
+        cylinder.SetCenter(self.device.xRayProducer.focalSpotInitialPositionXYSystem[0,0],
+                           self.device.xRayProducer.focalSpotInitialPositionXYSystem[0,1],
+                           self.device.xRayProducer.focalSpotInitialPositionXYSystem[0,2])
         cylinder.SetResolution(100)
         cylinder.Update()
         #add the cylinder to the renderer

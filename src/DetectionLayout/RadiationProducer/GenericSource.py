@@ -47,7 +47,7 @@ class GenericRadiativeSource:
         with open(file_name, "w") as file:
             json5.dump({"sourceName": self._sourceName,
                         "sourceActivity": self._sourceActivity,
-                        "focalSpot": self._focalSpot,
+                        "focalSpot": self._focalSpotInitialPositionXYSystem,
                         "focalSpotDiameter": self._focalSpotDiameter,
                         "shieldingShape": self._shieldingShape,
                         "shieldingMaterial": self._shieldingMaterial,
@@ -127,9 +127,10 @@ class GenericRadiativeSource:
         if isinstance(value, list):
             value = np.array(value, dtype=np.float32)
 
-            self._focalSpotIntialPositionXYSystem = value
+            self._focalSpotInitialPositionXYSystem = value
         elif isinstance(value, np.ndarray):
-            self._focalSpotIntialPositionXYSystem = value
+            self._focalSpotInitialPositionXYSystem = value
+            print("Focal spot initial position set to: ", self._focalSpotInitialPositionXYSystem)
 
         else:
             raise ValueError("Focal spot initial position must be a list or np.array.")

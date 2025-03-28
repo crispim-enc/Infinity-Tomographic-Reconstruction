@@ -295,13 +295,12 @@ class EasyCTGeometry(DualRotationSystem):
             raise Warning("Detector module B is not defined. You are choosing a only a CT based solution."
                       "\nIf a PET/CT solution is needit define a module type for side B ")
 
-
         # self._detectorModuleA = detector_moduleA
         self._xRayProducer = x_ray_producer
-
         self._sourceCenter = None
         self._centerFace = None
         self._model = model
+
         if model == "Pyramidal":
             self._corner1list = None
             self._corner2list = None
@@ -317,63 +316,79 @@ class EasyCTGeometry(DualRotationSystem):
         If it runned after sourcePositionAfterMovement, it will rewrite vector of possitions
         """
         self.sourcePositionAfterMovement(np.zeros(1), np.zeros(1))
-        self._xRayProducer.setFocalSpotInitialPositionXYSystem(self.sourceCenter)
+        self._xRayProducer.setFocalSpotInitialPositionXYSystem(self._sourceCenter)
         # print warning if the command is not runned after sourcePositionAfterMovement
 
-    def detectorSideACoordinatesAfterMovement(self, axialMotorAngle, fanMotorAngle, uniqueIdDetectorheader=None):
+    def generateInitialCoordinatesXYSystem(self):
+        """
+        Generate the initial coordinates in the XY system
+        """
+        axial_motor_angles = np.zeros(1)
+        fan_motor_angles = np.zeros(1)
+        self.sourcePositionAfterMovement(axial_motor_angles, fan_motor_angles)
+
+    def detectorSideBCoordinatesAfterMovement(self, axialMotorAngle, fanMotorAngle, uniqueIdDetectorheader=None):
         """
         Load the list mode data np.array
         """
+
+        crystalCenters = [self.detectorModulesSideB[0].modelHighEnergyLightDetectors[i].centroid for i in uniqueIdDetectorheader]
+        crystalCenters = np.array(crystalCenters, dtype=np.float32)
+
         fanMotorAngle = np.deg2rad(fanMotorAngle) + np.pi
         axialMotorAngle = np.deg2rad(axialMotorAngle)
-        axialDetectorCoordinate = [geometry_file[(uniqueIdDetectorheader).astype(np.int32), i] for i in  range(3)]
+        # axialDetectorCoordinate = [geometry_file[(uniqueIdDetectorheader).astype(np.int32), i] for i in  range(3)]
 
-        half_crystal_depth = crystal_depth / 2
-        half_crystal_height = crystal_height / 2
-        half_crystal_width = crystal_width / 2
+        half_crystal_depth = self.detectorModulesSideB[0].modelHighEnergyLightDetectors[0].crystalSizeZ / 2
+        half_crystal_height = self.detectorModulesSideB[0].modelHighEnergyLightDetectors[0].crystalSizeY / 2
+        half_crystal_width = self.detectorModulesSideB[0].modelHighEnergyLightDetectors[0].crystalSizeX / 2
         # End Points - Crystal on the other side of top motor positions
-        zav = np.float32(np.arctan(axialDetectorCoordinate / (distance_crystals + half_crystal_depth)))
-        vtr = np.float32(
-            ((distance_crystals + half_crystal_depth) ** 2 + crystal_distance_to_center_fov_sideB[1] ** 2) ** 0.5)
+        zav = np.float32(np.arctan(crystalCenters[:,1] / (self.distanceFanMotorToDetectorModulesOnSideB +
+                                                          half_crystal_depth)))
+        vtr = np.float32(((self.distanceFanMotorToDetectorModulesOnSideB + half_crystal_depth) ** 2 + crystalCenters[:,1]  ** 2) ** 0.5)
+
+
+        #
+        #     vertice = np.array([x_corner, y_corner, z_corner], dtype=np.float
 
         self.centerFace = DualRotationSystem.applyDualRotation(fanMotorAngle + zav, vtr, axialMotorAngle,
-                                                               self._distanceBetweenMotors, )
-        angle_to_vertice = np.float32(
-            np.arctan(half_crystal_width / (distance_crystals)))
-
-        distance_to_vertice_pos = np.float32(
-            ((distance_crystals) ** 2 + (crystal_distance_to_center_fov_sideB[1] + half_crystal_width) ** 2) ** 0.5)
-
-        distance_to_vertice_neg = np.float32(
-            ((distance_crystals) ** 2 + (crystal_distance_to_center_fov_sideB[1] - half_crystal_width) ** 2) ** 0.5)
-
-        A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle + angle_to_vertice, distance_to_vertice_pos, bot)
-        x_corner = A00 * B[0] - A01 * B[1] + self._distanceBetweenMotors * A00 * B[2]
-        y_corner = A01 * B[0] + A00 * B[1] + self._distanceBetweenMotors * A01 * B[2]
-        z_corner = crystal_distance_to_center_fov_sideB[2] + half_crystal_height
-
-        self._corner1list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
-
-        A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle - angle_to_vertice, distance_to_vertice_neg, bot)
-        x_corner = A00 * B[0] - A01 * B[1] + self._distanceBetweenMotors  * A00 * B[2]
-        y_corner = A01 * B[0] + A00 * B[1] + self._distanceBetweenMotors  * A01 * B[2]
-        z_corner = crystal_distance_to_center_fov_sideB[2] + half_crystal_height
-
-        self.corner2list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
-
-        A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle - angle_to_vertice, distance_to_vertice_neg, bot)
-        x_corner = A00 * B[0] - A01 * B[1] + distance_between_motors * A00 * B[2]
-        y_corner = A01 * B[0] + A00 * B[1] + distance_between_motors * A01 * B[2]
-        z_corner = crystal_distance_to_center_fov_sideB[2] - half_crystal_height
-
-        self.corner3list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
-
-        A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle + angle_to_vertice, distance_to_vertice_pos, bot)
-        x_corner = A00 * B[0] - A01 * B[1] + distance_between_motors * A00 * B[2]
-        y_corner = A01 * B[0] + A00 * B[1] + distance_between_motors * A01 * B[2]
-        z_corner = crystal_distance_to_center_fov_sideB[2] - half_crystal_height
-
-        self.corner4list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
+                                                               self._distanceBetweenMotors, crystalCenters[:,2])  # for evaluation of the center of the face
+        # angle_to_vertice = np.float32(
+        #     np.arctan(half_crystal_width / (distance_crystals)))
+        #
+        # distance_to_vertice_pos = np.float32(
+        #     ((distance_crystals) ** 2 + (crystal_distance_to_center_fov_sideB[1] + half_crystal_width) ** 2) ** 0.5)
+        #
+        # distance_to_vertice_neg = np.float32(
+        #     ((distance_crystals) ** 2 + (crystal_distance_to_center_fov_sideB[1] - half_crystal_width) ** 2) ** 0.5)
+        #
+        # A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle + angle_to_vertice, distance_to_vertice_pos, bot)
+        # x_corner = A00 * B[0] - A01 * B[1] + self._distanceBetweenMotors * A00 * B[2]
+        # y_corner = A01 * B[0] + A00 * B[1] + self._distanceBetweenMotors * A01 * B[2]
+        # z_corner = crystal_distance_to_center_fov_sideB[2] + half_crystal_height
+        #
+        # self._corner1list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
+        #
+        # A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle - angle_to_vertice, distance_to_vertice_neg, bot)
+        # x_corner = A00 * B[0] - A01 * B[1] + self._distanceBetweenMotors  * A00 * B[2]
+        # y_corner = A01 * B[0] + A00 * B[1] + self._distanceBetweenMotors  * A01 * B[2]
+        # z_corner = crystal_distance_to_center_fov_sideB[2] + half_crystal_height
+        #
+        # self.corner2list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
+        #
+        # A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle - angle_to_vertice, distance_to_vertice_neg, bot)
+        # x_corner = A00 * B[0] - A01 * B[1] + distance_between_motors * A00 * B[2]
+        # y_corner = A01 * B[0] + A00 * B[1] + distance_between_motors * A01 * B[2]
+        # z_corner = crystal_distance_to_center_fov_sideB[2] - half_crystal_height
+        #
+        # self.corner3list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
+        #
+        # A00, A01, B = DualRotationSystem.dotAB(fanMotorAngle + angle_to_vertice, distance_to_vertice_pos, bot)
+        # x_corner = A00 * B[0] - A01 * B[1] + distance_between_motors * A00 * B[2]
+        # y_corner = A01 * B[0] + A00 * B[1] + distance_between_motors * A01 * B[2]
+        # z_corner = crystal_distance_to_center_fov_sideB[2] - half_crystal_height
+        #
+        # self.corner4list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
 
     def sourcePositionAfterMovement(self, axialMotorAngle, fanMotorAngle):
 
@@ -386,7 +401,7 @@ class EasyCTGeometry(DualRotationSystem):
         RP = np.array(
             [r_a * np.cos(axialMotorAngle), r_a * np.sin(axialMotorAngle), np.zeros(axialMotorAngle.shape[0])],
             dtype=np.float32)  # rotation point
-        self._originSystemWZ = RP
+        self._originSystemWK = RP
 
         if sourceDistanceToWZOrigin == 0:
             sourceCenter = np.copy(RP)
@@ -468,7 +483,7 @@ if __name__ == "__main__":
     # newDevice
     newDevice.setDeviceName("EasyCT")
     newDevice.setDeviceType("CT")
-    newDevice.generateInitialCoordinates()
+    newDevice.generateInitialCoordinatesWKSystem()
 
     # newDevice.generateDeviceUUID()
     # newDevice.createDirectory()

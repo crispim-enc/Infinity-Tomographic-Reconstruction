@@ -24,7 +24,8 @@ class DualRotationSystem(Device):
         self._distanceBetweenMotors = 30
         self._distanceFanMotorToDetectorModulesOnSideA = 0
         self._distanceFanMotorToDetectorModulesOnSideB = 60
-        self._originSystemWZ = np.array([0, 0, 0])
+        self._originSystemWK = np.array([0, 0, 0])
+        self._originSystemXY = np.array([0, 0, 0])
         self._numberOfDetectorModulesSideA = 2
         self._numberOfDetectorModulesSideB = 2
 
@@ -34,7 +35,7 @@ class DualRotationSystem(Device):
         if self._detectorModuleObjB is not None:
             self._detectorModulesSideB = [self._detectorModuleObjB(i) for i in range(self._numberOfDetectorModulesSideB)]
 
-    def generateInitialCoordinates(self):
+    def generateInitialCoordinatesWKSystem(self):
         """
         Generate the initial coordinates of the system
         """
@@ -50,15 +51,24 @@ class DualRotationSystem(Device):
         except AttributeError:
             pass
 
+    def generateInitialCoordinatesXYSystem(self):
+        """
+        Evaluate the initial position of the detectors
+        """
+        raise NotImplementedError("Method not implemented. Method should be implemented in the child class")
+
     def detectorSideACoordinatesAfterMovement(self, axialMotorAngle, fanMotorAngle, uniqueIdDetectorheaderA=None):
         """
         Load the list mode data np.array
         """
+        raise NotImplementedError("Method not implemented. Method should be implemented in the child class")
 
     def detectorSideBCoordinatesAfterMovement(self, axialMotorAngle, fanMotorAngle, uniqueIdDetectorheaderB=None):
         """
 
         """
+        raise NotImplementedError("Method not implemented. Method should be implemented in the child class")
+
 
     @staticmethod
     def _rotatePoint(angle, initial_point):
@@ -89,7 +99,7 @@ class DualRotationSystem(Device):
 
     @property
     def originSystemWZ(self):
-        return self._originSystemWZ
+        return self._originSystemWK
 
     @property
     def detectorModulesSideA(self):
@@ -122,3 +132,28 @@ class DualRotationSystem(Device):
             self._detectorModulesSideB = [self._detectorModuleObjB(i) for i in range(self._numberOfDetectorModulesSideB)]
         else:
             raise AttributeError("Detector Module B is not defined")
+
+    @property
+    def distanceBetweenMotors(self):
+        return self._distanceBetweenMotors
+
+    def setDistanceBetweenMotors(self, value):
+        self._distanceBetweenMotors = value
+
+    @property
+    def distanceFanMotorToDetectorModulesOnSideA(self):
+        return self._distanceFanMotorToDetectorModulesOnSideA
+
+    def setDistanceFanMotorToDetectorModulesOnSideA(self, value):
+        self._distanceFanMotorToDetectorModulesOnSideA = value
+
+    @property
+    def distanceFanMotorToDetectorModulesOnSideB(self):
+        return self._distanceFanMotorToDetectorModulesOnSideB
+
+    def setDistanceFanMotorToDetectorModulesOnSideB(self, value):
+        self._distanceFanMotorToDetectorModulesOnSideB = value
+
+    @property
+    def originSystemXY(self):
+        return self._originSystemXY
