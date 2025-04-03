@@ -45,19 +45,20 @@ newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x
 newDevice.setDistanceBetweenMotors(30)
 newDevice.setDistanceFanMotorToDetectorModulesOnSideA(0)
 newDevice.setDistanceFanMotorToDetectorModulesOnSideB(60)
-newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 3, (32*2+31*0.28)/2])
+newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 3, 0])
+# newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 4, (32*2+31*0.28)/2])
 
 newDevice.evaluateInitialSourcePosition()
 
 # Set modules Side A
 newDevice.setNumberOfDetectorModulesSideA(1)
 
-moduleSideA_X_translation = np.array([45], dtype=np.float32)
+moduleSideA_X_translation = np.array([15], dtype=np.float32)
 moduleSideA_Y_translation = np.array([0], dtype=np.float32)
-moduleSideA_Z_translation = np.array([(32*2+31*0.28) / 2], dtype=np.float32)
+moduleSideA_Z_translation = np.array([0], dtype=np.float32)
 moduleSideA_alpha_rotation = np.array([0], dtype=np.float32)
 moduleSideA_beta_rotation = np.array([0], dtype=np.float32)
-moduleSideA_sigma_rotation = np.array([90], dtype=np.float32)
+moduleSideA_sigma_rotation = np.array([0], dtype=np.float32)
 
 for i in range(newDevice.numberOfDetectorModulesSideA):
     newDevice.detectorModulesSideA[i].model32()
@@ -69,12 +70,12 @@ for i in range(newDevice.numberOfDetectorModulesSideA):
     newDevice.detectorModulesSideA[i].setSigmaRotation(moduleSideA_sigma_rotation[i])
 
 newDevice.setNumberOfDetectorModulesSideB(1)
-moduleSideB_X_translation = np.array([-45], dtype=np.float32)
+moduleSideB_X_translation = np.array([-75], dtype=np.float32)
 moduleSideB_Y_translation = np.array([0], dtype=np.float32)
-moduleSideB_Z_translation = np.array([(32*2+31*0.28) / 2], dtype=np.float32)
+moduleSideB_Z_translation = np.array([0], dtype=np.float32)
 moduleSideB_alpha_rotation = np.array([0], dtype=np.float32)
 moduleSideB_beta_rotation = np.array([0], dtype=np.float32)
-moduleSideB_sigma_rotation = np.array([-90], dtype=np.float32)
+moduleSideB_sigma_rotation = np.array([180], dtype=np.float32)
 
 for i in range(newDevice.numberOfDetectorModulesSideB):
     newDevice.detectorModulesSideB[i].model32()
@@ -88,23 +89,26 @@ for i in range(newDevice.numberOfDetectorModulesSideB):
 # newDevice
 newDevice.setDeviceName("EasyCT")
 newDevice.setDeviceType("CT")
+
 newDevice.generateInitialCoordinatesWKSystem()
 newDevice.generateInitialCoordinatesXYSystem()
 
-unique_header = np.repeat(np.arange(0,32), 7)
-axial_motor_angles = (np.zeros(32*7))
-fan_motor_angles = np.tile(np.arange(-45, 60, 15), 32)
-
-
-newDevice.detectorSideBCoordinatesAfterMovement(axial_motor_angles, fan_motor_angles, unique_header)
-
-device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT"
 # newDevice.generateDeviceUUID() # one time only
 # newDevice.createDirectory()  # one time only
 
 # storeDevice = StoreDeviceInFo(device_directory=newDevice.deviceDirectory)  # one time only
 # storeDevice = StoreDeviceInFo(device_directory=device_path)  # one time only
 # storeDevice.createDeviceInDirectory(object=newDevice)
+
+# ----------------------------------------------------------
+# TESTS PART
+unique_header = np.repeat(np.arange(0,32), 13)
+axial_motor_angles = (np.zeros(32*13))
+fan_motor_angles = np.tile(np.arange(-90, 105, 15), 32)
+
+newDevice.detectorSideBCoordinatesAfterMovement(axial_motor_angles, fan_motor_angles, unique_header)
+device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT"
+
 #
 # getDevice = StoreDeviceInFo(device_directory=device_path)
 # deviceRead = getDevice.readDeviceFromDirectory()
@@ -112,12 +116,30 @@ device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomograp
 axial_motor_angles = np.array([0, 0], dtype=np.float32)
 fan_motor_angles = np.array([0, 0], dtype=np.float32)
 newDevice.sourcePositionAfterMovement(axial_motor_angles, fan_motor_angles)
+plt.figure(figsize=(10, 10))
 plt.plot(newDevice.originSystemWZ[0], newDevice.originSystemWZ[1], 'ro', label='Origin Fan Motor')
 # plot source center
 plt.plot(newDevice.sourceCenter[:, 0], newDevice.sourceCenter[:, 1], 'bo', label='Source Center')
 plt.plot(newDevice.originSystemXY[0], newDevice.originSystemXY[1], 'ko', label='Origin FOV')
-plt.plot(newDevice.centerFace[:, 0], newDevice.centerFace[:, 1], 'go', label='Center Face Detector Module A')
-plt.legend()
+plt.plot(newDevice.centerFace[:, 0], newDevice.centerFace[:, 1], 'go', label='Center Face Detector Module B')
+plt.plot(newDevice._verticesB[:, :, 0], newDevice._verticesB[:,:, 1], 'mo', label='Vertices Base Detector Module B')
+#plot a line linking the originwz to the center face
+plt.plot([np.ones(newDevice.centerFace.shape[0]) * newDevice.originSystemWZ[0,0],
+            newDevice.centerFace[:, 0]], [np.ones(newDevice.centerFace.shape[0]) * newDevice.originSystemWZ[1,0],
+                                        newDevice.centerFace[:, 1]], '-')
+# plt.xlim(-5,40)
+# plt.ylim(25, 70)
+plt.figure(figsize=(10, 10))
+
+# x an Z direction
+plt.plot(newDevice.originSystemWZ[0], newDevice.originSystemWZ[2], 'ro', label='Origin Fan Motor')
+# plot source center
+plt.plot(newDevice.sourceCenter[:, 0], newDevice.sourceCenter[:, 2], 'bo', label='Source Center')
+plt.plot(newDevice.originSystemXY[0], newDevice.originSystemXY[2], 'ko', label='Origin FOV')
+plt.plot(newDevice.centerFace[:, 0], newDevice.centerFace[:, 2], 'go', label='Center Face Detector Module B')
+plt.plot(newDevice._verticesB[:, :, 0], newDevice._verticesB[:,:, 2], 'mo', label='Vertices Base Detector Module B')
+# plot a line linking the originwz to the center face
+
 plt.show()
 designer = DeviceDesignerStandalone(device=newDevice)
 designer.addDevice()

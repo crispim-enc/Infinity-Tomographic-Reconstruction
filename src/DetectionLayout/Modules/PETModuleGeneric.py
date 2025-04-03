@@ -49,8 +49,8 @@ class PETModule:
         self._detectorsPosition = None
         self._blockCreationHighEnergyDetector = True
         self._blockCreationVisibleLightSensor = True
-        self.setVisibleEnergyLightDetectorBlock()
-        self.setHighEnergyLightDetectorBlock()
+        # self.setVisibleEnergyLightDetectorBlock()
+        # self.setHighEnergyLightDetectorBlock()
 
     def setInitialGeometry(self):
         """
@@ -67,11 +67,11 @@ class PETModule:
     def setVisibleEnergyLightDetectorBlock(self):
         if self._blockCreationVisibleLightSensor:
             x_step = (self._modelVisibleLightSensors[0].blockSPiMWidth +
-                      self._modelVisibleLightSensors[0].externalBorderSizeX)
+                      self._modelVisibleLightSensors[0].externalBorderSizeX*2)
             x_range = np.arange(0, self._numberVisibleLightSensorsX * x_step, x_step) - (
                         self._numberVisibleLightSensorsX - 1) * x_step / 2
             z_step = (self._modelVisibleLightSensors[0].blockSPiMHeight +
-                      self._modelVisibleLightSensors[0].externalBorderSizeY)
+                      self._modelVisibleLightSensors[0].externalBorderSizeY*2)
             z_range = np.arange(0, self._numberVisibleLightSensorsY * z_step, z_step) - (
                         self._numberVisibleLightSensorsY - 1) * z_step / 2
             xx, zz = np.meshgrid(x_range, z_range)
@@ -143,13 +143,17 @@ class PETModule:
                 center_to_rotate = self._modelHighEnergyLightDetectors[i].centroid
             # print("Center to rotate: ", center_to_rotate)
             # self._modelHighEnergyLightDetectors[i].setCentroid(center_to_rotate)
+
+
             new_center = self.rotateAndTranslateModule(point=center_to_rotate, alpha=self._alphaRotation,
                                                        beta=self._betaRotation,
-                                                       sigma=self._sigmaRotation, x=self._xTranslation,
-                                                       y=self._yTranslation,
-                                                       z=self._zTranslation)
+                                                       sigma=self._sigmaRotation, x=center_to_rotate[0] + self._xTranslation,
+                                                       y=center_to_rotate[1] + self._yTranslation,
+                                                       z=center_to_rotate[2] + self._zTranslation)
             # print("New center: ", new_center)
+            self._modelHighEnergyLightDetectors[i].setVerticesCrystalCoordinateSystem()
             self._modelHighEnergyLightDetectors[i].setCentroid(new_center)
+            # self._modelHighEnergyLightDetectors[i].setVerticesCrystalCoordinateSystem()
             self._modelHighEnergyLightDetectors[i].setAlphaRotation(self._alphaRotation)
             self._modelHighEnergyLightDetectors[i].setBetaRotation(self._betaRotation)
             self._modelHighEnergyLightDetectors[i].setSigmaRotation(self._sigmaRotation)
@@ -157,15 +161,18 @@ class PETModule:
             self._modelHighEnergyLightDetectors[i].setYTranslation(self._yTranslation)
             self._modelHighEnergyLightDetectors[i].setZTranslation(self._zTranslation)
 
-            self._modelHighEnergyLightDetectors[i].setVerticesCrystalCoordinateSystem()
+
 
             # Rotate and translate the crystal vertices
+
             vertexes = self._modelHighEnergyLightDetectors[i].vertices
+            vertexes_old = vertexes.copy()
             for vertex in range(len(self._modelHighEnergyLightDetectors[i].vertices)):
                 new_vertex = self.rotateAndTranslateModule(point=vertexes[vertex], alpha=self._alphaRotation,
                                                            beta=self._betaRotation, sigma=self._sigmaRotation,
-                                                           x=self._xTranslation, y=self._yTranslation,
-                                                           z=self._zTranslation)
+                                                              x=center_to_rotate[0] + self._xTranslation,
+                                                                y=center_to_rotate[1] + self._yTranslation,
+                                                                z=center_to_rotate[2] + self._zTranslation)
                 vertexes[vertex] = new_vertex
             self._modelHighEnergyLightDetectors[i].setVertices(vertexes)
 
@@ -370,14 +377,14 @@ class PETModule:
         """
         Number of high energy light detectors in the X direction
         """
-        return self._numberHighEnergyLightDetectors
+        return self._numberHighEnergyLightDetectorsX
 
     @property
     def numberHighEnergyLightDetectorsY(self):
         """
         Number of high energy light detectors in the Y direction
         """
-        return self._numberHighEnergyLightDetectors
+        return self._numberHighEnergyLightDetectorsY
 
     def updateNumberHighEnergyLightDetectors(self, valueX, valueY):
         """
@@ -386,6 +393,11 @@ class PETModule:
         # if self._numberHighEnergyLightDetectorsX != value:
         self._numberHighEnergyLightDetectorsX = valueX
         self._numberHighEnergyLightDetectorsY = valueY
+        self._totalNumberHighEnergyLightDetectors = self._numberHighEnergyLightDetectorsX * self._numberHighEnergyLightDetectorsY
+
+    @property
+    def totalNumberHighEnergyLightDetectors(self):
+        return self._totalNumberHighEnergyLightDetectors
 
     @property
     def modelVisibleLightSensors(self):
@@ -412,6 +424,28 @@ class PETModule:
         """
         self._modelVisibleLightSensors = value
 
+    def setReflectorThicknessX(self, value):
+        """
+        Sets the reflector thickness in the x direction.
+        """
+        self._reflectorThicknessX = value
+
+    def setReflectorThicknessY(self, value):
+        """
+        Sets the reflector thickness in the y direction.
+        """
+        self._reflectorThicknessY = value
+
+    @property
+    def reflectorThicknessX(self):
+        """
+        Returns the reflector thickness in the x direction.
+        """
+        return self._reflectorThicknessX
+
+    @property
+    def reflectorThicknessY(self):
+        return self._reflectorThicknessY
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt

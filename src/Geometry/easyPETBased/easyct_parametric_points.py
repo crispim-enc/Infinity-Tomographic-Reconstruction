@@ -299,13 +299,34 @@ class EasyCTGeometry(DualRotationSystem):
         self._xRayProducer = x_ray_producer
         self._sourceCenter = None
         self._centerFace = None
+        self._verticesB = None
         self._model = model
 
-        if model == "Pyramidal":
-            self._corner1list = None
-            self._corner2list = None
-            self._corner3list = None
-            self._corner4list = None
+        # if model == "Pyramidal":
+        #     self._corner1list = None
+        #     self._corner2list = None
+        #     self._corner3list = None
+        #     self._corner4list = None
+
+    # @property
+    # def corner1list(self):
+    #     return self._corner1list
+    #
+    # @property
+    # def corner2list(self):
+    #     return self._corner2list
+    #
+    # @property
+    # def corner3list(self):
+    #     return self._corner3list
+    #
+    # @property
+    # def corner4list(self):
+    #     return self._corner4list
+
+    @property
+    def centerFace(self):
+        return self._centerFace
 
     @property
     def xRayProducer(self):
@@ -343,16 +364,36 @@ class EasyCTGeometry(DualRotationSystem):
         half_crystal_height = self.detectorModulesSideB[0].modelHighEnergyLightDetectors[0].crystalSizeY / 2
         half_crystal_width = self.detectorModulesSideB[0].modelHighEnergyLightDetectors[0].crystalSizeX / 2
         # End Points - Crystal on the other side of top motor positions
-        zav = np.float32(np.arctan(crystalCenters[:,1] / (self.distanceFanMotorToDetectorModulesOnSideB +
-                                                          half_crystal_depth)))
-        vtr = np.float32(((self.distanceFanMotorToDetectorModulesOnSideB + half_crystal_depth) ** 2 + crystalCenters[:,1]  ** 2) ** 0.5)
+        # zav = np.float32(np.arctan(crystalCenters[:,1] / (self.distanceFanMotorToDetectorModulesOnSideB +
+        #                                                   half_crystal_depth)))
+        zav = np.float32(np.arctan(crystalCenters[:,1] / crystalCenters[:,0]))
+        vtr = np.float32((crystalCenters[:,0] ** 2 + crystalCenters[:,1]  ** 2) ** 0.5)
 
+        self._centerFace = DualRotationSystem.applyDualRotation(fanMotorAngle + zav, vtr, axialMotorAngle,
+                                                               self._distanceBetweenMotors, crystalCenters[:,2])
 
-        #
-        #     vertice = np.array([x_corner, y_corner, z_corner], dtype=np.float
+        vertices = [self.detectorModulesSideB[0].modelHighEnergyLightDetectors[i].vertices for i in uniqueIdDetectorheader]
+        vertices = np.array(vertices, dtype=np.float32)
+        self._verticesB = np.zeros((vertices.shape), dtype=np.float32)
+        for i in range(vertices.shape[1]):
+            angleToAdd = np.float32(np.tan(vertices[:, i, 1] / vertices[:, i, 0]))
+            distanceToPointOfRotation = np.sqrt(vertices[:, i, 0] ** 2 + vertices[:, i, 1] ** 2)
 
-        self.centerFace = DualRotationSystem.applyDualRotation(fanMotorAngle + zav, vtr, axialMotorAngle,
-                                                               self._distanceBetweenMotors, crystalCenters[:,2])  # for evaluation of the center of the face
+            self._verticesB[:, i, :] = DualRotationSystem.applyDualRotation(fanMotorAngle+angleToAdd,
+                                                                          distanceToPointOfRotation, axialMotorAngle,
+                                                                          self._distanceBetweenMotors,
+                                                                          vertices[:, i, 2])
+            # self._verticesB[:, i, :] = DualRotationSystem.applyDualRotation(fanMotorAngle + angleToAdd,
+            #                                                                 vtr, axialMotorAngle,
+            #                                                                 self._distanceBetweenMotors,
+            #                                                                 vertices[:, i, 2])
+
+            # self._verticesB[:,i,1] += vertices[:, i, 1]
+            # self._verticesB[:,i,0] += vertices[:, i, 0]
+            # self._verticesB[:,i,2] += vertices[:, i, 2]
+        print(self._verticesB)
+
+        # for evaluation of the center of the face
         # angle_to_vertice = np.float32(
         #     np.arctan(half_crystal_width / (distance_crystals)))
         #

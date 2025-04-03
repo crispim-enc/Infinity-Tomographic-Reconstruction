@@ -23,7 +23,6 @@ from src.Corrections.CT.Projector import PyramidalProjector
 from src.Optimizer import kernelManager
 
 
-
 class ReconstructionEasyPETCT:
     def __init__(self, file_path=None, file_path_output=None, iterations=25, subsets=1, algorithm="MLEM",
                  voxelSize=None, radial_fov_range=None, energyregion=None):

@@ -1,12 +1,10 @@
 import os
 import numpy as np
-from src.Geometry import CZTModule, CollimatorGeometry
-from src.Designer import GeometryDesignerObject
 
 
 class SPECTHeadGeneric(object):
 
-    def __init__(self, moduleObject):
+    def __init__(self, moduleObject, collimatorObject):
         """
         Initialize the head geometry
         :param numberHead: number of the head
@@ -15,7 +13,7 @@ class SPECTHeadGeneric(object):
         self._numberOfModules = 5
         self._numberHead = 0
         self._detectionModule = [moduleObject() for i in range(self._numberOfModules)]
-        self._collimators = [CollimatorGeometry() for i in range(self._numberOfModules)]
+        self._collimators = [collimatorObject() for i in range(self._numberOfModules)]
         self._spacingCZTtoCollimator = 1.9  # mm
         self.alphaRotation = 0
         self.betaRotation = 0
@@ -89,6 +87,7 @@ class SPECTHeadGeneric(object):
         """
         if value != self._numberHead:
             self._numberHead = value
+
     @property
     def numberHead(self):
         """
@@ -138,7 +137,7 @@ class SPECTHeadGeneric(object):
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
-
+    from src.Designer import GeometryDesignerObject
     spectGeometry = SPECTHeadGeneric()
     spectGeometry.calculateInitialGeometry()
     gd = GeometryDesignerObject()

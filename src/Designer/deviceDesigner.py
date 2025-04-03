@@ -28,6 +28,11 @@ class DeviceDesignerStandalone:
                 self.addModule(module)
             for module in self.device.detectorModulesSideB:
                 self.addModule(module)
+        elif self.device.geometryType == "planar":
+            for module in self.device.detectorModule:
+                print("Adding module")
+                print(module)
+                self.addModule(module)
     def addxRayProducerSource(self):
         # cilinder around the focal point the
         # Create a cylinder
@@ -60,8 +65,8 @@ class DeviceDesignerStandalone:
         for detector in module.modelHighEnergyLightDetectors:
             # Create a cube
             cube = vtk.vtkCubeSource()
-            cube.SetXLength(detector.crystalSizeX)
-            cube.SetYLength(detector.crystalSizeZ)
+            cube.SetXLength(detector.crystalSizeZ)
+            cube.SetYLength(detector.crystalSizeX)
             cube.SetZLength(detector.crystalSizeY)
             cube.Update()
             # Rotate the cube

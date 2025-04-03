@@ -138,8 +138,8 @@ class HamamatsuS13360Series(GenericSiPM):
             self.setPixelArea(self.pixelWidth * self.pixelHeight)
             self.setPixelSpacingX(50)
             self.setPixelSpacingY(50)
-            self.setBorderSizeX(0.2)
-            self.setBorderSizeY(0.2)
+            self.setBorderSizeX(0.4)
+            self.setBorderSizeY(0.4)
             self.setResinThickness(0)
             self.setGeometricalFillFactor(0.74)
             self.setPhotonDetectionEfficiencyAtPeak(0.5)
@@ -156,8 +156,9 @@ class HamamatsuS13360Series(GenericSiPM):
             self.setBlockSPiMHeight(1.3)
             self.setBlockSPiMDepth(0.85)
             # self.setBlockSPiMArea(665.64)
-            self.setExternalBorderSizeX(0.4)
-            self.setExternalBorderSizeY(0.4)
+            self.setExternalBorderSizeX(0.49)
+            self.setExternalBorderSizeY(0.49)
+            # self.setPixelSpacingX()
             self.setChannelOriginalCentrePosition()
 
 

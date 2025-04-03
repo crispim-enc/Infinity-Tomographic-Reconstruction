@@ -2,10 +2,11 @@ from src.Geometry.Standard import RegularPolygonalGeometry
 
 
 class PlanarGeometry(RegularPolygonalGeometry):
-    def __init__(self, detector_module, distance_between_planes=10):
+    def __init__(self, detector_module=None, distance_between_planes=10):
         super(PlanarGeometry, self).__init__(detector_module=detector_module)
-        self._radius = distance_between_planes
+        self._radius = distance_between_planes/2
         self._numberOfModulesPhi = 2
+        self._geometryType = "planar"
 
 
 

@@ -8,7 +8,7 @@ class GenericCrystal:
 
 
     """
-    def __init__(self):
+    def __init__(self, crystal_id=1):
         self._density = 7.4
         self._crystalID = 1
         self._crystalSizeX = 1.5  # mm
@@ -59,7 +59,7 @@ class GenericCrystal:
         """
         Sets the crystal vertices.
         """
-        self._originalVertices = np.array([[self._centroid[0] - self._crystalSizeX / 2,
+        self._vertices = np.array([[self._centroid[0] - self._crystalSizeX / 2,
                                     self._centroid[1] - self._crystalSizeY / 2,
                                     self._centroid[2] - self._crystalSizeZ / 2],
                                    [self._centroid[0] + self._crystalSizeX / 2,

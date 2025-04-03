@@ -71,10 +71,10 @@ class GenericSiPM:
         self._channelCentrePosition = center
 
     def setChannelOriginalCentrePosition(self):
-        x_step = self._effectiveWidth + self.borderSizeX
+        x_step = self._effectiveWidth + self.borderSizeX + self._pixelSpacingX
         x_range = np.arange(0, self._numberOfChannelsX * x_step, x_step) - (
                 self._numberOfChannelsX - 1) * x_step / 2
-        z_step = self._effectiveHeight + self.borderSizeY
+        z_step = self._effectiveHeight + self.borderSizeY + self._pixelSpacingY
         z_range = np.arange(0, self._numberOfChannelsY * z_step, z_step) - (
                 self._numberOfChannelsY - 1) * z_step / 2
 
