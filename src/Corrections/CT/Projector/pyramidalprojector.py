@@ -65,7 +65,6 @@ class PyramidalProjector:
 
         self._countsPerPosition = None
 
-
     @property
     def countsPerPosition(self):
         """
@@ -118,8 +117,10 @@ class PyramidalProjector:
         Needs pointCenterList, pointCorner1List, pointCorner2List, pointCorner3List, pointCorner4List to be
         defined first
         """
-
+        print("Creating vectorial space")
+        print("Transforming points to positive points")
         self.transformIntoPositivePoints()
+        print("Amplifying points to GPU coordinate system")
         self.amplifyPointsToGPUCoordinateSystem()
 
         # Create a int range array from 0 to number of pixels)

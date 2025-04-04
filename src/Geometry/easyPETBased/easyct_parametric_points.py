@@ -299,6 +299,7 @@ class EasyCTGeometry(DualRotationSystem):
         self._xRayProducer = x_ray_producer
         self._sourceCenter = None
         self._centerFace = None
+        self._verticesA = None
         self._verticesB = None
         self._model = model
 
@@ -352,7 +353,7 @@ class EasyCTGeometry(DualRotationSystem):
         """
         Load the list mode data np.array
         """
-
+        print("Calculating parametric positions of the center and vertices of the detector for all events...")
         crystalCenters = [self.detectorModulesSideB[0].modelHighEnergyLightDetectors[i].centroid for i in uniqueIdDetectorheader]
         crystalCenters = np.array(crystalCenters, dtype=np.float32)
 
@@ -371,18 +372,20 @@ class EasyCTGeometry(DualRotationSystem):
 
         self._centerFace = DualRotationSystem.applyDualRotation(fanMotorAngle + zav, vtr, axialMotorAngle,
                                                                self._distanceBetweenMotors, crystalCenters[:,2])
+        print("Centroid calculated for all events...")
 
         vertices = [self.detectorModulesSideB[0].modelHighEnergyLightDetectors[i].vertices for i in uniqueIdDetectorheader]
         vertices = np.array(vertices, dtype=np.float32)
         self._verticesB = np.zeros((vertices.shape), dtype=np.float32)
         for i in range(vertices.shape[1]):
             angleToAdd = np.float32(np.tan(vertices[:, i, 1] / vertices[:, i, 0]))
-            distanceToPointOfRotation = np.sqrt(vertices[:, i, 0] ** 2 + vertices[:, i, 1] ** 2)
+            distanceToPointOfRotation = np.sqrt(vertices[:, i, 0] ** 2 + vertices[:, i, 1] ** 2).astype(np.float32)
 
             self._verticesB[:, i, :] = DualRotationSystem.applyDualRotation(fanMotorAngle+angleToAdd,
                                                                           distanceToPointOfRotation, axialMotorAngle,
                                                                           self._distanceBetweenMotors,
                                                                           vertices[:, i, 2])
+            print("Vertice {} calculated for all events...".format(i))
             # self._verticesB[:, i, :] = DualRotationSystem.applyDualRotation(fanMotorAngle + angleToAdd,
             #                                                                 vtr, axialMotorAngle,
             #                                                                 self._distanceBetweenMotors,
@@ -432,7 +435,9 @@ class EasyCTGeometry(DualRotationSystem):
         # self.corner4list = np.array([x_corner, y_corner, z_corner], dtype=np.float32).T
 
     def sourcePositionAfterMovement(self, axialMotorAngle, fanMotorAngle):
-
+        print("Calculating source position for all events detected...")
+        axialMotorAngle = np.deg2rad(axialMotorAngle)
+        fanMotorAngle = np.deg2rad(fanMotorAngle)
         r_a = np.float32(self._distanceBetweenMotors)
 
         sourceDistanceToWZOrigin = np.sign(self._xRayProducer.focalSpotInitialPositionWKSystem[0]) * np.sqrt(self._xRayProducer.focalSpotInitialPositionWKSystem[0] ** 2 + self._xRayProducer.focalSpotInitialPositionWKSystem[1] ** 2)
@@ -463,6 +468,13 @@ class EasyCTGeometry(DualRotationSystem):
     def sourceCenter(self):
         return self._sourceCenter
 
+    @property
+    def verticesA(self):
+        return self._verticesA
+
+    @property
+    def verticesB(self):
+        return self._verticesB
 
 def testSourceDistance(focal_point, source_position, point_of_rotation):
     distanceToWZOrigin = np.sqrt(focal_point[0] ** 2 + focal_point[1] ** 2)

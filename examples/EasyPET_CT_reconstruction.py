@@ -20,7 +20,7 @@ from src.DetectionLayout.Modules import PETModule, easyPETModule
 from src.DetectionLayout.RadiationProducer import GenericRadiativeSource
 from src.Designer import DeviceDesignerStandalone
 from src.Corrections.CT.Projector import PyramidalProjector
-from src.Optimizer import kernelManager
+from src.Optimizer import GPUSharedMemoryMultipleKernel
 
 
 class ReconstructionEasyPETCT:
@@ -57,26 +57,35 @@ class ReconstructionEasyPETCT:
         self.lastImageReconstructed = None  # Last image reconstructed
         self.saved_image_by_iteration = True
         self.energyRegion = energyregion
-        crystals_geometry = [32, 1]
 
-        self.parametric_coordinates = SetParametricsPoints(listMode=self.listMode, geometry_file=self.geometry_file,
-                                                      simulation_files=False)
+
+        ToRFile_reader = ToRFile(filepath=output_path)
+        ToRFile_reader.read()
+        listModeBody_read = ToRFile_reader.fileBodyData
+
+
+        self.systemInfo = ToRFile_reader.systemInfo
+        self.systemInfo.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 0, 0])
+        self.systemInfo.sourcePositionAfterMovement(listModeBody_read["AXIAL_MOTOR"], listModeBody_read["FAN_MOTOR"])
+
+        self.systemInfo.detectorSideBCoordinatesAfterMovement(listModeBody_read["AXIAL_MOTOR"], listModeBody_read["FAN_MOTOR"],
+                                                       listModeBody_read["IDA"].astype(np.int32))
+
 
         radial_fov_range = [0, 23]
         self.projector = PyramidalProjector(voxelSize=voxelSize, FovRadialStart=radial_fov_range[0],
-                                                 FovRadialEnd=radial_fov_range[1], fov=self.fov)
+                                                 FovRadialEnd=radial_fov_range[1], fov=23)
 
 
-        # self._normalizationMatrix = np.ones_like(self.projector.im_index_z)  # apagar depois
-        # self._normalizationMatrix = self._normalizationMatrix.astype(np.float32)  # apagar depois
-        # self._normalizationMatrix /= np.sum(self._normalizationMatrix)
+
         self.lastImageReconstructed = None
 
     def start(self):
-
+        print("Starting reconstruction")
+        print("________________________________")
         self.ctx = cuda.Device(0).make_context()  # Create the context
         self.device = self.ctx.get_device()
-        self.generateNormalization()
+        # self.generateNormalization()
         self.generateImage()
         self.ctx.detach()
 
@@ -124,19 +133,20 @@ class ReconstructionEasyPETCT:
         exporter.write()
 
     def generateImage(self):
-        self.parametric_coordinates = SetParametricsPoints(listMode=self.listMode,
-                                                           geometry_file=self.geometry_file,
-                                                           simulation_files=False)
-        self.projector.pointCenterList = self.parametric_coordinates.sourceCenter
-        self.projector.pointCorner1List = self.parametric_coordinates.corner1list
-        self.projector.pointCorner2List = self.parametric_coordinates.corner4list
-        self.projector.pointCorner3List = self.parametric_coordinates.corner3list
-        self.projector.pointCorner4List = self.parametric_coordinates.corner2list
+
+        self.projector.pointCenterList = self.systemInfo.sourceCenter
+        self.projector.pointCorner1List = self.systemInfo.verticesB[:, 0]
+        self.projector.pointCorner2List = self.systemInfo.verticesB[:, 1]
+        self.projector.pointCorner3List = self.systemInfo.verticesB[:, 2]
+        self.projector.pointCorner4List = self.systemInfo.verticesB[:, 3]
         var_1 = 0
         var_2 = 1
 
         self.projector.createVectorialSpace()
         self.projector.createPlanes()
+        self._normalizationMatrix = np.ones_like(self.projector.im_index_z)  # apagar depois
+        self._normalizationMatrix = self._normalizationMatrix.astype(np.float32)  # apagar depois
+        self._normalizationMatrix /= np.sum(self._normalizationMatrix)
         optimizer = GPUSharedMemoryMultipleKernel(parent=self, )
         optimizer.normalization_matrix = self._normalizationMatrix
         print(f"GPU being use {self.device}")
@@ -149,53 +159,28 @@ class ReconstructionEasyPETCT:
         file_name = "image"
         if not os.path.exists(folder):
             os.makedirs(folder)
-        exporter = InterfileWriter(file_name=os.path.join(folder, file_name), data=self.lastImageReconstructed,)
-        # exporter.generateInterfileHeader(voxel_size=self.voxelSize, name_subject=1)
-        exporter.write()
+        # exporter = InterfileWriter(file_name=os.path.join(folder, file_name), data=self.lastImageReconstructed,)
+        # # exporter.generateInterfileHeader(voxel_size=self.voxelSize, name_subject=1)
+        # exporter.write()
 
 
-# filename = "../../allvalues.npy"
-filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\intelligent_scan-NewGeometries-CT\\allvalues.npy"
-output_path = "C:/Users/pedro/OneDrive/Ambiente de Trabalho/Iterations_test"
-if not os.path.exists(output_path):
-    os.makedirs(output_path)
+if __name__ == "__main__":
+    from src.TORFilesReader import ToRFile
+    # filename = "../../allvalues.npy"
+    filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\intelligent_scan-NewGeometries-CT\\allvalues.npy"
+    output_path = "C:/Users/pedro/OneDrive/Ambiente de Trabalho/Iterations_test"
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
 
-voxelSize =[0.5,0.5,0.5]
+    voxelSize =[0.5,0.5,0.5]
 
 
+    output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor"
 
-#TESTS
-axial_motor_angles = np.deg2rad(np.arange(0, 360, 45))
-fan_motor_angles = np.deg2rad(np.arange(-45, 60, 15))
-# repeat the fan motor angles for each axial motor angle
-fan_motor_angles = np.repeat(fan_motor_angles, len(axial_motor_angles))
-axial_motor_angles = np.tile(axial_motor_angles, len(fan_motor_angles) // len(axial_motor_angles))
-newDevice.sourcePositionAfterMovement(axial_motor_angles, fan_motor_angles)
-testSourceDistance(newDevice.xRayProducer.focalSpotInitialPositionWKSystem, newDevice.sourceCenter,
-                   newDevice.originSystemWZ.T)
-index_fan_motor_angle_0 = np.where(fan_motor_angles == 0)
-source_center_fan_motor_angle_0 = newDevice.sourceCenter[index_fan_motor_angle_0]
-origin_fan_motor_angle_0 = newDevice.originSystemWZ.T[index_fan_motor_angle_0]
 
-# Plots
-# plt.plot(newDevice.originSystemWZ[0], newDevice.originSystemWZ[1], 'ro', label='Origin Fan Motor')
-# # plot source center
-# plt.plot(newDevice.sourceCenter[:, 0], newDevice.sourceCenter[:, 1], 'bo', label='Source Center')
-# # plot a line from the origin to the source center at fan motor angle 0
-# plt.plot(source_center_fan_motor_angle_0[:, 0], source_center_fan_motor_angle_0[:, 1], 'gx')
-#
-# plt.plot([origin_fan_motor_angle_0[:, 0], source_center_fan_motor_angle_0[:, 0]],
-#          [origin_fan_motor_angle_0[:, 1], source_center_fan_motor_angle_0[:, 1]], '-')
-# plt.legend()
-# plt.title("Configuration Source side of detector module A")
-# plt.title("Configuration Source in front module")
-# plt.show()
+    r = ReconstructionEasyPETCT(filename, iterations=10, subsets=1, algorithm="LM-MLEM",
+                     voxelSize=voxelSize, radial_fov_range=None, energyregion=None, file_path_output=output_path)
+    r.start()
 
-# add visualization
-
-r = ReconstructionEasyPETCT(filename, iterations=10, subsets=1, algorithm="LM-MLEM",
-                 voxelSize=voxelSize, radial_fov_range=None, energyregion=None, file_path_output=output_path)
-r.start()
-
-plt.imshow(np.mean(r.lastImageReconstructed, axis=2))
-plt.show()
+    plt.imshow(np.mean(r.lastImageReconstructed, axis=2))
+    plt.show()

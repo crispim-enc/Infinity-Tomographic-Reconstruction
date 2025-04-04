@@ -95,10 +95,11 @@ newDevice.generateInitialCoordinatesXYSystem()
 
 # newDevice.generateDeviceUUID() # one time only
 # newDevice.createDirectory()  # one time only
+device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT"
 
 # storeDevice = StoreDeviceInFo(device_directory=newDevice.deviceDirectory)  # one time only
-# storeDevice = StoreDeviceInFo(device_directory=device_path)  # one time only
-# storeDevice.createDeviceInDirectory(object=newDevice)
+storeDevice = StoreDeviceInFo(device_directory=device_path)  # one time only
+storeDevice.createDeviceInDirectory(object=newDevice)
 
 # ----------------------------------------------------------
 # TESTS PART
@@ -107,7 +108,6 @@ axial_motor_angles = (np.zeros(32*13))
 fan_motor_angles = np.tile(np.arange(-90, 105, 15), 32)
 
 newDevice.detectorSideBCoordinatesAfterMovement(axial_motor_angles, fan_motor_angles, unique_header)
-device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT"
 
 #
 # getDevice = StoreDeviceInFo(device_directory=device_path)

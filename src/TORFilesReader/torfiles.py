@@ -15,6 +15,7 @@ class ToRFile:
         self._fileBodyData = None
 
     def read(self, filePath=None):
+        print("Reading file: {}".format(filePath) if filePath is not None else "Reading file: {}".format(self._filePath))
         if filePath is None:
             filePath = self._filePath
         with open(filePath, 'rb') as input_file:

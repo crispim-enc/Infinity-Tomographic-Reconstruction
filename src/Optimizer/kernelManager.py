@@ -30,7 +30,7 @@ class GPUSharedMemoryMultipleKernel:
         self.saved_image_by_iteration = parent.saved_image_by_iteration
         if self.saved_image_by_iteration:
 
-            self.iterations_path = os.path.join(self.directory, "iterations")
+            self.iterations_path = os.path.join(os.path.dirname(self.directory), "iterations")
             if not os.path.isdir(self.iterations_path):
                 os.makedirs(self.iterations_path)
 
@@ -67,10 +67,10 @@ class GPUSharedMemoryMultipleKernel:
         self.normalization_matrix = np.ones((self.number_of_pixels_x, self.number_of_pixels_y, self.number_of_pixels_z))
         self.normalization_matrix = np.ascontiguousarray(self.normalization_matrix, dtype=np.float32)
 
-        self.fw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+        self.fw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "CT"
                                             "pyramidalProjectorForward.c")
 
-        self.bw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+        self.bw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "CT"
                                             "pyramidalProjectorBack.c")
 
     def _loadMachineCCode(self):

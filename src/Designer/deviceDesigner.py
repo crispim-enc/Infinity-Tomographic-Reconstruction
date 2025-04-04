@@ -43,6 +43,9 @@ class DeviceDesignerStandalone:
         cylinder.SetCenter(self.device.xRayProducer.focalSpotInitialPositionXYSystem[0,0],
                            self.device.xRayProducer.focalSpotInitialPositionXYSystem[0,1],
                            self.device.xRayProducer.focalSpotInitialPositionXYSystem[0,2])
+        cylinder.SetCenter(self.device.xRayProducer.focalSpotInitialPositionWKSystem[0],
+                           self.device.xRayProducer.focalSpotInitialPositionWKSystem[1],
+                           self.device.xRayProducer.focalSpotInitialPositionWKSystem[2])
         cylinder.SetResolution(100)
         cylinder.Update()
         #add the cylinder to the renderer
@@ -65,9 +68,9 @@ class DeviceDesignerStandalone:
         for detector in module.modelHighEnergyLightDetectors:
             # Create a cube
             cube = vtk.vtkCubeSource()
-            cube.SetXLength(detector.crystalSizeZ)
-            cube.SetYLength(detector.crystalSizeX)
-            cube.SetZLength(detector.crystalSizeY)
+            cube.SetXLength(detector.crystalSizeX)
+            cube.SetYLength(detector.crystalSizeY)
+            cube.SetZLength(detector.crystalSizeZ)
             cube.Update()
             # Rotate the cube
             translateRotationCube = vtk.vtkTransform()
@@ -95,9 +98,9 @@ class DeviceDesignerStandalone:
         for SiPM in module.modelVisibleLightSensors:
             # Create a cube
             cube = vtk.vtkCubeSource()
-            cube.SetXLength(SiPM.blockSPiMWidth)
+            cube.SetXLength(SiPM.blockSPiMDepth-SiPM.resinThickness)
+            cube.SetYLength(SiPM.blockSPiMWidth)
             cube.SetZLength(SiPM.blockSPiMHeight)
-            cube.SetYLength(SiPM.blockSPiMDepth-SiPM.resinThickness)
             cube.Update()
 
             # Rotate the cube
@@ -121,9 +124,9 @@ class DeviceDesignerStandalone:
             for channel in range(len(SiPM.channelCentrePosition)):
                 center = SiPM.channelCentrePosition[channel]
                 individualChannel = vtk.vtkCubeSource()
-                individualChannel.SetXLength(SiPM.effectiveWidth)
+                individualChannel.SetXLength(SiPM.resinThickness)
                 individualChannel.SetZLength(SiPM.effectiveHeight)
-                individualChannel.SetYLength(SiPM.resinThickness)
+                individualChannel.SetYLength(SiPM.effectiveWidth)
                 individualChannel.Update()
 
                 individualChannelTransform = vtk.vtkTransform()

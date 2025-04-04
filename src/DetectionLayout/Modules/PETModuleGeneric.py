@@ -118,19 +118,19 @@ class PETModule:
 
     def setHighEnergyLightDetectorBlock(self, block_creation=True):
         if block_creation:
-            x_step = self._modelHighEnergyLightDetectors[0].crystalSizeX + self._reflectorThicknessX
-            x_range = np.arange(0, self._numberHighEnergyLightDetectorsX * x_step, x_step) - (
-                        self._numberHighEnergyLightDetectorsX - 1) * x_step / 2
-            z_step = self._modelHighEnergyLightDetectors[0].crystalSizeY + self._reflectorThicknessY
+            y_step = self._modelHighEnergyLightDetectors[0].crystalSizeY + self._reflectorThicknessX
+            y_range = np.arange(0, self._numberHighEnergyLightDetectorsX * y_step, y_step) - (
+                        self._numberHighEnergyLightDetectorsX - 1) * y_step / 2
+            z_step = self._modelHighEnergyLightDetectors[0].crystalSizeZ + self._reflectorThicknessY
             z_range = np.arange(0, self._numberHighEnergyLightDetectorsY * z_step, z_step) - (
                         self._numberHighEnergyLightDetectorsY - 1) * z_step / 2
-            xx, zz = np.meshgrid(x_range, z_range)
+            yy, zz = np.meshgrid(y_range, z_range)
             # xx, zz = np.meshgrid(np.arange(self._numberVisibleLightSensorsX) * (
             #             self._modelHighEnergyLightDetectors[0].crystalSizeX + self._reflectorThicknessX),
             # np.arange(self._numberVisibleLightSensorsY) * (
             #             self._modelHighEnergyLightDetectors[0].crystalSizeY + self._reflectorThicknessY))
-            x_flat = xx.flatten()
-            y_flat = np.zeros(self._numberHighEnergyLightDetectorsX * self._numberHighEnergyLightDetectorsY)
+            x_flat = np.zeros(self._numberHighEnergyLightDetectorsX * self._numberHighEnergyLightDetectorsY)
+            y_flat = yy.flatten()
             z_flat = zz.flatten()
 
         for i in range(self._totalNumberHighEnergyLightDetectors):
@@ -149,7 +149,7 @@ class PETModule:
                                                        beta=self._betaRotation,
                                                        sigma=self._sigmaRotation, x=center_to_rotate[0] + self._xTranslation,
                                                        y=center_to_rotate[1] + self._yTranslation,
-                                                       z=center_to_rotate[2] + self._zTranslation)
+                                                       z=self._zTranslation)
             # print("New center: ", new_center)
             self._modelHighEnergyLightDetectors[i].setVerticesCrystalCoordinateSystem()
             self._modelHighEnergyLightDetectors[i].setCentroid(new_center)
