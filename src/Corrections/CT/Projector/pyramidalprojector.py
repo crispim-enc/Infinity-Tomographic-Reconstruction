@@ -4,7 +4,7 @@ import numpy as np
 
 class PyramidalProjector:
     def __init__(self, voxelSize=None, FoVAxial=45, FoVRadial=25, FoVTangencial=30, FovRadialStart=None,
-                 FovRadialEnd=None, fov=45, only_fov=True):
+                 FovRadialEnd=None, fov=45, only_fov=False):
         """
         Pyramidal Projector
 

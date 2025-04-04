@@ -20,6 +20,7 @@ from src.DetectionLayout.Modules import PETModule, easyPETModule
 from src.DetectionLayout.RadiationProducer import GenericRadiativeSource
 from src.Designer import DeviceDesignerStandalone
 from src.Corrections.CT.Projector import PyramidalProjector
+from src.Corrections.CT import NormalizationCT
 from src.Optimizer import GPUSharedMemoryMultipleKernel
 
 
@@ -59,22 +60,16 @@ class ReconstructionEasyPETCT:
         self.energyRegion = energyregion
 
 
-        ToRFile_reader = ToRFile(filepath=output_path)
-        ToRFile_reader.read()
-        listModeBody_read = ToRFile_reader.fileBodyData
+        self.ToRFile_reader = ToRFile(filepath=output_path)
+        self.ToRFile_reader.read()
 
 
-        self.systemInfo = ToRFile_reader.systemInfo
-        self.systemInfo.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 0, 0])
-        self.systemInfo.sourcePositionAfterMovement(listModeBody_read["AXIAL_MOTOR"], listModeBody_read["FAN_MOTOR"])
 
-        self.systemInfo.detectorSideBCoordinatesAfterMovement(listModeBody_read["AXIAL_MOTOR"], listModeBody_read["FAN_MOTOR"],
-                                                       listModeBody_read["IDA"].astype(np.int32))
 
 
         radial_fov_range = [0, 23]
         self.projector = PyramidalProjector(voxelSize=voxelSize, FovRadialStart=radial_fov_range[0],
-                                                 FovRadialEnd=radial_fov_range[1], fov=23)
+                                                 FovRadialEnd=radial_fov_range[1], fov=40, only_fov=True)
 
 
 
@@ -85,7 +80,7 @@ class ReconstructionEasyPETCT:
         print("________________________________")
         self.ctx = cuda.Device(0).make_context()  # Create the context
         self.device = self.ctx.get_device()
-        # self.generateNormalization()
+        self.generateNormalization()
         self.generateImage()
         self.ctx.detach()
 
@@ -99,16 +94,22 @@ class ReconstructionEasyPETCT:
                                                     rangeTopMotor=108, begin_range_botMotor=0, end_rangeBotMotor=360,
                                                     stepTopmotor=0.225, stepBotMotor=1.8, recon_2D=False)
         normalization.normalization_LM()
-        parametric_listMode = normalization.reading_data
-        self.parametric_coordinates = SetParametricsPoints(listMode=parametric_listMode, geometry_file=self.geometry_file,
-                                                           normalization=True)
+
+        systemInfo = self.ToRFile_reader.systemInfo
+        systemInfo.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 0, 0])
+        systemInfo.sourcePositionAfterMovement(normalization.reading_data[:,0], normalization.reading_data[:,1])
+
+        systemInfo.detectorSideBCoordinatesAfterMovement(normalization.reading_data[:,0], normalization.reading_data[:,1],
+                                                                normalization.reading_data[:,2].astype(np.int32))
+
+
         # parametric_listMode = parametric_listMode.loc[0]
         # self.replacePointsInProjector(parametric_listMode)
-        self.projector.pointCenterList = self.parametric_coordinates.sourceCenter
-        self.projector.pointCorner1List = self.parametric_coordinates.corner1list
-        self.projector.pointCorner2List = self.parametric_coordinates.corner4list
-        self.projector.pointCorner3List = self.parametric_coordinates.corner3list
-        self.projector.pointCorner4List = self.parametric_coordinates.corner2list
+        self.projector.pointCenterList = systemInfo.sourceCenter
+        self.projector.pointCorner1List = systemInfo.verticesB[:, 7]
+        self.projector.pointCorner2List = systemInfo.verticesB[:, 3]
+        self.projector.pointCorner3List = systemInfo.verticesB[:, 0]
+        self.projector.pointCorner4List = systemInfo.verticesB[:, 4]
 
         self.projector.createVectorialSpace()
         self.projector.createPlanes()
@@ -120,33 +121,41 @@ class ReconstructionEasyPETCT:
         geometric_normalization = optimizer.im
         geometric_normalization /= np.sum(geometric_normalization) #Comentar se não quiser normalização
         self._normalizationMatrix = geometric_normalization
-        self._normalizationMatrix = np.ones_like(geometric_normalization)  # reset normalization matrix
+        # self._normalizationMatrix = np.ones_like(geometric_normalization)  # reset normalization matrix
         # self._normalizationMatrix *= geometric_normalization #Comentar se não quiser normalização
         # self._normalizationMatrix /= np.sum(self._normalizationMatrix)
 
         folder = self.file_path_output
         file_name = "normalization"
-        if not os.path.exists(folder):
-            os.makedirs(folder)
-        exporter = InterfileWriter(file_name=os.path.join(folder, file_name), data=self._normalizationMatrix)
-        # exporter.generateInterfileHeader(voxel_size=self.voxelSize, name_subject=1)
-        exporter.write()
+        # if not os.path.exists(folder):
+        #     os.makedirs(folder)
+        # exporter = InterfileWriter(file_name=os.path.join(folder, file_name), data=self._normalizationMatrix)
+        # # exporter.generateInterfileHeader(voxel_size=self.voxelSize, name_subject=1)
+        # exporter.write()
 
     def generateImage(self):
+        listModeBody_read = self.ToRFile_reader.fileBodyData
+        systemInfo = self.ToRFile_reader.systemInfo
+        systemInfo.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 0, 0])
+        systemInfo.sourcePositionAfterMovement(listModeBody_read["AXIAL_MOTOR"], listModeBody_read["FAN_MOTOR"])
 
-        self.projector.pointCenterList = self.systemInfo.sourceCenter
-        self.projector.pointCorner1List = self.systemInfo.verticesB[:, 0]
-        self.projector.pointCorner2List = self.systemInfo.verticesB[:, 1]
-        self.projector.pointCorner3List = self.systemInfo.verticesB[:, 2]
-        self.projector.pointCorner4List = self.systemInfo.verticesB[:, 3]
+        systemInfo.detectorSideBCoordinatesAfterMovement(listModeBody_read["AXIAL_MOTOR"],
+                                                              listModeBody_read["FAN_MOTOR"],
+                                                              listModeBody_read["IDA"].astype(np.int32))
+
+        self.projector.pointCenterList = systemInfo.sourceCenter
+        self.projector.pointCorner1List = systemInfo.verticesB[:, 7]   #Só esta ordem funciona
+        self.projector.pointCorner2List = systemInfo.verticesB[:, 3]
+        self.projector.pointCorner3List = systemInfo.verticesB[:, 0]
+        self.projector.pointCorner4List = systemInfo.verticesB[:, 4]
         var_1 = 0
         var_2 = 1
 
         self.projector.createVectorialSpace()
         self.projector.createPlanes()
-        self._normalizationMatrix = np.ones_like(self.projector.im_index_z)  # apagar depois
-        self._normalizationMatrix = self._normalizationMatrix.astype(np.float32)  # apagar depois
-        self._normalizationMatrix /= np.sum(self._normalizationMatrix)
+        # self._normalizationMatrix = np.ones_like(self.projector.im_index_z)  # apagar depois
+        # self._normalizationMatrix = self._normalizationMatrix.astype(np.float32)  # apagar depois
+        # self._normalizationMatrix /= np.sum(self._normalizationMatrix)
         optimizer = GPUSharedMemoryMultipleKernel(parent=self, )
         optimizer.normalization_matrix = self._normalizationMatrix
         print(f"GPU being use {self.device}")
@@ -173,6 +182,7 @@ if __name__ == "__main__":
         os.makedirs(output_path)
 
     voxelSize =[0.5,0.5,0.5]
+    # voxelSize =[1, 1, 1]
 
 
     output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor"
