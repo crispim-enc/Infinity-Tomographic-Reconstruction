@@ -35,6 +35,7 @@ class GPUSharedMemoryMultipleKernel:
                 os.makedirs(self.iterations_path)
 
         self.planes = parent.projector.planes
+        self.countsPerID = parent.projector.countsPerPosition
 
         self.A = parent.projector.im_index_x
         self.B = parent.projector.im_index_y
@@ -192,7 +193,7 @@ class GPUSharedMemoryMultipleKernel:
 
         # Back projection Memory allocation
 
-        backward_projection_arrays_full_arrays = unroll_planes + [self.sum_vor]
+        backward_projection_arrays_full_arrays = unroll_planes + [self.sum_vor, self.countsPerID]
         backward_projection_array_gpu_arrays = [[None] * number_of_datasets for _ in
                                                 range(len(backward_projection_arrays_full_arrays))]
         backward_projection_pinned_arrays = [None] * len(backward_projection_arrays_full_arrays)
@@ -408,6 +409,7 @@ class GPUSharedMemoryMultipleKernel:
                                   C_cut_gpu[dataset],
                                   adjust_coef_gpu[dataset],
                                   backward_projection_array_gpu_arrays[16], system_matrix_back_cut_gpu[dataset], im_gpu,
+                                  backward_projection_array_gpu_arrays[17],
                                   block=threadsperblock,
                                   grid=blockspergrid,
                                   shared=int(4 * number_of_voxels_thread),

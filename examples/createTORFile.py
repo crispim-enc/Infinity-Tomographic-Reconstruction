@@ -76,13 +76,20 @@ scanHeader.setDate(time.strftime("%Y-%m-%d %H:%M:%S"))
 # IF PET/SPECT/COMPTON
 # scanHeader.setRadioisotope(radioisotope)
 
-listmode = np.load(filename) # should be a numpy array with the listmode data
+listmode = np.load(filename)
+listmode[:,3] = 0 # should be a numpy array with the listmode data
 listModeBody = ListModeBody()
 listModeBody.setListmode(listmode)
 listModeBody.setListmodeFields(["ENERGYA", "ENERGYB", "IDA", "IDB", "AXIAL_MOTOR", "FAN_MOTOR", "TIME"])
 listModeBody.setFrameStartIndexes(scanHeader.indexesOfFrames)
 listModeBody.generateStatistics()
 listModeBody.printStatistics()
+listModeBody.setGlobalDetectorID()
+listModeBody.setCountsPerGlobalID()
+
+plt.figure()
+plt.hist(listModeBody["IDA"], bins=32)
+plt.show()
 
 ToRFile_creator = ToRFile(filepath=output_path)
 ToRFile_creator.setSystemInfo(newDevice)

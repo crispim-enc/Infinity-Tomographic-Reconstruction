@@ -8,7 +8,7 @@ __global__ void backprojection_cdrf
      const float* aFront, const float* bFront, const float* cFront, const float* dFront,
      const float* aBack, const float* bBack,   const float* cBack, const float* dBack,
      const short* A, const short* B, const short* C,
-    float* adjust_coef, float* sum_vor, float* system_matrix, float* im_gpu)
+    float* adjust_coef, float* sum_vor, float* system_matrix, float* im_gpu, const int* counts)
 {
 
     extern __shared__ float adjust_coef_shared[];
@@ -58,7 +58,7 @@ __global__ void backprojection_cdrf
                          if (sum_vor[e] != 0)
                             {
 //                                adjust_coef_shared[i_s] = 1* expf(-sum_vor[e])*(1 - expf(1 ));
-                                adjust_coef_shared[i_s]+= 1/sum_vor[e];
+                                adjust_coef_shared[i_s]+= 1 /sum_vor[e];
 //                                adjust_coef_shared[i_s] += 1;
                             }
                     }

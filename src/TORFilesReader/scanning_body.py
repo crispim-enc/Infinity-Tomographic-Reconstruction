@@ -48,6 +48,73 @@ class ListModeBody:
         self._numberOfMotors = None
         self._frameStartIndexes = None
         self._coincidenceTimeDiff = None
+        self._globalDetectorID = None
+        self._countsPerGlobalID = None
+        self._indexCountsPerGlobalID = None
+
+    @property
+    def countsPerGlobalID(self):
+        return self._countsPerGlobalID
+
+    @property
+    def indexCountsPerGlobalID(self):
+        return self._indexCountsPerGlobalID
+
+    def setCountsPerGlobalID(self):
+        globalID, indexCountsPerGlobalID, counts = np.unique(self._globalDetectorID, return_index=True, return_counts=True)
+        self._indexCountsPerGlobalID = indexCountsPerGlobalID
+        self._countsPerGlobalID = np.ascontiguousarray(counts, dtype=np.int32)
+
+    def setListModeHistogramHybridMode(self):
+        originalListmode = self._listmode[self._indexCountsPerGlobalID, :]
+        self._listmode = np.zeros((self._countsPerGlobalID.shape[0], len(self._listmodeFields) + 1))
+        self._listmode[:, :-1] = originalListmode
+        self._listmode[:, -1] = self._countsPerGlobalID
+        self._listmodeFields.append("Counts")
+
+    @property
+    def globalDetectorID(self):
+        return self._globalDetectorID
+
+    def setGlobalDetectorID(self, globalDetectorID=None):
+        # Needs to run after generateStatistics
+        if globalDetectorID is None:
+            print("Global detector ID not set. Automatically setting is going to run. Note that incomplete data could set a wrong global ID leading to incorrect reconstruction")
+            print("Number of motors detected: ", self._numberOfMotors)
+
+            acceptableFields = ["motor", "Motor", "MOTOR"]
+            keys_with_motor = [key for key in self._listmodeFields if any(acceptableField in key for acceptableField in acceptableFields)]
+            step_size = []
+            range_motor = []
+            for motor in keys_with_motor:
+                step_ = self._minDiff[self._listmodeFields.index(motor)]
+                range_ = self.uniqueValuesCount[self._listmodeFields.index(motor)]
+                print(motor, " step", step_)
+                print(motor, " range", range_)
+                step_size.append(step_)
+                range_motor.append(range_)
+
+            acceptableFields = ["ID", "id", "Id"]
+            keys_with_ID = [key for key in self._listmodeFields if any(acceptableField in key for acceptableField in acceptableFields)]
+            range_ID = []
+            for ID in keys_with_ID:
+                range_ = self.uniqueValuesCount[self._listmodeFields.index(ID)]
+                print(ID, " number of detectors", range_)
+                range_ID.append(range_)
+
+            motor_angle_normalized_0 = self._listmode[:, self._listmodeFields.index(keys_with_motor[0])] + np.abs(self._listmode[:, self._listmodeFields.index(keys_with_motor[0])].min())
+            motor_angle_normalized_1 = self._listmode[:, self._listmodeFields.index(keys_with_motor[1])] + np.abs(self._listmode[:, self._listmodeFields.index(keys_with_motor[1])].min())
+            globalID = (motor_angle_normalized_0 / step_size[0] +
+                        range_motor[0] * motor_angle_normalized_1 / step_size[1] +
+                        range_motor[1] * range_motor[0] * self._listmode[:, self._listmodeFields.index(keys_with_ID[0])] +
+                        range_ID[0] * range_motor[1] * range_motor[0] * (self._listmode[:, self._listmodeFields.index(keys_with_ID[1])]))
+            self._globalDetectorID = globalID.astype(int)
+
+            print("GlobalID_maximum: ", self._globalDetectorID.max())
+            print("GlobalID_minimum: ", self._globalDetectorID.min())
+            print("Expected GlobalID maximum: ", range_motor[0]*range_motor[1]*range_ID[0]*range_ID[1])
+
+
 
     @property
     def listmode(self):

@@ -64,7 +64,7 @@ class easyPETModule(PETModule):
         self._totalNumberVisibleLightSensors = self._numberVisibleLightSensorsX * self._numberVisibleLightSensorsY
         self._totalNumberHighEnergyLightDetectors = self._numberHighEnergyLightDetectorsX * self._numberHighEnergyLightDetectorsY
         self._reflectorThicknessX = 0.35
-        self._reflectorThicknessY = 0.28
+        self._reflectorThicknessY = 0.0
         self._modelVisibleLightSensors = [HamamatsuS13360Series(i) for i in
                                           range(self._totalNumberVisibleLightSensors)]
 
@@ -75,7 +75,7 @@ class easyPETModule(PETModule):
                                                range(self._totalNumberHighEnergyLightDetectors)]
         for i in range(self._totalNumberHighEnergyLightDetectors):
             self._modelHighEnergyLightDetectors[i].setCrystalID(i)
-            self._modelHighEnergyLightDetectors[i].setCristalSize(30, 2, 2)
+            self._modelHighEnergyLightDetectors[i].setCristalSize(30, 2, 2.28)
             # self._modelHighEnergyLightDetectors[i].setSigmaRotation(90)
 
 

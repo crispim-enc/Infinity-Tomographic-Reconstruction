@@ -62,19 +62,13 @@ class ReconstructionEasyPETCT:
 
         self.ToRFile_reader = ToRFile(filepath=output_path)
         self.ToRFile_reader.read()
-
-
-
-
+        # self.ToRFile_reader.fileBodyData.setListModeHistogramHybridMode()
 
         radial_fov_range = [0, 23]
         self.projector = PyramidalProjector(voxelSize=voxelSize, FovRadialStart=radial_fov_range[0],
                                                  FovRadialEnd=radial_fov_range[1], fov=40, only_fov=True)
 
-
-
         self.lastImageReconstructed = None
-
     def start(self):
         print("Starting reconstruction")
         print("________________________________")
@@ -113,6 +107,7 @@ class ReconstructionEasyPETCT:
 
         self.projector.createVectorialSpace()
         self.projector.createPlanes()
+        self.projector.setCountsPerPosition(np.ones(systemInfo.sourceCenter.shape[0], dtype=np.int32))
         print("Normalization GPU")
         optimizer = GPUSharedMemoryMultipleKernel(parent=self, normalizationFlag=False)
         optimizer.number_of_iterations = 1
@@ -141,7 +136,7 @@ class ReconstructionEasyPETCT:
 
         systemInfo.detectorSideBCoordinatesAfterMovement(listModeBody_read["AXIAL_MOTOR"],
                                                               listModeBody_read["FAN_MOTOR"],
-                                                              listModeBody_read["IDA"].astype(np.int32))
+                                                              listModeBody_read["IDA"].astype(np.int32)) ## ID_A está trocado com ID_B
 
         self.projector.pointCenterList = systemInfo.sourceCenter
         self.projector.pointCorner1List = systemInfo.verticesB[:, 7]   #Só esta ordem funciona
@@ -153,11 +148,14 @@ class ReconstructionEasyPETCT:
 
         self.projector.createVectorialSpace()
         self.projector.createPlanes()
-        # self._normalizationMatrix = np.ones_like(self.projector.im_index_z)  # apagar depois
+        self.projector.setCountsPerPosition(np.ones(systemInfo.sourceCenter.shape[0], dtype=np.int32))
+        # self.projector.setCountsPerPosition(self.ToRFile_reader.fileBodyData.countsPerGlobalID)
+        # self._normalizationM atrix = np.ones_like(self.projector.im_index_z)  # apagar depois
         # self._normalizationMatrix = self._normalizationMatrix.astype(np.float32)  # apagar depois
         # self._normalizationMatrix /= np.sum(self._normalizationMatrix)
         optimizer = GPUSharedMemoryMultipleKernel(parent=self, )
         optimizer.normalization_matrix = self._normalizationMatrix
+        # optimizer.im = np.ascontiguousarray(self._normalizationMatrix * self.projector.countsPerPosition.sum(), dtype=np.float32)
         print(f"GPU being use {self.device}")
         optimizer.multipleKernel()
 
@@ -181,14 +179,14 @@ if __name__ == "__main__":
     if not os.path.exists(output_path):
         os.makedirs(output_path)
 
-    voxelSize =[0.5,0.5,0.5]
+    voxelSize =[0.25,0.25,1]
     # voxelSize =[1, 1, 1]
 
 
     output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor"
 
 
-    r = ReconstructionEasyPETCT(filename, iterations=10, subsets=1, algorithm="LM-MLEM",
+    r = ReconstructionEasyPETCT(filename, iterations=20, subsets=1, algorithm="LM-MLEM",
                      voxelSize=voxelSize, radial_fov_range=None, energyregion=None, file_path_output=output_path)
     r.start()
 
