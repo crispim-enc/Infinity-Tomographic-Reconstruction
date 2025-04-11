@@ -59,16 +59,16 @@ class ReconstructionEasyPETCT:
         self.saved_image_by_iteration = True
         self.energyRegion = energyregion
 
-
         self.ToRFile_reader = ToRFile(filepath=output_path)
         self.ToRFile_reader.read()
-        # self.ToRFile_reader.fileBodyData.setListModeHistogramHybridMode()
+        self.ToRFile_reader.fileBodyData.setListModeHistogramHybridMode()
+
 
         radial_fov_range = [0, 23]
         self.projector = PyramidalProjector(voxelSize=voxelSize, FovRadialStart=radial_fov_range[0],
-                                                 FovRadialEnd=radial_fov_range[1], fov=40, only_fov=True)
-
+                                                 FovRadialEnd=radial_fov_range[1], fov=35, only_fov=True)
         self.lastImageReconstructed = None
+
     def start(self):
         print("Starting reconstruction")
         print("________________________________")
@@ -83,7 +83,6 @@ class ReconstructionEasyPETCT:
 
 
         """
-
         normalization = NormalizationCT(number_of_crystals=[32, 1],
                                                     rangeTopMotor=108, begin_range_botMotor=0, end_rangeBotMotor=360,
                                                     stepTopmotor=0.225, stepBotMotor=1.8, recon_2D=False)
@@ -91,6 +90,11 @@ class ReconstructionEasyPETCT:
 
         systemInfo = self.ToRFile_reader.systemInfo
         systemInfo.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 0, 0])
+        # nb_eventstest = 2
+        # normalization.reading_data = normalization.reading_data[:nb_eventstest]
+        # normalization.reading_data[:, 0] = np.arange(0,360, 360/nb_eventstest)
+        # normalization.reading_data[:, 1] = np.zeros(nb_eventstest)
+        # normalization.reading_data[:, 2] = 0
         systemInfo.sourcePositionAfterMovement(normalization.reading_data[:,0], normalization.reading_data[:,1])
 
         systemInfo.detectorSideBCoordinatesAfterMovement(normalization.reading_data[:,0], normalization.reading_data[:,1],
@@ -104,6 +108,13 @@ class ReconstructionEasyPETCT:
         self.projector.pointCorner2List = systemInfo.verticesB[:, 3]
         self.projector.pointCorner3List = systemInfo.verticesB[:, 0]
         self.projector.pointCorner4List = systemInfo.verticesB[:, 4]
+        # for i in range(8):
+        #     # print(systemInfo.verticesB[1, i, 0:2])
+        #     plt.plot(systemInfo.verticesB[1, i, 1], systemInfo.verticesB[1, i, 2], "o", label=f"Corner {i}")
+        #
+        # plt.plot(systemInfo.sourceCenter[1, 1],systemInfo.sourceCenter[1, 2] , 'ro', label='Source Center')
+        # plt.legend()
+        # plt.show()
 
         self.projector.createVectorialSpace()
         self.projector.createPlanes()
@@ -148,8 +159,8 @@ class ReconstructionEasyPETCT:
 
         self.projector.createVectorialSpace()
         self.projector.createPlanes()
-        self.projector.setCountsPerPosition(np.ones(systemInfo.sourceCenter.shape[0], dtype=np.int32))
-        # self.projector.setCountsPerPosition(self.ToRFile_reader.fileBodyData.countsPerGlobalID)
+        # self.projector.setCountsPerPosition(np.ones(systemInfo.sourceCenter.shape[0], dtype=np.int32))
+        self.projector.setCountsPerPosition(self.ToRFile_reader.fileBodyData.countsPerGlobalID)
         # self._normalizationM atrix = np.ones_like(self.projector.im_index_z)  # apagar depois
         # self._normalizationMatrix = self._normalizationMatrix.astype(np.float32)  # apagar depois
         # self._normalizationMatrix /= np.sum(self._normalizationMatrix)

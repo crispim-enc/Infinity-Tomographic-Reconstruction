@@ -8,7 +8,7 @@ __global__ void backprojection_cdrf
      const float* aFront, const float* bFront, const float* cFront, const float* dFront,
      const float* aBack, const float* bBack,   const float* cBack, const float* dBack,
      const short* A, const short* B, const short* C,
-    float* adjust_coef, float* sum_vor, float* system_matrix, float* im_gpu, const int* counts)
+    float* adjust_coef, float* sum_vor, float* system_matrix, float* im_gpu, int* counts)
 {
 
     extern __shared__ float adjust_coef_shared[];
@@ -18,6 +18,10 @@ __global__ void backprojection_cdrf
     float valueRight;
     float valueFront;
     float valueBack;
+    float term_diff_1;
+    float term_diff_2;
+    float term_sum_3;
+    float term_sum_4;
 
     short a_temp;
     short b_temp;
@@ -26,6 +30,8 @@ __global__ void backprojection_cdrf
     float im_gpu_temp;
 //    char fov_cut_temp;
     int i_s = threadIdx.x;
+    float probability;
+
 
     if (idt > n * m * p)
     {
@@ -39,6 +45,7 @@ __global__ void backprojection_cdrf
     a_temp = A[idt];
     b_temp = B[idt];
     c_temp = C[idt];
+
 
     for (int e = begin_event_gpu_limitation; e < end_event_gpu_limitation; e++)
     {
@@ -57,8 +64,21 @@ __global__ void backprojection_cdrf
                     {
                          if (sum_vor[e] != 0)
                             {
+
+                                term_diff_1 = abs(valueLeft - valueRight)*0.5;
+                                term_diff_2 = abs(valueFront - valueBack)*0.5;
+                                term_sum_3 = abs(valueLeft + valueRight)*0.5;
+                                term_sum_4 = abs(valueFront + valueBack)*0.5;
+//                                probability = 1 - sqrt(((abs(valueLeft) - abs(valueRight))*0.5) +
+//                                                        ((abs(valueFront) - abs(valueBack))*0.5)**2)/
+//                                                        sqrt(((abs(valueLeft) + abs(valueRight))*0.5)**2 +
+//                                                        ((abs(valueFront) + abs(valueBack))*0.5)**2);
+
+                                 probability = 1 -  sqrt(term_diff_1*term_diff_1 + term_diff_2*term_diff_2)/
+                                                        sqrt(term_sum_3*term_sum_3 + term_sum_4*term_sum_4);
+
 //                                adjust_coef_shared[i_s] = 1* expf(-sum_vor[e])*(1 - expf(1 ));
-                                adjust_coef_shared[i_s]+= 1 /sum_vor[e];
+                                adjust_coef_shared[i_s]+= probability * counts[e]/sum_vor[e];
 //                                adjust_coef_shared[i_s] += 1;
                             }
                     }

@@ -50,6 +50,11 @@ __global__ void forward_projection_cdrf
     float valueRight;
     float valueFront;
     float valueBack;
+    float probability;
+    float term_diff_1;
+    float term_diff_2;
+    float term_sum_3;
+    float term_sum_4;
 
 //    float sum_vor_temp;
     int index;
@@ -118,8 +123,16 @@ __global__ void forward_projection_cdrf
                             valueBack = aBackShared[e_m] * x_t + bBackShared[e_m] * y_t + cBackShared[e_m] * z_t - dBackShared[e_m];
                             if (valueBack <= 0)
                             {
+                                 term_diff_1 = abs(valueLeft - valueRight)*0.5;
+                                term_diff_2 = abs(valueFront - valueBack)*0.5;
+                                term_sum_3 = abs(valueLeft + valueRight)*0.5;
+                                term_sum_4 = abs(valueFront + valueBack)*0.5;
+//
 
-                                 sum_vor_shared[e_m] += im_old[index];
+                                 probability = 1 -  sqrt(term_diff_1*term_diff_1 + term_diff_2*term_diff_2)/
+                                                        sqrt(term_sum_3*term_sum_3 + term_sum_4*term_sum_4);
+//
+                                 sum_vor_shared[e_m] += probability * im_old[index];
 
                             }
                         }

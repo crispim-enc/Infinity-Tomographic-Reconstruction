@@ -52,6 +52,7 @@ class Device:
         self._deviceDirectory = None
         self._geometryObject = None
         self._geometryType = None
+        self._energyResolutionFunction = None
 
     def readDeviceProperties(self, objectName=None):
         """
@@ -59,7 +60,7 @@ class Device:
 
         :param objectName: name of the object to read the properties from (folder name)
         :type objectName: str
-
+        Deprecated
         """
         if objectName is None:
             print("Error: objectName is None")
@@ -165,20 +166,12 @@ class Device:
         """
         self._geometryObject = geometryObject
 
-    # def saveVarsDeviceToFile(self):
-    #     """
-    #     Save the device variables to a file
-    #     Also saves the geometry files  in the same folder
-    #     :return:
-    #     """
-    #     # save the variablesto a json5 file
-    #     file = open(os.path.join(self._deviceDirectory, "deviceVars.txt"), "w")
-    #     json5.dump({"deviceUUID": self._deviceUUID,
-    #                 "deviceName": self._deviceName,
-    #                 "deviceType": self._deviceType,
-    #                 "deviceDirectory": self._deviceDirectory}, file)
+    def setEnergyResolutionFunction(self, energyResolutionFunction=None):
+        if energyResolutionFunction is not None and not callable(energyResolutionFunction):
+            raise ValueError("energyResolutionFunction must be a callable function.")
+        self._energyResolutionFunction = energyResolutionFunction
 
-        # save the geometry vars to a file
-        # self._geometryObject.saveVarsGeometryToFile()
-
-
+    def getFWHMSystemEnergyResponse(self, energy):
+        if self._energyResolutionFunction is None:
+            raise ValueError("No energy resolution function has been set.")
+        return self._energyResolutionFunction(energy)

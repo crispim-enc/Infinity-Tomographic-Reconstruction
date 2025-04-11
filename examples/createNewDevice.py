@@ -15,11 +15,38 @@ Afterwars the device can be read from the folder and added to the new TOR files 
 """
 import matplotlib.pyplot as plt
 import numpy as np
+# import scipy to perform a fit
+from scipy.optimize import curve_fit
 from src.Geometry.easyPETBased import EasyCTGeometry, testSourceDistance
 from src.DetectionLayout.Modules import PETModule, easyPETModule
 from src.DetectionLayout.RadiationProducer import GenericRadiativeSource
 from src.Designer import DeviceDesignerStandalone
 from src.Device import StoreDeviceInFo
+
+
+def systemEnergyResponseFunction(E, Er, p1,p2):
+    """
+    Energy response function of the system
+    :param energy: energy of the photon
+    :param Er: energy resolution
+    """
+    fwhm = np.sqrt((p1/E)**2 + (p2)**2)
+    return fwhm/E
+
+
+energies = np.array([30, 59.6, 511])
+energy_resolution = np.array([0.63, 0.33, 0.14])
+
+fit = curve_fit(systemEnergyResponseFunction, energies, energy_resolution)
+plt.plot(energies, energy_resolution, 'ro', label='Data')
+plt.plot(np.arange(25,600, 10), systemEnergyResponseFunction(np.arange(25,600, 10), *fit[0]), 'b-', label='Fit')
+energy_window = [energies-energies*systemEnergyResponseFunction(energies, *fit[0]),energies+energies*systemEnergyResponseFunction(energies, *fit[0])]
+
+
+def systemEnergyResponseFunctionToLoadToDevice(E):
+    fwhm = np.sqrt((fit[0][1]/E)**2 + (fit[0][2])**2)
+    return fwhm/E
+
 
 # Set PET module type
 _module = easyPETModule
@@ -41,6 +68,8 @@ xrayproducer.setMainEmissions({1: {"energy": 59.54, "intensity": 0.36},
 # xrayproducer.setFocalSpotInitialPositionWKSystem([-2, 0, -(32*2+31*0.28)/2])
 # Set device
 newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x_ray_producer=xrayproducer)
+newDevice.setEnergyResolutionFunction(systemEnergyResponseFunctionToLoadToDevice)
+resolution = newDevice.getFWHMSystemEnergyResponse(energies)
 # Set source
 newDevice.setDistanceBetweenMotors(30)
 newDevice.setDistanceFanMotorToDetectorModulesOnSideA(0)
