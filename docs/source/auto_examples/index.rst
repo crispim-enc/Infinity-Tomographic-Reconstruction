@@ -1,6 +1,6 @@
 :orphan:
 
-Example Gallery
+Examples
 ===============
 
 This section contains usage examples and tutorials for the Infinity Tomographic Reconstruction project.
@@ -30,6 +30,23 @@ Each example demonstrates a specific feature or workflow.
     </div>
 
 
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Siemens Intevo Bold SPECT/CT">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_newdevice_siemens_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_newdevice_siemens.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Siemens Intevo Bold SPECT/CT</div>
+    </div>
+
+
 .. thumbnail-parent-div-close
 
 .. raw:: html
@@ -41,6 +58,7 @@ Each example demonstrates a specific feature or workflow.
    :hidden:
 
    /auto_examples/createNewDevice
+   /auto_examples/newdevice_siemens
 
 
 .. only:: html

@@ -1,0 +1,74 @@
+{
+ "DeviceDesignerStandalone": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "src.Designer",
+   "module_short": "src.Designer",
+   "name": "DeviceDesignerStandalone"
+  }
+ ],
+ "GenericCrystal": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "src.DetectionLayout.Photodetectors.Crystals",
+   "module_short": "src.DetectionLayout.Photodetectors.Crystals",
+   "name": "GenericCrystal"
+  }
+ ],
+ "PETModule": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "src.DetectionLayout.Modules",
+   "module_short": "src.DetectionLayout.Modules",
+   "name": "PETModule"
+  }
+ ],
+ "PlanarGeometry": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "src.Geometry.Standard",
+   "module_short": "src.Geometry.Standard",
+   "name": "PlanarGeometry"
+  }
+ ],
+ "np.array": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "array"
+  }
+ ],
+ "os.path.join": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "os.path",
+   "module_short": "os.path",
+   "name": "join"
+  }
+ ],
+ "plt.subplots": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "subplots"
+  }
+ ],
+ "pydicom.dcmread": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "dcmread"
+  }
+ ]
+}

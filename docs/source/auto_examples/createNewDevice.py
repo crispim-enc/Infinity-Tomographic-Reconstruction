@@ -28,7 +28,7 @@ from Device import StoreDeviceInFo, EnergyResolutionFunction
 from TORFilesReader import ToRFile
 from Corrections.General import DetectorSensitivityResponse
 
-
+"""SYSTEM ENERGY RESPONSE FUNCTION (Not mandatory)"""
 def systemEnergyResponseFunction(E, Er, p1,p2):
     """
     Energy response function of the system
@@ -51,9 +51,17 @@ systemEnergyResolution = EnergyResolutionFunction(p1=fit[0][1], p2=fit[0][2])
 
 
 
-# Set PET module type
+# %% [markdown]
+# # Setup the type of the detector module. You should not call the PETModule class directly.
+# This object  should entry as  argument in the geometry class type for proper setting. This allows to set multiple
+# cells. Number of modules, rotations and translations are set after the geometry class is created.
 _module = easyPETModule
 
+# %% [markdown]
+# # Setup the x-ray source
+#
+# Now we define the characteristics of the x-ray source using the `GenericRadiativeSource` class.
+# The source is set to be an Am-241 source with a focal spot diameter of 1 mm, and the shielding is set to be a cylinder made of lead with a density of 11.34 g/cm³ and a thickness of 0.5 mm.
 # Set x-ray producer object
 xrayproducer = GenericRadiativeSource()
 xrayproducer.setSourceName("Am-241")
@@ -68,23 +76,33 @@ xrayproducer.setShieldingRadius(12.5)
 xrayproducer.setMainEmissions({1: {"energy": 59.54, "intensity": 0.36},
                                  2: {"energy": 26.34, "intensity": 0.024},
                                  })
-# xrayproducer.setFocalSpotInitialPositionWKSystem([-2, 0, -(32*2+31*0.28)/2])
-# Set device
+
+
+# %% [markdown]
+# # The next step  is to choose the geometry type, which is `EasyCTGeometry` in this case. This function is inherited
+# from the DualRotationGeometry class which is an Device Object. Here we set the distance between the two points of rotation,
+# the distance between the fan motor and the detector modules (closest side) and the distance between the fan motor and the detector modules (far side).
+# as well as the initial position of the x-ray source.
+
 newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x_ray_producer=xrayproducer)
-newDevice.setEnergyResolutionFunction(systemEnergyResolution)
-# newDevice.energyResolutionFunction = types.MethodType(energyResolutionFunction, newDevice)
-resolution = newDevice.getFWHMSystemEnergyResponse(energies)
-print("Resolution: ", resolution)
-# Set source
-newDevice.setDistanceBetweenMotors(30)
-newDevice.setDistanceFanMotorToDetectorModulesOnSideA(0)
-newDevice.setDistanceFanMotorToDetectorModulesOnSideB(60)
+newDevice.setDeviceName("EasyCT")
+newDevice.setDeviceType("CT")
+newDevice.setEnergyResolutionFunction(systemEnergyResolution) # use to apply energy cuts
+newDevice.setDistanceBetweenMotors(30) # Distance between the two points of rotation
+newDevice.setDistanceFanMotorToDetectorModulesOnSideA(0)  # Distance between the fan motor and the detector modules (closest side)
+newDevice.setDistanceFanMotorToDetectorModulesOnSideB(60) # Distance between the fan motor and the detector modules (far side)
 newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 3, 0])
-# newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 4, (32*2+31*0.28)/2])
+newDevice.evaluateInitialSourcePosition() # evaluate the initial position of the source
 
-newDevice.evaluateInitialSourcePosition()
 
-# Set modules Side A
+# %% [markdown]
+# # Set modules Side A. For each module, should be in the list  the equivalent rotation and translation variables.
+# If for example two modules are set, the variables should be in the list as follows:
+#   moduleSideA_X_translation = np.array([15, 20], dtype=np.float32)
+#   moduleSideA_Y_translation = np.array([0, 0], dtype=np.float32)
+#
+#   ...
+# Very important. The translations are regarding the fan motor center. The rotations are regarding the center of the module.
 newDevice.setNumberOfDetectorModulesSideA(1)
 
 moduleSideA_X_translation = np.array([15], dtype=np.float32)
@@ -103,6 +121,8 @@ for i in range(newDevice.numberOfDetectorModulesSideA):
     newDevice.detectorModulesSideA[i].setBetaRotation(moduleSideA_beta_rotation[i])
     newDevice.detectorModulesSideA[i].setSigmaRotation(moduleSideA_sigma_rotation[i])
 
+# %% [markdown]
+# # Set modules Side B.
 newDevice.setNumberOfDetectorModulesSideB(1)
 moduleSideB_X_translation = np.array([-75], dtype=np.float32)
 moduleSideB_Y_translation = np.array([0], dtype=np.float32)
@@ -120,10 +140,13 @@ for i in range(newDevice.numberOfDetectorModulesSideB):
     newDevice.detectorModulesSideB[i].setBetaRotation(moduleSideB_beta_rotation[i])
     newDevice.detectorModulesSideB[i].setSigmaRotation(moduleSideB_sigma_rotation[i])
 
-# newDevice
-newDevice.setDeviceName("EasyCT")
-newDevice.setDeviceType("CT")
-
+# %% [markdown]
+# # Set the inital coordinates of the system. In both coordinate
+#
+# .. image:: ../images/geometry_easypet_mathematical_calculation.png
+#    :alt: EasyCT Diagram
+#    :width: 600px
+#    :align: center
 newDevice.generateInitialCoordinatesWKSystem()
 newDevice.generateInitialCoordinatesXYSystem()
 

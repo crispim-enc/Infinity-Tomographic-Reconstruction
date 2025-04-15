@@ -25,7 +25,7 @@ This is an example how to create a new device. In this case a new system for Eas
 The device should be run only one time to create a new device.  A folder with a unique identifier will be created
 Afterwars the device can be read from the folder and added to the new TOR files created
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-197
+.. GENERATED FROM PYTHON SOURCE LINES 18-54
 
 .. code-block:: Python
 
@@ -42,7 +42,7 @@ Afterwars the device can be read from the folder and added to the new TOR files 
     from TORFilesReader import ToRFile
     from Corrections.General import DetectorSensitivityResponse
 
-
+    """SYSTEM ENERGY RESPONSE FUNCTION (Not mandatory)"""
     def systemEnergyResponseFunction(E, Er, p1,p2):
         """
         Energy response function of the system
@@ -65,10 +65,32 @@ Afterwars the device can be read from the folder and added to the new TOR files 
 
 
 
-    # Set PET module type
+
+.. GENERATED FROM PYTHON SOURCE LINES 55-58
+
+# Setup the type of the detector module. You should not call the PETModule class directly.
+This object  should entry as  argument in the geometry class type for proper setting. This allows to set multiple
+cells. Number of modules, rotations and translations are set after the geometry class is created.
+
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
+
+.. code-block:: Python
+
     _module = easyPETModule
 
-    # Set x-ray producer object
+
+.. GENERATED FROM PYTHON SOURCE LINES 61-66
+
+# Setup the x-ray source
+
+Now we define the characteristics of the x-ray source using the `GenericRadiativeSource` class.
+The source is set to be an Am-241 source with a focal spot diameter of 1 mm, and the shielding is set to be a cylinder made of lead with a density of 11.34 g/cm³ and a thickness of 0.5 mm.
+Set x-ray producer object
+
+.. GENERATED FROM PYTHON SOURCE LINES 66-81
+
+.. code-block:: Python
+
     xrayproducer = GenericRadiativeSource()
     xrayproducer.setSourceName("Am-241")
     xrayproducer.setSourceActivity(1.0 * 37000)
@@ -82,23 +104,47 @@ Afterwars the device can be read from the folder and added to the new TOR files 
     xrayproducer.setMainEmissions({1: {"energy": 59.54, "intensity": 0.36},
                                      2: {"energy": 26.34, "intensity": 0.024},
                                      })
-    # xrayproducer.setFocalSpotInitialPositionWKSystem([-2, 0, -(32*2+31*0.28)/2])
-    # Set device
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 82-86
+
+# The next step  is to choose the geometry type, which is `EasyCTGeometry` in this case. This function is inherited
+from the DualRotationGeometry class which is an Device Object. Here we set the distance between the two points of rotation,
+the distance between the fan motor and the detector modules (closest side) and the distance between the fan motor and the detector modules (far side).
+as well as the initial position of the x-ray source.
+
+.. GENERATED FROM PYTHON SOURCE LINES 86-98
+
+.. code-block:: Python
+
+
     newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x_ray_producer=xrayproducer)
-    newDevice.setEnergyResolutionFunction(systemEnergyResolution)
-    # newDevice.energyResolutionFunction = types.MethodType(energyResolutionFunction, newDevice)
-    resolution = newDevice.getFWHMSystemEnergyResponse(energies)
-    print("Resolution: ", resolution)
-    # Set source
-    newDevice.setDistanceBetweenMotors(30)
-    newDevice.setDistanceFanMotorToDetectorModulesOnSideA(0)
-    newDevice.setDistanceFanMotorToDetectorModulesOnSideB(60)
+    newDevice.setDeviceName("EasyCT")
+    newDevice.setDeviceType("CT")
+    newDevice.setEnergyResolutionFunction(systemEnergyResolution) # use to apply energy cuts
+    newDevice.setDistanceBetweenMotors(30) # Distance between the two points of rotation
+    newDevice.setDistanceFanMotorToDetectorModulesOnSideA(0)  # Distance between the fan motor and the detector modules (closest side)
+    newDevice.setDistanceFanMotorToDetectorModulesOnSideB(60) # Distance between the fan motor and the detector modules (far side)
     newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 3, 0])
-    # newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 4, (32*2+31*0.28)/2])
+    newDevice.evaluateInitialSourcePosition() # evaluate the initial position of the source
 
-    newDevice.evaluateInitialSourcePosition()
 
-    # Set modules Side A
+
+.. GENERATED FROM PYTHON SOURCE LINES 99-106
+
+# Set modules Side A. For each module, should be in the list  the equivalent rotation and translation variables.
+If for example two modules are set, the variables should be in the list as follows:
+  moduleSideA_X_translation = np.array([15, 20], dtype=np.float32)
+  moduleSideA_Y_translation = np.array([0, 0], dtype=np.float32)
+
+  ...
+Very important. The translations are regarding the fan motor center. The rotations are regarding the center of the module.
+
+.. GENERATED FROM PYTHON SOURCE LINES 106-124
+
+.. code-block:: Python
+
     newDevice.setNumberOfDetectorModulesSideA(1)
 
     moduleSideA_X_translation = np.array([15], dtype=np.float32)
@@ -117,6 +163,15 @@ Afterwars the device can be read from the folder and added to the new TOR files 
         newDevice.detectorModulesSideA[i].setBetaRotation(moduleSideA_beta_rotation[i])
         newDevice.detectorModulesSideA[i].setSigmaRotation(moduleSideA_sigma_rotation[i])
 
+
+.. GENERATED FROM PYTHON SOURCE LINES 125-126
+
+# Set modules Side B.
+
+.. GENERATED FROM PYTHON SOURCE LINES 126-143
+
+.. code-block:: Python
+
     newDevice.setNumberOfDetectorModulesSideB(1)
     moduleSideB_X_translation = np.array([-75], dtype=np.float32)
     moduleSideB_Y_translation = np.array([0], dtype=np.float32)
@@ -134,9 +189,19 @@ Afterwars the device can be read from the folder and added to the new TOR files 
         newDevice.detectorModulesSideB[i].setBetaRotation(moduleSideB_beta_rotation[i])
         newDevice.detectorModulesSideB[i].setSigmaRotation(moduleSideB_sigma_rotation[i])
 
-    # newDevice
-    newDevice.setDeviceName("EasyCT")
-    newDevice.setDeviceType("CT")
+
+.. GENERATED FROM PYTHON SOURCE LINES 144-150
+
+# Set the inital coordinates of the system. In both coordinate
+
+.. image:: ../images/geometry_easypet_mathematical_calculation.png
+   :alt: EasyCT Diagram
+   :width: 600px
+   :align: center
+
+.. GENERATED FROM PYTHON SOURCE LINES 150-220
+
+.. code-block:: Python
 
     newDevice.generateInitialCoordinatesWKSystem()
     newDevice.generateInitialCoordinatesXYSystem()

@@ -46,7 +46,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/createNewDevice';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Example Gallery" href="index.html" />
+    <link rel="next" title="Siemens Intevo Bold SPECT/CT" href="newdevice_siemens.html" />
+    <link rel="prev" title="Examples" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -153,7 +154,7 @@
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
-                        Example Gallery
+                        Examples
                       </a>
                     </li>
                 
@@ -243,7 +244,7 @@ document.write(`
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
-                        Example Gallery
+                        Examples
                       </a>
                     </li>
                 
@@ -277,6 +278,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">EasyCT device creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newdevice_siemens.html">Siemens Intevo Bold SPECT/CT</a></li>
 </ul>
 </div>
 </nav></div>
@@ -315,7 +317,7 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Example Gallery</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Examples</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">EasyCT...</li>
   </ul>
@@ -357,7 +359,7 @@ Afterwars the device can be read from the folder and added to the new TOR files 
 <span class="kn">from</span><span class="w"> </span><span class="nn">TORFilesReader</span><span class="w"> </span><span class="kn">import</span> <span class="n">ToRFile</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">Corrections.General</span><span class="w"> </span><span class="kn">import</span> <span class="n">DetectorSensitivityResponse</span>
 
-
+<span class="sd">&quot;&quot;&quot;SYSTEM ENERGY RESPONSE FUNCTION (Not mandatory)&quot;&quot;&quot;</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">systemEnergyResponseFunction</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">Er</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Energy response function of the system</span>
@@ -377,14 +379,19 @@ Afterwars the device can be read from the folder and added to the new TOR files 
 <span class="n">energy_window</span> <span class="o">=</span> <span class="p">[</span><span class="n">energies</span><span class="o">-</span><span class="n">energies</span><span class="o">*</span><span class="n">systemEnergyResponseFunction</span><span class="p">(</span><span class="n">energies</span><span class="p">,</span> <span class="o">*</span><span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">energies</span><span class="o">+</span><span class="n">energies</span><span class="o">*</span><span class="n">systemEnergyResponseFunction</span><span class="p">(</span><span class="n">energies</span><span class="p">,</span> <span class="o">*</span><span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
 
 <span class="n">systemEnergyResolution</span> <span class="o">=</span> <span class="n">EnergyResolutionFunction</span><span class="p">(</span><span class="n">p1</span><span class="o">=</span><span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">p2</span><span class="o">=</span><span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
-
-
-
-<span class="c1"># Set PET module type</span>
-<span class="n">_module</span> <span class="o">=</span> <span class="n">easyPETModule</span>
-
-<span class="c1"># Set x-ray producer object</span>
-<span class="n">xrayproducer</span> <span class="o">=</span> <span class="n">GenericRadiativeSource</span><span class="p">()</span>
+</pre></div>
+</div>
+<p># Setup the type of the detector module. You should not call the PETModule class directly.
+This object  should entry as  argument in the geometry class type for proper setting. This allows to set multiple
+cells. Number of modules, rotations and translations are set after the geometry class is created.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">_module</span> <span class="o">=</span> <span class="n">easyPETModule</span>
+</pre></div>
+</div>
+<p># Setup the x-ray source</p>
+<p>Now we define the characteristics of the x-ray source using the <cite>GenericRadiativeSource</cite> class.
+The source is set to be an Am-241 source with a focal spot diameter of 1 mm, and the shielding is set to be a cylinder made of lead with a density of 11.34 g/cm³ and a thickness of 0.5 mm.
+Set x-ray producer object</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">xrayproducer</span> <span class="o">=</span> <span class="n">GenericRadiativeSource</span><span class="p">()</span>
 <span class="n">xrayproducer</span><span class="o">.</span><span class="n">setSourceName</span><span class="p">(</span><span class="s2">&quot;Am-241&quot;</span><span class="p">)</span>
 <span class="n">xrayproducer</span><span class="o">.</span><span class="n">setSourceActivity</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">*</span> <span class="mi">37000</span><span class="p">)</span>
 <span class="n">xrayproducer</span><span class="o">.</span><span class="n">setFocalSpotDiameter</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -397,24 +404,32 @@ Afterwars the device can be read from the folder and added to the new TOR files 
 <span class="n">xrayproducer</span><span class="o">.</span><span class="n">setMainEmissions</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;energy&quot;</span><span class="p">:</span> <span class="mf">59.54</span><span class="p">,</span> <span class="s2">&quot;intensity&quot;</span><span class="p">:</span> <span class="mf">0.36</span><span class="p">},</span>
                                  <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;energy&quot;</span><span class="p">:</span> <span class="mf">26.34</span><span class="p">,</span> <span class="s2">&quot;intensity&quot;</span><span class="p">:</span> <span class="mf">0.024</span><span class="p">},</span>
                                  <span class="p">})</span>
-<span class="c1"># xrayproducer.setFocalSpotInitialPositionWKSystem([-2, 0, -(32*2+31*0.28)/2])</span>
-<span class="c1"># Set device</span>
-<span class="n">newDevice</span> <span class="o">=</span> <span class="n">EasyCTGeometry</span><span class="p">(</span><span class="n">detector_moduleA</span><span class="o">=</span><span class="n">_module</span><span class="p">,</span> <span class="n">detector_moduleB</span><span class="o">=</span><span class="n">_module</span><span class="p">,</span> <span class="n">x_ray_producer</span><span class="o">=</span><span class="n">xrayproducer</span><span class="p">)</span>
-<span class="n">newDevice</span><span class="o">.</span><span class="n">setEnergyResolutionFunction</span><span class="p">(</span><span class="n">systemEnergyResolution</span><span class="p">)</span>
-<span class="c1"># newDevice.energyResolutionFunction = types.MethodType(energyResolutionFunction, newDevice)</span>
-<span class="n">resolution</span> <span class="o">=</span> <span class="n">newDevice</span><span class="o">.</span><span class="n">getFWHMSystemEnergyResponse</span><span class="p">(</span><span class="n">energies</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resolution: &quot;</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
-<span class="c1"># Set source</span>
-<span class="n">newDevice</span><span class="o">.</span><span class="n">setDistanceBetweenMotors</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">newDevice</span><span class="o">.</span><span class="n">setDistanceFanMotorToDetectorModulesOnSideA</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">newDevice</span><span class="o">.</span><span class="n">setDistanceFanMotorToDetectorModulesOnSideB</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+<p># The next step  is to choose the geometry type, which is <cite>EasyCTGeometry</cite> in this case. This function is inherited
+from the DualRotationGeometry class which is an Device Object. Here we set the distance between the two points of rotation,
+the distance between the fan motor and the detector modules (closest side) and the distance between the fan motor and the detector modules (far side).
+as well as the initial position of the x-ray source.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">newDevice</span> <span class="o">=</span> <span class="n">EasyCTGeometry</span><span class="p">(</span><span class="n">detector_moduleA</span><span class="o">=</span><span class="n">_module</span><span class="p">,</span> <span class="n">detector_moduleB</span><span class="o">=</span><span class="n">_module</span><span class="p">,</span> <span class="n">x_ray_producer</span><span class="o">=</span><span class="n">xrayproducer</span><span class="p">)</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">setDeviceName</span><span class="p">(</span><span class="s2">&quot;EasyCT&quot;</span><span class="p">)</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">setDeviceType</span><span class="p">(</span><span class="s2">&quot;CT&quot;</span><span class="p">)</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">setEnergyResolutionFunction</span><span class="p">(</span><span class="n">systemEnergyResolution</span><span class="p">)</span> <span class="c1"># use to apply energy cuts</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">setDistanceBetweenMotors</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># Distance between the two points of rotation</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">setDistanceFanMotorToDetectorModulesOnSideA</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Distance between the fan motor and the detector modules (closest side)</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">setDistanceFanMotorToDetectorModulesOnSideB</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span> <span class="c1"># Distance between the fan motor and the detector modules (far side)</span>
 <span class="n">newDevice</span><span class="o">.</span><span class="n">xRayProducer</span><span class="o">.</span><span class="n">setFocalSpotInitialPositionWKSystem</span><span class="p">([</span><span class="mf">12.55</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="c1"># newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 4, (32*2+31*0.28)/2])</span>
-
-<span class="n">newDevice</span><span class="o">.</span><span class="n">evaluateInitialSourcePosition</span><span class="p">()</span>
-
-<span class="c1"># Set modules Side A</span>
-<span class="n">newDevice</span><span class="o">.</span><span class="n">setNumberOfDetectorModulesSideA</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">evaluateInitialSourcePosition</span><span class="p">()</span> <span class="c1"># evaluate the initial position of the source</span>
+</pre></div>
+</div>
+<p># Set modules Side A. For each module, should be in the list  the equivalent rotation and translation variables.
+If for example two modules are set, the variables should be in the list as follows:</p>
+<blockquote>
+<div><p>moduleSideA_X_translation = np.array([15, 20], dtype=np.float32)
+moduleSideA_Y_translation = np.array([0, 0], dtype=np.float32)</p>
+<p>…</p>
+</div></blockquote>
+<p>Very important. The translations are regarding the fan motor center. The rotations are regarding the center of the module.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">newDevice</span><span class="o">.</span><span class="n">setNumberOfDetectorModulesSideA</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">moduleSideA_X_translation</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="mi">15</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float32" title="numpy.float32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">np</span><span class="o">.</span><span class="n">float32</span></a><span class="p">)</span>
 <span class="n">moduleSideA_Y_translation</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float32" title="numpy.float32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">np</span><span class="o">.</span><span class="n">float32</span></a><span class="p">)</span>
@@ -431,8 +446,10 @@ Afterwars the device can be read from the folder and added to the new TOR files 
     <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModulesSideA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">setAlphaRotation</span><span class="p">(</span><span class="n">moduleSideA_alpha_rotation</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModulesSideA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">setBetaRotation</span><span class="p">(</span><span class="n">moduleSideA_beta_rotation</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModulesSideA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">setSigmaRotation</span><span class="p">(</span><span class="n">moduleSideA_sigma_rotation</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-
-<span class="n">newDevice</span><span class="o">.</span><span class="n">setNumberOfDetectorModulesSideB</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p># Set modules Side B.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">newDevice</span><span class="o">.</span><span class="n">setNumberOfDetectorModulesSideB</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">moduleSideB_X_translation</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="o">-</span><span class="mi">75</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float32" title="numpy.float32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">np</span><span class="o">.</span><span class="n">float32</span></a><span class="p">)</span>
 <span class="n">moduleSideB_Y_translation</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float32" title="numpy.float32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">np</span><span class="o">.</span><span class="n">float32</span></a><span class="p">)</span>
 <span class="n">moduleSideB_Z_translation</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float32" title="numpy.float32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">np</span><span class="o">.</span><span class="n">float32</span></a><span class="p">)</span>
@@ -448,12 +465,12 @@ Afterwars the device can be read from the folder and added to the new TOR files 
     <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModulesSideB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">setAlphaRotation</span><span class="p">(</span><span class="n">moduleSideB_alpha_rotation</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModulesSideB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">setBetaRotation</span><span class="p">(</span><span class="n">moduleSideB_beta_rotation</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModulesSideB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">setSigmaRotation</span><span class="p">(</span><span class="n">moduleSideB_sigma_rotation</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-
-<span class="c1"># newDevice</span>
-<span class="n">newDevice</span><span class="o">.</span><span class="n">setDeviceName</span><span class="p">(</span><span class="s2">&quot;EasyCT&quot;</span><span class="p">)</span>
-<span class="n">newDevice</span><span class="o">.</span><span class="n">setDeviceType</span><span class="p">(</span><span class="s2">&quot;CT&quot;</span><span class="p">)</span>
-
-<span class="n">newDevice</span><span class="o">.</span><span class="n">generateInitialCoordinatesWKSystem</span><span class="p">()</span>
+</pre></div>
+</div>
+<p># Set the inital coordinates of the system. In both coordinate</p>
+<a class="reference internal image-reference" href="../_images/geometry_easypet_mathematical_calculation.png"><img alt="EasyCT Diagram" class="align-center" src="../_images/geometry_easypet_mathematical_calculation.png" style="width: 600px;" />
+</a>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">newDevice</span><span class="o">.</span><span class="n">generateInitialCoordinatesWKSystem</span><span class="p">()</span>
 <span class="n">newDevice</span><span class="o">.</span><span class="n">generateInitialCoordinatesXYSystem</span><span class="p">()</span>
 
 <span class="c1"># Generate detector sensitivity response (It is necessary to create the device one time first then generate the TOR file for the white scan and then generate the new device)</span>
@@ -555,8 +572,17 @@ Afterwars the device can be read from the folder and added to the new TOR files 
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Example Gallery</p>
+        <p class="prev-next-title">Examples</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="newdevice_siemens.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Siemens Intevo Bold SPECT/CT</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

@@ -15,10 +15,10 @@ This is an example how to create a new device. In this case a new system for Eas
 The device should be run only one time to create a new device.  A folder with a unique identifier will be created
 Afterwars the device can be read from the folder and added to the new TOR files created
 """
-import types
+
+"""IMPORTS"""
 import matplotlib.pyplot as plt
 import numpy as np
-# import scipy to perform a fit
 from scipy.optimize import curve_fit
 from Geometry.easyPETBased import EasyCTGeometry, testSourceDistance
 from DetectionLayout.Modules import PETModule, easyPETModule
@@ -28,6 +28,7 @@ from Device import StoreDeviceInFo, EnergyResolutionFunction
 from TORFilesReader import ToRFile
 from Corrections.General import DetectorSensitivityResponse
 
+"""SYSTEM ENERGY RESPONSE FUNCTION (Not mandatory)"""
 
 def systemEnergyResponseFunction(E, Er, p1,p2):
     """
@@ -51,9 +52,13 @@ systemEnergyResolution = EnergyResolutionFunction(p1=fit[0][1], p2=fit[0][2])
 
 
 
-# Set PET module type
-_module = easyPETModule
 
+
+# %% [markdown]
+# ## Setup the x-ray source
+#
+# Now we define the characteristics of the x-ray source using the `GenericRadiativeSource` class.
+# The source is set to be an Am-241 source with a focal spot diameter of 1 mm, and the shielding is set to be a cylinder made of lead with a density of 11.34 g/cm³ and a thickness of 0.5 mm.
 # Set x-ray producer object
 xrayproducer = GenericRadiativeSource()
 xrayproducer.setSourceName("Am-241")
@@ -68,6 +73,9 @@ xrayproducer.setShieldingRadius(12.5)
 xrayproducer.setMainEmissions({1: {"energy": 59.54, "intensity": 0.36},
                                  2: {"energy": 26.34, "intensity": 0.024},
                                  })
+
+# Set PET module type
+_module = easyPETModule
 # xrayproducer.setFocalSpotInitialPositionWKSystem([-2, 0, -(32*2+31*0.28)/2])
 # Set device
 newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x_ray_producer=xrayproducer)

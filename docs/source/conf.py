@@ -10,6 +10,7 @@ import sys
 # sys.path.insert(0, os.path.abspath('../src/'))
 # sys.path.insert(0, os.path.abspath('../../src/'))
 sys.path.insert(0, os.path.abspath('../../src/'))
+from sphinx_gallery.sorting import FileNameSortKey
 
 project = 'Infinity-Tomographic-Reconstruction'
 copyright = '2025, Pedro Encarnação'
@@ -35,12 +36,15 @@ sphinx_gallery_conf = {
     'examples_dirs': 'examples',   # path to your example scripts
     'gallery_dirs': 'auto_examples',  # where to save gallery generated pages
     'filename_pattern': r'example_',
+'within_subsection_order': FileNameSortKey,
 }# regex to filter which files to include
     # Optional:
     # 'backreferences_dir': 'generated',
     # 'doc_module': ('your_module_name',),
     # 'image_scrapers': ('matplotlib',),
 # }
+
+
 language = 'en'
 
 # -- Options for HTML output -------------------------------------------------
