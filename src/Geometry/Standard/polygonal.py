@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from src.Device import Device
+from Device import Device
 
 
 class RegularPolygonalGeometry(Device):

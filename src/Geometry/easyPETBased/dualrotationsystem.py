@@ -11,7 +11,7 @@
 """
 Brief description of the file.
 """
-from src.Device import Device
+from Device import Device
 import numpy as np
 
 

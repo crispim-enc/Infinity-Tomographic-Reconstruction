@@ -7,7 +7,7 @@ import pycuda.driver as cuda
 # import pycuda.autoinit
 from pycuda.compiler import SourceModule
 
-from ..Segmentation.findisosurface import FindISOSurface
+# from ..Segmentation.findisosurface import FindISOSurface
 from .selectable_events import ROIEvents
 from .CPU import IterativeAlgorithmCPU
 from .gpu_shared_memory import GPUSharedMemorySingleKernel

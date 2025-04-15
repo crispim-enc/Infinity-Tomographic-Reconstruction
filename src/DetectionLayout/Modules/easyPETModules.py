@@ -13,8 +13,8 @@ Brief description of the file.
 """
 import numpy as np
 from .PETModuleGeneric import PETModule
-from src.DetectionLayout.Photodetectors.Crystals import LYSOCrystal
-from src.DetectionLayout.Photodetectors.SiPM import HamamatsuS13360Series
+from DetectionLayout.Photodetectors.Crystals import LYSOCrystal
+from DetectionLayout.Photodetectors.SiPM import HamamatsuS13360Series
 
 
 class easyPETModule(PETModule):

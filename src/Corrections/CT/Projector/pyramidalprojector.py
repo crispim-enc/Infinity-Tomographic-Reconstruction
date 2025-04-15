@@ -1,5 +1,5 @@
 import numpy as np
-# from src.Projector import GeneralProjector
+# from Projector import GeneralProjector
 
 
 class PyramidalProjector:

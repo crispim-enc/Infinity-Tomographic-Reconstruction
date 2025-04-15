@@ -1,0 +1,1068 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DetectionLayout.Photodetectors.SiPM package &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DetectionLayout.Photodetectors.SiPM';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DetectionLayout.RadiationProducer package" href="DetectionLayout.RadiationProducer.html" />
+    <link rel="prev" title="DetectionLayout.Photodetectors.Crystals package" href="DetectionLayout.Photodetectors.Crystals.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        src
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        src
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AnalyticalReconstruction.html">AnalyticalReconstruction package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Corrections.html">Corrections package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.CT.html">Corrections.CT package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.CT.Projector.html">Corrections.CT.Projector package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.Compton.html">Corrections.Compton package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.EasyPET.html">Corrections.EasyPET package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.Normalization.html">Corrections.EasyPET.Normalization package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.SystemFocus.html">Corrections.EasyPET.SystemFocus package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.General.html">Corrections.General package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.PET.html">Corrections.PET package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Attenuation.html">Corrections.PET.Attenuation package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DOI.html">Corrections.PET.DOI package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DecayCorrection.html">Corrections.PET.DecayCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.EnergyCorrection.html">Corrections.PET.EnergyCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Projector.html">Corrections.PET.Projector package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Designer.html">Designer package</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="DetectionLayout.html">DetectionLayout package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Collimators.html">DetectionLayout.Collimators package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Modules.html">DetectionLayout.Modules package</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="DetectionLayout.Photodetectors.html">DetectionLayout.Photodetectors package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Photodetectors.Crystals.html">DetectionLayout.Photodetectors.Crystals package</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">DetectionLayout.Photodetectors.SiPM package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.RadiationProducer.html">DetectionLayout.RadiationProducer package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Semicondutors.html">DetectionLayout.Semicondutors package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Device.html">Device package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="EasyPETLinkInitializer.html">EasyPETLinkInitializer package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html">EasyPETLinkInitializer.EasyPETDataReader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html">EasyPETLinkInitializer.Preprocessing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.SimulationData.html">EasyPETLinkInitializer.SimulationData package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html">EasyPETLinkInitializer.Utilities package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="GateLink.html">GateLink package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.GateToTor.html">GateLink.GateToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.RootToTor.html">GateLink.RootToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.ToRToGate.html">GateLink.ToRToGate package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Geometry.html">Geometry package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.LinearPET.html">Geometry.LinearPET package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.SPIRAL.html">Geometry.SPIRAL package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.Standard.html">Geometry.Standard package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.easyPETBased.html">Geometry.easyPETBased package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ImageReader.html">ImageReader package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.DICOM.html">ImageReader.DICOM package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.Interfile.html">ImageReader.Interfile package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.RawData.html">ImageReader.RawData package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Metrics.html">Metrics package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.ImageQuality.html">Metrics.ImageQuality package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.NEMA.html">Metrics.NEMA package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Optimizer.html">Optimizer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phantoms.html">Phantoms package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quantification.html">Quantification package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StandaloneInitializer.html">StandaloneInitializer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TORFilesReader.html">TORFilesReader package</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">src</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="DetectionLayout.Photodetectors.html" class="nav-link">DetectionLayout.Photodetectors package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">DetectionLay...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="detectionlayout-photodetectors-sipm-package">
+<h1>DetectionLayout.Photodetectors.SiPM package<a class="headerlink" href="#detectionlayout-photodetectors-sipm-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-DetectionLayout.Photodetectors.SiPM.Hamamatsu">
+<span id="detectionlayout-photodetectors-sipm-hamamatsu-module"></span><h2>DetectionLayout.Photodetectors.SiPM.Hamamatsu module<a class="headerlink" href="#module-DetectionLayout.Photodetectors.SiPM.Hamamatsu" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.Hamamatsu.HamamatsuS13360Series">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DetectionLayout.Photodetectors.SiPM.Hamamatsu.</span></span><span class="sig-name descname"><span class="pre">HamamatsuS13360Series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idSiPM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1350PE'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/Hamamatsu.html#HamamatsuS13360Series"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.Hamamatsu.HamamatsuS13360Series" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM" title="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM"><code class="xref py py-class docutils literal notranslate"><span class="pre">GenericSiPM</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.Hamamatsu.HamamatsuS14161Series">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DetectionLayout.Photodetectors.SiPM.Hamamatsu.</span></span><span class="sig-name descname"><span class="pre">HamamatsuS14161Series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'3050HS-08'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/Hamamatsu.html#HamamatsuS14161Series"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.Hamamatsu.HamamatsuS14161Series" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM" title="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM"><code class="xref py py-class docutils literal notranslate"><span class="pre">GenericSiPM</span></code></a></p>
+<p>Hamamatsu S14161 Series
+model: 3050HS-04 or 3050HS-08</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.Hamamatsu.HamamatsuS14161Series.applyModelProperties">
+<span class="sig-name descname"><span class="pre">applyModelProperties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/Hamamatsu.html#HamamatsuS14161Series.applyModelProperties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.Hamamatsu.HamamatsuS14161Series.applyModelProperties" title="Link to this definition">#</a></dt>
+<dd><p>Apply model properties
+:type model: 
+:param model: model name
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-DetectionLayout.Photodetectors.SiPM.Kettek">
+<span id="detectionlayout-photodetectors-sipm-kettek-module"></span><h2>DetectionLayout.Photodetectors.SiPM.Kettek module<a class="headerlink" href="#module-DetectionLayout.Photodetectors.SiPM.Kettek" title="Link to this heading">#</a></h2>
+<p>Brief description of the file.</p>
+</section>
+<section id="module-DetectionLayout.Photodetectors.SiPM.generic">
+<span id="detectionlayout-photodetectors-sipm-generic-module"></span><h2>DetectionLayout.Photodetectors.SiPM.generic module<a class="headerlink" href="#module-DetectionLayout.Photodetectors.SiPM.generic" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DetectionLayout.Photodetectors.SiPM.generic.</span></span><span class="sig-name descname"><span class="pre">GenericSiPM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idSiPM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Generic SiPM class
+parameters:</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.alphaRotation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alphaRotation</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.alphaRotation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.betaRotation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">betaRotation</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.betaRotation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMArea">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">blockSPiMArea</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMArea" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMDepth">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">blockSPiMDepth</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMDepth" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMHeight">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">blockSPiMHeight</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMHeight" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMWidth">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">blockSPiMWidth</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMWidth" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.borderSizeX">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borderSizeX</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.borderSizeX" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.borderSizeY">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borderSizeY</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.borderSizeY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.centerSiPMModule">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centerSiPMModule</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.centerSiPMModule" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.channelCentrePosition">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">channelCentrePosition</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.channelCentrePosition" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.effectiveAreaPerChannel">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">effectiveAreaPerChannel</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.effectiveAreaPerChannel" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.effectiveHeight">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">effectiveHeight</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.effectiveHeight" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.effectiveWidth">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">effectiveWidth</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.effectiveWidth" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.externalBorderSizeX">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">externalBorderSizeX</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.externalBorderSizeX" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.externalBorderSizeY">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">externalBorderSizeY</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.externalBorderSizeY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.geometricalFillFactor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geometricalFillFactor</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.geometricalFillFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.model" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.numberOfChannelsX">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numberOfChannelsX</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.numberOfChannelsX" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.numberOfChannelsY">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numberOfChannelsY</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.numberOfChannelsY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.numberPixelPerChannel">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numberPixelPerChannel</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.numberPixelPerChannel" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.packageType">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">packageType</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.packageType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.photonDetectionEfficiencyAtPeak">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">photonDetectionEfficiencyAtPeak</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.photonDetectionEfficiencyAtPeak" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelArea">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pixelArea</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelArea" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelDepth">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pixelDepth</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelDepth" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelHeight">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pixelHeight</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelHeight" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelHeightTolerance">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pixelHeightTolerance</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelHeightTolerance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelPitch">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pixelPitch</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelPitch" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelSpacingX">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pixelSpacingX</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelSpacingX" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelSpacingY">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pixelSpacingY</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelSpacingY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelWidth">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pixelWidth</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelWidth" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelWidthTolerance">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pixelWidthTolerance</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelWidthTolerance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.resinThickness">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">resinThickness</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.resinThickness" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.series">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">series</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.series" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setAlphaRotation">
+<span class="sig-name descname"><span class="pre">setAlphaRotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setAlphaRotation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setAlphaRotation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBetaRotation">
+<span class="sig-name descname"><span class="pre">setBetaRotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setBetaRotation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBetaRotation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMArea">
+<span class="sig-name descname"><span class="pre">setBlockSPiMArea</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blockSPiMArea</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setBlockSPiMArea"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMArea" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMDepth">
+<span class="sig-name descname"><span class="pre">setBlockSPiMDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blockSPiMDepth</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setBlockSPiMDepth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMDepth" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMHeight">
+<span class="sig-name descname"><span class="pre">setBlockSPiMHeight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blockSPiMHeight</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setBlockSPiMHeight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMHeight" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMWidth">
+<span class="sig-name descname"><span class="pre">setBlockSPiMWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blockSPiMWidth</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setBlockSPiMWidth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMWidth" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBorderSizeX">
+<span class="sig-name descname"><span class="pre">setBorderSizeX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">borderSizeX</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setBorderSizeX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBorderSizeX" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBorderSizeY">
+<span class="sig-name descname"><span class="pre">setBorderSizeY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">borderSizeY</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setBorderSizeY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBorderSizeY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setCenterSiPMModule">
+<span class="sig-name descname"><span class="pre">setCenterSiPMModule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setCenterSiPMModule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setCenterSiPMModule" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setChannelCentrePosition">
+<span class="sig-name descname"><span class="pre">setChannelCentrePosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setChannelCentrePosition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setChannelCentrePosition" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setChannelOriginalCentrePosition">
+<span class="sig-name descname"><span class="pre">setChannelOriginalCentrePosition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setChannelOriginalCentrePosition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setChannelOriginalCentrePosition" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setEffectiveAreaPerChannel">
+<span class="sig-name descname"><span class="pre">setEffectiveAreaPerChannel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">effectiveAreaPerChannel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setEffectiveAreaPerChannel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setEffectiveAreaPerChannel" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setEffectiveHeight">
+<span class="sig-name descname"><span class="pre">setEffectiveHeight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">effectiveHeight</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setEffectiveHeight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setEffectiveHeight" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setEffectiveWidth">
+<span class="sig-name descname"><span class="pre">setEffectiveWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">effectiveWidth</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setEffectiveWidth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setEffectiveWidth" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setExternalBorderSizeX">
+<span class="sig-name descname"><span class="pre">setExternalBorderSizeX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">externalBorderSizeX</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setExternalBorderSizeX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setExternalBorderSizeX" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setExternalBorderSizeY">
+<span class="sig-name descname"><span class="pre">setExternalBorderSizeY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">externalBorderSizeY</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setExternalBorderSizeY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setExternalBorderSizeY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setGeometricalFillFactor">
+<span class="sig-name descname"><span class="pre">setGeometricalFillFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometricalFillFactor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setGeometricalFillFactor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setGeometricalFillFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setModel">
+<span class="sig-name descname"><span class="pre">setModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setModel" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setNumberOfChannelsX">
+<span class="sig-name descname"><span class="pre">setNumberOfChannelsX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numberOfChannelsX</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setNumberOfChannelsX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setNumberOfChannelsX" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setNumberOfChannelsY">
+<span class="sig-name descname"><span class="pre">setNumberOfChannelsY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numberOfChannelsY</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setNumberOfChannelsY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setNumberOfChannelsY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setNumberPixelPerChannel">
+<span class="sig-name descname"><span class="pre">setNumberPixelPerChannel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numberPixelPerChannel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setNumberPixelPerChannel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setNumberPixelPerChannel" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPackageType">
+<span class="sig-name descname"><span class="pre">setPackageType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packageType</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setPackageType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPackageType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPhotonDetectionEfficiencyAtPeak">
+<span class="sig-name descname"><span class="pre">setPhotonDetectionEfficiencyAtPeak</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">photonDetectionEfficiencyAtPeak</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setPhotonDetectionEfficiencyAtPeak"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPhotonDetectionEfficiencyAtPeak" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelArea">
+<span class="sig-name descname"><span class="pre">setPixelArea</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixelArea</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setPixelArea"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelArea" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelDepth">
+<span class="sig-name descname"><span class="pre">setPixelDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixelDepth</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setPixelDepth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelDepth" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelHeight">
+<span class="sig-name descname"><span class="pre">setPixelHeight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixelHeight</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setPixelHeight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelHeight" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelHeightTolerance">
+<span class="sig-name descname"><span class="pre">setPixelHeightTolerance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixelHeightTolerance</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setPixelHeightTolerance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelHeightTolerance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelPitch">
+<span class="sig-name descname"><span class="pre">setPixelPitch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixelPitch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setPixelPitch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelPitch" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelSpacingX">
+<span class="sig-name descname"><span class="pre">setPixelSpacingX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixelSpacingX</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setPixelSpacingX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelSpacingX" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelSpacingY">
+<span class="sig-name descname"><span class="pre">setPixelSpacingY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixelSpacingY</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setPixelSpacingY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelSpacingY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelWidth">
+<span class="sig-name descname"><span class="pre">setPixelWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixelWidth</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setPixelWidth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelWidth" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelWidthTolerance">
+<span class="sig-name descname"><span class="pre">setPixelWidthTolerance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixelWidthTolerance</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setPixelWidthTolerance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelWidthTolerance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setResinThickness">
+<span class="sig-name descname"><span class="pre">setResinThickness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resinThickness</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setResinThickness"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setResinThickness" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setSeries">
+<span class="sig-name descname"><span class="pre">setSeries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setSeries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setSeries" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setSigmaRotation">
+<span class="sig-name descname"><span class="pre">setSigmaRotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setSigmaRotation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setSigmaRotation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setVendor">
+<span class="sig-name descname"><span class="pre">setVendor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vendor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setVendor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setVendor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setWindowRefractiveIndex">
+<span class="sig-name descname"><span class="pre">setWindowRefractiveIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">windowRefractiveIndex</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setWindowRefractiveIndex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setWindowRefractiveIndex" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setWindowType">
+<span class="sig-name descname"><span class="pre">setWindowType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">windowType</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setWindowType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setWindowType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setXTranslation">
+<span class="sig-name descname"><span class="pre">setXTranslation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setXTranslation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setXTranslation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setYTranslation">
+<span class="sig-name descname"><span class="pre">setYTranslation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setYTranslation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setYTranslation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setZTranslation">
+<span class="sig-name descname"><span class="pre">setZTranslation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/DetectionLayout/Photodetectors/SiPM/generic.html#GenericSiPM.setZTranslation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setZTranslation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.sigmaRotation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sigmaRotation</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.sigmaRotation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.totalNumberOfChannels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">totalNumberOfChannels</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.totalNumberOfChannels" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.vendor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vendor</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.vendor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.windowRefractiveIndex">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">windowRefractiveIndex</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.windowRefractiveIndex" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.windowType">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">windowType</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.windowType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.xTranslation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xTranslation</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.xTranslation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.yTranslation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">yTranslation</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.yTranslation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.zTranslation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zTranslation</span></span><a class="headerlink" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.zTranslation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-DetectionLayout.Photodetectors.SiPM">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-DetectionLayout.Photodetectors.SiPM" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DetectionLayout.Photodetectors.Crystals.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">DetectionLayout.Photodetectors.Crystals package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DetectionLayout.RadiationProducer.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DetectionLayout.RadiationProducer package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-DetectionLayout.Photodetectors.SiPM.Hamamatsu">DetectionLayout.Photodetectors.SiPM.Hamamatsu module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.Hamamatsu.HamamatsuS13360Series"><code class="docutils literal notranslate"><span class="pre">HamamatsuS13360Series</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.Hamamatsu.HamamatsuS14161Series"><code class="docutils literal notranslate"><span class="pre">HamamatsuS14161Series</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.Hamamatsu.HamamatsuS14161Series.applyModelProperties"><code class="docutils literal notranslate"><span class="pre">HamamatsuS14161Series.applyModelProperties()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-DetectionLayout.Photodetectors.SiPM.Kettek">DetectionLayout.Photodetectors.SiPM.Kettek module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-DetectionLayout.Photodetectors.SiPM.generic">DetectionLayout.Photodetectors.SiPM.generic module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM"><code class="docutils literal notranslate"><span class="pre">GenericSiPM</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.alphaRotation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.alphaRotation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.betaRotation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.betaRotation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMArea"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.blockSPiMArea</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMDepth"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.blockSPiMDepth</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMHeight"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.blockSPiMHeight</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.blockSPiMWidth"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.blockSPiMWidth</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.borderSizeX"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.borderSizeX</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.borderSizeY"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.borderSizeY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.centerSiPMModule"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.centerSiPMModule</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.channelCentrePosition"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.channelCentrePosition</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.effectiveAreaPerChannel"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.effectiveAreaPerChannel</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.effectiveHeight"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.effectiveHeight</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.effectiveWidth"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.effectiveWidth</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.externalBorderSizeX"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.externalBorderSizeX</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.externalBorderSizeY"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.externalBorderSizeY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.geometricalFillFactor"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.geometricalFillFactor</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.model"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.numberOfChannelsX"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.numberOfChannelsX</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.numberOfChannelsY"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.numberOfChannelsY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.numberPixelPerChannel"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.numberPixelPerChannel</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.packageType"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.packageType</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.photonDetectionEfficiencyAtPeak"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.photonDetectionEfficiencyAtPeak</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelArea"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.pixelArea</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelDepth"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.pixelDepth</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelHeight"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.pixelHeight</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelHeightTolerance"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.pixelHeightTolerance</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelPitch"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.pixelPitch</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelSpacingX"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.pixelSpacingX</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelSpacingY"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.pixelSpacingY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelWidth"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.pixelWidth</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.pixelWidthTolerance"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.pixelWidthTolerance</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.resinThickness"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.resinThickness</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.series"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.series</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setAlphaRotation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setAlphaRotation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBetaRotation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setBetaRotation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMArea"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setBlockSPiMArea()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMDepth"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setBlockSPiMDepth()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMHeight"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setBlockSPiMHeight()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBlockSPiMWidth"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setBlockSPiMWidth()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBorderSizeX"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setBorderSizeX()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setBorderSizeY"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setBorderSizeY()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setCenterSiPMModule"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setCenterSiPMModule()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setChannelCentrePosition"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setChannelCentrePosition()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setChannelOriginalCentrePosition"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setChannelOriginalCentrePosition()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setEffectiveAreaPerChannel"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setEffectiveAreaPerChannel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setEffectiveHeight"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setEffectiveHeight()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setEffectiveWidth"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setEffectiveWidth()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setExternalBorderSizeX"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setExternalBorderSizeX()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setExternalBorderSizeY"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setExternalBorderSizeY()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setGeometricalFillFactor"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setGeometricalFillFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setModel"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setNumberOfChannelsX"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setNumberOfChannelsX()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setNumberOfChannelsY"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setNumberOfChannelsY()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setNumberPixelPerChannel"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setNumberPixelPerChannel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPackageType"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setPackageType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPhotonDetectionEfficiencyAtPeak"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setPhotonDetectionEfficiencyAtPeak()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelArea"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setPixelArea()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelDepth"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setPixelDepth()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelHeight"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setPixelHeight()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelHeightTolerance"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setPixelHeightTolerance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelPitch"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setPixelPitch()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelSpacingX"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setPixelSpacingX()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelSpacingY"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setPixelSpacingY()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelWidth"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setPixelWidth()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setPixelWidthTolerance"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setPixelWidthTolerance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setResinThickness"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setResinThickness()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setSeries"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setSeries()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setSigmaRotation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setSigmaRotation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setVendor"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setVendor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setWindowRefractiveIndex"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setWindowRefractiveIndex()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setWindowType"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setWindowType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setXTranslation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setXTranslation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setYTranslation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setYTranslation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.setZTranslation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.setZTranslation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.sigmaRotation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.sigmaRotation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.totalNumberOfChannels"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.totalNumberOfChannels</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.vendor"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.vendor</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.windowRefractiveIndex"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.windowRefractiveIndex</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.windowType"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.windowType</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.xTranslation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.xTranslation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.yTranslation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.yTranslation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#DetectionLayout.Photodetectors.SiPM.generic.GenericSiPM.zTranslation"><code class="docutils literal notranslate"><span class="pre">GenericSiPM.zTranslation</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-DetectionLayout.Photodetectors.SiPM">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

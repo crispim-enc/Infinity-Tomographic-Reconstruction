@@ -8,9 +8,9 @@ Subpackages
    :maxdepth: 4
 
    Geometry.LinearPET
+   Geometry.SPIRAL
    Geometry.Standard
-   Geometry.easyCT
-   Geometry.easyPET
+   Geometry.easyPETBased
 
 Module contents
 ---------------

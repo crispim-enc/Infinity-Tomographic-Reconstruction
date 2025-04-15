@@ -249,9 +249,9 @@ class GPUSharedMemoryMultipleKernel:
             adjust_coef_gpu[dataset] = cuda.mem_alloc(
                 adjust_coef_cut[dataset].size * adjust_coef_cut[dataset].dtype.itemsize)
 
-            adjust_coef_pinned[dataset] = cuda.register_host_memory(adjust_coef_cut[dataset])
-            assert np.all(adjust_coef_pinned[dataset] == adjust_coef_cut[dataset])
-            cuda.memcpy_htod_async(adjust_coef_gpu[dataset], adjust_coef_pinned[dataset], stream[dataset])
+            # adjust_coef_pinned[dataset] = cuda.register_host_memory(adjust_coef_cut[dataset])
+            # assert np.all(adjust_coef_pinned[dataset] == adjust_coef_cut[dataset])
+            cuda.memcpy_htod_async(adjust_coef_gpu[dataset], adjust_coef_cut[dataset], stream[dataset])
 
             # fov_cut_matrix_cutted_gpu[dataset] = cuda.mem_alloc(
             #     fov_cut_matrix_cut[dataset].size * fov_cut_matrix_cut[dataset].dtype.itemsize)
@@ -470,10 +470,9 @@ class GPUSharedMemoryMultipleKernel:
                 for dataset in range(number_of_datasets_back):
                     adjust_coef_cut[dataset] = adjust_coef[
                                                dataset * voxels_division:(dataset + 1) * voxels_division]
-                    adjust_coef_pinned[dataset] = cuda.register_host_memory(adjust_coef_cut[dataset])
-                    assert np.all(adjust_coef_pinned[dataset] == adjust_coef_cut[dataset])
-                    cuda.memcpy_htod_async(adjust_coef_gpu[dataset], adjust_coef_pinned[dataset], stream[dataset])
-
+                    # adjust_coef_pinned[dataset] = cuda.register_host_memory(adjust_coef_cut[dataset])
+                    # assert np.all(adjust_coef_pinned[dataset] == adjust_coef_cut[dataset])
+                    cuda.memcpy_htod_async(adjust_coef_gpu[dataset], adjust_coef_cut[dataset], stream[dataset])
 
                 if self.saved_image_by_iteration:
                     if i % 2 == 0:

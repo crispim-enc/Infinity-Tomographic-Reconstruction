@@ -15,13 +15,13 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 import pycuda.driver as cuda
-from src.Geometry.easyPETBased import EasyCTGeometry, testSourceDistance
-from src.DetectionLayout.Modules import PETModule, easyPETModule
-from src.DetectionLayout.RadiationProducer import GenericRadiativeSource
-from src.Designer import DeviceDesignerStandalone
-from src.Corrections.CT.Projector import PyramidalProjector
-from src.Corrections.CT import NormalizationCT
-from src.Optimizer import GPUSharedMemoryMultipleKernel
+from Geometry.easyPETBased import EasyCTGeometry, testSourceDistance
+from DetectionLayout.Modules import PETModule, easyPETModule
+from DetectionLayout.RadiationProducer import GenericRadiativeSource
+from Designer import DeviceDesignerStandalone
+from Corrections.CT.Projector import PyramidalProjector
+from Corrections.CT import NormalizationCT
+from Optimizer import GPUSharedMemoryMultipleKernel
 
 
 class ReconstructionEasyPETCT:
@@ -147,7 +147,7 @@ class ReconstructionEasyPETCT:
 
         systemInfo.detectorSideBCoordinatesAfterMovement(listModeBody_read["AXIAL_MOTOR"],
                                                               listModeBody_read["FAN_MOTOR"],
-                                                              listModeBody_read["IDA"].astype(np.int32)) ## ID_A está trocado com ID_B
+                                                              listModeBody_read["IDB"].astype(np.int32)) ## ID_A está trocado com ID_B
 
         self.projector.pointCenterList = systemInfo.sourceCenter
         self.projector.pointCorner1List = systemInfo.verticesB[:, 7]   #Só esta ordem funciona
@@ -183,7 +183,7 @@ class ReconstructionEasyPETCT:
 
 
 if __name__ == "__main__":
-    from src.TORFilesReader import ToRFile
+    from TORFilesReader import ToRFile
     # filename = "../../allvalues.npy"
     filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\intelligent_scan-NewGeometries-CT\\allvalues.npy"
     output_path = "C:/Users/pedro/OneDrive/Ambiente de Trabalho/Iterations_test"

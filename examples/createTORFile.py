@@ -17,14 +17,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 import uuid
 import time
-from src.TORFilesReader import ToRFile, AnimalType, PhantomType, AcquisitionInfo, ListModeBody, RadioisotopeInfo, Technician
-from src.Device import StoreDeviceInFo
-from src.Phantoms import NEMAIQ2008NU
+from TORFilesReader import ToRFile, AnimalType, PhantomType, AcquisitionInfo, ListModeBody, RadioisotopeInfo, Technician
+from Device import StoreDeviceInFo
+from Phantoms import NEMAIQ2008NU
+
+print(np.__version__)
+print(np.__file__)
 
 
 # filename = "../../allvalues.npy"
 filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\intelligent_scan-NewGeometries-CT\\allvalues.npy"
+# filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1.npy"
 output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor"
+# output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1 (1).tor"
+#
 # if not os.path.exists(output_path):
 #     os.makedirs(output_path)
 
@@ -77,7 +83,11 @@ scanHeader.setDate(time.strftime("%Y-%m-%d %H:%M:%S"))
 # scanHeader.setRadioisotope(radioisotope)
 
 listmode = np.load(filename)
-listmode[:,3] = 0 # should be a numpy array with the listmode data
+listmode[:,3] = np.copy(listmode[:,2])# invert ID_A and ID_B
+listmode[:,2] = 0
+listmode[:,1] = np.copy(listmode[:,0]) * 1000
+listmode[:,0] = 0
+
 listModeBody = ListModeBody()
 listModeBody.setListmode(listmode)
 listModeBody.setListmodeFields(["ENERGYA", "ENERGYB", "IDA", "IDB", "AXIAL_MOTOR", "FAN_MOTOR", "TIME"])
@@ -88,7 +98,7 @@ listModeBody.setGlobalDetectorID()
 listModeBody.setCountsPerGlobalID()
 
 plt.figure()
-plt.hist(listModeBody["IDA"], bins=32)
+plt.hist(listModeBody["IDB"], bins=32)
 plt.show()
 
 ToRFile_creator = ToRFile(filepath=output_path)
@@ -103,7 +113,7 @@ ToRFile_reader = ToRFile(filepath=output_path)
 ToRFile_reader.read()
 listModeBody_read = ToRFile_reader.fileBodyData
 
-plt.hist(listModeBody_read["ENERGYA"], bins=500)
+plt.hist(listModeBody_read["ENERGYB"], bins=500)
 plt.figure()
 plt.hist2d(listModeBody_read["AXIAL_MOTOR"], listModeBody_read["FAN_MOTOR"],
            bins=(listModeBody_read.uniqueValuesCount[4], listModeBody_read.uniqueValuesCount[5]))
@@ -113,7 +123,6 @@ print(ToRFile_reader.systemInfo)
 deviceFromTOR = ToRFile_reader.systemInfo
 
 axial_motor_angles = np.deg2rad(np.arange(0, 360, 45))
-
 fan_motor_angles = np.deg2rad(np.arange(-45, 60, 15))
 # repeat the fan motor angles for each axial motor angle
 fan_motor_angles = np.repeat(fan_motor_angles, len(axial_motor_angles))

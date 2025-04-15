@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DetectionLayout package &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DetectionLayout';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DetectionLayout.Collimators package" href="DetectionLayout.Collimators.html" />
+    <link rel="prev" title="Designer package" href="Designer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AnalyticalReconstruction.html">AnalyticalReconstruction package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Corrections.html">Corrections package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.CT.html">Corrections.CT package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.CT.Projector.html">Corrections.CT.Projector package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.Compton.html">Corrections.Compton package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.EasyPET.html">Corrections.EasyPET package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.Normalization.html">Corrections.EasyPET.Normalization package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.SystemFocus.html">Corrections.EasyPET.SystemFocus package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.General.html">Corrections.General package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.PET.html">Corrections.PET package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Attenuation.html">Corrections.PET.Attenuation package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DOI.html">Corrections.PET.DOI package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DecayCorrection.html">Corrections.PET.DecayCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.EnergyCorrection.html">Corrections.PET.EnergyCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Projector.html">Corrections.PET.Projector package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Designer.html">Designer package</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">DetectionLayout package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Collimators.html">DetectionLayout.Collimators package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Modules.html">DetectionLayout.Modules package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="DetectionLayout.Photodetectors.html">DetectionLayout.Photodetectors package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Photodetectors.Crystals.html">DetectionLayout.Photodetectors.Crystals package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Photodetectors.SiPM.html">DetectionLayout.Photodetectors.SiPM package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.RadiationProducer.html">DetectionLayout.RadiationProducer package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Semicondutors.html">DetectionLayout.Semicondutors package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Device.html">Device package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="EasyPETLinkInitializer.html">EasyPETLinkInitializer package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html">EasyPETLinkInitializer.EasyPETDataReader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html">EasyPETLinkInitializer.Preprocessing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.SimulationData.html">EasyPETLinkInitializer.SimulationData package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html">EasyPETLinkInitializer.Utilities package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="GateLink.html">GateLink package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.GateToTor.html">GateLink.GateToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.RootToTor.html">GateLink.RootToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.ToRToGate.html">GateLink.ToRToGate package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Geometry.html">Geometry package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.LinearPET.html">Geometry.LinearPET package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.SPIRAL.html">Geometry.SPIRAL package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.Standard.html">Geometry.Standard package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.easyPETBased.html">Geometry.easyPETBased package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ImageReader.html">ImageReader package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.DICOM.html">ImageReader.DICOM package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.Interfile.html">ImageReader.Interfile package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.RawData.html">ImageReader.RawData package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Metrics.html">Metrics package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.ImageQuality.html">Metrics.ImageQuality package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.NEMA.html">Metrics.NEMA package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Optimizer.html">Optimizer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phantoms.html">Phantoms package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quantification.html">Quantification package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StandaloneInitializer.html">StandaloneInitializer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TORFilesReader.html">TORFilesReader package</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">src</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">DetectionLay...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="detectionlayout-package">
+<h1>DetectionLayout package<a class="headerlink" href="#detectionlayout-package" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="DetectionLayout.Collimators.html">DetectionLayout.Collimators package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Collimators.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Collimators.html#module-DetectionLayout.Collimators.collimatorGeneric">DetectionLayout.Collimators.collimatorGeneric module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Collimators.html#DetectionLayout.Collimators.collimatorGeneric.CollimatorGeometry"><code class="docutils literal notranslate"><span class="pre">CollimatorGeometry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Collimators.html#DetectionLayout.Collimators.collimatorGeneric.CollimatorGeometry.calculateFocalPoint"><code class="docutils literal notranslate"><span class="pre">CollimatorGeometry.calculateFocalPoint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Collimators.html#DetectionLayout.Collimators.collimatorGeneric.CollimatorGeometry.calculateInitialPyramidalVertex"><code class="docutils literal notranslate"><span class="pre">CollimatorGeometry.calculateInitialPyramidalVertex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Collimators.html#DetectionLayout.Collimators.collimatorGeneric.CollimatorGeometry.focalPoint"><code class="docutils literal notranslate"><span class="pre">CollimatorGeometry.focalPoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Collimators.html#DetectionLayout.Collimators.collimatorGeneric.CollimatorGeometry.joinPyramidPointsIntoArray"><code class="docutils literal notranslate"><span class="pre">CollimatorGeometry.joinPyramidPointsIntoArray()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Collimators.html#DetectionLayout.Collimators.collimatorGeneric.CollimatorGeometry.rotateAndTranslate"><code class="docutils literal notranslate"><span class="pre">CollimatorGeometry.rotateAndTranslate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Collimators.html#DetectionLayout.Collimators.collimatorGeneric.CollimatorGeometry.vectorVertex"><code class="docutils literal notranslate"><span class="pre">CollimatorGeometry.vectorVertex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Collimators.html#DetectionLayout.Collimators.collimatorGeneric.CollimatorGeometry.vertex1"><code class="docutils literal notranslate"><span class="pre">CollimatorGeometry.vertex1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Collimators.html#DetectionLayout.Collimators.collimatorGeneric.CollimatorGeometry.vertex2"><code class="docutils literal notranslate"><span class="pre">CollimatorGeometry.vertex2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Collimators.html#DetectionLayout.Collimators.collimatorGeneric.CollimatorGeometry.vertex3"><code class="docutils literal notranslate"><span class="pre">CollimatorGeometry.vertex3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Collimators.html#DetectionLayout.Collimators.collimatorGeneric.CollimatorGeometry.vertex4"><code class="docutils literal notranslate"><span class="pre">CollimatorGeometry.vertex4</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Collimators.html#module-DetectionLayout.Collimators">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DetectionLayout.Modules.html">DetectionLayout.Modules package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Modules.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Modules.html#module-DetectionLayout.Modules.PETModuleGeneric">DetectionLayout.Modules.PETModuleGeneric module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule"><code class="docutils literal notranslate"><span class="pre">PETModule</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.moduleID"><code class="docutils literal notranslate"><span class="pre">PETModule.moduleID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.numberVisibleLightSensorsX"><code class="docutils literal notranslate"><span class="pre">PETModule.numberVisibleLightSensorsX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.numberVisibleLightSensorsY"><code class="docutils literal notranslate"><span class="pre">PETModule.numberVisibleLightSensorsY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.numberHighEnergyLightDetectors"><code class="docutils literal notranslate"><span class="pre">PETModule.numberHighEnergyLightDetectors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.modelVisibleLightSensors"><code class="docutils literal notranslate"><span class="pre">PETModule.modelVisibleLightSensors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.modelHighEnergyLightDetectors"><code class="docutils literal notranslate"><span class="pre">PETModule.modelHighEnergyLightDetectors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.visibleLightSensorObject"><code class="docutils literal notranslate"><span class="pre">PETModule.visibleLightSensorObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.alphaRotation"><code class="docutils literal notranslate"><span class="pre">PETModule.alphaRotation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.betaRotation"><code class="docutils literal notranslate"><span class="pre">PETModule.betaRotation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.detectorsPosition"><code class="docutils literal notranslate"><span class="pre">PETModule.detectorsPosition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.highEnergyLightDetectorBlock"><code class="docutils literal notranslate"><span class="pre">PETModule.highEnergyLightDetectorBlock</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#id0"><code class="docutils literal notranslate"><span class="pre">PETModule.modelHighEnergyLightDetectors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#id1"><code class="docutils literal notranslate"><span class="pre">PETModule.modelVisibleLightSensors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#id2"><code class="docutils literal notranslate"><span class="pre">PETModule.moduleID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.numberHighEnergyLightDetectorsX"><code class="docutils literal notranslate"><span class="pre">PETModule.numberHighEnergyLightDetectorsX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.numberHighEnergyLightDetectorsY"><code class="docutils literal notranslate"><span class="pre">PETModule.numberHighEnergyLightDetectorsY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#id3"><code class="docutils literal notranslate"><span class="pre">PETModule.numberVisibleLightSensorsX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#id4"><code class="docutils literal notranslate"><span class="pre">PETModule.numberVisibleLightSensorsY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.reflectorThicknessX"><code class="docutils literal notranslate"><span class="pre">PETModule.reflectorThicknessX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.reflectorThicknessY"><code class="docutils literal notranslate"><span class="pre">PETModule.reflectorThicknessY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.rotateAndTranslateModule"><code class="docutils literal notranslate"><span class="pre">PETModule.rotateAndTranslateModule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setAlphaRotation"><code class="docutils literal notranslate"><span class="pre">PETModule.setAlphaRotation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setBetaRotation"><code class="docutils literal notranslate"><span class="pre">PETModule.setBetaRotation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setHighEnergyLightDetectorBlock"><code class="docutils literal notranslate"><span class="pre">PETModule.setHighEnergyLightDetectorBlock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setInitialGeometry"><code class="docutils literal notranslate"><span class="pre">PETModule.setInitialGeometry()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setModelHighEnergyLightDetectors"><code class="docutils literal notranslate"><span class="pre">PETModule.setModelHighEnergyLightDetectors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setModelVisibleLightSensors"><code class="docutils literal notranslate"><span class="pre">PETModule.setModelVisibleLightSensors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setModuleID"><code class="docutils literal notranslate"><span class="pre">PETModule.setModuleID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setReflectorThicknessX"><code class="docutils literal notranslate"><span class="pre">PETModule.setReflectorThicknessX()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setReflectorThicknessY"><code class="docutils literal notranslate"><span class="pre">PETModule.setReflectorThicknessY()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setSigmaRotation"><code class="docutils literal notranslate"><span class="pre">PETModule.setSigmaRotation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setVisibleEnergyLightDetectorBlock"><code class="docutils literal notranslate"><span class="pre">PETModule.setVisibleEnergyLightDetectorBlock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setXTranslation"><code class="docutils literal notranslate"><span class="pre">PETModule.setXTranslation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setYTranslation"><code class="docutils literal notranslate"><span class="pre">PETModule.setYTranslation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.setZTranslation"><code class="docutils literal notranslate"><span class="pre">PETModule.setZTranslation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.sigmaRotation"><code class="docutils literal notranslate"><span class="pre">PETModule.sigmaRotation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.totalNumberHighEnergyLightDetectors"><code class="docutils literal notranslate"><span class="pre">PETModule.totalNumberHighEnergyLightDetectors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.updateNumberHighEnergyLightDetectors"><code class="docutils literal notranslate"><span class="pre">PETModule.updateNumberHighEnergyLightDetectors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.updateNumberVisibleLightSensorsX"><code class="docutils literal notranslate"><span class="pre">PETModule.updateNumberVisibleLightSensorsX()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.updateNumberVisibleLightSensorsY"><code class="docutils literal notranslate"><span class="pre">PETModule.updateNumberVisibleLightSensorsY()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.updateVisibleLightSensorObject"><code class="docutils literal notranslate"><span class="pre">PETModule.updateVisibleLightSensorObject()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#id5"><code class="docutils literal notranslate"><span class="pre">PETModule.visibleLightSensorObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.xTranslation"><code class="docutils literal notranslate"><span class="pre">PETModule.xTranslation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.yTranslation"><code class="docutils literal notranslate"><span class="pre">PETModule.yTranslation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.PETModuleGeneric.PETModule.zTranslation"><code class="docutils literal notranslate"><span class="pre">PETModule.zTranslation</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Modules.html#module-DetectionLayout.Modules.SPECTModuleGeneric">DetectionLayout.Modules.SPECTModuleGeneric module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.SPECTModuleGeneric.SPECTHeadGeneric"><code class="docutils literal notranslate"><span class="pre">SPECTHeadGeneric</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.SPECTModuleGeneric.SPECTHeadGeneric.CZTModules"><code class="docutils literal notranslate"><span class="pre">SPECTHeadGeneric.CZTModules</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.SPECTModuleGeneric.SPECTHeadGeneric.calculateInitialGeometry"><code class="docutils literal notranslate"><span class="pre">SPECTHeadGeneric.calculateInitialGeometry()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.SPECTModuleGeneric.SPECTHeadGeneric.collimators"><code class="docutils literal notranslate"><span class="pre">SPECTHeadGeneric.collimators</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.SPECTModuleGeneric.SPECTHeadGeneric.numberHead"><code class="docutils literal notranslate"><span class="pre">SPECTHeadGeneric.numberHead</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.SPECTModuleGeneric.SPECTHeadGeneric.numberOfModules"><code class="docutils literal notranslate"><span class="pre">SPECTHeadGeneric.numberOfModules</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.SPECTModuleGeneric.SPECTHeadGeneric.projectorHeadPointsMap"><code class="docutils literal notranslate"><span class="pre">SPECTHeadGeneric.projectorHeadPointsMap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.SPECTModuleGeneric.SPECTHeadGeneric.saveVarsHead"><code class="docutils literal notranslate"><span class="pre">SPECTHeadGeneric.saveVarsHead()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.SPECTModuleGeneric.SPECTHeadGeneric.setNumberHead"><code class="docutils literal notranslate"><span class="pre">SPECTHeadGeneric.setNumberHead()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.SPECTModuleGeneric.SPECTHeadGeneric.setProjectorHeadPointsMap"><code class="docutils literal notranslate"><span class="pre">SPECTHeadGeneric.setProjectorHeadPointsMap()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Modules.html#detectionlayout-modules-spiralmodule-module">DetectionLayout.Modules.SPIRALModule module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Modules.html#module-DetectionLayout.Modules.easyPETModules">DetectionLayout.Modules.easyPETModules module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.easyPETModules.easyPETModule"><code class="docutils literal notranslate"><span class="pre">easyPETModule</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.easyPETModules.easyPETModule.model16_2"><code class="docutils literal notranslate"><span class="pre">easyPETModule.model16_2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.easyPETModules.easyPETModule.model32"><code class="docutils literal notranslate"><span class="pre">easyPETModule.model32()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Modules.html#DetectionLayout.Modules.easyPETModules.easyPETModule.model32_2"><code class="docutils literal notranslate"><span class="pre">easyPETModule.model32_2()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Modules.html#module-DetectionLayout.Modules">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DetectionLayout.Photodetectors.html">DetectionLayout.Photodetectors package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Photodetectors.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Photodetectors.Crystals.html">DetectionLayout.Photodetectors.Crystals package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Photodetectors.Crystals.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Photodetectors.Crystals.html#module-DetectionLayout.Photodetectors.Crystals.LYSO">DetectionLayout.Photodetectors.Crystals.LYSO module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Photodetectors.Crystals.html#module-DetectionLayout.Photodetectors.Crystals.genericCrystal">DetectionLayout.Photodetectors.Crystals.genericCrystal module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Photodetectors.Crystals.html#module-DetectionLayout.Photodetectors.Crystals">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Photodetectors.SiPM.html">DetectionLayout.Photodetectors.SiPM package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Photodetectors.SiPM.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Photodetectors.SiPM.html#module-DetectionLayout.Photodetectors.SiPM.Hamamatsu">DetectionLayout.Photodetectors.SiPM.Hamamatsu module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Photodetectors.SiPM.html#module-DetectionLayout.Photodetectors.SiPM.Kettek">DetectionLayout.Photodetectors.SiPM.Kettek module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Photodetectors.SiPM.html#module-DetectionLayout.Photodetectors.SiPM.generic">DetectionLayout.Photodetectors.SiPM.generic module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Photodetectors.SiPM.html#module-DetectionLayout.Photodetectors.SiPM">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Photodetectors.html#module-DetectionLayout.Photodetectors">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DetectionLayout.RadiationProducer.html">DetectionLayout.RadiationProducer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#module-DetectionLayout.RadiationProducer.GenericSource">DetectionLayout.RadiationProducer.GenericSource module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.focalSpotDiameter"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.focalSpotDiameter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.focalSpotInitialPositionWKSystem"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.focalSpotInitialPositionWKSystem</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.focalSpotInitialPositionXYSystem"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.focalSpotInitialPositionXYSystem</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.mainEmissions"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.mainEmissions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setFocalSpotDiameter"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setFocalSpotDiameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setFocalSpotInitialPositionWKSystem"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setFocalSpotInitialPositionWKSystem()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setFocalSpotInitialPositionXYSystem"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setFocalSpotInitialPositionXYSystem()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setMainEmissions"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setMainEmissions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setShieldingDensity"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setShieldingDensity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setShieldingHeight"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setShieldingHeight()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setShieldingMaterial"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setShieldingMaterial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setShieldingRadius"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setShieldingRadius()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setShieldingShape"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setShieldingShape()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setShieldingThickness"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setShieldingThickness()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setSourceActivity"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setSourceActivity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.setSourceName"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.setSourceName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.shieldingDensity"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.shieldingDensity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.shieldingHeight"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.shieldingHeight</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.shieldingMaterial"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.shieldingMaterial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.shieldingRadius"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.shieldingRadius</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.shieldingShape"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.shieldingShape</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.shieldingThickness"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.shieldingThickness</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.sourceActivity"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.sourceActivity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.sourceName"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.sourceName</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#DetectionLayout.RadiationProducer.GenericSource.GenericRadiativeSource.writeSourceInformation"><code class="docutils literal notranslate"><span class="pre">GenericRadiativeSource.writeSourceInformation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.RadiationProducer.html#module-DetectionLayout.RadiationProducer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DetectionLayout.Semicondutors.html">DetectionLayout.Semicondutors package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Semicondutors.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Semicondutors.html#module-DetectionLayout.Semicondutors.cztgeometry">DetectionLayout.Semicondutors.cztgeometry module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule"><code class="docutils literal notranslate"><span class="pre">CZTModule</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.calculateInitialMatrix"><code class="docutils literal notranslate"><span class="pre">CZTModule.calculateInitialMatrix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.cztThickness"><code class="docutils literal notranslate"><span class="pre">CZTModule.cztThickness</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.detectorSizeX"><code class="docutils literal notranslate"><span class="pre">CZTModule.detectorSizeX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.detectorSizeY"><code class="docutils literal notranslate"><span class="pre">CZTModule.detectorSizeY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.initialMatrix"><code class="docutils literal notranslate"><span class="pre">CZTModule.initialMatrix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.moduleNumber"><code class="docutils literal notranslate"><span class="pre">CZTModule.moduleNumber</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.numberOfPixels"><code class="docutils literal notranslate"><span class="pre">CZTModule.numberOfPixels</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.origin"><code class="docutils literal notranslate"><span class="pre">CZTModule.origin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.pixelSize"><code class="docutils literal notranslate"><span class="pre">CZTModule.pixelSize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.pixelSpacingX"><code class="docutils literal notranslate"><span class="pre">CZTModule.pixelSpacingX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.pixelSpacingY"><code class="docutils literal notranslate"><span class="pre">CZTModule.pixelSpacingY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.rotateAndTranslate"><code class="docutils literal notranslate"><span class="pre">CZTModule.rotateAndTranslate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.updateDetectorSizeX"><code class="docutils literal notranslate"><span class="pre">CZTModule.updateDetectorSizeX()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.updateDetectorSizeY"><code class="docutils literal notranslate"><span class="pre">CZTModule.updateDetectorSizeY()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.updateModuleNumber"><code class="docutils literal notranslate"><span class="pre">CZTModule.updateModuleNumber()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.updateNumberOfPixels"><code class="docutils literal notranslate"><span class="pre">CZTModule.updateNumberOfPixels()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.updateOrigin"><code class="docutils literal notranslate"><span class="pre">CZTModule.updateOrigin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.updatePixelSize"><code class="docutils literal notranslate"><span class="pre">CZTModule.updatePixelSize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.updatecztThickness"><code class="docutils literal notranslate"><span class="pre">CZTModule.updatecztThickness()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.updatepixelSpacingX"><code class="docutils literal notranslate"><span class="pre">CZTModule.updatepixelSpacingX()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="DetectionLayout.Semicondutors.html#DetectionLayout.Semicondutors.cztgeometry.CZTModule.updatepixelSpacingY"><code class="docutils literal notranslate"><span class="pre">CZTModule.updatepixelSpacingY()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Semicondutors.html#module-DetectionLayout.Semicondutors">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-DetectionLayout">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-DetectionLayout" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Designer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Designer package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DetectionLayout.Collimators.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DetectionLayout.Collimators package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-DetectionLayout">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -54,6 +54,7 @@ class Device:
         self._geometryType = None
         self._energyResolutionFunction = None
 
+
     def readDeviceProperties(self, objectName=None):
         """
         Read the device properties from a file
@@ -166,12 +167,17 @@ class Device:
         """
         self._geometryObject = geometryObject
 
-    def setEnergyResolutionFunction(self, energyResolutionFunction=None):
-        if energyResolutionFunction is not None and not callable(energyResolutionFunction):
-            raise ValueError("energyResolutionFunction must be a callable function.")
+    @property
+    def energyResolutionFunction(self):
+        return self._energyResolutionFunction
+
+    def setEnergyResolutionFunction(self, energyResolutionFunction):
+        """
+        """
         self._energyResolutionFunction = energyResolutionFunction
 
     def getFWHMSystemEnergyResponse(self, energy):
         if self._energyResolutionFunction is None:
             raise ValueError("No energy resolution function has been set.")
-        return self._energyResolutionFunction(energy)
+        return self._energyResolutionFunction.run(energy)
+

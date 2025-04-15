@@ -5,7 +5,7 @@ import numpy as np
 from scipy import ndimage
 import tkinter as tk
 from vtk.util import numpy_support
-from src.Phantoms import NEMAIQ2008NU
+from Phantoms import NEMAIQ2008NU
 
 
 

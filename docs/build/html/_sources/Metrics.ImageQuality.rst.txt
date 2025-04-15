@@ -12,14 +12,6 @@ Metrics.ImageQuality.algortihmConvergency module
    :undoc-members:
    :show-inheritance:
 
-Metrics.ImageQuality.image\_metrics module
-------------------------------------------
-
-.. automodule:: Metrics.ImageQuality.image_metrics
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 

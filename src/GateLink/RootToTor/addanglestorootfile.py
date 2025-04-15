@@ -2,7 +2,7 @@ import os
 import numpy as np
 import uproot
 try:
-    from src.GateLink.RootToTor import ReadRootFile
+    from GateLink.RootToTor import ReadRootFile
 except ModuleNotFoundError:
     from readroot import ReadRootFile
 

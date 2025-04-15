@@ -8,6 +8,4 @@
 # * LICENSE: "CC BY-NC-SA 4.0"
 # *******************************************************
 
-"""
-Brief description of the file.
-"""
+from .detector_sensitivity import DetectorSensitivityResponse

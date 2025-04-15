@@ -1,4 +1,4 @@
-from src.Geometry.Standard import RegularPolygonalGeometry
+from Geometry.Standard import RegularPolygonalGeometry
 
 
 class PlanarGeometry(RegularPolygonalGeometry):

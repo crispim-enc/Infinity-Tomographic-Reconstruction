@@ -1,6 +1,6 @@
 import numpy as np
-from src.DetectionLayout.Photodetectors.SiPM import HamamatsuS14161Series
-from src.DetectionLayout.Photodetectors.Crystals import LYSOCrystal
+from DetectionLayout.Photodetectors.SiPM import HamamatsuS14161Series
+from DetectionLayout.Photodetectors.Crystals import LYSOCrystal
 
 
 class PETModule:

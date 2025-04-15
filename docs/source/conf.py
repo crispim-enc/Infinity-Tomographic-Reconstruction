@@ -7,12 +7,13 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 import os
 import sys
-# sys.path.insert(0, os.path.abspath('../..'))
+# sys.path.insert(0, os.path.abspath('../src/'))
 # sys.path.insert(0, os.path.abspath('../../src/'))
 sys.path.insert(0, os.path.abspath('../../src/'))
 
 project = 'Infinity-Tomographic-Reconstruction'
 copyright = '2025, Pedro Encarnação'
+license = 'CC BY-NC-SA 4.0'
 author = 'Pedro Encarnação'
 release = '0.1.0'
 
@@ -27,7 +28,19 @@ extensions = ["sphinx.ext.autodoc", 'sphinx.ext.coverage', 'sphinx.ext.napoleon'
 'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     'sphinx_autodoc_typehints',
+'sphinx_gallery.gen_gallery'
 ]
+#
+sphinx_gallery_conf = {
+    'examples_dirs': 'examples',   # path to your example scripts
+    'gallery_dirs': 'auto_examples',  # where to save gallery generated pages
+    'filename_pattern': r'example_',
+}# regex to filter which files to include
+    # Optional:
+    # 'backreferences_dir': 'generated',
+    # 'doc_module': ('your_module_name',),
+    # 'image_scrapers': ('matplotlib',),
+# }
 language = 'en'
 
 # -- Options for HTML output -------------------------------------------------

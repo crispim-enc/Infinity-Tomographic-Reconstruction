@@ -1,0 +1,182 @@
+{
+ "DetectorSensitivityResponse": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.General",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse"
+  }
+ ],
+ "DeviceDesignerStandalone": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone"
+  }
+ ],
+ "EasyCTGeometry": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  }
+ ],
+ "EnergyResolutionFunction": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "EnergyResolutionFunction"
+  }
+ ],
+ "GenericRadiativeSource": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource"
+  }
+ ],
+ "StoreDeviceInFo": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  }
+ ],
+ "ToRFile": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  }
+ ],
+ "curve_fit": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "scipy.optimize",
+   "module_short": "scipy.optimize",
+   "name": "curve_fit"
+  }
+ ],
+ "easyPETModule": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules",
+   "module_short": "DetectionLayout.Modules",
+   "name": "easyPETModule"
+  }
+ ],
+ "np.arange": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "arange"
+  }
+ ],
+ "np.array": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "array"
+  }
+ ],
+ "np.float32": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "float32"
+  }
+ ],
+ "np.ones": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ones"
+  }
+ ],
+ "np.repeat": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "repeat"
+  }
+ ],
+ "np.sqrt": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "sqrt"
+  }
+ ],
+ "np.tile": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "tile"
+  }
+ ],
+ "np.zeros": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "zeros"
+  }
+ ],
+ "plt.figure": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "figure"
+  }
+ ],
+ "plt.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "plot"
+  }
+ ],
+ "plt.show": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "show"
+  }
+ ]
+}

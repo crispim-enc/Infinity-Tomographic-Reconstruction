@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -13,33 +13,30 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
     <script src="_static/documentation_options.js?v=01f34227"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'py-modindex';</script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -47,7 +44,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
 
 
   </head>
@@ -57,16 +53,32 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -74,6 +86,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -81,27 +94,19 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
+</form></div>
+  </div>
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
     <span class="fa-solid fa-bars"></span>
-  </button>
+  </label>
   
   
   <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
-
-  
-    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -116,7 +121,7 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
-    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -127,16 +132,21 @@
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item">
-<nav>
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="modules.html">
-    src
-  </a>
-</li>
-
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        src
+                      </a>
+                    </li>
+                
   </ul>
 </nav></div>
       
@@ -147,22 +157,28 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button>
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
       
     </div>
     
@@ -170,30 +186,27 @@
   
   
     <div class="navbar-persistent--mobile">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button>
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
 </div>
 
-    </header>
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      
-      
-        
-      
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -202,21 +215,23 @@
     
       <div class="sidebar-header-items__center">
         
-          
-          
-            <div class="navbar-item">
-<nav>
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="modules.html">
-    src
-  </a>
-</li>
-
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        src
+                      </a>
+                    </li>
+                
   </ul>
 </nav></div>
-          
         
       </div>
     
@@ -225,12 +240,15 @@
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
         
       </div>
     
@@ -238,31 +256,26 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none"></div>
+              <div class="bd-header-article"></div>
               
               
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
 
    <h1>Python Module Index</h1>
@@ -271,12 +284,12 @@
    <a href="#cap-c"><strong>c</strong></a> | 
    <a href="#cap-d"><strong>d</strong></a> | 
    <a href="#cap-e"><strong>e</strong></a> | 
+   <a href="#cap-g"><strong>g</strong></a> | 
    <a href="#cap-i"><strong>i</strong></a> | 
    <a href="#cap-m"><strong>m</strong></a> | 
    <a href="#cap-o"><strong>o</strong></a> | 
    <a href="#cap-p"><strong>p</strong></a> | 
    <a href="#cap-q"><strong>q</strong></a> | 
-   <a href="#cap-s"><strong>s</strong></a> | 
    <a href="#cap-t"><strong>t</strong></a>
    </div>
 
@@ -288,157 +301,212 @@
        <td><img src="_static/minus.png" class="toggler"
               id="toggle-1" style="display: none" alt="-" /></td>
        <td>
-       <a href="ControlUI.html#module-ControlUI"><code class="xref">ControlUI</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.html#module-ControlUI.advance_parameters_gui"><code class="xref">ControlUI.advance_parameters_gui</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.InfoTab.html#module-ControlUI.InfoTab"><code class="xref">ControlUI.InfoTab</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.InfoTab.html#module-ControlUI.InfoTab.headerinfotab"><code class="xref">ControlUI.InfoTab.headerinfotab</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.ReconstructionManager.html#module-ControlUI.ReconstructionManager"><code class="xref">ControlUI.ReconstructionManager</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.ReconstructionManager.html#module-ControlUI.ReconstructionManager.TabReconstructionFile"><code class="xref">ControlUI.ReconstructionManager.TabReconstructionFile</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.html#module-ControlUI.ResourcesImages_rc"><code class="xref">ControlUI.ResourcesImages_rc</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.html#module-ControlUI.SegmentationManager"><code class="xref">ControlUI.SegmentationManager</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.Visualization.html#module-ControlUI.Visualization"><code class="xref">ControlUI.Visualization</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.Visualization.html#module-ControlUI.Visualization.camera"><code class="xref">ControlUI.Visualization.camera</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.Visualization.html#module-ControlUI.Visualization.dynamicvisualization"><code class="xref">ControlUI.Visualization.dynamicvisualization</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.Visualization.html#module-ControlUI.Visualization.mainvisualization"><code class="xref">ControlUI.Visualization.mainvisualization</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.Visualization.html#module-ControlUI.Visualization.mouseobserver_main"><code class="xref">ControlUI.Visualization.mouseobserver_main</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.Visualization.html#module-ControlUI.Visualization.typeofviews"><code class="xref">ControlUI.Visualization.typeofviews</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="ControlUI.Visualization.html#module-ControlUI.Visualization.viewPort"><code class="xref">ControlUI.Visualization.viewPort</code></a></td><td>
-       <em></em></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-2" style="display: none" alt="-" /></td>
-       <td>
        <a href="Corrections.html#module-Corrections"><code class="xref">Corrections</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-2">
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Corrections.Compton.html#module-Corrections.Compton"><code class="xref">Corrections.Compton</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Corrections.Compton.html#module-Corrections.Compton.conicalprojector"><code class="xref">Corrections.Compton.conicalprojector</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Corrections.CT.html#module-Corrections.CT"><code class="xref">Corrections.CT</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-2">
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Corrections.CT.html#module-Corrections.CT.normalization"><code class="xref">Corrections.CT.normalization</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Corrections.CT.Projector.html#module-Corrections.CT.Projector"><code class="xref">Corrections.CT.Projector</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-2">
+     <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Corrections.CT.Projector.html#module-Corrections.CT.Projector.pyramidalprojector"><code class="xref">Corrections.CT.Projector.pyramidalprojector</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-2">
+     <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Corrections.EasyPET.html#module-Corrections.EasyPET"><code class="xref">Corrections.EasyPET</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-2">
+     <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization"><code class="xref">Corrections.EasyPET.Normalization</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-2">
+     <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization.adaptative_normalization_matrix"><code class="xref">Corrections.EasyPET.Normalization.adaptative_normalization_matrix</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-2">
+     <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization.generateallpositions"><code class="xref">Corrections.EasyPET.Normalization.generateallpositions</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-2">
+     <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Corrections.EasyPET.Normalization.html#module-Corrections.EasyPET.Normalization.poissonmapgenerator"><code class="xref">Corrections.EasyPET.Normalization.poissonmapgenerator</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-2">
+     <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Corrections.EasyPET.SystemFocus.html#module-Corrections.EasyPET.SystemFocus"><code class="xref">Corrections.EasyPET.SystemFocus</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-2">
+     <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Corrections.EasyPET.SystemFocus.html#module-Corrections.EasyPET.SystemFocus.SystemAligment"><code class="xref">Corrections.EasyPET.SystemFocus.SystemAligment</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Corrections.General.html#module-Corrections.General"><code class="xref">Corrections.General</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Corrections.General.html#module-Corrections.General.detector_sensitivity"><code class="xref">Corrections.General.detector_sensitivity</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Corrections.General.html#module-Corrections.General.EnergyFiltering"><code class="xref">Corrections.General.EnergyFiltering</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Corrections.General.html#module-Corrections.General.generalprojector"><code class="xref">Corrections.General.generalprojector</code></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-d"><td></td><td>
        <strong>d</strong></td><td></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
+              id="toggle-2" style="display: none" alt="-" /></td>
+       <td>
+       <a href="Designer.html#module-Designer"><code class="xref">Designer</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Designer.html#module-Designer.deviceDesigner"><code class="xref">Designer.deviceDesigner</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Designer.html#module-Designer.geometricdesigner"><code class="xref">Designer.geometricdesigner</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Designer.html#module-Designer.Image_vtk_projector_article"><code class="xref">Designer.Image_vtk_projector_article</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td><img src="_static/minus.png" class="toggler"
               id="toggle-3" style="display: none" alt="-" /></td>
        <td>
-       <a href="Detectors.html#module-Detectors"><code class="xref">Detectors</code></a></td><td>
+       <a href="DetectionLayout.html#module-DetectionLayout"><code class="xref">DetectionLayout</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-3">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="Detectors.Collimators.html#module-Detectors.Collimators"><code class="xref">Detectors.Collimators</code></a></td><td>
+       <a href="DetectionLayout.Collimators.html#module-DetectionLayout.Collimators"><code class="xref">DetectionLayout.Collimators</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-3">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="Detectors.Crystals.html#module-Detectors.Crystals.genericCrystal"><code class="xref">Detectors.Crystals.genericCrystal</code></a></td><td>
+       <a href="DetectionLayout.Collimators.html#module-DetectionLayout.Collimators.collimatorGeneric"><code class="xref">DetectionLayout.Collimators.collimatorGeneric</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-3">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="Detectors.SiPM.html#module-Detectors.SiPM.generic"><code class="xref">Detectors.SiPM.generic</code></a></td><td>
+       <a href="DetectionLayout.Modules.html#module-DetectionLayout.Modules"><code class="xref">DetectionLayout.Modules</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Modules.html#module-DetectionLayout.Modules.easyPETModules"><code class="xref">DetectionLayout.Modules.easyPETModules</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Modules.html#module-DetectionLayout.Modules.PETModuleGeneric"><code class="xref">DetectionLayout.Modules.PETModuleGeneric</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Modules.html#module-DetectionLayout.Modules.SPECTModuleGeneric"><code class="xref">DetectionLayout.Modules.SPECTModuleGeneric</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Photodetectors.html#module-DetectionLayout.Photodetectors"><code class="xref">DetectionLayout.Photodetectors</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Photodetectors.Crystals.html#module-DetectionLayout.Photodetectors.Crystals"><code class="xref">DetectionLayout.Photodetectors.Crystals</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Photodetectors.Crystals.html#module-DetectionLayout.Photodetectors.Crystals.genericCrystal"><code class="xref">DetectionLayout.Photodetectors.Crystals.genericCrystal</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Photodetectors.Crystals.html#module-DetectionLayout.Photodetectors.Crystals.LYSO"><code class="xref">DetectionLayout.Photodetectors.Crystals.LYSO</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Photodetectors.SiPM.html#module-DetectionLayout.Photodetectors.SiPM"><code class="xref">DetectionLayout.Photodetectors.SiPM</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Photodetectors.SiPM.html#module-DetectionLayout.Photodetectors.SiPM.generic"><code class="xref">DetectionLayout.Photodetectors.SiPM.generic</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Photodetectors.SiPM.html#module-DetectionLayout.Photodetectors.SiPM.Hamamatsu"><code class="xref">DetectionLayout.Photodetectors.SiPM.Hamamatsu</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Photodetectors.SiPM.html#module-DetectionLayout.Photodetectors.SiPM.Kettek"><code class="xref">DetectionLayout.Photodetectors.SiPM.Kettek</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.RadiationProducer.html#module-DetectionLayout.RadiationProducer"><code class="xref">DetectionLayout.RadiationProducer</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.RadiationProducer.html#module-DetectionLayout.RadiationProducer.GenericSource"><code class="xref">DetectionLayout.RadiationProducer.GenericSource</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Semicondutors.html#module-DetectionLayout.Semicondutors"><code class="xref">DetectionLayout.Semicondutors</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="DetectionLayout.Semicondutors.html#module-DetectionLayout.Semicondutors.cztgeometry"><code class="xref">DetectionLayout.Semicondutors.cztgeometry</code></a></td><td>
        <em></em></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
@@ -450,6 +518,16 @@
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Device.html#module-Device.device"><code class="xref">Device.device</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-4">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Device.html#module-Device.energy_resolution_function"><code class="xref">Device.energy_resolution_function</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-4">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Device.html#module-Device.storedeviceInfo"><code class="xref">Device.storedeviceInfo</code></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-e"><td></td><td>
@@ -531,20 +609,149 @@
        <a href="EasyPETLinkInitializer.Utilities.html#module-EasyPETLinkInitializer.Utilities.exceptions"><code class="xref">EasyPETLinkInitializer.Utilities.exceptions</code></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-i"><td></td><td>
-       <strong>i</strong></td><td></td></tr>
+     <tr class="cap" id="cap-g"><td></td><td>
+       <strong>g</strong></td><td></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
               id="toggle-6" style="display: none" alt="-" /></td>
        <td>
-       <code class="xref">ImageReader</code></td><td>
+       <a href="Geometry.html#module-Geometry"><code class="xref">Geometry</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-6">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="ImageReader.RawData.html#module-ImageReader.RawData"><code class="xref">ImageReader.RawData</code></a></td><td>
+       <a href="Geometry.easyPETBased.html#module-Geometry.easyPETBased"><code class="xref">Geometry.easyPETBased</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.easyPETBased.html#module-Geometry.easyPETBased.dualrotationsystem"><code class="xref">Geometry.easyPETBased.dualrotationsystem</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.easyPETBased.html#module-Geometry.easyPETBased.easyct_parametric_points"><code class="xref">Geometry.easyPETBased.easyct_parametric_points</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.easyPETBased.html#module-Geometry.easyPETBased.easypet_parametric_points"><code class="xref">Geometry.easyPETBased.easypet_parametric_points</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.easyPETBased.html#module-Geometry.easyPETBased.matrixgeometrycorrection"><code class="xref">Geometry.easyPETBased.matrixgeometrycorrection</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.easyPETBased.html#module-Geometry.easyPETBased.resetposition"><code class="xref">Geometry.easyPETBased.resetposition</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.LinearPET.html#module-Geometry.LinearPET"><code class="xref">Geometry.LinearPET</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.LinearPET.html#module-Geometry.LinearPET.linear_parametric_points"><code class="xref">Geometry.LinearPET.linear_parametric_points</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.SPIRAL.html#module-Geometry.SPIRAL"><code class="xref">Geometry.SPIRAL</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.Standard.html#module-Geometry.Standard"><code class="xref">Geometry.Standard</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.Standard.html#module-Geometry.Standard.cylindrical"><code class="xref">Geometry.Standard.cylindrical</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.Standard.html#module-Geometry.Standard.planar"><code class="xref">Geometry.Standard.planar</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Geometry.Standard.html#module-Geometry.Standard.polygonal"><code class="xref">Geometry.Standard.polygonal</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-i"><td></td><td>
+       <strong>i</strong></td><td></td></tr>
+     <tr>
+       <td><img src="_static/minus.png" class="toggler"
+              id="toggle-7" style="display: none" alt="-" /></td>
+       <td>
+       <a href="ImageReader.html#module-ImageReader"><code class="xref">ImageReader</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.DICOM.html#module-ImageReader.DICOM"><code class="xref">ImageReader.DICOM</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.DICOM.html#module-ImageReader.DICOM.equipment"><code class="xref">ImageReader.DICOM.equipment</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.DICOM.html#module-ImageReader.DICOM.filesreader"><code class="xref">ImageReader.DICOM.filesreader</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.DICOM.html#module-ImageReader.DICOM.frameofreference"><code class="xref">ImageReader.DICOM.frameofreference</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.DICOM.html#module-ImageReader.DICOM.image"><code class="xref">ImageReader.DICOM.image</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.DICOM.html#module-ImageReader.DICOM.patient"><code class="xref">ImageReader.DICOM.patient</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.DICOM.html#module-ImageReader.DICOM.series"><code class="xref">ImageReader.DICOM.series</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.DICOM.html#module-ImageReader.DICOM.study"><code class="xref">ImageReader.DICOM.study</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.DICOM.html#module-ImageReader.DICOM.submodule"><code class="xref">ImageReader.DICOM.submodule</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.DICOM.html#module-ImageReader.DICOM.writeDicom"><code class="xref">ImageReader.DICOM.writeDicom</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.Interfile.html#module-ImageReader.Interfile"><code class="xref">ImageReader.Interfile</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="ImageReader.RawData.html#module-ImageReader.RawData"><code class="xref">ImageReader.RawData</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-7">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="ImageReader.RawData.html#module-ImageReader.RawData.raw_data"><code class="xref">ImageReader.RawData.raw_data</code></a></td><td>
@@ -552,17 +759,6 @@
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-m"><td></td><td>
        <strong>m</strong></td><td></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-7" style="display: none" alt="-" /></td>
-       <td>
-       <a href="Manager.html#module-Manager"><code class="xref">Manager</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-7">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="Manager.html#module-Manager.ReconstructionManagerGeneral"><code class="xref">Manager.ReconstructionManagerGeneral</code></a></td><td>
-       <em></em></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
               id="toggle-8" style="display: none" alt="-" /></td>
@@ -583,16 +779,6 @@
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Metrics.ImageQuality.html#module-Metrics.ImageQuality.algortihmConvergency"><code class="xref">Metrics.ImageQuality.algortihmConvergency</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-8">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="Metrics.ImageQuality.html#module-Metrics.ImageQuality.image_metrics"><code class="xref">Metrics.ImageQuality.image_metrics</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-8">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="Metrics.MetaDataAnalyser.html#module-Metrics.MetaDataAnalyser"><code class="xref">Metrics.MetaDataAnalyser</code></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-o"><td></td><td>
@@ -626,6 +812,11 @@
      <tr class="cg-9">
        <td></td>
        <td>&#160;&#160;&#160;
+       <a href="Optimizer.html#module-Optimizer.GPUManager"><code class="xref">Optimizer.GPUManager</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-9">
+       <td></td>
+       <td>&#160;&#160;&#160;
        <a href="Optimizer.html#module-Optimizer.kernelManager"><code class="xref">Optimizer.kernelManager</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-9">
@@ -640,12 +831,27 @@
        <td><img src="_static/minus.png" class="toggler"
               id="toggle-10" style="display: none" alt="-" /></td>
        <td>
-       <code class="xref">Phantoms</code></td><td>
+       <a href="Phantoms.html#module-Phantoms"><code class="xref">Phantoms</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-10">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="Phantoms.html#module-Phantoms.cylindricalStructure"><code class="xref">Phantoms.cylindricalStructure</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-10">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Phantoms.html#module-Phantoms.data_suv_reader"><code class="xref">Phantoms.data_suv_reader</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-10">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Phantoms.html#module-Phantoms.NECPhantom"><code class="xref">Phantoms.NECPhantom</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-10">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="Phantoms.html#module-Phantoms.NEMAIQgeometry"><code class="xref">Phantoms.NEMAIQgeometry</code></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-q"><td></td><td>
@@ -662,34 +868,40 @@
        <a href="Quantification.html#module-Quantification.factor_calibration_phantom_uniform"><code class="xref">Quantification.factor_calibration_phantom_uniform</code></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-s"><td></td><td>
-       <strong>s</strong></td><td></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-12" style="display: none" alt="-" /></td>
-       <td>
-       <a href="Segmentation.html#module-Segmentation"><code class="xref">Segmentation</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-12">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="Segmentation.html#module-Segmentation.findisosurface"><code class="xref">Segmentation.findisosurface</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-12">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="Segmentation.html#module-Segmentation.maskcreatdemo"><code class="xref">Segmentation.maskcreatdemo</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-t"><td></td><td>
        <strong>t</strong></td><td></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
-              id="toggle-13" style="display: none" alt="-" /></td>
+              id="toggle-12" style="display: none" alt="-" /></td>
        <td>
        <a href="TORFilesReader.html#module-TORFilesReader"><code class="xref">TORFilesReader</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-13">
+     <tr class="cg-12">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="TORFilesReader.html#module-TORFilesReader.Radioisotope"><code class="xref">TORFilesReader.Radioisotope</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-12">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="TORFilesReader.html#module-TORFilesReader.scanning_body"><code class="xref">TORFilesReader.scanning_body</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-12">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="TORFilesReader.html#module-TORFilesReader.scanning_header"><code class="xref">TORFilesReader.scanning_header</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-12">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="TORFilesReader.html#module-TORFilesReader.subject_type"><code class="xref">TORFilesReader.subject_type</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-12">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="TORFilesReader.html#module-TORFilesReader.technician"><code class="xref">TORFilesReader.technician</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-12">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="TORFilesReader.html#module-TORFilesReader.torfiles"><code class="xref">TORFilesReader.torfiles</code></a></td><td>
@@ -703,8 +915,8 @@
               
               
               
-                <footer class="prev-next-footer d-print-none">
-                  
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
 </div>
                 </footer>
@@ -724,8 +936,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -733,7 +945,6 @@
     <div class="footer-items__start">
       
         <div class="footer-item">
-
   <p class="copyright">
     
       © Copyright 2025, Pedro Encarnação.
@@ -743,9 +954,8 @@
 </div>
       
         <div class="footer-item">
-
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     <br/>
   </p>
 </div>
@@ -756,10 +966,8 @@
   
     <div class="footer-items__end">
       
-        <div class="footer-item">
-<p class="theme-version">
-  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
 </p></div>
       
     </div>

@@ -1,5 +1,5 @@
 import numpy as np
-from src.Geometry.easyPETBased import MatrixGeometryCorrection
+from Geometry.easyPETBased import MatrixGeometryCorrection
 
 
 class ResetParametricPointsToOrigin:

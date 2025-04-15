@@ -6,7 +6,7 @@ import os
 import json
 import matplotlib.pyplot as plt
 try:
-    from src.GateLink.RootToTor import ReadRootFile
+    from GateLink.RootToTor import ReadRootFile
 except ModuleNotFoundError:
     from readroot import ReadRootFile
 

@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Designer.geometricdesigner &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/Designer/geometricdesigner';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../auto_examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../auto_examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Designer.geo...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for Designer.geometricdesigner</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vtk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="c1"># from scipy import ndimage, misc</span>
+
+
+<div class="viewcode-block" id="GeometryDesigner">
+<a class="viewcode-back" href="../../Designer.html#Designer.geometricdesigner.GeometryDesigner">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">GeometryDesigner</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detector_geometry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">draw_volume</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">geometry_vector</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pixel_dimensions</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">volume</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span><span class="n">top_angle</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pixel_dimensions</span> <span class="o">=</span> <span class="n">pixel_dimensions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">geometry_vector</span> <span class="o">=</span> <span class="n">geometry_vector</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="n">top_angle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">volume</span> <span class="o">=</span> <span class="n">volume</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ren</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderWin</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindow</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderWin</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ren</span><span class="p">)</span>
+        <span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">640</span>
+        <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">480</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderWin</span><span class="o">.</span><span class="n">SetSize</span><span class="p">(</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">)</span>
+
+        <span class="c1"># create a renderwindowinteractor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderInteractor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindowInteractor</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderInteractor</span><span class="o">.</span><span class="n">SetRenderWindow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">renderWin</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderInteractor</span><span class="o">.</span><span class="n">SetInteractorStyle</span><span class="p">(</span><span class="n">vtk</span><span class="o">.</span><span class="n">vtkInteractorStyleTrackballCamera</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="n">detector_geometry</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_draw_detectors</span><span class="p">()</span>
+
+        <span class="c1"># With almost everything else ready, its time to initialize the renderer and window, as well as creating a method for exiting the application</span>
+        <span class="c1"># renderWin = self.vtkWidget.GetRenderWindow()</span>
+        <span class="c1"># renderInteractor = self.vtkWidget.GetRenderWindow().GetInteractor()</span>
+
+        <span class="c1"># Add Renderer to PYVTK window</span>
+        <span class="c1"># self.vtkWidget.GetRenderWindow().AddRenderer(self.ren_volume)</span>
+        <span class="c1"># renderInteractor.SetRenderWindow(renderWin)</span>
+        <span class="c1"># We add the volume to the renderer ...</span>
+        <span class="c1"># self.ren_volume.AddVolume(volume)</span>
+        <span class="c1"># self.Volume4VTK = volume</span>
+        <span class="c1"># self.ren.AddVolume(self.Volume4VTK)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ren</span><span class="o">.</span><span class="n">ResetCamera</span><span class="p">()</span>
+        <span class="c1"># self.ren_volume.SetBackground(0, 0, 0)  # black</span>
+
+        <span class="c1"># self.ren_volume.ResetCamera()</span>
+
+        <span class="c1"># self.renderWin = renderWin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderInteractor</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span>
+
+        <span class="c1"># Because nothing will be rendered without any input, we order the first render manually before control is handed over to the main-loop.</span>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_draw_image_reconstructed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">map_cut</span><span class="o">=</span><span class="mf">0.6</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;volume&#39;</span><span class="p">)</span>
+        <span class="n">direct</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+        <span class="n">colormap</span> <span class="o">=</span> <span class="s1">&#39;hot.cl&#39;</span>
+
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">direct</span><span class="p">,</span><span class="s2">&quot;ControlUI&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap_files&quot;</span><span class="p">)</span>
+        <span class="n">z_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">volume</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">data3D</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">volume</span><span class="p">)</span>
+        <span class="c1"># data3D = self.volume</span>
+        <span class="c1">#</span>
+        <span class="c1"># data3D = ndimage.gaussian_filter(data3D, sigma=0.8)</span>
+        <span class="c1"># data3D = ndimage.uniform_filter(data3D, size=3)</span>
+        <span class="c1"># data3D = ndimage.convolve(data3D, np.ones((3, 3, 3)) / 27)</span>
+        <span class="c1"># data3D = ndimage.gaussian_gradient_magnitude(data3D, sigma=0.6)</span>
+        <span class="c1"># apply a wavelet filter to de image</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">pywt</span>
+
+        <span class="n">coeffs</span> <span class="o">=</span> <span class="n">pywt</span><span class="o">.</span><span class="n">dwtn</span><span class="p">(</span><span class="n">data3D</span><span class="p">,</span> <span class="s1">&#39;haar&#39;</span><span class="p">)</span>  <span class="c1"># &#39;haar&#39; is the wavelet type, you can choose others as well</span>
+
+        <span class="c1"># Threshold the wavelet coefficients (this is optional and depends on your application)</span>
+        <span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># Adjust this threshold as needed</span>
+        <span class="n">coeffs_thresh</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">pywt</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;soft&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">coeffs</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="c1"># data3D = pywt.idwtn(coeffs_thresh, &#39;haar&#39;)</span>
+        <span class="n">data3D</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">median_filter</span><span class="p">(</span><span class="n">data3D</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="c1"># Reconstruct the denoised image</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">skimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">img_as_float</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">skimage.restoration</span><span class="w"> </span><span class="kn">import</span> <span class="n">denoise_nl_means</span>
+        <span class="c1"># Adjust the parameters according to your requirements</span>
+        <span class="n">patch_size</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># Size of patches used for denoising</span>
+        <span class="n">patch_distance</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># Maximum distance for patches to be considered similar</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Smoothing parameter (higher values give stronger smoothing)</span>
+
+        <span class="c1"># Apply non-local means denoising</span>
+        <span class="c1"># data3D = denoise_nl_means(data3D, patch_size=patch_size, patch_distance=patch_distance, h=h)</span>
+
+
+        <span class="c1"># denoised_image = pywt.idwtn(coeffs_thresh, &#39;haar&#39;)</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span>
+                <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">yy</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="p">(</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span>
+                <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="n">xx</span><span class="o">.</span><span class="n">T</span>
+        <span class="c1"># circle_cut = xx + yy - (self.im_index_x.shape[1] * np.sin(np.radians(easypetdata.half_real_range))*0.5) ** 2</span>
+        <span class="n">circle_cut</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">-</span> <span class="p">(</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.4</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="c1"># circle_cut = xx + yy - (self.im_index_x.shape[1] * np.sin(np.radians(120/2))*.50) ** 2</span>
+
+        <span class="n">circle_cut</span><span class="p">[</span><span class="n">circle_cut</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">circle_cut</span><span class="p">[</span><span class="n">circle_cut</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">circle_cut</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">circle_cut</span><span class="p">[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+        <span class="n">data3D</span> <span class="o">=</span> <span class="n">data3D</span><span class="o">*</span><span class="n">circle_cut</span>
+        <span class="c1"># data3D[data3D &lt; 0.02*data3D.max()] = 0</span>
+        <span class="n">data3D</span><span class="p">[:,:,:</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">data3D</span><span class="p">[:,:,</span><span class="o">-</span><span class="mi">10</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># data3D[:,:,-3:] = 0</span>
+        <span class="c1">#  Volume inversion</span>
+        <span class="c1"># data3D = np.flip(data3D, axis=2)</span>
+
+        <span class="n">size</span> <span class="o">=</span> <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">size</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">w</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">z_pos</span><span class="p">):</span>
+            <span class="n">stack</span><span class="p">[:,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">data3D</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">j</span><span class="p">]</span>
+
+        <span class="n">stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>  <span class="c1"># stack = np.require(data3D,dtype=np.uint16)</span>
+
+        <span class="n">normalize_colormap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data3D</span><span class="p">)</span><span class="o">*</span><span class="n">map_cut</span>
+        <span class="n">start_color</span> <span class="o">=</span> <span class="mi">20</span>
+        <span class="n">end_color</span> <span class="o">=</span> <span class="mi">1500</span>
+
+        <span class="c1"># --------IMPORT DATA-----------------</span>
+
+        <span class="n">dataImporter</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageImport</span><span class="p">()</span>
+        <span class="c1"># The preaviusly created array is converted to a string of chars and imported.</span>
+        <span class="n">data_string</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">tostring</span><span class="p">()</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">CopyImportVoidPointer</span><span class="p">(</span><span class="n">data_string</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_string</span><span class="p">))</span>
+        <span class="c1"># dataImporter.SetDataScalarTypeToUnsignedShort()</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">SetDataScalarTypeToFloat</span><span class="p">()</span>
+        <span class="c1"># dataImporter.SetDataSpacing(self.pixel_size_reconstruct_file[0], self.pixel_size_reconstruct_file[2],</span>
+        <span class="c1">#                             self.pixel_size_reconstruct_file[1])</span>
+
+        <span class="c1"># Because the data that is imported only contains an intensity value (it isnt RGB-coded or someting similar), the importer</span>
+        <span class="c1"># must be told this is the case.</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">SetNumberOfScalarComponents</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># ---------------STORE DATA-------------------------------</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">SetDataExtent</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">w</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">d</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">h</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">SetWholeExtent</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">w</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">d</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">h</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># dataImporter.SetTransform(transL1)</span>
+
+        <span class="c1"># -----------------------Scalar range-------------</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+        <span class="c1"># -----------------------------------------------------------</span>
+        <span class="c1"># The following class is used to store transparencyv-values for later retrival. In our case, we want the value 0 to be</span>
+        <span class="c1"># completly opaque whereas the three different cubes are given different transperancy-values to show how it works.</span>
+        <span class="n">alphaChannelFunc</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPiecewiseFunction</span><span class="p">()</span>
+        <span class="n">colorTransferFunction</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkColorTransferFunction</span><span class="p">()</span>
+        <span class="n">colorTransferFunction</span><span class="o">.</span><span class="n">SetColorSpaceToRGB</span><span class="p">()</span>
+
+        <span class="c1"># ----------------OPACITYMAP-----------------------------</span>
+
+        <span class="c1"># http://www.kennethmoreland.com/color-advice/</span>
+
+        <span class="c1"># file_name = &#39;{}{}.cl&#39;.format(path, colormap)</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">colormap</span><span class="p">)</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="n">bins</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="nb">len</span><span class="p">(</span><span class="n">reader</span><span class="p">),</span> <span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">stack</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
+        <span class="n">res2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="p">[</span><span class="n">stack</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">stack</span><span class="o">.</span><span class="n">max</span><span class="p">()],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">opacitymap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">res</span><span class="p">,</span> <span class="n">res2</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">opacitymap</span> <span class="o">=</span> <span class="n">opacitymap</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+
+        <span class="n">increment_color</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">reader</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">start_color</span><span class="p">:</span>
+                <span class="n">colorTransferFunction</span><span class="o">.</span><span class="n">AddRGBPoint</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">normalize_colormap</span><span class="p">,</span>
+                                                  <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">]))</span>
+
+            <span class="k">elif</span> <span class="n">row</span> <span class="o">&gt;</span> <span class="n">end_color</span><span class="p">:</span>
+                <span class="n">colorTransferFunction</span><span class="o">.</span><span class="n">AddRGBPoint</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">normalize_colormap</span><span class="p">,</span>
+                                                  <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">increment_color</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">start_color</span> <span class="o">-</span> <span class="n">end_color</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">increment_color</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">reader</span><span class="p">):</span>
+                    <span class="n">colorTransferFunction</span><span class="o">.</span><span class="n">AddRGBPoint</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">normalize_colormap</span><span class="p">,</span>
+                                                      <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">increment_color</span><span class="p">,</span> <span class="mi">0</span><span class="p">))][</span><span class="mi">1</span><span class="p">]),</span>
+                                                      <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">increment_color</span><span class="p">,</span> <span class="mi">0</span><span class="p">))][</span><span class="mi">2</span><span class="p">]),</span>
+                                                      <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">increment_color</span><span class="p">,</span> <span class="mi">0</span><span class="p">))][</span><span class="mi">3</span><span class="p">]))</span>
+        <span class="c1"># #</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(opacitymap[start_color, 0], 0.03)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(opacitymap[end_color, 1], 0.15)</span>
+        <span class="n">colorTransferFunction</span><span class="o">.</span><span class="n">AddRGBPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>
+                                          <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">]))</span>
+
+        <span class="n">colorTransferFunction</span><span class="o">.</span><span class="n">AddRGBPoint</span><span class="p">(</span><span class="n">data3D</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+                                          <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">reader</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]))</span>
+
+
+        <span class="n">PEAK</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">alphaChannelFunc</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(data3D.max()*0.01, 0.0)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(data3D.max() * PEAK-0.1, 0.05)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(data3D.max()*PEAK, 0.9)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(data3D.max()*PEAK+0.2, 0.05)</span>
+        <span class="n">alphaChannelFunc</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="n">data3D</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(0.296, 0.01)</span>
+        <span class="c1"># # alphaChannelFunc.AddPoint(0.10*data3D.max(), 0.5)</span>
+        <span class="c1"># # alphaChannelFunc.AddPoint(0.20*data3D.max(), 0.4)</span>
+        <span class="c1"># # alphaChannelFunc.AddPoint(0.30*data3D.max(), 0.5)</span>
+        <span class="c1"># # alphaChannelFunc.AddPoint(0.40*data3D.max(), 0.15)</span>
+        <span class="c1"># # alphaChannelFunc.AddPoint(0.50*data3D.max(), 0.10)</span>
+        <span class="c1"># # alphaChannelFunc.AddPoint(data3D.max(), 0.7)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(1, 0.2)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(1.1, 0.1)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(1.127, 0.1)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(1.19, 0.01)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(float(reader[-1][0]) * normalize_colormap, 1)</span>
+
+        <span class="c1"># The preavius two classes stored properties. Because we want to apply these properties to the volume we want to render,</span>
+        <span class="c1"># we have to store them in a class that stores volume prpoperties.</span>
+        <span class="n">volumeProperty</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkVolumeProperty</span><span class="p">()</span>
+        <span class="n">volumeProperty</span><span class="o">.</span><span class="n">SetColor</span><span class="p">(</span><span class="n">colorTransferFunction</span><span class="p">)</span>
+        <span class="n">volumeProperty</span><span class="o">.</span><span class="n">SetScalarOpacity</span><span class="p">(</span><span class="n">alphaChannelFunc</span><span class="p">)</span>
+
+        <span class="c1"># volumeProperty.SetGradientOpacity(volumeGradientOpacity)</span>
+        <span class="n">volumeProperty</span><span class="o">.</span><span class="n">SetInterpolationType</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">volumeProperty</span><span class="o">.</span><span class="n">SetAmbient</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># volumeProperty.SetDiffuse(0.1)</span>
+        <span class="n">volumeProperty</span><span class="o">.</span><span class="n">SetSpecular</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+
+        <span class="c1"># volumeProperty.ShadeOn()</span>
+
+        <span class="c1"># This class describes how the volume is rendered (through ray tracing).</span>
+        <span class="c1"># compositeFunction = vtk.vtkFixedPointVolumeRayCastCompositeFunction()</span>
+        <span class="c1"># We can finally create our volume. We also have to specify the data for it, as well as how the data will be rendered.</span>
+        <span class="c1"># smoothing_filter = vtk.vtkImageGaussianSmooth()</span>
+        <span class="c1"># smoothing_filter.SetDimensionality(3)</span>
+        <span class="c1"># smoothing_filter.SetInputConnection(dataImporter.GetOutputPort())</span>
+        <span class="c1"># smoothing_filter.SetStandardDeviations(0.5, 0.5, 0.5)</span>
+        <span class="c1"># smoothing_filter.SetRadiusFactors(0.25, 0.25, 0.25)</span>
+        <span class="c1"># #dataImporter = smoothing_filter</span>
+        <span class="c1"># volumeMapper = vtk.vtkFixedPointVolumeRayCastMapper()</span>
+        <span class="n">volumeMapper</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkGPUVolumeRayCastMapper</span><span class="p">()</span>
+        <span class="n">volumeMapper</span><span class="o">.</span><span class="n">UseJitteringOn</span><span class="p">()</span>
+        <span class="n">volumeMapper</span><span class="o">.</span><span class="n">SetSampleDistance</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+
+        <span class="n">volumeMapper</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">dataImporter</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+
+        <span class="c1"># The class vtkVolume is used to pair the preaviusly declared volume as well as the properties to be used when rendering that volume.</span>
+        <span class="n">volume</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkVolume</span><span class="p">()</span>
+        <span class="n">volume</span><span class="o">.</span><span class="n">SetMapper</span><span class="p">(</span><span class="n">volumeMapper</span><span class="p">)</span>
+        <span class="n">volume</span><span class="o">.</span><span class="n">SetProperty</span><span class="p">(</span><span class="n">volumeProperty</span><span class="p">)</span>
+        <span class="c1"># self.ren.SetUseDepthPeeling(1)</span>
+
+        <span class="n">scalarBar</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkScalarBarActor</span><span class="p">()</span>
+        <span class="c1"># scalarBar.SetOrientationToHorizontal()</span>
+        <span class="c1"># scalarBar.SetPosition(0.1, 0.1)</span>
+        <span class="n">scalarBar</span><span class="o">.</span><span class="n">SetWidth</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">scalarBar</span><span class="o">.</span><span class="n">SetHeight</span><span class="p">(</span><span class="mf">0.8</span><span class="p">)</span>
+        <span class="n">scalarBar</span><span class="o">.</span><span class="n">SetLookupTable</span><span class="p">(</span><span class="n">colorTransferFunction</span><span class="p">)</span>
+        <span class="c1"># scalarBar.SetTitle(&quot;MBq/ml&quot;)</span>
+        <span class="c1"># title vertical rotated</span>
+        <span class="n">scalarBar</span><span class="o">.</span><span class="n">SetOrientationToVertical</span><span class="p">()</span>
+        <span class="n">scalarBar</span><span class="o">.</span><span class="n">SetPosition</span><span class="p">(</span><span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">scalarBar</span><span class="o">.</span><span class="n">SetPosition2</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span>
+
+        <span class="n">scalarBar</span><span class="o">.</span><span class="n">SetNumberOfLabels</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+        <span class="c1"># self.ren.AddActor2D(scalarB</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ren</span><span class="o">.</span><span class="n">AddActor2D</span><span class="p">(</span><span class="n">scalarBar</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ren</span><span class="o">.</span><span class="n">AddVolume</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderWin</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderInteractor</span><span class="o">.</span><span class="n">Start</span><span class="p">()</span>
+
+        <span class="c1"># self.renderInteractor.Start()</span>
+        <span class="c1"># volume.SetUserTransform(FOV_trans)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_draw_detectors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">number_of_detectors</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">geometry_vector</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="c1"># number_of_detectors = 8000</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_detectors</span><span class="p">):</span>
+            <span class="n">cube</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCubeSource</span><span class="p">()</span>
+            <span class="c1"># cube.SetCenter([i * 2, 5, 2])</span>
+            <span class="n">cube</span><span class="o">.</span><span class="n">SetXLength</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">cube</span><span class="o">.</span><span class="n">SetYLength</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">cube</span><span class="o">.</span><span class="n">SetZLength</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_dimensions</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+            <span class="n">cube</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+            <span class="n">transL2</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkTransform</span><span class="p">()</span>
+            <span class="c1"># transL1.Translate(-10, 150, -10)</span>
+            <span class="n">transL2</span><span class="o">.</span><span class="n">RotateZ</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+            <span class="n">labelTransform</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkTransformPolyDataFilter</span><span class="p">()</span>
+            <span class="n">labelTransform</span><span class="o">.</span><span class="n">SetTransform</span><span class="p">(</span><span class="n">transL2</span><span class="p">)</span>
+            <span class="n">labelTransform</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">cube</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+
+            <span class="n">transL1</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkTransform</span><span class="p">()</span>
+            <span class="c1"># transL1.Translate(-10, 150, -10)</span>
+            <span class="c1"># transL1.RotateZ(np.degrees(self.top[i]))</span>
+            <span class="n">transL1</span><span class="o">.</span><span class="n">Translate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">geometry_vector</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">],</span><span class="bp">self</span><span class="o">.</span><span class="n">geometry_vector</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">geometry_vector</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">labelTransform_2</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkTransformPolyDataFilter</span><span class="p">()</span>
+            <span class="n">labelTransform_2</span><span class="o">.</span><span class="n">SetTransform</span><span class="p">(</span><span class="n">transL1</span><span class="p">)</span>
+            <span class="n">labelTransform_2</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">labelTransform</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+
+
+
+            <span class="c1"># transL1.Scale(5, 5, 5)</span>
+
+            <span class="n">cm</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPolyDataMapper</span><span class="p">()</span>
+            <span class="n">cm</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">labelTransform_2</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+            <span class="n">ca</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkActor</span><span class="p">()</span>
+            <span class="n">ca</span><span class="o">.</span><span class="n">SetMapper</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+            <span class="c1"># if i &lt; 1920:</span>
+            <span class="c1">#     # print(&#39;Section A1&#39;)</span>
+            <span class="c1">#     ca.GetProperty().SetColor([1, 0, 0])</span>
+            <span class="c1"># elif 1920 &lt;= i &lt; 3840:</span>
+            <span class="c1">#     # print(&#39;Section A2&#39;)</span>
+            <span class="c1">#     ca.GetProperty().SetColor([0, 1, 0])</span>
+            <span class="c1">#</span>
+            <span class="c1"># elif 3840 &lt;= i &lt; 7296:</span>
+            <span class="c1">#     # print(&#39;Section B1&#39;)</span>
+            <span class="c1">#     ca.GetProperty().SetColor([0, 0, 1])</span>
+            <span class="c1">#</span>
+            <span class="c1"># elif 7296 &lt;= i &lt; 7296+3456:</span>
+            <span class="c1">#     # print(&#39;Section B1&#39;)</span>
+            <span class="c1">#     ca.GetProperty().SetColor([0, 0.5, 1])</span>
+            <span class="c1">#</span>
+            <span class="c1"># elif 7296+3456&lt;= i &lt; 14912:</span>
+            <span class="c1">#     ca.GetProperty().SetColor([0.5, 0.5, 1])</span>
+            <span class="c1">#</span>
+            <span class="c1"># elif 14912 &lt;= i &lt; 22400:</span>
+            <span class="c1">#     ca.GetProperty().SetColor([0, 0.5, 0.5])</span>
+            <span class="c1">#</span>
+            <span class="c1"># elif 22400+5824 &lt;= i &lt;= 22400+11648:</span>
+            <span class="c1">#     ca.GetProperty().SetColor([1, 0.5, 0.2])</span>
+
+            <span class="c1"># ca.color(red)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ren</span><span class="o">.</span><span class="n">AddActor</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span></div>
+
+
+
+        <span class="c1"># create a render with 3 viewport</span>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-from src.DetectionLayout.Photodetectors.Crystals import GenericCrystal
+from DetectionLayout.Photodetectors.Crystals import GenericCrystal
 
 
 class LYSOCrystal(GenericCrystal):

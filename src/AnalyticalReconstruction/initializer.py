@@ -2,7 +2,7 @@ import numpy as np
 import skimage
 from skimage.transform import iradon, iradon_sart
 from skimage.filters import gaussian
-from src.EasyPETLinkInitializer.Preprocessing import Sinogram
+from EasyPETLinkInitializer.Preprocessing import Sinogram
 
 
 class AnalyticalReconstruction:

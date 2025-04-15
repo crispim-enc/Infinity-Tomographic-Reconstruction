@@ -37,6 +37,7 @@ Explore the documentation to understand the capabilities and implementation deta
 
    modules
    tutorials
+   auto_examples/index
 
 Indices and tables
 ==================

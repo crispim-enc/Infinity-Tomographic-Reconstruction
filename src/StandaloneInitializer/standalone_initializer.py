@@ -1,7 +1,7 @@
 import os
-from src.EasyPETLinkInitializer.Preprocessing import PrepareEasyPETdata
-from src.EasyPETLinkInitializer.reconstruction_initializer import ReconstructionInitializer
-from src.EasyPETLinkInitializer.Utilities.exceptions import OnlyOneIncompleteTurn
+from EasyPETLinkInitializer.Preprocessing import PrepareEasyPETdata
+from EasyPETLinkInitializer.reconstruction_initializer import ReconstructionInitializer
+from EasyPETLinkInitializer.Utilities.exceptions import OnlyOneIncompleteTurn
 
 
 class ReconstructOpenFileTest:

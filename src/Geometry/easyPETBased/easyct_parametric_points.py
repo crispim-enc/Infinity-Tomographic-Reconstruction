@@ -6,8 +6,8 @@
 #  *******************************************************
 
 import numpy as np
-from src.Device import Device
-from src.Geometry.easyPETBased.dualrotationsystem import DualRotationSystem
+from Device import Device
+from Geometry.easyPETBased.dualrotationsystem import DualRotationSystem
 
 
 class SetParametricsPoints:

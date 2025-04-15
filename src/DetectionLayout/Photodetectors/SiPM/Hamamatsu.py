@@ -1,4 +1,4 @@
-from src.DetectionLayout.Photodetectors.SiPM import GenericSiPM
+from DetectionLayout.Photodetectors.SiPM import GenericSiPM
 
 
 class HamamatsuS14161Series(GenericSiPM):

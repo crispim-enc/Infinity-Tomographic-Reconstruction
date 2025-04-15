@@ -12,7 +12,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 # from src.Geometry import GeometryDesigner
-from src.Phantoms import CylindricalStructure
+from Phantoms import CylindricalStructure
 
 
 class NEMAIQ2008NU:

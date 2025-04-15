@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Geometry.easyPETBased package &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Geometry.easyPETBased';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ImageReader package" href="ImageReader.html" />
+    <link rel="prev" title="Geometry.Standard package" href="Geometry.Standard.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AnalyticalReconstruction.html">AnalyticalReconstruction package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Corrections.html">Corrections package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.CT.html">Corrections.CT package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.CT.Projector.html">Corrections.CT.Projector package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.Compton.html">Corrections.Compton package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.EasyPET.html">Corrections.EasyPET package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.Normalization.html">Corrections.EasyPET.Normalization package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.SystemFocus.html">Corrections.EasyPET.SystemFocus package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.General.html">Corrections.General package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.PET.html">Corrections.PET package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Attenuation.html">Corrections.PET.Attenuation package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DOI.html">Corrections.PET.DOI package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DecayCorrection.html">Corrections.PET.DecayCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.EnergyCorrection.html">Corrections.PET.EnergyCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Projector.html">Corrections.PET.Projector package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Designer.html">Designer package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="DetectionLayout.html">DetectionLayout package</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Collimators.html">DetectionLayout.Collimators package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Modules.html">DetectionLayout.Modules package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="DetectionLayout.Photodetectors.html">DetectionLayout.Photodetectors package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Photodetectors.Crystals.html">DetectionLayout.Photodetectors.Crystals package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Photodetectors.SiPM.html">DetectionLayout.Photodetectors.SiPM package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.RadiationProducer.html">DetectionLayout.RadiationProducer package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Semicondutors.html">DetectionLayout.Semicondutors package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Device.html">Device package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="EasyPETLinkInitializer.html">EasyPETLinkInitializer package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html">EasyPETLinkInitializer.EasyPETDataReader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html">EasyPETLinkInitializer.Preprocessing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.SimulationData.html">EasyPETLinkInitializer.SimulationData package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html">EasyPETLinkInitializer.Utilities package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="GateLink.html">GateLink package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.GateToTor.html">GateLink.GateToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.RootToTor.html">GateLink.RootToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.ToRToGate.html">GateLink.ToRToGate package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Geometry.html">Geometry package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Geometry.LinearPET.html">Geometry.LinearPET package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.SPIRAL.html">Geometry.SPIRAL package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.Standard.html">Geometry.Standard package</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Geometry.easyPETBased package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ImageReader.html">ImageReader package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.DICOM.html">ImageReader.DICOM package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.Interfile.html">ImageReader.Interfile package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.RawData.html">ImageReader.RawData package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Metrics.html">Metrics package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.ImageQuality.html">Metrics.ImageQuality package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.NEMA.html">Metrics.NEMA package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Optimizer.html">Optimizer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phantoms.html">Phantoms package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quantification.html">Quantification package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StandaloneInitializer.html">StandaloneInitializer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TORFilesReader.html">TORFilesReader package</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">src</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="Geometry.html" class="nav-link">Geometry package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Geometry.eas...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="geometry-easypetbased-package">
+<h1>Geometry.easyPETBased package<a class="headerlink" href="#geometry-easypetbased-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-Geometry.easyPETBased.dualrotationsystem">
+<span id="geometry-easypetbased-dualrotationsystem-module"></span><h2>Geometry.easyPETBased.dualrotationsystem module<a class="headerlink" href="#module-Geometry.easyPETBased.dualrotationsystem" title="Link to this heading">#</a></h2>
+<p>Brief description of the file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Geometry.easyPETBased.dualrotationsystem.</span></span><span class="sig-name descname"><span class="pre">DualRotationSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detector_moduleA</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_moduleB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/dualrotationsystem.html#DualRotationSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="Device.html#Device.device.Device" title="Device.device.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.applyDualRotation">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">applyDualRotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ZCoordinate</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/dualrotationsystem.html#DualRotationSystem.applyDualRotation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.applyDualRotation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorModulesSideA">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">detectorModulesSideA</span></span><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorModulesSideA" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorModulesSideB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">detectorModulesSideB</span></span><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorModulesSideB" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorSideACoordinatesAfterMovement">
+<span class="sig-name descname"><span class="pre">detectorSideACoordinatesAfterMovement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axialMotorAngle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fanMotorAngle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uniqueIdDetectorheaderA</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/dualrotationsystem.html#DualRotationSystem.detectorSideACoordinatesAfterMovement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorSideACoordinatesAfterMovement" title="Link to this definition">#</a></dt>
+<dd><p>Load the list mode data np.array</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorSideBCoordinatesAfterMovement">
+<span class="sig-name descname"><span class="pre">detectorSideBCoordinatesAfterMovement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axialMotorAngle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fanMotorAngle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uniqueIdDetectorheaderB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/dualrotationsystem.html#DualRotationSystem.detectorSideBCoordinatesAfterMovement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorSideBCoordinatesAfterMovement" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.distanceBetweenMotors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">distanceBetweenMotors</span></span><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.distanceBetweenMotors" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.distanceFanMotorToDetectorModulesOnSideA">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">distanceFanMotorToDetectorModulesOnSideA</span></span><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.distanceFanMotorToDetectorModulesOnSideA" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.distanceFanMotorToDetectorModulesOnSideB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">distanceFanMotorToDetectorModulesOnSideB</span></span><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.distanceFanMotorToDetectorModulesOnSideB" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.generateInitialCoordinatesWKSystem">
+<span class="sig-name descname"><span class="pre">generateInitialCoordinatesWKSystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/dualrotationsystem.html#DualRotationSystem.generateInitialCoordinatesWKSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.generateInitialCoordinatesWKSystem" title="Link to this definition">#</a></dt>
+<dd><p>Generate the initial coordinates of the system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.generateInitialCoordinatesXYSystem">
+<span class="sig-name descname"><span class="pre">generateInitialCoordinatesXYSystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/dualrotationsystem.html#DualRotationSystem.generateInitialCoordinatesXYSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.generateInitialCoordinatesXYSystem" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate the initial position of the detectors</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.numberOfDetectorModulesSideA">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numberOfDetectorModulesSideA</span></span><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.numberOfDetectorModulesSideA" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.numberOfDetectorModulesSideB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numberOfDetectorModulesSideB</span></span><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.numberOfDetectorModulesSideB" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.originSystemWZ">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">originSystemWZ</span></span><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.originSystemWZ" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.originSystemXY">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">originSystemXY</span></span><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.originSystemXY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setDistanceBetweenMotors">
+<span class="sig-name descname"><span class="pre">setDistanceBetweenMotors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/dualrotationsystem.html#DualRotationSystem.setDistanceBetweenMotors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setDistanceBetweenMotors" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA">
+<span class="sig-name descname"><span class="pre">setDistanceFanMotorToDetectorModulesOnSideA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/dualrotationsystem.html#DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB">
+<span class="sig-name descname"><span class="pre">setDistanceFanMotorToDetectorModulesOnSideB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/dualrotationsystem.html#DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setNumberOfDetectorModulesSideA">
+<span class="sig-name descname"><span class="pre">setNumberOfDetectorModulesSideA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/dualrotationsystem.html#DualRotationSystem.setNumberOfDetectorModulesSideA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setNumberOfDetectorModulesSideA" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setNumberOfDetectorModulesSideB">
+<span class="sig-name descname"><span class="pre">setNumberOfDetectorModulesSideB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/dualrotationsystem.html#DualRotationSystem.setNumberOfDetectorModulesSideB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setNumberOfDetectorModulesSideB" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Geometry.easyPETBased.easyct_parametric_points">
+<span id="geometry-easypetbased-easyct-parametric-points-module"></span><h2>Geometry.easyPETBased.easyct_parametric_points module<a class="headerlink" href="#module-Geometry.easyPETBased.easyct_parametric_points" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Geometry.easyPETBased.easyct_parametric_points.</span></span><span class="sig-name descname"><span class="pre">EasyCTGeometry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detector_moduleA</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_moduleB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ray_producer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Pyramidal'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easyct_parametric_points.html#EasyCTGeometry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem" title="Geometry.easyPETBased.dualrotationsystem.DualRotationSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">DualRotationSystem</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.centerFace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">centerFace</span></span><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.centerFace" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.detectorSideBCoordinatesAfterMovement">
+<span class="sig-name descname"><span class="pre">detectorSideBCoordinatesAfterMovement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axialMotorAngle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fanMotorAngle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uniqueIdDetectorheader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easyct_parametric_points.html#EasyCTGeometry.detectorSideBCoordinatesAfterMovement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.detectorSideBCoordinatesAfterMovement" title="Link to this definition">#</a></dt>
+<dd><p>Load the list mode data np.array</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.evaluateInitialSourcePosition">
+<span class="sig-name descname"><span class="pre">evaluateInitialSourcePosition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easyct_parametric_points.html#EasyCTGeometry.evaluateInitialSourcePosition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.evaluateInitialSourcePosition" title="Link to this definition">#</a></dt>
+<dd><p>If it runned after sourcePositionAfterMovement, it will rewrite vector of possitions</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.generateInitialCoordinatesXYSystem">
+<span class="sig-name descname"><span class="pre">generateInitialCoordinatesXYSystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easyct_parametric_points.html#EasyCTGeometry.generateInitialCoordinatesXYSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.generateInitialCoordinatesXYSystem" title="Link to this definition">#</a></dt>
+<dd><p>Generate the initial coordinates in the XY system</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.sourceCenter">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sourceCenter</span></span><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.sourceCenter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.sourcePositionAfterMovement">
+<span class="sig-name descname"><span class="pre">sourcePositionAfterMovement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axialMotorAngle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fanMotorAngle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easyct_parametric_points.html#EasyCTGeometry.sourcePositionAfterMovement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.sourcePositionAfterMovement" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.verticesA">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">verticesA</span></span><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.verticesA" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.verticesB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">verticesB</span></span><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.verticesB" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.xRayProducer">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xRayProducer</span></span><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.xRayProducer" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Geometry.easyPETBased.easyct_parametric_points.</span></span><span class="sig-name descname"><span class="pre">SetParametricsPoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listMode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simulation_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'crystal_center'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FoV</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">45</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_between_motors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_crystals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centers_for_doi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easyct_parametric_points.html#SetParametricsPoints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints.beginPoints">
+<span class="sig-name descname"><span class="pre">beginPoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_between_motors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_distance_to_center_fov_sideA</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easyct_parametric_points.html#SetParametricsPoints.beginPoints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints.beginPoints" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints.dotAB">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dotAB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easyct_parametric_points.html#SetParametricsPoints.dotAB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints.dotAB" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints.endPoints">
+<span class="sig-name descname"><span class="pre">endPoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_distance_to_center_fov_sideB</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_crystals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_between_motors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easyct_parametric_points.html#SetParametricsPoints.endPoints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints.endPoints" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easyct_parametric_points.testSourceDistance">
+<span class="sig-prename descclassname"><span class="pre">Geometry.easyPETBased.easyct_parametric_points.</span></span><span class="sig-name descname"><span class="pre">testSourceDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">focal_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_of_rotation</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easyct_parametric_points.html#testSourceDistance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easyct_parametric_points.testSourceDistance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-Geometry.easyPETBased.easypet_parametric_points">
+<span id="geometry-easypetbased-easypet-parametric-points-module"></span><h2>Geometry.easyPETBased.easypet_parametric_points module<a class="headerlink" href="#module-Geometry.easyPETBased.easypet_parametric_points" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Geometry.easyPETBased.easypet_parametric_points.</span></span><span class="sig-name descname"><span class="pre">SetParametricCoordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listMode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simulation_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'crystal_center'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FoV</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">45</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_between_motors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_crystals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recon2D</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_neighbours</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generated_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_into_positive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centers_for_doi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easypet_parametric_points.html#SetParametricCoordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.beginPoints">
+<span class="sig-name descname"><span class="pre">beginPoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_between_motors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_distance_to_center_fov_sideA</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_distance_to_center_fov_sideB</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easypet_parametric_points.html#SetParametricCoordinates.beginPoints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.beginPoints" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.cutCurrentFrame">
+<span class="sig-name descname"><span class="pre">cutCurrentFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_end</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easypet_parametric_points.html#SetParametricCoordinates.cutCurrentFrame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.cutCurrentFrame" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.endPoints">
+<span class="sig-name descname"><span class="pre">endPoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_distance_to_center_fov_sideB</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_crystals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_between_motors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easypet_parametric_points.html#SetParametricCoordinates.endPoints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.endPoints" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.filter_neighbours">
+<span class="sig-name descname"><span class="pre">filter_neighbours</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crystal_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbours</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/easypet_parametric_points.html#SetParametricCoordinates.filter_neighbours"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.filter_neighbours" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Geometry.easyPETBased.matrixgeometrycorrection">
+<span id="geometry-easypetbased-matrixgeometrycorrection-module"></span><h2>Geometry.easyPETBased.matrixgeometrycorrection module<a class="headerlink" href="#module-Geometry.easyPETBased.matrixgeometrycorrection" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.matrixgeometrycorrection.MatrixGeometryCorrection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Geometry.easyPETBased.matrixgeometrycorrection.</span></span><span class="sig-name descname"><span class="pre">MatrixGeometryCorrection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystals_dimensions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_between_motors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detectors_distances</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/matrixgeometrycorrection.html#MatrixGeometryCorrection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.matrixgeometrycorrection.MatrixGeometryCorrection" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-Geometry.easyPETBased.resetposition">
+<span id="geometry-easypetbased-resetposition-module"></span><h2>Geometry.easyPETBased.resetposition module<a class="headerlink" href="#module-Geometry.easyPETBased.resetposition" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Geometry.easyPETBased.resetposition.</span></span><span class="sig-name descname"><span class="pre">ResetParametricPointsToOrigin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listMode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simulation_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'crystal_center'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crystal_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FoV</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">45</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_between_motors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_crystals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/resetposition.html#ResetParametricPointsToOrigin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.angleFromPointToTopRotationCenter">
+<span class="sig-name descname"><span class="pre">angleFromPointToTopRotationCenter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">midpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centers</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/resetposition.html#ResetParametricPointsToOrigin.angleFromPointToTopRotationCenter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.angleFromPointToTopRotationCenter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.calcD">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calcD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossproduct</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/resetposition.html#ResetParametricPointsToOrigin.calcD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.calcD" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the d value of the plane equation
+:type point: 
+:param point:
+:type crossproduct: 
+:param crossproduct:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.calcVector">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calcVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/resetposition.html#ResetParametricPointsToOrigin.calcVector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.calcVector" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the vector between two points
+:type p1: 
+:param p1:
+:type p2: 
+:param p2:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.crossProduct">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">crossProduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/resetposition.html#ResetParametricPointsToOrigin.crossProduct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.crossProduct" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the cross product of two vectors
+:type v1: 
+:param v1:
+:type v2: 
+:param v2:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.farSideCoordinates">
+<span class="sig-name descname"><span class="pre">farSideCoordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points_to_rotate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/resetposition.html#ResetParametricPointsToOrigin.farSideCoordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.farSideCoordinates" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.norm">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Geometry/easyPETBased/resetposition.html#ResetParametricPointsToOrigin.norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.norm" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the norm of a vector
+:type vector: 
+:param vector:
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Geometry.easyPETBased">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Geometry.easyPETBased" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Geometry.Standard.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Geometry.Standard package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ImageReader.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ImageReader package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-Geometry.easyPETBased.dualrotationsystem">Geometry.easyPETBased.dualrotationsystem module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.applyDualRotation"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.applyDualRotation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorModulesSideA"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.detectorModulesSideA</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorModulesSideB"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.detectorModulesSideB</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorSideACoordinatesAfterMovement"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.detectorSideACoordinatesAfterMovement()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.detectorSideBCoordinatesAfterMovement"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.detectorSideBCoordinatesAfterMovement()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.distanceBetweenMotors"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.distanceBetweenMotors</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.distanceFanMotorToDetectorModulesOnSideA"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.distanceFanMotorToDetectorModulesOnSideA</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.distanceFanMotorToDetectorModulesOnSideB"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.distanceFanMotorToDetectorModulesOnSideB</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.generateInitialCoordinatesWKSystem"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.generateInitialCoordinatesWKSystem()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.generateInitialCoordinatesXYSystem"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.generateInitialCoordinatesXYSystem()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.numberOfDetectorModulesSideA"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.numberOfDetectorModulesSideA</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.numberOfDetectorModulesSideB"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.numberOfDetectorModulesSideB</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.originSystemWZ"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.originSystemWZ</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.originSystemXY"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.originSystemXY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setDistanceBetweenMotors"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.setDistanceBetweenMotors()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setNumberOfDetectorModulesSideA"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.setNumberOfDetectorModulesSideA()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.dualrotationsystem.DualRotationSystem.setNumberOfDetectorModulesSideB"><code class="docutils literal notranslate"><span class="pre">DualRotationSystem.setNumberOfDetectorModulesSideB()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-Geometry.easyPETBased.easyct_parametric_points">Geometry.easyPETBased.easyct_parametric_points module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry"><code class="docutils literal notranslate"><span class="pre">EasyCTGeometry</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.centerFace"><code class="docutils literal notranslate"><span class="pre">EasyCTGeometry.centerFace</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.detectorSideBCoordinatesAfterMovement"><code class="docutils literal notranslate"><span class="pre">EasyCTGeometry.detectorSideBCoordinatesAfterMovement()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.evaluateInitialSourcePosition"><code class="docutils literal notranslate"><span class="pre">EasyCTGeometry.evaluateInitialSourcePosition()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.generateInitialCoordinatesXYSystem"><code class="docutils literal notranslate"><span class="pre">EasyCTGeometry.generateInitialCoordinatesXYSystem()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.sourceCenter"><code class="docutils literal notranslate"><span class="pre">EasyCTGeometry.sourceCenter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.sourcePositionAfterMovement"><code class="docutils literal notranslate"><span class="pre">EasyCTGeometry.sourcePositionAfterMovement()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.verticesA"><code class="docutils literal notranslate"><span class="pre">EasyCTGeometry.verticesA</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.verticesB"><code class="docutils literal notranslate"><span class="pre">EasyCTGeometry.verticesB</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry.xRayProducer"><code class="docutils literal notranslate"><span class="pre">EasyCTGeometry.xRayProducer</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints"><code class="docutils literal notranslate"><span class="pre">SetParametricsPoints</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints.beginPoints"><code class="docutils literal notranslate"><span class="pre">SetParametricsPoints.beginPoints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints.dotAB"><code class="docutils literal notranslate"><span class="pre">SetParametricsPoints.dotAB()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.SetParametricsPoints.endPoints"><code class="docutils literal notranslate"><span class="pre">SetParametricsPoints.endPoints()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easyct_parametric_points.testSourceDistance"><code class="docutils literal notranslate"><span class="pre">testSourceDistance()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-Geometry.easyPETBased.easypet_parametric_points">Geometry.easyPETBased.easypet_parametric_points module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates"><code class="docutils literal notranslate"><span class="pre">SetParametricCoordinates</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.beginPoints"><code class="docutils literal notranslate"><span class="pre">SetParametricCoordinates.beginPoints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.cutCurrentFrame"><code class="docutils literal notranslate"><span class="pre">SetParametricCoordinates.cutCurrentFrame()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.endPoints"><code class="docutils literal notranslate"><span class="pre">SetParametricCoordinates.endPoints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.easypet_parametric_points.SetParametricCoordinates.filter_neighbours"><code class="docutils literal notranslate"><span class="pre">SetParametricCoordinates.filter_neighbours()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-Geometry.easyPETBased.matrixgeometrycorrection">Geometry.easyPETBased.matrixgeometrycorrection module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.matrixgeometrycorrection.MatrixGeometryCorrection"><code class="docutils literal notranslate"><span class="pre">MatrixGeometryCorrection</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-Geometry.easyPETBased.resetposition">Geometry.easyPETBased.resetposition module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin"><code class="docutils literal notranslate"><span class="pre">ResetParametricPointsToOrigin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.angleFromPointToTopRotationCenter"><code class="docutils literal notranslate"><span class="pre">ResetParametricPointsToOrigin.angleFromPointToTopRotationCenter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.calcD"><code class="docutils literal notranslate"><span class="pre">ResetParametricPointsToOrigin.calcD()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.calcVector"><code class="docutils literal notranslate"><span class="pre">ResetParametricPointsToOrigin.calcVector()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.crossProduct"><code class="docutils literal notranslate"><span class="pre">ResetParametricPointsToOrigin.crossProduct()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.farSideCoordinates"><code class="docutils literal notranslate"><span class="pre">ResetParametricPointsToOrigin.farSideCoordinates()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Geometry.easyPETBased.resetposition.ResetParametricPointsToOrigin.norm"><code class="docutils literal notranslate"><span class="pre">ResetParametricPointsToOrigin.norm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-Geometry.easyPETBased">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

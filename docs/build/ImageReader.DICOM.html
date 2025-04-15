@@ -1,0 +1,1120 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ImageReader.DICOM package &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ImageReader.DICOM';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ImageReader.Interfile package" href="ImageReader.Interfile.html" />
+    <link rel="prev" title="ImageReader package" href="ImageReader.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AnalyticalReconstruction.html">AnalyticalReconstruction package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Corrections.html">Corrections package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.CT.html">Corrections.CT package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.CT.Projector.html">Corrections.CT.Projector package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.Compton.html">Corrections.Compton package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.EasyPET.html">Corrections.EasyPET package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.Normalization.html">Corrections.EasyPET.Normalization package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.SystemFocus.html">Corrections.EasyPET.SystemFocus package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.General.html">Corrections.General package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.PET.html">Corrections.PET package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Attenuation.html">Corrections.PET.Attenuation package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DOI.html">Corrections.PET.DOI package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DecayCorrection.html">Corrections.PET.DecayCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.EnergyCorrection.html">Corrections.PET.EnergyCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Projector.html">Corrections.PET.Projector package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Designer.html">Designer package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="DetectionLayout.html">DetectionLayout package</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Collimators.html">DetectionLayout.Collimators package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Modules.html">DetectionLayout.Modules package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="DetectionLayout.Photodetectors.html">DetectionLayout.Photodetectors package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Photodetectors.Crystals.html">DetectionLayout.Photodetectors.Crystals package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Photodetectors.SiPM.html">DetectionLayout.Photodetectors.SiPM package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.RadiationProducer.html">DetectionLayout.RadiationProducer package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Semicondutors.html">DetectionLayout.Semicondutors package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Device.html">Device package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="EasyPETLinkInitializer.html">EasyPETLinkInitializer package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html">EasyPETLinkInitializer.EasyPETDataReader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html">EasyPETLinkInitializer.Preprocessing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.SimulationData.html">EasyPETLinkInitializer.SimulationData package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html">EasyPETLinkInitializer.Utilities package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="GateLink.html">GateLink package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.GateToTor.html">GateLink.GateToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.RootToTor.html">GateLink.RootToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.ToRToGate.html">GateLink.ToRToGate package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Geometry.html">Geometry package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.LinearPET.html">Geometry.LinearPET package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.SPIRAL.html">Geometry.SPIRAL package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.Standard.html">Geometry.Standard package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.easyPETBased.html">Geometry.easyPETBased package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ImageReader.html">ImageReader package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ImageReader.DICOM package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.Interfile.html">ImageReader.Interfile package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.RawData.html">ImageReader.RawData package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Metrics.html">Metrics package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.ImageQuality.html">Metrics.ImageQuality package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.NEMA.html">Metrics.NEMA package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Optimizer.html">Optimizer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phantoms.html">Phantoms package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quantification.html">Quantification package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StandaloneInitializer.html">StandaloneInitializer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TORFilesReader.html">TORFilesReader package</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">src</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="ImageReader.html" class="nav-link">ImageReader package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">ImageReader....</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="imagereader-dicom-package">
+<h1>ImageReader.DICOM package<a class="headerlink" href="#imagereader-dicom-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-ImageReader.DICOM.equipment">
+<span id="imagereader-dicom-equipment-module"></span><h2>ImageReader.DICOM.equipment module<a class="headerlink" href="#module-ImageReader.DICOM.equipment" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.equipment.Equipment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.equipment.</span></span><span class="sig-name descname"><span class="pre">Equipment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/equipment.html#Equipment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.equipment.Equipment" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.equipment.Synchronization">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.equipment.</span></span><span class="sig-name descname"><span class="pre">Synchronization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/equipment.html#Synchronization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.equipment.Synchronization" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-ImageReader.DICOM.filesreader">
+<span id="imagereader-dicom-filesreader-module"></span><h2>ImageReader.DICOM.filesreader module<a class="headerlink" href="#module-ImageReader.DICOM.filesreader" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.filesreader.DicomReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.filesreader.</span></span><span class="sig-name descname"><span class="pre">DicomReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_file_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/filesreader.html#DicomReader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.filesreader.DicomReader" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="ImageReader.DICOM.filesreader.DicomReader.dicomHeaders">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dicomHeaders</span></span><a class="headerlink" href="#ImageReader.DICOM.filesreader.DicomReader.dicomHeaders" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.filesreader.DicomReader.readDirectory">
+<span class="sig-name descname"><span class="pre">readDirectory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/filesreader.html#DicomReader.readDirectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.filesreader.DicomReader.readDirectory" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.filesreader.DicomReader.volumes">
+<span class="sig-name descname"><span class="pre">volumes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/filesreader.html#DicomReader.volumes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.filesreader.DicomReader.volumes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.filesreader.DicomVTKReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.filesreader.</span></span><span class="sig-name descname"><span class="pre">DicomVTKReader</span></span><a class="reference internal" href="_modules/ImageReader/DICOM/filesreader.html#DicomVTKReader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.filesreader.DicomVTKReader" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ImageReader.DICOM.filesreader.fix_sop_class">
+<span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.filesreader.</span></span><span class="sig-name descname"><span class="pre">fix_sop_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/filesreader.html#fix_sop_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.filesreader.fix_sop_class" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-ImageReader.DICOM.frameofreference">
+<span id="imagereader-dicom-frameofreference-module"></span><h2>ImageReader.DICOM.frameofreference module<a class="headerlink" href="#module-ImageReader.DICOM.frameofreference" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.frameofreference.FrameOfReference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.frameofreference.</span></span><span class="sig-name descname"><span class="pre">FrameOfReference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/frameofreference.html#FrameOfReference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.frameofreference.FrameOfReference" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.frameofreference.FrameOfReference.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acquisitionInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/frameofreference.html#FrameOfReference.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.frameofreference.FrameOfReference.override" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ImageReader.DICOM.image">
+<span id="imagereader-dicom-image-module"></span><h2>ImageReader.DICOM.image module<a class="headerlink" href="#module-ImageReader.DICOM.image" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.AcquisitionContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">AcquisitionContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preamble</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_implicit_VR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_little_endian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#AcquisitionContext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.AcquisitionContext" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<p>Future Implementation - Not Included</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.CommonInstanceReference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">CommonInstanceReference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preamble</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_implicit_VR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_little_endian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#CommonInstanceReference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.CommonInstanceReference" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<p>Future Implementation - Not Included</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.Device">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">Device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#Device"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.Device" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.Device.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#Device.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.Device.override" title="Link to this definition">#</a></dt>
+<dd><p>Future Implementation</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.GeneralImage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">GeneralImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#GeneralImage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.GeneralImage" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.GeneralImage.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acquisitionInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seriesInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#GeneralImage.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.GeneralImage.override" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.GeneralReference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">GeneralReference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preamble</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_implicit_VR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_little_endian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#GeneralReference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.GeneralReference" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.ImagePixel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">ImagePixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#ImagePixel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.ImagePixel" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.ImagePixel.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#ImagePixel.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.ImagePixel.override" title="Link to this definition">#</a></dt>
+<dd><p>Future Implementation - Not Included</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.ImagePlane">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">ImagePlane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#ImagePlane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.ImagePlane" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.ImagePlane.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imageInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seriesInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#ImagePlane.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.ImagePlane.override" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.ImagePlane.update_image_position">
+<span class="sig-name descname"><span class="pre">update_image_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#ImagePlane.update_image_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.ImagePlane.update_image_position" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.OverlayPlane">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">OverlayPlane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preamble</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_implicit_VR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_little_endian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#OverlayPlane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.OverlayPlane" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<p>Future Implementation - Not Included</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.PETImage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">PETImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#PETImage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.PETImage" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<p>Future Implementation - Not Included</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.PETImage.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seriesInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#PETImage.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.PETImage.override" title="Link to this definition">#</a></dt>
+<dd><p>Future Implementation</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.SOPCommon">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">SOPCommon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preamble</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_implicit_VR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_little_endian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#SOPCommon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.SOPCommon" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<p>Future Implementation - Not Included</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.Specimen">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">Specimen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preamble</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_implicit_VR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_little_endian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#Specimen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.Specimen" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<p>Future Implementation - Not Included</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.image.VoiLUT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.image.</span></span><span class="sig-name descname"><span class="pre">VoiLUT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preamble</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_implicit_VR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_little_endian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/image.html#VoiLUT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.image.VoiLUT" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<p>Future Implementation - Not Included</p>
+</dd></dl>
+
+</section>
+<section id="module-ImageReader.DICOM.patient">
+<span id="imagereader-dicom-patient-module"></span><h2>ImageReader.DICOM.patient module<a class="headerlink" href="#module-ImageReader.DICOM.patient" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.patient.Patient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.patient.</span></span><span class="sig-name descname"><span class="pre">Patient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/patient.html#Patient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.patient.Patient" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.patient.Patient.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acquisitionInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/patient.html#Patient.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.patient.Patient.override" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.patient.Patient_not">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.patient.</span></span><span class="sig-name descname"><span class="pre">Patient_not</span></span><a class="reference internal" href="_modules/ImageReader/DICOM/patient.html#Patient_not"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.patient.Patient_not" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.patient.Patient_not.issuerOfPatientID">
+<span class="sig-name descname"><span class="pre">issuerOfPatientID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/patient.html#Patient_not.issuerOfPatientID"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.patient.Patient_not.issuerOfPatientID" title="Link to this definition">#</a></dt>
+<dd><p>Identifier of the Assigning Authority (system, organization, agency, or department) that issued
+the Patient ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.patient.Patient_not.patientID">
+<span class="sig-name descname"><span class="pre">patientID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/patient.html#Patient_not.patientID"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.patient.Patient_not.patientID" title="Link to this definition">#</a></dt>
+<dd><p>Primary identifier for the Patient.
+Note: In the case of imaging a group of small animals simultaneously, the single value of this identifier
+corresponds to the
+identification of the entire group. See also Section C.7.1.4.1.1
+see: <a class="reference external" href="https://dicom.innolitics.com/ciods/pet-image/patient/00100020">https://dicom.innolitics.com/ciods/pet-image/patient/00100020</a></p>
+<p>Tag     (0010,0020)
+Type    Required, Empty if Unknown (2)
+Keyword PatientID
+Value Multiplicity      1
+Value Representation    Long String (LO)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.patient.Patient_not.patientsName">
+<span class="sig-name descname"><span class="pre">patientsName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/patient.html#Patient_not.patientsName"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.patient.Patient_not.patientsName" title="Link to this definition">#</a></dt>
+<dd><p>Patient’s full name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.patient.Patient_not.typeOfPatientID">
+<span class="sig-name descname"><span class="pre">typeOfPatientID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/patient.html#Patient_not.typeOfPatientID"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.patient.Patient_not.typeOfPatientID" title="Link to this definition">#</a></dt>
+<dd><p>The type of identifier in the Patient ID (0010,0020).
+Tag     (0010,0022)
+Type    Optional (3)
+Keyword TypeOfPatientID
+Value Multiplicity      1
+Value Representation    Code String (CS)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.patient.Patient_not.updateDsFile">
+<span class="sig-name descname"><span class="pre">updateDsFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acquisitionInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/patient.html#Patient_not.updateDsFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.patient.Patient_not.updateDsFile" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.patient.Patient_not.updateVariables">
+<span class="sig-name descname"><span class="pre">updateVariables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imageInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acquisitionInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/patient.html#Patient_not.updateVariables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.patient.Patient_not.updateVariables" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ImageReader.DICOM.series">
+<span id="imagereader-dicom-series-module"></span><h2>ImageReader.DICOM.series module<a class="headerlink" href="#module-ImageReader.DICOM.series" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.series.GeneralSeries">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.series.</span></span><span class="sig-name descname"><span class="pre">GeneralSeries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/series.html#GeneralSeries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.series.GeneralSeries" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.series.GeneralSeries.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acquisitionInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seriesInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/series.html#GeneralSeries.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.series.GeneralSeries.override" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.series.PETIsotope">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.series.</span></span><span class="sig-name descname"><span class="pre">PETIsotope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/series.html#PETIsotope"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.series.PETIsotope" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.series.PETIsotope.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acquisitionInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/series.html#PETIsotope.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.series.PETIsotope.override" title="Link to this definition">#</a></dt>
+<dd><p>DICOM properties</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.series.PETMultiGatedAcquisition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.series.</span></span><span class="sig-name descname"><span class="pre">PETMultiGatedAcquisition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preamble</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_implicit_VR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_little_endian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/series.html#PETMultiGatedAcquisition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.series.PETMultiGatedAcquisition" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<p>Future Implementation</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.series.PETSeries">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.series.</span></span><span class="sig-name descname"><span class="pre">PETSeries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/series.html#PETSeries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.series.PETSeries" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.series.PETSeries.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imageInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acquisitionInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seriesInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/series.html#PETSeries.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.series.PETSeries.override" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ImageReader.DICOM.study">
+<span id="imagereader-dicom-study-module"></span><h2>ImageReader.DICOM.study module<a class="headerlink" href="#module-ImageReader.DICOM.study" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.study.GeneralStudy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.study.</span></span><span class="sig-name descname"><span class="pre">GeneralStudy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/study.html#GeneralStudy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.study.GeneralStudy" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.study.GeneralStudy.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seriesInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/study.html#GeneralStudy.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.study.GeneralStudy.override" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.study.PatientStudy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.study.</span></span><span class="sig-name descname"><span class="pre">PatientStudy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/study.html#PatientStudy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.study.PatientStudy" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.study.PatientStudy.override">
+<span class="sig-name descname"><span class="pre">override</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acquisitionInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/study.html#PatientStudy.override"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.study.PatientStudy.override" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ImageReader.DICOM.submodule">
+<span id="imagereader-dicom-submodule-module"></span><h2>ImageReader.DICOM.submodule module<a class="headerlink" href="#module-ImageReader.DICOM.submodule" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.MainAttribute">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.submodule.</span></span><span class="sig-name descname"><span class="pre">MainAttribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dependencies</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#MainAttribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.MainAttribute" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.MainAttribute.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#MainAttribute.dependencies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.MainAttribute.dependencies" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.MainAttribute.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#MainAttribute.tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.MainAttribute.tag" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.MainAttribute.type">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#MainAttribute.type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.MainAttribute.type" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.MainAttribute.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#MainAttribute.value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.MainAttribute.value" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.SubAttribute">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.submodule.</span></span><span class="sig-name descname"><span class="pre">SubAttribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dependencies</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codevalue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codingschemedesignator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codingschemeversion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codemeaning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longcodevalue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">urncodevalue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#SubAttribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.SubAttribute" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.SubAttribute.URNCodeValue">
+<span class="sig-name descname"><span class="pre">URNCodeValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#SubAttribute.URNCodeValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.SubAttribute.URNCodeValue" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.SubAttribute.codeMeaning">
+<span class="sig-name descname"><span class="pre">codeMeaning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#SubAttribute.codeMeaning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.SubAttribute.codeMeaning" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.SubAttribute.codeValue">
+<span class="sig-name descname"><span class="pre">codeValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#SubAttribute.codeValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.SubAttribute.codeValue" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.SubAttribute.codingSchemeDesignator">
+<span class="sig-name descname"><span class="pre">codingSchemeDesignator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#SubAttribute.codingSchemeDesignator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.SubAttribute.codingSchemeDesignator" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.SubAttribute.codingSchemeVersion">
+<span class="sig-name descname"><span class="pre">codingSchemeVersion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#SubAttribute.codingSchemeVersion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.SubAttribute.codingSchemeVersion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.SubAttribute.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#SubAttribute.dependencies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.SubAttribute.dependencies" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.SubAttribute.longCodeValue">
+<span class="sig-name descname"><span class="pre">longCodeValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#SubAttribute.longCodeValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.SubAttribute.longCodeValue" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.SubAttribute.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#SubAttribute.tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.SubAttribute.tag" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.SubAttribute.type">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#SubAttribute.type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.SubAttribute.type" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.submodule.SubAttribute.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/submodule.html#SubAttribute.value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.submodule.SubAttribute.value" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ImageReader.DICOM.writeDicom">
+<span id="imagereader-dicom-writedicom-module"></span><h2>ImageReader.DICOM.writeDicom module<a class="headerlink" href="#module-ImageReader.DICOM.writeDicom" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.writeDicom.Dict2Class">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.writeDicom.</span></span><span class="sig-name descname"><span class="pre">Dict2Class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/writeDicom.html#Dict2Class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.writeDicom.Dict2Class" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ImageReader.DICOM.writeDicom.WriteDicom">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ImageReader.DICOM.writeDicom.</span></span><span class="sig-name descname"><span class="pre">WriteDicom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_from_raw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_dcm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/writeDicom.html#WriteDicom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.writeDicom.WriteDicom" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.writeDicom.WriteDicom.default_values">
+<span class="sig-name descname"><span class="pre">default_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/writeDicom.html#WriteDicom.default_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.writeDicom.WriteDicom.default_values" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.writeDicom.WriteDicom.pet_corrections">
+<span class="sig-name descname"><span class="pre">pet_corrections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/writeDicom.html#WriteDicom.pet_corrections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.writeDicom.WriteDicom.pet_corrections" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ImageReader.DICOM.writeDicom.WriteDicom.seriesNumber">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">seriesNumber</span></span><a class="headerlink" href="#ImageReader.DICOM.writeDicom.WriteDicom.seriesNumber" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ImageReader.DICOM.writeDicom.WriteDicom.time_id_series">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time_id_series</span></span><a class="headerlink" href="#ImageReader.DICOM.writeDicom.WriteDicom.time_id_series" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.writeDicom.WriteDicom.updateSeriesNumber">
+<span class="sig-name descname"><span class="pre">updateSeriesNumber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/writeDicom.html#WriteDicom.updateSeriesNumber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.writeDicom.WriteDicom.updateSeriesNumber" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.writeDicom.WriteDicom.updateVolume">
+<span class="sig-name descname"><span class="pre">updateVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/writeDicom.html#WriteDicom.updateVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.writeDicom.WriteDicom.updateVolume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.writeDicom.WriteDicom.updatetimeIdSeries">
+<span class="sig-name descname"><span class="pre">updatetimeIdSeries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/writeDicom.html#WriteDicom.updatetimeIdSeries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.writeDicom.WriteDicom.updatetimeIdSeries" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ImageReader.DICOM.writeDicom.WriteDicom.write_dicom_file">
+<span class="sig-name descname"><span class="pre">write_dicom_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ImageReader/DICOM/writeDicom.html#WriteDicom.write_dicom_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ImageReader.DICOM.writeDicom.WriteDicom.write_dicom_file" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ImageReader.DICOM">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ImageReader.DICOM" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ImageReader.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ImageReader package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ImageReader.Interfile.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ImageReader.Interfile package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ImageReader.DICOM.equipment">ImageReader.DICOM.equipment module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.equipment.Equipment"><code class="docutils literal notranslate"><span class="pre">Equipment</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.equipment.Synchronization"><code class="docutils literal notranslate"><span class="pre">Synchronization</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ImageReader.DICOM.filesreader">ImageReader.DICOM.filesreader module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.filesreader.DicomReader"><code class="docutils literal notranslate"><span class="pre">DicomReader</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.filesreader.DicomReader.dicomHeaders"><code class="docutils literal notranslate"><span class="pre">DicomReader.dicomHeaders</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.filesreader.DicomReader.readDirectory"><code class="docutils literal notranslate"><span class="pre">DicomReader.readDirectory()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.filesreader.DicomReader.volumes"><code class="docutils literal notranslate"><span class="pre">DicomReader.volumes()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.filesreader.DicomVTKReader"><code class="docutils literal notranslate"><span class="pre">DicomVTKReader</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.filesreader.fix_sop_class"><code class="docutils literal notranslate"><span class="pre">fix_sop_class()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ImageReader.DICOM.frameofreference">ImageReader.DICOM.frameofreference module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.frameofreference.FrameOfReference"><code class="docutils literal notranslate"><span class="pre">FrameOfReference</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.frameofreference.FrameOfReference.override"><code class="docutils literal notranslate"><span class="pre">FrameOfReference.override()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ImageReader.DICOM.image">ImageReader.DICOM.image module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.AcquisitionContext"><code class="docutils literal notranslate"><span class="pre">AcquisitionContext</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.CommonInstanceReference"><code class="docutils literal notranslate"><span class="pre">CommonInstanceReference</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.Device"><code class="docutils literal notranslate"><span class="pre">Device</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.Device.override"><code class="docutils literal notranslate"><span class="pre">Device.override()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.GeneralImage"><code class="docutils literal notranslate"><span class="pre">GeneralImage</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.GeneralImage.override"><code class="docutils literal notranslate"><span class="pre">GeneralImage.override()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.GeneralReference"><code class="docutils literal notranslate"><span class="pre">GeneralReference</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.ImagePixel"><code class="docutils literal notranslate"><span class="pre">ImagePixel</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.ImagePixel.override"><code class="docutils literal notranslate"><span class="pre">ImagePixel.override()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.ImagePlane"><code class="docutils literal notranslate"><span class="pre">ImagePlane</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.ImagePlane.override"><code class="docutils literal notranslate"><span class="pre">ImagePlane.override()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.ImagePlane.update_image_position"><code class="docutils literal notranslate"><span class="pre">ImagePlane.update_image_position()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.OverlayPlane"><code class="docutils literal notranslate"><span class="pre">OverlayPlane</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.PETImage"><code class="docutils literal notranslate"><span class="pre">PETImage</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.PETImage.override"><code class="docutils literal notranslate"><span class="pre">PETImage.override()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.SOPCommon"><code class="docutils literal notranslate"><span class="pre">SOPCommon</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.Specimen"><code class="docutils literal notranslate"><span class="pre">Specimen</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.image.VoiLUT"><code class="docutils literal notranslate"><span class="pre">VoiLUT</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ImageReader.DICOM.patient">ImageReader.DICOM.patient module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.patient.Patient"><code class="docutils literal notranslate"><span class="pre">Patient</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.patient.Patient.override"><code class="docutils literal notranslate"><span class="pre">Patient.override()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.patient.Patient_not"><code class="docutils literal notranslate"><span class="pre">Patient_not</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.patient.Patient_not.issuerOfPatientID"><code class="docutils literal notranslate"><span class="pre">Patient_not.issuerOfPatientID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.patient.Patient_not.patientID"><code class="docutils literal notranslate"><span class="pre">Patient_not.patientID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.patient.Patient_not.patientsName"><code class="docutils literal notranslate"><span class="pre">Patient_not.patientsName()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.patient.Patient_not.typeOfPatientID"><code class="docutils literal notranslate"><span class="pre">Patient_not.typeOfPatientID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.patient.Patient_not.updateDsFile"><code class="docutils literal notranslate"><span class="pre">Patient_not.updateDsFile()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.patient.Patient_not.updateVariables"><code class="docutils literal notranslate"><span class="pre">Patient_not.updateVariables()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ImageReader.DICOM.series">ImageReader.DICOM.series module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.series.GeneralSeries"><code class="docutils literal notranslate"><span class="pre">GeneralSeries</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.series.GeneralSeries.override"><code class="docutils literal notranslate"><span class="pre">GeneralSeries.override()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.series.PETIsotope"><code class="docutils literal notranslate"><span class="pre">PETIsotope</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.series.PETIsotope.override"><code class="docutils literal notranslate"><span class="pre">PETIsotope.override()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.series.PETMultiGatedAcquisition"><code class="docutils literal notranslate"><span class="pre">PETMultiGatedAcquisition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.series.PETSeries"><code class="docutils literal notranslate"><span class="pre">PETSeries</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.series.PETSeries.override"><code class="docutils literal notranslate"><span class="pre">PETSeries.override()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ImageReader.DICOM.study">ImageReader.DICOM.study module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.study.GeneralStudy"><code class="docutils literal notranslate"><span class="pre">GeneralStudy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.study.GeneralStudy.override"><code class="docutils literal notranslate"><span class="pre">GeneralStudy.override()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.study.PatientStudy"><code class="docutils literal notranslate"><span class="pre">PatientStudy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.study.PatientStudy.override"><code class="docutils literal notranslate"><span class="pre">PatientStudy.override()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ImageReader.DICOM.submodule">ImageReader.DICOM.submodule module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.MainAttribute"><code class="docutils literal notranslate"><span class="pre">MainAttribute</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.MainAttribute.dependencies"><code class="docutils literal notranslate"><span class="pre">MainAttribute.dependencies()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.MainAttribute.tag"><code class="docutils literal notranslate"><span class="pre">MainAttribute.tag()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.MainAttribute.type"><code class="docutils literal notranslate"><span class="pre">MainAttribute.type()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.MainAttribute.value"><code class="docutils literal notranslate"><span class="pre">MainAttribute.value()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.SubAttribute"><code class="docutils literal notranslate"><span class="pre">SubAttribute</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.SubAttribute.URNCodeValue"><code class="docutils literal notranslate"><span class="pre">SubAttribute.URNCodeValue()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.SubAttribute.codeMeaning"><code class="docutils literal notranslate"><span class="pre">SubAttribute.codeMeaning()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.SubAttribute.codeValue"><code class="docutils literal notranslate"><span class="pre">SubAttribute.codeValue()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.SubAttribute.codingSchemeDesignator"><code class="docutils literal notranslate"><span class="pre">SubAttribute.codingSchemeDesignator()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.SubAttribute.codingSchemeVersion"><code class="docutils literal notranslate"><span class="pre">SubAttribute.codingSchemeVersion()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.SubAttribute.dependencies"><code class="docutils literal notranslate"><span class="pre">SubAttribute.dependencies()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.SubAttribute.longCodeValue"><code class="docutils literal notranslate"><span class="pre">SubAttribute.longCodeValue()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.SubAttribute.tag"><code class="docutils literal notranslate"><span class="pre">SubAttribute.tag()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.SubAttribute.type"><code class="docutils literal notranslate"><span class="pre">SubAttribute.type()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.submodule.SubAttribute.value"><code class="docutils literal notranslate"><span class="pre">SubAttribute.value()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ImageReader.DICOM.writeDicom">ImageReader.DICOM.writeDicom module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.writeDicom.Dict2Class"><code class="docutils literal notranslate"><span class="pre">Dict2Class</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.writeDicom.WriteDicom"><code class="docutils literal notranslate"><span class="pre">WriteDicom</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.writeDicom.WriteDicom.default_values"><code class="docutils literal notranslate"><span class="pre">WriteDicom.default_values()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.writeDicom.WriteDicom.pet_corrections"><code class="docutils literal notranslate"><span class="pre">WriteDicom.pet_corrections()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.writeDicom.WriteDicom.seriesNumber"><code class="docutils literal notranslate"><span class="pre">WriteDicom.seriesNumber</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.writeDicom.WriteDicom.time_id_series"><code class="docutils literal notranslate"><span class="pre">WriteDicom.time_id_series</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.writeDicom.WriteDicom.updateSeriesNumber"><code class="docutils literal notranslate"><span class="pre">WriteDicom.updateSeriesNumber()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.writeDicom.WriteDicom.updateVolume"><code class="docutils literal notranslate"><span class="pre">WriteDicom.updateVolume()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.writeDicom.WriteDicom.updatetimeIdSeries"><code class="docutils literal notranslate"><span class="pre">WriteDicom.updatetimeIdSeries()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ImageReader.DICOM.writeDicom.WriteDicom.write_dicom_file"><code class="docutils literal notranslate"><span class="pre">WriteDicom.write_dicom_file()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ImageReader.DICOM">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,649 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantification.factor_calibration_phantom_uniform &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/Quantification/factor_calibration_phantom_uniform';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../auto_examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../auto_examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Quantificati...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for Quantification.factor_calibration_phantom_uniform</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">array</span><span class="w"> </span><span class="kn">import</span> <span class="n">array</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+
+<div class="viewcode-block" id="FactorQuantificationFromUniformPhantom">
+<a class="viewcode-back" href="../../Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FactorQuantificationFromUniformPhantom</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">activity_phantom</span><span class="o">=</span><span class="mi">6663944</span><span class="p">,</span> <span class="n">radiotracer_phantom</span><span class="o">=</span><span class="s2">&quot;F18&quot;</span><span class="p">,</span> <span class="n">positron_fraction_phantom</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">positron_fraction_subject</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">phantom_volume</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span>
+                 <span class="n">radiotracer_subject</span><span class="o">=</span><span class="s2">&quot;Cu64&quot;</span><span class="p">,</span> <span class="n">image_phantom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">acquisition_phantom_duration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">voxel_volume</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">voxel_volume_unit</span><span class="o">=</span><span class="s2">&quot;ml&quot;</span><span class="p">,</span> <span class="n">crystals_geometry</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">crystals_geometry</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">crystals_geometry</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_voxel</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_ml</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">activity_phantom</span> <span class="o">=</span> <span class="n">activity_phantom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radiotracer_phantom</span> <span class="o">=</span> <span class="n">radiotracer_phantom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phantom_volume</span> <span class="o">=</span> <span class="n">phantom_volume</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span> <span class="o">=</span> <span class="n">image_phantom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radiotracer_subject</span> <span class="o">=</span> <span class="n">radiotracer_subject</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">acquisition_phantom_duration</span> <span class="o">=</span> <span class="n">acquisition_phantom_duration</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">segmented_image</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">concentration_phantom</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">factor_phantom_radiotracer</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">positron_fraction_phantom</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">factor_phantom_radiotracer</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">factor_phantom_radiotracer</span> <span class="o">=</span> <span class="mf">0.967</span>  <span class="c1"># default F18</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">factor_subject_radiotracer</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">positron_fraction_subject</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">factor_subject_radiotracer</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">factor_subject_radiotracer</span> <span class="o">=</span> <span class="mf">0.967</span>
+
+        <span class="k">if</span> <span class="n">voxel_volume_unit</span> <span class="o">==</span> <span class="s2">&quot;mm^3&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">voxel_volume</span> <span class="o">=</span> <span class="n">voxel_volume</span> <span class="o">*</span> <span class="mf">0.001</span>
+        <span class="k">elif</span> <span class="n">voxel_volume_unit</span> <span class="o">==</span> <span class="s2">&quot;ml&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">voxel_volume</span> <span class="o">=</span> <span class="n">voxel_volume</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;please specify voxel volume units&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor_per_ml</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">default_system_quantification_factor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))),</span>
+                                      <span class="s2">&quot;system_configurations&quot;</span><span class="p">,</span>
+                                      <span class="s2">&quot;x_</span><span class="si">{}</span><span class="s2">__y_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">crystals_geometry</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">crystals_geometry</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                                      <span class="s2">&quot;quatification_factor&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radioisotope_dict</span> <span class="o">=</span> <span class="p">{</span>
+                                  <span class="s2">&quot;F18&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Half-life&quot;</span><span class="p">:</span> <span class="mf">6582.66</span><span class="p">,</span>
+                                          <span class="s2">&quot;Number decays&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                                          <span class="s2">&quot;Decay 1 type&quot;</span><span class="p">:</span> <span class="s2">&quot;beta+&quot;</span><span class="p">,</span>
+                                          <span class="s2">&quot;Decay 1 Energy&quot;</span><span class="p">:</span> <span class="mi">633</span><span class="p">,</span>
+                                          <span class="s2">&quot;Decay 1 Percentage&quot;</span><span class="p">:</span> <span class="mf">0.9886</span><span class="p">,</span>
+                                          <span class="p">},</span>
+
+                                  <span class="s2">&quot;Na22&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Half-life&quot;</span><span class="p">:</span> <span class="mf">6582.66</span><span class="p">,</span>
+                                           <span class="s2">&quot;Number decays&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 1 Energy&quot;</span><span class="p">:</span> <span class="mi">546</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 1 Percentage&quot;</span><span class="p">:</span> <span class="mf">0.898</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 2 Energy&quot;</span><span class="p">:</span> <span class="mi">1254</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 2 Percentage&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">},</span>
+
+                                  <span class="s2">&quot;Cu64&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Half-life&quot;</span><span class="p">:</span> <span class="mi">45720</span><span class="p">,</span>
+                                           <span class="s2">&quot;Number decays&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 1 type&quot;</span><span class="p">:</span> <span class="s2">&quot;gamma&quot;</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 1 Energy&quot;</span><span class="p">:</span> <span class="mi">1346</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 1 Percentage&quot;</span><span class="p">:</span> <span class="mf">0.54</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 2 type&quot;</span><span class="p">:</span> <span class="s2">&quot;beta+&quot;</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 2 Energy&quot;</span><span class="p">:</span> <span class="mi">653</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 2 Percentage&quot;</span><span class="p">:</span>  <span class="mf">0.178</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 3 type&quot;</span><span class="p">:</span> <span class="s2">&quot;beta-&quot;</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 3 Energy&quot;</span><span class="p">:</span> <span class="mi">579</span><span class="p">,</span>
+                                           <span class="s2">&quot;Decay 3 Percentage&quot;</span><span class="p">:</span> <span class="mf">0.3848</span><span class="p">}</span>
+                                <span class="p">}</span>
+
+<div class="viewcode-block" id="FactorQuantificationFromUniformPhantom.segment_region_phantom">
+<a class="viewcode-back" href="../../Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.segment_region_phantom">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">segment_region_phantom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">dz</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">voi</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">segmented_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="n">dx</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">dx</span><span class="p">),</span>
+                                            <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="n">dy</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">dy</span><span class="p">),</span>
+                                            <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="n">dz</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">dz</span><span class="p">)]</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">number_voxels</span> <span class="o">=</span> <span class="n">voi</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">voxel_volume</span>
+            <span class="n">number_voxels_per_side</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">number_voxels</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">segmented_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="p">[</span>
+                               <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">number_voxels_per_side</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">number_voxels_per_side</span><span class="p">),</span>
+                               <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">number_voxels_per_side</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">number_voxels_per_side</span><span class="p">),</span>
+                               <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">number_voxels_per_side</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">number_voxels_per_side</span><span class="p">)]</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">number_voxels_per_side</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">number_voxels_per_side</span><span class="p">),</span>
+                               <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">number_voxels_per_side</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">number_voxels_per_side</span><span class="p">),</span>
+                               <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">number_voxels_per_side</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">image_phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">number_voxels_per_side</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number_voxels: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number_voxels</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number_voxels_per_side: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number_voxels_per_side</span><span class="p">))</span></div>
+
+        <span class="c1"># l = (voi*1000)^(1/3)</span>
+
+<div class="viewcode-block" id="FactorQuantificationFromUniformPhantom.quantification_factor_calculation">
+<a class="viewcode-back" href="../../Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.quantification_factor_calculation">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">quantification_factor_calculation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bq_ml</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="c1"># self.counts_p_s_voxel = np.mean(self.segmented_image)/self.acquisition_phantom_duration</span>
+        <span class="k">if</span> <span class="n">bq_ml</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_voxel</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_ml</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segmented_image</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_voxel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segmented_image</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_ml</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_voxel</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">voxel_volume</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">concentration_phantom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">factor_phantom_radiotracer</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity_phantom</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">phantom_volume</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">concentration_phantom</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_ml</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor_per_ml</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">voxel_volume</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Phantom Mean: </span><span class="si">{}</span><span class="s2"> Counts/s/voxel&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_voxel</span><span class="p">)))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Phantom Mean: </span><span class="si">{}</span><span class="s2"> Bq/ml&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_ml</span><span class="p">)))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Factor_phantom_radiotracer: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">factor_phantom_radiotracer</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Activity phantom: </span><span class="si">{}</span><span class="s2"> Bq&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">activity_phantom</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Activity Phantom concentration </span><span class="si">{}</span><span class="s2"> Bq/ml&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">concentration_phantom</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quantification Factor </span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quantification Factor per mm3 </span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor_per_ml</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="FactorQuantificationFromUniformPhantom.save_info">
+<a class="viewcode-back" href="../../Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.save_info">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Phantom Mean (Counts/s/voxel)&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_voxel</span><span class="p">),</span>
+                <span class="s2">&quot;Phantom Mean (Counts/s/ml)&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">counts_p_s_ml</span><span class="p">),</span>
+                <span class="s2">&quot;Factor phantom radiotracer&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">factor_phantom_radiotracer</span><span class="p">),</span>
+                <span class="s2">&quot;Activity phantom&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">activity_phantom</span><span class="p">),</span>
+                <span class="s2">&quot;Activity Phantom concentration (Bq/ml)&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">concentration_phantom</span><span class="p">),</span>
+                <span class="s2">&quot;Quantification Factor&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor</span><span class="p">),</span>
+                <span class="s2">&quot;Quantification Factor per ml&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor_per_ml</span><span class="p">)}</span>
+
+        <span class="n">calibrationfactor</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+        <span class="n">calibrationfactor_info</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="n">calibrationfactor</span><span class="p">)</span>
+        <span class="n">calibrationfactor_info_size</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">calibrationfactor_info</span><span class="p">)]</span>
+        <span class="n">calibrationfactor_info_size</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">calibrationfactor_info_size</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
+            <span class="n">calibrationfactor_info_size</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span>
+            <span class="n">calibrationfactor_info</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FactorQuantificationFromUniformPhantom.load_info">
+<a class="viewcode-back" href="../../Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.load_info">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">binary_file</span><span class="p">:</span>
+                <span class="n">size_header</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">binary_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">binary_file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+                <span class="n">quantificationfactor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">binary_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;|S1&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">size_header</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;|U1&#39;</span><span class="p">)</span>
+                <span class="n">quantificationfactor</span> <span class="o">=</span> <span class="n">quantificationfactor</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+                <span class="n">quantificationfactor</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">quantificationfactor</span><span class="p">)</span>
+                <span class="n">quantificationfactor</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">quantificationfactor</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">default_system_quantification_factor</span> <span class="o">=</span> <span class="n">quantificationfactor</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">default_system_quantification_factor</span>
+                                               <span class="p">[</span><span class="s2">&quot;Quantification Factor per ml&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">voxel_volume</span>
+            <span class="c1"># self.quantification_factor = float(self.default_system_quantification_factor</span>
+            <span class="c1">#                                    [&quot;Quantification Factor&quot;])</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No quantification factor found&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+
+
+<div class="viewcode-block" id="FactorQuantificationFromUniformPhantom.calculation_radiotracer_factors">
+<a class="viewcode-back" href="../../Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.calculation_radiotracer_factors">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculation_radiotracer_factors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">it_measure_only_beta_plus</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">it_measure_only_beta_plus</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">factor_phantom_radiotracer</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">factor_subject_radiotracer</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radioisotope_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">radiotracer_phantom</span><span class="p">][</span><span class="s2">&quot;Number decays&quot;</span><span class="p">]):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">radioisotope_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">radiotracer_phantom</span><span class="p">][</span><span class="s2">&quot;Decay </span><span class="si">{}</span><span class="s2"> type&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">==</span> <span class="s2">&quot;beta+&quot;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">factor_phantom_radiotracer</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radioisotope_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">radiotracer_phantom</span><span class="p">][</span>
+                        <span class="s2">&quot;Decay </span><span class="si">{}</span><span class="s2"> Percentage&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span>
+
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radioisotope_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">radiotracer_phantom</span><span class="p">][</span><span class="s2">&quot;Number decays&quot;</span><span class="p">]):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">radioisotope_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">radiotracer_phantom</span><span class="p">][</span><span class="s2">&quot;Decay </span><span class="si">{}</span><span class="s2"> type&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">==</span> <span class="s2">&quot;beta+&quot;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">factor_subject_radiotracer</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radioisotope_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">radiotracer_phantom</span><span class="p">][</span>
+                        <span class="s2">&quot;Decay </span><span class="si">{}</span><span class="s2"> Percentage&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span></div>
+
+
+<div class="viewcode-block" id="FactorQuantificationFromUniformPhantom.apply_quantification_factor_to_image">
+<a class="viewcode-back" href="../../Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.apply_quantification_factor_to_image">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply_quantification_factor_to_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">image</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">quantification_factor</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">factor_subject_radiotracer</span></div>
+
+
+<div class="viewcode-block" id="FactorQuantificationFromUniformPhantom.plt_segmented_image">
+<a class="viewcode-back" href="../../Quantification.html#Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.plt_segmented_image">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plt_segmented_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segmented_image</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+</div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="kn">import</span> <span class="n">filedialog</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">src.ImageReader</span><span class="w"> </span><span class="kn">import</span> <span class="n">RawDataSetter</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">src.EasyPETLinkInitializer.EasyPETDataReader</span><span class="w"> </span><span class="kn">import</span> <span class="n">binary_data</span>
+
+    <span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">withdraw</span><span class="p">()</span>
+    <span class="c1"># matplotlib.rcParams[&#39;font.family&#39;] = &quot;Gill Sans MT&quot;</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfilename</span><span class="p">()</span>
+    <span class="n">easypet_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
+    <span class="n">easypet_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">easypet_folder</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.easypet&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">easypet_folder</span><span class="p">)))</span>
+    <span class="c1"># file_folder = path.join(file_folder, &quot;static_image&quot;)</span>
+
+    <span class="p">[</span><span class="n">listMode</span><span class="p">,</span> <span class="n">Version_binary</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">dates</span><span class="p">,</span> <span class="n">otherinfo</span><span class="p">,</span> <span class="n">acquisitionInfo</span><span class="p">,</span> <span class="n">stringdata</span><span class="p">,</span>
+     <span class="n">systemConfigurations_info</span><span class="p">,</span> <span class="n">energyfactor_info</span><span class="p">,</span> <span class="n">peakMatrix_info</span><span class="p">]</span> <span class="o">=</span> <span class="n">binary_data</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">easypet_file</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">RawDataSetter</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="n">file_path</span><span class="p">,)</span>
+    <span class="c1"># data = RawDataSetter(file_name=file_path, size_file_m=[88, 88, 130])</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">read_files</span><span class="p">()</span>
+    <span class="n">volume</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">volume</span>
+    <span class="n">real_pixelSizeXYZ</span> <span class="o">=</span> <span class="p">(</span><span class="n">systemConfigurations_info</span><span class="p">[</span><span class="s2">&quot;array_crystal_x&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">systemConfigurations_info</span><span class="p">[</span><span class="s2">&quot;crystal_pitch_x&quot;</span><span class="p">]</span> <span class="o">+</span>
+                         <span class="p">(</span><span class="n">systemConfigurations_info</span><span class="p">[</span><span class="s2">&quot;array_crystal_x&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span>
+                         <span class="mi">2</span><span class="o">*</span><span class="n">systemConfigurations_info</span><span class="p">[</span><span class="s2">&quot;reflector_interior_A_x&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="n">volume</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">volume_voxel</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">real_pixelSizeXYZ</span><span class="o">*</span><span class="mf">0.001</span>
+
+    <span class="n">cg</span> <span class="o">=</span> <span class="p">[</span><span class="n">systemConfigurations_info</span><span class="p">[</span><span class="s2">&quot;array_crystal_x&quot;</span><span class="p">],</span> <span class="n">systemConfigurations_info</span><span class="p">[</span><span class="s2">&quot;array_crystal_y&quot;</span><span class="p">]]</span>
+    <span class="n">initial_activity</span> <span class="o">=</span> <span class="n">acquisitionInfo</span><span class="p">[</span><span class="s2">&quot;Total Dose&quot;</span><span class="p">]</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">FactorQuantificationFromUniformPhantom</span><span class="p">(</span><span class="n">activity_phantom</span><span class="o">=</span><span class="n">initial_activity</span><span class="p">,</span>
+                                               <span class="n">radiotracer_phantom</span><span class="o">=</span><span class="n">acquisitionInfo</span><span class="p">[</span><span class="s1">&#39;Tracer&#39;</span><span class="p">],</span>
+                                               <span class="n">positron_fraction_phantom</span><span class="o">=</span><span class="n">acquisitionInfo</span><span class="p">[</span><span class="s1">&#39;Positron Fraction&#39;</span><span class="p">],</span>
+                                               <span class="n">phantom_volume</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">acquisitionInfo</span><span class="p">[</span><span class="s2">&quot;Volume tracer&quot;</span><span class="p">]),</span>
+                                               <span class="n">crystals_geometry</span><span class="o">=</span><span class="n">cg</span><span class="p">,</span>
+                                               <span class="n">image_phantom</span><span class="o">=</span><span class="n">volume</span><span class="p">,</span>
+                                               <span class="n">acquisition_phantom_duration</span><span class="o">=</span><span class="n">listMode</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+                                               <span class="n">voxel_volume</span><span class="o">=</span><span class="n">volume_voxel</span><span class="p">,</span> <span class="n">voxel_volume_unit</span><span class="o">=</span><span class="s2">&quot;ml&quot;</span><span class="p">)</span>
+
+    <span class="c1"># f = FactorQuantificationFromUniformPhantom(activity_phantom=  crystals_geometry=cg ,image_phantom=volume,</span>
+    <span class="c1">#                                            acquisition_phantom_duration=listMode[-1, 6],</span>
+    <span class="c1">#                                            voxel_volume=volume_voxel, voxel_volume_unit=&quot;mm^3&quot;)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">segment_region_phantom</span><span class="p">(</span><span class="n">dx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dz</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">quantification_factor_calculation</span><span class="p">(</span><span class="n">bq_ml</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># f.save_info()</span>
+
+    <span class="n">f</span><span class="o">.</span><span class="n">plt_segmented_image</span><span class="p">()</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
