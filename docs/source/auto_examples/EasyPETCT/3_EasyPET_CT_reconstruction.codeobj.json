@@ -1,0 +1,332 @@
+{
+ "GPUSharedMemoryMultipleKernel": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Optimizer.kernelManager",
+   "module_short": "Optimizer",
+   "name": "GPUSharedMemoryMultipleKernel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Optimizer",
+   "module_short": "Optimizer",
+   "name": "GPUSharedMemoryMultipleKernel"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Optimizer",
+   "module_short": "Optimizer",
+   "name": "GPUSharedMemoryMultipleKernel"
+  }
+ ],
+ "NormalizationCT": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Corrections.CT.normalization",
+   "module_short": "Corrections.CT",
+   "name": "NormalizationCT"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Corrections.CT",
+   "module_short": "Corrections.CT",
+   "name": "NormalizationCT"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Corrections",
+   "module_short": "Corrections",
+   "name": "NormalizationCT"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.CT",
+   "module_short": "Corrections.CT",
+   "name": "NormalizationCT"
+  }
+ ],
+ "PyramidalProjector": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Corrections.CT.Projector.pyramidalprojector",
+   "module_short": "Corrections.CT.Projector",
+   "name": "PyramidalProjector"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Corrections.CT.Projector",
+   "module_short": "Corrections.CT.Projector",
+   "name": "PyramidalProjector"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Corrections.CT",
+   "module_short": "Corrections.CT",
+   "name": "PyramidalProjector"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Corrections",
+   "module_short": "Corrections",
+   "name": "PyramidalProjector"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.CT.Projector",
+   "module_short": "Corrections.CT.Projector",
+   "name": "PyramidalProjector"
+  }
+ ],
+ "ReconstructionEasyPETCT": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "__main__",
+   "module_short": "__main__",
+   "name": "ReconstructionEasyPETCT"
+  }
+ ],
+ "ToRFile": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  }
+ ],
+ "__name__": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "cuda": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "module"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pycuda",
+   "module_short": "pycuda",
+   "name": "driver"
+  }
+ ],
+ "cuda.Device": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "pycuda._driver",
+   "module_short": "pycuda._driver",
+   "name": "Device"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "pycuda",
+   "module_short": "pycuda",
+   "name": "Device"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pycuda.driver",
+   "module_short": "pycuda.driver",
+   "name": "Device"
+  }
+ ],
+ "filename": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "np.int32": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "int32"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "signedinteger"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "integer"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "number"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "generic"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "int32"
+  }
+ ],
+ "np.ones": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ones"
+  }
+ ],
+ "np.sum": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "sum"
+  }
+ ],
+ "os.makedirs": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "os",
+   "module_short": "os",
+   "name": "makedirs"
+  }
+ ],
+ "os.path.dirname": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "os.path",
+   "module_short": "os.path",
+   "name": "dirname"
+  }
+ ],
+ "os.path.exists": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "os.path",
+   "module_short": "os.path",
+   "name": "exists"
+  }
+ ],
+ "output_path": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "r": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "__main__",
+   "module_short": "__main__",
+   "name": "ReconstructionEasyPETCT"
+  }
+ ],
+ "voxelSize": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ]
+}

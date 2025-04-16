@@ -1,0 +1,1569 @@
+{
+ "AcquisitionInfo": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo"
+  }
+ ],
+ "ListModeBody": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_body",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody"
+  }
+ ],
+ "NEMAIQ2008NU": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Phantoms.NEMAIQgeometry",
+   "module_short": "Phantoms",
+   "name": "NEMAIQ2008NU"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Phantoms",
+   "module_short": "Phantoms",
+   "name": "NEMAIQ2008NU"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Phantoms",
+   "module_short": "Phantoms",
+   "name": "NEMAIQ2008NU"
+  }
+ ],
+ "PhantomType": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader.subject_type",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType"
+  }
+ ],
+ "RadioisotopeInfo": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader.Radioisotope",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo"
+  }
+ ],
+ "StoreDeviceInFo": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Device.storedeviceInfo",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  }
+ ],
+ "Technician": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader.technician",
+   "module_short": "TORFilesReader",
+   "name": "Technician"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "Technician"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "Technician"
+  }
+ ],
+ "ToRFile": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  }
+ ],
+ "ToRFile_creator": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  }
+ ],
+ "ToRFile_creator.setAcquisitionInfo": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.setAcquisitionInfo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.setAcquisitionInfo"
+  }
+ ],
+ "ToRFile_creator.setSystemInfo": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.setSystemInfo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.setSystemInfo"
+  }
+ ],
+ "ToRFile_creator.setfileBodyData": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.setfileBodyData"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.setfileBodyData"
+  }
+ ],
+ "ToRFile_creator.write": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.write"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.write"
+  }
+ ],
+ "ToRFile_reader": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  }
+ ],
+ "ToRFile_reader.fileBodyData": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.fileBodyData"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.fileBodyData"
+  }
+ ],
+ "ToRFile_reader.read": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.read"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.read"
+  }
+ ],
+ "ToRFile_reader.systemInfo": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.systemInfo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.systemInfo"
+  }
+ ],
+ "axial_motor_angles": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "deviceFromTOR": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry"
+  }
+ ],
+ "deviceFromTOR.originSystemWZ": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.originSystemWZ"
+  }
+ ],
+ "deviceFromTOR.originSystemWZ.T": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.originSystemWZ"
+  }
+ ],
+ "deviceFromTOR.sourceCenter": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased.dualrotationsystem",
+   "name": "DualRotationSystem.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.sourceCenter"
+  }
+ ],
+ "deviceFromTOR.sourcePositionAfterMovement": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased.dualrotationsystem",
+   "name": "DualRotationSystem.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.sourcePositionAfterMovement"
+  }
+ ],
+ "device_path": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "fan_motor_angles": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "filename": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "getDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.storedeviceInfo",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  }
+ ],
+ "getDevice.readDeviceFromDirectory": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.storedeviceInfo",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo.readDeviceFromDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo.readDeviceFromDirectory"
+  }
+ ],
+ "index_fan_motor_angle_0": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "listModeBody": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_body",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody"
+  }
+ ],
+ "listModeBody.generateStatistics": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_body",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.generateStatistics"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.generateStatistics"
+  }
+ ],
+ "listModeBody.printStatistics": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_body",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.printStatistics"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.printStatistics"
+  }
+ ],
+ "listModeBody.setCountsPerGlobalID": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_body",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.setCountsPerGlobalID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.setCountsPerGlobalID"
+  }
+ ],
+ "listModeBody.setFrameStartIndexes": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_body",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.setFrameStartIndexes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.setFrameStartIndexes"
+  }
+ ],
+ "listModeBody.setGlobalDetectorID": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_body",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.setGlobalDetectorID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.setGlobalDetectorID"
+  }
+ ],
+ "listModeBody.setListmode": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_body",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.setListmode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.setListmode"
+  }
+ ],
+ "listModeBody.setListmodeFields": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_body",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.setListmodeFields"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.setListmodeFields"
+  }
+ ],
+ "listModeBody_read": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_body",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody"
+  }
+ ],
+ "listModeBody_read.uniqueValuesCount": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_body",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.uniqueValuesCount"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ListModeBody.uniqueValuesCount"
+  }
+ ],
+ "listmode": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "newDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry"
+  }
+ ],
+ "np.__file__": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "__file__"
+  }
+ ],
+ "np.__version__": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "__version__"
+  }
+ ],
+ "np.arange": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "arange"
+  }
+ ],
+ "np.copy": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "copy"
+  }
+ ],
+ "np.deg2rad": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ufunc"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "deg2rad"
+  }
+ ],
+ "np.load": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "load"
+  }
+ ],
+ "np.repeat": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "repeat"
+  }
+ ],
+ "np.tile": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "tile"
+  }
+ ],
+ "np.where": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "where"
+  }
+ ],
+ "origin_fan_motor_angle_0": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "output_path": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "plt.figure": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "figure"
+  }
+ ],
+ "plt.hist": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "hist"
+  }
+ ],
+ "plt.hist2d": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "hist2d"
+  }
+ ],
+ "plt.legend": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "legend"
+  }
+ ],
+ "plt.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "plot"
+  }
+ ],
+ "plt.show": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "show"
+  }
+ ],
+ "plt.title": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "title"
+  }
+ ],
+ "radioisotope": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.Radioisotope",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo"
+  }
+ ],
+ "radioisotope.setDecayEnergies": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.Radioisotope",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo.setDecayEnergies"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo.setDecayEnergies"
+  }
+ ],
+ "radioisotope.setDecayTypes": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.Radioisotope",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo.setDecayTypes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo.setDecayTypes"
+  }
+ ],
+ "radioisotope.setHalfLifes": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.Radioisotope",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo.setHalfLifes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo.setHalfLifes"
+  }
+ ],
+ "radioisotope.setTracers": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.Radioisotope",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo.setTracers"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "RadioisotopeInfo.setTracers"
+  }
+ ],
+ "scanHeader": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo"
+  }
+ ],
+ "scanHeader.indexesOfFrames": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.indexesOfFrames"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.indexesOfFrames"
+  }
+ ],
+ "scanHeader.setDate": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setDate"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setDate"
+  }
+ ],
+ "scanHeader.setFrameOfReferenceUID": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setFrameOfReferenceUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setFrameOfReferenceUID"
+  }
+ ],
+ "scanHeader.setId": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setId"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setId"
+  }
+ ],
+ "scanHeader.setIndexesOfFrames": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setIndexesOfFrames"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setIndexesOfFrames"
+  }
+ ],
+ "scanHeader.setInstanceUID": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setInstanceUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setInstanceUID"
+  }
+ ],
+ "scanHeader.setScanType": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setScanType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setScanType"
+  }
+ ],
+ "scanHeader.setStudyInstanceUID": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setStudyInstanceUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setStudyInstanceUID"
+  }
+ ],
+ "scanHeader.setSubject": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setSubject"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setSubject"
+  }
+ ],
+ "scanHeader.setTecnhician": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.scanning_header",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setTecnhician"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "AcquisitionInfo.setTecnhician"
+  }
+ ],
+ "source_center_fan_motor_angle_0": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "subject": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.subject_type",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType"
+  }
+ ],
+ "subject.setDigitalPhantomCopy": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.subject_type",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType.setDigitalPhantomCopy"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType.setDigitalPhantomCopy"
+  }
+ ],
+ "subject.setPhantomDescription": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.subject_type",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType.setPhantomDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType.setPhantomDescription"
+  }
+ ],
+ "subject.setPhantomName": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.subject_type",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType.setPhantomName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType.setPhantomName"
+  }
+ ],
+ "subject.setPhantomPurpose": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.subject_type",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType.setPhantomPurpose"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "PhantomType.setPhantomPurpose"
+  }
+ ],
+ "tecnhician": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.technician",
+   "module_short": "TORFilesReader",
+   "name": "Technician"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "Technician"
+  }
+ ],
+ "tecnhician.setName": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.technician",
+   "module_short": "TORFilesReader",
+   "name": "Technician.setName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "Technician.setName"
+  }
+ ],
+ "tecnhician.setOrganization": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.technician",
+   "module_short": "TORFilesReader",
+   "name": "Technician.setOrganization"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "Technician.setOrganization"
+  }
+ ],
+ "tecnhician.setRole": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.technician",
+   "module_short": "TORFilesReader",
+   "name": "Technician.setRole"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "Technician.setRole"
+  }
+ ],
+ "time.strftime": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "time",
+   "module_short": "time",
+   "name": "strftime"
+  }
+ ],
+ "uuid.uuid4": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "uuid",
+   "module_short": "uuid",
+   "name": "uuid4"
+  }
+ ]
+}

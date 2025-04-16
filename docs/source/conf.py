@@ -11,6 +11,8 @@ import sys
 # sys.path.insert(0, os.path.abspath('../../src/'))
 sys.path.insert(0, os.path.abspath('../../src/'))
 from sphinx_gallery.sorting import FileNameSortKey
+import matplotlib
+matplotlib.use('agg')  # for headless image generation
 
 project = 'Infinity-Tomographic-Reconstruction'
 copyright = '2025, Pedro Encarnação'
@@ -29,14 +31,18 @@ extensions = ["sphinx.ext.autodoc", 'sphinx.ext.coverage', 'sphinx.ext.napoleon'
 'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     'sphinx_autodoc_typehints',
-'sphinx_gallery.gen_gallery'
+'sphinx_gallery.gen_gallery',
+'matplotlib.sphinxext.mathmpl',
+          'matplotlib.sphinxext.plot_directive',
+          'sphinx.ext.doctest',
 ]
 #
 sphinx_gallery_conf = {
-    'examples_dirs': 'examples',   # path to your example scripts
-    'gallery_dirs': 'auto_examples',  # where to save gallery generated pages
-    'filename_pattern': r'example_',
+    'examples_dirs': ['examples/EasyPETCT', 'examples/SiemensIntevoBoldSPECTCT'],   # path to your example scripts
+    'gallery_dirs': ['auto_examples/EasyPETCT', 'auto_examples/SiemensIntevoBoldSPECTCT'],  # where to save gallery generated pages
+    'filename_pattern': r'.*\.py$',
 'within_subsection_order': FileNameSortKey,
+   'backreferences_dir' :None,
 }# regex to filter which files to include
     # Optional:
     # 'backreferences_dir': 'generated',

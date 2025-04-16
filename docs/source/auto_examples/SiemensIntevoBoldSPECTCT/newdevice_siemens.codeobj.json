@@ -1,0 +1,1401 @@
+{
+ "DeviceDesignerStandalone": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Designer.deviceDesigner",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone"
+  }
+ ],
+ "FOV_dim": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.multival",
+   "module_short": "pydicom.multival",
+   "name": "MultiValue"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "MultiValue"
+  }
+ ],
+ "FOV_shape": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "Focal_distance": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.valuerep",
+   "module_short": "pydicom.valuerep",
+   "name": "IS"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "IS"
+  }
+ ],
+ "GenericCrystal": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Photodetectors.Crystals.genericCrystal",
+   "module_short": "DetectionLayout.Photodetectors.Crystals",
+   "name": "GenericCrystal"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Photodetectors.Crystals",
+   "module_short": "DetectionLayout.Photodetectors.Crystals",
+   "name": "GenericCrystal"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Photodetectors",
+   "module_short": "DetectionLayout.Photodetectors",
+   "name": "GenericCrystal"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericCrystal"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.Photodetectors.Crystals",
+   "module_short": "DetectionLayout.Photodetectors.Crystals",
+   "name": "GenericCrystal"
+  }
+ ],
+ "PETModule": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules.PETModuleGeneric",
+   "module_short": "DetectionLayout.Modules",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules",
+   "module_short": "DetectionLayout.Modules",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "PETModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules",
+   "module_short": "DetectionLayout.Modules",
+   "name": "PETModule"
+  }
+ ],
+ "PlanarGeometry": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry.Standard.planar",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "PlanarGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry.Standard.polygonal",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "RegularPolygonalGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device",
+   "name": "Device"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry"
+  }
+ ],
+ "RotationDirection": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "angularStep": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.valuerep",
+   "module_short": "pydicom.valuerep",
+   "name": "DSfloat"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "DSfloat"
+  }
+ ],
+ "angularViewVector": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "axes": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "cols": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "designer": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer.deviceDesigner",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone"
+  }
+ ],
+ "designer.addDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer.deviceDesigner",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone.addDevice"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone.addDevice"
+  }
+ ],
+ "designer.startRender": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer.deviceDesigner",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone.startRender"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone.startRender"
+  }
+ ],
+ "detectorVector": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "detector_info": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.dataset",
+   "module_short": "pydicom",
+   "name": "Dataset"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "Dataset"
+  }
+ ],
+ "detector_info.FieldOfViewDimensions": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.multival",
+   "module_short": "pydicom.multival",
+   "name": "MultiValue"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "MultiValue"
+  }
+ ],
+ "detector_info.FieldOfViewShape": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "detector_info.FocalDistance": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.valuerep",
+   "module_short": "pydicom.valuerep",
+   "name": "IS"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "IS"
+  }
+ ],
+ "detector_info.RadialPosition": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.multival",
+   "module_short": "pydicom.multival",
+   "name": "MultiValue"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "MultiValue"
+  }
+ ],
+ "detector_info.StartAngle": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.valuerep",
+   "module_short": "pydicom.valuerep",
+   "name": "DSfloat"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "DSfloat"
+  }
+ ],
+ "ds": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.dataset",
+   "module_short": "pydicom",
+   "name": "FileDataset"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "FileDataset"
+  }
+ ],
+ "ds.AngularViewVector": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "ds.Columns": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "ds.DetectorInformationSequence": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.sequence",
+   "module_short": "pydicom",
+   "name": "Sequence"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "Sequence"
+  }
+ ],
+ "ds.DetectorVector": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "ds.PixelSpacing": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.multival",
+   "module_short": "pydicom.multival",
+   "name": "MultiValue"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "MultiValue"
+  }
+ ],
+ "ds.RotationInformationSequence": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.sequence",
+   "module_short": "pydicom",
+   "name": "Sequence"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "Sequence"
+  }
+ ],
+ "ds.RotationVector": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "ds.Rows": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "ds.pixel_array": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.dataset",
+   "module_short": "pydicom",
+   "name": "FileDataset.pixel_array"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "FileDataset.pixel_array"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.dataset",
+   "module_short": "pydicom",
+   "name": "Dataset.pixel_array"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "Dataset.pixel_array"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "dict.pixel_array"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "typing",
+   "module_short": "typing",
+   "name": "Generic.pixel_array"
+  }
+ ],
+ "fig": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.figure",
+   "module_short": "matplotlib.figure",
+   "name": "Figure"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Figure"
+  }
+ ],
+ "file_path": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "i": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "j": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "modules_": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "newDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.planar",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "PlanarGeometry"
+  }
+ ],
+ "newDevice.calculateInitialGeometry": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.planar",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.calculateInitialGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.calculateInitialGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "PlanarGeometry.calculateInitialGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.polygonal",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.calculateInitialGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.calculateInitialGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "RegularPolygonalGeometry.calculateInitialGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.calculateInitialGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.calculateInitialGeometry"
+  }
+ ],
+ "newDevice.detectorModule": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.planar",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.detectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.detectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "PlanarGeometry.detectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.polygonal",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.detectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.detectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "RegularPolygonalGeometry.detectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.detectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.detectorModule"
+  }
+ ],
+ "newDevice.getDeviceName": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.planar",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.getDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.getDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "PlanarGeometry.getDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.polygonal",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.getDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.getDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "RegularPolygonalGeometry.getDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device",
+   "name": "Device.getDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.getDeviceName"
+  }
+ ],
+ "newDevice.numberOfModules": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.planar",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.numberOfModules"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.numberOfModules"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "PlanarGeometry.numberOfModules"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.polygonal",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.numberOfModules"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.numberOfModules"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "RegularPolygonalGeometry.numberOfModules"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.numberOfModules"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.numberOfModules"
+  }
+ ],
+ "newDevice.setDetectorModule": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.planar",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.setDetectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.setDetectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "PlanarGeometry.setDetectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.polygonal",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.setDetectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.setDetectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "RegularPolygonalGeometry.setDetectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.setDetectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setDetectorModule"
+  }
+ ],
+ "newDevice.setDeviceName": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.planar",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "PlanarGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.polygonal",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "RegularPolygonalGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device",
+   "name": "Device.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setDeviceName"
+  }
+ ],
+ "newDevice.setNumberOfModulesPerSide": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.planar",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.setNumberOfModulesPerSide"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.setNumberOfModulesPerSide"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "PlanarGeometry.setNumberOfModulesPerSide"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.polygonal",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesPerSide"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesPerSide"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesPerSide"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.setNumberOfModulesPerSide"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setNumberOfModulesPerSide"
+  }
+ ],
+ "newDevice.setNumberOfModulesPhi": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.planar",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.setNumberOfModulesPhi"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.setNumberOfModulesPhi"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "PlanarGeometry.setNumberOfModulesPhi"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.polygonal",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesPhi"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesPhi"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesPhi"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.setNumberOfModulesPhi"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setNumberOfModulesPhi"
+  }
+ ],
+ "newDevice.setNumberOfModulesZ": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.planar",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.setNumberOfModulesZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "PlanarGeometry.setNumberOfModulesZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "PlanarGeometry.setNumberOfModulesZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard.polygonal",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.Standard",
+   "module_short": "Geometry.Standard",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.setNumberOfModulesZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setNumberOfModulesZ"
+  }
+ ],
+ "np.array": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "array"
+  }
+ ],
+ "num_display": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "num_frames": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.valuerep",
+   "module_short": "pydicom.valuerep",
+   "name": "IS"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "IS"
+  }
+ ],
+ "os.path.join": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "os.path",
+   "module_short": "os.path",
+   "name": "join"
+  }
+ ],
+ "pixel_array": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "pixel_array.shape": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "pixel_spacing": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.multival",
+   "module_short": "pydicom.multival",
+   "name": "MultiValue"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "MultiValue"
+  }
+ ],
+ "plt.subplots": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "subplots"
+  }
+ ],
+ "pydicom.dcmread": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "dcmread"
+  }
+ ],
+ "radial_positions": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.multival",
+   "module_short": "pydicom.multival",
+   "name": "MultiValue"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "MultiValue"
+  }
+ ],
+ "rotationInformationSequence": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.dataset",
+   "module_short": "pydicom",
+   "name": "Dataset"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "Dataset"
+  }
+ ],
+ "rotationInformationSequence.AngularStep": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.valuerep",
+   "module_short": "pydicom.valuerep",
+   "name": "DSfloat"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "DSfloat"
+  }
+ ],
+ "rotationInformationSequence.RotationDirection": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "rotationInformationSequence.ScanArc": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.valuerep",
+   "module_short": "pydicom.valuerep",
+   "name": "DSfloat"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "DSfloat"
+  }
+ ],
+ "rotationVector": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "rows": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "scanArc": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.valuerep",
+   "module_short": "pydicom.valuerep",
+   "name": "DSfloat"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "DSfloat"
+  }
+ ],
+ "sinogram": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "start_angle": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom.valuerep",
+   "module_short": "pydicom.valuerep",
+   "name": "DSfloat"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "pydicom",
+   "module_short": "pydicom",
+   "name": "DSfloat"
+  }
+ ]
+}

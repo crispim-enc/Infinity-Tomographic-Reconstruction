@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview: module code &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/index';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Overview:...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>All modules for which code is available</h1>
+<ul><li><a href="Corrections/CT/Projector/pyramidalprojector.html">Corrections.CT.Projector.pyramidalprojector</a></li>
+<li><a href="Corrections/CT/normalization.html">Corrections.CT.normalization</a></li>
+<li><a href="Corrections/Compton/conicalprojector.html">Corrections.Compton.conicalprojector</a></li>
+<li><a href="Corrections/EasyPET/Normalization/adaptative_normalization_matrix.html">Corrections.EasyPET.Normalization.adaptative_normalization_matrix</a></li>
+<li><a href="Corrections/EasyPET/Normalization/generateallpositions.html">Corrections.EasyPET.Normalization.generateallpositions</a></li>
+<li><a href="Corrections/EasyPET/Normalization/poissonmapgenerator.html">Corrections.EasyPET.Normalization.poissonmapgenerator</a></li>
+<li><a href="Corrections/EasyPET/SystemFocus/SystemAligment.html">Corrections.EasyPET.SystemFocus.SystemAligment</a></li>
+<li><a href="Corrections/General/EnergyFiltering.html">Corrections.General.EnergyFiltering</a></li>
+<li><a href="Corrections/General/detector_sensitivity.html">Corrections.General.detector_sensitivity</a></li>
+<li><a href="Corrections/General/generalprojector.html">Corrections.General.generalprojector</a></li>
+<li><a href="Designer/Image_vtk_projector_article.html">Designer.Image_vtk_projector_article</a></li>
+<li><a href="Designer/deviceDesigner.html">Designer.deviceDesigner</a></li>
+<li><a href="Designer/geometricdesigner.html">Designer.geometricdesigner</a></li>
+<li><a href="DetectionLayout/Collimators/collimatorGeneric.html">DetectionLayout.Collimators.collimatorGeneric</a></li>
+<li><a href="DetectionLayout/Modules/PETModuleGeneric.html">DetectionLayout.Modules.PETModuleGeneric</a></li>
+<li><a href="DetectionLayout/Modules/SPECTModuleGeneric.html">DetectionLayout.Modules.SPECTModuleGeneric</a></li>
+<li><a href="DetectionLayout/Modules/easyPETModules.html">DetectionLayout.Modules.easyPETModules</a></li>
+<li><a href="DetectionLayout/Photodetectors/Crystals/LYSO.html">DetectionLayout.Photodetectors.Crystals.LYSO</a></li>
+<li><a href="DetectionLayout/Photodetectors/Crystals/genericCrystal.html">DetectionLayout.Photodetectors.Crystals.genericCrystal</a></li>
+<li><a href="DetectionLayout/Photodetectors/SiPM/Hamamatsu.html">DetectionLayout.Photodetectors.SiPM.Hamamatsu</a></li>
+<li><a href="DetectionLayout/Photodetectors/SiPM/generic.html">DetectionLayout.Photodetectors.SiPM.generic</a></li>
+<li><a href="DetectionLayout/RadiationProducer/GenericSource.html">DetectionLayout.RadiationProducer.GenericSource</a></li>
+<li><a href="DetectionLayout/Semicondutors/cztgeometry.html">DetectionLayout.Semicondutors.cztgeometry</a></li>
+<li><a href="Device/device.html">Device.device</a></li>
+<li><a href="Device/energy_resolution_function.html">Device.energy_resolution_function</a></li>
+<li><a href="Device/storedeviceInfo.html">Device.storedeviceInfo</a></li>
+<li><a href="EasyPETLinkInitializer/EasyPETDataReader/calibration_points_upload.html">EasyPETLinkInitializer.EasyPETDataReader.calibration_points_upload</a></li>
+<li><a href="EasyPETLinkInitializer/EasyPETDataReader/crystalsRC_client.html">EasyPETLinkInitializer.EasyPETDataReader.crystalsRC_client</a></li>
+<li><a href="EasyPETLinkInitializer/EasyPETDataReader/detect_peaks.html">EasyPETLinkInitializer.EasyPETDataReader.detect_peaks</a></li>
+<li><a href="EasyPETLinkInitializer/EasyPETDataReader/energyCorrection.html">EasyPETLinkInitializer.EasyPETDataReader.energyCorrection</a></li>
+<li><a href="EasyPETLinkInitializer/EasyPETDataReader/hardware_parameters_file.html">EasyPETLinkInitializer.EasyPETDataReader.hardware_parameters_file</a></li>
+<li><a href="EasyPETLinkInitializer/EasyPETDataReader/indexToEnergyCorrection_client.html">EasyPETLinkInitializer.EasyPETDataReader.indexToEnergyCorrection_client</a></li>
+<li><a href="EasyPETLinkInitializer/EasyPETDataReader/lmodebin.html">EasyPETLinkInitializer.EasyPETDataReader.lmodebin</a></li>
+<li><a href="EasyPETLinkInitializer/EasyPETDataReader/natural_sort.html">EasyPETLinkInitializer.EasyPETDataReader.natural_sort</a></li>
+<li><a href="EasyPETLinkInitializer/EasyPETDataReader/peaksFile.html">EasyPETLinkInitializer.EasyPETDataReader.peaksFile</a></li>
+<li><a href="EasyPETLinkInitializer/EasyPETDataReader/ratioEnergy_client.html">EasyPETLinkInitializer.EasyPETDataReader.ratioEnergy_client</a></li>
+<li><a href="EasyPETLinkInitializer/EasyPETDataReader/time_discrimination.html">EasyPETLinkInitializer.EasyPETDataReader.time_discrimination</a></li>
+<li><a href="EasyPETLinkInitializer/Utilities/exceptions.html">EasyPETLinkInitializer.Utilities.exceptions</a></li>
+<li><a href="Geometry/LinearPET/linear_parametric_points.html">Geometry.LinearPET.linear_parametric_points</a></li>
+<li><a href="Geometry/Standard/cylindrical.html">Geometry.Standard.cylindrical</a></li>
+<li><a href="Geometry/Standard/planar.html">Geometry.Standard.planar</a></li>
+<li><a href="Geometry/Standard/polygonal.html">Geometry.Standard.polygonal</a></li>
+<li><a href="Geometry/easyPETBased/dualrotationsystem.html">Geometry.easyPETBased.dualrotationsystem</a></li>
+<li><a href="Geometry/easyPETBased/easyct_parametric_points.html">Geometry.easyPETBased.easyct_parametric_points</a></li>
+<li><a href="Geometry/easyPETBased/easypet_parametric_points.html">Geometry.easyPETBased.easypet_parametric_points</a></li>
+<li><a href="Geometry/easyPETBased/matrixgeometrycorrection.html">Geometry.easyPETBased.matrixgeometrycorrection</a></li>
+<li><a href="Geometry/easyPETBased/resetposition.html">Geometry.easyPETBased.resetposition</a></li>
+<li><a href="ImageReader/DICOM/equipment.html">ImageReader.DICOM.equipment</a></li>
+<li><a href="ImageReader/DICOM/filesreader.html">ImageReader.DICOM.filesreader</a></li>
+<li><a href="ImageReader/DICOM/frameofreference.html">ImageReader.DICOM.frameofreference</a></li>
+<li><a href="ImageReader/DICOM/image.html">ImageReader.DICOM.image</a></li>
+<li><a href="ImageReader/DICOM/patient.html">ImageReader.DICOM.patient</a></li>
+<li><a href="ImageReader/DICOM/series.html">ImageReader.DICOM.series</a></li>
+<li><a href="ImageReader/DICOM/study.html">ImageReader.DICOM.study</a></li>
+<li><a href="ImageReader/DICOM/submodule.html">ImageReader.DICOM.submodule</a></li>
+<li><a href="ImageReader/DICOM/writeDicom.html">ImageReader.DICOM.writeDicom</a></li>
+<li><a href="ImageReader/RawData/raw_data.html">ImageReader.RawData.raw_data</a></li>
+<li><a href="Metrics/ImageQuality/algortihmConvergency.html">Metrics.ImageQuality.algortihmConvergency</a></li>
+<li><a href="Metrics/groundtruth.html">Metrics.groundtruth</a></li>
+<li><a href="Optimizer/CPU.html">Optimizer.CPU</a></li>
+<li><a href="Optimizer/GPUManager.html">Optimizer.GPUManager</a></li>
+<li><a href="Optimizer/GaussianFileGenarator.html">Optimizer.GaussianFileGenarator</a></li>
+<li><a href="Optimizer/gpu_multiple_kernel.html">Optimizer.gpu_multiple_kernel</a></li>
+<li><a href="Optimizer/gpu_shared_memory.html">Optimizer.gpu_shared_memory</a></li>
+<li><a href="Optimizer/kernelManager.html">Optimizer.kernelManager</a></li>
+<li><a href="Optimizer/selectable_events.html">Optimizer.selectable_events</a></li>
+<li><a href="Phantoms/NECPhantom.html">Phantoms.NECPhantom</a></li>
+<li><a href="Phantoms/NEMAIQgeometry.html">Phantoms.NEMAIQgeometry</a></li>
+<li><a href="Phantoms/cylindricalStructure.html">Phantoms.cylindricalStructure</a></li>
+<li><a href="Phantoms/data_suv_reader.html">Phantoms.data_suv_reader</a></li>
+<li><a href="Quantification/factor_calibration_phantom_uniform.html">Quantification.factor_calibration_phantom_uniform</a></li>
+<li><a href="TORFilesReader/Radioisotope.html">TORFilesReader.Radioisotope</a></li>
+<li><a href="TORFilesReader/scanning_body.html">TORFilesReader.scanning_body</a></li>
+<li><a href="TORFilesReader/scanning_header.html">TORFilesReader.scanning_header</a></li>
+<li><a href="TORFilesReader/subject_type.html">TORFilesReader.subject_type</a></li>
+<li><a href="TORFilesReader/technician.html">TORFilesReader.technician</a></li>
+<li><a href="TORFilesReader/torfiles.html">TORFilesReader.torfiles</a></li>
+</ul>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

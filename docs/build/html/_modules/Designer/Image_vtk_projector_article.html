@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Designer.Image_vtk_projector_article &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/Designer/Image_vtk_projector_article';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Designer.Ima...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for Designer.Image_vtk_projector_article</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vtk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">ndimage</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">vtk.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">numpy_support</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Phantoms</span><span class="w"> </span><span class="kn">import</span> <span class="n">NEMAIQ2008NU</span>
+
+
+
+<div class="viewcode-block" id="SliceViewer">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SliceViewer</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="p">,</span> <span class="n">data3D</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale_z</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">scale_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">scale_y</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;hot.cl&#39;</span> <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span> <span class="o">=</span> <span class="n">data3D</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">colormap</span> <span class="o">=</span> <span class="n">colormap</span>
+        <span class="n">direct</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path_colormap</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">direct</span><span class="p">,</span> <span class="s2">&quot;ControlUI&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap_files&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phantom</span> <span class="o">=</span> <span class="n">NEMAIQ2008NU</span><span class="p">(</span><span class="n">centerPhantom</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">scale_z</span><span class="o">*</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rods</span> <span class="o">=</span> <span class="p">[</span> <span class="bp">self</span><span class="o">.</span><span class="n">phantom</span><span class="o">.</span><span class="n">_rod1mm</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">phantom</span><span class="o">.</span><span class="n">_rod2mm</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">phantom</span><span class="o">.</span><span class="n">_rod3mm</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">phantom</span><span class="o">.</span><span class="n">_rod4mm</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">phantom</span><span class="o">.</span><span class="n">_rod5mm</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">cold_rods</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">phantom</span><span class="o">.</span><span class="n">_waterChamberFilling</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">phantom</span><span class="o">.</span><span class="n">_airChamberFilling</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">scale_x</span> <span class="o">=</span> <span class="n">scale_x</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">scale_y</span> <span class="o">=</span> <span class="n">scale_y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scale_z</span> <span class="o">=</span> <span class="n">scale_z</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">master</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;VTK with Tkinter Scale&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">master</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtk_widget</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtk_widget</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindow</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactorStyleImage</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkInteractorStyleImage</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactorStyleImage</span><span class="o">.</span><span class="n">SetInteractionModeToImageSlicing</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactorStyle3D</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkInteractorStyleTrackballCamera</span><span class="p">()</span>
+
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindowInteractor</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">SetInteractorStyle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactorStyleImage</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">SetRenderWindow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderer_entered</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_listOfRenderers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resliced_main_window</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_min_color</span> <span class="o">=</span> <span class="mi">40</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_color</span> <span class="o">=</span> <span class="mi">1300</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ambient</span> <span class="o">=</span> <span class="mf">1.1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_specular</span> <span class="o">=</span> <span class="mf">0.4</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volumeRotationX</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volumeRotationY</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volumeRotationZ</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_zoomVolume</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_maxValueForVolume</span> <span class="o">=</span> <span class="n">data3D</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_minValueForVolume</span> <span class="o">=</span> <span class="n">data3D</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+<div class="viewcode-block" id="SliceViewer.maxValueForVolume">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.maxValueForVolume">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">maxValueForVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maxValueForVolume</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.minValueForVolume">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.minValueForVolume">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">minValueForVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_minValueForVolume</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.setMaxValueForVolume">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.setMaxValueForVolume">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setMaxValueForVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_maxValueForVolume</span> <span class="o">=</span> <span class="n">max_value</span></div>
+
+
+
+<div class="viewcode-block" id="SliceViewer.setZoomVolume">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.setZoomVolume">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setZoomVolume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoom</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_zoomVolume</span> <span class="o">=</span> <span class="n">zoom</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.setVolumeRotation">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.setVolumeRotation">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setVolumeRotation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volumeRotationX</span> <span class="o">=</span> <span class="n">alpha</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volumeRotationY</span> <span class="o">=</span> <span class="n">beta</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volumeRotationZ</span> <span class="o">=</span> <span class="n">gamma</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.setColorMapLimits">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.setColorMapLimits">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setColorMapLimits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v_lim</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_min_color</span> <span class="o">=</span> <span class="n">v_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_color</span> <span class="o">=</span> <span class="n">v_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.setAmbient">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.setAmbient">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setAmbient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ambient</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ambient</span> <span class="o">=</span> <span class="n">ambient</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.setSpecular">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.setSpecular">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setSpecular</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specular</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_specular</span> <span class="o">=</span> <span class="n">specular</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.addObservers">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.addObservers">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">addObservers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactorStyleImage</span><span class="o">.</span><span class="n">AddObserver</span><span class="p">(</span><span class="s2">&quot;MouseMoveEvent&quot;</span><span class="p">,</span>
+                                              <span class="k">lambda</span> <span class="n">obj</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">MouseMoveCallback</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">event</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactorStyleImage</span><span class="o">.</span><span class="n">AddObserver</span><span class="p">(</span><span class="s2">&quot;MouseWheelForwardEvent&quot;</span><span class="p">,</span>
+                                              <span class="k">lambda</span> <span class="n">obj</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">wheelForwardCallback</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">event</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactorStyleImage</span><span class="o">.</span><span class="n">AddObserver</span><span class="p">(</span><span class="s2">&quot;MouseWheelBackwardEvent&quot;</span><span class="p">,</span>
+                                              <span class="k">lambda</span> <span class="n">obj</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">wheelForwardCallback</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">event</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.addVolumeRendering">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.addVolumeRendering">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">addVolumeRendering</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">dims</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">dataImporter</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageImport</span><span class="p">()</span>
+        <span class="n">data_string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">CopyImportVoidPointer</span><span class="p">(</span><span class="n">data_string</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_string</span><span class="p">))</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">SetDataScalarTypeToFloat</span><span class="p">()</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">SetNumberOfScalarComponents</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">SetDataExtent</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dims</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dims</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dims</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># dataImporter.SetDataExtent(-dims[0]*self.scale_x/2, dims[0]*self.scale_x/2, -dims[1]*self.scale_y/2, dims[1]*self.scale_y/2, -dims[2]*self.scale_z/2, dims[2]*self.scale_z/2)</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">SetWholeExtent</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dims</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dims</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dims</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># dataImporter.SetWholeExtent(-dims[0]*self.scale_x/2, dims[0]*self.scale_x/2, -dims[1]*self.scale_y/2, dims[1]*self.scale_y/2, -dims[2]*self.scale_z/2, dims[2]*self.scale_z/2)</span>
+        <span class="n">dataImporter</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">dataImporter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image_data</span> <span class="o">=</span> <span class="n">dataImporter</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">()</span>
+
+        <span class="c1"># Volume rendering setup</span>
+        <span class="n">volume_mapper</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkSmartVolumeMapper</span><span class="p">()</span>
+        <span class="n">volume_mapper</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+        <span class="c1"># volume_mapper.SetInterpolationModeToCubic()</span>
+
+        <span class="n">volume_property</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkVolumeProperty</span><span class="p">()</span>
+        <span class="n">volume_property</span><span class="o">.</span><span class="n">ShadeOn</span><span class="p">()</span>
+
+        <span class="c1"># volume_property.SetInterpolationTypeToLinear()</span>
+        <span class="c1"># volume_property.SetInterpolationTypeToCubic()</span>
+
+        <span class="c1"># composite_opacity = vtk.vtkPiecewiseFunction()</span>
+        <span class="c1"># composite_opacity.AddPoint(0, 0.0)</span>
+        <span class="c1"># composite_opacity.AddPoint(self.data3D.max(), 1.0)</span>
+        <span class="c1"># volume_property.SetScalarOpacity(composite_opacity)</span>
+
+        <span class="n">color</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkColorTransferFunction</span><span class="p">()</span>
+        <span class="n">color</span><span class="o">.</span><span class="n">SetColorSpaceToRGB</span><span class="p">()</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_colormap</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">colormap</span><span class="p">)</span>
+        <span class="n">color_map_file</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+
+        <span class="n">normalize_colormap</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maxValueForVolume</span>
+        <span class="n">start_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_min_color</span>  <span class="c1"># 40</span>
+        <span class="n">end_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_color</span>  <span class="c1"># 1300</span>
+
+        <span class="n">increment_color</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">start_color</span><span class="p">:</span>
+                <span class="n">color</span><span class="o">.</span><span class="n">AddRGBPoint</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">normalize_colormap</span><span class="p">,</span>
+                                  <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">]))</span>
+            <span class="k">elif</span> <span class="n">row</span> <span class="o">&gt;</span> <span class="n">end_color</span><span class="p">:</span>
+                <span class="n">color</span><span class="o">.</span><span class="n">AddRGBPoint</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">normalize_colormap</span><span class="p">,</span>
+                                  <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]),</span>
+                                  <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">increment_color</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">)</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">start_color</span> <span class="o">-</span> <span class="n">end_color</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">increment_color</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">):</span>
+                    <span class="n">color</span><span class="o">.</span><span class="n">AddRGBPoint</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">normalize_colormap</span><span class="p">,</span>
+                                      <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">increment_color</span><span class="p">,</span> <span class="mi">0</span><span class="p">))][</span><span class="mi">1</span><span class="p">]),</span>
+                                      <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">increment_color</span><span class="p">,</span> <span class="mi">0</span><span class="p">))][</span><span class="mi">2</span><span class="p">]),</span>
+                                      <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">increment_color</span><span class="p">,</span> <span class="mi">0</span><span class="p">))][</span><span class="mi">3</span><span class="p">]))</span>
+
+        <span class="n">color</span><span class="o">.</span><span class="n">AddRGBPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">]))</span>
+        <span class="n">color</span><span class="o">.</span><span class="n">AddRGBPoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_maxValueForVolume</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]),</span>
+                          <span class="nb">float</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]))</span>
+
+        <span class="n">alphaChannelFunc</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPiecewiseFunction</span><span class="p">()</span>
+        <span class="n">alphaChannelFunc</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">alphaChannelFunc</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_maxValueForVolume</span> <span class="o">*</span> <span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(self._maxValueForVolume * 0.2, 0.005)  # 0.03  #mice 0.005</span>
+          <span class="c1"># 0.03  #mice 0.005</span>
+
+        <span class="n">alphaChannelFunc</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_maxValueForVolume</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># alphaChannelFunc.AddPoint(self._maxValueForVolume, 0.5)</span>
+        <span class="n">volume_property</span><span class="o">.</span><span class="n">SetColor</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+        <span class="n">volume_property</span><span class="o">.</span><span class="n">SetInterpolationType</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">volume_property</span><span class="o">.</span><span class="n">SetAmbient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ambient</span><span class="p">)</span>
+        <span class="n">volume_property</span><span class="o">.</span><span class="n">SetSpecular</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_specular</span><span class="p">)</span>
+        <span class="n">volume_property</span><span class="o">.</span><span class="n">SetScalarOpacity</span><span class="p">(</span><span class="n">alphaChannelFunc</span><span class="p">)</span>
+
+        <span class="n">volume</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkVolume</span><span class="p">()</span>
+        <span class="n">volume</span><span class="o">.</span><span class="n">SetMapper</span><span class="p">(</span><span class="n">volume_mapper</span><span class="p">)</span>
+        <span class="n">volume</span><span class="o">.</span><span class="n">SetProperty</span><span class="p">(</span><span class="n">volume_property</span><span class="p">)</span>
+        <span class="c1"># set scale</span>
+        <span class="n">volume</span><span class="o">.</span><span class="n">SetScale</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scale_x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_z</span><span class="p">)</span>
+
+        <span class="n">volume_renderer</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
+        <span class="n">volume_renderer</span><span class="o">.</span><span class="n">AddVolume</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span>
+        <span class="n">volume_renderer</span><span class="o">.</span><span class="n">SetBackground</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">volume_renderer</span><span class="o">.</span><span class="n">SetBackground</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># volume_renderer.SetBackground(color_map_file[0][1], color_map_file[0][2], color_map_file[0][3])</span>
+
+        <span class="n">volume</span><span class="o">.</span><span class="n">RotateX</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_volumeRotationX</span><span class="p">)</span> <span class="c1"># 90</span>
+        <span class="n">volume</span><span class="o">.</span><span class="n">RotateY</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_volumeRotationY</span><span class="p">)</span> <span class="c1"># 75</span>
+        <span class="n">volume</span><span class="o">.</span><span class="n">RotateZ</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_volumeRotationZ</span><span class="p">)</span> <span class="c1"># 60</span>
+        <span class="n">volume_renderer</span><span class="o">.</span><span class="n">ResetCamera</span><span class="p">()</span>
+        <span class="n">volume_renderer</span><span class="o">.</span><span class="n">GetActiveCamera</span><span class="p">()</span><span class="o">.</span><span class="n">Zoom</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_zoomVolume</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">reader</span><span class="p">,</span> <span class="n">volume_renderer</span><span class="p">,</span> <span class="n">color_map_file</span><span class="p">,</span> <span class="n">color</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.derenzo">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.derenzo">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">derenzo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputFilename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">recalculate_max_value</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="c1"># Read the volume data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data</span><span class="p">(</span><span class="n">voxeldata</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">recalculate_max_value</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_maxValueForVolume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_minValueForVolume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+        <span class="c1"># Convert self.data3D to VTK format</span>
+        <span class="n">reader</span><span class="p">,</span> <span class="n">volume_renderer</span><span class="p">,</span> <span class="n">color_map_file</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">addVolumeRendering</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">SetInteractorStyle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactorStyle3D</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">volume_renderer</span><span class="p">)</span>
+
+        <span class="c1"># Add title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span> <span class="o">=</span> <span class="n">volume_renderer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderWindow</span><span class="p">((</span><span class="mi">600</span><span class="p">,</span><span class="mi">600</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">saveImageInPDF</span><span class="p">(</span><span class="n">outputFilename</span><span class="o">=</span><span class="n">outputFilename</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">Start</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="SliceViewer.renderWindow">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.renderWindow">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">renderWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1875</span><span class="p">,</span> <span class="mi">1875</span><span class="p">)):</span> <span class="c1">#1875</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">SetSize</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+        <span class="c1"># self.save_screenshot()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.saveImageInPDF">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.saveImageInPDF">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">saveImageInPDF</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputFilename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">pdfExporter</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkGL2PSExporter</span><span class="p">()</span>
+        <span class="n">pdfExporter</span><span class="o">.</span><span class="n">SetRenderWindow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">outputFilename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">outputFilename</span> <span class="o">=</span> <span class="s2">&quot;../../outputs/teste&quot;</span>
+
+        <span class="n">pdfExporter</span><span class="o">.</span><span class="n">SetFileFormatToPDF</span><span class="p">()</span>  <span class="c1"># save as pdf</span>
+        <span class="n">pdfExporter</span><span class="o">.</span><span class="n">SetFilePrefix</span><span class="p">(</span><span class="n">outputFilename</span><span class="p">)</span>
+        <span class="n">pdfExporter</span><span class="o">.</span><span class="n">Write</span><span class="p">()</span>
+
+        <span class="c1"># save as png</span>
+        <span class="n">window_to_image_filter</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkWindowToImageFilter</span><span class="p">()</span>
+        <span class="n">window_to_image_filter</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="p">)</span>
+        <span class="n">window_to_image_filter</span><span class="o">.</span><span class="n">SetScale</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Image quality</span>
+        <span class="n">window_to_image_filter</span><span class="o">.</span><span class="n">SetInputBufferTypeToRGBA</span><span class="p">()</span>
+        <span class="n">window_to_image_filter</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPNGWriter</span><span class="p">()</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="n">outputFilename</span> <span class="o">+</span> <span class="s2">&quot;.png&quot;</span><span class="p">)</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">window_to_image_filter</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+        <span class="c1"># 300 dpi</span>
+
+        <span class="n">writer</span><span class="o">.</span><span class="n">Write</span><span class="p">()</span></div>
+
+
+
+
+
+
+<div class="viewcode-block" id="SliceViewer.MiceNaf">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.MiceNaf">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">MiceNaf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">recalculate_max_value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">only_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">render_volume</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">)):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data</span><span class="p">(</span><span class="n">voxeldata</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">recalculate_max_value</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_maxValueForVolume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_minValueForVolume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+        <span class="c1"># Convert self.data3D to VTK format</span>
+
+        <span class="n">reader</span><span class="p">,</span> <span class="n">volume_renderer</span><span class="p">,</span> <span class="n">color_map_file</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">addVolumeRendering</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">only_scalar_bar</span><span class="p">:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span> <span class="o">+</span> <span class="s2">&quot;_scalar_bar&quot;</span>
+            <span class="n">overlay_renderer</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
+            <span class="n">overlay_renderer</span><span class="o">.</span><span class="n">SetViewport</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+            <span class="n">overlay_renderer</span><span class="o">.</span><span class="n">SetLayer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">SetNumberOfLayers</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">overlay_renderer</span><span class="p">)</span>
+            <span class="c1">#add colorbar</span>
+            <span class="n">scaleActor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkScalarBarActor</span><span class="p">()</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetLookupTable</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetOrientationToVertical</span><span class="p">()</span>
+
+
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetNumberOfLabels</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetLabelFormat</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%2.1f</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetPosition</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetWidth</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetHeight</span><span class="p">(</span><span class="mf">0.8</span><span class="p">)</span>
+            <span class="c1"># lavls in black</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">GetLabelTextProperty</span><span class="p">()</span><span class="o">.</span><span class="n">SetColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># scaleActor.SetTitle(&quot;Activity (MBq/ml)&quot;)</span>
+            <span class="c1"># Create a text actor for the title</span>
+            <span class="n">title_actor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkTextActor</span><span class="p">()</span>
+            <span class="n">title_actor</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="s2">&quot;SUV&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Customize title text properties</span>
+            <span class="n">title_text_property</span> <span class="o">=</span> <span class="n">title_actor</span><span class="o">.</span><span class="n">GetTextProperty</span><span class="p">()</span>
+            <span class="n">title_text_property</span><span class="o">.</span><span class="n">SetFontSize</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+            <span class="n">title_text_property</span><span class="o">.</span><span class="n">SetJustificationToCentered</span><span class="p">()</span>
+            <span class="n">title_text_property</span><span class="o">.</span><span class="n">SetVerticalJustificationToCentered</span><span class="p">()</span>
+            <span class="n">title_text_property</span><span class="o">.</span><span class="n">SetOrientation</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>  <span class="c1"># Rotate text 90 degrees</span>
+            <span class="n">title_text_property</span><span class="o">.</span><span class="n">SetColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># White color text for better visibility</span>
+
+            <span class="c1"># Position the title actor to the right of the scalar bar</span>
+            <span class="n">title_actor</span><span class="o">.</span><span class="n">SetPosition</span><span class="p">(</span><span class="mi">92</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+            <span class="n">overlay_renderer</span><span class="o">.</span><span class="n">AddActor</span><span class="p">(</span><span class="n">scaleActor</span><span class="p">)</span>
+            <span class="n">overlay_renderer</span><span class="o">.</span><span class="n">AddActor</span><span class="p">((</span><span class="n">title_actor</span><span class="p">))</span>
+            <span class="c1"># self.renderWindow(size=(73, 600))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">renderWindow</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">73</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">render_volume</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">volume_renderer</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">SetInteractorStyle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactorStyle3D</span><span class="p">)</span>
+            <span class="c1"># Add title</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="o">.</span><span class="n">SetUseDepthPeeling</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">renderWindow</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">window_size</span><span class="p">)</span>
+
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">saveImageInPDF</span><span class="p">(</span><span class="n">outputFilename</span><span class="o">=</span><span class="n">filename</span><span class="p">)</span>
+        <span class="c1">#</span>
+        <span class="c1"># self.createMovie(filename=filename + &quot;.ogv&quot;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">Start</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.NemaIQ2008">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.NemaIQ2008">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">NemaIQ2008</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_to_save</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">only_scalar_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">recalculate_max_value</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+        <span class="c1"># Read the volume data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data</span><span class="p">(</span><span class="n">voxeldata</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">recalculate_max_value</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_maxValueForVolume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_minValueForVolume</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+        <span class="c1"># Convert self.data3D to VTK format</span>
+        <span class="n">reader</span><span class="p">,</span> <span class="n">volume_renderer</span><span class="p">,</span> <span class="n">color_map_file</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">addVolumeRendering</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="o">.</span><span class="n">SetUseDepthPeeling</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">slice_x_renderer</span><span class="p">,</span> <span class="n">slice_y_renderer</span><span class="p">,</span> <span class="n">slice_z_renderer</span><span class="p">,</span> <span class="n">volume_renderer</span><span class="p">,</span> <span class="n">mip_reslice_x</span><span class="p">,</span> <span class="n">mip_reslice_y</span><span class="p">,</span> <span class="n">mip_reslice_z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">addViewportsNema</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">volume_renderer</span><span class="p">,</span> <span class="n">color_map_file</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_listOfRenderers</span> <span class="o">=</span> <span class="p">[</span><span class="n">volume_renderer</span><span class="p">,</span> <span class="n">slice_x_renderer</span><span class="p">,</span> <span class="n">slice_y_renderer</span><span class="p">,</span> <span class="n">slice_z_renderer</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resliced_main_window</span> <span class="o">=</span> <span class="p">[</span><span class="n">mip_reslice_x</span><span class="p">,</span> <span class="n">mip_reslice_y</span><span class="p">,</span> <span class="n">mip_reslice_z</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+        <span class="c1"># add observers</span>
+        <span class="c1"># self.interactor.AddObserver(&quot;MouseMoveEvent&quot;, self.MouseMoveCallback)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">addObservers</span><span class="p">()</span>
+
+
+        <span class="c1"># Create an overlay renderer for the scalar bar</span>
+        <span class="k">if</span> <span class="n">only_scalar_bar</span><span class="p">:</span>
+            <span class="n">overlay_renderer</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
+            <span class="n">overlay_renderer</span><span class="o">.</span><span class="n">SetViewport</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+            <span class="n">overlay_renderer</span><span class="o">.</span><span class="n">SetLayer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">SetNumberOfLayers</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">overlay_renderer</span><span class="p">)</span>
+            <span class="c1">#add colorbar</span>
+            <span class="n">scaleActor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkScalarBarActor</span><span class="p">()</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetLookupTable</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetOrientationToVertical</span><span class="p">()</span>
+
+
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetNumberOfLabels</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetLabelFormat</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%2.1f</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetPosition</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetWidth</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">SetHeight</span><span class="p">(</span><span class="mf">0.8</span><span class="p">)</span>
+            <span class="c1"># lavls in black</span>
+            <span class="n">scaleActor</span><span class="o">.</span><span class="n">GetLabelTextProperty</span><span class="p">()</span><span class="o">.</span><span class="n">SetColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># scaleActor.SetTitle(&quot;Activity (MBq/ml)&quot;)</span>
+            <span class="c1"># Create a text actor for the title</span>
+            <span class="n">title_actor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkTextActor</span><span class="p">()</span>
+            <span class="n">title_actor</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="s2">&quot;Activity (MBq/ml)&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Customize title text properties</span>
+            <span class="n">title_text_property</span> <span class="o">=</span> <span class="n">title_actor</span><span class="o">.</span><span class="n">GetTextProperty</span><span class="p">()</span>
+            <span class="n">title_text_property</span><span class="o">.</span><span class="n">SetFontSize</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+            <span class="n">title_text_property</span><span class="o">.</span><span class="n">SetJustificationToCentered</span><span class="p">()</span>
+            <span class="n">title_text_property</span><span class="o">.</span><span class="n">SetVerticalJustificationToCentered</span><span class="p">()</span>
+            <span class="n">title_text_property</span><span class="o">.</span><span class="n">SetOrientation</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>  <span class="c1"># Rotate text 90 degrees</span>
+            <span class="n">title_text_property</span><span class="o">.</span><span class="n">SetColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># White color text for better visibility</span>
+
+            <span class="c1"># Position the title actor to the right of the scalar bar</span>
+            <span class="n">title_actor</span><span class="o">.</span><span class="n">SetPosition</span><span class="p">(</span><span class="mi">92</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+            <span class="n">overlay_renderer</span><span class="o">.</span><span class="n">AddActor</span><span class="p">(</span><span class="n">scaleActor</span><span class="p">)</span>
+            <span class="n">overlay_renderer</span><span class="o">.</span><span class="n">AddActor</span><span class="p">((</span><span class="n">title_actor</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">renderWindow</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">73</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Add title</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">volume_renderer</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">slice_x_renderer</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">slice_y_renderer</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">slice_z_renderer</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">renderWindow</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">saveImageInPDF</span><span class="p">(</span><span class="n">outputFilename</span><span class="o">=</span><span class="n">file_to_save</span><span class="p">)</span>
+        <span class="c1">#</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">Start</span><span class="p">()</span></div>
+
+
+
+
+<div class="viewcode-block" id="SliceViewer.addViewportsNema">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.addViewportsNema">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">addViewportsNema</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reader</span><span class="p">,</span> <span class="n">volume_renderer</span><span class="p">,</span> <span class="n">color_map_file</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+
+        <span class="n">slice_x_renderer</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
+        <span class="n">slice_y_renderer</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
+        <span class="n">slice_z_renderer</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_viewport</span><span class="p">(</span><span class="n">slice_z_renderer</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_viewport</span><span class="p">(</span><span class="n">slice_x_renderer</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_viewport</span><span class="p">(</span><span class="n">slice_y_renderer</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_viewport</span><span class="p">(</span><span class="n">volume_renderer</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rods</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">center</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+        <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">5</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_x</span>
+        <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_y</span>
+        <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_z</span>
+        <span class="n">mip_reslice_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_reslice</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">(),</span> <span class="n">slab_thickness</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">slab_mode</span><span class="o">=</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">)</span>
+        <span class="n">color_mapper_x</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageMapToColors</span><span class="p">()</span>
+        <span class="n">color_mapper_x</span><span class="o">.</span><span class="n">SetLookupTable</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+        <span class="n">color_mapper_x</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">mip_reslice_x</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+        <span class="n">color_mapper_x</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+        <span class="n">slice_x_mapper</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageResliceMapper</span><span class="p">()</span>
+        <span class="n">slice_x_mapper</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">color_mapper_x</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+        <span class="n">slice_x_mapper</span><span class="o">.</span><span class="n">SliceFacesCameraOn</span><span class="p">()</span>
+        <span class="n">slice_x_mapper</span><span class="o">.</span><span class="n">BorderOff</span><span class="p">()</span>
+
+        <span class="c1"># set interpolation type</span>
+
+
+
+        <span class="n">slice_x_actor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageSlice</span><span class="p">()</span>
+        <span class="n">slice_x_actor</span><span class="o">.</span><span class="n">SetMapper</span><span class="p">(</span><span class="n">slice_x_mapper</span><span class="p">)</span>
+        <span class="c1"># slice_x_actor.RotateY(90)</span>
+        <span class="n">slice_x_renderer</span><span class="o">.</span><span class="n">AddViewProp</span><span class="p">(</span><span class="n">slice_x_actor</span><span class="p">)</span>
+        <span class="n">slice_x_renderer</span><span class="o">.</span><span class="n">SetBackground</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="c1">#first color of the colormap is background</span>
+        <span class="n">slice_x_renderer</span><span class="o">.</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">slice_x_renderer</span><span class="o">.</span><span class="n">ResetCamera</span><span class="p">()</span>
+        <span class="n">slice_x_renderer</span><span class="o">.</span><span class="n">GetActiveCamera</span><span class="p">()</span><span class="o">.</span><span class="n">Zoom</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">slice_x_renderer</span><span class="o">.</span><span class="n">GetActiveCamera</span><span class="p">()</span><span class="o">.</span><span class="n">Roll</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+        <span class="n">center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cold_rods</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">center</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+        <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">5</span><span class="o">+</span><span class="mi">2</span>
+        <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_x</span>
+        <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_y</span>
+        <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_z</span>
+        <span class="n">mip_reslice_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_reslice</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">(),</span> <span class="n">slab_thickness</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">slab_mode</span><span class="o">=</span><span class="s2">&quot;Min&quot;</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">)</span>
+        <span class="n">color_mapper_y</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageMapToColors</span><span class="p">()</span>
+        <span class="n">color_mapper_y</span><span class="o">.</span><span class="n">SetLookupTable</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+        <span class="n">color_mapper_y</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">mip_reslice_y</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+        <span class="n">color_mapper_y</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+        <span class="n">slice_y_mapper</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageResliceMapper</span><span class="p">()</span>
+        <span class="n">slice_y_mapper</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">color_mapper_y</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+        <span class="n">slice_y_mapper</span><span class="o">.</span><span class="n">SliceFacesCameraOn</span><span class="p">()</span>
+        <span class="n">slice_y_mapper</span><span class="o">.</span><span class="n">SliceAtFocalPointOn</span><span class="p">()</span>
+        <span class="n">slice_y_mapper</span><span class="o">.</span><span class="n">BorderOff</span><span class="p">()</span>
+
+        <span class="n">slice_y_actor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageSlice</span><span class="p">()</span>
+        <span class="n">slice_y_actor</span><span class="o">.</span><span class="n">SetMapper</span><span class="p">(</span><span class="n">slice_y_mapper</span><span class="p">)</span>
+
+        <span class="n">slice_y_renderer</span><span class="o">.</span><span class="n">AddViewProp</span><span class="p">(</span><span class="n">slice_y_actor</span><span class="p">)</span>
+        <span class="n">slice_y_renderer</span><span class="o">.</span><span class="n">SetBackground</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">slice_y_renderer</span><span class="o">.</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">slice_y_renderer</span><span class="o">.</span><span class="n">ResetCamera</span><span class="p">()</span>
+        <span class="n">slice_y_renderer</span><span class="o">.</span><span class="n">GetActiveCamera</span><span class="p">()</span><span class="o">.</span><span class="n">Zoom</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">slice_y_renderer</span><span class="o">.</span><span class="n">GetActiveCamera</span><span class="p">()</span><span class="o">.</span><span class="n">Roll</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+        <span class="c1"># middle slice center of the phantom</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">scale_x</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_y</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_z</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cold_rods</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">center</span>
+        <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">5</span>
+        <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">scale_x</span> <span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">scale_x</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span><span class="mi">3</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+        <span class="n">mip_reslice_z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_reslice</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">(),</span> <span class="n">slab_thickness</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">slab_mode</span><span class="o">=</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="n">rotation_type</span><span class="o">=</span><span class="s2">&quot;Sagittal&quot;</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">)</span>
+        <span class="n">color_mapper_z</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageMapToColors</span><span class="p">()</span>
+        <span class="n">color_mapper_z</span><span class="o">.</span><span class="n">SetLookupTable</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+        <span class="n">color_mapper_z</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">mip_reslice_z</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+        <span class="n">color_mapper_z</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+        <span class="n">slice_z_mapper</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageResliceMapper</span><span class="p">()</span>
+        <span class="n">slice_z_mapper</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">color_mapper_z</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+        <span class="n">slice_z_mapper</span><span class="o">.</span><span class="n">SliceFacesCameraOn</span><span class="p">()</span>
+        <span class="n">slice_z_mapper</span><span class="o">.</span><span class="n">SliceAtFocalPointOn</span><span class="p">()</span>
+        <span class="n">slice_z_mapper</span><span class="o">.</span><span class="n">BorderOff</span><span class="p">()</span>
+
+        <span class="n">slice_z_actor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageSlice</span><span class="p">()</span>
+        <span class="n">slice_z_actor</span><span class="o">.</span><span class="n">SetMapper</span><span class="p">(</span><span class="n">slice_z_mapper</span><span class="p">)</span>
+        <span class="n">slice_z_renderer</span><span class="o">.</span><span class="n">AddViewProp</span><span class="p">(</span><span class="n">slice_z_actor</span><span class="p">)</span>
+        <span class="n">slice_z_renderer</span><span class="o">.</span><span class="n">SetBackground</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">slice_z_renderer</span><span class="o">.</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">color_map_file</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">slice_z_renderer</span><span class="o">.</span><span class="n">ResetCamera</span><span class="p">()</span>
+        <span class="n">slice_z_renderer</span><span class="o">.</span><span class="n">GetActiveCamera</span><span class="p">()</span><span class="o">.</span><span class="n">Zoom</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">slice_z_renderer</span><span class="o">.</span><span class="n">GetActiveCamera</span><span class="p">()</span><span class="o">.</span><span class="n">Roll</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+
+
+
+        <span class="k">return</span> <span class="n">slice_x_renderer</span><span class="p">,</span> <span class="n">slice_y_renderer</span><span class="p">,</span> <span class="n">slice_z_renderer</span><span class="p">,</span> <span class="n">volume_renderer</span><span class="p">,</span> <span class="n">mip_reslice_x</span><span class="p">,</span> <span class="n">mip_reslice_y</span><span class="p">,</span> <span class="n">mip_reslice_z</span></div>
+
+        <span class="c1"># slice_z_renderer.GetActiveCamera().Yaw(90)</span>
+
+        <span class="c1"># textActor = vtk.vtkTextActor()</span>
+        <span class="c1"># textActor.SetTextScaleModeToNone()</span>
+        <span class="c1"># textActor.GetTextProperty().SetFontSize(24)</span>
+        <span class="c1"># textActor.GetTextProperty().SetColor(1, 1, 1)</span>
+        <span class="c1"># textActor.SetInput(&quot;NEMA IQ 2008 Phantom&quot;)</span>
+        <span class="c1"># textActor.SetPosition(10, 10)</span>
+        <span class="c1"># self.renderer.AddActor(textActor)</span>
+        <span class="c1"># # Add scale</span>
+        <span class="c1"># scaleActor = vtk.vtkScalarBarActor()</span>
+        <span class="c1"># scaleActor.SetLookupTable(color)</span>
+        <span class="c1"># scaleActor.SetTitle(&quot;Activity (Bq/ml)&quot;)</span>
+        <span class="c1"># scaleActor.SetNumberOfLabels(5)</span>
+        <span class="c1"># scaleActor.SetLabelFormat(&quot;%6.1f&quot;)</span>
+        <span class="c1"># scaleActor.SetPosition(0.1, 0.1)</span>
+        <span class="c1"># scaleActor.SetWidth(0.8)</span>
+        <span class="c1"># scaleActor.SetHeight(0.1)</span>
+        <span class="c1"># scaleActor.SetOrientationToHorizontal()</span>
+        <span class="c1"># scaleActor.GetTitleTextProperty().SetColor(1, 1, 1)</span>
+        <span class="c1"># scaleActor.GetLabelTextProperty().SetColor(1, 1, 1)</span>
+        <span class="c1"># self.renderer.AddActor(scaleActor)</span>
+
+
+
+        <span class="c1"># Add save button</span>
+        <span class="c1"># self.save_button = tk.Button(master, text=&quot;Save Screenshot&quot;, command=self.save_screenshot)</span>
+        <span class="c1"># self.save_button.pack()</span>
+
+        <span class="c1"># # Save render window as png</span>
+
+        <span class="c1"># writer = vtk.vtkPNGWriter()</span>
+        <span class="c1"># writer.SetFileName(&quot;../../outputs/NeMa_renderODRTVF.png&quot;)</span>
+        <span class="c1"># writer.SetInputConnection(windowToImageFilter.GetOutputPort())</span>
+        <span class="c1"># writer.Write()</span>
+<div class="viewcode-block" id="SliceViewer.createMovie">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.createMovie">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">createMovie</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="c1"># perform a 360 degree rotation of the volume</span>
+        <span class="c1"># create a camera</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="o">.</span><span class="n">SetUseDepthPeeling</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># self.ren_volume.SetBackground(0, 0, 0)  # black</span>
+
+        <span class="c1"># self.ren_volume.ResetCamera()</span>
+
+        <span class="c1"># self.renderWin = renderWin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span>
+        <span class="c1"># self.call_backs = [None] * len(self.detectors)</span>
+        <span class="c1"># for i in range(len(self.detectors)):</span>
+        <span class="c1"># for i in range(5):</span>
+        <span class="n">camera</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="o">.</span><span class="n">GetActiveCamera</span><span class="p">()</span>
+        <span class="n">camera</span><span class="o">.</span><span class="n">Azimuth</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">camera</span><span class="o">.</span><span class="n">Roll</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">)</span>
+        <span class="c1"># camera.Pitch(3)</span>
+        <span class="c1"># camera.Elevation(5)</span>
+        <span class="c1"># camera.Yaw(5)</span>
+        <span class="n">camera</span><span class="o">.</span><span class="n">SetViewAngle</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+        <span class="c1"># camera.SetFocalDistance()</span>
+        <span class="c1"># camera.SetClippingRange(0,400)</span>
+
+        <span class="n">windowToImageFilter</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkWindowToImageFilter</span><span class="p">()</span>
+        <span class="n">windowToImageFilter</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="p">)</span>
+        <span class="c1"># windowToImageFilter.SetInputBufferTypeToRGBA()</span>
+        <span class="c1"># windowToImageFilter.ReadFrontBufferOff()</span>
+        <span class="n">windowToImageFilter</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+        <span class="c1"># writer = vtk.vtkAVIWriter()</span>
+        <span class="c1"># writer.SetInputConnection(windowToImageFilter.GetOutputPort())</span>
+        <span class="c1"># writer.SetFileName(&quot;test.avi&quot;)</span>
+        <span class="c1"># writer.Start()</span>
+        <span class="c1">#</span>
+        <span class="n">moviewriter</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkOggTheoraWriter</span><span class="p">()</span>
+        <span class="n">moviewriter</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">windowToImageFilter</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+        <span class="n">moviewriter</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">moviewriter</span><span class="o">.</span><span class="n">Start</span><span class="p">()</span>
+        <span class="n">ca</span> <span class="o">=</span> <span class="n">vtkTimerCallback</span><span class="p">(</span><span class="n">moviewriter</span><span class="p">,</span> <span class="n">windowToImageFilter</span><span class="p">)</span>
+        <span class="n">ca</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="n">camera</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">AddObserver</span><span class="p">(</span><span class="s1">&#39;TimerEvent&#39;</span><span class="p">,</span> <span class="n">ca</span><span class="o">.</span><span class="n">execute</span><span class="p">)</span>
+        <span class="n">timerId</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">CreateRepeatingTimer</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+        <span class="c1"># Because nothing will be rendered without any input, we order the first render manually before control is handed over to the main-loop.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">Start</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">moviewriter</span> <span class="o">=</span> <span class="n">moviewriter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">moviewriter</span><span class="o">.</span><span class="n">End</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="SliceViewer.save_screenshot">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.save_screenshot">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_screenshot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">window_to_image_filter</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkWindowToImageFilter</span><span class="p">()</span>
+        <span class="n">window_to_image_filter</span><span class="o">.</span><span class="n">SetInput</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="p">)</span>
+        <span class="n">window_to_image_filter</span><span class="o">.</span><span class="n">SetScale</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Image quality</span>
+        <span class="n">window_to_image_filter</span><span class="o">.</span><span class="n">SetInputBufferTypeToRGBA</span><span class="p">()</span>
+        <span class="n">window_to_image_filter</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPNGWriter</span><span class="p">()</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="s2">&quot;screenshot.png&quot;</span><span class="p">)</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">window_to_image_filter</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">Write</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.prepare_data">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.prepare_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voxeldata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">z_pos</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data3D</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="c1"># voxeldata = np.random.rand(100, 100, 100)  # Example data</span>
+
+        <span class="n">z_pos</span> <span class="o">=</span> <span class="n">voxeldata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">data3D</span> <span class="o">=</span> <span class="n">voxeldata</span>
+
+        <span class="c1"># data3D = ndimage.median_filter(data3D, size=3)</span>
+        <span class="c1"># data3D = ndimage.gaussian_filter(data3D, sigma=0.57)</span>
+        <span class="c1"># data3D =ndimage.filters.convolve(data3D, np.ones((3, 1, 1)) / 9)</span>
+        <span class="c1"># wavelet filter on the image</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">pywt</span>
+        <span class="c1"># Reconstruct the denoised image</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">skimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">img_as_float</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">skimage.restoration</span><span class="w"> </span><span class="kn">import</span> <span class="n">denoise_nl_means</span>
+        <span class="c1"># Adjust the parameters according to your requirements</span>
+        <span class="n">patch_size</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Size of patches used for denoising</span>
+        <span class="n">patch_distance</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Maximum distance for patches to be considered similar</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mf">0.0005</span>  <span class="c1"># Smoothing parameter (higher values give stronger smoothing)</span>
+
+        <span class="c1"># Apply non-local means denoising</span>
+        <span class="c1"># data3D = denoise_nl_means(data3D, patch_size=patch_size, patch_distance=patch_distance, h=h)</span>
+
+        <span class="c1"># denoised_image = pywt.idwtn(coeffs_thresh, &#39;haar&#39;)</span>
+
+
+
+
+        <span class="n">xx</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">yy</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="p">(</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="n">xx</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">circle_cut</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">-</span> <span class="p">(</span><span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+            <span class="n">circle_cut</span><span class="p">[</span><span class="n">circle_cut</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">circle_cut</span><span class="p">[</span><span class="n">circle_cut</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">circle_cut</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">circle_cut</span><span class="p">[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+
+            <span class="n">data3D</span> <span class="o">=</span> <span class="n">data3D</span> <span class="o">*</span> <span class="n">circle_cut</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">data3D</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 5</span>
+        <span class="n">data3D</span><span class="p">[:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">25</span> <span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#-5</span>
+        <span class="c1"># data3D[:, :7, :] = 0  # 5</span>
+        <span class="c1"># data3D[:, -7:, :] = 0  # -5</span>
+        <span class="c1"># transforme array for the axis 1 has the same shape as the axis 0</span>
+        <span class="n">add_missing</span> <span class="o">=</span> <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;add missing&quot;</span><span class="p">,</span> <span class="n">add_missing</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">add_missing</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">data3D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">data3D</span><span class="p">,</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">add_missing</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="s1">&#39;constant&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">add_missing</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">data3D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">data3D</span><span class="p">,</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">add_missing</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="s1">&#39;constant&#39;</span><span class="p">)</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">data3D</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">size</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">w</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">z_pos</span><span class="p">):</span>
+            <span class="n">stack</span><span class="p">[:,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">data3D</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">j</span><span class="p">]</span>
+
+        <span class="n">stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+        <span class="c1"># data is with the wrong order per slice</span>
+        <span class="c1"># stack = np.swapaxes(stack, 0, 2)</span>
+        <span class="c1">#add 200 zeros in axis 0</span>
+        <span class="c1">#the</span>
+        <span class="c1"># stack = np.swapaxes(stack, 1, 2)</span>
+
+
+        <span class="k">return</span> <span class="n">stack</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.create_viewport">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.create_viewport">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_viewport</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="n">viewport</span><span class="p">):</span>
+        <span class="n">renderer</span><span class="o">.</span><span class="n">SetViewport</span><span class="p">(</span><span class="n">viewport</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.create_reslice">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.create_reslice">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_reslice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_port</span><span class="p">,</span> <span class="n">slab_thickness</span><span class="p">,</span> <span class="n">slab_mode</span><span class="p">,</span> <span class="n">rotation_type</span><span class="o">=</span><span class="s2">&quot;Coronal&quot;</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                       <span class="n">azimuthal_angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">polar_angle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">newResliceAxes</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkMatrix4x4</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">rotation_type</span> <span class="o">==</span> <span class="s2">&quot;Axial&quot;</span><span class="p">:</span>
+            <span class="n">newResliceAxes</span><span class="o">.</span><span class="n">DeepCopy</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                     <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                                     <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                     <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">rotation_type</span> <span class="o">==</span> <span class="s2">&quot;Coronal&quot;</span><span class="p">:</span>
+            <span class="n">newResliceAxes</span><span class="o">.</span><span class="n">DeepCopy</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                        <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                                        <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                        <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">rotation_type</span> <span class="o">==</span> <span class="s2">&quot;Sagittal&quot;</span><span class="p">:</span>
+            <span class="n">newResliceAxes</span><span class="o">.</span><span class="n">DeepCopy</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                        <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                                        <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                        <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+
+        <span class="n">reslice</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageSlabReslice</span><span class="p">()</span>
+        <span class="n">reslice</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">input_port</span><span class="p">)</span>
+        <span class="n">reslice</span><span class="o">.</span><span class="n">SetResliceAxes</span><span class="p">(</span><span class="n">newResliceAxes</span><span class="p">)</span>
+        <span class="n">reslice</span><span class="o">.</span><span class="n">SetSlabThickness</span><span class="p">(</span><span class="n">slab_thickness</span><span class="p">)</span>
+        <span class="n">reslice</span><span class="o">.</span><span class="n">SetInterpolationModeToCubic</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">slab_mode</span> <span class="o">==</span> <span class="s2">&quot;Mean&quot;</span><span class="p">:</span>
+            <span class="n">reslice</span><span class="o">.</span><span class="n">SetBlendModeToMean</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">slab_mode</span> <span class="o">==</span> <span class="s2">&quot;Max&quot;</span><span class="p">:</span>
+            <span class="n">reslice</span><span class="o">.</span><span class="n">SetBlendModeToMax</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">slab_mode</span> <span class="o">==</span> <span class="s2">&quot;Min&quot;</span><span class="p">:</span>
+            <span class="n">reslice</span><span class="o">.</span><span class="n">SetBlendModeToMin</span><span class="p">()</span>
+        <span class="n">reslice</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">reslice</span></div>
+
+
+<div class="viewcode-block" id="SliceViewer.MouseMoveCallback">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.MouseMoveCallback">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">MouseMoveCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">lastX</span><span class="p">,</span> <span class="n">lastY</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">GetLastEventPosition</span><span class="p">()</span>
+        <span class="p">(</span><span class="n">mouseX</span><span class="p">,</span> <span class="n">mouseY</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">GetEventPosition</span><span class="p">()</span>
+        <span class="n">renderer_entered</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">FindPokedRenderer</span><span class="p">(</span><span class="n">mouseX</span><span class="p">,</span> <span class="n">mouseY</span><span class="p">)</span>
+        <span class="c1"># print(&#39;Mouse moving&#39;)</span>
+        <span class="c1"># print(renderer_entered)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_listOfRenderers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">renderer_entered</span><span class="p">:</span>
+            <span class="c1"># print(&#39;3D&#39;)</span>
+            <span class="c1"># pass</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">SetInteractorStyle</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactorStyle3D</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactorStyle3D</span><span class="o">.</span><span class="n">OnMouseMove</span><span class="p">()</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># print(&#39;Slicers&#39;)</span>
+            <span class="c1"># self.interactorStyleImage = vtk.vtkInteractorStyleImage()</span>
+            <span class="c1"># self.interactorStyleImage.SetInteractionModeToImageSlicing()</span>
+            <span class="c1"># self.interactorMainWindow.SetInteractorStyle(self.interactorStyleImage)</span>
+            <span class="c1"># index_renderer = self.parent.populateMainWindowVTK.listOfRenderers.index(</span>
+            <span class="c1">#     renderer_entered) - 1  # testing -- put as dict</span>
+            <span class="c1"># if self.actions[&quot;Slicing&quot;] == 1:</span>
+            <span class="c1">#     deltaY = mouseY - lastY</span>
+            <span class="c1">#     # self.resliced_main_window[index_renderer].Update()</span>
+            <span class="c1">#     sliceSpacing = \</span>
+            <span class="c1">#     self.parent.populateMainWindowVTK.resliced_main_window[index_renderer].GetOutput().GetSpacing()[2]</span>
+            <span class="c1">#     matrix = self.parent.populateMainWindowVTK.resliced_main_window[index_renderer].GetResliceAxes()</span>
+            <span class="c1">#     center = matrix.MultiplyPoint((0, 0, sliceSpacing * deltaY, 1))</span>
+            <span class="c1">#     matrix.SetElement(0, 3, center[0])</span>
+            <span class="c1">#     matrix.SetElement(1, 3, center[1])</span>
+            <span class="c1">#     matrix.SetElement(2, 3, center[2])</span>
+            <span class="c1">#     self.parent.populateMainWindowVTK.vtkWidget.GetRenderWindow().Render()</span>
+            <span class="c1">#</span>
+            <span class="c1"># else:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactorStyleImage</span><span class="o">.</span><span class="n">SetInteractionModeToImageSlicing</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactor</span><span class="o">.</span><span class="n">SetInteractorStyle</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactorStyleImage</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactorStyleImage</span><span class="o">.</span><span class="n">OnMouseMove</span><span class="p">()</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">renderer_entered</span> <span class="o">=</span> <span class="n">renderer_entered</span></div>
+
+
+    <span class="c1"># override scroll event and  update reslice</span>
+<div class="viewcode-block" id="SliceViewer.wheelForwardCallback">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.SliceViewer.wheelForwardCallback">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wheelForwardCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="s2">&quot;MouseWheelForwardEvent&quot;</span><span class="p">:</span>
+            <span class="n">increment</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="s2">&quot;MouseWheelBackwardEvent&quot;</span><span class="p">:</span>
+            <span class="n">increment</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+        <span class="n">index_renderer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_listOfRenderers</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">renderer_entered</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+        <span class="c1"># if self.parent.populateMainWindowVTK.resliced_main_window[index_renderer] is None:</span>
+        <span class="c1">#     return</span>
+
+        <span class="n">sliceSpacing</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_resliced_main_window</span><span class="p">[</span><span class="n">index_renderer</span><span class="p">]</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">()</span><span class="o">.</span><span class="n">GetSpacing</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resliced_main_window</span><span class="p">[</span><span class="n">index_renderer</span><span class="p">]</span><span class="o">.</span><span class="n">GetResliceAxes</span><span class="p">()</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">MultiplyPoint</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sliceSpacing</span> <span class="o">*</span> <span class="n">increment</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">matrix</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">matrix</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">matrix</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">center</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="c1"># set the reslice axes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resliced_main_window</span><span class="p">[</span><span class="n">index_renderer</span><span class="p">]</span><span class="o">.</span><span class="n">SetResliceAxes</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="vtkTimerCallback">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.vtkTimerCallback">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">vtkTimerCallback</span><span class="p">():</span>
+   <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">imageFilter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">timer_count</span> <span class="o">=</span> <span class="mi">0</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">writer</span> <span class="o">=</span> <span class="n">writer</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">imageFilter</span> <span class="o">=</span> <span class="n">imageFilter</span>
+
+<div class="viewcode-block" id="vtkTimerCallback.execute">
+<a class="viewcode-back" href="../../Designer.html#Designer.Image_vtk_projector_article.vtkTimerCallback.execute">[docs]</a>
+   <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">obj</span><span class="p">,</span><span class="n">event</span><span class="p">):</span>
+       <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">timer_count</span><span class="p">)</span>
+       <span class="c1"># self.actor.SetPosition(self.timer_count, self.timer_count,0)</span>
+       <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer_count</span> <span class="o">&lt;</span><span class="mi">360</span><span class="p">:</span>
+           <span class="n">focal_position</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">500</span><span class="p">])</span>
+           <span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">timer_count</span><span class="p">)</span>
+           <span class="n">beta</span> <span class="o">=</span> <span class="mi">0</span>
+           <span class="n">gamma</span> <span class="o">=</span> <span class="mi">0</span>
+           <span class="n">rotation_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">beta</span><span class="p">),</span>
+                                        <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">gamma</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">gamma</span><span class="p">),</span>
+                                        <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">gamma</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">gamma</span><span class="p">)],</span>
+                                       <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">beta</span><span class="p">),</span>
+                                        <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">gamma</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">gamma</span><span class="p">),</span>
+                                        <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">gamma</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">gamma</span><span class="p">)],</span>
+                                       <span class="p">[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">beta</span><span class="p">),</span>
+                                        <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">gamma</span><span class="p">),</span>
+                                        <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">gamma</span><span class="p">)]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+           <span class="n">focal_position</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">focal_position</span><span class="p">,</span> <span class="n">rotation_matrix</span><span class="p">))</span>
+
+           <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">focal_position</span><span class="p">)</span>
+       <span class="c1"># elif self.timer_count &lt;370:</span>
+       <span class="c1">#     self.camera.Zoom((self.timer_count-360)*.1+1)</span>
+       <span class="c1">#</span>
+       <span class="c1"># else:</span>
+       <span class="c1">#     focal_position = np.array([1000, 1000, 0])</span>
+       <span class="c1">#     alpha = np.deg2rad(self.timer_count)</span>
+       <span class="c1">#     beta = 0</span>
+       <span class="c1">#     gamma = 0</span>
+       <span class="c1">#     rotation_matrix = np.array([[np.cos(alpha) * np.cos(beta),</span>
+       <span class="c1">#                                  np.cos(alpha) * np.sin(beta) * np.sin(gamma) - np.sin(alpha) * np.cos(gamma),</span>
+       <span class="c1">#                                  np.cos(alpha) * np.sin(beta) * np.cos(gamma) + np.sin(alpha) * np.sin(gamma)],</span>
+       <span class="c1">#                                 [np.sin(alpha) * np.cos(beta),</span>
+       <span class="c1">#                                  np.sin(alpha) * np.sin(beta) * np.sin(gamma) + np.cos(alpha) * np.cos(gamma),</span>
+       <span class="c1">#                                  np.sin(alpha) * np.sin(beta) * np.sin(gamma) - np.cos(alpha) * np.sin(gamma)],</span>
+       <span class="c1">#                                 [-np.sin(beta),</span>
+       <span class="c1">#                                  np.cos(beta) * np.sin(gamma),</span>
+       <span class="c1">#                                  np.cos(beta) * np.cos(gamma)]], dtype=np.float32)</span>
+       <span class="c1">#     focal_position = (np.dot(focal_position, rotation_matrix))</span>
+       <span class="c1">#     self.camera.SetPosition(focal_position)</span>
+       <span class="c1"># self.camera.SetViewUp(1,-1,0)</span>
+       <span class="c1"># self.camera.GetViewUp()</span>
+       <span class="c1"># self.camera.OrthogonalizeViewUp()</span>
+       <span class="c1"># self.camera.Roll(90)</span>
+       <span class="n">iren</span> <span class="o">=</span> <span class="n">obj</span>
+       <span class="n">iren</span><span class="o">.</span><span class="n">GetRenderWindow</span><span class="p">()</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">timer_count</span> <span class="o">+=</span> <span class="mi">1</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">imageFilter</span><span class="o">.</span><span class="n">Modified</span><span class="p">()</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">Write</span><span class="p">()</span></div>
+</div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">src.ImageReader</span><span class="w"> </span><span class="kn">import</span> <span class="n">RawDataSetter</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">src.Quantification</span><span class="w"> </span><span class="kn">import</span> <span class="n">FactorQuantificationFromUniformPhantom</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">src.Geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">GeometryDesigner</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive - Universidade de Aveiro</span><span class="se">\\</span><span class="s2">SimulacoesGATE</span><span class="se">\\</span><span class="s2">EasyPET3D64</span><span class="se">\\</span><span class="s2">NEMA-NU-4-2008-IQ</span><span class="se">\\</span><span class="s2">15-December-2022ListMode</span><span class="se">\\</span><span class="s2">whole_body</span><span class="se">\\</span><span class="s2">ID_26 Jan 2022 - 00h 16m 02s_1p80bot_ IMAGE (71, 71, 129).T&quot;</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive - Universidade de Aveiro</span><span class="se">\\</span><span class="s2">SimulacoesGATE</span><span class="se">\\</span><span class="s2">EasyPET3D64</span><span class="se">\\</span><span class="s2">NEMA-NU-4-2008-IQ</span><span class="se">\\</span><span class="s2">15-December-2022ListMode</span><span class="se">\\</span><span class="s2">Data articles</span><span class="se">\\</span><span class="s2">gpu_article</span><span class="se">\\</span><span class="s2">IQ</span><span class="se">\\</span><span class="s2">OD-RT varying FWHM</span><span class="se">\\</span><span class="s2">iterations</span><span class="se">\\</span><span class="s2">EasyPETScan_it20_sb0&quot;</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive - Universidade de Aveiro</span><span class="se">\\</span><span class="s2">SimulacoesGATE</span><span class="se">\\</span><span class="s2">EasyPET3D64</span><span class="se">\\</span><span class="s2">NEMA-NU-4-2008-IQ</span><span class="se">\\</span><span class="s2">15-December-2022ListMode</span><span class="se">\\</span><span class="s2">Data articles</span><span class="se">\\</span><span class="s2">gpu_article</span><span class="se">\\</span><span class="s2">IQ</span><span class="se">\\</span><span class="s2">TOR</span><span class="se">\\</span><span class="s2">iterations</span><span class="se">\\</span><span class="s2">EasyPETScan_it20_sb0&quot;</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive - Universidade de Aveiro</span><span class="se">\\</span><span class="s2">ICNAS</span><span class="se">\\</span><span class="s2">Acquisitions 2022</span><span class="se">\\</span><span class="s2">Easypet Scan 16 May 2022 - 10h 16m 52s</span><span class="se">\\</span><span class="s2">whole_body</span><span class="se">\\</span><span class="s2">ID_16 May 2022 - 10h 16m 52s_None_ IMAGE (71, 71, 129).T&quot;</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive - Universidade de Aveiro</span><span class="se">\\</span><span class="s2">ICNAS</span><span class="se">\\</span><span class="s2">Acquisitions 2022</span><span class="se">\\</span><span class="s2">Easypet Scan 16 May 2022 - 10h 16m 52s</span><span class="se">\\</span><span class="s2">whole_body</span><span class="se">\\</span><span class="s2">ID_16 May 2022 - 10h 16m 52s_None_ IMAGE (71, 71, 129)_bestODRTVF.T&quot;</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive - Universidade de Aveiro</span><span class="se">\\</span><span class="s2">ICNAS</span><span class="se">\\</span><span class="s2">Acquisitions 2022</span><span class="se">\\</span><span class="s2">Easypet Scan 16 May 2022 - 10h 16m 52s</span><span class="se">\\</span><span class="s2">whole_body</span><span class="se">\\</span><span class="s2">ID_16 May 2022 - 10h 16m 52s_None_ IMAGE (89, 89, 161).T&quot;</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive - Universidade de Aveiro</span><span class="se">\\</span><span class="s2">ICNAS</span><span class="se">\\</span><span class="s2">Acquisitions 2022</span><span class="se">\\</span><span class="s2">Easypet Scan 16 May 2022 - 10h 16m 52s</span><span class="se">\\</span><span class="s2">whole_body</span><span class="se">\\</span><span class="s2">ID_16 May 2022 - 10h 16m 52s_None_ IMAGE (89, 89, 161)_32corrected_ODRTVF.T&quot;</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive - Universidade de Aveiro</span><span class="se">\\</span><span class="s2">ICNAS</span><span class="se">\\</span><span class="s2">Acquisitions 2022</span><span class="se">\\</span><span class="s2">Easypet Scan 16 May 2022 - 10h 16m 52s</span><span class="se">\\</span><span class="s2">whole_body</span><span class="se">\\</span><span class="s2">ID_16 May 2022 - 10h 16m 52s_None_ IMAGE (118, 118, 216).T&quot;</span>
+    <span class="c1"># filepath = &quot;C:\\Users\\pedro\\OneDrive - Universidade de Aveiro\\ICNAS\\Acquisitions 2022\\Easypet Scan 16 May 2022 - 10h 16m 52s\\whole_body\\ID_16 May 2022 - 10h 16m 52s_None_ IMAGE (89, 89, 161)_32corrected_TOR.T&quot;</span>
+    <span class="c1"># filepath = &quot;C:\\Users\\pedro\\OneDrive - Universidade de Aveiro\\ICNAS\\Acquisitions 2022\\Easypet Scan 16 May 2022 - 10h 16m 52s\\whole_body\\ID_16 May 2022 - 10h 16m 52s_None_ IMAGE (89, 89, 161)_32corrected_ODRT.T&quot;</span>
+    <span class="c1"># filepath = &quot;C:\\Users\\pedro\\OneDrive - Universidade de Aveiro\\ICNAS\\Acquisitions 2022\\Easypet Scan 16 May 2022 - 10h 16m 52s\\whole_body\\ID_16 May 2022 - 10h 16m 52s_None_ IMAGE (89, 89, 161).T&quot;</span>
+    <span class="c1"># filepath =&quot;C:\\Users\\pedro\\OneDrive - Universidade de Aveiro\\SimulacoesGATE\EasyPET3D64\\NEMA-NU-4-2008-IQ\\15-December-2022ListMode\\Data articles\\gpu_article\\IQ\\TOR\\iterations\\EasyPETScan_it28_sb0&quot;</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Ambiente de Trabalho</span><span class="se">\\</span><span class="s2">DESKTOP Organizar</span><span class="se">\\</span><span class="s2">GPU article</span><span class="se">\\</span><span class="s2">ODTR</span><span class="se">\\</span><span class="s2">Derenzo</span><span class="se">\\</span><span class="s2">ID_26 Jan 2022 - 00h 16m 02s_GammasBackToBack.npy_ IMAGE (176, 176, 321).T&quot;</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Ambiente de Trabalho</span><span class="se">\\</span><span class="s2">DESKTOP Organizar</span><span class="se">\\</span><span class="s2">GPU article</span><span class="se">\\</span><span class="s2">TOR</span><span class="se">\\</span><span class="s2">Derenzo</span><span class="se">\\</span><span class="s2">ID_26 Jan 2022 - 00h 16m 02s_GammasBackToBack.npy_ IMAGE (176, 176, 321) .T&quot;</span>
+    <span class="c1"># filepath = &quot;C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\DESKTOP Organizar\\GPU article\\ODTRVF\\Derenzo\\ID_26 Jan 2022 - 00h 16m 02s_GammasBackToBack.npy_ IMAGE (176, 176, 321).T&quot;</span>
+    <span class="c1"># filepath = &quot;C:\\Users\\pedro\\OneDrive - Universidade de Aveiro\\ICNAS\\Acquisitions 2022\\Easypet Scan 16 May 2022 - 10h 16m 52s\\iterations\\EasyPETScan_it24_sb0&quot;</span>
+    <span class="c1"># filepath = &quot;C:\\Users\\pedro\\OneDrive - Universidade de Aveiro\\ICNAS\\Acquisitions 2022\\Easypet Scan 16 May 2022 - 10h 16m 52s\\\Data article\\ODRT\\EasyPETScan_it28_sb0&quot;</span>
+    <span class="c1"># filepath = &quot;C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\DESKTOP Organizar\\GPU article\\ODTRVF\\Mice\\ID_16 May 2022 - 10h 16m 52s_None_ IMAGE (118, 118, 216)_article.T&quot;</span>
+    <span class="c1"># filepath = &quot;C:\\Users\\pedro\\OneDrive - Universidade de Aveiro\\ICNAS\\Acquisitions 2022\\Easypet Scan 16 May 2022 - 10h 16m 52s\\iterations\\EasyPETScan_it28_sb0&quot;</span>
+    <span class="c1"># filepath = &quot;C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\Images intro\\Cu64\\MRI_Cu64_7_Dec_00h48&quot;</span>
+    <span class="c1"># filepath = &quot;C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\Images intro\\FDG_cardiac\\ID_06 Jul 2023 - 12h 29m 51s_Test Slow_ IMAGE (89, 89, 161).T&quot;</span>
+    <span class="n">size_file_m</span> <span class="o">=</span> <span class="p">[</span><span class="mi">129</span><span class="p">,</span> <span class="mi">129</span><span class="p">,</span> <span class="mi">216</span><span class="p">]</span>
+    <span class="n">size_file_m</span> <span class="o">=</span> <span class="p">[</span><span class="mi">129</span><span class="p">,</span> <span class="mi">129</span><span class="p">,</span> <span class="mi">161</span><span class="p">]</span>
+    <span class="n">size_file_m</span> <span class="o">=</span> <span class="p">[</span><span class="mi">118</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">216</span><span class="p">]</span>
+    <span class="c1"># size_file_m = [89, 89, 161]</span>
+    <span class="c1"># size_file_m = [200, 400,50]</span>
+    <span class="c1"># size_file_m = [71, 71, 124]</span>
+    <span class="c1"># size_file_m = [71, 71, 129]</span>
+    <span class="n">size_file_m</span> <span class="o">=</span> <span class="p">[</span><span class="mi">176</span><span class="p">,</span> <span class="mi">176</span><span class="p">,</span> <span class="mi">321</span><span class="p">]</span>
+    <span class="c1"># size_file_m = [104,104,129]</span>
+
+    <span class="c1"># size_file_m = [78,78,129]</span>
+    <span class="c1"># size_file_m = [53,53,65]</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">RawDataSetter</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">size_file_m</span><span class="o">=</span><span class="n">size_file_m</span><span class="p">)</span>
+    <span class="c1"># r = RawDataSetter(filepath)</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">read_files</span><span class="p">(</span><span class="n">type_file</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">,</span> <span class="n">big_endian</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">voxeldata</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">volume</span>
+
+    <span class="c1"># set to zero the pixels in which the neighbor is much lo</span>
+
+    <span class="c1"># voxeldata[:, :, -2:] = 0</span>
+    <span class="c1"># voxeldata[:, :, :2] = 0</span>
+    <span class="n">v_lim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
+    <span class="n">scale_x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">scale_y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">scale_z</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">/</span> <span class="p">(</span><span class="mf">0.4</span> <span class="o">/</span> <span class="mf">0.44</span><span class="p">))</span>
+    <span class="c1">#mri</span>
+    <span class="c1"># scale_x = 0.225</span>
+    <span class="c1"># scale_y = 0.5</span>
+    <span class="c1"># scale_z = 0.2</span>
+    <span class="n">extent_x_y</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">scale_x</span> <span class="o">*</span> <span class="n">voxeldata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">scale_x</span> <span class="o">*</span> <span class="n">voxeldata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                  <span class="o">-</span><span class="n">scale_y</span> <span class="o">*</span> <span class="n">voxeldata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">scale_y</span> <span class="o">*</span> <span class="n">voxeldata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># generate coordinates</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">size_file_m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">size_file_m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+    <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="n">quantification</span> <span class="o">=</span> <span class="n">FactorQuantificationFromUniformPhantom</span><span class="p">(</span><span class="n">voxel_volume</span><span class="o">=</span><span class="n">scale_x</span> <span class="o">*</span> <span class="n">scale_y</span> <span class="o">*</span> <span class="n">scale_z</span><span class="o">*</span><span class="mf">0.001</span><span class="p">)</span>
+    <span class="n">quantification</span><span class="o">.</span><span class="n">load_info</span><span class="p">()</span>
+    <span class="n">quantification_factor</span> <span class="o">=</span> <span class="n">quantification</span><span class="o">.</span><span class="n">quantification_factor</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">quantification_factor</span><span class="p">)</span>
+    <span class="n">quantification_factor</span><span class="o">=</span><span class="mf">0.011</span>
+    <span class="n">acquisition_time</span> <span class="o">=</span> <span class="mf">6586.2</span><span class="o">*</span><span class="mf">7.2</span>  <span class="c1">#F18 half-life 109.77 min and in s 6586.2</span>
+    <span class="n">voxel_volume</span> <span class="o">=</span> <span class="n">scale_x</span> <span class="o">*</span> <span class="n">scale_y</span> <span class="o">*</span> <span class="n">scale_z</span><span class="o">*</span><span class="mf">0.001</span>
+    <span class="c1"># voxeldata =  voxeldata / (acquisition_time * voxel_volume)</span>
+    <span class="c1"># voxeldata/=1*(10**6)</span>
+
+    <span class="c1"># voxeldata *= quantification_factor</span>
+    <span class="c1"># actidade Media</span>
+    <span class="c1">#mice</span>
+    <span class="c1"># voxeldata = voxeldata/(381*37000/17.33)</span>
+
+
+    <span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+    <span class="c1">#derenzo</span>
+    <span class="n">voxeldata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">voxeldata</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">viewer</span> <span class="o">=</span> <span class="n">SliceViewer</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">data3D</span><span class="o">=</span><span class="n">voxeldata</span><span class="p">,</span> <span class="n">scale_x</span><span class="o">=</span><span class="n">scale_x</span><span class="p">,</span> <span class="n">scale_y</span><span class="o">=</span><span class="n">scale_y</span><span class="p">,</span> <span class="n">scale_z</span><span class="o">=</span><span class="n">scale_z</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s2">&quot;hot.cl&quot;</span><span class="p">)</span>
+    <span class="c1">#Nema</span>
+    <span class="c1"># viewer.setColorMapLimits(v_lim=[20, 1080])</span>
+    <span class="c1"># viewer.setZoomVolume(2)</span>
+    <span class="c1"># viewer.setVolumeRotation(90, 75, 60)</span>
+    <span class="c1"># # viewer.setMaxValueForVolume(300*37000/22/(1*10**6))</span>
+    <span class="c1"># viewer.NemaIQ2008(file_to_save=&quot;../../outputs/NemaIQ2008_renderTOR&quot;, only_scalar_bar=False)</span>
+    <span class="c1"># viewer.NemaIQ2008(file_to_save=&quot;../../outputs/NemaIQ2008_colorbar&quot;, only_scalar_bar=True)</span>
+
+    <span class="c1"># mice</span>
+    <span class="c1"># name_to_record =&quot;../../outputs/MiceNAF_test_{}&quot;.format(os.path.basename(os.path.dirname(os.path.dirname(filepath))).split(&quot;.&quot;)[0].split(&quot;_&quot;)[-1])</span>
+    <span class="c1"># only_scalar_bar = False</span>
+    <span class="c1"># viewer.setColorMapLimits(v_lim=[10,750]) # 40, 750</span>
+    <span class="c1"># viewer.setZoomVolume(1.4)</span>
+    <span class="c1"># viewer.setVolumeRotation(0, -80, 10)</span>
+    <span class="c1"># viewer.setMaxValueForVolume(14)</span>
+    <span class="c1"># viewer.MiceNaf(filename=name_to_record, only_scalar_bar=only_scalar_bar, render_volume=True, recalculate_max_value=True)</span>
+    <span class="c1">#</span>
+    <span class="c1"># # # add masked image in the same window</span>
+    <span class="c1"># maskFilename = &quot;../../outputs/mask_skull_name.png&quot;</span>
+    <span class="c1">#</span>
+    <span class="c1"># # using PIL</span>
+    <span class="c1"># if only_scalar_bar is not True:</span>
+    <span class="c1">#     from PIL import Image, ImageDraw</span>
+    <span class="c1">#     # image_mask = Image.open(maskFilename)</span>
+    <span class="c1">#     image = Image.open(name_to_record + &quot;.png&quot;)</span>
+    <span class="c1">#     image.convert(&quot;RGBA&quot;)</span>
+    <span class="c1">#     # canvas = Image.new(&#39;RGBA&#39;, image.size, color=&quot;#&quot;)  # Empty canvas colour (r,g,b,a)</span>
+    <span class="c1">#     #new canvas with black background</span>
+    <span class="c1">#     canvas = Image.new(&#39;RGB&#39;, image.size, color=&quot;#000000&quot;)</span>
+    <span class="c1">#     #black background</span>
+    <span class="c1">#     background = np.zeros((image.size[1], image.size[0], 3), dtype=np.uint8)</span>
+    <span class="c1">#     maskedImage = Image.open(maskFilename)</span>
+    <span class="c1">#     maskedImage.convert(&quot;RGBA&quot;)</span>
+    <span class="c1">#</span>
+    <span class="c1">#     canvas.paste(image, mask=image)  # Paste the image onto the canvas, using it&#39;s alpha channel as mask</span>
+    <span class="c1">#     canvas.paste(maskedImage, mask=maskedImage)  # Paste the image onto the canvas, using it&#39;s alpha channel as mask</span>
+    <span class="c1">#     canvas.save(name_to_record + &quot;_mask.png&quot;, resolution=300.0)</span>
+
+    <span class="c1"># viewer.createMovie(filename=name_to_record+&quot;.avi&quot;)</span>
+
+
+    <span class="c1">#Derenzo</span>
+    <span class="n">viewer</span><span class="o">.</span><span class="n">setColorMapLimits</span><span class="p">(</span><span class="n">v_lim</span><span class="o">=</span><span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">1080</span><span class="p">])</span>
+    <span class="n">viewer</span><span class="o">.</span><span class="n">setZoomVolume</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+    <span class="n">view</span> <span class="o">=</span> <span class="s2">&quot;37.5&quot;</span>
+    <span class="c1"># view = &quot;axial&quot;</span>
+    <span class="k">if</span> <span class="n">view</span> <span class="o">==</span> <span class="s2">&quot;axial&quot;</span><span class="p">:</span>
+        <span class="n">viewer</span><span class="o">.</span><span class="n">setVolumeRotation</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">view</span> <span class="o">==</span> <span class="s2">&quot;37.5&quot;</span><span class="p">:</span>
+        <span class="n">viewer</span><span class="o">.</span><span class="n">setVolumeRotation</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mf">37.5</span><span class="p">)</span>
+
+    <span class="n">outputFilename</span> <span class="o">=</span> <span class="s2">&quot;../../outputs/Derenzo_</span><span class="si">{}</span><span class="s2">_view_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">filepath</span><span class="p">))),</span> <span class="n">view</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">outputFilename</span><span class="p">)</span>
+    <span class="n">viewer</span><span class="o">.</span><span class="n">derenzo</span><span class="p">(</span><span class="n">outputFilename</span><span class="o">=</span><span class="n">outputFilename</span><span class="p">)</span>
+
+    <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

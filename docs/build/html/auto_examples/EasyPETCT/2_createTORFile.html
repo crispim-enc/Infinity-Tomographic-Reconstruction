@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>TOR FILE &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/EasyPETCT/2_createTORFile';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../modules.html">
+                        src
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">TOR FILE</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-easypetct-2-createtorfile-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="tor-file">
+<span id="sphx-glr-auto-examples-easypetct-2-createtorfile-py"></span><h1>TOR FILE<a class="headerlink" href="#tor-file" title="Link to this heading">#</a></h1>
+<p>This is an example how to create a TOR file for easyPETCT
+The file should be run one time to each new acquisition</p>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_2_createTORFile_001.png" srcset="../../_images/sphx_glr_2_createTORFile_001.png" alt="2 createTORFile" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_2_createTORFile_002.png" srcset="../../_images/sphx_glr_2_createTORFile_002.png" alt="Configuration Source in front module" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2.0.2
+C:\Users\pedro\anaconda3\envs\test_env_spect\lib\site-packages\numpy\__init__.py
+&lt;Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry object at 0x00000241D8FA81C0&gt;
+Field: ENERGYA
+...............................
+Mean: 0.0
+Std: 0.0
+Range: 0.0 to 0.0
+Median: 0.0
+Min diff: None
+Number of unique values: 1
+-------------------------------
+
+Field: ENERGYB
+...............................
+Mean: 55.3545
+Std: 13.6874
+Range: 2e-05 to 125.29936
+Median: 59.97403
+Min diff: 0.0001
+Number of unique values: 465749
+-------------------------------
+
+Field: IDA
+...............................
+Mean: 0.0
+Std: 0.0
+Range: 0.0 to 0.0
+Median: 0.0
+Min diff: None
+Number of unique values: 1
+-------------------------------
+
+Field: IDB
+...............................
+Mean: 15.479
+Std: 8.623
+Range: 0.0 to 31.0
+Median: 15.0
+Min diff: 1.0
+Number of unique values: 32
+-------------------------------
+
+Field: AXIAL_MOTOR
+...............................
+Mean: -179.4862
+Std: 104.0901
+Range: -358.20001 to -0.0
+Median: -180.0
+Min diff: 1.8
+Number of unique values: 200
+-------------------------------
+
+Field: FAN_MOTOR
+...............................
+Mean: -0.0203
+Std: 32.7272
+Range: -54.0 to 54.0
+Median: 0.0
+Min diff: 0.225
+Number of unique values: 481
+-------------------------------
+
+Field: TIME
+...............................
+Mean: 1203.3042
+Std: 694.2908
+Range: 0.00028 to 2404.99293
+Median: 1204.52752
+Min diff: 0.0001
+Number of unique values: 7122705
+-------------------------------
+
+Number of events: 8884639
+Number of events per second: 3694.2474519394295
+Number of events per frame per second: [np.float64(3989.3916972420348), np.float64(4357.291575446141), np.float64(3095.0522156673755), np.float64(3489.2407769029724)]
+Number of motors: 2
+Global detector ID not set. Automatically setting is going to run. Note that incomplete data could set a wrong global ID leading to incorrect reconstruction
+Number of motors detected:  2
+AXIAL_MOTOR  step 1.7999999999999545
+AXIAL_MOTOR  range 200
+FAN_MOTOR  step 0.22499999999999432
+FAN_MOTOR  range 481
+IDA  number of detectors 1
+IDB  number of detectors 32
+GlobalID_maximum:  3078399
+GlobalID_minimum:  0
+Expected GlobalID maximum:  3078400
+Reading file: C:\Users\pedro\OneDrive\Ambiente de Trabalho\all_values.tor
+&lt;Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry object at 0x000002419E5633A0&gt;
+Calculating source position for all events detected...
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">TORFilesReader</span><span class="w"> </span><span class="kn">import</span> <span class="n">ToRFile</span><span class="p">,</span> <span class="n">AnimalType</span><span class="p">,</span> <span class="n">PhantomType</span><span class="p">,</span> <span class="n">AcquisitionInfo</span><span class="p">,</span> <span class="n">ListModeBody</span><span class="p">,</span> <span class="n">RadioisotopeInfo</span><span class="p">,</span> <span class="n">Technician</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Device</span><span class="w"> </span><span class="kn">import</span> <span class="n">StoreDeviceInFo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Phantoms</span><span class="w"> </span><span class="kn">import</span> <span class="n">NEMAIQ2008NU</span>
+
+<span class="nb">print</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">__version__</span></a><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
+
+
+<span class="c1"># filename = &quot;../../allvalues.npy&quot;</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">filename</span></a> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Ambiente de Trabalho</span><span class="se">\\</span><span class="s2">intelligent_scan-NewGeometries-CT</span><span class="se">\\</span><span class="s2">allvalues.npy&quot;</span>
+<span class="c1"># filename = &quot;C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1.npy&quot;</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Ambiente de Trabalho</span><span class="se">\\</span><span class="s2">all_values.tor&quot;</span>
+<span class="c1"># output_path = &quot;C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1 (1).tor&quot;</span>
+<span class="c1">#</span>
+<span class="c1"># if not os.path.exists(output_path):</span>
+<span class="c1">#     os.makedirs(output_path)</span>
+
+
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">device_path</span></a> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Documentos</span><span class="se">\\</span><span class="s2">GitHub</span><span class="se">\\</span><span class="s2">Infinity-Tomographic-Reconstruction</span><span class="se">\\</span><span class="s2">configurations</span><span class="se">\\</span><span class="s2">08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT&quot;</span>
+
+<span class="n">getDevice</span> <span class="o">=</span> <span class="n">StoreDeviceInFo</span><span class="p">(</span><span class="n">device_directory</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">device_path</span></a><span class="p">)</span>
+<span class="n">newDevice</span> <span class="o">=</span> <span class="n">getDevice</span><span class="o">.</span><span class="n">readDeviceFromDirectory</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">newDevice</span><span class="p">)</span>
+<span class="c1">#-----------------------------------------</span>
+<span class="c1"># create listMode</span>
+<span class="c1"># IF Animal</span>
+<span class="c1"># subject = AnimalType()</span>
+<span class="c1"># subject.setHealthy(True)</span>
+<span class="c1"># ....</span>
+
+<span class="c1"># IF Phantom</span>
+<span class="n">subject</span> <span class="o">=</span> <span class="n">PhantomType</span><span class="p">()</span>
+<span class="n">subject</span><span class="o">.</span><span class="n">setPhantomName</span><span class="p">(</span><span class="s2">&quot;NEMA IQ 2008 NU&quot;</span><span class="p">)</span>
+<span class="n">subject</span><span class="o">.</span><span class="n">setPhantomPurpose</span><span class="p">(</span><span class="s2">&quot;Calibration&quot;</span><span class="p">)</span>
+<span class="n">subject</span><span class="o">.</span><span class="n">setPhantomDescription</span><span class="p">(</span><span class="s2">&quot;NEMA IQ 2008 NU phantom for calibration&quot;</span><span class="p">)</span>
+<span class="n">subject</span><span class="o">.</span><span class="n">setDigitalPhantomCopy</span><span class="p">(</span><span class="n">NEMAIQ2008NU</span><span class="p">())</span>
+
+<span class="c1"># If PET/SPECT/COMPTON</span>
+<span class="n">radioisotope</span> <span class="o">=</span> <span class="n">RadioisotopeInfo</span><span class="p">()</span>
+<span class="n">radioisotope</span><span class="o">.</span><span class="n">setTracers</span><span class="p">([</span><span class="s2">&quot;18F&quot;</span><span class="p">])</span>
+<span class="n">radioisotope</span><span class="o">.</span><span class="n">setHalfLifes</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="mf">109.771</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span> <span class="p">])</span>
+<span class="n">radioisotope</span><span class="o">.</span><span class="n">setDecayTypes</span><span class="p">([</span><span class="s2">&quot;BetaPlus&quot;</span><span class="p">])</span>
+<span class="n">radioisotope</span><span class="o">.</span><span class="n">setDecayEnergies</span><span class="p">([</span><span class="mi">511</span><span class="p">])</span>
+
+<span class="c1"># Tecnhician</span>
+<span class="n">tecnhician</span> <span class="o">=</span> <span class="n">Technician</span><span class="p">()</span>
+<span class="n">tecnhician</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="s2">&quot;Pedro Encarnação&quot;</span><span class="p">)</span>
+<span class="n">tecnhician</span><span class="o">.</span><span class="n">setRole</span><span class="p">(</span><span class="s2">&quot;Researcher&quot;</span><span class="p">)</span>
+<span class="n">tecnhician</span><span class="o">.</span><span class="n">setOrganization</span><span class="p">(</span><span class="s2">&quot;Universidade de Aveiro&quot;</span><span class="p">)</span>
+
+
+<span class="n">scanHeader</span> <span class="o">=</span> <span class="n">AcquisitionInfo</span><span class="p">()</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setId</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setScanType</span><span class="p">(</span><span class="s2">&quot;CT&quot;</span><span class="p">)</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setIndexesOfFrames</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">])</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setSubject</span><span class="p">(</span><span class="n">subject</span><span class="p">)</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setTecnhician</span><span class="p">(</span><span class="n">tecnhician</span><span class="p">)</span>
+<span class="c1"># scanHeader.setNumberOfFrames(1)</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setInstanceUID</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><a href="https://docs.python.org/3/library/uuid.html#uuid.uuid4" title="uuid.uuid4" class="sphx-glr-backref-module-uuid sphx-glr-backref-type-py-function"><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span></a><span class="p">()))</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setStudyInstanceUID</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><a href="https://docs.python.org/3/library/uuid.html#uuid.uuid4" title="uuid.uuid4" class="sphx-glr-backref-module-uuid sphx-glr-backref-type-py-function"><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span></a><span class="p">()))</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setFrameOfReferenceUID</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><a href="https://docs.python.org/3/library/uuid.html#uuid.uuid4" title="uuid.uuid4" class="sphx-glr-backref-module-uuid sphx-glr-backref-type-py-function"><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span></a><span class="p">()))</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setDate</span><span class="p">(</span><a href="https://docs.python.org/3/library/time.html#time.strftime" title="time.strftime" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span><span class="o">.</span><span class="n">strftime</span></a><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">))</span>
+<span class="c1"># IF PET/SPECT/COMPTON</span>
+<span class="c1"># scanHeader.setRadioisotope(radioisotope)</span>
+
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.load.html#numpy.load" title="numpy.load" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">load</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">filename</span></a><span class="p">)</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.copy.html#numpy.copy" title="numpy.copy" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">copy</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span><span class="c1"># invert ID_A and ID_B</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.copy.html#numpy.copy" title="numpy.copy" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">copy</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">1000</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">listModeBody</span> <span class="o">=</span> <span class="n">ListModeBody</span><span class="p">()</span>
+<span class="n">listModeBody</span><span class="o">.</span><span class="n">setListmode</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">)</span>
+<span class="n">listModeBody</span><span class="o">.</span><span class="n">setListmodeFields</span><span class="p">([</span><span class="s2">&quot;ENERGYA&quot;</span><span class="p">,</span> <span class="s2">&quot;ENERGYB&quot;</span><span class="p">,</span> <span class="s2">&quot;IDA&quot;</span><span class="p">,</span> <span class="s2">&quot;IDB&quot;</span><span class="p">,</span> <span class="s2">&quot;AXIAL_MOTOR&quot;</span><span class="p">,</span> <span class="s2">&quot;FAN_MOTOR&quot;</span><span class="p">,</span> <span class="s2">&quot;TIME&quot;</span><span class="p">])</span>
+<span class="n">listModeBody</span><span class="o">.</span><span class="n">setFrameStartIndexes</span><span class="p">(</span><span class="n">scanHeader</span><span class="o">.</span><span class="n">indexesOfFrames</span><span class="p">)</span>
+<span class="n">listModeBody</span><span class="o">.</span><span class="n">generateStatistics</span><span class="p">()</span>
+<span class="n">listModeBody</span><span class="o">.</span><span class="n">printStatistics</span><span class="p">()</span>
+<span class="n">listModeBody</span><span class="o">.</span><span class="n">setGlobalDetectorID</span><span class="p">()</span>
+<span class="n">listModeBody</span><span class="o">.</span><span class="n">setCountsPerGlobalID</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">listModeBody</span><span class="p">[</span><span class="s2">&quot;IDB&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">ToRFile_creator</span> <span class="o">=</span> <span class="n">ToRFile</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a><span class="p">)</span>
+<span class="n">ToRFile_creator</span><span class="o">.</span><span class="n">setSystemInfo</span><span class="p">(</span><span class="n">newDevice</span><span class="p">)</span>
+<span class="n">ToRFile_creator</span><span class="o">.</span><span class="n">setAcquisitionInfo</span><span class="p">(</span><span class="n">scanHeader</span><span class="p">)</span>
+<span class="n">ToRFile_creator</span><span class="o">.</span><span class="n">setfileBodyData</span><span class="p">(</span><span class="n">listModeBody</span><span class="p">)</span>
+<span class="n">ToRFile_creator</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+
+<span class="c1">#######CHECK TESTS###################</span>
+<span class="c1">#######UNCOMMENT TO CHECK FILE AND GEOMETRY INTEGRATY############</span>
+<span class="n">ToRFile_reader</span> <span class="o">=</span> <span class="n">ToRFile</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a><span class="p">)</span>
+<span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">listModeBody_read</span> <span class="o">=</span> <span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">fileBodyData</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">listModeBody_read</span><span class="p">[</span><span class="s2">&quot;ENERGYB&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist2d</span><span class="p">(</span><span class="n">listModeBody_read</span><span class="p">[</span><span class="s2">&quot;AXIAL_MOTOR&quot;</span><span class="p">],</span> <span class="n">listModeBody_read</span><span class="p">[</span><span class="s2">&quot;FAN_MOTOR&quot;</span><span class="p">],</span>
+           <span class="n">bins</span><span class="o">=</span><span class="p">(</span><span class="n">listModeBody_read</span><span class="o">.</span><span class="n">uniqueValuesCount</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">listModeBody_read</span><span class="o">.</span><span class="n">uniqueValuesCount</span><span class="p">[</span><span class="mi">5</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">systemInfo</span><span class="p">)</span>
+
+<span class="n">deviceFromTOR</span> <span class="o">=</span> <span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">systemInfo</span>
+
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="c1"># repeat the fan motor angles for each axial motor angle</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.repeat.html#numpy.repeat" title="numpy.repeat" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">repeat</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a><span class="p">))</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.tile.html#numpy.tile" title="numpy.tile" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">tile</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a><span class="p">)</span> <span class="o">//</span> <span class="nb">len</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a><span class="p">))</span>
+
+<span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">sourcePositionAfterMovement</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">originSystemWZ</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">originSystemWZ</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Origin Fan Motor&#39;</span><span class="p">)</span>
+<span class="c1"># plot source center</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">sourceCenter</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">sourceCenter</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Source Center&#39;</span><span class="p">)</span>
+<span class="c1"># plot a line from the origin to the source center at fan motor angle 0</span>
+<span class="c1"># testSourceDistance(deviceFromTOR.xRayProducer.focalSpotInitialPositionWKSystem, deviceFromTOR.sourceCenter,</span>
+<span class="c1">#                    deviceFromTOR.originSystemWZ.T)</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">index_fan_motor_angle_0</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.where.html#numpy.where" title="numpy.where" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">where</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">source_center_fan_motor_angle_0</span></a> <span class="o">=</span> <span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">sourceCenter</span><span class="p">[</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">index_fan_motor_angle_0</span></a><span class="p">]</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">origin_fan_motor_angle_0</span></a> <span class="o">=</span> <span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">originSystemWZ</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">index_fan_motor_angle_0</span></a><span class="p">]</span>
+
+<span class="c1"># plt.plot(origin_fan_motor_angle_0[0], origin_fan_motor_angle_0[1], &#39;x&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">source_center_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">source_center_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;gx&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">origin_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">source_center_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">0</span><span class="p">]],</span>
+         <span class="p">[</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">origin_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">source_center_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Configuration Source side of detector module A&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Configuration Source in front module&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># designer = DeviceDesignerStandalone(device=deviceFromTOR)</span>
+<span class="c1"># designer.addDevice()</span>
+<span class="c1"># designer.addxRayProducerSource()</span>
+<span class="c1"># designer.startRender()</span>
+
+<span class="c1"># ToRFile_creator.setAcquisitionInfo(scanHeader)</span>
+<span class="c1"># ToRFile_creator.setListMode(listmode)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 9.424 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-easypetct-2-createtorfile-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/a8faff37c238472d6d8b9c0669116d26/2_createTORFile.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">2_createTORFile.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/e317aff1b8dac61057ccdc31c9eddcc2/2_createTORFile.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">2_createTORFile.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/9cf097c9f4b0c0ec8d6e7eeb87b60ab9/2_createTORFile.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">2_createTORFile.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
