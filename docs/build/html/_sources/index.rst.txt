@@ -7,36 +7,67 @@ Infinity Tomographic Reconstruction
 ==============================================
 
 
-The **Infinity Tomographic Reconstruction** is a Python package that provides a set of tools for parametric 3D tomographic
-reconstruction mainly listmode-based.
+The **Infinity Tomographic Reconstruction** is a Python package that provides a set of tools for parametric 3D tomographic reconstruction mainly listmode-based.
 
 Systems Types
 ------------
-- ** PET
-- ** CT
-- ** SPECT
-- ** Compton
+- PET
+- CT (in test)
+- SPECT
+- Compton (in test
 
 Geometry Types
 --------------
-- ** Dynamic
-   ** easyPET based
-   ** LinearPET based
-- ** Static
-** cylindrical
-** polygonal
+- Dynamic
+   easyPET based
+   LinearPET based
+- Static
+   cylindrical
+   polygonal
+   planar
+
+Getting Started
+---------------
+.. grid:: 2 2 2 2
+   :gutter: 2
+
+   .. grid-item-card:: 🛠 Getting Started
+      :link: installation
+      :link-type: ref
+      :class-card: custom-card
+
+      Install the package and set up your environment.
+
+   .. grid-item-card:: 📈 Example Gallery
+      :link: auto_examples/index
+      :link-type: doc
+      :class-card: custom-card
+
+      Visual walkthroughs of device creation, reconstruction, and analysis.
+
+   .. grid-item-card:: 🧰 API Reference
+      :link: api_reference
+      :link-type: ref
+      :class-card: custom-card
+
+      Browse the module-level API for Infinity’s core components.
+
+   .. grid-item-card:: 🔄 Geometry Types
+      :link: auto_examples/GeometryTypes/index
+      :link-type: doc
+      :class-card: custom-card
+
+      Explore scanner configurations and layout systems.
 
 
-Get Started
------------
-Explore the documentation to understand the capabilities and implementation details of Infinity Tomographic Reconstruction:
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   auto_examples/index	
    modules 
-   auto_examples/index
+   
 
 Indices and tables
 ==================

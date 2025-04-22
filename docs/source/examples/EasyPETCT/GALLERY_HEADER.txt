@@ -1,6 +1,9 @@
-Examples
-===============
+EasyPETCT
+=========
 
-This section contains usage examples and tutorials for the Infinity Tomographic Reconstruction project.
-Each example demonstrates a specific feature or workflow.
+This section provides examples focused on **EasyPETCT** device workflows:
 
+- 📦 **New Device Creation**: Setting up and configuring an EasyPETCT device
+- 🧪 **TOR File Creation**: Generating the TOR file for event mapping
+- 🔄 **Iterative Reconstruction**: Using iterative algorithms for image reconstruction
+- 📈 **Analytical Reconstruction**: Applying analytical methods like FBP

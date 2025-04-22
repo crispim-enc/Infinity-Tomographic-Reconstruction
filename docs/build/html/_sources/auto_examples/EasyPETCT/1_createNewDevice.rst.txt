@@ -58,7 +58,7 @@ Imports to create the device
 
 SYSTEM ENERGY RESPONSE FUNCTION (Not mandatory)
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-58
+.. GENERATED FROM PYTHON SOURCE LINES 36-68
 
 .. code-block:: Python
 
@@ -85,6 +85,16 @@ SYSTEM ENERGY RESPONSE FUNCTION (Not mandatory)
     plt.savefig("../../images/system_energy_response_function.png")
 
 
+    # .. image:: ../../images/system_energy_response_function.png
+    #     :alt: EasyCT Diagram
+    #     :width: 400px
+    #     :align: center
+
+    energy_window = [energies - energies * systemEnergyResponseFunction(energies, *fit[0]),
+                     energies + energies * systemEnergyResponseFunction(energies, *fit[0])]
+    systemEnergyResolution = EnergyResolutionFunction(p1=fit[0][1], p2=fit[0][2])
+
+
 
 
 .. image-sg:: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_001.png
@@ -99,29 +109,6 @@ SYSTEM ENERGY RESPONSE FUNCTION (Not mandatory)
 
     C:\Users\pedro\OneDrive\Documentos\GitHub\Infinity-Tomographic-Reconstruction\docs\source\examples\EasyPETCT\1_createNewDevice.py:49: OptimizeWarning: Covariance of the parameters could not be estimated
       fit = curve_fit(systemEnergyResponseFunction, energies, energy_resolution)
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 59-63
-
-.. image:: ../../images/system_energy_response_function.png
-    :alt: EasyCT Diagram
-    :width: 400px
-    :align: center
-
-.. GENERATED FROM PYTHON SOURCE LINES 63-68
-
-.. code-block:: Python
-
-
-    energy_window = [energies - energies * systemEnergyResponseFunction(energies, *fit[0]),
-                     energies + energies * systemEnergyResponseFunction(energies, *fit[0])]
-    systemEnergyResolution = EnergyResolutionFunction(p1=fit[0][1], p2=fit[0][2])
-
-
-
-
 
 
 
@@ -570,7 +557,7 @@ Calculate the coordinates for the previous angles
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 8.951 seconds)
+   **Total running time of the script:** (0 minutes 13.489 seconds)
 
 
 .. _sphx_glr_download_auto_examples_EasyPETCT_1_createNewDevice.py:

@@ -13,6 +13,8 @@ sys.path.insert(0, os.path.abspath('../../src/'))
 from sphinx_gallery.sorting import FileNameSortKey
 import matplotlib
 matplotlib.use('agg')  # for headless image generation
+def setup(app):
+    app.add_css_file("custom.css")
 
 project = 'Infinity-Tomographic-Reconstruction'
 copyright = '2025, Pedro Encarnação'
@@ -35,11 +37,13 @@ extensions = ["sphinx.ext.autodoc", 'sphinx.ext.coverage', 'sphinx.ext.napoleon'
 'matplotlib.sphinxext.mathmpl',
           'matplotlib.sphinxext.plot_directive',
           'sphinx.ext.doctest',
+"sphinx_design"
 ]
-#
+# 'examples_dirs': ['examples/EasyPETCT', 'examples/SiemensIntevoBoldSPECTCT'],   # path to your example scripts
+#     'gallery_dirs': ['auto_examples/EasyPETCT', 'auto_examples/SiemensIntevoBoldSPECTCT'],
 sphinx_gallery_conf = {
-    'examples_dirs': ['examples/EasyPETCT', 'examples/SiemensIntevoBoldSPECTCT'],   # path to your example scripts
-    'gallery_dirs': ['auto_examples/EasyPETCT', 'auto_examples/SiemensIntevoBoldSPECTCT'],  # where to save gallery generated pages
+    'examples_dirs': 'examples',   # path to your example scripts
+    'gallery_dirs': 'auto_examples',  # where to save gallery generated pages
     'filename_pattern': r'.*\.py$',
 'within_subsection_order': FileNameSortKey,
    'backreferences_dir' :None,
@@ -59,6 +63,12 @@ language = 'en'
 # html_theme = 'alabaster'
 html_theme = "pydata_sphinx_theme"
 # html_theme = "sphinx_rtd_theme"
+html_theme_options = {
+    "github_url": "https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction",
+    "navbar_start": ["navbar-logo"],
+    "navbar_center": ["navbar-nav"],
+    "navbar_end": ["theme-switcher", "navbar-icon-links"],
+}
 html_static_path = ['_static']
 html_show_sourcelink = False
 # Example of intersphinx mapping for cross-references

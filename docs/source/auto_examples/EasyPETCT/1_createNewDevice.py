@@ -55,7 +55,7 @@ plt.ylabel('Energy Resolution (%)')
 plt.legend()
 plt.savefig("../../images/system_energy_response_function.png")
 
-# %% [markdown]
+
 # .. image:: ../../images/system_energy_response_function.png
 #     :alt: EasyCT Diagram
 #     :width: 400px

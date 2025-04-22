@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**02:19.279** total execution time for 4 files **from all galleries**:
+**00:13.489** total execution time for 4 files **from all galleries**:
 
 .. container::
 
@@ -32,15 +32,15 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_auto_examples_SiemensIntevoBoldSPECTCT_newdevice_siemens.py` (``examples\SiemensIntevoBoldSPECTCT\newdevice_siemens.py``)
-     - 02:10.327
-     - 0.0
    * - :ref:`sphx_glr_auto_examples_EasyPETCT_1_createNewDevice.py` (``examples\EasyPETCT\1_createNewDevice.py``)
-     - 00:08.951
+     - 00:13.489
      - 0.0
    * - :ref:`sphx_glr_auto_examples_EasyPETCT_2_createTORFile.py` (``examples\EasyPETCT\2_createTORFile.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_auto_examples_EasyPETCT_3_EasyPET_CT_reconstruction.py` (``examples\EasyPETCT\3_EasyPET_CT_reconstruction.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_SiemensIntevoBoldSPECTCT_newdevice_siemens.py` (``examples\SiemensIntevoBoldSPECTCT\newdevice_siemens.py``)
      - 00:00.000
      - 0.0

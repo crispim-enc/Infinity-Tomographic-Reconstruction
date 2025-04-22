@@ -1,6 +1,11 @@
 Examples
-===============
+================
 
-This section contains usage examples and tutorials for the Infinity Tomographic Reconstruction project.
-Each example demonstrates a specific feature or workflow.
+This gallery contains categorized examples and tutorials for the **Infinity Tomographic Reconstruction** project.
 
+Explore workflows including device creation, data preparation, and reconstruction techniques.
+
+Sections:
+
+- **EasyPETCT**: PET/CT device workflows and reconstructions
+- **SiemensIntevoBoldSPECTCT**: Different scanner geometry demonstrations
