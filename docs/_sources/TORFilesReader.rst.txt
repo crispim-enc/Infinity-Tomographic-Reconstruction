@@ -1,0 +1,61 @@
+TORFilesReader package
+======================
+
+Submodules
+----------
+
+TORFilesReader.Radioisotope module
+----------------------------------
+
+.. automodule:: TORFilesReader.Radioisotope
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+TORFilesReader.scanning\_body module
+------------------------------------
+
+.. automodule:: TORFilesReader.scanning_body
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+TORFilesReader.scanning\_header module
+--------------------------------------
+
+.. automodule:: TORFilesReader.scanning_header
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+TORFilesReader.subject\_type module
+-----------------------------------
+
+.. automodule:: TORFilesReader.subject_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+TORFilesReader.technician module
+--------------------------------
+
+.. automodule:: TORFilesReader.technician
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+TORFilesReader.torfiles module
+------------------------------
+
+.. automodule:: TORFilesReader.torfiles
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: TORFilesReader
+   :members:
+   :undoc-members:
+   :show-inheritance:

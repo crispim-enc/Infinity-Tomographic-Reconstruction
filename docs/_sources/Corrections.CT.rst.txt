@@ -1,0 +1,29 @@
+Corrections.CT package
+======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   Corrections.CT.Projector
+
+Submodules
+----------
+
+Corrections.CT.normalization module
+-----------------------------------
+
+.. automodule:: Corrections.CT.normalization
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: Corrections.CT
+   :members:
+   :undoc-members:
+   :show-inheritance:

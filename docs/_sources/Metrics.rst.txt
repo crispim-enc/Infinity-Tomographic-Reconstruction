@@ -1,0 +1,30 @@
+Metrics package
+===============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   Metrics.ImageQuality
+   Metrics.NEMA
+
+Submodules
+----------
+
+Metrics.groundtruth module
+--------------------------
+
+.. automodule:: Metrics.groundtruth
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: Metrics
+   :members:
+   :undoc-members:
+   :show-inheritance:

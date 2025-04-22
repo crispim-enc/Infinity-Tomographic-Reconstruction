@@ -1,0 +1,37 @@
+Device package
+==============
+
+Submodules
+----------
+
+Device.device module
+--------------------
+
+.. automodule:: Device.device
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Device.energy\_resolution\_function module
+------------------------------------------
+
+.. automodule:: Device.energy_resolution_function
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Device.storedeviceInfo module
+-----------------------------
+
+.. automodule:: Device.storedeviceInfo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: Device
+   :members:
+   :undoc-members:
+   :show-inheritance:
