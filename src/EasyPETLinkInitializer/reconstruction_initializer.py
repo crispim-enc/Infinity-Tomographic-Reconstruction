@@ -8,8 +8,8 @@ import numpy as np
 import pycuda.driver as cuda
 from array import array
 from src.Corrections.EasyPET.Normalization import AdaptiveNormalizationMatrix
-from src.Geometry.easyPET.matrixgeometrycorrection import MatrixGeometryCorrection
-from src.Geometry.easyPET.easypet_parametric_points import SetParametricCoordinates
+from src.Geometry.easyPETBased.matrixgeometrycorrection import MatrixGeometryCorrection
+from src.Geometry.easyPETBased.easypet_parametric_points import SetParametricCoordinates
 from src.Corrections.PET.Projector import ParallelepipedProjector
 from src.Optimizer.GPUManager import EM
 from src.AnalyticalReconstruction.initializer import AnalyticalReconstruction
@@ -183,7 +183,7 @@ class ReconstructionInitializer:
         if live_normalization_pre_calculation is False:
             self.entry_im = None
             self.pixeltoangle = False
-            self.reading_data = Easypetdata.listMode
+            self.reading_data = Easypetdata.fileBodyData
             self.header = Easypetdata.header
             self.Version_binary = Easypetdata.Version_binary
             self.dates = Easypetdata.dates

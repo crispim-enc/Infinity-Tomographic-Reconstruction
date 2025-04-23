@@ -1,6 +1,6 @@
 import uproot
 try:
-    from src.GateLink.RootToTor import ExtractSingles
+    from GateLink.RootToTor import ExtractSingles
 except ModuleNotFoundError:
     from singlesstruct import ExtractSingles
 

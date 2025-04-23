@@ -7,12 +7,12 @@ import logging
 from dateutil.parser import parse
 import numpy as np
 
-from src.ImageReader.DICOM.patient import Patient
-from src.ImageReader.DICOM.image import GeneralImage, GeneralReference, ImagePlane, ImagePixel, Device, PETImage
-from src.ImageReader.DICOM.frameofreference import FrameOfReference
-from src.ImageReader.DICOM.series import GeneralSeries, PETIsotope, PETSeries
-from src.ImageReader.DICOM.study import GeneralStudy, PatientStudy
-from src.ImageReader.DICOM.equipment import Equipment
+from ImageReader.DICOM.patient import Patient
+from ImageReader.DICOM.image import GeneralImage, GeneralReference, ImagePlane, ImagePixel, Device, PETImage
+from ImageReader.DICOM.frameofreference import FrameOfReference
+from ImageReader.DICOM.series import GeneralSeries, PETIsotope, PETSeries
+from ImageReader.DICOM.study import GeneralStudy, PatientStudy
+from ImageReader.DICOM.equipment import Equipment
 
 
 class WriteDicom:

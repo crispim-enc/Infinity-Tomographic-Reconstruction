@@ -258,7 +258,7 @@ class ROIEvents:
         return valid_vor
 
     def generate_roi_listmode_data(self):
-        roi_listmode = self.EM_obj.easypetdata.listMode[self.valid_vor == 1]
+        roi_listmode = self.EM_obj.easypetdata.fileBodyData[self.valid_vor == 1]
         # crystal_geometry = self.crystal_geometry
         # self.path_data_validation = os.path.join(os.path.dirname(self.study_file), "Data_Validation")
         # if not os.path.isdir(self.path_data_validation):

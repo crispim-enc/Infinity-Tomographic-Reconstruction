@@ -2,3 +2,4 @@ from .selectable_events import ROIEvents
 from .GaussianFileGenarator import GaussianParameters
 from .CPU import IterativeAlgorithmCPU
 from .gpu_shared_memory import GPUSharedMemorySingleKernel
+from .kernelManager import GPUSharedMemoryMultipleKernel

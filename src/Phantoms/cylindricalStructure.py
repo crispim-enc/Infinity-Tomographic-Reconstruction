@@ -43,8 +43,8 @@ class CylindricalStructure:
         else:
             self._density = value
 
-        print("Density: {}".format(self._density))
-        print("__________")
+        # print("Density: {}".format(self._density))
+        # print("__________")
 
     @property
     def material(self):

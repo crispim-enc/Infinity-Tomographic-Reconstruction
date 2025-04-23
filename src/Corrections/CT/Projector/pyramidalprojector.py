@@ -1,10 +1,10 @@
 import numpy as np
-# from src.Projector import GeneralProjector
+# from Projector import GeneralProjector
 
 
 class PyramidalProjector:
     def __init__(self, voxelSize=None, FoVAxial=45, FoVRadial=25, FoVTangencial=30, FovRadialStart=None,
-                 FovRadialEnd=None, fov=45, only_fov=True):
+                 FovRadialEnd=None, fov=45, only_fov=False):
         """
         Pyramidal Projector
 
@@ -65,7 +65,6 @@ class PyramidalProjector:
 
         self._countsPerPosition = None
 
-
     @property
     def countsPerPosition(self):
         """
@@ -83,6 +82,7 @@ class PyramidalProjector:
         :return:
         """
         self._countsPerPosition = countsPerPosition
+        self._countsPerPosition = np.ascontiguousarray(self._countsPerPosition, dtype=np.int32)
 
     def transformIntoPositivePoints(self):
         """
@@ -118,8 +118,10 @@ class PyramidalProjector:
         Needs pointCenterList, pointCorner1List, pointCorner2List, pointCorner3List, pointCorner4List to be
         defined first
         """
-
+        print("Creating vectorial space")
+        print("Transforming points to positive points")
         self.transformIntoPositivePoints()
+        print("Amplifying points to GPU coordinate system")
         self.amplifyPointsToGPUCoordinateSystem()
 
         # Create a int range array from 0 to number of pixels)
@@ -139,10 +141,13 @@ class PyramidalProjector:
         if self._only_fov:
             self.x_range_lim = [np.floor((self.max_x - self.fov) / 2), np.ceil((self.max_x - self.fov) / 2 + np.ceil(self.fov))]
             self.y_range_lim = [np.floor((self.max_y - self.fov) / 2), np.ceil((self.max_y - self.fov) / 2 + np.ceil(self.fov))]
+            # self.x_range_lim = [0, 60]
+            # self.y_range_lim = [0, 60]
         else:
             self.x_range_lim = [np.ceil(self.pointCorner1List[:,0].min()), np.ceil(self.pointCorner1List[:,0].max())]
             self.y_range_lim = [np.ceil(self.pointCorner1List[:,1].min()), np.ceil(self.pointCorner1List[:,1].max())]
-        self.z_range_lim = [np.ceil(self.pointCorner3List[:,2].min()), np.ceil(self.pointCorner1List[:,2].max()+extra_pixel_z)]
+        self.z_range_lim = [np.floor(self.pointCorner3List[:,2].min()), np.ceil(self.pointCorner1List[:,2].max()+extra_pixel_z)]
+        # self.z_range_lim = [0, 73/self.voxelSize[2]]
 
         self.number_of_pixels_x = int(np.ceil(self.x_range_lim[1]-self.x_range_lim[0]))
         self.number_of_pixels_y = int(np.ceil(self.y_range_lim[1]-self.y_range_lim[0]))

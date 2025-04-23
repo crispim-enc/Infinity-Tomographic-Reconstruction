@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from src.Corrections.PET.Projector import PyramidalProjector
 from src.Geometry.easyCT import SetParametricsPoints
-from src.Geometry.easyPET import MatrixGeometryCorrection
+from src.Geometry.easyPETBased import MatrixGeometryCorrection
 from src.Optimizer import GPUSharedMemoryMultipleKernel
 from src.ImageReader.Interfile import InterfileWriter
 from src.Corrections.EasyPET.Normalization import NormalizationCT

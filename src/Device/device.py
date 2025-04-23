@@ -32,6 +32,8 @@
 # deviceDirectory: returns the device directory
 
 import os
+import uuid
+import json5
 
 
 class Device:
@@ -49,6 +51,8 @@ class Device:
         self._deviceType = None
         self._deviceDirectory = None
         self._geometryObject = None
+        self._geometryType = None
+        self._energyResolutionFunction = None
 
     def readDeviceProperties(self, objectName=None):
         """
@@ -56,7 +60,7 @@ class Device:
 
         :param objectName: name of the object to read the properties from (folder name)
         :type objectName: str
-
+        Deprecated
         """
         if objectName is None:
             print("Error: objectName is None")
@@ -64,7 +68,7 @@ class Device:
 
         # check if folder of device exists
         mainDirectory = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        self._deviceDirectory = os.path.join(mainDirectory, "configurations", objectName)
+        self._deviceDirectory = os.path.join(mainDirectory, "configurations", self._deviceUUID)
         if not os.path.exists(self._deviceDirectory):
             print("Error: device directory does not exist")
             return
@@ -82,16 +86,19 @@ class Device:
 
     @property
     def deviceUUID(self):
-
-        return self._deviceUUID
-
-    def getDeviceUUID(self):
         """ Returns the device UUID
 
-        :return: deviceUUID
-        """
-
+             :return: deviceUUID
+             """
         return self._deviceUUID
+
+    def generateDeviceUUID(self):
+        """
+        Generate a device Universally Unique Identifier (UUID) according to version 4
+
+        :return:
+        """
+        self._deviceUUID = str(uuid.uuid4())
 
     def setDeviceUUID(self, deviceUUID):
         """
@@ -125,6 +132,13 @@ class Device:
     def deviceDirectory(self):
         return self._deviceDirectory
 
+    @property
+    def geometryType(self):
+        return self._geometryType
+
+    def setGeometryType(self, geometry_type):
+        self._geometryType = geometry_type
+
     def createDirectory(self):
         """
         Create the directory for the device
@@ -133,7 +147,7 @@ class Device:
         """
         # create the directory if it does not exist in configurations with the id and name of the device
         mainDirectory = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        self._deviceDirectory = os.path.join(mainDirectory,"configurations", self._deviceUUID + "_" + self._deviceName)
+        self._deviceDirectory = os.path.join(mainDirectory, "configurations", self._deviceUUID + "_" + self._deviceName)
         if not os.path.exists(self._deviceDirectory):
             os.makedirs(self._deviceDirectory)
 
@@ -152,21 +166,17 @@ class Device:
         """
         self._geometryObject = geometryObject
 
-    def saveVarsDeviceToFile(self):
-        """
-        Save the device variables to a file
-        Also saves the geometry files  in the same folder
-        :return:
-        """
-        # save the variables to a file
-        file = open(os.path.join(self._deviceDirectory, "deviceID.txt"), "w")
-        file.write("deviceUUID: " + self._deviceUUID + "\n")
-        file.write("deviceName: " + self._deviceName + "\n")
-        file.write("deviceType: " + self._deviceType + "\n")
-        file.write("deviceDirectory: " + self._deviceDirectory + "\n")
-        file.close()
+    @property
+    def energyResolutionFunction(self):
+        return self._energyResolutionFunction
 
-        # save the geometry vars to a file
-        self._geometryObject.saveVarsGeometryToFile()
+    def setEnergyResolutionFunction(self, energyResolutionFunction):
+        """
+        """
+        self._energyResolutionFunction = energyResolutionFunction
 
+    def getFWHMSystemEnergyResponse(self, energy):
+        if self._energyResolutionFunction is None:
+            raise ValueError("No energy resolution function has been set.")
+        return self._energyResolutionFunction.run(energy)
 

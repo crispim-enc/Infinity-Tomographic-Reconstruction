@@ -30,11 +30,12 @@ class GPUSharedMemoryMultipleKernel:
         self.saved_image_by_iteration = parent.saved_image_by_iteration
         if self.saved_image_by_iteration:
 
-            self.iterations_path = os.path.join(self.directory, "iterations")
+            self.iterations_path = os.path.join(os.path.dirname(self.directory), "iterations")
             if not os.path.isdir(self.iterations_path):
                 os.makedirs(self.iterations_path)
 
         self.planes = parent.projector.planes
+        self.countsPerID = parent.projector.countsPerPosition
 
         self.A = parent.projector.im_index_x
         self.B = parent.projector.im_index_y
@@ -67,10 +68,10 @@ class GPUSharedMemoryMultipleKernel:
         self.normalization_matrix = np.ones((self.number_of_pixels_x, self.number_of_pixels_y, self.number_of_pixels_z))
         self.normalization_matrix = np.ascontiguousarray(self.normalization_matrix, dtype=np.float32)
 
-        self.fw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+        self.fw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "CT",
                                             "pyramidalProjectorForward.c")
 
-        self.bw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+        self.bw_source_model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "CT",
                                             "pyramidalProjectorBack.c")
 
     def _loadMachineCCode(self):
@@ -192,7 +193,7 @@ class GPUSharedMemoryMultipleKernel:
 
         # Back projection Memory allocation
 
-        backward_projection_arrays_full_arrays = unroll_planes + [self.sum_vor]
+        backward_projection_arrays_full_arrays = unroll_planes + [self.sum_vor, self.countsPerID]
         backward_projection_array_gpu_arrays = [[None] * number_of_datasets for _ in
                                                 range(len(backward_projection_arrays_full_arrays))]
         backward_projection_pinned_arrays = [None] * len(backward_projection_arrays_full_arrays)
@@ -248,9 +249,9 @@ class GPUSharedMemoryMultipleKernel:
             adjust_coef_gpu[dataset] = cuda.mem_alloc(
                 adjust_coef_cut[dataset].size * adjust_coef_cut[dataset].dtype.itemsize)
 
-            adjust_coef_pinned[dataset] = cuda.register_host_memory(adjust_coef_cut[dataset])
-            assert np.all(adjust_coef_pinned[dataset] == adjust_coef_cut[dataset])
-            cuda.memcpy_htod_async(adjust_coef_gpu[dataset], adjust_coef_pinned[dataset], stream[dataset])
+            # adjust_coef_pinned[dataset] = cuda.register_host_memory(adjust_coef_cut[dataset])
+            # assert np.all(adjust_coef_pinned[dataset] == adjust_coef_cut[dataset])
+            cuda.memcpy_htod_async(adjust_coef_gpu[dataset], adjust_coef_cut[dataset], stream[dataset])
 
             # fov_cut_matrix_cutted_gpu[dataset] = cuda.mem_alloc(
             #     fov_cut_matrix_cut[dataset].size * fov_cut_matrix_cut[dataset].dtype.itemsize)
@@ -408,6 +409,7 @@ class GPUSharedMemoryMultipleKernel:
                                   C_cut_gpu[dataset],
                                   adjust_coef_gpu[dataset],
                                   backward_projection_array_gpu_arrays[16], system_matrix_back_cut_gpu[dataset], im_gpu,
+                                  backward_projection_array_gpu_arrays[17],
                                   block=threadsperblock,
                                   grid=blockspergrid,
                                   shared=int(4 * number_of_voxels_thread),
@@ -427,7 +429,7 @@ class GPUSharedMemoryMultipleKernel:
                 print('adjust_coef: {}'.format(np.sum(adjust_coef)))
                 penalized_term = self._load_penalized_term(im)
                 # normalization
-                normalization_matrix = np.ones_like(im)
+
                 im[normalization_matrix != 0] = im[normalization_matrix != 0] * adjust_coef[
                     normalization_matrix != 0] / (normalization_matrix[normalization_matrix != 0])
                 im[normalization_matrix == 0] = 0
@@ -468,10 +470,9 @@ class GPUSharedMemoryMultipleKernel:
                 for dataset in range(number_of_datasets_back):
                     adjust_coef_cut[dataset] = adjust_coef[
                                                dataset * voxels_division:(dataset + 1) * voxels_division]
-                    adjust_coef_pinned[dataset] = cuda.register_host_memory(adjust_coef_cut[dataset])
-                    assert np.all(adjust_coef_pinned[dataset] == adjust_coef_cut[dataset])
-                    cuda.memcpy_htod_async(adjust_coef_gpu[dataset], adjust_coef_pinned[dataset], stream[dataset])
-
+                    # adjust_coef_pinned[dataset] = cuda.register_host_memory(adjust_coef_cut[dataset])
+                    # assert np.all(adjust_coef_pinned[dataset] == adjust_coef_cut[dataset])
+                    cuda.memcpy_htod_async(adjust_coef_gpu[dataset], adjust_coef_cut[dataset], stream[dataset])
 
                 if self.saved_image_by_iteration:
                     if i % 2 == 0:

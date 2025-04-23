@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from src.SystemFiles import Device
+from Device import Device
 
 
 class RegularPolygonalGeometry(Device):
@@ -16,8 +16,8 @@ class RegularPolygonalGeometry(Device):
     def __init__(self, detector_module=None, radius=40, fill_circle=False):
         super().__init__()
         if detector_module is None:
-            raise ValueError(
-                "Detector module cannot be None. Please provide a DetectorModule object. Should be of type")
+            Warning(
+                "Detector module cannot be None. Remember to set DetectorModule object. ")
 
         self._detectorModuleObject = detector_module
         self._radius = radius
@@ -32,21 +32,25 @@ class RegularPolygonalGeometry(Device):
         self._radialGapBetweenModules = 0
         self._zTranslation = 0
         self._structureType = "static"
+        self.setGeometryType("planar")
         self._numberOfModules = self._numberOfModulesZ * self._numberOfModulesPhi * self._numberOfModulesPerSide
+
         self._detectorModule = [self._detectorModuleObject(i) for i in range(self._numberOfModules)]
-        if fill_circle:
-            # self._radius = 12.8 + 2*12.8* (self._numberOfModulesPhi/4-1)*np.cos(np.deg2rad((self._numberOfModulesPhi/4 - 1)*(90-self._anglePhi)))+10
+        # self._detectorModule = None
+        if self._detectorModule is not None:
+            if fill_circle:
+                # self._radius = 12.8 + 2*12.8* (self._numberOfModulesPhi/4-1)*np.cos(np.deg2rad((self._numberOfModulesPhi/4 - 1)*(90-self._anglePhi)))+10
 
-            self._radius = 12.8*self._numberOfModulesPerSide +10 # half module width plus half crystal width
-            if self._numberOfModulesPhi % 4 == 0:
-                for inter_module in range(int(self._numberOfModulesPhi / 4 - 1)):
-                    self._radius += 2 * 12.8*self._numberOfModulesPerSide * np.cos(np.deg2rad((90 - (inter_module + 1) * self._anglePhi)))
-            elif self._numberOfModulesPhi % 4 == 2:
-                self._radius = 10
-                for inter_module in range(int(np.ceil(self._numberOfModulesPhi / 4)- 1)):
-                    self._radius += 2 * 12.8*self._numberOfModulesPerSide* np.cos(np.deg2rad((90 - (inter_module + 1) * self._anglePhi)))
+                self._radius = 12.8*self._numberOfModulesPerSide +10 # half module width plus half crystal width
+                if self._numberOfModulesPhi % 4 == 0:
+                    for inter_module in range(int(self._numberOfModulesPhi / 4 - 1)):
+                        self._radius += 2 * 12.8*self._numberOfModulesPerSide * np.cos(np.deg2rad((90 - (inter_module + 1) * self._anglePhi)))
+                elif self._numberOfModulesPhi % 4 == 2:
+                    self._radius = 10
+                    for inter_module in range(int(np.ceil(self._numberOfModulesPhi / 4)- 1)):
+                        self._radius += 2 * 12.8*self._numberOfModulesPerSide* np.cos(np.deg2rad((90 - (inter_module + 1) * self._anglePhi)))
 
-        print("radius: ", self._radius)
+            print("radius: ", self._radius)
         #     for inter_module in range(int(np.floor(self._numberOfModulesPhi / 4)- 1)):
         #         self._radius += 2 * 12.8*self._numberOfModulesPerSide* np.cos(np.deg2rad((90 - (inter_module + 1) * self._anglePhi)))
         # # self._detectorModule = [[self._detectorModuleObject(i+2*j) for i in range(self._numberOfModulesPhi)] for j in range(self._numberOfModulesZ)]
@@ -69,20 +73,32 @@ class RegularPolygonalGeometry(Device):
     def numberOfModulesZ(self):
         return self._numberOfModulesZ
 
+    @property
+    def numberOfModulesPhi(self):
+        return self._numberOfModulesPhi
+
+    @property
+    def numberOfModulesPerSide(self):
+        return self._numberOfModulesPerSide
+
+    @property
+    def numberOfModules(self):
+        return self._numberOfModules
+
     def setNumberOfModulesZ(self, number_of_modules_z):
         self._numberOfModulesZ = number_of_modules_z
         self._numberOfModules = self._numberOfModulesZ * self._numberOfModulesPhi*self._numberOfModulesPerSide
-        self._detectorModule = [self._detectorModuleObject(i) for i in range(self._numberOfModules)]
+        # self._detectorModule = [self._detectorModuleObject for i in range(self._numberOfModules)]
 
     def setNumberOfModulesPhi(self, number_of_modules_phi):
         self._numberOfModulesPhi = number_of_modules_phi
         self._numberOfModules = self._numberOfModulesZ * self._numberOfModulesPhi * self._numberOfModulesPerSide
-        self._detectorModule = [self._detectorModuleObject(i) for i in range(self._numberOfModules)]
+        # self._detectorModule = [self._detectorModuleObject for i in range(self._numberOfModules)]
 
     def setNumberOfModulesPerSide(self, number_of_modules_per_side):
         self._numberOfModulesPerSide = number_of_modules_per_side
         self._numberOfModules = self._numberOfModulesZ * self._numberOfModulesPhi * self._numberOfModulesPerSide
-        self._detectorModule = [self._detectorModuleObject(i) for i in range(self._numberOfModules)]
+        # self._detectorModule = [self._detectorModuleObject for i in range(self._numberOfModules)]
 
     def setAnglePhi(self, angle_phi):
         self._anglePhi = angle_phi
@@ -91,8 +107,8 @@ class RegularPolygonalGeometry(Device):
         for i in range(self._numberOfModulesPhi):
             for j in range(self._numberOfModulesZ):
                 for k in range(self._numberOfModulesPerSide):
-                    self._detectorModule[
-                        i + self._numberOfModulesPhi * j + self._numberOfModulesZ * self._numberOfModulesPhi * k].setXTranslation(26.6*k-(self._numberOfModulesPerSide-1)*26.6/2)
+                    # self._detectorModule[
+                    #     i + self._numberOfModulesPhi * j + self._numberOfModulesZ * self._numberOfModulesPhi * k].setXTranslation(self.radius*k-(self._numberOfModulesPerSide-1)*self.radius)
                     self._detectorModule[
                         i + self._numberOfModulesPhi * j + self._numberOfModulesZ * self._numberOfModulesPhi * k].setInitialGeometry()
                     # self._detectorModule[
@@ -125,7 +141,7 @@ class RegularPolygonalGeometry(Device):
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
-    from src.Detectors.Modules import PETModule
+    from src.DetectionLayout.Modules import PETModule
     from src.Designer import DeviceDesignerStandalone
 
     # newDevice = Device()
@@ -139,6 +155,7 @@ if __name__ == "__main__":
     module_ = PETModule
     #
     newDevice = RegularPolygonalGeometry(detector_module=module_)
+    # newDevice.setDetectorModule(module_)
     newDevice.setDeviceName("Test Device")
     newDevice.calculateInitialGeometry()
 

@@ -2,25 +2,24 @@ import numpy as np
 import skimage
 from skimage.transform import iradon, iradon_sart
 from skimage.filters import gaussian
-from src.EasyPETLinkInitializer.Preprocessing import Sinogram
+from EasyPETLinkInitializer.Preprocessing import Sinogram
 
 
 class AnalyticalReconstruction:
-    def __init__(self, reading_data=None, parametric_coordinates=None,
+    def __init__(self, initial_points=None, end_points=None,
                  pixel_size=0.2, type_filter="ramp", regularization=None, rebinning="reb"):
 
         self.interpolation = "cubic"
         self.clip = None
         self.projection_shifts = None
-        self.reading_data = reading_data
-        self.parametricCoordinates = parametric_coordinates
         self.type_filter = type_filter
         self.pixel_size = pixel_size
         self.regularization = regularization
         self.rebinning = rebinning
         self.im = None
 
-        self.sinoClass = Sinogram(listMode=self.reading_data, parametric=self.parametricCoordinates)
+        self.sinoClass = Sinogram(initialPoints=initial_points,
+                                  endPoints=end_points)
         self.sinoClass.calculate_s_phi()
         self.sinoClass.updateLimits()
         self.michelogram = None

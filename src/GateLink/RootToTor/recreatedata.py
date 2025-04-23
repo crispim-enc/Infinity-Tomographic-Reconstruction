@@ -4,7 +4,7 @@ import os
 import time
 from addanglestorootfile import AddMotorInfoToRoot
 from findcoincidencesRoot2Numpy import GenerateCoincidencesAndAnhnilationsPositions
-from RootJoiner import RootJoiner
+from rootjoiner import RootJoiner
 from validation_plots import CoincidenceValidationPlots
 
 #  get arguments addanglestorootfile.py from command line

@@ -1,0 +1,896 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Siemens Intevo Bold SPECT/CT &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6e65f732" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6e65f732" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=38b66d78"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/SiemensIntevoBoldSPECTCT/newdevice_siemens';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="API Reference" href="../../modules.html" />
+    <link rel="prev" title="Siemens" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../userguide.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../modules.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../userguide.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../modules.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../EasyPETCT/index.html">EasyPETCT</a><input checked class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../EasyPETCT/1_createNewDevice.html">EasyCT device creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../EasyPETCT/2_createTORFile.html">TOR FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../EasyPETCT/3_EasyPET_CT_reconstruction.html">Easy_CT Reconstruction</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Siemens</a><input checked class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Siemens Intevo Bold SPECT/CT</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Examples</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Siemens</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Siemens...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-siemensintevoboldspectct-newdevice-siemens-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="siemens-intevo-bold-spect-ct">
+<span id="sphx-glr-auto-examples-siemensintevoboldspectct-newdevice-siemens-py"></span><h1>Siemens Intevo Bold SPECT/CT<a class="headerlink" href="#siemens-intevo-bold-spect-ct" title="Link to this heading">#</a></h1>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pydicom</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">skimage.transform</span><span class="w"> </span><span class="kn">import</span> <span class="n">iradon</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">DetectionLayout.Modules</span><span class="w"> </span><span class="kn">import</span> <span class="n">PETModule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">DetectionLayout.Modules</span><span class="w"> </span><span class="kn">import</span> <span class="n">easyPETModule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">DetectionLayout.Modules.SPECTModuleGeneric</span><span class="w"> </span><span class="kn">import</span> <span class="n">SPECTHeadGeneric</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">DetectionLayout.Photodetectors.Crystals</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericCrystal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Geometry.Standard</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlanarGeometry</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Designer</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeviceDesignerStandalone</span>
+
+
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">file_path</span></a> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">Downloads</span><span class="se">\\</span><span class="s2">phase_1_challenge_data_03_05_2025</span><span class="se">\\</span><span class="s2">NEMA_phantom-20250221T115435Z-001</span><span class="se">\\</span><span class="s2">NEMA_phantom</span><span class="se">\\</span><span class="s2">SPECT-projections</span><span class="se">\\</span><span class="s2">&quot;</span>
+
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">file_path</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">file_path</span></a><span class="p">,</span> <span class="s2">&quot;DICOM</span><span class="se">\\</span><span class="s2">25011616</span><span class="se">\\</span><span class="s2">21060000</span><span class="se">\\</span><span class="s2">31702333&quot;</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">pydicom</span><span class="o">.</span><span class="n">dcmread</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">file_path</span></a><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Dataset.file_meta -------------------------------
+(0002, 0000) File Meta Information Group Length  UL: 200
+(0002, 0001) File Meta Information Version       OB: b&#39;\x00\x01&#39;
+(0002, 0002) Media Storage SOP Class UID         UI: Nuclear Medicine Image Storage
+(0002, 0003) Media Storage SOP Instance UID      UI: 1.3.12.2.1107.5.8.15.102372.30000025011616112216100000420
+(0002, 0010) Transfer Syntax UID                 UI: Explicit VR Little Endian
+(0002, 0012) Implementation Class UID            UI: 1.3.12.2.1107.5.8.15.10.20090701
+(0002, 0013) Implementation Version Name         SH: &#39;syngo.via&#39;
+-------------------------------------------------
+(0008, 0005) Specific Character Set              CS: &#39;ISO_IR 100&#39;
+(0008, 0008) Image Type                          CS: [&#39;ORIGINAL&#39;, &#39;PRIMARY&#39;, &#39;TOMO&#39;, &#39;EMISSION&#39;]
+(0008, 0016) SOP Class UID                       UI: Nuclear Medicine Image Storage
+(0008, 0018) SOP Instance UID                    UI: 1.3.12.2.1107.5.8.15.102372.30000025011616112216100000420
+(0008, 0020) Study Date                          DA: &#39;20241210&#39;
+(0008, 0021) Series Date                         DA: &#39;20241210&#39;
+(0008, 0022) Acquisition Date                    DA: &#39;20241210&#39;
+(0008, 0023) Content Date                        DA: &#39;20241210&#39;
+(0008, 0030) Study Time                          TM: &#39;101647&#39;
+(0008, 0031) Series Time                         TM: &#39;133615&#39;
+(0008, 0032) Acquisition Time                    TM: &#39;133615.706000&#39;
+(0008, 0033) Content Time                        TM: &#39;133615&#39;
+(0008, 0050) Accession Number                    SH: &#39;&#39;
+(0008, 0060) Modality                            CS: &#39;NM&#39;
+(0008, 0061) Modalities in Study                 CS: [&#39;NM&#39;, &#39;CT&#39;, &#39;SR&#39;]
+(0008, 0070) Manufacturer                        LO: &#39;SIEMENS NM&#39;
+(0008, 0090) Referring Physician&#39;s Name          PN: &#39;&#39;
+(0008, 1090) Manufacturer&#39;s Model Name           LO: &#39;Encore2&#39;
+(0008, 2218)  Anatomic Region Sequence  1 item(s) ----
+   (0008, 0100) Code Value                          SH: &#39;&#39;
+   (0008, 0102) Coding Scheme Designator            SH: &#39;&#39;
+   (0008, 0104) Code Meaning                        LO: &#39;-&#39;
+   ---------
+(0010, 0010) Patient&#39;s Name                      PN: &#39;ACTI_QUANT_NEMA_SCAN_Phase1&#39;
+(0010, 0020) Patient ID                          LO: &#39;ACTI_QUANT_NEMA_SCAN_Phase1&#39;
+(0010, 0030) Patient&#39;s Birth Date                DA: &#39;20250116&#39;
+(0010, 0040) Patient&#39;s Sex                       CS: &#39;F&#39;
+(0010, 1010) Patient&#39;s Age                       AS: &#39;035Y&#39;
+(0010, 1020) Patient&#39;s Size                      DS: &quot;1.67&quot;
+(0010, 1030) Patient&#39;s Weight                    DS: &quot;62.0&quot;
+(0012, 0062) Patient Identity Removed            CS: &#39;YES&#39;
+(0012, 0063) De-identification Method            LO: [&#39;Deidentified&#39;, &#39;Basic Application Confidentiality Profile applied&#39;, &#39;Retain Longitudinal Temporal Information With Full Dates Option&#39;, &#39;Retain Patient Characteristics Option&#39;]
+(0012, 0064)  De-identification Method Code Sequence  2 item(s) ----
+   (0008, 0100) Code Value                          SH: &#39;113106&#39;
+   (0008, 0102) Coding Scheme Designator            SH: &#39;DCM&#39;
+   (0008, 0104) Code Meaning                        LO: &#39;Retain Longitudinal Temporal Information With Full Dates Option&#39;
+   ---------
+   (0008, 0100) Code Value                          SH: &#39;113108&#39;
+   (0008, 0102) Coding Scheme Designator            SH: &#39;DCM&#39;
+   (0008, 0104) Code Meaning                        LO: &#39;Retain Patient Characteristics Option&#39;
+   ---------
+(0018, 0026)  Intervention Drug Information Sequence  1 item(s) ----
+   (0018, 0028) Intervention Drug Dose              DS: &quot;0.0&quot;
+   (0018, 0034) Intervention Drug Name              LO: &#39;&#39;
+   (0018, 0035) Intervention Drug Start Time        TM: &#39;000000.000000&#39;
+   ---------
+(0018, 0070) Counts Accumulated                  IS: None
+(0018, 0071) Acquisition Termination Condition   CS: &#39;TIME&#39;
+(0018, 1020) Software Versions                   LO: [&#39;10.700.2003.1302&#39;, &#39;10.700.1911.801&#39;, &#39;syngo CT VC50&gt;Symbia Intevo 16&gt;VB22A&#39;, &#39;VB22A&#39;]
+(0018, 1030) Protocol Name                       LO: &#39;DeIdentified&#39;
+(0018, 1200) Date of Last Calibration            DA: [&#39;20241125&#39;, &#39;20240404&#39;, &#39;20240916&#39;, &#39;20241125&#39;, &#39;20240404&#39;]
+(0018, 1201) Time of Last Calibration            TM: [&#39;153300.000000&#39;, &#39;161358.000000&#39;, &#39;153833.000000&#39;, &#39;153300.000000&#39;, &#39;161358.000000&#39;]
+(0018, 5100) Patient Position                    CS: &#39;FFS&#39;
+(0020, 000d) Study Instance UID                  UI: 1.3.12.2.1107.5.8.15.102372.30000025011616112216100000421
+(0020, 000e) Series Instance UID                 UI: 1.3.12.2.1107.5.8.15.102372.30000025011616112216100000422
+(0020, 0010) Study ID                            SH: &#39;&#39;
+(0020, 0011) Series Number                       IS: &quot;1000&quot;
+(0020, 0013) Instance Number                     IS: &quot;1&quot;
+(0020, 0052) Frame of Reference UID              UI: 1.3.12.2.1107.5.8.15.102372.30000025011616112216100000423
+(0020, 1040) Position Reference Indicator        LO: &#39;unknown&#39;
+(0020, 1208) Number of Study Related Instances   IS: &quot;1964&quot;
+(0028, 0002) Samples per Pixel                   US: 1
+(0028, 0004) Photometric Interpretation          CS: &#39;MONOCHROME2&#39;
+(0028, 0008) Number of Frames                    IS: &quot;720&quot;
+(0028, 0009) Frame Increment Pointer             AT: [(0054, 0010), (0054, 0020), (0054, 0050), (0054, 0090)]
+(0028, 0010) Rows                                US: 128
+(0028, 0011) Columns                             US: 128
+(0028, 0030) Pixel Spacing                       DS: [4.7951998710632, 4.7951998710632]
+(0028, 0051) Corrected Image                     CS: [&#39;UNIF&#39;, &#39;UNIF&#39;, &#39;UNIF&#39;, &#39;UNIF&#39;, &#39;UNIF&#39;, &#39;UNIF&#39;, &#39;UNIF&#39;, &#39;UNIF&#39;, &#39;UNIF&#39;, &#39;UNIF&#39;, &#39;UNIF&#39;, &#39;UNIF&#39;, &#39;UNIF&#39;]
+(0028, 0100) Bits Allocated                      US: 16
+(0028, 0101) Bits Stored                         US: 16
+(0028, 0102) High Bit                            US: 15
+(0028, 0103) Pixel Representation                US: 0
+(0028, 0106) Smallest Image Pixel Value          US: 0
+(0028, 0107) Largest Image Pixel Value           US: 31
+(0028, 1050) Window Center                       DS: &quot;15.0&quot;
+(0028, 1051) Window Width                        DS: &quot;31.0&quot;
+(0029, 0010) Private Creator                     LO: &#39;SIEMENS MEDCOM HEADER&#39;
+(0029, 0011) Private Creator                     LO: &#39;SIEMENS CSA HEADER&#39;
+(0029, 1040)  [Application Header Sequence]  4 item(s) ----
+   (0029, 0010) Private Creator                     LO: &#39;SIEMENS MEDCOM HEADER&#39;
+   (0029, 1041) [Application Header Type]           CS: &#39;VECTORMAP&#39;
+   (0029, 1042) [Application Header ID]             LO: &#39;Header 1&#39;
+   (0029, 1043) [Application Header Version]        LO: &#39;1.1&#39;
+   (0029, 1044) [Application Header Info]           OB: Array of 327680 elements
+   ---------
+   (0029, 0010) Private Creator                     LO: &#39;SIEMENS MEDCOM HEADER&#39;
+   (0029, 1041) [Application Header Type]           CS: &#39;VECTORMAP&#39;
+   (0029, 1042) [Application Header ID]             LO: &#39;Header 2&#39;
+   (0029, 1043) [Application Header Version]        LO: &#39;1.1&#39;
+   (0029, 1044) [Application Header Info]           OB: Array of 327680 elements
+   ---------
+   (0029, 0010) Private Creator                     LO: &#39;SIEMENS MEDCOM HEADER&#39;
+   (0029, 1041) [Application Header Type]           CS: &#39;DEFLECTIONMATRIX&#39;
+   (0029, 1042) [Application Header ID]             LO: &#39;Header 1&#39;
+   (0029, 1043) [Application Header Version]        LO: &#39;1.1&#39;
+   (0029, 1044) [Application Header Info]           OB: Array of 2880 elements
+   ---------
+   (0029, 0010) Private Creator                     LO: &#39;SIEMENS MEDCOM HEADER&#39;
+   (0029, 1041) [Application Header Type]           CS: &#39;DEFLECTIONMATRIX&#39;
+   (0029, 1042) [Application Header ID]             LO: &#39;Header 2&#39;
+   (0029, 1043) [Application Header Version]        LO: &#39;1.1&#39;
+   (0029, 1044) [Application Header Info]           OB: Array of 2880 elements
+   ---------
+(0029, 1108) [CSA Image Header Type]             CS: &#39;NUC FLOOD&#39;
+(0029, 1109) [CSA Image Header Version]          LO: &#39;1.1&#39;
+(0029, 1110) [CSA Image Header Info]             OB: Array of 786432 elements
+(0033, 0010) Private Creator                     LO: &#39;SIEMENS MED NM&#39;
+(0033, 1029) [Crystal thickness]                 FL: [9.524999618530273, 9.524999618530273]
+(0033, 1030) [Preset name used for acquisition]  LO: &#39;WouterTESTAc225&#39;
+(0035, 0010) Private Creator                     LO: &#39;SIEMENS MED NM&#39;
+(0035, 1000) [Specialized tomo type]             LO: &#39;None&#39;
+(0035, 1001) [Energy window type]                LO: [&#39;Photopeak&#39;, &#39;Scatter&#39;, &#39;Photopeak&#39;, &#39;Scatter&#39;, &#39;Photopeak&#39;, &#39;Scatter&#39;]
+(0040, 0244) Performed Procedure Step Start Date DA: &#39;20241210&#39;
+(0040, 0245) Performed Procedure Step Start Time TM: &#39;101647.697000&#39;
+(0041, 0010) Private Creator                     LO: &#39;SIEMENS MED NM&#39;
+(0041, 1001) [Unknown]                           SL: 1
+(0041, 1002) [Unknown]                           SL: 1
+(0054, 0010) Energy Window Vector                US: Array of 720 elements
+(0054, 0011) Number of Energy Windows            US: 6
+(0054, 0012)  Energy Window Information Sequence  6 item(s) ----
+   (0054, 0013)  Energy Window Range Sequence  1 item(s) ----
+      (0054, 0014) Energy Window Lower Limit           DS: &quot;398.35800170898&quot;
+      (0054, 0015) Energy Window Upper Limit           DS: &quot;486.88198852539&quot;
+      ---------
+   (0054, 0018) Energy Window Name                  SH: &#39;Window Group A&#39;
+   ---------
+   (0054, 0013)  Energy Window Range Sequence  1 item(s) ----
+      (0054, 0014) Energy Window Lower Limit           DS: &quot;241.51960754395&quot;
+      (0054, 0015) Energy Window Upper Limit           DS: &quot;398.26742553711&quot;
+      ---------
+   (0054, 0018) Energy Window Name                  SH: &#39;Window Group B&#39;
+   ---------
+   (0054, 0013)  Energy Window Range Sequence  1 item(s) ----
+      (0054, 0014) Energy Window Lower Limit           DS: &quot;194.33699035645&quot;
+      (0054, 0015) Energy Window Upper Limit           DS: &quot;237.52299499512&quot;
+      ---------
+   (0054, 0018) Energy Window Name                  SH: &#39;Window Group C&#39;
+   ---------
+   (0054, 0013)  Energy Window Range Sequence  1 item(s) ----
+      (0054, 0014) Energy Window Lower Limit           DS: &quot;103.26010131836&quot;
+      (0054, 0015) Energy Window Upper Limit           DS: &quot;193.89128112793&quot;
+      ---------
+   (0054, 0018) Energy Window Name                  SH: &#39;Window Group D&#39;
+   ---------
+   (0054, 0013)  Energy Window Range Sequence  1 item(s) ----
+      (0054, 0014) Energy Window Lower Limit           DS: &quot;71.04125213623&quot;
+      (0054, 0015) Energy Window Upper Limit           DS: &quot;91.338752746582&quot;
+      ---------
+   (0054, 0018) Energy Window Name                  SH: &#39;Window Group E&#39;
+   ---------
+   (0054, 0013)  Energy Window Range Sequence  1 item(s) ----
+      (0054, 0014) Energy Window Lower Limit           DS: &quot;62.216251373291&quot;
+      (0054, 0015) Energy Window Upper Limit           DS: &quot;70.158744812012&quot;
+      ---------
+   (0054, 0018) Energy Window Name                  SH: &#39;Window Group F&#39;
+   ---------
+(0054, 0016)  Radiopharmaceutical Information Sequence  0 item(s) ----
+(0054, 0020) Detector Vector                     US: Array of 720 elements
+(0054, 0021) Number of Detectors                 US: 2
+(0054, 0022)  Detector Information Sequence  2 item(s) ----
+   (0018, 1142) Radial Position                     DS: Array of 60 elements
+   (0018, 1145) Center of Rotation Offset           DS: &quot;0.0&quot;
+   (0018, 1147) Field of View Shape                 CS: &#39;RECTANGLE&#39;
+   (0018, 1149) Field of View Dimension(s)          IS: [537, 383]
+   (0018, 1180) Collimator/grid Name                SH: &#39;@30419607&#39;
+   (0018, 1181) Collimator Type                     CS: &#39;PARA&#39;
+   (0018, 1182) Focal Distance                      IS: &quot;0&quot;
+   (0018, 1183) X Focus Center                      DS: [0, 0]
+   (0018, 1184) Y Focus Center                      DS: [0, 0]
+   (0020, 0032) Image Position (Patient)            DS: [0, 0, 942.49519181252]
+   (0020, 0037) Image Orientation (Patient)         DS: [1, -8.742278e-008, 0, 0, 0, -1]
+   (0028, 0031) Zoom Factor                         DS: [1, 1]
+   (0054, 0200) Start Angle                         DS: &quot;179.85116577148&quot;
+   ---------
+   (0018, 1142) Radial Position                     DS: Array of 60 elements
+   (0018, 1145) Center of Rotation Offset           DS: &quot;0.0&quot;
+   (0018, 1147) Field of View Shape                 CS: &#39;RECTANGLE&#39;
+   (0018, 1149) Field of View Dimension(s)          IS: [537, 383]
+   (0018, 1180) Collimator/grid Name                SH: &#39;@30419608&#39;
+   (0018, 1181) Collimator Type                     CS: &#39;PARA&#39;
+   (0018, 1182) Focal Distance                      IS: &quot;0&quot;
+   (0018, 1183) X Focus Center                      DS: [0, 0]
+   (0018, 1184) Y Focus Center                      DS: [0, 0]
+   (0020, 0032) Image Position (Patient)            DS: [0, 0, 942.49519181252]
+   (0020, 0037) Image Orientation (Patient)         DS: [-1, 0, 0, 0, 0, -1]
+   (0028, 0031) Zoom Factor                         DS: [1, 1]
+   (0054, 0200) Start Angle                         DS: &quot;0.14882896840572&quot;
+   ---------
+(0054, 0050) Rotation Vector                     US: Array of 720 elements
+(0054, 0051) Number of Rotations                 US: 1
+(0054, 0052)  Rotation Information Sequence  1 item(s) ----
+   (0018, 1130) Table Height                        DS: &quot;222.1&quot;
+   (0018, 1131) Table Traverse                      DS: &quot;831.5&quot;
+   (0018, 1140) Rotation Direction                  CS: &#39;CC&#39;
+   (0018, 1142) Radial Position                     DS: Array of 60 elements
+   (0018, 1143) Scan Arc                            DS: &quot;180.0&quot;
+   (0018, 1144) Angular Step                        DS: &quot;3.0&quot;
+   (0018, 1242) Actual Frame Duration               IS: &quot;60001&quot;
+   (0054, 0053) Number of Frames in Rotation        US: 60
+   (0054, 0200) Start Angle                         DS: &quot;179.85116577148&quot;
+   ---------
+(0054, 0090) Angular View Vector                 US: Array of 720 elements
+(0054, 0202) Type of Detector Motion             CS: &#39;&#39;
+(0054, 0410)  Patient Orientation Code Sequence  1 item(s) ----
+   (0008, 0100) Code Value                          SH: &#39;F-10450&#39;
+   (0008, 0102) Coding Scheme Designator            SH: &#39;99SDM&#39;
+   (0008, 0104) Code Meaning                        LO: &#39;Recumbent&#39;
+   (0054, 0412)  Patient Orientation Modifier Code Sequence  1 item(s) ----
+      (0008, 0100) Code Value                          SH: &#39;F-10340&#39;
+      (0008, 0102) Coding Scheme Designator            SH: &#39;99SDM&#39;
+      (0008, 0104) Code Meaning                        LO: &#39;Supine position&#39;
+      ---------
+   ---------
+(0054, 0414)  Patient Gantry Relationship Code Sequence  1 item(s) ----
+   (0008, 0100) Code Value                          SH: &#39;G-5191&#39;
+   (0008, 0102) Coding Scheme Designator            SH: &#39;99SDM&#39;
+   (0008, 0104) Code Meaning                        LO: &#39;Feet-first&#39;
+   ---------
+(7fe0, 0010) Pixel Data                          OW: Array of 23592960 elements
+(7fe3, 0010) Private Creator                     LO: &#39;SIEMENS MED NM&#39;
+(7fe3, 1014) [Lowest Pixel Value in THIS Frame]  OW: Array of 2880 elements
+(7fe3, 1015) [Highest Pixel Value in THIS Frame] OW: Array of 2880 elements
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="s2">&quot;PixelData&quot;</span><span class="p">):</span>
+    <span class="n">num_frames</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="s2">&quot;NumberOfFrames&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Multi-frame images</span>
+    <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rows</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cols</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds</span><span class="o">.</span><span class="n">Rows</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds</span><span class="o">.</span><span class="n">Columns</span></a>
+</pre></div>
+</div>
+<p>detector information sequence</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">detector_info</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">DetectorInformationSequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">radial_positions</span> <span class="o">=</span> <span class="n">detector_info</span><span class="o">.</span><span class="n">RadialPosition</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">FOV_shape</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">detector_info</span><span class="o">.</span><span class="n">FieldOfViewShape</span></a>
+<span class="n">FOV_dim</span> <span class="o">=</span> <span class="n">detector_info</span><span class="o">.</span><span class="n">FieldOfViewDimensions</span>
+<span class="n">Focal_distance</span> <span class="o">=</span> <span class="n">detector_info</span><span class="o">.</span><span class="n">FocalDistance</span>
+<span class="n">start_angle</span> <span class="o">=</span> <span class="n">detector_info</span><span class="o">.</span><span class="n">StartAngle</span>
+<span class="c1">#pixel spacing</span>
+<span class="n">pixel_spacing</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">PixelSpacing</span>
+
+<span class="c1"># print(f&quot;Radial Positions: {radial_positions}&quot;)</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rotationVector</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds</span><span class="o">.</span><span class="n">RotationVector</span></a>
+<span class="n">rotationInformationSequence</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">RotationInformationSequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RotationDirection</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rotationInformationSequence</span><span class="o">.</span><span class="n">RotationDirection</span></a>
+<span class="n">scanArc</span> <span class="o">=</span> <span class="n">rotationInformationSequence</span><span class="o">.</span><span class="n">ScanArc</span>
+<span class="n">angularStep</span> <span class="o">=</span> <span class="n">rotationInformationSequence</span><span class="o">.</span><span class="n">AngularStep</span>
+<span class="c1"># numberOfFrames = rotationInformationSequence.NumberOfFrames</span>
+
+<span class="c1"># arcOfRotation = rotationVector.ScanArc</span>
+
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">angularViewVector</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds</span><span class="o">.</span><span class="n">AngularViewVector</span></a><span class="p">)</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">detectorVector</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds</span><span class="o">.</span><span class="n">DetectorVector</span></a><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rotation Vector: </span><span class="si">{</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rotationVector</span></a><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># module_spect = SPECTHeadGeneric()</span>
+
+
+<span class="c1"># module_.setHighEnergyLightDetectorBlock(2)</span>
+
+<span class="c1">#</span>
+<span class="n">newDevice</span> <span class="o">=</span> <span class="n">PlanarGeometry</span><span class="p">(</span><span class="n">distance_between_planes</span><span class="o">=</span><span class="mi">537</span><span class="p">)</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">setDeviceName</span><span class="p">(</span><span class="s2">&quot;Siemens SYmbia Intevo Bold SPEC/CT&quot;</span><span class="p">)</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">setNumberOfModulesZ</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">setNumberOfModulesPerSide</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">setNumberOfModulesPhi</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of modules: &quot;</span><span class="p">,</span> <span class="n">newDevice</span><span class="o">.</span><span class="n">numberOfModules</span><span class="p">)</span>
+
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">modules_</span></a> <span class="o">=</span> <span class="p">[</span><span class="n">PETModule</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">)</span> <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">newDevice</span><span class="o">.</span><span class="n">numberOfModules</span><span class="p">)]</span>
+<span class="n">newDevice</span><span class="o">.</span><span class="n">setDetectorModule</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">modules_</span></a><span class="p">)</span>
+
+<span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">newDevice</span><span class="o">.</span><span class="n">numberOfModules</span><span class="p">):</span>
+    <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModule</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">setModuleID</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">)</span>
+    <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModule</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">updateNumberHighEnergyLightDetectors</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of high energy light detectors: &quot;</span><span class="p">,</span> <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModule</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">totalNumberHighEnergyLightDetectors</span><span class="p">)</span>
+
+    <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModule</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">setModelHighEnergyLightDetectors</span><span class="p">([</span><span class="n">GenericCrystal</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span>
+                                                <span class="nb">range</span><span class="p">(</span><span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModule</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">totalNumberHighEnergyLightDetectors</span><span class="p">)])</span>
+    <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">j</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModule</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">totalNumberHighEnergyLightDetectors</span><span class="p">):</span>
+
+        <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModule</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">modelHighEnergyLightDetectors</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">j</span></a><span class="p">]</span><span class="o">.</span><span class="n">setCrystalID</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">j</span></a><span class="p">)</span>
+        <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModule</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">modelHighEnergyLightDetectors</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">j</span></a><span class="p">]</span><span class="o">.</span><span class="n">setCristalSize</span><span class="p">(</span><span class="n">pixel_spacing</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pixel_spacing</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModule</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">setReflectorThicknessX</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModule</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">setReflectorThicknessY</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">newDevice</span><span class="o">.</span><span class="n">detectorModule</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">setHighEnergyLightDetectorBlock</span><span class="p">()</span>
+
+<span class="n">newDevice</span><span class="o">.</span><span class="n">calculateInitialGeometry</span><span class="p">()</span>
+
+<span class="n">designer</span> <span class="o">=</span> <span class="n">DeviceDesignerStandalone</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">newDevice</span><span class="p">)</span>
+<span class="n">designer</span><span class="o">.</span><span class="n">addDevice</span><span class="p">()</span>
+<span class="n">designer</span><span class="o">.</span><span class="n">startRender</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">newDevice</span><span class="o">.</span><span class="n">getDeviceName</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Rotation Vector: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+Number of modules:  2
+Number of high energy light detectors:  16384
+Number of high energy light detectors:  16384
+Adding module
+&lt;DetectionLayout.Modules.PETModuleGeneric.PETModule object at 0x00000247917F3FA0&gt;
+Adding module
+&lt;DetectionLayout.Modules.PETModuleGeneric.PETModule object at 0x000002478E76DE50&gt;
+Siemens SYmbia Intevo Bold SPEC/CT
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if the file contains Pixel Data (projection images)</span>
+<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="s2">&quot;PixelData&quot;</span><span class="p">):</span>
+    <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pixel_array</span></a> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pixel_array</span></a>  <span class="c1"># Convert pixel data to NumPy array</span>
+
+    <span class="n">num_frames</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="s2">&quot;NumberOfFrames&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Check number of projection frames</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Projection Data Found: </span><span class="si">{</span><span class="n">num_frames</span><span class="si">}</span><span class="s2"> frames of </span><span class="si">{</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds</span><span class="o">.</span><span class="n">Rows</span></a><span class="si">}</span><span class="s2">x</span><span class="si">{</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds</span><span class="o">.</span><span class="n">Columns</span></a><span class="si">}</span><span class="s2"> pixels.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Display first few projections</span>
+    <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">num_display</span></a> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">num_frames</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Show up to 6 projections</span>
+    <span class="n">fig</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">num_display</span></a><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">num_display</span></a><span class="p">):</span>
+        <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pixel_array</span></a><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+        <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Projection </span><span class="si">{</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+    <span class="c1"># plt.show()</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No Pixel Data found.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_newdevice_siemens_001.png" srcset="../../_images/sphx_glr_newdevice_siemens_001.png" alt="Projection 1, Projection 2, Projection 3, Projection 4, Projection 5, Projection 6, Projection 7, Projection 8, Projection 9, Projection 10" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Projection Data Found: 720 frames of 128x128 pixels.
+</pre></div>
+</div>
+<p>create a sinogram from the dicom information</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pixel_array</span><span class="o">.</span><span class="n">shape</span></a><span class="p">)</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sinogram</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pixel_array</span></a><span class="p">[</span><span class="mi">40</span><span class="p">]</span>
+<span class="c1"># theta = np.linspace()</span>
+<span class="c1"># image = iradon(sinogram, theta=theta, circle=True)</span>
+<span class="c1"># plt.imshow(image, cmap=&#39;gray&#39;)/</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(720, 128, 128)
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (2 minutes 10.327 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-siemensintevoboldspectct-newdevice-siemens-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/2a2506dcd4952ea30aad28f342e9f25a/newdevice_siemens.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">newdevice_siemens.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/c4af1df31694feda51772237a517ea62/newdevice_siemens.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">newdevice_siemens.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/22251f4fbeb54b597a97f88fb29eb5ed/newdevice_siemens.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">newdevice_siemens.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Siemens</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../modules.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API Reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -36,14 +36,6 @@ Phantoms.data\_suv\_reader module
    :undoc-members:
    :show-inheritance:
 
-Phantoms.listModeGenerator module
----------------------------------
-
-.. automodule:: Phantoms.listModeGenerator
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Phantoms.microderenzo module
 ----------------------------
 

@@ -4,14 +4,6 @@ Quantification package
 Submodules
 ----------
 
-Quantification.activtycharts module
------------------------------------
-
-.. automodule:: Quantification.activtycharts
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Quantification.factor\_calibration\_phantom\_uniform module
 -----------------------------------------------------------
 

@@ -1,0 +1,2898 @@
+{
+ "DetectorSensitivityResponse": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Corrections.General.detector_sensitivity",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Corrections.General",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Corrections",
+   "module_short": "Corrections",
+   "name": "DetectorSensitivityResponse"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.General",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse"
+  }
+ ],
+ "DeviceDesignerStandalone": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Designer.deviceDesigner",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone"
+  }
+ ],
+ "EasyCTGeometry": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device",
+   "name": "Device"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  }
+ ],
+ "EnergyResolutionFunction": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Device.energy_resolution_function",
+   "module_short": "Device",
+   "name": "EnergyResolutionFunction"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "EnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "EnergyResolutionFunction"
+  }
+ ],
+ "GenericRadiativeSource": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource"
+  }
+ ],
+ "StoreDeviceInFo": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Device.storedeviceInfo",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  }
+ ],
+ "ToRFile": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  }
+ ],
+ "ToRFile_sensitivity": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile"
+  }
+ ],
+ "ToRFile_sensitivity.read": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader.torfiles",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.read"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "TORFilesReader",
+   "module_short": "TORFilesReader",
+   "name": "ToRFile.read"
+  }
+ ],
+ "_module": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules.easyPETModules",
+   "module_short": "DetectionLayout.Modules",
+   "name": "easyPETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules",
+   "module_short": "DetectionLayout.Modules",
+   "name": "easyPETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "easyPETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules.PETModuleGeneric",
+   "module_short": "DetectionLayout.Modules",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules",
+   "module_short": "DetectionLayout.Modules",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "PETModule"
+  }
+ ],
+ "axial_motor_angles": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "curve_fit": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "scipy.optimize",
+   "module_short": "scipy.optimize",
+   "name": "curve_fit"
+  }
+ ],
+ "designer": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer.deviceDesigner",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone"
+  }
+ ],
+ "designer.addDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer.deviceDesigner",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone.addDevice"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone.addDevice"
+  }
+ ],
+ "designer.addxRayProducerSource": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer.deviceDesigner",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone.addxRayProducerSource"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone.addxRayProducerSource"
+  }
+ ],
+ "designer.startRender": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer.deviceDesigner",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone.startRender"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Designer",
+   "module_short": "Designer",
+   "name": "DeviceDesignerStandalone.startRender"
+  }
+ ],
+ "detector_sensitivity": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.General.detector_sensitivity",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.General",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections",
+   "module_short": "Corrections",
+   "name": "DetectorSensitivityResponse"
+  }
+ ],
+ "detector_sensitivity.setDetectorSensitivity": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.General.detector_sensitivity",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse.setDetectorSensitivity"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.General",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse.setDetectorSensitivity"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections",
+   "module_short": "Corrections",
+   "name": "DetectorSensitivityResponse.setDetectorSensitivity"
+  }
+ ],
+ "detector_sensitivity.setEnergyPeaks": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.General.detector_sensitivity",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse.setEnergyPeaks"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.General",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse.setEnergyPeaks"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections",
+   "module_short": "Corrections",
+   "name": "DetectorSensitivityResponse.setEnergyPeaks"
+  }
+ ],
+ "detector_sensitivity.setEnergyWindows": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.General.detector_sensitivity",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse.setEnergyWindows"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections.General",
+   "module_short": "Corrections.General",
+   "name": "DetectorSensitivityResponse.setEnergyWindows"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Corrections",
+   "module_short": "Corrections",
+   "name": "DetectorSensitivityResponse.setEnergyWindows"
+  }
+ ],
+ "device_path": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "easyPETModule": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules.easyPETModules",
+   "module_short": "DetectionLayout.Modules",
+   "name": "easyPETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules",
+   "module_short": "DetectionLayout.Modules",
+   "name": "easyPETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "easyPETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules.PETModuleGeneric",
+   "module_short": "DetectionLayout.Modules",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules",
+   "module_short": "DetectionLayout.Modules",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "PETModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.Modules",
+   "module_short": "DetectionLayout.Modules",
+   "name": "easyPETModule"
+  }
+ ],
+ "energies": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "energy_resolution": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "energy_window": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "fan_motor_angles": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "file_white_scan": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "fit": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "i": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "modifyDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "bool"
+  }
+ ],
+ "moduleSideA_X_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideA_Y_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideA_Z_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideA_alpha_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideA_beta_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideA_sigma_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_X_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_Y_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_Z_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_alpha_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_beta_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_sigma_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "newDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry"
+  }
+ ],
+ "newDevice._verticesB": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "newDevice.centerFace": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased.dualrotationsystem",
+   "name": "DualRotationSystem.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.centerFace"
+  }
+ ],
+ "newDevice.centerFace.shape": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased.dualrotationsystem",
+   "name": "DualRotationSystem.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.centerFace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.centerFace"
+  }
+ ],
+ "newDevice.createDirectory": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device",
+   "name": "Device.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.createDirectory"
+  }
+ ],
+ "newDevice.detectorModulesSideA": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.detectorModulesSideA"
+  }
+ ],
+ "newDevice.detectorModulesSideB": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.detectorModulesSideB"
+  }
+ ],
+ "newDevice.detectorSideBCoordinatesAfterMovement": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.detectorSideBCoordinatesAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.detectorSideBCoordinatesAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.detectorSideBCoordinatesAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.detectorSideBCoordinatesAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.detectorSideBCoordinatesAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.detectorSideBCoordinatesAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.detectorSideBCoordinatesAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.detectorSideBCoordinatesAfterMovement"
+  }
+ ],
+ "newDevice.deviceDirectory": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device",
+   "name": "Device.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.deviceDirectory"
+  }
+ ],
+ "newDevice.evaluateInitialSourcePosition": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.evaluateInitialSourcePosition"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.evaluateInitialSourcePosition"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.evaluateInitialSourcePosition"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased.dualrotationsystem",
+   "name": "DualRotationSystem.evaluateInitialSourcePosition"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.evaluateInitialSourcePosition"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.evaluateInitialSourcePosition"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.evaluateInitialSourcePosition"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.evaluateInitialSourcePosition"
+  }
+ ],
+ "newDevice.generateDeviceUUID": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device",
+   "name": "Device.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.generateDeviceUUID"
+  }
+ ],
+ "newDevice.generateInitialCoordinatesWKSystem": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.generateInitialCoordinatesWKSystem"
+  }
+ ],
+ "newDevice.generateInitialCoordinatesXYSystem": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.generateInitialCoordinatesXYSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.generateInitialCoordinatesXYSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.generateInitialCoordinatesXYSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.generateInitialCoordinatesXYSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.generateInitialCoordinatesXYSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.generateInitialCoordinatesXYSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.generateInitialCoordinatesXYSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.generateInitialCoordinatesXYSystem"
+  }
+ ],
+ "newDevice.numberOfDetectorModulesSideA": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.numberOfDetectorModulesSideA"
+  }
+ ],
+ "newDevice.numberOfDetectorModulesSideB": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.numberOfDetectorModulesSideB"
+  }
+ ],
+ "newDevice.originSystemWZ": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.originSystemWZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.originSystemWZ"
+  }
+ ],
+ "newDevice.originSystemXY": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.originSystemXY"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.originSystemXY"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.originSystemXY"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.originSystemXY"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.originSystemXY"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.originSystemXY"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.originSystemXY"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.originSystemXY"
+  }
+ ],
+ "newDevice.setDeviceName": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device",
+   "name": "Device.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setDeviceName"
+  }
+ ],
+ "newDevice.setDeviceType": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device",
+   "name": "Device.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setDeviceType"
+  }
+ ],
+ "newDevice.setDistanceBetweenMotors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setDistanceBetweenMotors"
+  }
+ ],
+ "newDevice.setDistanceFanMotorToDetectorModulesOnSideA": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setDistanceFanMotorToDetectorModulesOnSideA"
+  }
+ ],
+ "newDevice.setDistanceFanMotorToDetectorModulesOnSideB": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setDistanceFanMotorToDetectorModulesOnSideB"
+  }
+ ],
+ "newDevice.setEnergyResolutionFunction": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device",
+   "name": "Device.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setEnergyResolutionFunction"
+  }
+ ],
+ "newDevice.setNumberOfDetectorModulesSideA": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setNumberOfDetectorModulesSideA"
+  }
+ ],
+ "newDevice.setNumberOfDetectorModulesSideB": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.setNumberOfDetectorModulesSideB"
+  }
+ ],
+ "newDevice.sourceCenter": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased.dualrotationsystem",
+   "name": "DualRotationSystem.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.sourceCenter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.sourceCenter"
+  }
+ ],
+ "newDevice.sourcePositionAfterMovement": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased.dualrotationsystem",
+   "name": "DualRotationSystem.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.sourcePositionAfterMovement"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.sourcePositionAfterMovement"
+  }
+ ],
+ "newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.xRayProducer"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry.xRayProducer"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry.xRayProducer"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "Geometry.easyPETBased.dualrotationsystem",
+   "name": "DualRotationSystem.xRayProducer"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "DualRotationSystem.xRayProducer"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "DualRotationSystem.xRayProducer"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.device",
+   "module_short": "Device.device",
+   "name": "Device.xRayProducer"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "Device.xRayProducer"
+  }
+ ],
+ "newDevice_Read": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry.easyPETBased",
+   "module_short": "Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Geometry",
+   "module_short": "Geometry",
+   "name": "EasyCTGeometry"
+  }
+ ],
+ "np.arange": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "arange"
+  }
+ ],
+ "np.array": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "array"
+  }
+ ],
+ "np.float32": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "float32"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "floating"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "inexact"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "number"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "generic"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "float32"
+  }
+ ],
+ "np.ones": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ones"
+  }
+ ],
+ "np.repeat": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "repeat"
+  }
+ ],
+ "np.sqrt": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ufunc"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "sqrt"
+  }
+ ],
+ "np.tile": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "tile"
+  }
+ ],
+ "np.zeros": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "zeros"
+  }
+ ],
+ "plt.figure": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "figure"
+  }
+ ],
+ "plt.legend": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "legend"
+  }
+ ],
+ "plt.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "plot"
+  }
+ ],
+ "plt.savefig": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "savefig"
+  }
+ ],
+ "plt.show": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "show"
+  }
+ ],
+ "plt.xlabel": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "xlabel"
+  }
+ ],
+ "plt.ylabel": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "ylabel"
+  }
+ ],
+ "readDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.storedeviceInfo",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  }
+ ],
+ "readDevice.readDeviceFromDirectory": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.storedeviceInfo",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo.readDeviceFromDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo.readDeviceFromDirectory"
+  }
+ ],
+ "storeDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.storedeviceInfo",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo"
+  }
+ ],
+ "storeDevice.createDeviceInDirectory": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.storedeviceInfo",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo.createDeviceInDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "StoreDeviceInFo.createDeviceInDirectory"
+  }
+ ],
+ "systemEnergyResolution": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device.energy_resolution_function",
+   "module_short": "Device",
+   "name": "EnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "Device",
+   "module_short": "Device",
+   "name": "EnergyResolutionFunction"
+  }
+ ],
+ "systemEnergyResponseFunction": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  }
+ ],
+ "unique_header": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "xrayproducer": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource"
+  }
+ ],
+ "xrayproducer.setFocalSpotDiameter": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setFocalSpotDiameter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setFocalSpotDiameter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource.setFocalSpotDiameter"
+  }
+ ],
+ "xrayproducer.setMainEmissions": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setMainEmissions"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setMainEmissions"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource.setMainEmissions"
+  }
+ ],
+ "xrayproducer.setShieldingDensity": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingDensity"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingDensity"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource.setShieldingDensity"
+  }
+ ],
+ "xrayproducer.setShieldingHeight": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingHeight"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingHeight"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource.setShieldingHeight"
+  }
+ ],
+ "xrayproducer.setShieldingMaterial": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingMaterial"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingMaterial"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource.setShieldingMaterial"
+  }
+ ],
+ "xrayproducer.setShieldingRadius": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingRadius"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingRadius"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource.setShieldingRadius"
+  }
+ ],
+ "xrayproducer.setShieldingShape": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingShape"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingShape"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource.setShieldingShape"
+  }
+ ],
+ "xrayproducer.setShieldingThickness": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingThickness"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setShieldingThickness"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource.setShieldingThickness"
+  }
+ ],
+ "xrayproducer.setSourceActivity": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setSourceActivity"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setSourceActivity"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource.setSourceActivity"
+  }
+ ],
+ "xrayproducer.setSourceName": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer.GenericSource",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setSourceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout.RadiationProducer",
+   "module_short": "DetectionLayout.RadiationProducer",
+   "name": "GenericRadiativeSource.setSourceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "DetectionLayout",
+   "module_short": "DetectionLayout",
+   "name": "GenericRadiativeSource.setSourceName"
+  }
+ ]
+}

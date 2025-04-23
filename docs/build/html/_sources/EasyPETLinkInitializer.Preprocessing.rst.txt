@@ -20,14 +20,6 @@ EasyPETLinkInitializer.Preprocessing.prepareeasypetdata module
    :undoc-members:
    :show-inheritance:
 
-EasyPETLinkInitializer.Preprocessing.regularization\_error\_hist module
------------------------------------------------------------------------
-
-.. automodule:: EasyPETLinkInitializer.Preprocessing.regularization_error_hist
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 EasyPETLinkInitializer.Preprocessing.sinogram module
 ----------------------------------------------------
 

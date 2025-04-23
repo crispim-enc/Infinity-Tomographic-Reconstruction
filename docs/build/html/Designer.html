@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Designer package &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6e65f732" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6e65f732" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="_static/documentation_options.js?v=38b66d78"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Designer';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DetectionLayout package" href="DetectionLayout.html" />
+    <link rel="prev" title="Corrections.PET.Projector package" href="Corrections.PET.Projector.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="userguide.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="userguide.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AnalyticalReconstruction.html">AnalyticalReconstruction package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Corrections.html">Corrections package</a><input checked class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.CT.html">Corrections.CT package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.CT.Projector.html">Corrections.CT.Projector package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.Compton.html">Corrections.Compton package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.EasyPET.html">Corrections.EasyPET package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.Normalization.html">Corrections.EasyPET.Normalization package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.EasyPET.SystemFocus.html">Corrections.EasyPET.SystemFocus package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Corrections.General.html">Corrections.General package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Corrections.PET.html">Corrections.PET package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Attenuation.html">Corrections.PET.Attenuation package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DOI.html">Corrections.PET.DOI package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.DecayCorrection.html">Corrections.PET.DecayCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.EnergyCorrection.html">Corrections.PET.EnergyCorrection package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Corrections.PET.Projector.html">Corrections.PET.Projector package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Designer package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="DetectionLayout.html">DetectionLayout package</a><input checked class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Collimators.html">DetectionLayout.Collimators package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Modules.html">DetectionLayout.Modules package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="DetectionLayout.Photodetectors.html">DetectionLayout.Photodetectors package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Photodetectors.Crystals.html">DetectionLayout.Photodetectors.Crystals package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DetectionLayout.Photodetectors.SiPM.html">DetectionLayout.Photodetectors.SiPM package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.RadiationProducer.html">DetectionLayout.RadiationProducer package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.Semicondutors.html">DetectionLayout.Semicondutors package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Device.html">Device package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="EasyPETLinkInitializer.html">EasyPETLinkInitializer package</a><input checked class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.EasyPETDataReader.html">EasyPETLinkInitializer.EasyPETDataReader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Preprocessing.html">EasyPETLinkInitializer.Preprocessing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.SimulationData.html">EasyPETLinkInitializer.SimulationData package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.Utilities.html">EasyPETLinkInitializer.Utilities package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="GateLink.html">GateLink package</a><input checked class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.GateToTor.html">GateLink.GateToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.RootToTor.html">GateLink.RootToTor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GateLink.ToRToGate.html">GateLink.ToRToGate package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Geometry.html">Geometry package</a><input checked class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.LinearPET.html">Geometry.LinearPET package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.SPIRAL.html">Geometry.SPIRAL package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.Standard.html">Geometry.Standard package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Geometry.easyPETBased.html">Geometry.easyPETBased package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ImageReader.html">ImageReader package</a><input checked class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.DICOM.html">ImageReader.DICOM package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.Interfile.html">ImageReader.Interfile package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageReader.RawData.html">ImageReader.RawData package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Metrics.html">Metrics package</a><input checked class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.ImageQuality.html">Metrics.ImageQuality package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Metrics.NEMA.html">Metrics.NEMA package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Optimizer.html">Optimizer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phantoms.html">Phantoms package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quantification.html">Quantification package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StandaloneInitializer.html">StandaloneInitializer package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TORFilesReader.html">TORFilesReader package</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Designer package</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="designer-package">
+<h1>Designer package<a class="headerlink" href="#designer-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-Designer.Image_vtk_projector_article">
+<span id="designer-image-vtk-projector-article-module"></span><h2>Designer.Image_vtk_projector_article module<a class="headerlink" href="#module-Designer.Image_vtk_projector_article" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Designer.Image_vtk_projector_article.</span></span><span class="sig-name descname"><span class="pre">SliceViewer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data3D</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colormap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hot.cl'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.MiceNaf">
+<span class="sig-name descname"><span class="pre">MiceNaf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recalculate_max_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_scalar_bar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_volume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(600,</span> <span class="pre">600)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.MiceNaf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.MiceNaf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.MouseMoveCallback">
+<span class="sig-name descname"><span class="pre">MouseMoveCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.MouseMoveCallback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.MouseMoveCallback" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.NemaIQ2008">
+<span class="sig-name descname"><span class="pre">NemaIQ2008</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_to_save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_scalar_bar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recalculate_max_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.NemaIQ2008"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.NemaIQ2008" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.addObservers">
+<span class="sig-name descname"><span class="pre">addObservers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.addObservers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.addObservers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.addViewportsNema">
+<span class="sig-name descname"><span class="pre">addViewportsNema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_renderer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_map_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.addViewportsNema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.addViewportsNema" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.addVolumeRendering">
+<span class="sig-name descname"><span class="pre">addVolumeRendering</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.addVolumeRendering"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.addVolumeRendering" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.createMovie">
+<span class="sig-name descname"><span class="pre">createMovie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.createMovie"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.createMovie" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.create_reslice">
+<span class="sig-name descname"><span class="pre">create_reslice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slab_thickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slab_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Coronal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">azimuthal_angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polar_angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.create_reslice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.create_reslice" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.create_viewport">
+<span class="sig-name descname"><span class="pre">create_viewport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">renderer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viewport</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.create_viewport"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.create_viewport" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.derenzo">
+<span class="sig-name descname"><span class="pre">derenzo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outputFilename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recalculate_max_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.derenzo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.derenzo" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.maxValueForVolume">
+<span class="sig-name descname"><span class="pre">maxValueForVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.maxValueForVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.maxValueForVolume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.minValueForVolume">
+<span class="sig-name descname"><span class="pre">minValueForVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.minValueForVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.minValueForVolume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.prepare_data">
+<span class="sig-name descname"><span class="pre">prepare_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voxeldata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colormap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data3D</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.prepare_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.prepare_data" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.renderWindow">
+<span class="sig-name descname"><span class="pre">renderWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1875,</span> <span class="pre">1875)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.renderWindow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.renderWindow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.saveImageInPDF">
+<span class="sig-name descname"><span class="pre">saveImageInPDF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outputFilename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.saveImageInPDF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.saveImageInPDF" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.save_screenshot">
+<span class="sig-name descname"><span class="pre">save_screenshot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.save_screenshot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.save_screenshot" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.setAmbient">
+<span class="sig-name descname"><span class="pre">setAmbient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ambient</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.setAmbient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.setAmbient" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.setColorMapLimits">
+<span class="sig-name descname"><span class="pre">setColorMapLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v_lim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.setColorMapLimits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.setColorMapLimits" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.setMaxValueForVolume">
+<span class="sig-name descname"><span class="pre">setMaxValueForVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.setMaxValueForVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.setMaxValueForVolume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.setSpecular">
+<span class="sig-name descname"><span class="pre">setSpecular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specular</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.setSpecular"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.setSpecular" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.setVolumeRotation">
+<span class="sig-name descname"><span class="pre">setVolumeRotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.setVolumeRotation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.setVolumeRotation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.setZoomVolume">
+<span class="sig-name descname"><span class="pre">setZoomVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.setZoomVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.setZoomVolume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.SliceViewer.wheelForwardCallback">
+<span class="sig-name descname"><span class="pre">wheelForwardCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#SliceViewer.wheelForwardCallback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.SliceViewer.wheelForwardCallback" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.vtkTimerCallback">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Designer.Image_vtk_projector_article.</span></span><span class="sig-name descname"><span class="pre">vtkTimerCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">writer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageFilter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#vtkTimerCallback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.vtkTimerCallback" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.Image_vtk_projector_article.vtkTimerCallback.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/Image_vtk_projector_article.html#vtkTimerCallback.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.Image_vtk_projector_article.vtkTimerCallback.execute" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Designer.deviceDesigner">
+<span id="designer-devicedesigner-module"></span><h2>Designer.deviceDesigner module<a class="headerlink" href="#module-Designer.deviceDesigner" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Designer.deviceDesigner.DeviceDesignerStandalone">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Designer.deviceDesigner.</span></span><span class="sig-name descname"><span class="pre">DeviceDesignerStandalone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/deviceDesigner.html#DeviceDesignerStandalone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.deviceDesigner.DeviceDesignerStandalone" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.deviceDesigner.DeviceDesignerStandalone.addDevice">
+<span class="sig-name descname"><span class="pre">addDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/deviceDesigner.html#DeviceDesignerStandalone.addDevice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.deviceDesigner.DeviceDesignerStandalone.addDevice" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.deviceDesigner.DeviceDesignerStandalone.addModule">
+<span class="sig-name descname"><span class="pre">addModule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/deviceDesigner.html#DeviceDesignerStandalone.addModule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.deviceDesigner.DeviceDesignerStandalone.addModule" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.deviceDesigner.DeviceDesignerStandalone.addxRayProducerSource">
+<span class="sig-name descname"><span class="pre">addxRayProducerSource</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/deviceDesigner.html#DeviceDesignerStandalone.addxRayProducerSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.deviceDesigner.DeviceDesignerStandalone.addxRayProducerSource" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Designer.deviceDesigner.DeviceDesignerStandalone.startRender">
+<span class="sig-name descname"><span class="pre">startRender</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/deviceDesigner.html#DeviceDesignerStandalone.startRender"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.deviceDesigner.DeviceDesignerStandalone.startRender" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Designer.geometricdesigner">
+<span id="designer-geometricdesigner-module"></span><h2>Designer.geometricdesigner module<a class="headerlink" href="#module-Designer.geometricdesigner" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Designer.geometricdesigner.GeometryDesigner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Designer.geometricdesigner.</span></span><span class="sig-name descname"><span class="pre">GeometryDesigner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detector_geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">draw_volume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_vector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_dimensions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[2,</span> <span class="pre">10,</span> <span class="pre">2]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Designer/geometricdesigner.html#GeometryDesigner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Designer.geometricdesigner.GeometryDesigner" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="designer-vtkrender-module">
+<h2>Designer.vtkrender module<a class="headerlink" href="#designer-vtkrender-module" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-Designer">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Designer" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Corrections.PET.Projector.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Corrections.PET.Projector package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DetectionLayout.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DetectionLayout package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-Designer.Image_vtk_projector_article">Designer.Image_vtk_projector_article module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer"><code class="docutils literal notranslate"><span class="pre">SliceViewer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.MiceNaf"><code class="docutils literal notranslate"><span class="pre">SliceViewer.MiceNaf()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.MouseMoveCallback"><code class="docutils literal notranslate"><span class="pre">SliceViewer.MouseMoveCallback()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.NemaIQ2008"><code class="docutils literal notranslate"><span class="pre">SliceViewer.NemaIQ2008()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.addObservers"><code class="docutils literal notranslate"><span class="pre">SliceViewer.addObservers()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.addViewportsNema"><code class="docutils literal notranslate"><span class="pre">SliceViewer.addViewportsNema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.addVolumeRendering"><code class="docutils literal notranslate"><span class="pre">SliceViewer.addVolumeRendering()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.createMovie"><code class="docutils literal notranslate"><span class="pre">SliceViewer.createMovie()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.create_reslice"><code class="docutils literal notranslate"><span class="pre">SliceViewer.create_reslice()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.create_viewport"><code class="docutils literal notranslate"><span class="pre">SliceViewer.create_viewport()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.derenzo"><code class="docutils literal notranslate"><span class="pre">SliceViewer.derenzo()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.maxValueForVolume"><code class="docutils literal notranslate"><span class="pre">SliceViewer.maxValueForVolume()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.minValueForVolume"><code class="docutils literal notranslate"><span class="pre">SliceViewer.minValueForVolume()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.prepare_data"><code class="docutils literal notranslate"><span class="pre">SliceViewer.prepare_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.renderWindow"><code class="docutils literal notranslate"><span class="pre">SliceViewer.renderWindow()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.saveImageInPDF"><code class="docutils literal notranslate"><span class="pre">SliceViewer.saveImageInPDF()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.save_screenshot"><code class="docutils literal notranslate"><span class="pre">SliceViewer.save_screenshot()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.setAmbient"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setAmbient()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.setColorMapLimits"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setColorMapLimits()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.setMaxValueForVolume"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setMaxValueForVolume()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.setSpecular"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setSpecular()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.setVolumeRotation"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setVolumeRotation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.setZoomVolume"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setZoomVolume()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.SliceViewer.wheelForwardCallback"><code class="docutils literal notranslate"><span class="pre">SliceViewer.wheelForwardCallback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.vtkTimerCallback"><code class="docutils literal notranslate"><span class="pre">vtkTimerCallback</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.Image_vtk_projector_article.vtkTimerCallback.execute"><code class="docutils literal notranslate"><span class="pre">vtkTimerCallback.execute()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-Designer.deviceDesigner">Designer.deviceDesigner module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.deviceDesigner.DeviceDesignerStandalone"><code class="docutils literal notranslate"><span class="pre">DeviceDesignerStandalone</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.deviceDesigner.DeviceDesignerStandalone.addDevice"><code class="docutils literal notranslate"><span class="pre">DeviceDesignerStandalone.addDevice()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.deviceDesigner.DeviceDesignerStandalone.addModule"><code class="docutils literal notranslate"><span class="pre">DeviceDesignerStandalone.addModule()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.deviceDesigner.DeviceDesignerStandalone.addxRayProducerSource"><code class="docutils literal notranslate"><span class="pre">DeviceDesignerStandalone.addxRayProducerSource()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.deviceDesigner.DeviceDesignerStandalone.startRender"><code class="docutils literal notranslate"><span class="pre">DeviceDesignerStandalone.startRender()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-Designer.geometricdesigner">Designer.geometricdesigner module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Designer.geometricdesigner.GeometryDesigner"><code class="docutils literal notranslate"><span class="pre">GeometryDesigner</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#designer-vtkrender-module">Designer.vtkrender module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-Designer">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

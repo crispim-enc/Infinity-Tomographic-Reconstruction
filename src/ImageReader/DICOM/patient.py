@@ -5,7 +5,7 @@ from pydicom.dataset import Dataset, FileDataset
 # from pydicom.filebase import DicomFileLike
 # from pydicom.fileutil import PathType
 
-from src.ImageReader.DICOM.submodule import MainAttribute, SubAttribute
+from ImageReader.DICOM.submodule import MainAttribute, SubAttribute
 
 
 class Patient(FileDataset):
