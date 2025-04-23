@@ -29,25 +29,28 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6e65f732" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6e65f732" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
   <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
-    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/documentation_options.js?v=38b66d78"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="src" href="modules.html" />
+    <link rel="next" title="Installation" href="installation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -146,8 +149,15 @@
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="modules.html">
-                        src
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="userguide.html">
+                        User Guide
                       </a>
                     </li>
                 
@@ -155,6 +165,13 @@
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="auto_examples/index.html">
                         Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -190,6 +207,22 @@ document.write(`
   </button>
 `);
 </script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
       
     </div>
     
@@ -240,8 +273,15 @@ document.write(`
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="modules.html">
-                        src
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="userguide.html">
+                        User Guide
                       </a>
                     </li>
                 
@@ -249,6 +289,13 @@ document.write(`
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="auto_examples/index.html">
                         Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -271,6 +318,22 @@ document.write(`
   </button>
 `);
 </script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
@@ -301,56 +364,80 @@ document.write(`
                   
   <section id="infinity-tomographic-reconstruction">
 <h1>Infinity Tomographic Reconstruction<a class="headerlink" href="#infinity-tomographic-reconstruction" title="Link to this heading">#</a></h1>
-<p>The <strong>Infinity Tomographic Reconstruction</strong> is a Python package that provides a set of tools for parametric 3D tomographic
-reconstruction mainly listmode-based.</p>
-<section id="systems-types">
-<h2>Systems Types<a class="headerlink" href="#systems-types" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>** PET</p></li>
-<li><p>** CT</p></li>
-<li><p>** SPECT</p></li>
-<li><p>** Compton</p></li>
-</ul>
-</section>
-<section id="geometry-types">
-<h2>Geometry Types<a class="headerlink" href="#geometry-types" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><dl class="simple">
-<dt>** Dynamic</dt><dd><p>** easyPET based
-** LinearPET based</p>
-</dd>
-</dl>
-</li>
-<li><p>** Static</p></li>
-</ul>
-<p>** cylindrical
-** polygonal</p>
-</section>
-<section id="get-started">
-<h2>Get Started<a class="headerlink" href="#get-started" title="Link to this heading">#</a></h2>
-<p>Explore the documentation to understand the capabilities and implementation details of Infinity Tomographic Reconstruction:</p>
+<p>The <strong>Infinity Tomographic Reconstruction</strong> is a Python package that provides a set of tools for parametric 3D iterative
+tomographic reconstruction mainly listmode and GPU based.
+(Some packages are still in being repurposed and restructured to have a broader use. Although some are already included,
+some features that are available can run different from the intended use.)</p>
+<p>The documentation is not complete yet, but I am working on it. The package is moving to a openSource release,
+but the code is still in a private repository. To that reason the package installation is limited to the ones that have access to it.</p>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover custom-card docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+🛠 Getting Started</div>
+<p class="sd-card-text">Install the package and set up your environment.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="installation.html"><span class="doc">Installation</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover custom-card docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+📈 Example Gallery</div>
+<p class="sd-card-text">Visual walkthroughs of device creation, reconstruction, and analysis.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="auto_examples/index.html"><span class="doc">Examples</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover custom-card docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+🧰 API Reference</div>
+<p class="sd-card-text">Browse the module-level API for Infinity’s core components.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="modules.html"><span class="doc">API Reference</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover custom-card docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+🔄 About TOR</div>
+<p class="sd-card-text">Explore scanner configurations and layout systems.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="auto_examples/index.html"><span class="doc">Examples</span></a></div>
+</div>
+</div>
+</div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">🛠 Installation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">src</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="AnalyticalReconstruction.html">AnalyticalReconstruction package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Corrections.html">Corrections package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Designer.html">Designer package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DetectionLayout.html">DetectionLayout package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Device.html">Device package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EasyPETLinkInitializer.html">EasyPETLinkInitializer package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GateLink.html">GateLink package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Geometry.html">Geometry package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ImageReader.html">ImageReader package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Metrics.html">Metrics package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Optimizer.html">Optimizer package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Phantoms.html">Phantoms package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Quantification.html">Quantification package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="StandaloneInitializer.html">StandaloneInitializer package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TORFilesReader.html">TORFilesReader package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 </ul>
-</li>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">🛠 User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User Guide</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">📈 Examples</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html#easypetct">EasyPETCT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html#siemens">Siemens</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">🧰 API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">API Reference</a></li>
 </ul>
 </div>
 </section>
@@ -375,11 +462,11 @@ reconstruction mainly listmode-based.</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
-       href="modules.html"
+       href="installation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">src</p>
+        <p class="prev-next-title">Installation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -399,9 +486,9 @@ reconstruction mainly listmode-based.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Infinity Tomographic Reconstruction</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-types">Systems Types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-types">Geometry Types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-started">Get Started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-tables">Indices and tables</a></li>
