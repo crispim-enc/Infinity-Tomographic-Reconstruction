@@ -54,7 +54,6 @@ class Device:
         self._geometryType = None
         self._energyResolutionFunction = None
 
-
     def readDeviceProperties(self, objectName=None):
         """
         Read the device properties from a file

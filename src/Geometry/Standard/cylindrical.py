@@ -31,6 +31,7 @@ class CylindricalGeometry(Device):
         self._radialGapBetweenModules = 0
         self._zTranslation = 0
         self._structureType = "static"
+        self.setGeometryType("cylindrical")
         self._numberOfModules = self._numberOfModulesZ * self._numberOfModulesPhi
         self._detectorModule = [self._detectorModuleObject(i) for i in range(self._numberOfModules)]
         if fill_circle:
@@ -70,7 +71,7 @@ class CylindricalGeometry(Device):
                 self._detectorModule[i+self._numberOfModulesPhi*j].setAlphaRotation(0)
                 self._detectorModule[i+self._numberOfModulesPhi*j].setBetaRotation(0)
                 # self._detectorModule[j][i].setSigmaRotation(90 + 45 * i)
-                self._detectorModule[i+self._numberOfModulesPhi*j].setSigmaRotation(90 + self._anglePhi * i)
+                self._detectorModule[i+self._numberOfModulesPhi*j].setSigmaRotation(self._anglePhi * i)
                 self._detectorModule[i+self._numberOfModulesPhi*j].setInitialGeometry()
                 # petModule.setYTranslation(30)
 
@@ -81,7 +82,6 @@ class CylindricalGeometry(Device):
             # petModule.setbe(45*i)
 
             # centers = [i.centroid for i in petModule.modelHighEnergyLightDetectors]
-
     def getRadius(self):
         return self.radius
 

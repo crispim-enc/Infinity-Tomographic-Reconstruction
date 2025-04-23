@@ -31,8 +31,8 @@ class PETModule:
         self._numberHighEnergyLightDetectors = None
         self._totalNumberVisibleLightSensors = self._numberVisibleLightSensorsX * self._numberVisibleLightSensorsY
         self._totalNumberHighEnergyLightDetectors = self._numberHighEnergyLightDetectorsX * self._numberHighEnergyLightDetectorsY
-        self._reflectorThicknessX = 0.1
-        self._reflectorThicknessY = 0.1
+        self._reflectorThicknessX = 0.0
+        self._reflectorThicknessY = 0.0
         self._modelVisibleLightSensors = [HamamatsuS14161Series(i) for i in range(self._totalNumberVisibleLightSensors)]
         self._modelHighEnergyLightDetectors = [LYSOCrystal(i) for i in range(self._totalNumberHighEnergyLightDetectors)]
         self._visibleLightSensorObject = None
@@ -145,11 +145,11 @@ class PETModule:
             # self._modelHighEnergyLightDetectors[i].setCentroid(center_to_rotate)
 
 
-            new_center = self.rotateAndTranslateModule(point=center_to_rotate, alpha=self._alphaRotation,
+            new_center = self.rotateAndTranslateModule(point=[0,0,0], alpha=self._alphaRotation,
                                                        beta=self._betaRotation,
                                                        sigma=self._sigmaRotation, x=center_to_rotate[0] + self._xTranslation,
                                                        y=center_to_rotate[1] + self._yTranslation,
-                                                       z=self._zTranslation)
+                                                       z=center_to_rotate[2] + self._zTranslation)
             # print("New center: ", new_center)
             self._modelHighEnergyLightDetectors[i].setVerticesCrystalCoordinateSystem()
             self._modelHighEnergyLightDetectors[i].setCentroid(new_center)
@@ -454,11 +454,11 @@ if __name__ == "__main__":
     for i in range(2):
         petModule = PETModule(i)
         petModules.append(petModule)
-        petModule.setXTranslation(30*np.cos(np.deg2rad(45*i)))
-        petModule.setYTranslation(30*np.sin(np.deg2rad(45*i)))
+        # petModule.setXTranslation(30*np.cos(np.deg2rad(45*i)))
+        # petModule.setYTranslation(30*np.sin(np.deg2rad(45*i)))
         # petModule.setYTranslation(30)
         # petModule.setbe(45*i)
-        petModule.setSigmaRotation(90+45*i)
+        # petModule.setSigmaRotation(90+45*i)
         petModule.setInitialGeometry()
         centers = [i.centroid for i in petModule.modelHighEnergyLightDetectors]
         centers = np.array(centers).T
@@ -470,7 +470,8 @@ if __name__ == "__main__":
 
         plt.plot(centers[1], centers[2], 'o')
 
-    designer = DeviceDesignerStandalone(device=petModules[1])
-    designer.addModule()
+    designer = DeviceDesignerStandalone(device=petModules[0])
+    designer.addModule(petModules[0])
+    designer.startRender()
     # plt.show()
 

@@ -32,11 +32,12 @@ class RegularPolygonalGeometry(Device):
         self._radialGapBetweenModules = 0
         self._zTranslation = 0
         self._structureType = "static"
+        self.setGeometryType("planar")
         self._numberOfModules = self._numberOfModulesZ * self._numberOfModulesPhi * self._numberOfModulesPerSide
 
-        # self._detectorModule = [self._detectorModuleObject(i) for i in range(self._numberOfModules)]
-        self._detectorModule = None
-        if self._detectorModuleObject is not None:
+        self._detectorModule = [self._detectorModuleObject(i) for i in range(self._numberOfModules)]
+        # self._detectorModule = None
+        if self._detectorModule is not None:
             if fill_circle:
                 # self._radius = 12.8 + 2*12.8* (self._numberOfModulesPhi/4-1)*np.cos(np.deg2rad((self._numberOfModulesPhi/4 - 1)*(90-self._anglePhi)))+10
 
@@ -154,6 +155,7 @@ if __name__ == "__main__":
     module_ = PETModule
     #
     newDevice = RegularPolygonalGeometry(detector_module=module_)
+    # newDevice.setDetectorModule(module_)
     newDevice.setDeviceName("Test Device")
     newDevice.calculateInitialGeometry()
 

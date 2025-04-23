@@ -10,10 +10,10 @@ class GenericCrystal:
     """
     def __init__(self, crystal_id=1):
         self._density = 7.4
-        self._crystalID = 1
-        self._crystalSizeX = 1.5  # mm
-        self._crystalSizeY = 1.5  # mm
-        self._crystalSizeZ = 20
+        self._crystalID = crystal_id
+        self._crystalSizeX = 20 # mm
+        self._crystalSizeY = 1.6  # mm
+        self._crystalSizeZ = 1.6
         self._centroid = [0, 0, 0]
         self._vertices = np.array([[0, 0, 0],
                                    [0, 0, 0],

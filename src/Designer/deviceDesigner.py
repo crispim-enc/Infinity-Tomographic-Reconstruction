@@ -149,9 +149,9 @@ class DeviceDesignerStandalone:
                 individualChannelActor.GetProperty().SetOpacity(1)
                 self.ren.AddActor(individualChannelActor)
 
-
-            # ca.color(red)
-            self.ren.AddActor(detectorActor)
+        #
+        #     # ca.color(red)
+        #     self.ren.AddActor(detectorActor)
 
     def startRender(self):
         self.renderWin.Render()

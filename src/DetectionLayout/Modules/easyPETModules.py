@@ -100,4 +100,4 @@ class easyPETModule(PETModule):
         self._modelHighEnergyLightDetectors = [LYSOCrystal(i) for i in range(self._totalNumberHighEnergyLightDetectors)]
         for i in range(self._totalNumberHighEnergyLightDetectors):
             self._modelHighEnergyLightDetectors[i].setCrystalID(i)
-            self._modelHighEnergyLightDetectors[i].setCristalSize(30, 2, 2)
+            self._modelHighEnergyLightDetectors[i].setCristalSize(30, 2, 2.28)

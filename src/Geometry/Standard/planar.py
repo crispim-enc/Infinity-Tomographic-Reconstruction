@@ -11,8 +11,8 @@ class PlanarGeometry(RegularPolygonalGeometry):
 
 
 if __name__ == "__main__":
-    from src.DetectionLayout.Modules import PETModule
-    from src.Designer import DeviceDesignerStandalone
+    from DetectionLayout.Modules import PETModule
+    from Designer import DeviceDesignerStandalone
 
 
     module_ = PETModule

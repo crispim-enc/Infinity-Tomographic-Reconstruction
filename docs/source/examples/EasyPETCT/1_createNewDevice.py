@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
 from Geometry.easyPETBased import EasyCTGeometry
-from DetectionLayout.Modules import easyPETModule
+from DetectionLayout.Modules import easyPETModule, PETModule
 from DetectionLayout.RadiationProducer import GenericRadiativeSource
 from Designer import DeviceDesignerStandalone
 from Device import StoreDeviceInFo, EnergyResolutionFunction
@@ -69,7 +69,8 @@ systemEnergyResolution = EnergyResolutionFunction(p1=fit[0][1], p2=fit[0][2])
 # Setup the type of the detector module. You should not call the PETModule class directly.
 # This object  should entry as  argument in the geometry class type for proper setting. This allows to set multiple
 # cells. Number of modules, rotations and translations are set after the geometry class is created.
-_module = easyPETModule
+# _module = easyPETModule
+_module = PETModule
 
 # %% [markdown]
 # Setup the x-ray source
@@ -129,6 +130,7 @@ moduleSideA_sigma_rotation = np.array([0], dtype=np.float32)
 
 for i in range(newDevice.numberOfDetectorModulesSideA):
     newDevice.detectorModulesSideA[i].model32()
+    # newDevice.detectorModulesSideA[i].model16_2()
     newDevice.detectorModulesSideA[i].setXTranslation(moduleSideA_X_translation[i])
     newDevice.detectorModulesSideA[i].setYTranslation(moduleSideA_Y_translation[i])
     newDevice.detectorModulesSideA[i].setZTranslation(moduleSideA_Z_translation[i])
@@ -148,6 +150,7 @@ moduleSideB_sigma_rotation = np.array([180], dtype=np.float32)
 
 for i in range(newDevice.numberOfDetectorModulesSideB):
     newDevice.detectorModulesSideB[i].model32()
+    # newDevice.detectorModulesSideB[i].model16_2()
     newDevice.detectorModulesSideB[i].setXTranslation(moduleSideB_X_translation[i])
     newDevice.detectorModulesSideB[i].setYTranslation(moduleSideB_Y_translation[i])
     newDevice.detectorModulesSideB[i].setZTranslation(moduleSideB_Z_translation[i])
@@ -180,7 +183,7 @@ detector_sensitivity.setDetectorSensitivity()
 
 # %% [markdown]
 # Save the device in a folder with a unique identifier. The folder will be created in the current directory.
-modifyDevice = False
+modifyDevice = True
 if not modifyDevice:
     newDevice.generateDeviceUUID()  # one time only
     newDevice.createDirectory()  # one time only
