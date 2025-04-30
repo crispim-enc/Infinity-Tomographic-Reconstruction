@@ -15,12 +15,8 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 import pycuda.driver as cuda
-from Geometry.easyPETBased import EasyCTGeometry, testSourceDistance
-from DetectionLayout.Modules import PETModule, easyPETModule
-from DetectionLayout.RadiationProducer import GenericRadiativeSource
-from Designer import DeviceDesignerStandalone
-from Corrections.CT.Projector import PyramidalProjector
-from Corrections.CT import NormalizationCT
+from Corrections import PyramidalProjector
+from Corrections import NormalizationCT
 from Optimizer import GPUSharedMemoryMultipleKernel
 
 

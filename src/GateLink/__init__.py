@@ -1,1 +1,0 @@
-from src.GateLink.RootToTor.singlesstruct import ExtractSingles

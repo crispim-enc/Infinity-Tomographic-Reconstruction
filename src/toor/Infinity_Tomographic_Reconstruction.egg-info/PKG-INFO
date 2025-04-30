@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: Infinity-Tomographic-Reconstruction
+Version: 0.1.0
+Summary: Tomographic reconstruction for diferent imaging modalities (PET, SPECT, CT and Compton) 
+Home-page: https://github.com/DRIM-UA/Infinity-Tomographic-Reconstruction
+Author: Pedro Encarnação
+Author-email: 
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: CC BY-NC-SA 4.0
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=2.0.2

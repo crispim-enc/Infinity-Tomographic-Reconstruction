@@ -15,13 +15,9 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 
-from skimage.transform import iradon
-
-from DetectionLayout.Modules import PETModule
-from DetectionLayout.Modules import easyPETModule
-from DetectionLayout.Modules.SPECTModuleGeneric import SPECTHeadGeneric
-from DetectionLayout.Photodetectors.Crystals import GenericCrystal
-from Geometry.Standard import PlanarGeometry
+from DetectionLayout import PETModule
+from DetectionLayout import GenericCrystal
+from Geometry import PlanarGeometry
 from Designer import DeviceDesignerStandalone
 
 

@@ -22,13 +22,15 @@ Afterwars the device can be read from the folder and added to the new TOR files 
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
-from Geometry.easyPETBased import EasyCTGeometry
-from DetectionLayout.Modules import easyPETModule, PETModule
-from DetectionLayout.RadiationProducer import GenericRadiativeSource
-from Designer import DeviceDesignerStandalone
-from Device import StoreDeviceInFo, EnergyResolutionFunction
-from TORFilesReader import ToRFile
-from Corrections.General import DetectorSensitivityResponse
+
+from toor.Geometry.easyPETBased import EasyCTGeometry
+from toor.DetectionLayout.RadiationProducer import GenericRadiativeSource
+from toor.DetectionLayout.Modules import easyPETModule
+
+from toor.Designer import DeviceDesignerStandalone
+from toor.Device import StoreDeviceInFo, EnergyResolutionFunction
+# from toor.TORFilesReader import ToRFile
+
 
 
 # %% [markdown]
@@ -69,8 +71,8 @@ systemEnergyResolution = EnergyResolutionFunction(p1=fit[0][1], p2=fit[0][2])
 # Setup the type of the detector module. You should not call the PETModule class directly.
 # This object  should entry as  argument in the geometry class type for proper setting. This allows to set multiple
 # cells. Number of modules, rotations and translations are set after the geometry class is created.
-# _module = easyPETModule
-_module = PETModule
+_module = easyPETModule
+# _module = PETModule
 
 # %% [markdown]
 # Setup the x-ray source
@@ -168,18 +170,6 @@ for i in range(newDevice.numberOfDetectorModulesSideB):
 newDevice.generateInitialCoordinatesWKSystem()
 newDevice.generateInitialCoordinatesXYSystem()
 
-# %% [markdown]
-# Generate detector sensitivity response (It is necessary to create the device one time first then generate the TOR file for the white scan and then generate the new device)
-file_white_scan = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1 (1).tor"
-# load FILE
-ToRFile_sensitivity = ToRFile(filepath=file_white_scan)
-ToRFile_sensitivity.read()
-
-# comment this if the resolutionfucntion was not set
-detector_sensitivity = DetectorSensitivityResponse(TORFile=ToRFile_sensitivity, use_detector_energy_resolution=True)
-detector_sensitivity.setEnergyPeaks(energies)
-detector_sensitivity.setEnergyWindows()  # can set manually the energy windows. Put flag to use_detector_energy_resolution to False
-detector_sensitivity.setDetectorSensitivity()
 
 # %% [markdown]
 # Save the device in a folder with a unique identifier. The folder will be created in the current directory.

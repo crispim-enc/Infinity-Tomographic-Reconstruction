@@ -14,16 +14,11 @@ Easy_CT Reconstruction
 This example shows how use the TOR package to build and reconstruct a easyPET/CT system.
 """
 import os
-import matplotlib.pyplot as plt
 import numpy as np
 import pycuda.driver as cuda
-from Geometry.easyPETBased import EasyCTGeometry, testSourceDistance
-from DetectionLayout.Modules import PETModule, easyPETModule
-from DetectionLayout.RadiationProducer import GenericRadiativeSource
-from Designer import DeviceDesignerStandalone
-from Corrections.CT.Projector import PyramidalProjector
-from Corrections.CT import NormalizationCT
-from Optimizer import GPUSharedMemoryMultipleKernel
+from toor.Corrections.CT.Projector import PyramidalProjector
+from toor.Corrections.CT import NormalizationCT, DualRotationNormalizationSystem
+from toor.Optimizer import GPUSharedMemoryMultipleKernel
 
 
 class ReconstructionEasyPETCT:
@@ -37,7 +32,7 @@ class ReconstructionEasyPETCT:
         :param algorithm: Algorithm to use LM-MLEM or LM-MRP
         """
         if radial_fov_range is None:
-            radial_fov_range = [23, 40]
+            radial_fov_range = [0, 25]
         self.radial_fov_range = radial_fov_range
         if file_path is None:
             raise FileExistsError
@@ -45,6 +40,7 @@ class ReconstructionEasyPETCT:
             file_path_output = os.path.dirname(file_path)
         if voxelSize is None:
             voxelSize = [17, 0.8, 0.8]
+
         self.voxelSize = voxelSize
 
         self._normalizationMatrix = None
@@ -64,11 +60,16 @@ class ReconstructionEasyPETCT:
         self.ToRFile_reader = ToRFile(filepath=output_path)
         self.ToRFile_reader.read()
         self.ToRFile_reader.fileBodyData.setListModeHistogramHybridMode()
-
-
-        radial_fov_range = [0, 23]
+        energyRegionKeysAvailable = self.ToRFile_reader.calibrations.systemSensitivity.fields
+        if not energyregion in energyRegionKeysAvailable:
+            print("Energy Region: ", energyregion, " is not available in the file")
+            print("Energy Regions available (Choose exactly: )",
+                  self.ToRFile_reader.calibrations.systemSensitivity.fields)
+            raise ValueError("Energy Region: ", energyregion, " is not available in the file")
+        self._indexEnergyRegion = self.ToRFile_reader.calibrations.systemSensitivity.fields.index(energyregion)
         self.projector = PyramidalProjector(voxelSize=voxelSize, FovRadialStart=radial_fov_range[0],
                                                  FovRadialEnd=radial_fov_range[1], fov=35, only_fov=True)
+
         self.lastImageReconstructed = None
 
     def start(self):
@@ -85,38 +86,36 @@ class ReconstructionEasyPETCT:
 
 
         """
-        normalization = NormalizationCT(number_of_crystals=[32, 1],
-                                                    rangeTopMotor=108, begin_range_botMotor=0, end_rangeBotMotor=360,
-                                                    stepTopmotor=0.225, stepBotMotor=1.8, recon_2D=False)
-        normalization.normalization_LM()
+        # normalization = NormalizationCT(number_of_crystals=[32, 1],
+        #                                             rangeTopMotor=108, begin_range_botMotor=0, end_rangeBotMotor=360,
+        #                                             stepTopmotor=0.225, stepBotMotor=1.8, recon_2D=False)
+
+
+        normalization = DualRotationNormalizationSystem(self.ToRFile_reader)
+        normalization.printMotorVariables()
+        normalization.setEnergyPeakKey(self.energyRegion)
+        listModeForNormalization = normalization.normalizationLM()
 
         systemInfo = self.ToRFile_reader.systemInfo
-        systemInfo.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 0, 0])
+        systemInfo.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 0, 0]) #Apagar
         # nb_eventstest = 2
         # normalization.reading_data = normalization.reading_data[:nb_eventstest]
         # normalization.reading_data[:, 0] = np.arange(0,360, 360/nb_eventstest)
         # normalization.reading_data[:, 1] = np.zeros(nb_eventstest)
         # normalization.reading_data[:, 2] = 0
-        systemInfo.sourcePositionAfterMovement(normalization.reading_data[:,0], normalization.reading_data[:,1])
+        axialMotorData = listModeForNormalization[:,normalization.fieldsListMode.index("AXIAL_MOTOR")]
+        fanMotorData = listModeForNormalization[:,normalization.fieldsListMode.index("FAN_MOTOR")]
+        detectorIdData = listModeForNormalization[:,normalization.fieldsListMode.index("IDB")].astype(np.int32)
+        systemInfo.sourcePositionAfterMovement(axialMotorData, fanMotorData)
 
-        systemInfo.detectorSideBCoordinatesAfterMovement(normalization.reading_data[:,0], normalization.reading_data[:,1],
-                                                                normalization.reading_data[:,2].astype(np.int32))
+        systemInfo.detectorSideBCoordinatesAfterMovement(axialMotorData, fanMotorData,
+                                                                detectorIdData)
 
-
-        # parametric_listMode = parametric_listMode.loc[0]
-        # self.replacePointsInProjector(parametric_listMode)
         self.projector.pointCenterList = systemInfo.sourceCenter
         self.projector.pointCorner1List = systemInfo.verticesB[:, 7]
         self.projector.pointCorner2List = systemInfo.verticesB[:, 3]
         self.projector.pointCorner3List = systemInfo.verticesB[:, 0]
         self.projector.pointCorner4List = systemInfo.verticesB[:, 4]
-        # for i in range(8):
-        #     # print(systemInfo.verticesB[1, i, 0:2])
-        #     plt.plot(systemInfo.verticesB[1, i, 1], systemInfo.verticesB[1, i, 2], "o", label=f"Corner {i}")
-        #
-        # plt.plot(systemInfo.sourceCenter[1, 1],systemInfo.sourceCenter[1, 2] , 'ro', label='Source Center')
-        # plt.legend()
-        # plt.show()
 
         self.projector.createVectorialSpace()
         self.projector.createPlanes()
@@ -129,9 +128,6 @@ class ReconstructionEasyPETCT:
         geometric_normalization = optimizer.im
         geometric_normalization /= np.sum(geometric_normalization) #Comentar se não quiser normalização
         self._normalizationMatrix = geometric_normalization
-        # self._normalizationMatrix = np.ones_like(geometric_normalization)  # reset normalization matrix
-        # self._normalizationMatrix *= geometric_normalization #Comentar se não quiser normalização
-        # self._normalizationMatrix /= np.sum(self._normalizationMatrix)
 
         folder = self.file_path_output
         file_name = "normalization"
@@ -143,22 +139,32 @@ class ReconstructionEasyPETCT:
 
     def generateImage(self):
         listModeBody_read = self.ToRFile_reader.fileBodyData
+
+        axialMotorData = listModeBody_read["AXIAL_MOTOR"]
+        fanMotorData = listModeBody_read["FAN_MOTOR"]
+        detectorIdData = listModeBody_read["IDB"].astype(np.int32)
+        #filter in energy
+        energyMask = (listModeBody_read["ENERGYB"] <=
+                      self.ToRFile_reader.calibrations.systemSensitivity.energyWindows[self._indexEnergyRegion][1]) & (
+                                 listModeBody_read["ENERGYB"] >=
+                                 self.ToRFile_reader.calibrations.systemSensitivity.energyWindows[self._indexEnergyRegion][0])
+        axialMotorData = axialMotorData[energyMask]
+        fanMotorData = fanMotorData[energyMask]
+        detectorIdData = detectorIdData[energyMask]
+
         systemInfo = self.ToRFile_reader.systemInfo
         systemInfo.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 0, 0])
-        systemInfo.sourcePositionAfterMovement(listModeBody_read["AXIAL_MOTOR"], listModeBody_read["FAN_MOTOR"])
+        systemInfo.sourcePositionAfterMovement(axialMotorData, fanMotorData)
 
-        systemInfo.detectorSideBCoordinatesAfterMovement(listModeBody_read["AXIAL_MOTOR"],
-                                                              listModeBody_read["FAN_MOTOR"],
-                                                              listModeBody_read["IDB"].astype(np.int32)) ## ID_A está trocado com ID_B
+        systemInfo.detectorSideBCoordinatesAfterMovement(axialMotorData,
+                                                              fanMotorData,
+                                                              detectorIdData) ## ID_A está trocado com ID_B
 
         self.projector.pointCenterList = systemInfo.sourceCenter
         self.projector.pointCorner1List = systemInfo.verticesB[:, 7]   #Só esta ordem funciona
         self.projector.pointCorner2List = systemInfo.verticesB[:, 3]
         self.projector.pointCorner3List = systemInfo.verticesB[:, 0]
         self.projector.pointCorner4List = systemInfo.verticesB[:, 4]
-        var_1 = 0
-        var_2 = 1
-
         self.projector.createVectorialSpace()
         self.projector.createPlanes()
         # self.projector.setCountsPerPosition(np.ones(systemInfo.sourceCenter.shape[0], dtype=np.int32))
@@ -168,10 +174,9 @@ class ReconstructionEasyPETCT:
         # self._normalizationMatrix /= np.sum(self._normalizationMatrix)
         optimizer = GPUSharedMemoryMultipleKernel(parent=self, )
         optimizer.normalization_matrix = self._normalizationMatrix
-        # optimizer.im = np.ascontiguousarray(self._normalizationMatrix * self.projector.countsPerPosition.sum(), dtype=np.float32)
+
         print(f"GPU being use {self.device}")
         optimizer.multipleKernel()
-
         self.lastImageReconstructed = optimizer.im  # Get the last image reconstructed
         # generate a folder called whole_body and save the image
         # folder = os.path.join(os.path.dirname(self.file_path), "whole_body")
@@ -185,23 +190,22 @@ class ReconstructionEasyPETCT:
 
 
 if __name__ == "__main__":
-    from TORFilesReader import ToRFile
+    from toor.TORFilesReader import ToRFile
     # filename = "../../allvalues.npy"
     filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\intelligent_scan-NewGeometries-CT\\allvalues.npy"
     output_path = "C:/Users/pedro/OneDrive/Ambiente de Trabalho/Iterations_test"
     if not os.path.exists(output_path):
         os.makedirs(output_path)
 
-    voxelSize =[0.25,0.25,1]
+    voxelSize = [0.5, 0.5, 1]
+    energyregion = "59.6"
     # voxelSize =[1, 1, 1]
-
 
     output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor"
 
-
     r = ReconstructionEasyPETCT(filename, iterations=20, subsets=1, algorithm="LM-MLEM",
-                     voxelSize=voxelSize, radial_fov_range=None, energyregion=None, file_path_output=output_path)
-    # r.start()
+                     voxelSize=voxelSize, radial_fov_range=None, energyregion=energyregion, file_path_output=output_path)
+    r.start()
 
     # plt.imshow(np.mean(r.lastImageReconstructed, axis=2))
     # plt.show()

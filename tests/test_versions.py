@@ -1,6 +1,6 @@
 #  Copyright (c) 2025. Pedro Encarnação . Universidade de Aveiro LICENSE: CC BY-NC-SA 4.0 # ****************************
 #
-# get a list of all packages in src
+# get a list of all packages in toor
 import importlib
 import inspect
 import os
@@ -8,7 +8,7 @@ import os
 # List of your custom packages
 
 
-def get_packages(src_dir="src"):
+def get_packages(src_dir="toor"):
     """
     Get all Python packages inside the given directory.
 
@@ -57,12 +57,12 @@ def get_package_info(package_name):
 
 
 def main():
-    src_path = "src"  # Path to your source directory
+    src_path = "toor"  # Path to your source directory
     custom_packages = list(get_packages(src_path))
 
     custom_packages = custom_packages[1:]
-    #add src. to the package names
-    custom_packages = [f"src.{package}" for package in custom_packages]
+    #add toor. to the package names
+    custom_packages = [f"toor.{package}" for package in custom_packages]
     for package in custom_packages:
         version, classes = get_package_info(package)
         # if packedge is a submodule of package the text suffers an indentation

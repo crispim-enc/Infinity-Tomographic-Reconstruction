@@ -7,9 +7,9 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 import os
 import sys
-# sys.path.insert(0, os.path.abspath('../src/'))
-# sys.path.insert(0, os.path.abspath('../../src/'))
-sys.path.insert(0, os.path.abspath('../../src/'))
+# sys.path.insert(0, os.path.abspath('../toor/'))
+# sys.path.insert(0, os.path.abspath('../../toor/'))
+sys.path.insert(0, os.path.abspath('../../src/toor/'))
 from sphinx_gallery.sorting import FileNameSortKey
 import matplotlib
 matplotlib.use('agg')  # for headless image generation

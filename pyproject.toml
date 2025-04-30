@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "numpy", "scipy", "matplotlib", "vtk",
+    "pydicom", "pycuda", "json5"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Infinity-Tomographic-Reconstruction"
+version = "0.1.0"
+description = "Tomographic reconstruction for different imaging modalities (PET, SPECT, CT, and Compton)"
+readme = "README.md"
+authors = [  { name = "Pedro Encarnação" }]
+license = { text = "CC BY-NC-SA 4.0" }
+requires-python = ">=3.9"
+dependencies = [
+]
+
+urls = { "Homepage" = "https://github.com/DRIM-UA/Infinity-Tomographic-Reconstruction"}
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+#[tool.setuptools.extension]
+#include-package-data = true
+#
+#[tool.setuptools.ext_modules]
+#your_module = { sources = ["your_module.cpp"],  include-dirs = ["__NP_INCLUDE__"]}
