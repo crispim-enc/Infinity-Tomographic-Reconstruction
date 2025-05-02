@@ -14,14 +14,15 @@ TOR FILE
 This is an example how to create a TOR file for easyPETCT
 The file should be run one time to each new acquisition
 """
-import os
 import numpy as np
 import matplotlib.pyplot as plt
 import uuid
 import time
-from TORFilesReader import ToRFile, AnimalType, PhantomType, AcquisitionInfo, ListModeBody, RadioisotopeInfo, Technician
-from Device import StoreDeviceInFo
-from Phantoms import NEMAIQ2008NU
+from toor.TORFilesReader import ToRFile, PhantomType, AcquisitionInfo, ListModeBody, RadioisotopeInfo, Technician
+from toor.Device import StoreDeviceInFo
+from toor.Phantoms import NEMAIQ2008NU
+from toor.Corrections.General import DetectorSensitivityResponse
+from toor.CalibrationWrapper import CalibrationWrapper
 
 print(np.__version__)
 print(np.__file__)
@@ -99,6 +100,24 @@ listModeBody.printStatistics()
 listModeBody.setGlobalDetectorID()
 listModeBody.setCountsPerGlobalID()
 
+# %% [markdown]
+# Generate detector sensitivity response (It is necessary to create the device one time first then generate the TOR file for the white scan and then generate the new device)
+calibrations = CalibrationWrapper()
+file_white_scan = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1 (1).tor"
+# load FILE
+ToRFile_sensitivity = ToRFile(filepath=file_white_scan)
+ToRFile_sensitivity.read()
+
+energies = np.array([30, 59.6, 511])
+# comment this if the resolutionfucntion was not set
+detector_sensitivity = DetectorSensitivityResponse(TORFile=ToRFile_sensitivity, use_detector_energy_resolution=True)
+detector_sensitivity.setEnergyPeaks(energies)
+detector_sensitivity.setEnergyWindows()  # can set manually the energy windows. Put flag to use_detector_energy_resolution to False
+detector_sensitivity.setDetectorSensitivity()
+
+calibrations.setSystemSensitivity(detector_sensitivity)
+
+
 plt.figure()
 plt.hist(listModeBody["IDB"], bins=32)
 plt.show()
@@ -106,8 +125,11 @@ plt.show()
 ToRFile_creator = ToRFile(filepath=output_path)
 ToRFile_creator.setSystemInfo(newDevice)
 ToRFile_creator.setAcquisitionInfo(scanHeader)
+ToRFile_creator.setCalibrations(calibrations)
 ToRFile_creator.setfileBodyData(listModeBody)
 ToRFile_creator.write()
+
+
 
 #######CHECK TESTS###################
 #######UNCOMMENT TO CHECK FILE AND GEOMETRY INTEGRATY############

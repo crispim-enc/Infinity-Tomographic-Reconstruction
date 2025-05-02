@@ -1,3 +1,0 @@
-from Geometry.easyPETBased.matrixgeometrycorrection import MatrixGeometryCorrection
-from Geometry.easyPETBased.easypet_parametric_points import SetParametricCoordinates
-# from src.Designer.geometricdesigner import  GeometryDesigner

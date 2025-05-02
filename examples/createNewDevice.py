@@ -20,13 +20,13 @@ Afterwars the device can be read from the folder and added to the new TOR files 
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
-from Geometry.easyPETBased import EasyCTGeometry, testSourceDistance
-from DetectionLayout.Modules import PETModule, easyPETModule
-from DetectionLayout.RadiationProducer import GenericRadiativeSource
+from Geometry import EasyCTGeometry
+from DetectionLayout import easyPETModule
+from DetectionLayout import GenericRadiativeSource
 from Designer import DeviceDesignerStandalone
 from Device import StoreDeviceInFo, EnergyResolutionFunction
 from TORFilesReader import ToRFile
-from Corrections.General import DetectorSensitivityResponse
+from Corrections import DetectorSensitivityResponse
 
 """SYSTEM ENERGY RESPONSE FUNCTION (Not mandatory)"""
 

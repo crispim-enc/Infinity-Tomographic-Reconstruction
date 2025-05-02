@@ -1,0 +1,1 @@
+from .collimatorGeneric import CollimatorGeneric

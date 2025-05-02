@@ -13,14 +13,10 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 
-from skimage.transform import iradon
-
-from src.DetectionLayout.Modules import PETModule
-from src.DetectionLayout.Modules import easyPETModule
-from src.DetectionLayout.Modules.SPECTModuleGeneric import SPECTHeadGeneric
-from src.DetectionLayout.Photodetectors.Crystals import GenericCrystal
-from src.Geometry.Standard import PlanarGeometry
-from src.Designer import DeviceDesignerStandalone
+from DetectionLayout import PETModule
+from DetectionLayout.Photodetectors.Crystals import GenericCrystal
+from Geometry import PlanarGeometry
+from Designer import DeviceDesignerStandalone
 
 
 file_path = "C:\\Users\\pedro\\Downloads\\phase_1_challenge_data_03_05_2025\\NEMA_phantom-20250221T115435Z-001\\NEMA_phantom\\SPECT-projections\\"

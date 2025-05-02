@@ -14,20 +14,15 @@ Easy_CT Reconstruction
 This example shows how use the TOR package to build and reconstruct a easyPET/CT system.
 """
 import os
-import matplotlib.pyplot as plt
 import numpy as np
 import pycuda.driver as cuda
-from Geometry.easyPETBased import EasyCTGeometry, testSourceDistance
-from DetectionLayout.Modules import PETModule, easyPETModule
-from DetectionLayout.RadiationProducer import GenericRadiativeSource
-from Designer import DeviceDesignerStandalone
-from Corrections.CT.Projector import PyramidalProjector
-from Corrections.CT import NormalizationCT
-from Optimizer import GPUSharedMemoryMultipleKernel
+from toor.Corrections.CT.Projector import PyramidalProjector
+from toor.Corrections.CT import NormalizationCT
+from toor.Optimizer import GPUSharedMemoryMultipleKernel
 
 
 class ReconstructionEasyPETCT:
-    def __init__(self, file_path=None, file_path_output=None, iterations=25, subsets=1, algorithm="MLEM",
+    def __init__(self, file_path=None, file_path_output=None, iterations=10, subsets=1, algorithm="MLEM",
                  voxelSize=None, radial_fov_range=None, energyregion=None):
         """
         Reconstruction Manager
@@ -185,7 +180,7 @@ class ReconstructionEasyPETCT:
 
 
 if __name__ == "__main__":
-    from TORFilesReader import ToRFile
+    from toor.TORFilesReader import ToRFile
     # filename = "../../allvalues.npy"
     filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\intelligent_scan-NewGeometries-CT\\allvalues.npy"
     output_path = "C:/Users/pedro/OneDrive/Ambiente de Trabalho/Iterations_test"
@@ -201,7 +196,7 @@ if __name__ == "__main__":
 
     r = ReconstructionEasyPETCT(filename, iterations=20, subsets=1, algorithm="LM-MLEM",
                      voxelSize=voxelSize, radial_fov_range=None, energyregion=None, file_path_output=output_path)
-    # r.start()
+    r.start()
 
     # plt.imshow(np.mean(r.lastImageReconstructed, axis=2))
     # plt.show()

@@ -9,7 +9,7 @@
 # *******************************************************
 
 import unittest
-from src.TORFilesReader import RadioisotopeInfo
+from TORFilesReader import RadioisotopeInfo
 
 
 class TestRadioisotopeInfo(unittest.TestCase):

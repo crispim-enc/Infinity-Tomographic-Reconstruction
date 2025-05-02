@@ -12,12 +12,11 @@
 This is an example how to create a TOR file for easyPETCT
 The file should be run one time to each new acquisition
 """
-import os
 import numpy as np
 import matplotlib.pyplot as plt
 import uuid
 import time
-from TORFilesReader import ToRFile, AnimalType, PhantomType, AcquisitionInfo, ListModeBody, RadioisotopeInfo, Technician
+from TORFilesReader import ToRFile, PhantomType, AcquisitionInfo, ListModeBody, RadioisotopeInfo, Technician
 from Device import StoreDeviceInFo
 from Phantoms import NEMAIQ2008NU
 
