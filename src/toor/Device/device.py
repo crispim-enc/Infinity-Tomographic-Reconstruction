@@ -67,7 +67,7 @@ class Device:
             return
 
         # check if folder of device exists
-        mainDirectory = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        mainDirectory = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
         self._deviceDirectory = os.path.join(mainDirectory, "configurations", self._deviceUUID)
         if not os.path.exists(self._deviceDirectory):
             print("Error: device directory does not exist")
@@ -146,7 +146,7 @@ class Device:
         :return:
         """
         # create the directory if it does not exist in configurations with the id and name of the device
-        mainDirectory = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        mainDirectory = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
         self._deviceDirectory = os.path.join(mainDirectory, "configurations", self._deviceUUID + "_" + self._deviceName)
         if not os.path.exists(self._deviceDirectory):
             os.makedirs(self._deviceDirectory)

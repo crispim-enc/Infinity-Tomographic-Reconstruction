@@ -117,7 +117,7 @@ class Sinogram:
         self.z_min = min_z.min()
         self.z_max = max_z.max()
 
-    def projected_sinogram(self, bins_x=100, bins_y=200, rebining_x=100, rebining_y=100):
+    def projected_sinogram(self, bins_x=100, bins_y=200, rebining_x=100, rebining_y=100, weights=None):
         if bins_x is None:
             bins_x = int(len(np.unique(self.phi)) / rebining_x)
 
@@ -126,7 +126,7 @@ class Sinogram:
 
         self._projected_sinogram = plt.hist2d(self.phi, self.s, bins=[bins_x, bins_y],
                                               range=[[self.min_phi, self.max_phi],
-                                                     [self.min_s, self.max_s]])
+                                                     [self.min_s, self.max_s]], weights=weights)
         return self._projected_sinogram
 
     def calculateMichelogram(self, f2f_or_reb="reb", bins_x=None,bins_y=None, timecut=None):

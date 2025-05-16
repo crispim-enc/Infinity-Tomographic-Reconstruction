@@ -115,16 +115,24 @@ class ListModeBody:
             print("Expected GlobalID maximum: ", range_motor[0]*range_motor[1]*range_ID[0]*range_ID[1])
 
 
-
     @property
     def listmode(self):
         return self._listmode
 
-    def setListmode(self, listmode):
+    def setListmode(self, listmode, regenerateStats=False):
         """
         Set the listmode data
         """
         self._listmode = listmode
+        if regenerateStats:
+            self.regenerateStats()
+
+    def regenerateStats(self):
+        # listModeBody.setFrameStartIndexes(scanHeader.indexesOfFrames) " FuTure implementation
+        self.generateStatistics()
+        self.printStatistics()
+        self.setGlobalDetectorID()
+        self.setCountsPerGlobalID()
 
     def resetListmode(self):
         """

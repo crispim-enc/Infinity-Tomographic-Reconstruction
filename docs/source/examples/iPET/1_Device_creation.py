@@ -2,13 +2,15 @@
 #
 
 # *******************************************************
-# * FILE: createNewDevice
+# * FILE: 1_Device_creation
 # * AUTHOR: Pedro Encarnação
-# * DATE: 25/03/2025
+# * DATE: 05/05/2025
 # * LICENSE: "CC BY-NC-SA 4.0"
 # *******************************************************
+
+
 """
-EasyCT device creation
+iPET device creation
 ======================
 
 This is an example how to create a new device. In this case a new system for EasyCT
@@ -24,8 +26,8 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 from toor.Geometry.easyPETBased import EasyCTGeometry
-from toor.DetectionLayout.RadiationProducer import GenericRadiativeSource
-from toor.DetectionLayout.Modules import easyPETModule
+# from toor.DetectionLayout.RadiationProducer import GenericRadiativeSource
+from toor.DetectionLayout.Modules import  PETModule, easyPETModule
 
 from toor.Designer import DeviceDesignerStandalone
 from toor.Device import StoreDeviceInFo, EnergyResolutionFunction
@@ -71,29 +73,11 @@ systemEnergyResolution = EnergyResolutionFunction(p1=fit[0][1], p2=fit[0][2])
 # Setup the type of the detector module. You should not call the PETModule class directly.
 # This object  should entry as  argument in the geometry class type for proper setting. This allows to set multiple
 # cells. Number of modules, rotations and translations are set after the geometry class is created.
-_module = easyPETModule
-# _module = PETModule
+_module = PETModule
+# _module = easyPETModule
 
-# %% [markdown]
-# Setup the x-ray source
-#
-# Now we define the characteristics of the x-ray source using the `GenericRadiativeSource` class.
-# The source is set to be an Am-241 source with a focal spot diameter of 1 mm, and the shielding is set to be a
-# cylinder made of lead with a density of 11.34 g/cm³ and a thickness of 0.5 mm.
-# Set x-ray producer object
-xrayproducer = GenericRadiativeSource()
-xrayproducer.setSourceName("Am-241")
-xrayproducer.setSourceActivity(1.0 * 37000)
-xrayproducer.setFocalSpotDiameter(1)
-xrayproducer.setShieldingShape("Cylinder")
-xrayproducer.setShieldingMaterial("Lead")
-xrayproducer.setShieldingDensity(11.34)
-xrayproducer.setShieldingThickness(0.5)
-xrayproducer.setShieldingHeight(4)
-xrayproducer.setShieldingRadius(12.5)
-xrayproducer.setMainEmissions({1: {"energy": 59.54, "intensity": 0.36},
-                               2: {"energy": 26.34, "intensity": 0.024},
-                               })
+
+
 
 # %% [markdown]
 # The next step  is to choose the geometry type, which is `EasyCTGeometry` in this case. This function is inherited
@@ -101,19 +85,17 @@ xrayproducer.setMainEmissions({1: {"energy": 59.54, "intensity": 0.36},
 # the distance between the fan motor and the detector modules (closest side) and the distance between the fan motor and the detector modules (far side).
 # as well as the initial position of the x-ray source.
 
-newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x_ray_producer=xrayproducer)
-newDevice.setDeviceName("EasyCT_simulation_16_2_special")
-newDevice.setDeviceType("CT")
+newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module)
+newDevice.setDeviceName("iPET")
+newDevice.setDeviceType("PET")
 newDevice.setEnergyResolutionFunction(systemEnergyResolution)  # use to apply energy cuts
-newDevice.setDistanceBetweenMotors(30)  # Distance between the two points of rotation
+newDevice.setDistanceBetweenMotors(65)  # Distance between the two points of rotation
 newDevice.setDistanceFanMotorToDetectorModulesOnSideA(
     0)  # Distance between the fan motor and the detector modules (closest side)
 newDevice.setDistanceFanMotorToDetectorModulesOnSideB(
-    60)  # Distance between the fan motor and the detector modules (far side)
-newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 3, 0]) # simulation 31 _1
-newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([-2, 0, 0]) # simulation 16_2 e real
-# newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([2.45, 7.7, 0]) # simulation 16_2 special
-newDevice.evaluateInitialSourcePosition()  # evaluate the initial position of the source
+    130)  # Distance between the fan motor and the detector modules (far side)
+# newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 3, 0])
+# newDevice.evaluateInitialSourcePosition()  # evaluate the initial position of the source
 
 # %% [markdown]
 # Set modules Side A. For each module, should be in the list  the equivalent rotation and translation variables.
@@ -123,18 +105,18 @@ newDevice.evaluateInitialSourcePosition()  # evaluate the initial position of th
 #
 #   ...
 # Very important. The translations are regarding the fan motor center. The rotations are regarding the center of the module.
-newDevice.setNumberOfDetectorModulesSideA(1)
+newDevice.setNumberOfDetectorModulesSideA(4)
 
-moduleSideA_X_translation = np.array([15], dtype=np.float32)
-moduleSideA_Y_translation = np.array([0], dtype=np.float32)
-moduleSideA_Z_translation = np.array([0], dtype=np.float32)
-moduleSideA_alpha_rotation = np.array([0], dtype=np.float32)
-moduleSideA_beta_rotation = np.array([0], dtype=np.float32)
-moduleSideA_sigma_rotation = np.array([0], dtype=np.float32)
+moduleSideA_X_translation = np.array([10,10,10,10], dtype=np.float32)
+moduleSideA_Y_translation = np.array([0,0, 0, 0], dtype=np.float32)
+moduleSideA_Z_translation = np.arange(0,16*1.6*4+3,16*1.6+1)
+moduleSideA_alpha_rotation = np.array([0,0,0,0], dtype=np.float32)
+moduleSideA_beta_rotation = np.array([30, 30, 30, 30 ], dtype=np.float32)
+moduleSideA_sigma_rotation = np.array([0,0,0,0], dtype=np.float32)
 
 for i in range(newDevice.numberOfDetectorModulesSideA):
     # newDevice.detectorModulesSideA[i].model32()
-    newDevice.detectorModulesSideA[i].model16_2()
+    # newDevice.detectorModulesSideA[i].model16_2()
     newDevice.detectorModulesSideA[i].setXTranslation(moduleSideA_X_translation[i])
     newDevice.detectorModulesSideA[i].setYTranslation(moduleSideA_Y_translation[i])
     newDevice.detectorModulesSideA[i].setZTranslation(moduleSideA_Z_translation[i])
@@ -144,17 +126,17 @@ for i in range(newDevice.numberOfDetectorModulesSideA):
 
 # %% [markdown]
 # Set modules Side B.
-newDevice.setNumberOfDetectorModulesSideB(1)
-moduleSideB_X_translation = np.array([-75], dtype=np.float32)
-moduleSideB_Y_translation = np.array([0], dtype=np.float32)
-moduleSideB_Z_translation = np.array([0], dtype=np.float32)
-moduleSideB_alpha_rotation = np.array([0], dtype=np.float32)
-moduleSideB_beta_rotation = np.array([0], dtype=np.float32)
-moduleSideB_sigma_rotation = np.array([180], dtype=np.float32)
+newDevice.setNumberOfDetectorModulesSideB(4)
+moduleSideB_X_translation = np.array([-140, -140, -140, -140], dtype=np.float32)
+moduleSideB_Y_translation = np.array([0, 0, 0,0], dtype=np.float32)
+moduleSideB_Z_translation = np.arange(0,16*1.6*4+3,16*1.6+1)
+moduleSideB_alpha_rotation = np.array([-0, -0, -0, -0 ], dtype=np.float32)
+moduleSideB_beta_rotation = np.array([0, 0, 0, 0 ], dtype=np.float32)
+moduleSideB_sigma_rotation = np.array([180,180,180,180], dtype=np.float32)
 
 for i in range(newDevice.numberOfDetectorModulesSideB):
     # newDevice.detectorModulesSideB[i].model32()
-    newDevice.detectorModulesSideB[i].model16_2()
+    # newDevice.detectorModulesSideB[i].model16_2()
     newDevice.detectorModulesSideB[i].setXTranslation(moduleSideB_X_translation[i])
     newDevice.detectorModulesSideB[i].setYTranslation(moduleSideB_Y_translation[i])
     newDevice.detectorModulesSideB[i].setZTranslation(moduleSideB_Z_translation[i])
@@ -170,22 +152,19 @@ for i in range(newDevice.numberOfDetectorModulesSideB):
 #    :width: 600px
 #    :align: center
 newDevice.generateInitialCoordinatesWKSystem()
-newDevice.generateInitialCoordinatesXYSystem()
+# newDevice.generateInitialCoordinatesXYSystem()
 
 
 # %% [markdown]
 # Save the device in a folder with a unique identifier. The folder will be created in the current directory.
-modifyDevice = True
+modifyDevice = False
 if not modifyDevice:
-    print("Creating new device")
     newDevice.generateDeviceUUID()  # one time only
     newDevice.createDirectory()  # one time only
-    print("Device created in: ", newDevice.deviceDirectory)
     storeDevice = StoreDeviceInFo(device_directory=newDevice.deviceDirectory)  # one time only
     device_path = newDevice.deviceDirectory
 else:
     device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT"
-    device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\5433bf80-06b5-468f-9692-674f4b007605_EasyCT_simulation_16_2_special"
     storeDevice = StoreDeviceInFo(device_directory=device_path)  # one time only
 
 storeDevice.createDeviceInDirectory(object=newDevice)
@@ -199,7 +178,7 @@ newDevice_Read = readDevice.readDeviceFromDirectory()
 
 designer = DeviceDesignerStandalone(device=newDevice)
 designer.addDevice()
-designer.addxRayProducerSource()
+# designer.addxRayProducerSource()
 designer.startRender()
 # %% [markdown]
 # .. image:: ../../images/easyPETCT.png

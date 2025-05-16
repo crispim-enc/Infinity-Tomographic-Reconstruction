@@ -18,9 +18,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import uuid
 import time
-from TORFilesReader import ToRFile, PhantomType, AcquisitionInfo, ListModeBody, RadioisotopeInfo, Technician
-from Device import StoreDeviceInFo
-from Phantoms import NEMAIQ2008NU
+from toor.TORFilesReader import ToRFile, PhantomType, AcquisitionInfo, ListModeBody, RadioisotopeInfo, Technician
+from toor.Device import StoreDeviceInFo
+from toor.Phantoms import NEMAIQ2008NU
+from toor.Corrections.General import DetectorSensitivityResponse
+from toor.CalibrationWrapper import CalibrationWrapper
 
 print(np.__version__)
 print(np.__file__)
@@ -98,6 +100,24 @@ listModeBody.printStatistics()
 listModeBody.setGlobalDetectorID()
 listModeBody.setCountsPerGlobalID()
 
+# %% [markdown]
+# Generate detector sensitivity response (It is necessary to create the device one time first then generate the TOR file for the white scan and then generate the new device)
+calibrations = CalibrationWrapper()
+file_white_scan = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1 (1).tor"
+# load FILE
+ToRFile_sensitivity = ToRFile(filepath=file_white_scan)
+ToRFile_sensitivity.read()
+
+energies = np.array([30, 59.6, 511])
+# comment this if the resolutionfucntion was not set
+detector_sensitivity = DetectorSensitivityResponse(use_detector_energy_resolution=True)
+detector_sensitivity.setEnergyPeaks(energies)
+detector_sensitivity.setEnergyWindows(torFile=ToRFile_sensitivity)  # can set manually the energy windows. Put flag to use_detector_energy_resolution to False
+# detector_sensitivity.setDetectorSensitivity(torFile=ToRFile_sensitivity)
+detector_sensitivity.setDetectorSensitivity(generate_uniform=True, fileBodyData=listModeBody)
+calibrations.setSystemSensitivity(detector_sensitivity)
+
+
 plt.figure()
 plt.hist(listModeBody["IDB"], bins=32)
 plt.show()
@@ -105,20 +125,68 @@ plt.show()
 ToRFile_creator = ToRFile(filepath=output_path)
 ToRFile_creator.setSystemInfo(newDevice)
 ToRFile_creator.setAcquisitionInfo(scanHeader)
+ToRFile_creator.setCalibrations(calibrations)
 ToRFile_creator.setfileBodyData(listModeBody)
 ToRFile_creator.write()
 
+
+
 #######CHECK TESTS###################
 #######UNCOMMENT TO CHECK FILE AND GEOMETRY INTEGRATY############
+# memory check
+import sys
+from collections.abc import Mapping, Iterable
+
+
+def sizeof(obj):
+    """Safe sizeof with fallback."""
+    try:
+        return sys.getsizeof(obj)
+    except TypeError:
+        return 0
+
+
+def print_object_tree(obj, name='root', indent=0, seen=None):
+    """Recursively print tree of object attributes and their memory sizes."""
+    if seen is None:
+        seen = set()
+
+    obj_id = id(obj)
+    if obj_id in seen:
+        print('  ' * indent + f"{name} (already seen)")
+        return
+    seen.add(obj_id)
+
+    size = sizeof(obj)
+    print('  ' * indent + f"{name} - type: {type(obj).__name__}, size: {size} bytes")
+
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            print_object_tree(k, name=f"[key] {repr(k)}", indent=indent + 1, seen=seen)
+            print_object_tree(v, name=f"[val] {repr(k)}", indent=indent + 1, seen=seen)
+    elif isinstance(obj, (list, tuple, set, frozenset)):
+        for i, item in enumerate(obj):
+            print_object_tree(item, name=f"[{i}]", indent=indent + 1, seen=seen)
+    elif hasattr(obj, '__dict__'):
+        for attr, val in vars(obj).items():
+            print_object_tree(val, name=attr, indent=indent + 1, seen=seen)
+    elif hasattr(obj, '__slots__'):
+        for attr in obj.__slots__:
+            if hasattr(obj, attr):
+                print_object_tree(getattr(obj, attr), name=attr, indent=indent + 1, seen=seen)
+
+
 ToRFile_reader = ToRFile(filepath=output_path)
 ToRFile_reader.read()
 listModeBody_read = ToRFile_reader.fileBodyData
+# Get size of each attribute
+print_object_tree(ToRFile_reader.calibrations)
 
 plt.hist(listModeBody_read["ENERGYB"], bins=500)
 plt.figure()
 plt.hist2d(listModeBody_read["AXIAL_MOTOR"], listModeBody_read["FAN_MOTOR"],
            bins=(listModeBody_read.uniqueValuesCount[4], listModeBody_read.uniqueValuesCount[5]))
-plt.show()
+# plt.show()
 print(ToRFile_reader.systemInfo)
 
 deviceFromTOR = ToRFile_reader.systemInfo

@@ -80,8 +80,12 @@ class GenericSiPM:
 
         xx, zz = np.meshgrid(x_range, z_range)
 
-        x_flat = xx.flatten() + self._centerSiPMModule[0]
-        y_flat = -np.ones(self._numberOfChannelsX * self._numberOfChannelsX)*self.blockSPiMDepth/2 + self._centerSiPMModule[1]
+        # x_flat = xx.flatten() + self._centerSiPMModule[0]
+        # y_flat = -np.ones(self._numberOfChannelsX * self._numberOfChannelsX)*self.blockSPiMDepth/2 + self._centerSiPMModule[1]
+        # z_flat = zz.flatten() + self._centerSiPMModule[2]
+        #
+        x_flat = -np.ones(self._numberOfChannelsX * self._numberOfChannelsX)*self.blockSPiMDepth/2 + self._centerSiPMModule[1]
+        y_flat = xx.flatten() + self._centerSiPMModule[0]
         z_flat = zz.flatten() + self._centerSiPMModule[2]
         self._channelCentrePosition = np.array([x_flat, y_flat, z_flat]).T
 

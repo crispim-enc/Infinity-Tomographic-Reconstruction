@@ -17,7 +17,7 @@ class DetectorSensitivityResponse:
     This class is used to calculate the detector sensitivity of a system.
     """
 
-    def __init__(self, TORFile=None, use_detector_energy_resolution=True):
+    def __init__(self,  use_detector_energy_resolution=True):
         """
         Initialize the DetectorSensitivity class.
         :param device: The device to be used for the calculation.
@@ -27,7 +27,6 @@ class DetectorSensitivityResponse:
         self._energyWindows = None
         self._energyPeaks = None
         self._fields = None
-        self._torFile = TORFile
         self._detectorSensitivity = None
         self._probabilityOfDetection = None
 
@@ -73,7 +72,7 @@ class DetectorSensitivityResponse:
         """
         return self._energyWindows
 
-    def setEnergyWindows(self, energyWindows=None):
+    def setEnergyWindows(self, energyWindows=None, torFile=None):
         """
         Set the energy regions for the detector sensitivity.
         :param energyRegions: The energy regions to be used for the calculation.
@@ -83,40 +82,47 @@ class DetectorSensitivityResponse:
             # if not hasattr(self._torFile.systemInfo, "getEnergyResolution"):
             #     raise ValueError("The energy resolution function is not defined in the sensitivity file. Run the TOR file generator with a device with this function set.")
             energyWindows = np.zeros((len(self._energyPeaks), 2))
-            low = self._energyPeaks - self._energyPeaks * self._torFile.systemInfo.getFWHMSystemEnergyResponse(self._energyPeaks)
-            high = self._energyPeaks + self._energyPeaks * self._torFile.systemInfo.getFWHMSystemEnergyResponse(self._energyPeaks)
+            low = self._energyPeaks - self._energyPeaks * torFile.systemInfo.getFWHMSystemEnergyResponse(self._energyPeaks)
+            high = self._energyPeaks + self._energyPeaks * torFile.systemInfo.getFWHMSystemEnergyResponse(self._energyPeaks)
             energyWindows[:, 0] = np.clip(low, 0, None)
             energyWindows[:, 1] = np.clip(high, 0, None)
             energyWindows = np.round(energyWindows, 2)
             print("Energy windows: ", energyWindows)
         else:
-            if not isinstance(energyWindows, list) or not isinstance(energyWindows, np.ndarray):
+            if not isinstance(energyWindows, list) and not isinstance(energyWindows, np.ndarray):
                 raise ValueError("The energy regions must be a list or numpy array.")
         self._energyWindows = energyWindows
 
-    def setDetectorSensitivity(self):
+    def setDetectorSensitivity(self, torFile=None, fileBodyData=None, generate_uniform=False):
         numberOfEnergyCuts = len(self._energyPeaks)
+        if generate_uniform:
+            if fileBodyData is None:
+                raise ValueError("The fileBodyData must be provided when generate_uniform is True.")
+            column = fileBodyData.listmodeFields.index("IDB")
+            self._probabilityOfDetection = np.ones((numberOfEnergyCuts, len(fileBodyData.uniqueValues[column])))
+            self._probabilityOfDetection /= np.sum(self._probabilityOfDetection, axis=1)[:, np.newaxis]
 
-        if self._torFile.systemInfo.deviceType == "PET":
-            # "Not developed yet"
-            numberOfModules = len(self._torFile.systemInfo.detectorModules)
-            pass
         else:
-            # plt.figure()
-            column = self._torFile.fileBodyData.listmodeFields.index("IDB")
-            self._probabilityOfDetection = np.zeros((len(self._energyPeaks), len(self._torFile.fileBodyData.uniqueValues[column])))
-            for i in range(numberOfEnergyCuts):
-                energyWindow = self._energyWindows[i]
-                energyPeak = self._energyPeaks[i]
-                # Get the number of events in the energy window
-                #cut listmode
-                energy_array = self._torFile.fileBodyData["ENERGYB"]
-                indexes_active = np.where((energy_array >= energyWindow[0]) & (energy_array <= energyWindow[1]))[0]
-                id_array = self._torFile.fileBodyData["IDB"][indexes_active]
-                # get collumn of IDA
+            if torFile.systemInfo.deviceType == "PET":
+                # "Not developed yet"
+                numberOfModules = len(torFile.systemInfo.detectorModules)
+                pass
+            else:
+                # plt.figure()
+                column = torFile.fileBodyData.listmodeFields.index("IDB")
+                self._probabilityOfDetection = np.zeros((len(self._energyPeaks), len(torFile.fileBodyData.uniqueValues[column])))
+                for i in range(numberOfEnergyCuts):
+                    energyWindow = self._energyWindows[i]
+                    energyPeak = self._energyPeaks[i]
+                    # Get the number of events in the energy window
+                    #cut listmode
+                    energy_array = torFile.fileBodyData["ENERGYB"]
+                    indexes_active = np.where((energy_array >= energyWindow[0]) & (energy_array <= energyWindow[1]))[0]
+                    id_array = torFile.fileBodyData["IDB"][indexes_active]
+                    # get collumn of IDA
 
-                probability = np.histogram(id_array, bins=len(self._torFile.fileBodyData.uniqueValues[column]), density=True)[0]
-                self._probabilityOfDetection[i] = probability
+                    probability = np.histogram(id_array, bins=len(torFile.fileBodyData.uniqueValues[column]), density=True)[0]
+                    self._probabilityOfDetection[i] = probability
             #     plt.plot(probability, label=f"Energy window {i + 1} ({energyWindow[0]}-{energyWindow[1]})")
             # plt.legend()
             # plt.show()
