@@ -65,20 +65,20 @@ __global__ void backprojection_cdrf
                          if (sum_vor[e] != 0)
                             {
 
-                                term_diff_1 = abs(valueLeft - valueRight)*0.5;
-                                term_diff_2 = abs(valueFront - valueBack)*0.5;
-                                term_sum_3 = abs(valueLeft + valueRight)*0.5;
-                                term_sum_4 = abs(valueFront + valueBack)*0.5;
-//                                probability = 1 - sqrt(((abs(valueLeft) - abs(valueRight))*0.5) +
-//                                                        ((abs(valueFront) - abs(valueBack))*0.5)**2)/
-//                                                        sqrt(((abs(valueLeft) + abs(valueRight))*0.5)**2 +
-//                                                        ((abs(valueFront) + abs(valueBack))*0.5)**2);
-
-                                 probability = 1 -  sqrt(term_diff_1*term_diff_1 + term_diff_2*term_diff_2)/
-                                                        sqrt(term_sum_3*term_sum_3 + term_sum_4*term_sum_4);
+//                                term_diff_1 = abs(valueLeft - valueRight)*0.5;
+//                                term_diff_2 = abs(valueFront - valueBack)*0.5;
+//                                term_sum_3 = abs(valueLeft + valueRight)*0.5;
+//                                term_sum_4 = abs(valueFront + valueBack)*0.5;
+////                                probability = 1 - sqrt(((abs(valueLeft) - abs(valueRight))*0.5) +
+////                                                        ((abs(valueFront) - abs(valueBack))*0.5)**2)/
+////                                                        sqrt(((abs(valueLeft) + abs(valueRight))*0.5)**2 +
+////                                                        ((abs(valueFront) + abs(valueBack))*0.5)**2);
+//
+//                                 probability = 1 -  sqrt(term_diff_1*term_diff_1 + term_diff_2*term_diff_2)/
+//                                                        sqrt(term_sum_3*term_sum_3 + term_sum_4*term_sum_4);
 
 //                                adjust_coef_shared[i_s] = 1* expf(-sum_vor[e])*(1 - expf(1 ));
-                                adjust_coef_shared[i_s]+= probability * counts[e]/sum_vor[e];
+                                adjust_coef_shared[i_s]+=  counts[e]/sum_vor[e];
 //                                adjust_coef_shared[i_s] += 1;
                             }
                     }

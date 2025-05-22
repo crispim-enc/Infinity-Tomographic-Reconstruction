@@ -15,7 +15,7 @@ class RawDataSetter:
         self.offset = offset
         self.volume = None
 
-    def read_files(self, type_file='float32',big_endian=False):
+    def read_files(self, type_file='float32', big_endian=False):
         output_file = open(self.file_name, 'rb')  # define o ficheiro que queres ler
         if type_file == 'float32':
 
@@ -34,7 +34,7 @@ class RawDataSetter:
         volume = np.array(a)  # não precisas
         self.volume = volume.reshape((self.size_file_m[0], self.size_file_m[1], self.size_file_m[2]), order='f')
 
-    def write_files_simple_binary(self, volume):
+    def write(self, volume):
         """ """
         volume = volume.astype(np.float32)
         length = 1

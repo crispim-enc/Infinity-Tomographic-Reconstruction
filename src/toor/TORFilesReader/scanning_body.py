@@ -312,6 +312,13 @@ class ListModeBody:
         print(f"Number of events per frame per second: {self._numberOfEventsPerFramePerSecond}")
         print(f"Number of motors: {self._numberOfMotors}")
 
+    def saveVarsToFile(self, filename):
+        """
+
+        """
+        with open(filename, "w") as file:
+            self.printStatistics()
+
     def __str__(self):
         """
         String representation of the ListModeBody object
