@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=61.0", "wheel", "numpy", "scipy", "matplotlib", "vtk",
-    "pydicom", "pycuda", "json5"]
+    "pydicom", "pycuda", "json5", "scikit-image"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -18,9 +18,17 @@ urls = { "Homepage" = "https://github.com/DRIM-UA/Infinity-Tomographic-Reconstru
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+#packages = ["toor"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+#[tool.setuptools.package-data]
+## Recursively include all .c files in Optimizer and its subdirectories
+#"toor" = ["Optimizer/**/*.c"]
+##
+#[tool.setuptools.include-package-data]
+#include-package-data = true
 
 #[tool.setuptools.extension]
 #include-package-data = true

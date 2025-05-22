@@ -26,11 +26,11 @@ class GPUSharedMemoryMultipleKernel:
         self.mod_forward_projection_shared_mem = None
         self.mod_backward_projection_shared_mem = None
         self.normalizationFlag = normalizationFlag
-        self.directory = parent.file_path_output
+        self.directory = parent.filePathOutput
         self.saved_image_by_iteration = parent.saved_image_by_iteration
         if self.saved_image_by_iteration:
 
-            self.iterations_path = os.path.join(os.path.dirname(self.directory), "iterations")
+            self.iterations_path = os.path.join(self.directory, "iterations")
             if not os.path.isdir(self.iterations_path):
                 os.makedirs(self.iterations_path)
 
@@ -53,6 +53,7 @@ class GPUSharedMemoryMultipleKernel:
         self.depth = np.int32(self.A.shape[2])
 
         self.algorithm = parent.algorithm
+        self.algorithm_options = parent.algorithm_options
         self.adjust_coef = np.ascontiguousarray(
             np.zeros((self.number_of_pixels_x, self.number_of_pixels_y, self.number_of_pixels_z), dtype=np.float32))
 

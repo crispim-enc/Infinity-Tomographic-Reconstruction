@@ -38,7 +38,7 @@ class PETModule:
         self._visibleLightSensorObject = None
         self._highEnergyLightDetectorObject = None
         self._shiftXBetweenVisibleAndHighEnergy = 0
-        self._shiftYBetweenVisibleAndHighEnergy = 5
+        self._shiftYBetweenVisibleAndHighEnergy = -1
         self._shiftZBetweenVisibleAndHighEnergy = 0
         self._alphaRotation = 0
         self._betaRotation = 0
@@ -48,7 +48,7 @@ class PETModule:
         self._zTranslation = 0
         self._detectorsPosition = None
         self._blockCreationHighEnergyDetector = True
-        self._blockCreationVisibleLightSensor = True
+        self._blockCreationVisibleLightSensor = False
         # self.setVisibleEnergyLightDetectorBlock()
         # self.setHighEnergyLightDetectorBlock()
 
@@ -66,33 +66,33 @@ class PETModule:
 
     def setVisibleEnergyLightDetectorBlock(self):
         if self._blockCreationVisibleLightSensor:
-            x_step = (self._modelVisibleLightSensors[0].blockSPiMWidth +
+            y_step = (self._modelVisibleLightSensors[0].blockSPiMWidth +
                       self._modelVisibleLightSensors[0].externalBorderSizeX*2)
-            x_range = np.arange(0, self._numberVisibleLightSensorsX * x_step, x_step) - (
-                        self._numberVisibleLightSensorsX - 1) * x_step / 2
+            y_range = np.arange(0, self._numberVisibleLightSensorsX * y_step, y_step) - (
+                        self._numberVisibleLightSensorsX - 1) * y_step / 2
             z_step = (self._modelVisibleLightSensors[0].blockSPiMHeight +
                       self._modelVisibleLightSensors[0].externalBorderSizeY*2)
             z_range = np.arange(0, self._numberVisibleLightSensorsY * z_step, z_step) - (
                         self._numberVisibleLightSensorsY - 1) * z_step / 2
-            xx, zz = np.meshgrid(x_range, z_range)
+            yy, zz = np.meshgrid(y_range, z_range)
 
-            x_flat = xx.flatten()
-            y_flat = (np.zeros(self._numberVisibleLightSensorsX * self._numberVisibleLightSensorsY) +
+            x_flat = (np.zeros(self._numberVisibleLightSensorsX * self._numberVisibleLightSensorsY) +
                       self._shiftYBetweenVisibleAndHighEnergy)
+            y_flat = yy.flatten()
             z_flat = zz.flatten()
 
         for i in range(self._totalNumberVisibleLightSensors):
-            if self._blockCreationHighEnergyDetector:
+            if self._blockCreationVisibleLightSensor:
                 center_to_rotate = np.array([x_flat[i], y_flat[i], z_flat[i]])
             else:
                 center_to_rotate = self._modelVisibleLightSensors[i].centerSiPMModule
 
-            center_to_rotate[1] = (center_to_rotate[1] - self._modelHighEnergyLightDetectors[0].crystalSizeZ / 2 -
+            center_to_rotate[1] = (center_to_rotate[1] + self._modelHighEnergyLightDetectors[0].crystalSizeX / 2 -
                                    self._shiftYBetweenVisibleAndHighEnergy)
 
             self._modelVisibleLightSensors[i].setCenterSiPMModule(center_to_rotate)
             self._modelVisibleLightSensors[i].setChannelOriginalCentrePosition()
-            new_center = self.rotateAndTranslateModule(point=center_to_rotate, alpha=self._alphaRotation,
+            new_center = self.rotateAndTranslateModule(point=[0,0,0], alpha=self._alphaRotation,
                                           beta = self._betaRotation,
                                           sigma = self._sigmaRotation, x=self._xTranslation,
                                           y = self._yTranslation,

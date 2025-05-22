@@ -8,6 +8,9 @@ src/Infinity_Tomographic_Reconstruction.egg-info/top_level.txt
 src/toor/__init__.py
 src/toor/AnalyticalReconstruction/__init__.py
 src/toor/AnalyticalReconstruction/initializer.py
+src/toor/AnalyticalReconstruction/sinogram.py
+src/toor/CalibrationWrapper/__init__.py
+src/toor/CalibrationWrapper/calibration_wrapper.py
 src/toor/Corrections/__init__.py
 src/toor/Corrections/CT/__init__.py
 src/toor/Corrections/CT/normalization.py
@@ -86,7 +89,6 @@ src/toor/EasyPETLinkInitializer/EasyPETDataReader/time_discrimination.py
 src/toor/EasyPETLinkInitializer/Preprocessing/__init__.py
 src/toor/EasyPETLinkInitializer/Preprocessing/datatest.py
 src/toor/EasyPETLinkInitializer/Preprocessing/prepareeasypetdata.py
-src/toor/EasyPETLinkInitializer/Preprocessing/sinogram.py
 src/toor/EasyPETLinkInitializer/Preprocessing/sinogram_regularization.py
 src/toor/EasyPETLinkInitializer/SimulationData/__init__.py
 src/toor/EasyPETLinkInitializer/SimulationData/converter_simulation_data_to_easypet_mod.py

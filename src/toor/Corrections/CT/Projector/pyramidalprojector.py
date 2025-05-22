@@ -146,7 +146,7 @@ class PyramidalProjector:
         else:
             self.x_range_lim = [np.ceil(self.pointCorner1List[:,0].min()), np.ceil(self.pointCorner1List[:,0].max())]
             self.y_range_lim = [np.ceil(self.pointCorner1List[:,1].min()), np.ceil(self.pointCorner1List[:,1].max())]
-        self.z_range_lim = [np.floor(self.pointCorner3List[:,2].min()), np.ceil(self.pointCorner1List[:,2].max()+extra_pixel_z)]
+        self.z_range_lim = [np.floor(self.pointCorner3List[:,2].min()), np.ceil(self.pointCorner1List[:,2].max())]
         # self.z_range_lim = [0, 73/self.voxelSize[2]]
 
         self.number_of_pixels_x = int(np.ceil(self.x_range_lim[1]-self.x_range_lim[0]))

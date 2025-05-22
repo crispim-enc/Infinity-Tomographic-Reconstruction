@@ -52,6 +52,15 @@ class DualRotationNormalizationSystem(AutomaticNormalization):
         self._listModeForNormalization = None
         self._numberOfEventsListMode = None
         self._fieldsListMode = None
+        self._tiledProbabilityOfDetection = None
+
+    @property
+    def tiledProbabilityOfDetection(self):
+        """
+        Get the tiled probability of detection
+        :return:
+        """
+        return self._tiledProbabilityOfDetection
 
     @property
     def fieldsListMode(self):
@@ -203,7 +212,10 @@ class DualRotationNormalizationSystem(AutomaticNormalization):
                     np.repeat(axialMotor, self._numberOfDetectorsSideB), len(fanMotor))
                 value = np.random.choice((self._numberOfDetectorsSideB), len(self._listModeForNormalization),
                                          p=detectorSensitivity)
-                self._listModeForNormalization[:, 2] = value
+
+                # self._listModeForNormalization[:, 2] = value
+                self._listModeForNormalization[:,2] = np.tile(np.arange(0,self._numberOfDetectorsSideB),len(axialMotor)*len(fanMotor))
+                self._tiledProbabilityOfDetection = np.tile(detectorSensitivity,len(axialMotor)*len(fanMotor))
 
         return self._listModeForNormalization
 

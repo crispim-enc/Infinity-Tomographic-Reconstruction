@@ -18,32 +18,45 @@ import numpy as np
 import matplotlib.pyplot as plt
 import uuid
 import time
+
+# from toor.StandaloneInitializer.angletoparametricMLEM import output_path
 from toor.TORFilesReader import ToRFile, PhantomType, AcquisitionInfo, ListModeBody, RadioisotopeInfo, Technician
 from toor.Device import StoreDeviceInFo
-from toor.Phantoms import NEMAIQ2008NU
+# from toor.Phantoms import NEMAIQ2008NU
 from toor.Corrections.General import DetectorSensitivityResponse
 from toor.CalibrationWrapper import CalibrationWrapper
+from toor.EasyPETLinkInitializer.EasyPETDataReader import binary_data
 
 print(np.__version__)
 print(np.__file__)
 
-
 # filename = "../../allvalues.npy"
-filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\intelligent_scan-NewGeometries-CT\\allvalues.npy"
+filename = "C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\listmodes\\Am_Na.npy"
+filename = "D:\\Pedro\\listmode_wirephantom.npy"
+filename = "E:\\simulatedsinogram_matrix.npy"
+# filename = "D:\\Pedro\\sensitivity_sim\\listmode_sensitivity_sim.npy"
+# filename = "C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\listmodes\\listmode_sensitivity.npy"
 # filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1.npy"
-output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor"
+# output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor"
 # output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1 (1).tor"
+output_path = "C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\listmodes\\listmode_24Mar2025-17h54m00s.tor"
+output_path = "D:\\Pedro\\listmode_wirephantom.tor"
+output_path = "E:\\simulatedsinogram_matrix.tor"
+# output_path = "E:\\sensitivity_sim.tor"
+# output_path = "C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\listmodes\\listmode_sensitivity.tor"
 #
 # if not os.path.exists(output_path):
 #     os.makedirs(output_path)
 
 
-device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT"
+# device_path = "C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\.venv\\Lib\\site-packages\\configurations\\fda0f3b2-a0ae-470d-b30a-40e85b741c13_EasyCT"
+device_path = r"C:\Users\pedro\OneDrive\Documentos\GitHub\Infinity-Tomographic-Reconstruction\configurations\b4593ba9-7193-43c8-abed-7a07eeeabb8d_EasyCT_simulation_16_2"
+device_path = r"C:\Users\pedro\OneDrive\Documentos\GitHub\Infinity-Tomographic-Reconstruction\configurations\5433bf80-06b5-468f-9692-674f4b007605_EasyCT_simulation_16_2_special"
 
 getDevice = StoreDeviceInFo(device_directory=device_path)
 newDevice = getDevice.readDeviceFromDirectory()
 print(newDevice)
-#-----------------------------------------
+# -----------------------------------------
 # create listMode
 # IF Animal
 # subject = AnimalType()
@@ -52,24 +65,23 @@ print(newDevice)
 
 # IF Phantom
 subject = PhantomType()
-subject.setPhantomName("NEMA IQ 2008 NU")
-subject.setPhantomPurpose("Calibration")
-subject.setPhantomDescription("NEMA IQ 2008 NU phantom for calibration")
-subject.setDigitalPhantomCopy(NEMAIQ2008NU())
+subject.setPhantomName("Na-22 source")
+subject.setPhantomPurpose("CT scan")
+subject.setPhantomDescription("CT scan of the Na-22 point source")
+# subject.setDigitalPhantomCopy(NEMAIQ2008NU())
 
 # If PET/SPECT/COMPTON
 radioisotope = RadioisotopeInfo()
-radioisotope.setTracers(["18F"])
-radioisotope.setHalfLifes([float(109.771 * 60) ])
+radioisotope.setTracers(["Na22"])
+radioisotope.setHalfLifes([float(2.60 * 365 * 24 * 3600)])
 radioisotope.setDecayTypes(["BetaPlus"])
 radioisotope.setDecayEnergies([511])
 
 # Tecnhician
 tecnhician = Technician()
-tecnhician.setName("Pedro Encarnação")
+tecnhician.setName("Regina Oliveira")
 tecnhician.setRole("Researcher")
 tecnhician.setOrganization("Universidade de Aveiro")
-
 
 scanHeader = AcquisitionInfo()
 scanHeader.setId(1)
@@ -86,10 +98,15 @@ scanHeader.setDate(time.strftime("%Y-%m-%d %H:%M:%S"))
 # scanHeader.setRadioisotope(radioisotope)
 
 listmode = np.load(filename)
-listmode[:,3] = np.copy(listmode[:,2])# invert ID_A and ID_B
-listmode[:,2] = 0
-listmode[:,1] = np.copy(listmode[:,0]) * 1000
-listmode[:,0] = 0
+listmode[:, 3] = np.copy(listmode[:, 2])  # invert ID_A and ID_B
+listmode[:, 2] = 0
+listmode[:, 1] = np.copy(listmode[:, 0]) * 1000
+listmode[:, 0] = 0
+
+even_mask = listmode[:, 3] % 2 == 0
+odd_mask = listmode[:, 3] % 2 != 0
+listmode[:, 3][even_mask] += 1
+listmode[:, 3][odd_mask] -= 1
 
 listModeBody = ListModeBody()
 listModeBody.setListmode(listmode)
@@ -103,20 +120,23 @@ listModeBody.setCountsPerGlobalID()
 # %% [markdown]
 # Generate detector sensitivity response (It is necessary to create the device one time first then generate the TOR file for the white scan and then generate the new device)
 calibrations = CalibrationWrapper()
-file_white_scan = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1 (1).tor"
+# file_white_scan = r"C:\Users\regina.oliveira\PycharmProjects\EasyPETCT\listmodes\listmode_whitescan_32x1 (1).tor"
+# file_white_scan = r"C:\Users\regina.oliveira\PycharmProjects\EasyPETCT\listmodes\listmode_sensitivity.tor"
+file_white_scan = "E:\\sensitivity_sim.tor"
 # load FILE
 ToRFile_sensitivity = ToRFile(filepath=file_white_scan)
 ToRFile_sensitivity.read()
 
 energies = np.array([30, 59.6, 511])
+energy_windows = np.array([[10, 40], [45, 80], [511, 511]])
 # comment this if the resolutionfucntion was not set
-detector_sensitivity = DetectorSensitivityResponse(TORFile=ToRFile_sensitivity, use_detector_energy_resolution=True)
+detector_sensitivity = DetectorSensitivityResponse(use_detector_energy_resolution=False)
 detector_sensitivity.setEnergyPeaks(energies)
-detector_sensitivity.setEnergyWindows()  # can set manually the energy windows. Put flag to use_detector_energy_resolution to False
-detector_sensitivity.setDetectorSensitivity()
-
+detector_sensitivity.setEnergyWindows(energyWindows=energy_windows,
+                                      torFile=None)  # can set manually the energy windows. Put flag to use_detector_energy_resolution to False
+detector_sensitivity.setDetectorSensitivity(torFile=ToRFile_sensitivity)
+# detector_sensitivity.setDetectorSensitivity(generate_uniform=True, fileBodyData=listModeBody)
 calibrations.setSystemSensitivity(detector_sensitivity)
-
 
 plt.figure()
 plt.hist(listModeBody["IDB"], bins=32)
@@ -128,8 +148,6 @@ ToRFile_creator.setAcquisitionInfo(scanHeader)
 ToRFile_creator.setCalibrations(calibrations)
 ToRFile_creator.setfileBodyData(listModeBody)
 ToRFile_creator.write()
-
-
 
 #######CHECK TESTS###################
 #######UNCOMMENT TO CHECK FILE AND GEOMETRY INTEGRATY############
@@ -180,4 +198,3 @@ plt.show()
 
 # ToRFile_creator.setAcquisitionInfo(scanHeader)
 # ToRFile_creator.setListMode(listmode)
-
