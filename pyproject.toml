@@ -1,17 +1,17 @@
 [build-system]
-requires = ["setuptools>=64", "setuptools-scm>=8", "wheel", "numpy", "scipy", "matplotlib", "vtk",
-    "pydicom", "pycuda", "json5", "scikit-image"]
+requires = ["setuptools>=64", "setuptools-scm>=8", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "Infinity-Tomographic-Reconstruction"
+name = "toor"
 dynamic =["version"]
 description = "Tomographic reconstruction for different imaging modalities (PET, SPECT, CT, and Compton)"
 readme = "README.md"
 authors = [  { name = "Pedro Encarnação" }]
 license = { text = "CC BY-NC-SA 4.0" }
 requires-python = ">=3.9"
-dependencies = [
+dependencies = ["numpy", "scipy", "matplotlib", "vtk",
+    "pydicom", "pycuda", "json5", "scikit-image", "pandas", "PyQt6","uproot"
 ]
 
 urls = { "Homepage" = "https://github.com/DRIM-UA/Infinity-Tomographic-Reconstruction"}
