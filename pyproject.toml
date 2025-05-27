@@ -1,11 +1,11 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel", "numpy", "scipy", "matplotlib", "vtk",
+requires = ["setuptools>=64", "setuptools-scm>=8", "wheel", "numpy", "scipy", "matplotlib", "vtk",
     "pydicom", "pycuda", "json5", "scikit-image"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "Infinity-Tomographic-Reconstruction"
-version = "0.1.0"
+dynamic =["version"]
 description = "Tomographic reconstruction for different imaging modalities (PET, SPECT, CT, and Compton)"
 readme = "README.md"
 authors = [  { name = "Pedro Encarnação" }]
@@ -15,16 +15,19 @@ dependencies = [
 ]
 
 urls = { "Homepage" = "https://github.com/DRIM-UA/Infinity-Tomographic-Reconstruction"}
+[tool.setuptools_scm]
+#version_file = "pkg/_version.py"
 
 [tool.setuptools]
+
 package-dir = {"" = "src"}
 #packages = ["toor"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
-#[tool.setuptools.package-data]
-## Recursively include all .c files in Optimizer and its subdirectories
+[tool.setuptools.package-data]
+# Recursively include all .c files in Optimizer and its subdirectories
 #"toor" = ["Optimizer/**/*.c"]
 ##
 #[tool.setuptools.include-package-data]

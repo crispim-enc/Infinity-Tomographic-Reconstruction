@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: Infinity-Tomographic-Reconstruction
-Version: 0.1.0
+Version: 0.1.dev46+g4240736.d20250523
 Summary: Tomographic reconstruction for different imaging modalities (PET, SPECT, CT, and Compton)
 Author: Pedro Encarnação
 License: CC BY-NC-SA 4.0

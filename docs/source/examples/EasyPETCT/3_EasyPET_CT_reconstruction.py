@@ -217,11 +217,13 @@ class ReconstructionEasyPETCT:
         self.projector.pointCorner2List = systemInfo.verticesB[:, 3]
         self.projector.pointCorner3List = systemInfo.verticesB[:, 0]
         self.projector.pointCorner4List = systemInfo.verticesB[:, 4]
-
+        self.projector.setAbsMinMin()
+        self.projector.transformIntoPositivePoints()
+        self.projector.amplifyPointsToGPUCoordinateSystem()
         self.projector.createVectorialSpace()
         self.projector.createPlanes()
         # self.projector.setCountsPerPosition(np.ones(systemInfo.sourceCenter.shape[0], dtype=np.int32))
-        self.projector.setCountsPerPosition((normalization.tiledProbabilityOfDetection * 1000000).astype(np.int32))
+        self.projector.setCountsPerPosition((normalization.tiledProbabilityOfDetection * 1000000).astype(np.int32)) # Maybe convert the GPU entry to float32 to be univer
         print("Normalization GPU")
         optimizer = GPUSharedMemoryMultipleKernel(parent=self, normalizationFlag=False)
         optimizer.number_of_iterations = 1
@@ -264,7 +266,9 @@ class ReconstructionEasyPETCT:
         self.projector.pointCorner2List = systemInfo.verticesB[:, 3]
         self.projector.pointCorner3List = systemInfo.verticesB[:, 0]
         self.projector.pointCorner4List = systemInfo.verticesB[:, 4]
-        self.projector.createVectorialSpace()
+        self.projector.transformIntoPositivePoints()
+        self.projector.amplifyPointsToGPUCoordinateSystem()
+        # self.projector.createVectorialSpace()
         self.projector.createPlanes()
         # self.projector.setCountsPerPosition(np.ones(systemInfo.sourceCenter.shape[0], dtype=np.int32))
         self.projector.setCountsPerPosition(self.ToRFile_reader.fileBodyData.countsPerGlobalID)
