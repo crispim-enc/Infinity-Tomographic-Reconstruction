@@ -30,7 +30,7 @@ class ConicalProjector:
         self._comptonPointsOfInteraction = None
         self._scatterPointsOfInteraction = None
         self._vectorComptonScatter = None
-        self._errorConicalSurface = 0.1
+        self._errorConicalSurface = 1  # error of the conical surface
         self._conicalEquationOut = None
         self._conicalEquationIn = None
         self._A = None
@@ -82,21 +82,40 @@ class ConicalProjector:
         Set the conical equation of the outer surface.
         """
         # x^2 + y^2−k2z2−2   x0x−2    y0y + 2    k2z0z + (x02+y02−k2z0) = 0
-        self._A = 1 - np.tan(self._angles) ** 2 *(self._vectorComptonScatter[0] ** 2)
-        self._B = 1 - np.tan(self._angles) ** 2 *(self._vectorComptonScatter[1] ** 2)
-        self._C = -np.tan(self._angles) ** 2 *(self._vectorComptonScatter[2] ** 2)
-        self._D = -2 * self._scatterPointsOfInteraction[0] * self._vectorComptonScatter[0]
-        self._E = -2 * self._scatterPointsOfInteraction[1] * self._vectorComptonScatter[1]
-        self._F = 2 * self._scatterPointsOfInteraction[2] * self._vectorComptonScatter[2]
+        c = np.cos(self._angles/2)
+        self._A = self._vectorComptonScatter[:, 0]**2 - c**2
+        self._B = self._vectorComptonScatter[:, 1]**2 - c**2
+        self._C = self._vectorComptonScatter[:, 2]**2 - c**2
+        self._D = 2 * self._vectorComptonScatter[:, 0] * self._vectorComptonScatter[:, 1]
+        self._E = 2 * self._vectorComptonScatter[:, 0] * self._vectorComptonScatter[:, 2]
+        self._F = 2 * self._vectorComptonScatter[:, 1] * self._vectorComptonScatter[:, 2]
+        self._G = (-2 * self._A * self._scatterPointsOfInteraction[:, 0] - self._D *
+                   self._scatterPointsOfInteraction[:, 1] - self._E * self._scatterPointsOfInteraction[:, 2])
+        self._H = (-2 * self._B * self._scatterPointsOfInteraction[:, 1] -
+                   self._D * self._scatterPointsOfInteraction[:, 0] - self._F * self._scatterPointsOfInteraction[:, 2])
+        self._I = (-2 * self._C * self._scatterPointsOfInteraction[:, 2] -
+                   self._E * self._scatterPointsOfInteraction[:, 0] - self._F * self._scatterPointsOfInteraction[:, 1])
+        self._J = (self._A * self._scatterPointsOfInteraction[:, 0]**2 +
+                      self._B * self._scatterPointsOfInteraction[:, 1]**2 +
+                        self._C * self._scatterPointsOfInteraction[:, 2]**2 +
+                        self._D * self._scatterPointsOfInteraction[:, 0] * self._scatterPointsOfInteraction[:, 1] +
+                        self._E * self._scatterPointsOfInteraction[:, 0] * self._scatterPointsOfInteraction[:, 2] +
+                        self._F * self._scatterPointsOfInteraction[:, 1] * self._scatterPointsOfInteraction[:, 2])
 
-        return self._A, self._B, self._C, self._D, self._E, self._F
+
+        return np.array([self._A, self._B, self._C, self._D, self._E, self._F,self._G,
+                         self._H, self._I, self._J], dtype=np.float32)
+
 
     def setVectorComptonScatter(self):
         """
         Vector of the Compton scatter
         """
         self._vectorComptonScatter = self._comptonPointsOfInteraction - self._scatterPointsOfInteraction
-        self._vectorComptonScatter /= ConicalProjector.normVector(self._vectorComptonScatter)
+        norm_vector = ConicalProjector.normVector(self._vectorComptonScatter)
+        for coordinate in range(3):
+            self._vectorComptonScatter[:, coordinate] = self._vectorComptonScatter[:, coordinate] / norm_vector
+
         return self._vectorComptonScatter
 
     @staticmethod
@@ -104,12 +123,18 @@ class ConicalProjector:
         """
         Norm of the vector
         """
-        return np.sqrt(vector[0]**2 + vector[1]**2 + vector[2]**2)
+        return np.sqrt(vector[:, 0]**2 + vector[:, 1]**2 + vector[: ,2]**2)
 
-    def setAngles(self, angles):
+    def setAngles(self, angles, angles_unit='degrees'):
         """
         Set the angles of the conical projector.
         """
+        if angles_unit == 'degrees':
+            angles = np.array(np.radians(angles), dtype=np.float32)
+
+        elif angles_unit == 'radians':
+            angles = np.array(angles, dtype=np.float32)
+
         self._angles = angles
 
     def setEnergies(self, energies):
@@ -153,12 +178,19 @@ class ConicalProjector:
         self._xRangeLim = x_range_lim
         self._yRangeLim = y_range_lim
         self._zRangeLim = z_range_lim
+        min_x = np.min(self._scatterPointsOfInteraction[:, 0])
+        min_y = np.min(self._scatterPointsOfInteraction[:, 1])
+        min_z = np.min(self._scatterPointsOfInteraction[:, 2])
+        max_x = np.max(self._scatterPointsOfInteraction[:, 0])
+        max_y = np.max(self._scatterPointsOfInteraction[:, 1])
+        max_z = np.max(self._scatterPointsOfInteraction[:, 2])
         if x_range_lim is None:
-            self.x_range_lim = [np.ceil(self._scatterPointsOfInteraction[0]), np.ceil(self._scatterPointsOfInteraction[0])]
+            self._xRangeLim = [np.floor(min_x), np.ceil(max_x)]
         if y_range_lim is None:
-            self.y_range_lim = [np.ceil(self._scatterPointsOfInteraction[1]), np.ceil(self._scatterPointsOfInteraction[1])]
+            self._yRangeLim = [np.floor(min_y), np.ceil(max_y)]
         if z_range_lim is None:
-            z_range_lim = [np.ceil(self._scatterPointsOfInteraction[2]), np.ceil(self._scatterPointsOfInteraction[2])]
+            self._zRangeLim = [np.floor(min_z), np.ceil(max_z)]
+
 
     def transformIntoPositivePoints(self):
         """
@@ -197,23 +229,23 @@ class ConicalProjector:
 
 
 
-        self.numberOfPixelsX = int(np.ceil(self.xRangeLim[1]-self.xRangeLim[0]))
-        self.numberOfPixelsY = int(np.ceil(self.yRangeLim[1]-self.yRangeLim[0]))
-        self.numberOfPixelsZ = int(np.ceil(self.zRangeLim[1]-self.zRangeLim[0]))
+        self._numberOfPixelsX = int(np.ceil(self._xRangeLim[1]-self._xRangeLim[0]))
+        self._numberOfPixelsY = int(np.ceil(self._yRangeLim[1]-self._yRangeLim[0]))
+        self._numberOfPixelsZ = int(np.ceil(self._zRangeLim[1]-self._zRangeLim[0]))
 
         self._imIndexX = np.ascontiguousarray(
-            np.empty((self.numberOfPixelsX, self.numberOfPixelsY, self.numberOfPixelsZ), dtype=np.int32))
+            np.empty((self._numberOfPixelsX, self._numberOfPixelsY, self._numberOfPixelsZ), dtype=np.int32))
         self._imIndexY = np.ascontiguousarray(
-            np.empty((self.numberOfPixelsX, self.numberOfPixelsY, self.numberOfPixelsZ), dtype=np.int32))
+            np.empty((self._numberOfPixelsX, self._numberOfPixelsY, self._numberOfPixelsZ), dtype=np.int32))
         self._imIndexZ = np.ascontiguousarray(
-            np.empty((self.numberOfPixelsX, self.numberOfPixelsY, self.numberOfPixelsZ), dtype=np.int32))
+            np.empty((self._numberOfPixelsX, self._numberOfPixelsY, self._numberOfPixelsZ), dtype=np.int32))
         print(f"Image Shape{self._imIndexZ.shape}")
-        x_range = np.arange(self.x_range_lim[0], self.x_range_lim[1],
+        x_range = np.arange(self._xRangeLim[0], self._xRangeLim[1],
                             dtype=np.int32)
-        y_range = np.arange(self.y_range_lim[0], self.y_range_lim[1],
+        y_range = np.arange(self._yRangeLim[0], self._yRangeLim[1],
                             dtype=np.int32)
 
-        z_range = np.arange(self.z_range_lim[0], self.z_range_lim[1],
+        z_range = np.arange(self._zRangeLim[0], self._zRangeLim[1],
                             dtype=np.int32)
 
         # Create 3 EMPTY arrays with images size.
@@ -228,21 +260,76 @@ class ConicalProjector:
 
 
 if __name__ == "__main__":
+
     conicalProjector = ConicalProjector()
     # x^2 + y^2−k2z2−2   x0x−2    y0y + 2    k2z0z + (x02+y02−k2z0) = 0
 
-    point_scatter = np.array([[0, 0, 0], [5,5,0]], dtype=np.float32)
-    point_compton = np.array([[0, 0, 0], [5,5,0]], dtype=np.float32)
-    angles_compton = np.array([45, 45], dtype=np.float32)
+    point_scatter = np.array([[0, 0, 0], [20,3,10]], dtype=np.float32)
+    point_compton = np.array([[5, 2, 2], [10,10,10]], dtype=np.float32)
+    angles_compton = np.array([90, 10], dtype=np.float32)
     energies_compton = np.array([511, 511], dtype=np.float32)
+
+    file_path = r"C:\Users\pedro\OneDrive\Documentos\2Sources_openAngle_allEvents.txt"
+    data = np.loadtxt(file_path, delimiter=' ', skiprows=1)
+    point_scatter = data[:, 3:6]
+    point_compton = data[:, 0:3]
+    angles_compton = data[:, 6]
+    # remove larger than 100 degrees angles
+    point_scatter = point_scatter[angles_compton < 100]
+    point_compton = point_compton[angles_compton < 100]
+    angles_compton = angles_compton[angles_compton < 100]
 
     conicalProjector.setScatterPointsOfInteraction(point_scatter)
     conicalProjector.setComptonPointsOfInteraction(point_compton)
     conicalProjector.setAngles(angles_compton)
     conicalProjector.setEnergies(energies_compton)
     conicalProjector.setVectorComptonScatter()
-    conicalProjector.setConeEquation()
-
-    print(conicalProjector)
+    # conicalProjector.setRangeLim(np.array([-20, 20], dtype=np.float32),np.array([-20, 20], dtype=np.float32), np.array([-20, 20], dtype=np.float32))
+    conicalProjector.setRangeLim()
+    conicalProjector.createVectorialSpace()
+    equation = conicalProjector.setConeEquation()
 
     import matplotlib.pyplot as plt
+    #draw the conical surface
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    XX = conicalProjector._imIndexX
+    YY = conicalProjector._imIndexY
+    ZZ = conicalProjector._imIndexZ
+    x_flat = XX.flatten()
+    y_flat = YY.flatten()
+    z_flat = ZZ.flatten()
+    x_flat =XX
+    y_flat = YY
+    z_flat = ZZ
+    # for i in range(point_scatter.shape[0]):
+    # for i in range(point_scatter.shape[0]):
+    im = np.zeros((XX.shape[0], YY.shape[1], ZZ.shape[2]), dtype=np.float32)
+    for i in range(point_scatter.shape[0]):
+    # for i in range(100):
+        # Ax2+By2+Cz2+Dxy+Eyz+Fxz=0
+        value = equation[0, i] * x_flat ** 2 + \
+                equation[1, i] * y_flat ** 2 + \
+                equation[2, i] * z_flat ** 2 + \
+                equation[3, i] * x_flat * y_flat + \
+                equation[4, i] * x_flat * z_flat + \
+                equation[5, i] * y_flat * z_flat + \
+                equation[6, i] * x_flat + \
+                equation[7, i] * y_flat + \
+                equation[8, i] * z_flat + \
+                equation[9, i]
+
+        # plot the points that are inside the conical surface
+        im += np.abs(value) < conicalProjector._errorConicalSurface
+
+        # plt.plot(x_flat[np.abs(value) < conicalProjector._errorConicalSurface],
+        #              y_flat[np.abs(value) < conicalProjector._errorConicalSurface],
+        #              z_flat[np.abs(value) < conicalProjector._errorConicalSurface],
+        #              marker='o', linestyle='None', markersize=2, label='Conical Surface Error')
+
+    plt.figure()
+    plt.imshow(np.mean(im, axis=2), cmap='gray', extent=(conicalProjector._xRangeLim[0], conicalProjector._xRangeLim[1],
+                                                   conicalProjector._yRangeLim[0], conicalProjector._yRangeLim[1]))
+    print(conicalProjector)
+    plt.show()
+
