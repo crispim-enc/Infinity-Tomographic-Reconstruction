@@ -93,3 +93,24 @@ Special thanks to:
     Project Lead: Your Name
     Website: Project Website
     GitHub Issues: Submit an Issue
+
+## ⚠️ Disclaimer
+
+This repository is provided for non-commercial research and educational purposes only. It contains or builds upon
+components that are licensed under terms which prohibit commercial use.
+
+The author:
+
++ Does not authorize the use of this repository, in whole or in part, in any commercial application or product.
+
++ Shall not be held responsible for any direct or indirect consequences arising from unauthorized commercial use.
+
++ Disclaims all liability for any outcomes, conclusions, or decisions—particularly those of a medical or clinical 
+nature—derived from the use of this repository.
+
++ Makes no guarantees regarding the accuracy, reliability, or fitness of the code for any specific application.
+
++ Has not received any financial compensation related to the use or distribution of this repository.
+
+By using this repository, you agree to comply with all applicable license terms, 
+including the CC BY-NC-SA 4.0 license under which this project is distributed.

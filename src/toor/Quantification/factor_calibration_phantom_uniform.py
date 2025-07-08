@@ -3,6 +3,10 @@ import json
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""
+Not integrated in the TOOR. For PET quantification factor calculation used the intelligent scan project
+"""
+
 
 class FactorQuantificationFromUniformPhantom:
     def __init__(self, activity_phantom=6663944, radiotracer_phantom="F18", positron_fraction_phantom=1,
@@ -142,7 +146,7 @@ class FactorQuantificationFromUniformPhantom:
         """ """
         try:
             with open(self.file_name, "rb") as binary_file:
-                size_header = np.fromfile(binary_file, dtype=np.int, count=1)
+                size_header = np.fromfile(binary_file, dtype=np.int32, count=1)
                 binary_file.seek(2)
                 quantificationfactor = np.fromfile(binary_file, dtype='|S1', count=size_header[0] * 2 + 2).astype('|U1')
                 quantificationfactor = quantificationfactor.tolist()
