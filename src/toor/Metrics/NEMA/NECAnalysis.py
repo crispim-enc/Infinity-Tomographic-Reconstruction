@@ -184,17 +184,17 @@ class NECAnalysis:
         if _background_calculation:
             for_dim = 1
         else:
-            # if not self.acquisitionInfo["Type of subject"] == "Simulation":
-            #     valid_turns = self._breakListModeIntoParts()
-            # else:
-            valid_turns = self.acquisitionInfo["Turn end index"]#hack for simulation
-            valid_turns = [0, 5831895, 8133158, 9129935, 10023839, 10543612, 11023706, 11250857]#hack for simulation
-            # saved_time = (listmode_temp[-1-1, 6] - listmode_temp[0, 6])
-            saved_time = [481.0047301997547, 481.0047301997547, 481.0037258126249, 962.0039543666644, 962.000346938381, 1923.9923457532423, 5771.985315153957]
-            valid_turns =  [0, 23679418, 43625879, 60153401, 73557587, 84130166, 92186643, 98018538, 100319801, 101316578, 102210482, 102730255, 103210349, 103602216]#hack for simulation
-            saved_time = [481.00497392637703,481.00497392637703, 481.00494717908197, 481.004956082609, 481.004850723411, 481.00487213812,
-             481.004913950128, 481.004730199745, 481.00372581264696, 962.003954366732, 962.0003469383939,
-             1923.9923457532382, 5771.985315153976]
+            if not self.acquisitionInfo["Type of subject"] == "Simulation":
+                valid_turns = self._breakListModeIntoParts()
+            else:
+                valid_turns = self.acquisitionInfo["Turn end index"]#hack for simulation
+                # valid_turns = [0, 5831895, 8133158, 9129935, 10023839, 10543612, 11023706, 11250857]#hack for simulation
+                saved_time = (listmode[-1, 6] - listmode[0, 6])
+            # saved_time = [481.0047301997547, 481.0047301997547, 481.0037258126249, 962.0039543666644, 962.000346938381, 1923.9923457532423, 5771.985315153957]
+            # valid_turns =  [0, 23679418, 43625879, 60153401, 73557587, 84130166, 92186643, 98018538, 100319801, 101316578, 102210482, 102730255, 103210349, 103602216]#hack for simulation
+            # saved_time = [481.00497392637703,481.00497392637703, 481.00494717908197, 481.004956082609, 481.004850723411, 481.00487213812,
+            #  481.004913950128, 481.004730199745, 481.00372581264696, 962.003954366732, 962.0003469383939,
+            #  1923.9923457532382, 5771.985315153976]
 
             for_dim = len(valid_turns) - 1
 
