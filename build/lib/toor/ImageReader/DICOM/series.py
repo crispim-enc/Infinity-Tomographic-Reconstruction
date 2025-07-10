@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: series.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 from dateutil.parser import parse
 from pydicom.dataset import Dataset, FileDataset
 import numpy as np

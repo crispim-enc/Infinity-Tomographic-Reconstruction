@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: hardware_parameters_file.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 import time
 import os
 import logging

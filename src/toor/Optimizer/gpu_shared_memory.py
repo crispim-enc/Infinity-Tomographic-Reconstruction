@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: gpu_shared_memory.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 import numpy as np
 from pycuda.compiler import SourceModule
 import math

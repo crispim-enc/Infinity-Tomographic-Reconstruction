@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: detect_peaks.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 """Detect peaks in data based on their amplitude and other features."""
 
 from __future__ import division, print_function
