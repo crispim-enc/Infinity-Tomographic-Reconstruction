@@ -8,8 +8,6 @@
 # * LICENSE: "CC BY-NC-SA 4.0"
 # *******************************************************
 
-"""
-Brief description of the file.
-"""
+
 from . import AnalyticalReconstruction, Corrections, Designer, DetectionLayout, Device, GateLink, Geometry
 from . import ImageReader, Metrics, Phantoms, Quantification, TORFilesReader, CalibrationWrapper

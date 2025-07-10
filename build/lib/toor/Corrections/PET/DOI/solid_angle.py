@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: solid_angle.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 import numpy as np
 import matplotlib.pyplot as plt
 width = 1-np.abs(np.arange(-1,1,0.1))

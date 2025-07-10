@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: resetposition.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 class ResetParametricPointsToOrigin:
     def __init__(self, listMode=None, geometry_file=None, simulation_files=False, point_location="crystal_center",
                  crystal_height=2, crystal_width=2, crystal_depth=20, shuffle=False, FoV=45, distance_between_motors=30,

@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: IQ_analysisFixed.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import *
 from mpl_toolkits.axes_grid1 import make_axes_locatable

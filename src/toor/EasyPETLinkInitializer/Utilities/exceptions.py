@@ -1,4 +1,0 @@
-
-
-class OnlyOneIncompleteTurn(Exception):
-    pass

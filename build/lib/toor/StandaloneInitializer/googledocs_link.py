@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: googledocs_link.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 import os
 import sys
 import time

@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: FWHM_estimator.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 import tkinter as tk
 from tkinter import filedialog
 from os import listdir, path

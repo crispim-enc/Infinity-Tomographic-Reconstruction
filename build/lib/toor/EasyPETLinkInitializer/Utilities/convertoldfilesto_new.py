@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: convertoldfilesto_new.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 import os.path
 import tkinter as tk
 import time

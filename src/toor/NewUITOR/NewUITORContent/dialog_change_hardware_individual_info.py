@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: dialog_change_hardware_individual_info.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 import os
 from dialog_change_hardware_individual_info_gui import Ui_Dialog as DialogChangeHardware_parameters
 from PyQt5.QtQml import qmlRegisterType, QQmlComponent, QQmlEngine, QQmlError

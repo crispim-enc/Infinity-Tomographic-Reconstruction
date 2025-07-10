@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: natural_sort.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 import re
 
 #Sort a list  [im1 , im2, im11] instead of [im1, im11, im2]

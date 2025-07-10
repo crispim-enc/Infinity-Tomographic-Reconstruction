@@ -1,7 +1,19 @@
+# *******************************************************
+# * FILE: factor_calibration_phantom_uniform.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 from array import array
 import json
 import numpy as np
 import matplotlib.pyplot as plt
+
+"""
+Not integrated in the TOOR. For PET quantification factor calculation used the intelligent scan project
+Future implementation  
+"""
 
 
 class FactorQuantificationFromUniformPhantom:
@@ -142,7 +154,7 @@ class FactorQuantificationFromUniformPhantom:
         """ """
         try:
             with open(self.file_name, "rb") as binary_file:
-                size_header = np.fromfile(binary_file, dtype=np.int, count=1)
+                size_header = np.fromfile(binary_file, dtype=np.int32, count=1)
                 binary_file.seek(2)
                 quantificationfactor = np.fromfile(binary_file, dtype='|S1', count=size_header[0] * 2 + 2).astype('|U1')
                 quantificationfactor = quantificationfactor.tolist()
@@ -182,49 +194,3 @@ class FactorQuantificationFromUniformPhantom:
         plt.imshow(np.max(self.segmented_image, axis=0))
         plt.show()
 
-
-if __name__ == "__main__":
-    import os
-    import tkinter as tk
-    from tkinter import filedialog
-    from ImageReader import RawDataSetter
-    from EasyPETLinkInitializer.EasyPETDataReader import binary_data
-
-    root = tk.Tk()
-    root.withdraw()
-    # matplotlib.rcParams['font.family'] = "Gill Sans MT"
-    file_path = filedialog.askopenfilename()
-    easypet_folder = os.path.dirname(os.path.dirname(file_path))
-    easypet_file = os.path.join(easypet_folder, "{}.easypet".format(os.path.basename(easypet_folder)))
-    # file_folder = path.join(file_folder, "static_image")
-
-    [listMode, Version_binary, header, dates, otherinfo, acquisitionInfo, stringdata,
-     systemConfigurations_info, energyfactor_info, peakMatrix_info] = binary_data().open(easypet_file)
-    data = RawDataSetter(file_name=file_path,)
-    # data = RawDataSetter(file_name=file_path, size_file_m=[88, 88, 130])
-    data.read_files()
-    volume = data.volume
-    real_pixelSizeXYZ = (systemConfigurations_info["array_crystal_x"] * systemConfigurations_info["crystal_pitch_x"] +
-                         (systemConfigurations_info["array_crystal_x"] - 1) *
-                         2*systemConfigurations_info["reflector_interior_A_x"]) / volume.shape[2]
-    volume_voxel = 1 * 1 * real_pixelSizeXYZ*0.001
-
-    cg = [systemConfigurations_info["array_crystal_x"], systemConfigurations_info["array_crystal_y"]]
-    initial_activity = acquisitionInfo["Total Dose"]
-    f = FactorQuantificationFromUniformPhantom(activity_phantom=initial_activity,
-                                               radiotracer_phantom=acquisitionInfo['Tracer'],
-                                               positron_fraction_phantom=acquisitionInfo['Positron Fraction'],
-                                               phantom_volume=float(acquisitionInfo["Volume tracer"]),
-                                               crystals_geometry=cg,
-                                               image_phantom=volume,
-                                               acquisition_phantom_duration=listMode[-1, 6],
-                                               voxel_volume=volume_voxel, voxel_volume_unit="ml")
-
-    # f = FactorQuantificationFromUniformPhantom(activity_phantom=  crystals_geometry=cg ,image_phantom=volume,
-    #                                            acquisition_phantom_duration=listMode[-1, 6],
-    #                                            voxel_volume=volume_voxel, voxel_volume_unit="mm^3")
-    f.segment_region_phantom(dx=10, dy=10, dz=10)
-    f.quantification_factor_calculation(bq_ml=True)
-    # f.save_info()
-
-    f.plt_segmented_image()

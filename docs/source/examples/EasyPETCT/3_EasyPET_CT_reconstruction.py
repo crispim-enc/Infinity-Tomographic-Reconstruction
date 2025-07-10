@@ -172,7 +172,6 @@ class ReconstructionEasyPETCT:
                     for key6, value6 in value5.__dict__.items():
                         f.write(f"\t{key6}: {value6}\n")
 
-
     def start(self):
         print("Starting reconstruction")
         print("________________________________")
@@ -301,11 +300,13 @@ if __name__ == "__main__":
     # filename = "../../allvalues.npy"
     filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\intelligent_scan-NewGeometries-CT\\allvalues.npy"
     filename = "E:\\easyCT study 1 frontal\\simulatedsinogram_matrix.tor"
+    filename = "C:\\Users\\pedro\\Downloads\\simulatedsinogram_matrix.tor"
     # output_path = "C:/Users/pedro/OneDrive/Ambiente de Trabalho/Iterations_test"
     # if not os.path.exists(output_path):
     #     os.makedirs(output_path)
 
     voxelSize = [0.25, 0.25, 0.5]
+    voxelSize = [0.5, 0.5, 1]
     energyregion = "59.6"
     # voxelSize =[1, 1, 1]
 
@@ -313,7 +314,7 @@ if __name__ == "__main__":
     # output_path = "E:\\simulatedsinogram_matrix.tor"
     output_path = None
 
-    r = ReconstructionEasyPETCT(filename, iterations=25, subsets=1, algorithm="LM-MRP",
+    r = ReconstructionEasyPETCT(filename, iterations=25, subsets=1, algorithm="LM-MLEM",
                      voxelSize=voxelSize, radial_fov_range=None, energyregion=energyregion, file_path_output=output_path,
                                 algorithm_options=[0.15, 3])
     r.start()

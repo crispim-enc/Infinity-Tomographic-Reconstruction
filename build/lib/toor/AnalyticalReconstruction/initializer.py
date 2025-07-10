@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: initializer.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 import numpy as np
 import skimage
 from skimage.transform import iradon, iradon_sart

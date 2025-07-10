@@ -1,3 +1,10 @@
+# *******************************************************
+# * FILE: easypet_parametric_points.py
+# * AUTHOR: Pedro Encarnação
+# * DATE: 2025-07-10
+# * LICENSE: CC BY-NC-SA 4.0
+# *******************************************************
+
 import numpy as np
 import matplotlib.pyplot as plt
 # from toor.Designer.geometricdesigner import GeometryDesigner
