@@ -7,11 +7,13 @@ Image Reconstruction Framework for PET/CT and SPECT
 This repository provides modular image reconstruction framework designed for Positron Emission Tomography (PET),
 Computed Tomography (CT), and Single Photon Emission Computed Tomography (SPECT). 
 
+
 You can define the **Device** type
  + PET
  + CT
  + SPECT
  + Compton
+
 
 **Modules and Submodules**
  + LYSO and SPiM
@@ -38,6 +40,7 @@ You can define the **Device** type
    + MLEM
    + LM - MRP
    + MRP
+
 
 
 ## 🛠️ Installation
@@ -76,6 +79,7 @@ Timing performance evaluation of a dual-axis rotational PET system according to 
 PET Reconstruction and ODRTVF projector
 + Encarnação, P. M. C. C., Correia, P. M. M., Silva, A. L. M., Ribeiro, F. M., Castro, I. F., & Veloso, J. F. C. A. (2025).
 A modified orthogonal-distance ray-tracer method applied to dual rotation PET systems. Physics in Medicine & Biology, 70(2), 025021. https://doi.org/10.1088/1361-6560/ada718
+
 
 Pyramidal Projector
 + P. M. C. C. Encarnação et al., "Individual and Simultaneous Imaging of ⁹⁹mTc and ¹⁷⁷Lu With a Preclinical Broad Energy-Spectrum CZT-Based SPECT," in 
