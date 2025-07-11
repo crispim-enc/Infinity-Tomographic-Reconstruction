@@ -15,10 +15,10 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 
-from DetectionLayout import PETModule
-from DetectionLayout import GenericCrystal
-from Geometry import PlanarGeometry
-from Designer import DeviceDesignerStandalone
+from toor.DetectionLayout.Modules import PETModule
+from toor.DetectionLayout.Photodetectors.Crystals import GenericCrystal
+from toor.Geometry.Standard import PlanarGeometry
+from toor.Designer import DeviceDesignerStandalone
 
 
 file_path = "C:\\Users\\pedro\\Downloads\\phase_1_challenge_data_03_05_2025\\NEMA_phantom-20250221T115435Z-001\\NEMA_phantom\\SPECT-projections\\"
@@ -63,7 +63,7 @@ print(f"Rotation Vector: {rotationVector}")
 # module_.setHighEnergyLightDetectorBlock(2)
 
 #
-newDevice = PlanarGeometry(distance_between_planes=537)
+newDevice = PlanarGeometry(distance_between_planes=537, detector_module=PETModule)
 newDevice.setDeviceName("Siemens SYmbia Intevo Bold SPEC/CT")
 newDevice.setNumberOfModulesZ(1)
 newDevice.setNumberOfModulesPerSide(1)

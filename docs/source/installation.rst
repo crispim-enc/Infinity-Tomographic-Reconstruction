@@ -6,6 +6,20 @@ You can install **Infinity Tomographic Reconstruction** from source using `setup
 
 ----
 
+Install Directly from GitHub
+----------------------------
+
+You can install directly from the GitHub repository without cloning:
+
+.. code-block:: bash
+
+   pip install git+https://github.com/DRIM-UA/infinity-tomographic-reconstruction.git
+
+This will fetch the latest `main` branch and install it using `setuptools`.
+
+----
+
+
 Install from Local Source
 -------------------------
 
@@ -32,28 +46,28 @@ This allows live updates to your code without re-installing.
 
 ----
 
-Install Directly from GitHub
-----------------------------
 
-You can install directly from the GitHub repository without cloning:
-
-.. code-block:: bash
-
-   pip install git+https://github.com/your-org/infinity-tomographic-reconstruction.git
-
-This will fetch the latest `main` branch and install it using `setuptools`.
-
-----
-
-Requirements
+Pre-Requirements
 ------------
+
+    Cuda Toolkit 11.3 or higher,
+    Python 3.8, pip, cl compiler.
+
 
 Core dependencies (automatically installed with `pip install`) include:
 
 - `numpy>=2.0`
 - `matplotlib`
 - `scipy`
-- `pycuda` (optional, for GPU support)
+- `pycuda`
+-  "vtk",
+- "pydicom"
+- "pycuda"
+- "json5",
+- "scikit-image"
+- "pandas"
+- "PyQt6"
+- "uproot"
 
 To install extra dev tools:
 

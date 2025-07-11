@@ -19,6 +19,14 @@ Afterwars the device can be read from the folder and added to the new TOR files 
 
 # # sphinx_gallery_thumbnail_path = 'examples/EasyPETCT/easyPETCT.png'
 """
+
+# %% [markdown]
+# .. image:: ../../images/ipetmodules.png
+#    :alt: EasyCT Diagram
+#    :width: 600px
+#    :align: center
+
+
 # %% [markdown]
 # Imports to create the device
 import matplotlib.pyplot as plt
@@ -32,7 +40,6 @@ from toor.DetectionLayout.Modules import  PETModule, easyPETModule
 from toor.Designer import DeviceDesignerStandalone
 from toor.Device import StoreDeviceInFo, EnergyResolutionFunction
 # from toor.TORFilesReader import ToRFile
-
 
 
 # %% [markdown]
@@ -111,7 +118,7 @@ moduleSideA_X_translation = np.array([10,10,10,10], dtype=np.float32)
 moduleSideA_Y_translation = np.array([0,0, 0, 0], dtype=np.float32)
 moduleSideA_Z_translation = np.arange(0,16*1.6*4+3,16*1.6+1)
 moduleSideA_alpha_rotation = np.array([0,0,0,0], dtype=np.float32)
-moduleSideA_beta_rotation = np.array([30, 30, 30, 30 ], dtype=np.float32)
+moduleSideA_beta_rotation = np.array([0, 0, 0, 0 ], dtype=np.float32)
 moduleSideA_sigma_rotation = np.array([0,0,0,0], dtype=np.float32)
 
 for i in range(newDevice.numberOfDetectorModulesSideA):
@@ -180,11 +187,6 @@ designer = DeviceDesignerStandalone(device=newDevice)
 designer.addDevice()
 # designer.addxRayProducerSource()
 designer.startRender()
-# %% [markdown]
-# .. image:: ../../images/easyPETCT.png
-#    :alt: EasyCT Diagram
-#    :width: 600px
-#    :align: center
 
 # %% [markdown]
 # Test some initial positions of the source and the detectors
@@ -195,35 +197,35 @@ fan_motor_angles = np.tile(np.arange(-90, 105, 15), 32)
 
 # %% [markdown]
 # Calculate the coordinates for the previous angles
-newDevice.detectorSideBCoordinatesAfterMovement(axial_motor_angles, fan_motor_angles, unique_header)
-
-axial_motor_angles = np.array([0, 0], dtype=np.float32)
-fan_motor_angles = np.array([0, 0], dtype=np.float32)
-newDevice.sourcePositionAfterMovement(axial_motor_angles, fan_motor_angles)
-plt.figure(figsize=(10, 10))
-plt.plot(newDevice.originSystemWZ[0], newDevice.originSystemWZ[1], 'ro', label='Origin Fan Motor')
-# plot source center
-plt.plot(newDevice.sourceCenter[:, 0], newDevice.sourceCenter[:, 1], 'bo', label='Source Center')
-plt.plot(newDevice.originSystemXY[0], newDevice.originSystemXY[1], 'ko', label='Origin FOV')
-plt.plot(newDevice.centerFace[:, 0], newDevice.centerFace[:, 1], 'go', label='Center Face Detector Module B')
-plt.plot(newDevice._verticesB[:, :, 0], newDevice._verticesB[:, :, 1], 'mo', label='Vertices Base Detector Module B')
-
-plt.plot([np.ones(newDevice.centerFace.shape[0]) * newDevice.originSystemWZ[0, 0],
-          newDevice.centerFace[:, 0]], [np.ones(newDevice.centerFace.shape[0]) * newDevice.originSystemWZ[1, 0],
-                                        newDevice.centerFace[:, 1]], '-')
-plt.xlabel('X (mm)')
-plt.ylabel('Z (mm)')
-plt.legend()
-plt.figure(figsize=(10, 10))
-
-# x an Z direction
-plt.plot(newDevice.originSystemWZ[0], newDevice.originSystemWZ[2], 'ro', label='Origin Fan Motor')
-# plot source center
-plt.plot(newDevice.sourceCenter[:, 0], newDevice.sourceCenter[:, 2], 'bo', label='Source Center')
-plt.plot(newDevice.originSystemXY[0], newDevice.originSystemXY[2], 'ko', label='Origin FOV')
-plt.plot(newDevice.centerFace[:, 0], newDevice.centerFace[:, 2], 'go', label='Center Face Detector Module B')
-plt.plot(newDevice._verticesB[:, :, 0], newDevice._verticesB[:, :, 2], 'mo', label='Vertices Base Detector Module B')
-plt.xlabel('X (mm)')
-plt.ylabel('Y (mm)')
-plt.legend()
-plt.show()
+# newDevice.detectorSideBCoordinatesAfterMovement(axial_motor_angles, fan_motor_angles, unique_header)
+#
+# axial_motor_angles = np.array([0, 0], dtype=np.float32)
+# fan_motor_angles = np.array([0, 0], dtype=np.float32)
+# # newDevice.sourcePositionAfterMovement(axial_motor_angles, fan_motor_angles)
+# plt.figure(figsize=(10, 10))
+# plt.plot(newDevice.originSystemWZ[0], newDevice.originSystemWZ[1], 'ro', label='Origin Fan Motor')
+# # plot source center
+# # plt.plot(newDevice.sourceCenter[:, 0], newDevice.sourceCenter[:, 1], 'bo', label='Source Center')
+# plt.plot(newDevice.originSystemXY[0], newDevice.originSystemXY[1], 'ko', label='Origin FOV')
+# plt.plot(newDevice.centerFace[:, 0], newDevice.centerFace[:, 1], 'go', label='Center Face Detector Module B')
+# plt.plot(newDevice._verticesB[:, :, 0], newDevice._verticesB[:, :, 1], 'mo', label='Vertices Base Detector Module B')
+#
+# plt.plot([np.ones(newDevice.centerFace.shape[0]) * newDevice.originSystemWZ[0, 0],
+#           newDevice.centerFace[:, 0]], [np.ones(newDevice.centerFace.shape[0]) * newDevice.originSystemWZ[1, 0],
+#                                         newDevice.centerFace[:, 1]], '-')
+# plt.xlabel('X (mm)')
+# plt.ylabel('Z (mm)')
+# plt.legend()
+# plt.figure(figsize=(10, 10))
+#
+# # x an Z direction
+# plt.plot(newDevice.originSystemWZ[0], newDevice.originSystemWZ[2], 'ro', label='Origin Fan Motor')
+# # plot source center
+# # plt.plot(newDevice.sourceCenter[:, 0], newDevice.sourceCenter[:, 2], 'bo', label='Source Center')
+# plt.plot(newDevice.originSystemXY[0], newDevice.originSystemXY[2], 'ko', label='Origin FOV')
+# # plt.plot(newDevice.centerFace[:, 0], newDevice.centerFace[:, 2], 'go', label='Center Face Detector Module B')
+# plt.plot(newDevice._verticesB[:, :, 0], newDevice._verticesB[:, :, 2], 'mo', label='Vertices Base Detector Module B')
+# plt.xlabel('X (mm)')
+# plt.ylabel('Y (mm)')
+# plt.legend()
+# plt.show()

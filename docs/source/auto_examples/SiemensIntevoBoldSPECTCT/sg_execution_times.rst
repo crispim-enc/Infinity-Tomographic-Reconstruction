@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**02:10.327** total execution time for 1 file **from auto_examples\SiemensIntevoBoldSPECTCT**:
+**04:52.605** total execution time for 1 file **from auto_examples\SiemensIntevoBoldSPECTCT**:
 
 .. container::
 
@@ -33,5 +33,5 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_SiemensIntevoBoldSPECTCT_newdevice_siemens.py` (``newdevice_siemens.py``)
-     - 02:10.327
+     - 04:52.605
      - 0.0

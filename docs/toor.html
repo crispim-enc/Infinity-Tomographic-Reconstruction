@@ -1,0 +1,1160 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>toor package &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="_static/documentation_options.js?v=38b66d78"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'toor';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="toor.AnalyticalReconstruction package" href="toor.AnalyticalReconstruction.html" />
+    <link rel="prev" title="API reference" href="modules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Please cite
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Please cite
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">toor package</a><input checked class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.AnalyticalReconstruction.html">toor.AnalyticalReconstruction package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.CalibrationWrapper.html">toor.CalibrationWrapper package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.Corrections.html">toor.Corrections package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.CT.html">toor.Corrections.CT package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.CT.Projector.html">toor.Corrections.CT.Projector package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Corrections.Compton.html">toor.Corrections.Compton package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.EasyPET.html">toor.Corrections.EasyPET package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.EasyPET.Normalization.html">toor.Corrections.EasyPET.Normalization package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.EasyPET.SystemFocus.html">toor.Corrections.EasyPET.SystemFocus package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Corrections.General.html">toor.Corrections.General package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.PET.html">toor.Corrections.PET package</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.Attenuation.html">toor.Corrections.PET.Attenuation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.DOI.html">toor.Corrections.PET.DOI package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.DecayCorrection.html">toor.Corrections.PET.DecayCorrection package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.EnergyCorrection.html">toor.Corrections.PET.EnergyCorrection package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.Projector.html">toor.Corrections.PET.Projector package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Designer.html">toor.Designer package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.DetectionLayout.html">toor.DetectionLayout package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Collimators.html">toor.DetectionLayout.Collimators package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Modules.html">toor.DetectionLayout.Modules package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.html">toor.DetectionLayout.Photodetectors package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.Crystals.html">toor.DetectionLayout.Photodetectors.Crystals package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.SiPM.html">toor.DetectionLayout.Photodetectors.SiPM package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.RadiationProducer.html">toor.DetectionLayout.RadiationProducer package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Semicondutors.html">toor.DetectionLayout.Semicondutors package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Device.html">toor.Device package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.GateLink.html">toor.GateLink package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.GateToTor.html">toor.GateLink.GateToTor package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.RootToTor.html">toor.GateLink.RootToTor package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.ToRToGate.html">toor.GateLink.ToRToGate package</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.Geometry.html">toor.Geometry package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.LinearPET.html">toor.Geometry.LinearPET package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.Standard.html">toor.Geometry.Standard package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.easyPETBased.html">toor.Geometry.easyPETBased package</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.ImageReader.html">toor.ImageReader package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.DICOM.html">toor.ImageReader.DICOM package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.Interfile.html">toor.ImageReader.Interfile package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.RawData.html">toor.ImageReader.RawData package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html">toor.Optimizer package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Quantification.html">toor.Quantification package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html">toor.TORFilesReader package</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">toor package</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="toor-package">
+<h1>toor package<a class="headerlink" href="#toor-package" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="toor.AnalyticalReconstruction.html">toor.AnalyticalReconstruction package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.AnalyticalReconstruction.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.AnalyticalReconstruction.html#module-toor.AnalyticalReconstruction.initializer">toor.AnalyticalReconstruction.initializer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.initializer.AnalyticalReconstruction"><code class="docutils literal notranslate"><span class="pre">AnalyticalReconstruction</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.initializer.AnalyticalReconstruction.FBP2D"><code class="docutils literal notranslate"><span class="pre">AnalyticalReconstruction.FBP2D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.initializer.AnalyticalReconstruction.SART"><code class="docutils literal notranslate"><span class="pre">AnalyticalReconstruction.SART()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.initializer.AnalyticalReconstruction.michelogramRegularization"><code class="docutils literal notranslate"><span class="pre">AnalyticalReconstruction.michelogramRegularization()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.AnalyticalReconstruction.html#module-toor.AnalyticalReconstruction.sinogram">toor.AnalyticalReconstruction.sinogram module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.sinogram.Sinogram"><code class="docutils literal notranslate"><span class="pre">Sinogram</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.sinogram.Sinogram.calculateMichelogram"><code class="docutils literal notranslate"><span class="pre">Sinogram.calculateMichelogram()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.sinogram.Sinogram.calculate_s_phi"><code class="docutils literal notranslate"><span class="pre">Sinogram.calculate_s_phi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.sinogram.Sinogram.front2Front"><code class="docutils literal notranslate"><span class="pre">Sinogram.front2Front()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.sinogram.Sinogram.michelogram"><code class="docutils literal notranslate"><span class="pre">Sinogram.michelogram</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.sinogram.Sinogram.projected_sinogram"><code class="docutils literal notranslate"><span class="pre">Sinogram.projected_sinogram()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.sinogram.Sinogram.rebinningSSBR"><code class="docutils literal notranslate"><span class="pre">Sinogram.rebinningSSBR()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.AnalyticalReconstruction.html#toor.AnalyticalReconstruction.sinogram.Sinogram.updateLimits"><code class="docutils literal notranslate"><span class="pre">Sinogram.updateLimits()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.AnalyticalReconstruction.html#module-toor.AnalyticalReconstruction">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toor.CalibrationWrapper.html">toor.CalibrationWrapper package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.CalibrationWrapper.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.CalibrationWrapper.html#module-toor.CalibrationWrapper.calibration_wrapper">toor.CalibrationWrapper.calibration_wrapper module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.CalibrationWrapper.html#toor.CalibrationWrapper.calibration_wrapper.CalibrationWrapper"><code class="docutils literal notranslate"><span class="pre">CalibrationWrapper</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.CalibrationWrapper.html#toor.CalibrationWrapper.calibration_wrapper.CalibrationWrapper.setSystemSensitivity"><code class="docutils literal notranslate"><span class="pre">CalibrationWrapper.setSystemSensitivity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.CalibrationWrapper.html#toor.CalibrationWrapper.calibration_wrapper.CalibrationWrapper.systemSensitivity"><code class="docutils literal notranslate"><span class="pre">CalibrationWrapper.systemSensitivity</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.CalibrationWrapper.html#module-toor.CalibrationWrapper">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toor.Corrections.html">toor.Corrections package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.Corrections.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Corrections.CT.html">toor.Corrections.CT package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.CT.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.CT.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.CT.html#module-toor.Corrections.CT.normalization">toor.Corrections.CT.normalization module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.CT.html#module-toor.Corrections.CT">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Corrections.Compton.html">toor.Corrections.Compton package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.Compton.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.Compton.html#module-toor.Corrections.Compton.conicalprojector">toor.Corrections.Compton.conicalprojector module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.Compton.html#module-toor.Corrections.Compton">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Corrections.EasyPET.html">toor.Corrections.EasyPET package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.EasyPET.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.EasyPET.html#module-toor.Corrections.EasyPET">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Corrections.General.html">toor.Corrections.General package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.General.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.General.html#module-toor.Corrections.General.EnergyFiltering">toor.Corrections.General.EnergyFiltering module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.General.html#module-toor.Corrections.General.detector_sensitivity">toor.Corrections.General.detector_sensitivity module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.General.html#module-toor.Corrections.General.generalprojector">toor.Corrections.General.generalprojector module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.General.html#module-toor.Corrections.General">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Corrections.PET.html">toor.Corrections.PET package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.html#module-toor.Corrections.PET">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Corrections.html#module-toor.Corrections">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toor.Designer.html">toor.Designer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.Designer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Designer.html#module-toor.Designer.Image_vtk_projector_article">toor.Designer.Image_vtk_projector_article module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer"><code class="docutils literal notranslate"><span class="pre">SliceViewer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.MiceNaf"><code class="docutils literal notranslate"><span class="pre">SliceViewer.MiceNaf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.MouseMoveCallback"><code class="docutils literal notranslate"><span class="pre">SliceViewer.MouseMoveCallback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.NemaIQ2008"><code class="docutils literal notranslate"><span class="pre">SliceViewer.NemaIQ2008()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.addObservers"><code class="docutils literal notranslate"><span class="pre">SliceViewer.addObservers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.addViewportsNema"><code class="docutils literal notranslate"><span class="pre">SliceViewer.addViewportsNema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.addVolumeRendering"><code class="docutils literal notranslate"><span class="pre">SliceViewer.addVolumeRendering()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.createMovie"><code class="docutils literal notranslate"><span class="pre">SliceViewer.createMovie()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.create_reslice"><code class="docutils literal notranslate"><span class="pre">SliceViewer.create_reslice()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.create_viewport"><code class="docutils literal notranslate"><span class="pre">SliceViewer.create_viewport()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.derenzo"><code class="docutils literal notranslate"><span class="pre">SliceViewer.derenzo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.maxValueForVolume"><code class="docutils literal notranslate"><span class="pre">SliceViewer.maxValueForVolume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.minValueForVolume"><code class="docutils literal notranslate"><span class="pre">SliceViewer.minValueForVolume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.prepare_data"><code class="docutils literal notranslate"><span class="pre">SliceViewer.prepare_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.renderWindow"><code class="docutils literal notranslate"><span class="pre">SliceViewer.renderWindow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.saveImageInPDF"><code class="docutils literal notranslate"><span class="pre">SliceViewer.saveImageInPDF()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.save_screenshot"><code class="docutils literal notranslate"><span class="pre">SliceViewer.save_screenshot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.setAmbient"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setAmbient()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.setColorMapLimits"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setColorMapLimits()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.setMaxValueForVolume"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setMaxValueForVolume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.setSpecular"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setSpecular()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.setVolumeRotation"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setVolumeRotation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.setZoomVolume"><code class="docutils literal notranslate"><span class="pre">SliceViewer.setZoomVolume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.SliceViewer.wheelForwardCallback"><code class="docutils literal notranslate"><span class="pre">SliceViewer.wheelForwardCallback()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.vtkTimerCallback"><code class="docutils literal notranslate"><span class="pre">vtkTimerCallback</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.Image_vtk_projector_article.vtkTimerCallback.execute"><code class="docutils literal notranslate"><span class="pre">vtkTimerCallback.execute()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Designer.html#module-toor.Designer.deviceDesigner">toor.Designer.deviceDesigner module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Designer.html#toor.Designer.deviceDesigner.DeviceDesignerStandalone"><code class="docutils literal notranslate"><span class="pre">DeviceDesignerStandalone</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.deviceDesigner.DeviceDesignerStandalone.addDevice"><code class="docutils literal notranslate"><span class="pre">DeviceDesignerStandalone.addDevice()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.deviceDesigner.DeviceDesignerStandalone.addModule"><code class="docutils literal notranslate"><span class="pre">DeviceDesignerStandalone.addModule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.deviceDesigner.DeviceDesignerStandalone.addxRayProducerSource"><code class="docutils literal notranslate"><span class="pre">DeviceDesignerStandalone.addxRayProducerSource()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Designer.html#toor.Designer.deviceDesigner.DeviceDesignerStandalone.startRender"><code class="docutils literal notranslate"><span class="pre">DeviceDesignerStandalone.startRender()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Designer.html#module-toor.Designer.geometricdesigner">toor.Designer.geometricdesigner module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Designer.html#toor.Designer.geometricdesigner.GeometryDesigner"><code class="docutils literal notranslate"><span class="pre">GeometryDesigner</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Designer.html#toor-designer-vtkrender-module">toor.Designer.vtkrender module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Designer.html#module-toor.Designer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toor.DetectionLayout.html">toor.DetectionLayout package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.DetectionLayout.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Collimators.html">toor.DetectionLayout.Collimators package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Collimators.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Collimators.html#module-toor.DetectionLayout.Collimators.collimatorGeneric">toor.DetectionLayout.Collimators.collimatorGeneric module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Collimators.html#module-toor.DetectionLayout.Collimators">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Modules.html">toor.DetectionLayout.Modules package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Modules.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Modules.html#module-toor.DetectionLayout.Modules.PETModuleGeneric">toor.DetectionLayout.Modules.PETModuleGeneric module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Modules.html#module-toor.DetectionLayout.Modules.SPECTModuleGeneric">toor.DetectionLayout.Modules.SPECTModuleGeneric module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Modules.html#module-toor.DetectionLayout.Modules.SPIRALModule">toor.DetectionLayout.Modules.SPIRALModule module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Modules.html#module-toor.DetectionLayout.Modules.easyPETModules">toor.DetectionLayout.Modules.easyPETModules module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Modules.html#module-toor.DetectionLayout.Modules">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.html">toor.DetectionLayout.Photodetectors package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.html#module-toor.DetectionLayout.Photodetectors">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.RadiationProducer.html">toor.DetectionLayout.RadiationProducer package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.RadiationProducer.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.RadiationProducer.html#module-toor.DetectionLayout.RadiationProducer.GenericSource">toor.DetectionLayout.RadiationProducer.GenericSource module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.RadiationProducer.html#module-toor.DetectionLayout.RadiationProducer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Semicondutors.html">toor.DetectionLayout.Semicondutors package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Semicondutors.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Semicondutors.html#module-toor.DetectionLayout.Semicondutors.cztgeometry">toor.DetectionLayout.Semicondutors.cztgeometry module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Semicondutors.html#module-toor.DetectionLayout.Semicondutors">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.DetectionLayout.html#module-toor.DetectionLayout">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toor.Device.html">toor.Device package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.Device.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Device.html#module-toor.Device.device">toor.Device.device module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device"><code class="docutils literal notranslate"><span class="pre">Device</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.createDirectory"><code class="docutils literal notranslate"><span class="pre">Device.createDirectory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.deviceDirectory"><code class="docutils literal notranslate"><span class="pre">Device.deviceDirectory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.deviceName"><code class="docutils literal notranslate"><span class="pre">Device.deviceName</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.deviceType"><code class="docutils literal notranslate"><span class="pre">Device.deviceType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.deviceUUID"><code class="docutils literal notranslate"><span class="pre">Device.deviceUUID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.energyResolutionFunction"><code class="docutils literal notranslate"><span class="pre">Device.energyResolutionFunction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.generateDeviceUUID"><code class="docutils literal notranslate"><span class="pre">Device.generateDeviceUUID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.geometryObject"><code class="docutils literal notranslate"><span class="pre">Device.geometryObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.geometryType"><code class="docutils literal notranslate"><span class="pre">Device.geometryType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.getDeviceName"><code class="docutils literal notranslate"><span class="pre">Device.getDeviceName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.getFWHMSystemEnergyResponse"><code class="docutils literal notranslate"><span class="pre">Device.getFWHMSystemEnergyResponse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.readDeviceProperties"><code class="docutils literal notranslate"><span class="pre">Device.readDeviceProperties()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.setDeviceName"><code class="docutils literal notranslate"><span class="pre">Device.setDeviceName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.setDeviceType"><code class="docutils literal notranslate"><span class="pre">Device.setDeviceType()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.setDeviceUUID"><code class="docutils literal notranslate"><span class="pre">Device.setDeviceUUID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.setEnergyResolutionFunction"><code class="docutils literal notranslate"><span class="pre">Device.setEnergyResolutionFunction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.setGeometryObject"><code class="docutils literal notranslate"><span class="pre">Device.setGeometryObject()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.device.Device.setGeometryType"><code class="docutils literal notranslate"><span class="pre">Device.setGeometryType()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Device.html#module-toor.Device.energy_resolution_function">toor.Device.energy_resolution_function module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Device.html#toor.Device.energy_resolution_function.EnergyResolutionFunction"><code class="docutils literal notranslate"><span class="pre">EnergyResolutionFunction</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.energy_resolution_function.EnergyResolutionFunction.run"><code class="docutils literal notranslate"><span class="pre">EnergyResolutionFunction.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Device.html#module-toor.Device.storedeviceInfo">toor.Device.storedeviceInfo module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Device.html#toor.Device.storedeviceInfo.StoreDeviceInFo"><code class="docutils literal notranslate"><span class="pre">StoreDeviceInFo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.storedeviceInfo.StoreDeviceInFo.createDeviceInDirectory"><code class="docutils literal notranslate"><span class="pre">StoreDeviceInFo.createDeviceInDirectory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Device.html#toor.Device.storedeviceInfo.StoreDeviceInFo.readDeviceFromDirectory"><code class="docutils literal notranslate"><span class="pre">StoreDeviceInFo.readDeviceFromDirectory()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Device.html#module-toor.Device">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toor.GateLink.html">toor.GateLink package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.GateLink.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.GateToTor.html">toor.GateLink.GateToTor package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.GateToTor.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.GateToTor.html#module-toor.GateLink.GateToTor.GateToTor">toor.GateLink.GateToTor.GateToTor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.GateToTor.html#module-toor.GateLink.GateToTor.MacParser">toor.GateLink.GateToTor.MacParser module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.GateToTor.html#module-toor.GateLink.GateToTor">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.RootToTor.html">toor.GateLink.RootToTor package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.RootToTor.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.RootToTor.html#module-toor.GateLink.RootToTor.addanglestorootfile">toor.GateLink.RootToTor.addanglestorootfile module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.RootToTor.html#module-toor.GateLink.RootToTor.findcoincidencesRoot2Numpy">toor.GateLink.RootToTor.findcoincidencesRoot2Numpy module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.RootToTor.html#module-toor.GateLink.RootToTor.readroot">toor.GateLink.RootToTor.readroot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.RootToTor.html#toor-gatelink-roottotor-recreatedata-module">toor.GateLink.RootToTor.recreatedata module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.RootToTor.html#toor-gatelink-roottotor-roottotor-module">toor.GateLink.RootToTor.rootToTor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.RootToTor.html#module-toor.GateLink.RootToTor.rootjoiner">toor.GateLink.RootToTor.rootjoiner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.RootToTor.html#module-toor.GateLink.RootToTor.singlesstruct">toor.GateLink.RootToTor.singlesstruct module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.RootToTor.html#module-toor.GateLink.RootToTor.validation_plots">toor.GateLink.RootToTor.validation_plots module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.RootToTor.html#module-toor.GateLink.RootToTor">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.ToRToGate.html">toor.GateLink.ToRToGate package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.ToRToGate.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.ToRToGate.html#module-toor.GateLink.ToRToGate.TorToGate">toor.GateLink.ToRToGate.TorToGate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.GateLink.ToRToGate.html#module-toor.GateLink.ToRToGate">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.GateLink.html#module-toor.GateLink">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toor.Geometry.html">toor.Geometry package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.Geometry.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.LinearPET.html">toor.Geometry.LinearPET package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.LinearPET.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.LinearPET.html#module-toor.Geometry.LinearPET.linear_parametric_points">toor.Geometry.LinearPET.linear_parametric_points module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.LinearPET.html#module-toor.Geometry.LinearPET">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.Standard.html">toor.Geometry.Standard package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.Standard.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.Standard.html#module-toor.Geometry.Standard.cylindrical">toor.Geometry.Standard.cylindrical module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.Standard.html#module-toor.Geometry.Standard.planar">toor.Geometry.Standard.planar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.Standard.html#module-toor.Geometry.Standard.polygonal">toor.Geometry.Standard.polygonal module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.Standard.html#module-toor.Geometry.Standard">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.easyPETBased.html">toor.Geometry.easyPETBased package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.easyPETBased.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.easyPETBased.html#module-toor.Geometry.easyPETBased.dualrotationsystem">toor.Geometry.easyPETBased.dualrotationsystem module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.easyPETBased.html#module-toor.Geometry.easyPETBased.easyct_parametric_points">toor.Geometry.easyPETBased.easyct_parametric_points module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.easyPETBased.html#module-toor.Geometry.easyPETBased.easypet_parametric_points">toor.Geometry.easyPETBased.easypet_parametric_points module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.easyPETBased.html#module-toor.Geometry.easyPETBased.matrixgeometrycorrection">toor.Geometry.easyPETBased.matrixgeometrycorrection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.easyPETBased.html#module-toor.Geometry.easyPETBased.resetposition">toor.Geometry.easyPETBased.resetposition module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Geometry.easyPETBased.html#module-toor.Geometry.easyPETBased">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Geometry.html#module-toor.Geometry">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toor.ImageReader.html">toor.ImageReader package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.ImageReader.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.DICOM.html">toor.ImageReader.DICOM package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.DICOM.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.DICOM.html#module-toor.ImageReader.DICOM.equipment">toor.ImageReader.DICOM.equipment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.DICOM.html#module-toor.ImageReader.DICOM.filesreader">toor.ImageReader.DICOM.filesreader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.DICOM.html#module-toor.ImageReader.DICOM.frameofreference">toor.ImageReader.DICOM.frameofreference module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.DICOM.html#module-toor.ImageReader.DICOM.image">toor.ImageReader.DICOM.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.DICOM.html#module-toor.ImageReader.DICOM.patient">toor.ImageReader.DICOM.patient module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.DICOM.html#module-toor.ImageReader.DICOM.series">toor.ImageReader.DICOM.series module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.DICOM.html#module-toor.ImageReader.DICOM.study">toor.ImageReader.DICOM.study module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.DICOM.html#module-toor.ImageReader.DICOM.submodule">toor.ImageReader.DICOM.submodule module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.DICOM.html#module-toor.ImageReader.DICOM.writeDicom">toor.ImageReader.DICOM.writeDicom module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.DICOM.html#module-toor.ImageReader.DICOM">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.Interfile.html">toor.ImageReader.Interfile package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.Interfile.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.Interfile.html#module-toor.ImageReader.Interfile.general_data">toor.ImageReader.Interfile.general_data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.Interfile.html#module-toor.ImageReader.Interfile.interfile_writer">toor.ImageReader.Interfile.interfile_writer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.Interfile.html#module-toor.ImageReader.Interfile">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.RawData.html">toor.ImageReader.RawData package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.RawData.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.RawData.html#module-toor.ImageReader.RawData.raw_data">toor.ImageReader.RawData.raw_data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.ImageReader.RawData.html#module-toor.ImageReader.RawData">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.ImageReader.html#module-toor.ImageReader">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toor.Optimizer.html">toor.Optimizer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html#module-toor.Optimizer.CPU">toor.Optimizer.CPU module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.CPU.IterativeAlgorithmCPU"><code class="docutils literal notranslate"><span class="pre">IterativeAlgorithmCPU</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html#module-toor.Optimizer.GPUManager">toor.Optimizer.GPUManager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GPUManager.EM"><code class="docutils literal notranslate"><span class="pre">EM</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GPUManager.EM.apply_circular_mask_fov"><code class="docutils literal notranslate"><span class="pre">EM.apply_circular_mask_fov()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GPUManager.EM.get_active_roi_voxels"><code class="docutils literal notranslate"><span class="pre">EM.get_active_roi_voxels()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GPUManager.EM.load_initial_arrays"><code class="docutils literal notranslate"><span class="pre">EM.load_initial_arrays()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GPUManager.EM.load_roi_map"><code class="docutils literal notranslate"><span class="pre">EM.load_roi_map()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GPUManager.EM.remove_events_outside_ROI"><code class="docutils literal notranslate"><span class="pre">EM.remove_events_outside_ROI()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html#module-toor.Optimizer.GaussianFileGenarator">toor.Optimizer.GaussianFileGenarator module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GaussianFileGenarator.GaussianParameters"><code class="docutils literal notranslate"><span class="pre">GaussianParameters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GaussianFileGenarator.GaussianParameters.acceptableYDistance"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.acceptableYDistance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GaussianFileGenarator.GaussianParameters.acceptableZDistance"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.acceptableZDistance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GaussianFileGenarator.GaussianParameters.gaussian_y_fix_term"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.gaussian_y_fix_term</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GaussianFileGenarator.GaussianParameters.gaussian_z_fix_term"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.gaussian_z_fix_term</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GaussianFileGenarator.GaussianParameters.invert2timesigma_y_square"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.invert2timesigma_y_square</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GaussianFileGenarator.GaussianParameters.invert2timesigma_z_square"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.invert2timesigma_z_square</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GaussianFileGenarator.GaussianParameters.setShiftInvariantParameters"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.setShiftInvariantParameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GaussianFileGenarator.GaussianParameters.setShiftVariantParameters"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.setShiftVariantParameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GaussianFileGenarator.GaussianParameters.sigma_y_square"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.sigma_y_square</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.GaussianFileGenarator.GaussianParameters.sigma_z_square"><code class="docutils literal notranslate"><span class="pre">GaussianParameters.sigma_z_square</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html#module-toor.Optimizer.gpu_multiple_kernel">toor.Optimizer.gpu_multiple_kernel module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.map_events_gpu"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.map_events_gpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.multikernel_optimized_memory_reads"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.multikernel_optimized_memory_reads()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.multikernel_optimized_memory_reads_review"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.multikernel_optimized_memory_reads_review()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.gpu_multiple_kernel.GPUSharedMemoryMultipleKernel.multiplekernel"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.multiplekernel()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html#module-toor.Optimizer.gpu_shared_memory">toor.Optimizer.gpu_shared_memory module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.gpu_shared_memory.GPUSharedMemorySingleKernel"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemorySingleKernel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html#module-toor.Optimizer.kernelManager">toor.Optimizer.kernelManager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.kernelManager.GPUSharedMemoryMultipleKernel"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.kernelManager.GPUSharedMemoryMultipleKernel.map_events_gpu"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.map_events_gpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.kernelManager.GPUSharedMemoryMultipleKernel.multipleKernel"><code class="docutils literal notranslate"><span class="pre">GPUSharedMemoryMultipleKernel.multipleKernel()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html#module-toor.Optimizer.selectable_events">toor.Optimizer.selectable_events module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.selectable_events.ROIEvents"><code class="docutils literal notranslate"><span class="pre">ROIEvents</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.selectable_events.ROIEvents.generate_roi_listmode_data"><code class="docutils literal notranslate"><span class="pre">ROIEvents.generate_roi_listmode_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.selectable_events.ROIEvents.pixel2Position"><code class="docutils literal notranslate"><span class="pre">ROIEvents.pixel2Position()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Optimizer.html#toor.Optimizer.selectable_events.ROIEvents.save_gpu_results"><code class="docutils literal notranslate"><span class="pre">ROIEvents.save_gpu_results()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html#module-toor.Optimizer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toor.Quantification.html">toor.Quantification package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.Quantification.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Quantification.html#module-toor.Quantification.factor_calibration_phantom_uniform">toor.Quantification.factor_calibration_phantom_uniform module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Quantification.html#toor.Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Quantification.html#toor.Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.apply_quantification_factor_to_image"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.apply_quantification_factor_to_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Quantification.html#toor.Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.calculation_radiotracer_factors"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.calculation_radiotracer_factors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Quantification.html#toor.Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.load_info"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.load_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Quantification.html#toor.Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.plt_segmented_image"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.plt_segmented_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Quantification.html#toor.Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.quantification_factor_calculation"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.quantification_factor_calculation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Quantification.html#toor.Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.save_info"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.save_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Quantification.html#toor.Quantification.factor_calibration_phantom_uniform.FactorQuantificationFromUniformPhantom.segment_region_phantom"><code class="docutils literal notranslate"><span class="pre">FactorQuantificationFromUniformPhantom.segment_region_phantom()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Quantification.html#module-toor.Quantification">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toor.TORFilesReader.html">toor.TORFilesReader package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html#module-toor.TORFilesReader.Radioisotope">toor.TORFilesReader.Radioisotope module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setTracers"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setTracers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setHalfLifes"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setHalfLifes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setPositronFractions"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setPositronFractions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setDecayFactor"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setDecayFactor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setDecayTypes"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setDecayTypes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setDecayEnergies"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setDecayEnergies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setDecayPercentage"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setDecayPercentage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setResidualActivity"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setResidualActivity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setTotalDose"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setTotalDose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setRoute"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setRoute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setStartDate"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setStartDate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setEndDate"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setEndDate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setInjectionDateTime"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setInjectionDateTime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setBatchCodeValue"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setBatchCodeValue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setBatchCodingSchemeDesignator"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setBatchCodingSchemeDesignator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setBatchCodingSchemeVersion"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setBatchCodingSchemeVersion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setBatchCodeMeaning"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setBatchCodeMeaning()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.setBatchLongCodeValue"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setBatchLongCodeValue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.decayEnergies"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.decayEnergies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.decayFactor"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.decayFactor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.decayPercentage"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.decayPercentage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.decayTypes"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.decayTypes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.endDateTime"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.endDateTime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.halfLifes"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.halfLifes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.positronFractions"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.positronFractions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.residualActivity"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.residualActivity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.route"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.route</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id0"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setDecayEnergies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id1"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setDecayFactor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id2"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setDecayPercentage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id3"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setDecayTypes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id4"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setEndDate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id5"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setHalfLifes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id6"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setPositronFractions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id7"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setResidualActivity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id8"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setRoute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id9"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setStartDate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id10"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setTotalDose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#id11"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.setTracers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.startDateTime"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.startDateTime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.totalDose"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.totalDose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.Radioisotope.RadioisotopeInfo.tracers"><code class="docutils literal notranslate"><span class="pre">RadioisotopeInfo.tracers</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html#module-toor.TORFilesReader.scanning_body">toor.TORFilesReader.scanning_body module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody"><code class="docutils literal notranslate"><span class="pre">ListModeBody</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.countsPerGlobalID"><code class="docutils literal notranslate"><span class="pre">ListModeBody.countsPerGlobalID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.frameStartIndexes"><code class="docutils literal notranslate"><span class="pre">ListModeBody.frameStartIndexes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.generateStatistics"><code class="docutils literal notranslate"><span class="pre">ListModeBody.generateStatistics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.globalDetectorID"><code class="docutils literal notranslate"><span class="pre">ListModeBody.globalDetectorID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.indexCountsPerGlobalID"><code class="docutils literal notranslate"><span class="pre">ListModeBody.indexCountsPerGlobalID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.listmode"><code class="docutils literal notranslate"><span class="pre">ListModeBody.listmode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.listmodeFields"><code class="docutils literal notranslate"><span class="pre">ListModeBody.listmodeFields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.max"><code class="docutils literal notranslate"><span class="pre">ListModeBody.max</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.mean"><code class="docutils literal notranslate"><span class="pre">ListModeBody.mean</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.median"><code class="docutils literal notranslate"><span class="pre">ListModeBody.median</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.min"><code class="docutils literal notranslate"><span class="pre">ListModeBody.min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.minDiff"><code class="docutils literal notranslate"><span class="pre">ListModeBody.minDiff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.numberOfEvents"><code class="docutils literal notranslate"><span class="pre">ListModeBody.numberOfEvents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.numberOfEventsPerFramePerSecond"><code class="docutils literal notranslate"><span class="pre">ListModeBody.numberOfEventsPerFramePerSecond</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.numberOfEventsPerSecond"><code class="docutils literal notranslate"><span class="pre">ListModeBody.numberOfEventsPerSecond</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.numberOfMotors"><code class="docutils literal notranslate"><span class="pre">ListModeBody.numberOfMotors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.printStatistics"><code class="docutils literal notranslate"><span class="pre">ListModeBody.printStatistics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.regenerateStats"><code class="docutils literal notranslate"><span class="pre">ListModeBody.regenerateStats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.resetListmode"><code class="docutils literal notranslate"><span class="pre">ListModeBody.resetListmode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.saveVarsToFile"><code class="docutils literal notranslate"><span class="pre">ListModeBody.saveVarsToFile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setCountsPerGlobalID"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setCountsPerGlobalID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setFrameStartIndexes"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setFrameStartIndexes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setGlobalDetectorID"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setGlobalDetectorID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setListModeHistogramHybridMode"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setListModeHistogramHybridMode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setListmode"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setListmode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setListmodeFields"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setListmodeFields()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setMaxValues"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setMaxValues()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setMeanValues"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setMeanValues()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setMedianValues"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setMedianValues()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setMinDiff"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setMinDiff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setMinValues"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setMinValues()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setNumberOfEvents"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setNumberOfEvents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setNumberOfEventsPerFramePerSecond"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setNumberOfEventsPerFramePerSecond()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setNumberOfEventsPerSecond"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setNumberOfEventsPerSecond()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setNumberOfMotors"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setNumberOfMotors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setStdValues"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setStdValues()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setUniqueValues"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setUniqueValues()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.setUniqueValuesCount"><code class="docutils literal notranslate"><span class="pre">ListModeBody.setUniqueValuesCount()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.std"><code class="docutils literal notranslate"><span class="pre">ListModeBody.std</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.uniqueValues"><code class="docutils literal notranslate"><span class="pre">ListModeBody.uniqueValues</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_body.ListModeBody.uniqueValuesCount"><code class="docutils literal notranslate"><span class="pre">ListModeBody.uniqueValuesCount</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html#module-toor.TORFilesReader.scanning_header">toor.TORFilesReader.scanning_header module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.date"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.frameOfReferenceUID"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.frameOfReferenceUID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.id"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.indexesOfFrames"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.indexesOfFrames</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.instanceUID"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.instanceUID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.numberOfFrames"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.numberOfFrames</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.radioisotope"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.radioisotope</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.scanType"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.scanType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.setDate"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.setDate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.setFrameOfReferenceUID"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.setFrameOfReferenceUID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.setId"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.setId()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.setIndexesOfFrames"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.setIndexesOfFrames()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.setInstanceUID"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.setInstanceUID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.setNumberOfFrames"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.setNumberOfFrames()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.setRadioisotope"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.setRadioisotope()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.setScanType"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.setScanType()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.setStudyInstanceUID"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.setStudyInstanceUID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.setSubject"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.setSubject()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.setTecnhician"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.setTecnhician()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.studyInstanceUID"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.studyInstanceUID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.subject"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.subject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.scanning_header.AcquisitionInfo.tecnichian"><code class="docutils literal notranslate"><span class="pre">AcquisitionInfo.tecnichian</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html#module-toor.TORFilesReader.subject_type">toor.TORFilesReader.subject_type module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.AnimalType"><code class="docutils literal notranslate"><span class="pre">AnimalType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.AnimalType.diagnosis"><code class="docutils literal notranslate"><span class="pre">AnimalType.diagnosis</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.AnimalType.healthy"><code class="docutils literal notranslate"><span class="pre">AnimalType.healthy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.AnimalType.observations"><code class="docutils literal notranslate"><span class="pre">AnimalType.observations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.AnimalType.setDiagnosis"><code class="docutils literal notranslate"><span class="pre">AnimalType.setDiagnosis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.AnimalType.setHealthy"><code class="docutils literal notranslate"><span class="pre">AnimalType.setHealthy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.AnimalType.setObservations"><code class="docutils literal notranslate"><span class="pre">AnimalType.setObservations()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.PhantomType"><code class="docutils literal notranslate"><span class="pre">PhantomType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.PhantomType.digitalPhantomCopy"><code class="docutils literal notranslate"><span class="pre">PhantomType.digitalPhantomCopy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.PhantomType.phantomDescription"><code class="docutils literal notranslate"><span class="pre">PhantomType.phantomDescription</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.PhantomType.phantomName"><code class="docutils literal notranslate"><span class="pre">PhantomType.phantomName</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.PhantomType.phantomPurpose"><code class="docutils literal notranslate"><span class="pre">PhantomType.phantomPurpose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.PhantomType.setDigitalPhantomCopy"><code class="docutils literal notranslate"><span class="pre">PhantomType.setDigitalPhantomCopy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.PhantomType.setPhantomDescription"><code class="docutils literal notranslate"><span class="pre">PhantomType.setPhantomDescription()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.PhantomType.setPhantomName"><code class="docutils literal notranslate"><span class="pre">PhantomType.setPhantomName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.subject_type.PhantomType.setPhantomPurpose"><code class="docutils literal notranslate"><span class="pre">PhantomType.setPhantomPurpose()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html#module-toor.TORFilesReader.technician">toor.TORFilesReader.technician module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.technician.Technician"><code class="docutils literal notranslate"><span class="pre">Technician</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.technician.Technician.setAnimalWelfareResponsibleOrganization"><code class="docutils literal notranslate"><span class="pre">Technician.setAnimalWelfareResponsibleOrganization()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.technician.Technician.setAnimalWelfareResponsiblePerson"><code class="docutils literal notranslate"><span class="pre">Technician.setAnimalWelfareResponsiblePerson()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.technician.Technician.setAnimalWelfareResponsiblePersonRole"><code class="docutils literal notranslate"><span class="pre">Technician.setAnimalWelfareResponsiblePersonRole()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.technician.Technician.setName"><code class="docutils literal notranslate"><span class="pre">Technician.setName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.technician.Technician.setOrganization"><code class="docutils literal notranslate"><span class="pre">Technician.setOrganization()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.technician.Technician.setRole"><code class="docutils literal notranslate"><span class="pre">Technician.setRole()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html#module-toor.TORFilesReader.torfiles">toor.TORFilesReader.torfiles module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile"><code class="docutils literal notranslate"><span class="pre">ToRFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile.acquisitionInfo"><code class="docutils literal notranslate"><span class="pre">ToRFile.acquisitionInfo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile.calibrations"><code class="docutils literal notranslate"><span class="pre">ToRFile.calibrations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile.fileBodyData"><code class="docutils literal notranslate"><span class="pre">ToRFile.fileBodyData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile.read"><code class="docutils literal notranslate"><span class="pre">ToRFile.read()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile.setAcquisitionInfo"><code class="docutils literal notranslate"><span class="pre">ToRFile.setAcquisitionInfo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile.setCalibrations"><code class="docutils literal notranslate"><span class="pre">ToRFile.setCalibrations()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile.setSystemInfo"><code class="docutils literal notranslate"><span class="pre">ToRFile.setSystemInfo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile.setfileBodyData"><code class="docutils literal notranslate"><span class="pre">ToRFile.setfileBodyData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile.systemInfo"><code class="docutils literal notranslate"><span class="pre">ToRFile.systemInfo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile.version"><code class="docutils literal notranslate"><span class="pre">ToRFile.version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.TORFilesReader.html#toor.TORFilesReader.torfiles.ToRFile.write"><code class="docutils literal notranslate"><span class="pre">ToRFile.write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html#module-toor.TORFilesReader">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-toor">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-toor" title="Link to this heading">#</a></h2>
+<p>Brief description of the file.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="modules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">API reference</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="toor.AnalyticalReconstruction.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">toor.AnalyticalReconstruction package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
