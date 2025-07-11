@@ -1,0 +1,2212 @@
+{
+ "DeviceDesignerStandalone": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Designer.deviceDesigner",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Designer",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Designer",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone"
+  }
+ ],
+ "EasyCTGeometry": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device",
+   "name": "Device"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  }
+ ],
+ "EnergyResolutionFunction": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Device.energy_resolution_function",
+   "module_short": "toor.Device",
+   "name": "EnergyResolutionFunction"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "EnergyResolutionFunction"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "EnergyResolutionFunction"
+  }
+ ],
+ "PETModule": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.DetectionLayout.Modules.PETModuleGeneric",
+   "module_short": "toor.DetectionLayout.Modules",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.DetectionLayout.Modules",
+   "module_short": "toor.DetectionLayout.Modules",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.DetectionLayout",
+   "module_short": "toor.DetectionLayout",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PETModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.DetectionLayout.Modules",
+   "module_short": "toor.DetectionLayout.Modules",
+   "name": "PETModule"
+  }
+ ],
+ "StoreDeviceInFo": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Device.storedeviceInfo",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo"
+  }
+ ],
+ "_module": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.DetectionLayout.Modules.PETModuleGeneric",
+   "module_short": "toor.DetectionLayout.Modules",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.DetectionLayout.Modules",
+   "module_short": "toor.DetectionLayout.Modules",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.DetectionLayout",
+   "module_short": "toor.DetectionLayout",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PETModule"
+  }
+ ],
+ "axial_motor_angles": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "curve_fit": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "scipy.optimize",
+   "module_short": "scipy.optimize",
+   "name": "curve_fit"
+  }
+ ],
+ "designer": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Designer.deviceDesigner",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Designer",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DeviceDesignerStandalone"
+  }
+ ],
+ "designer.addDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Designer.deviceDesigner",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone.addDevice"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Designer",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone.addDevice"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DeviceDesignerStandalone.addDevice"
+  }
+ ],
+ "designer.startRender": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Designer.deviceDesigner",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone.startRender"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Designer",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone.startRender"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DeviceDesignerStandalone.startRender"
+  }
+ ],
+ "device_path": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "energies": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "energy_resolution": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "energy_window": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "fan_motor_angles": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "fit": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "i": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "modifyDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "bool"
+  }
+ ],
+ "moduleSideA_X_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideA_Y_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideA_Z_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideA_alpha_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideA_beta_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideA_sigma_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_X_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_Y_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_Z_translation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_alpha_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_beta_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "moduleSideB_sigma_rotation": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "newDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry"
+  }
+ ],
+ "newDevice.createDirectory": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device",
+   "name": "Device.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.createDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.createDirectory"
+  }
+ ],
+ "newDevice.detectorModulesSideA": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
+   "name": "Device.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.detectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.detectorModulesSideA"
+  }
+ ],
+ "newDevice.detectorModulesSideB": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
+   "name": "Device.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.detectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.detectorModulesSideB"
+  }
+ ],
+ "newDevice.deviceDirectory": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device",
+   "name": "Device.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.deviceDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.deviceDirectory"
+  }
+ ],
+ "newDevice.generateDeviceUUID": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device",
+   "name": "Device.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.generateDeviceUUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.generateDeviceUUID"
+  }
+ ],
+ "newDevice.generateInitialCoordinatesWKSystem": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
+   "name": "Device.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.generateInitialCoordinatesWKSystem"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.generateInitialCoordinatesWKSystem"
+  }
+ ],
+ "newDevice.numberOfDetectorModulesSideA": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
+   "name": "Device.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.numberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.numberOfDetectorModulesSideA"
+  }
+ ],
+ "newDevice.numberOfDetectorModulesSideB": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
+   "name": "Device.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.numberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.numberOfDetectorModulesSideB"
+  }
+ ],
+ "newDevice.setDeviceName": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device",
+   "name": "Device.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.setDeviceName"
+  }
+ ],
+ "newDevice.setDeviceType": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device",
+   "name": "Device.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setDeviceType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.setDeviceType"
+  }
+ ],
+ "newDevice.setDistanceBetweenMotors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
+   "name": "Device.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setDistanceBetweenMotors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.setDistanceBetweenMotors"
+  }
+ ],
+ "newDevice.setDistanceFanMotorToDetectorModulesOnSideA": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
+   "name": "Device.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setDistanceFanMotorToDetectorModulesOnSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.setDistanceFanMotorToDetectorModulesOnSideA"
+  }
+ ],
+ "newDevice.setDistanceFanMotorToDetectorModulesOnSideB": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
+   "name": "Device.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setDistanceFanMotorToDetectorModulesOnSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.setDistanceFanMotorToDetectorModulesOnSideB"
+  }
+ ],
+ "newDevice.setEnergyResolutionFunction": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device",
+   "name": "Device.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setEnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.setEnergyResolutionFunction"
+  }
+ ],
+ "newDevice.setNumberOfDetectorModulesSideA": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
+   "name": "Device.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setNumberOfDetectorModulesSideA"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.setNumberOfDetectorModulesSideA"
+  }
+ ],
+ "newDevice.setNumberOfDetectorModulesSideB": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.dualrotationsystem",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationSystem.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
+   "name": "Device.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setNumberOfDetectorModulesSideB"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "Device.setNumberOfDetectorModulesSideB"
+  }
+ ],
+ "newDevice_Read": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EasyCTGeometry"
+  }
+ ],
+ "np.arange": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "arange"
+  }
+ ],
+ "np.array": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "array"
+  }
+ ],
+ "np.float32": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "float32"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "floating"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "inexact"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "number"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "generic"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "float32"
+  }
+ ],
+ "np.repeat": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "repeat"
+  }
+ ],
+ "np.sqrt": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ufunc"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "sqrt"
+  }
+ ],
+ "np.tile": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "tile"
+  }
+ ],
+ "np.zeros": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "zeros"
+  }
+ ],
+ "plt.figure": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "figure"
+  }
+ ],
+ "plt.legend": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "legend"
+  }
+ ],
+ "plt.plot": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "plot"
+  }
+ ],
+ "plt.savefig": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "savefig"
+  }
+ ],
+ "plt.xlabel": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "xlabel"
+  }
+ ],
+ "plt.ylabel": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "ylabel"
+  }
+ ],
+ "readDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.storedeviceInfo",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "StoreDeviceInFo"
+  }
+ ],
+ "readDevice.readDeviceFromDirectory": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.storedeviceInfo",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo.readDeviceFromDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo.readDeviceFromDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "StoreDeviceInFo.readDeviceFromDirectory"
+  }
+ ],
+ "storeDevice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.storedeviceInfo",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "StoreDeviceInFo"
+  }
+ ],
+ "storeDevice.createDeviceInDirectory": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.storedeviceInfo",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo.createDeviceInDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo.createDeviceInDirectory"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "StoreDeviceInFo.createDeviceInDirectory"
+  }
+ ],
+ "systemEnergyResolution": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.energy_resolution_function",
+   "module_short": "toor.Device",
+   "name": "EnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "EnergyResolutionFunction"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "EnergyResolutionFunction"
+  }
+ ],
+ "systemEnergyResponseFunction": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  }
+ ],
+ "unique_header": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ]
+}

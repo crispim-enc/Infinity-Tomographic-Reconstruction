@@ -3,22 +3,29 @@
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Designer.deviceDesigner",
-   "module_short": "Designer",
+   "module": "toor.Designer.deviceDesigner",
+   "module_short": "toor.Designer",
    "name": "DeviceDesignerStandalone"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Designer",
-   "module_short": "Designer",
+   "module": "toor.Designer",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "DeviceDesignerStandalone"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Designer",
-   "module_short": "Designer",
+   "module": "toor.Designer",
+   "module_short": "toor.Designer",
    "name": "DeviceDesignerStandalone"
   }
  ],
@@ -67,36 +74,43 @@
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "DetectionLayout.Photodetectors.Crystals.genericCrystal",
-   "module_short": "DetectionLayout.Photodetectors.Crystals",
+   "module": "toor.DetectionLayout.Photodetectors.Crystals.genericCrystal",
+   "module_short": "toor.DetectionLayout.Photodetectors.Crystals",
    "name": "GenericCrystal"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "DetectionLayout.Photodetectors.Crystals",
-   "module_short": "DetectionLayout.Photodetectors.Crystals",
+   "module": "toor.DetectionLayout.Photodetectors.Crystals",
+   "module_short": "toor.DetectionLayout.Photodetectors.Crystals",
    "name": "GenericCrystal"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "DetectionLayout.Photodetectors",
-   "module_short": "DetectionLayout.Photodetectors",
+   "module": "toor.DetectionLayout.Photodetectors",
+   "module_short": "toor.DetectionLayout.Photodetectors",
    "name": "GenericCrystal"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "DetectionLayout",
-   "module_short": "DetectionLayout",
+   "module": "toor.DetectionLayout",
+   "module_short": "toor.DetectionLayout",
+   "name": "GenericCrystal"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "GenericCrystal"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "DetectionLayout.Photodetectors.Crystals",
-   "module_short": "DetectionLayout.Photodetectors.Crystals",
+   "module": "toor.DetectionLayout.Photodetectors.Crystals",
+   "module_short": "toor.DetectionLayout.Photodetectors.Crystals",
    "name": "GenericCrystal"
   }
  ],
@@ -104,29 +118,36 @@
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "DetectionLayout.Modules.PETModuleGeneric",
-   "module_short": "DetectionLayout.Modules",
+   "module": "toor.DetectionLayout.Modules.PETModuleGeneric",
+   "module_short": "toor.DetectionLayout.Modules",
    "name": "PETModule"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "DetectionLayout.Modules",
-   "module_short": "DetectionLayout.Modules",
+   "module": "toor.DetectionLayout.Modules",
+   "module_short": "toor.DetectionLayout.Modules",
    "name": "PETModule"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "DetectionLayout",
-   "module_short": "DetectionLayout",
+   "module": "toor.DetectionLayout",
+   "module_short": "toor.DetectionLayout",
+   "name": "PETModule"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "PETModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "DetectionLayout.Modules",
-   "module_short": "DetectionLayout.Modules",
+   "module": "toor.DetectionLayout.Modules",
+   "module_short": "toor.DetectionLayout.Modules",
    "name": "PETModule"
   }
  ],
@@ -134,64 +155,85 @@
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Geometry.Standard.planar",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard.planar",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "PlanarGeometry"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Geometry.Standard.polygonal",
-   "module_short": "Geometry.Standard",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PlanarGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Geometry.Standard.polygonal",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "RegularPolygonalGeometry"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "RegularPolygonalGeometry"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device",
    "name": "Device"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Device"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry"
   }
  ],
@@ -251,15 +293,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Designer.deviceDesigner",
-   "module_short": "Designer",
+   "module": "toor.Designer.deviceDesigner",
+   "module_short": "toor.Designer",
    "name": "DeviceDesignerStandalone"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Designer",
-   "module_short": "Designer",
+   "module": "toor.Designer",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "DeviceDesignerStandalone"
   }
  ],
@@ -267,15 +316,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Designer.deviceDesigner",
-   "module_short": "Designer",
+   "module": "toor.Designer.deviceDesigner",
+   "module_short": "toor.Designer",
    "name": "DeviceDesignerStandalone.addDevice"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Designer",
-   "module_short": "Designer",
+   "module": "toor.Designer",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone.addDevice"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "DeviceDesignerStandalone.addDevice"
   }
  ],
@@ -283,15 +339,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Designer.deviceDesigner",
-   "module_short": "Designer",
+   "module": "toor.Designer.deviceDesigner",
+   "module_short": "toor.Designer",
    "name": "DeviceDesignerStandalone.startRender"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Designer",
-   "module_short": "Designer",
+   "module": "toor.Designer",
+   "module_short": "toor.Designer",
+   "name": "DeviceDesignerStandalone.startRender"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "DeviceDesignerStandalone.startRender"
   }
  ],
@@ -602,22 +665,29 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.planar",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard.planar",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "PlanarGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "PlanarGeometry"
   }
  ],
@@ -625,57 +695,78 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.planar",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard.planar",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.calculateInitialGeometry"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.calculateInitialGeometry"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "PlanarGeometry.calculateInitialGeometry"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.polygonal",
-   "module_short": "Geometry.Standard",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PlanarGeometry.calculateInitialGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.Standard.polygonal",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.calculateInitialGeometry"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.calculateInitialGeometry"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "RegularPolygonalGeometry.calculateInitialGeometry"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device.device",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "RegularPolygonalGeometry.calculateInitialGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
    "name": "Device.calculateInitialGeometry"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.calculateInitialGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Device.calculateInitialGeometry"
   }
  ],
@@ -683,57 +774,78 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.planar",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard.planar",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.detectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.detectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "PlanarGeometry.detectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.polygonal",
-   "module_short": "Geometry.Standard",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PlanarGeometry.detectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.Standard.polygonal",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.detectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.detectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "RegularPolygonalGeometry.detectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device.device",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "RegularPolygonalGeometry.detectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
    "name": "Device.detectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.detectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Device.detectorModule"
   }
  ],
@@ -741,57 +853,78 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.planar",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard.planar",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.getDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.getDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "PlanarGeometry.getDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.polygonal",
-   "module_short": "Geometry.Standard",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PlanarGeometry.getDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.Standard.polygonal",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.getDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.getDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "RegularPolygonalGeometry.getDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "RegularPolygonalGeometry.getDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device",
    "name": "Device.getDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.getDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Device.getDeviceName"
   }
  ],
@@ -799,57 +932,78 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.planar",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard.planar",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.numberOfModules"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.numberOfModules"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "PlanarGeometry.numberOfModules"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.polygonal",
-   "module_short": "Geometry.Standard",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PlanarGeometry.numberOfModules"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.Standard.polygonal",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.numberOfModules"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.numberOfModules"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "RegularPolygonalGeometry.numberOfModules"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device.device",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "RegularPolygonalGeometry.numberOfModules"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
    "name": "Device.numberOfModules"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.numberOfModules"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Device.numberOfModules"
   }
  ],
@@ -857,57 +1011,78 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.planar",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard.planar",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.setDetectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.setDetectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "PlanarGeometry.setDetectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.polygonal",
-   "module_short": "Geometry.Standard",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PlanarGeometry.setDetectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.Standard.polygonal",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.setDetectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.setDetectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "RegularPolygonalGeometry.setDetectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device.device",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "RegularPolygonalGeometry.setDetectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
    "name": "Device.setDetectorModule"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setDetectorModule"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Device.setDetectorModule"
   }
  ],
@@ -915,57 +1090,78 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.planar",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard.planar",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.setDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.setDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "PlanarGeometry.setDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.polygonal",
-   "module_short": "Geometry.Standard",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PlanarGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.Standard.polygonal",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.setDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.setDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "RegularPolygonalGeometry.setDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "RegularPolygonalGeometry.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device",
    "name": "Device.setDeviceName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setDeviceName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Device.setDeviceName"
   }
  ],
@@ -973,57 +1169,78 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.planar",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard.planar",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.setNumberOfModulesPerSide"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.setNumberOfModulesPerSide"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "PlanarGeometry.setNumberOfModulesPerSide"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.polygonal",
-   "module_short": "Geometry.Standard",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PlanarGeometry.setNumberOfModulesPerSide"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.Standard.polygonal",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.setNumberOfModulesPerSide"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.setNumberOfModulesPerSide"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "RegularPolygonalGeometry.setNumberOfModulesPerSide"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device.device",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesPerSide"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
    "name": "Device.setNumberOfModulesPerSide"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setNumberOfModulesPerSide"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Device.setNumberOfModulesPerSide"
   }
  ],
@@ -1031,57 +1248,78 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.planar",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard.planar",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.setNumberOfModulesPhi"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.setNumberOfModulesPhi"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "PlanarGeometry.setNumberOfModulesPhi"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.polygonal",
-   "module_short": "Geometry.Standard",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PlanarGeometry.setNumberOfModulesPhi"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.Standard.polygonal",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.setNumberOfModulesPhi"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.setNumberOfModulesPhi"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "RegularPolygonalGeometry.setNumberOfModulesPhi"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device.device",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesPhi"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
    "name": "Device.setNumberOfModulesPhi"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setNumberOfModulesPhi"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Device.setNumberOfModulesPhi"
   }
  ],
@@ -1089,57 +1327,78 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.planar",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard.planar",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.setNumberOfModulesZ"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "PlanarGeometry.setNumberOfModulesZ"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "PlanarGeometry.setNumberOfModulesZ"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard.polygonal",
-   "module_short": "Geometry.Standard",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PlanarGeometry.setNumberOfModulesZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Geometry.Standard.polygonal",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.setNumberOfModulesZ"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.Standard",
-   "module_short": "Geometry.Standard",
+   "module": "toor.Geometry.Standard",
+   "module_short": "toor.Geometry.Standard",
    "name": "RegularPolygonalGeometry.setNumberOfModulesZ"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
    "name": "RegularPolygonalGeometry.setNumberOfModulesZ"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device.device",
+   "module": "toor",
+   "module_short": "toor",
+   "name": "RegularPolygonalGeometry.setNumberOfModulesZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Device.device",
+   "module_short": "toor.Device.device",
    "name": "Device.setNumberOfModulesZ"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "Device.setNumberOfModulesZ"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Device.setNumberOfModulesZ"
   }
  ],

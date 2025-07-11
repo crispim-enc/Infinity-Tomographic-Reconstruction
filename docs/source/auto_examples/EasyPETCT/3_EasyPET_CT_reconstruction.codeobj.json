@@ -1,92 +1,178 @@
 {
+ "DualRotationNormalizationSystem": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Corrections.CT.normalization",
+   "module_short": "toor.Corrections.CT",
+   "name": "DualRotationNormalizationSystem"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Corrections.CT",
+   "module_short": "toor.Corrections.CT",
+   "name": "DualRotationNormalizationSystem"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Corrections",
+   "module_short": "toor.Corrections",
+   "name": "DualRotationNormalizationSystem"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DualRotationNormalizationSystem"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Corrections.CT.normalization",
+   "module_short": "toor.Corrections.CT",
+   "name": "AutomaticNormalization"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Corrections.CT",
+   "module_short": "toor.Corrections.CT",
+   "name": "AutomaticNormalization"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Corrections",
+   "module_short": "toor.Corrections",
+   "name": "AutomaticNormalization"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "AutomaticNormalization"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Corrections.CT",
+   "module_short": "toor.Corrections.CT",
+   "name": "DualRotationNormalizationSystem"
+  }
+ ],
  "GPUSharedMemoryMultipleKernel": [
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Optimizer.kernelManager",
-   "module_short": "Optimizer",
+   "module": "toor.Optimizer.kernelManager",
+   "module_short": "toor.Optimizer",
    "name": "GPUSharedMemoryMultipleKernel"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Optimizer",
-   "module_short": "Optimizer",
+   "module": "toor.Optimizer",
+   "module_short": "toor.Optimizer",
+   "name": "GPUSharedMemoryMultipleKernel"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "GPUSharedMemoryMultipleKernel"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Optimizer",
-   "module_short": "Optimizer",
+   "module": "toor.Optimizer",
+   "module_short": "toor.Optimizer",
    "name": "GPUSharedMemoryMultipleKernel"
-  }
- ],
- "NormalizationCT": [
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "Corrections.CT.normalization",
-   "module_short": "Corrections.CT",
-   "name": "NormalizationCT"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "Corrections.CT",
-   "module_short": "Corrections.CT",
-   "name": "NormalizationCT"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "Corrections",
-   "module_short": "Corrections",
-   "name": "NormalizationCT"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Corrections.CT",
-   "module_short": "Corrections.CT",
-   "name": "NormalizationCT"
   }
  ],
  "PyramidalProjector": [
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Corrections.CT.Projector.pyramidalprojector",
-   "module_short": "Corrections.CT.Projector",
+   "module": "toor.Corrections.CT.Projector.pyramidalprojector",
+   "module_short": "toor.Corrections.CT.Projector",
    "name": "PyramidalProjector"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Corrections.CT.Projector",
-   "module_short": "Corrections.CT.Projector",
+   "module": "toor.Corrections.CT.Projector",
+   "module_short": "toor.Corrections.CT.Projector",
    "name": "PyramidalProjector"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Corrections.CT",
-   "module_short": "Corrections.CT",
+   "module": "toor.Corrections.CT",
+   "module_short": "toor.Corrections.CT",
    "name": "PyramidalProjector"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Corrections",
-   "module_short": "Corrections",
+   "module": "toor.Corrections",
+   "module_short": "toor.Corrections",
+   "name": "PyramidalProjector"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "PyramidalProjector"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Corrections.CT.Projector",
-   "module_short": "Corrections.CT.Projector",
+   "module": "toor.Corrections.CT.Projector",
+   "module_short": "toor.Corrections.CT.Projector",
    "name": "PyramidalProjector"
+  }
+ ],
+ "RawDataSetter": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.ImageReader.RawData.raw_data",
+   "module_short": "toor.ImageReader.RawData",
+   "name": "RawDataSetter"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.ImageReader.RawData",
+   "module_short": "toor.ImageReader.RawData",
+   "name": "RawDataSetter"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.ImageReader",
+   "module_short": "toor.ImageReader",
+   "name": "RawDataSetter"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "RawDataSetter"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.ImageReader.RawData",
+   "module_short": "toor.ImageReader.RawData",
+   "name": "RawDataSetter"
   }
  ],
  "ReconstructionEasyPETCT": [
@@ -102,22 +188,29 @@
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader.torfiles",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.torfiles",
+   "module_short": "toor.TORFilesReader",
    "name": "ToRFile"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "ToRFile"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "ToRFile"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
    "name": "ToRFile"
   }
  ],
@@ -167,6 +260,15 @@
    "module": "pycuda.driver",
    "module_short": "pycuda.driver",
    "name": "Device"
+  }
+ ],
+ "energyregion": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
   }
  ],
  "filename": [
@@ -222,7 +324,7 @@
    "name": "int32"
   }
  ],
- "np.ones": [
+ "np.load": [
   {
    "is_class": false,
    "is_explicit": false,
@@ -235,7 +337,39 @@
    "is_explicit": false,
    "module": "numpy",
    "module_short": "numpy",
-   "name": "ones"
+   "name": "load"
+  }
+ ],
+ "np.mean": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "mean"
+  }
+ ],
+ "np.save": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "save"
   }
  ],
  "np.sum": [
@@ -302,13 +436,109 @@
    "name": "exists"
   }
  ],
+ "os.path.join": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "os.path",
+   "module_short": "os.path",
+   "name": "join"
+  }
+ ],
  "output_path": [
   {
    "is_class": false,
    "is_explicit": false,
    "module": "builtins",
    "module_short": "builtins",
-   "name": "str"
+   "name": "NoneType"
+  }
+ ],
+ "plt.close": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "close"
+  }
+ ],
+ "plt.figure": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "figure"
+  }
+ ],
+ "plt.hist": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "hist"
+  }
+ ],
+ "plt.imshow": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "imshow"
+  }
+ ],
+ "plt.savefig": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "savefig"
   }
  ],
  "r": [
@@ -318,6 +548,33 @@
    "module": "__main__",
    "module_short": "__main__",
    "name": "ReconstructionEasyPETCT"
+  }
+ ],
+ "r.lastImageReconstructed": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "r.saveVariablesTxT": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "__main__",
+   "module_short": "__main__",
+   "name": "ReconstructionEasyPETCT.saveVariablesTxT"
+  }
+ ],
+ "r.start": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "__main__",
+   "module_short": "__main__",
+   "name": "ReconstructionEasyPETCT.start"
   }
  ],
  "voxelSize": [

@@ -23,162 +23,53 @@ TOR FILE
 This is an example how to create a TOR file for easyPETCT
 The file should be run one time to each new acquisition
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-162
-
-
-
-.. rst-class:: sphx-glr-horizontal
-
-
-    *
-
-      .. image-sg:: /auto_examples/EasyPETCT/images/sphx_glr_2_createTORFile_001.png
-         :alt: 2 createTORFile
-         :srcset: /auto_examples/EasyPETCT/images/sphx_glr_2_createTORFile_001.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/EasyPETCT/images/sphx_glr_2_createTORFile_002.png
-         :alt: Configuration Source in front module
-         :srcset: /auto_examples/EasyPETCT/images/sphx_glr_2_createTORFile_002.png
-         :class: sphx-glr-multi-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    2.0.2
-    C:\Users\pedro\anaconda3\envs\test_env_spect\lib\site-packages\numpy\__init__.py
-    <Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry object at 0x00000241D8FA81C0>
-    Field: ENERGYA
-    ...............................
-    Mean: 0.0
-    Std: 0.0
-    Range: 0.0 to 0.0
-    Median: 0.0
-    Min diff: None
-    Number of unique values: 1
-    -------------------------------
-
-    Field: ENERGYB
-    ...............................
-    Mean: 55.3545
-    Std: 13.6874
-    Range: 2e-05 to 125.29936
-    Median: 59.97403
-    Min diff: 0.0001
-    Number of unique values: 465749
-    -------------------------------
-
-    Field: IDA
-    ...............................
-    Mean: 0.0
-    Std: 0.0
-    Range: 0.0 to 0.0
-    Median: 0.0
-    Min diff: None
-    Number of unique values: 1
-    -------------------------------
-
-    Field: IDB
-    ...............................
-    Mean: 15.479
-    Std: 8.623
-    Range: 0.0 to 31.0
-    Median: 15.0
-    Min diff: 1.0
-    Number of unique values: 32
-    -------------------------------
-
-    Field: AXIAL_MOTOR
-    ...............................
-    Mean: -179.4862
-    Std: 104.0901
-    Range: -358.20001 to -0.0
-    Median: -180.0
-    Min diff: 1.8
-    Number of unique values: 200
-    -------------------------------
-
-    Field: FAN_MOTOR
-    ...............................
-    Mean: -0.0203
-    Std: 32.7272
-    Range: -54.0 to 54.0
-    Median: 0.0
-    Min diff: 0.225
-    Number of unique values: 481
-    -------------------------------
-
-    Field: TIME
-    ...............................
-    Mean: 1203.3042
-    Std: 694.2908
-    Range: 0.00028 to 2404.99293
-    Median: 1204.52752
-    Min diff: 0.0001
-    Number of unique values: 7122705
-    -------------------------------
-
-    Number of events: 8884639
-    Number of events per second: 3694.2474519394295
-    Number of events per frame per second: [np.float64(3989.3916972420348), np.float64(4357.291575446141), np.float64(3095.0522156673755), np.float64(3489.2407769029724)]
-    Number of motors: 2
-    Global detector ID not set. Automatically setting is going to run. Note that incomplete data could set a wrong global ID leading to incorrect reconstruction
-    Number of motors detected:  2
-    AXIAL_MOTOR  step 1.7999999999999545
-    AXIAL_MOTOR  range 200
-    FAN_MOTOR  step 0.22499999999999432
-    FAN_MOTOR  range 481
-    IDA  number of detectors 1
-    IDB  number of detectors 32
-    GlobalID_maximum:  3078399
-    GlobalID_minimum:  0
-    Expected GlobalID maximum:  3078400
-    Reading file: C:\Users\pedro\OneDrive\Ambiente de Trabalho\all_values.tor
-    <Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry object at 0x000002419E5633A0>
-    Calculating source position for all events detected...
-
-
-
-
-
-
-|
+.. GENERATED FROM PYTHON SOURCE LINES 17-120
 
 .. code-block:: Python
 
-    import os
     import numpy as np
     import matplotlib.pyplot as plt
     import uuid
     import time
-    from TORFilesReader import ToRFile, AnimalType, PhantomType, AcquisitionInfo, ListModeBody, RadioisotopeInfo, Technician
-    from Device import StoreDeviceInFo
-    from Phantoms import NEMAIQ2008NU
+
+    # from toor.StandaloneInitializer.angletoparametricMLEM import output_path
+    from toor.TORFilesReader import ToRFile, PhantomType, AcquisitionInfo, ListModeBody, RadioisotopeInfo, Technician
+    from toor.Device import StoreDeviceInFo
+    # from toor.Phantoms import NEMAIQ2008NU
+    from toor.Corrections.General import DetectorSensitivityResponse
+    from toor.CalibrationWrapper import CalibrationWrapper
+    from toor.EasyPETLinkInitializer.EasyPETDataReader import binary_data
 
     print(np.__version__)
     print(np.__file__)
 
-
     # filename = "../../allvalues.npy"
-    filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\intelligent_scan-NewGeometries-CT\\allvalues.npy"
+    filename = "C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\listmodes\\Am_Na.npy"
+    filename = "D:\\Pedro\\listmode_wirephantom.npy"
+    filename = "E:\\simulatedsinogram_matrix.npy"
+    # filename = "D:\\Pedro\\sensitivity_sim\\listmode_sensitivity_sim.npy"
+    # filename = "C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\listmodes\\listmode_sensitivity.npy"
     # filename = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1.npy"
-    output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor"
+    # output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor"
     # output_path = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1 (1).tor"
+    output_path = "C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\listmodes\\listmode_24Mar2025-17h54m00s.tor"
+    output_path = "D:\\Pedro\\listmode_wirephantom.tor"
+    output_path = "E:\\simulatedsinogram_matrix.tor"
+    # output_path = "E:\\sensitivity_sim.tor"
+    # output_path = "C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\listmodes\\listmode_sensitivity.tor"
     #
     # if not os.path.exists(output_path):
     #     os.makedirs(output_path)
 
 
-    device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT"
+    # device_path = "C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\.venv\\Lib\\site-packages\\configurations\\fda0f3b2-a0ae-470d-b30a-40e85b741c13_EasyCT"
+    device_path = r"C:\Users\pedro\OneDrive\Documentos\GitHub\Infinity-Tomographic-Reconstruction\configurations\b4593ba9-7193-43c8-abed-7a07eeeabb8d_EasyCT_simulation_16_2"
+    device_path = r"C:\Users\pedro\OneDrive\Documentos\GitHub\Infinity-Tomographic-Reconstruction\configurations\5433bf80-06b5-468f-9692-674f4b007605_EasyCT_simulation_16_2_special"
 
     getDevice = StoreDeviceInFo(device_directory=device_path)
     newDevice = getDevice.readDeviceFromDirectory()
     print(newDevice)
-    #-----------------------------------------
+    # -----------------------------------------
     # create listMode
     # IF Animal
     # subject = AnimalType()
@@ -187,24 +78,23 @@ The file should be run one time to each new acquisition
 
     # IF Phantom
     subject = PhantomType()
-    subject.setPhantomName("NEMA IQ 2008 NU")
-    subject.setPhantomPurpose("Calibration")
-    subject.setPhantomDescription("NEMA IQ 2008 NU phantom for calibration")
-    subject.setDigitalPhantomCopy(NEMAIQ2008NU())
+    subject.setPhantomName("Na-22 source")
+    subject.setPhantomPurpose("CT scan")
+    subject.setPhantomDescription("CT scan of the Na-22 point source")
+    # subject.setDigitalPhantomCopy(NEMAIQ2008NU())
 
     # If PET/SPECT/COMPTON
     radioisotope = RadioisotopeInfo()
-    radioisotope.setTracers(["18F"])
-    radioisotope.setHalfLifes([float(109.771 * 60) ])
+    radioisotope.setTracers(["Na22"])
+    radioisotope.setHalfLifes([float(2.60 * 365 * 24 * 3600)])
     radioisotope.setDecayTypes(["BetaPlus"])
     radioisotope.setDecayEnergies([511])
 
     # Tecnhician
     tecnhician = Technician()
-    tecnhician.setName("Pedro Encarnação")
+    tecnhician.setName("Regina Oliveira")
     tecnhician.setRole("Researcher")
     tecnhician.setOrganization("Universidade de Aveiro")
-
 
     scanHeader = AcquisitionInfo()
     scanHeader.setId(1)
@@ -221,10 +111,15 @@ The file should be run one time to each new acquisition
     # scanHeader.setRadioisotope(radioisotope)
 
     listmode = np.load(filename)
-    listmode[:,3] = np.copy(listmode[:,2])# invert ID_A and ID_B
-    listmode[:,2] = 0
-    listmode[:,1] = np.copy(listmode[:,0]) * 1000
-    listmode[:,0] = 0
+    listmode[:, 3] = np.copy(listmode[:, 2])  # invert ID_A and ID_B
+    listmode[:, 2] = 0
+    listmode[:, 1] = np.copy(listmode[:, 0]) * 1000
+    listmode[:, 0] = 0
+
+    even_mask = listmode[:, 3] % 2 == 0
+    odd_mask = listmode[:, 3] % 2 != 0
+    listmode[:, 3][even_mask] += 1
+    listmode[:, 3][odd_mask] -= 1
 
     listModeBody = ListModeBody()
     listModeBody.setListmode(listmode)
@@ -235,6 +130,49 @@ The file should be run one time to each new acquisition
     listModeBody.setGlobalDetectorID()
     listModeBody.setCountsPerGlobalID()
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+.. code-block:: pytb
+
+    Traceback (most recent call last):
+      File "C:\Users\pedro\OneDrive\Documentos\GitHub\Infinity-Tomographic-Reconstruction\docs\source\examples\EasyPETCT\2_createTORFile.py", line 100, in <module>
+        listmode = np.load(filename)
+      File "C:\Users\pedro\anaconda3\envs\test_env_spect\lib\site-packages\numpy\lib\_npyio_impl.py", line 455, in load
+        fid = stack.enter_context(open(os.fspath(file), "rb"))
+    FileNotFoundError: [Errno 2] No such file or directory: 'E:\\simulatedsinogram_matrix.npy'
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 121-122
+
+Generate detector sensitivity response (It is necessary to create the device one time first then generate the TOR file for the white scan and then generate the new device)
+
+.. GENERATED FROM PYTHON SOURCE LINES 122-201
+
+.. code-block:: Python
+
+    calibrations = CalibrationWrapper()
+    # file_white_scan = r"C:\Users\regina.oliveira\PycharmProjects\EasyPETCT\listmodes\listmode_whitescan_32x1 (1).tor"
+    # file_white_scan = r"C:\Users\regina.oliveira\PycharmProjects\EasyPETCT\listmodes\listmode_sensitivity.tor"
+    file_white_scan = "E:\\sensitivity_sim.tor"
+    # load FILE
+    ToRFile_sensitivity = ToRFile(filepath=file_white_scan)
+    ToRFile_sensitivity.read()
+
+    energies = np.array([30, 59.6, 511])
+    energy_windows = np.array([[10, 40], [45, 80], [511, 511]])
+    # comment this if the resolutionfucntion was not set
+    detector_sensitivity = DetectorSensitivityResponse(use_detector_energy_resolution=False)
+    detector_sensitivity.setEnergyPeaks(energies)
+    detector_sensitivity.setEnergyWindows(energyWindows=energy_windows,
+                                          torFile=None)  # can set manually the energy windows. Put flag to use_detector_energy_resolution to False
+    detector_sensitivity.setDetectorSensitivity(torFile=ToRFile_sensitivity)
+    # detector_sensitivity.setDetectorSensitivity(generate_uniform=True, fileBodyData=listModeBody)
+    calibrations.setSystemSensitivity(detector_sensitivity)
+
     plt.figure()
     plt.hist(listModeBody["IDB"], bins=32)
     plt.show()
@@ -242,6 +180,7 @@ The file should be run one time to each new acquisition
     ToRFile_creator = ToRFile(filepath=output_path)
     ToRFile_creator.setSystemInfo(newDevice)
     ToRFile_creator.setAcquisitionInfo(scanHeader)
+    ToRFile_creator.setCalibrations(calibrations)
     ToRFile_creator.setfileBodyData(listModeBody)
     ToRFile_creator.write()
 
@@ -296,10 +235,9 @@ The file should be run one time to each new acquisition
     # ToRFile_creator.setListMode(listmode)
 
 
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 9.424 seconds)
+   **Total running time of the script:** (0 minutes 0.013 seconds)
 
 
 .. _sphx_glr_download_auto_examples_EasyPETCT_2_createTORFile.py:

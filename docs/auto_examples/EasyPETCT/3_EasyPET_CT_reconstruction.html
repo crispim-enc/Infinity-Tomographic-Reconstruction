@@ -30,13 +30,13 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6e65f732" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6e65f732" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
@@ -50,7 +50,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/EasyPETCT/3_EasyPET_CT_reconstruction';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Siemens" href="../SiemensIntevoBoldSPECTCT/index.html" />
+    <link rel="next" title="SiemensIntevoBoldSPECTCT" href="../SiemensIntevoBoldSPECTCT/index.html" />
     <link rel="prev" title="TOR FILE" href="2_createTORFile.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -156,13 +156,6 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../userguide.html">
-                        User Guide
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Examples
@@ -172,7 +165,14 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
-                        API Reference
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../references.html">
+                        Please cite
                       </a>
                     </li>
                 
@@ -276,13 +276,6 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../userguide.html">
-                        User Guide
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Examples
@@ -292,7 +285,14 @@ document.write(`
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
-                        API Reference
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../references.html">
+                        Please cite
                       </a>
                     </li>
                 
@@ -347,8 +347,12 @@ document.write(`
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Easy_CT Reconstruction</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../SiemensIntevoBoldSPECTCT/index.html">Siemens</a><input checked class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../SiemensIntevoBoldSPECTCT/index.html">SiemensIntevoBoldSPECTCT</a><input checked class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../SiemensIntevoBoldSPECTCT/newdevice_siemens.html">Siemens Intevo Bold SPECT/CT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../iPET/index.html">iPET</a><input checked class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../iPET/1_Device_creation.html">iPET device creation</a></li>
 </ul>
 </li>
 </ul>
@@ -419,28 +423,302 @@ to download the full example code.</p>
 <section class="sphx-glr-example-title" id="easy-ct-reconstruction">
 <span id="sphx-glr-auto-examples-easypetct-3-easypet-ct-reconstruction-py"></span><h1>Easy_CT Reconstruction<a class="headerlink" href="#easy-ct-reconstruction" title="Link to this heading">#</a></h1>
 <p>This example shows how use the TOR package to build and reconstruct a easyPET/CT system.</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Reading file: C:\Users\pedro\OneDrive\Ambiente de Trabalho\all_values.tor
+<img src="../../_images/sphx_glr_3_EasyPET_CT_reconstruction_001.png" srcset="../../_images/sphx_glr_3_EasyPET_CT_reconstruction_001.png" alt="3 EasyPET CT reconstruction" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Reading file: C:\Users\pedro\Downloads\simulatedsinogram_matrix.tor
+Field: ENERGYA
+...............................
+Mean: 0.0
+Std: 0.0
+Range: 0.0 to 0.0
+Median: 0.0
+Min diff: None
+Number of unique values: 1
+-------------------------------
+
+Field: ENERGYB
+...............................
+Mean: 59.3473
+Std: 7.5839
+Range: 45.0 to 79.99997
+Median: 59.0179
+Min diff: 0.0001
+Number of unique values: 801999
+-------------------------------
+
+Field: IDA
+...............................
+Mean: 0.0
+Std: 0.0
+Range: 0.0 to 0.0
+Median: 0.0
+Min diff: None
+Number of unique values: 1
+-------------------------------
+
+Field: IDB
+...............................
+Mean: 15.5011
+Std: 9.1186
+Range: 0.0 to 31.0
+Median: 16.0
+Min diff: 1.0
+Number of unique values: 32
+-------------------------------
+
+Field: AXIAL_MOTOR
+...............................
+Mean: -179.0858
+Std: 103.9007
+Range: -358.2 to -0.0
+Median: -178.2
+Min diff: 1.8
+Number of unique values: 200
+-------------------------------
+
+Field: FAN_MOTOR
+...............................
+Mean: -0.0044
+Std: 32.7876
+Range: -54.0 to 54.0
+Median: 0.0
+Min diff: 0.225
+Number of unique values: 481
+-------------------------------
+
+Field: TIME
+...............................
+Mean: 2404.7296
+Std: 1388.3303
+Range: 7e-05 to 4809.81273
+Median: 2404.63416
+Min diff: 0.0001
+Number of unique values: 28129522
+-------------------------------
+
+Number of events: 29326853
+Number of events per second: 6097.296229511117
+Number of events per frame per second: [np.float64(10589.59604769927), np.float64(10348.808504850227), np.float64(10454.672647817863), np.float64(10609.436268621823), np.float64(7049.392973039373), np.float64(6634.767371080418), np.float64(6992.534329745741), np.float64(6822.576706292056)]
+Number of motors: 2
+Global detector ID not set. Automatically setting is going to run. Note that incomplete data could set a wrong global ID leading to incorrect reconstruction
+Number of motors detected:  2
+AXIAL_MOTOR  step 1.7999999999999545
+AXIAL_MOTOR  range 200
+FAN_MOTOR  step 0.22499999999999432
+FAN_MOTOR  range 481
+IDA  number of detectors 1
+IDB  number of detectors 32
+GlobalID_maximum:  3078399
+GlobalID_minimum:  0
+Expected GlobalID maximum:  3078400
+Starting reconstruction
+________________________________
+Starting Normalization
+________________________________
+Fan Motor Step:  0.22499999999999432
+Axial Motor Step:  1.7999999999999545
+Range Top Motor:  108.0
+Begin Axial Motor Position:  -0.0
+End Axial Motor Position:  -358.2
+Calculate All Positions All Detectors:  True
+Generate Motor Positions:  True
+Calculating source position for all events detected...
+Calculating parametric positions of the center and vertices of the detector for all events...
+Centroid calculated for all events...
+Vertice 0 calculated for all events...
+Vertice 1 calculated for all events...
+Vertice 2 calculated for all events...
+Vertice 3 calculated for all events...
+Vertice 4 calculated for all events...
+Vertice 5 calculated for all events...
+Vertice 6 calculated for all events...
+Vertice 7 calculated for all events...
+[[[ -6.9275036  48.244366  -18.24     ]
+  [-25.314726   71.949     -18.24     ]
+  [-26.895681   70.72266   -18.24     ]
+  ...
+  [-25.314726   71.949     -15.96     ]
+  [-26.895681   70.72266   -15.96     ]
+  [ -8.509279   47.017326  -15.96     ]]
+
+ [[ -5.0690937  49.685806  -18.24     ]
+  [-23.45717    73.38984   -18.24     ]
+  [-25.038157   72.16352   -18.24     ]
+  ...
+  [-23.45717    73.38984   -15.96     ]
+  [-25.038157   72.16352   -15.96     ]
+  [ -6.6509495  48.458885  -15.96     ]]
+
+ [[ -6.9275036  48.244366  -15.96     ]
+  [-25.314726   71.949     -15.96     ]
+  [-26.895681   70.72266   -15.96     ]
+  ...
+  [-25.314726   71.949     -13.679999 ]
+  [-26.895681   70.72266   -13.679999 ]
+  [ -8.509279   47.017326  -13.679999 ]]
+
+ ...
+
+ [[ -6.842346  -47.406456   13.679999 ]
+  [-24.379631  -71.74668    13.679999 ]
+  [-22.75632   -72.9164     13.679999 ]
+  ...
+  [-24.379631  -71.74668    15.96     ]
+  [-22.75632   -72.9164     15.96     ]
+  [ -5.218212  -48.576828   15.96     ]]
+
+ [[ -4.9342384 -48.78145    15.96     ]
+  [-22.472347  -73.12102    15.96     ]
+  [-20.849022  -74.290695   15.96     ]
+  ...
+  [-22.472347  -73.12102    18.24     ]
+  [-20.849022  -74.290695   18.24     ]
+  [ -3.3100204 -49.95171    18.24     ]]
+
+ [[ -6.842346  -47.406456   15.96     ]
+  [-24.379631  -71.74668    15.96     ]
+  [-22.75632   -72.9164     15.96     ]
+  ...
+  [-24.379631  -71.74668    18.24     ]
+  [-22.75632   -72.9164     18.24     ]
+  [ -5.218212  -48.576828   18.24     ]]]
+Creating vectorial space
+Transforming points to positive points
+Max X: 200.24391174316406 Min X: 0.0
+Max Y: 200.24392700195312 Min Y: 0.0
+Image Shape(71, 71, 37)
+Normalization GPU
+GPU STARTED - Multiple reads
+Start_point: 65,65,0
+Image size: 71,71, 37
+81.7 % of device memory is free.
+Number events for reconstruction: 3084800
+Iteration number: 1
+----------------
+81.7 % of device memory is free.
+Subset number: 0
+Time part Forward Projection 1 : 1.5580565929412842
+SUM VOR: 5146076672.0
+LEN VOR: 354734
+begin_dataset 0
+end_dataset 3084800
+Time part Backward Projection 1 : 5.186734914779663
+adjust_coef: 5158220800.0
+SUM IMAGE: 85311684608.0
+C:\Users\pedro\Downloads\9\iterations\_it0_sb0
+Calculating source position for all events detected...
+Calculating parametric positions of the center and vertices of the detector for all events...
+Centroid calculated for all events...
+Vertice 0 calculated for all events...
+Vertice 1 calculated for all events...
+Vertice 2 calculated for all events...
+Vertice 3 calculated for all events...
+Vertice 4 calculated for all events...
+Vertice 5 calculated for all events...
+Vertice 6 calculated for all events...
+Vertice 7 calculated for all events...
+[[[ -6.9275055  48.24436   -18.24     ]
+  [-25.314713   71.949005  -18.24     ]
+  [-26.89568    70.72266   -18.24     ]
+  ...
+  [-25.314713   71.949005  -15.96     ]
+  [-26.89568    70.72266   -15.96     ]
+  [ -8.509277   47.017326  -15.96     ]]
+
+ [[ -8.439478   48.00296   -18.24     ]
+  [-27.562197   71.118355  -18.24     ]
+  [-29.10386    69.84295   -18.24     ]
+  ...
+  [-27.562197   71.118355  -15.96     ]
+  [-29.10386    69.84295   -15.96     ]
+  [ -9.981928   46.72685   -15.96     ]]
+
+ [[ -9.943119   47.714184  -18.24     ]
+  [-29.782478   70.217514  -18.24     ]
+  [-31.283321   68.89431   -18.24     ]
+  ...
+  [-29.782478   70.217514  -15.96     ]
+  [-31.283321   68.89431   -15.96     ]
+  [-11.444729   46.39025   -15.96     ]]
+
+ ...
+
+ [[ -9.981928  -46.72685    15.96     ]
+  [-29.103865  -69.84296    15.96     ]
+  [-27.562193  -71.118355   15.96     ]
+  ...
+  [-29.103865  -69.84296    18.24     ]
+  [-27.562193  -71.118355   18.24     ]
+  [ -8.439482  -48.00296    18.24     ]]
+
+ [[ -8.509277  -47.017323   15.96     ]
+  [-26.89568   -70.722664   15.96     ]
+  [-25.314709  -71.949005   15.96     ]
+  ...
+  [-26.89568   -70.722664   18.24     ]
+  [-25.314709  -71.949005   18.24     ]
+  [ -6.9275093 -48.24436    18.24     ]]
+
+ [[ -7.0282288 -47.26141    15.96     ]
+  [-24.660957  -71.532585   15.96     ]
+  [-23.042248  -72.708664   15.96     ]
+  ...
+  [-24.660957  -71.532585   18.24     ]
+  [-23.042248  -72.708664   18.24     ]
+  [ -5.408695  -48.438156   18.24     ]]]
+GPU being use &lt;pycuda._driver.Device object at 0x000001C485B80040&gt;
+GPU STARTED - Multiple reads
+Start_point: 65,65,0
+Image size: 71,71, 37
+81.7 % of device memory is free.
+Number events for reconstruction: 3070268
+Iteration number: 1
+----------------
+81.7 % of device memory is free.
+Subset number: 0
+Time part Forward Projection 1 : 1.6599524021148682
+SUM VOR: 5096138240.0
+LEN VOR: 349652
+begin_dataset 0
+end_dataset 3070268
+Time part Backward Projection 1 : 5.255990982055664
+adjust_coef: 1559892.75
+SUM IMAGE: 3134157225984.0
+C:\Users\pedro\Downloads\9\iterations\_it0_sb0
+Iteration number: 2
+----------------
+81.7 % of device memory is free.
+Subset number: 0
+Time part Forward Projection 1 : 1.620429277420044
+SUM VOR: 7570454311075840.0
+LEN VOR: 349652
+begin_dataset 0
+end_dataset 3070268
+Time part Backward Projection 1 : 5.270488739013672
+adjust_coef: 0.9915919899940491
+SUM IMAGE: 3102879252480.0
+Context detached
+Reconstruction finished
+________________________________
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pycuda.driver</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cuda</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">Geometry.easyPETBased</span><span class="w"> </span><span class="kn">import</span> <span class="n">EasyCTGeometry</span><span class="p">,</span> <span class="n">testSourceDistance</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">DetectionLayout.Modules</span><span class="w"> </span><span class="kn">import</span> <span class="n">PETModule</span><span class="p">,</span> <span class="n">easyPETModule</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">DetectionLayout.RadiationProducer</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericRadiativeSource</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">Designer</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeviceDesignerStandalone</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">Corrections.CT.Projector</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyramidalProjector</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">Corrections.CT</span><span class="w"> </span><span class="kn">import</span> <span class="n">NormalizationCT</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">Optimizer</span><span class="w"> </span><span class="kn">import</span> <span class="n">GPUSharedMemoryMultipleKernel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toor.Corrections.CT.Projector</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyramidalProjector</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toor.Corrections.CT</span><span class="w"> </span><span class="kn">import</span> <span class="n">NormalizationCT</span><span class="p">,</span> <span class="n">DualRotationNormalizationSystem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toor.Optimizer</span><span class="w"> </span><span class="kn">import</span> <span class="n">GPUSharedMemoryMultipleKernel</span>
+<span class="c1"># from toor.ImageReader.Interfile import InterfileWriter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toor.ImageReader.RawData</span><span class="w"> </span><span class="kn">import</span> <span class="n">RawDataSetter</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">ReconstructionEasyPETCT</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">file_path_output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">subsets</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s2">&quot;MLEM&quot;</span><span class="p">,</span>
-                 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">voxelSize</span></a><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">radial_fov_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energyregion</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+                 <span class="n">voxelSize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">radial_fov_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energyregion</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fov</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;raw&quot;</span><span class="p">,</span>
+                 <span class="n">algorithm_options</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reconstruction Manager</span>
 <span class="sd">        :param file_path: Path to the file</span>
@@ -448,40 +726,141 @@ to download the full example code.</p>
 <span class="sd">        :param subsets: Number of subsets</span>
 <span class="sd">        :param algorithm: Algorithm to use LM-MLEM or LM-MRP</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">algorithm_options</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">algorithm_options</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">radial_fov_range</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">radial_fov_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+            <span class="n">radial_fov_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">radial_fov_range</span> <span class="o">=</span> <span class="n">radial_fov_range</span>
         <span class="k">if</span> <span class="n">file_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">FileExistsError</span>
         <span class="k">if</span> <span class="n">file_path_output</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">file_path_output</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.dirname" title="os.path.dirname" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span></a><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-        <span class="k">if</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">voxelSize</span></a> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">voxelSize</span></a> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">voxelSize</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">voxelSize</span></a>
+            <span class="n">file_path_output</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">voxelSize</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">voxelSize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">voxelSize</span> <span class="o">=</span> <span class="n">voxelSize</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_normalizationMatrix</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Context of the GPU</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Device of the GPU</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cuda</span> <span class="o">=</span> <span class="n">cuda</span>  <span class="c1"># Cuda driver</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>  <span class="c1"># Initialize the cuda driver</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">file_path</span> <span class="o">=</span> <span class="n">file_path</span>  <span class="c1"># Path to the file</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">file_path_output</span> <span class="o">=</span> <span class="n">file_path_output</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filePath</span> <span class="o">=</span> <span class="n">file_path</span>  <span class="c1"># Path to the file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filePathOutput</span> <span class="o">=</span> <span class="n">file_path_output</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fov</span> <span class="o">=</span> <span class="n">fov</span>  <span class="c1"># Field of view</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fileOutputType</span> <span class="o">=</span> <span class="n">output_format</span>  <span class="c1"># Output file type</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">iterations</span> <span class="o">=</span> <span class="n">iterations</span>  <span class="c1"># Number of iterations</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">subsets</span> <span class="o">=</span> <span class="n">subsets</span>  <span class="c1"># Number of subsets</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">algorithm</span> <span class="o">=</span> <span class="n">algorithm</span>  <span class="c1"># Algorithm to use</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">algorithm_options</span> <span class="o">=</span> <span class="n">algorithm_options</span>  <span class="c1"># Algorithm options</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lastImageReconstructed</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Last image reconstructed</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">saved_image_by_iteration</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">energyRegion</span> <span class="o">=</span> <span class="n">energyregion</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span> <span class="o">=</span> <span class="n">ToRFile</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span> <span class="o">=</span> <span class="n">ToRFile</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">filePath</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="n">folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filePathOutput</span>
+        <span class="c1"># find the bigger number in the folder ex.&quot;1&quot;</span>
+        <span class="c1"># check if a series numpy number exist in the folder. If not create a new one. If yes, create a new one with a higher number</span>
+        <span class="n">series_file</span> <span class="o">=</span> <span class="s2">&quot;seriesID.npy&quot;</span>
+
+        <span class="n">series_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">series_file</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">series_file_path</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">series_file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_seriesNumber</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_seriesNumber</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">series_file_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_seriesNumber</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_seriesNumber</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">series_file_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_seriesNumber</span><span class="p">)</span>
+        <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_seriesNumber</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">filePathOutput</span> <span class="o">=</span> <span class="n">folder</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">fileBodyData</span><span class="p">[</span><span class="s2">&quot;ENERGYB&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+        <span class="n">energyRegionKeysAvailable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">calibrations</span><span class="o">.</span><span class="n">systemSensitivity</span><span class="o">.</span><span class="n">fields</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">energyregion</span> <span class="ow">in</span> <span class="n">energyRegionKeysAvailable</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy Region: &quot;</span><span class="p">,</span> <span class="n">energyregion</span><span class="p">,</span> <span class="s2">&quot; is not available in the file&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy Regions available (Choose exactly: )&quot;</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">calibrations</span><span class="o">.</span><span class="n">systemSensitivity</span><span class="o">.</span><span class="n">fields</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Energy Region: &quot;</span><span class="p">,</span> <span class="n">energyregion</span><span class="p">,</span> <span class="s2">&quot; is not available in the file&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_indexEnergyRegion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">calibrations</span><span class="o">.</span><span class="n">systemSensitivity</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">energyregion</span><span class="p">)</span>
+        <span class="n">energyMask</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">fileBodyData</span><span class="p">[</span><span class="s2">&quot;ENERGYB&quot;</span><span class="p">]</span> <span class="o">&lt;=</span>
+                      <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">calibrations</span><span class="o">.</span><span class="n">systemSensitivity</span><span class="o">.</span><span class="n">energyWindows</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_indexEnergyRegion</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">fileBodyData</span><span class="p">[</span><span class="s2">&quot;ENERGYB&quot;</span><span class="p">]</span> <span class="o">&gt;=</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">calibrations</span><span class="o">.</span><span class="n">systemSensitivity</span><span class="o">.</span><span class="n">energyWindows</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_indexEnergyRegion</span><span class="p">][</span>
+                                 <span class="mi">0</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">fileBodyData</span><span class="o">.</span><span class="n">setListmode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">fileBodyData</span><span class="o">.</span><span class="n">listmode</span><span class="p">[</span><span class="n">energyMask</span><span class="p">],</span> <span class="n">regenerateStats</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">fileBodyData</span><span class="o">.</span><span class="n">setListModeHistogramHybridMode</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">fileBodyData</span><span class="p">[</span><span class="s2">&quot;ENERGYB&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filePathOutput</span><span class="p">,</span> <span class="s2">&quot;energy_histogram.png&quot;</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">projector</span> <span class="o">=</span> <span class="n">PyramidalProjector</span><span class="p">(</span><span class="n">voxelSize</span><span class="o">=</span><span class="n">voxelSize</span><span class="p">,</span> <span class="n">FovRadialStart</span><span class="o">=</span><span class="n">radial_fov_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                                 <span class="n">FovRadialEnd</span><span class="o">=</span><span class="n">radial_fov_range</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">fov</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fov</span><span class="p">,</span> <span class="n">only_fov</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-        <span class="n">radial_fov_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">projector</span> <span class="o">=</span> <span class="n">PyramidalProjector</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">voxelSize</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">voxelSize</span></a><span class="p">,</span> <span class="n">FovRadialStart</span><span class="o">=</span><span class="n">radial_fov_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                                                 <span class="n">FovRadialEnd</span><span class="o">=</span><span class="n">radial_fov_range</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">fov</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">only_fov</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lastImageReconstructed</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+        <span class="c1"># self.ToRFile_reader.fileBodyData.saveVariablesTxT(filename=folder)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">saveVariablesTxT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the variables in a txt file</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># print variables of acquisition info</span>
+        <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filePathOutput</span><span class="p">,</span> <span class="s2">&quot;Info.txt&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">Reconstruction Parameters</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;__________________________________________________</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Iterations: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iterations</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Subsets: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subsets</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Algorithm: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">algorithm</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Voxel Size: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">voxelSize</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Radial FOV Range: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fov</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Energy Region: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">energyRegion</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Energy Window: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">calibrations</span><span class="o">.</span><span class="n">systemSensitivity</span><span class="o">.</span><span class="n">energyWindows</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastImageReconstructed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Image Shape: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lastImageReconstructed</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># Print the dict of the class</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">Acquisition Info</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;__________________________________________________</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">acquisitionInfo</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="c1"># if value is an object, print the dict of that class</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;__dict__&quot;</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">key2</span><span class="p">,</span> <span class="n">value2</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">key2</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value2</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">Calibrations</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;__________________________________________________</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key3</span><span class="p">,</span> <span class="n">value3</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">calibrations</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key3</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value3</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="c1"># if value is an object, print the dict of that class</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value3</span><span class="p">,</span> <span class="s2">&quot;__dict__&quot;</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">key4</span><span class="p">,</span> <span class="n">value4</span> <span class="ow">in</span> <span class="n">value3</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">key4</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value4</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">System Info</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;__________________________________________________</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key5</span><span class="p">,</span> <span class="n">value5</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">systemInfo</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key5</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value5</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="c1"># if value is an object, print the dict of that class</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value5</span><span class="p">,</span> <span class="s2">&quot;__dict__&quot;</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">key6</span><span class="p">,</span> <span class="n">value6</span> <span class="ow">in</span> <span class="n">value5</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">key6</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value6</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting reconstruction&quot;</span><span class="p">)</span>
@@ -491,135 +870,151 @@ to download the full example code.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">generateNormalization</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">generateImage</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Context detached&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reconstruction finished&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;________________________________&quot;</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">generateNormalization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">normalization</span> <span class="o">=</span> <span class="n">NormalizationCT</span><span class="p">(</span><span class="n">number_of_crystals</span><span class="o">=</span><span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-                                                    <span class="n">rangeTopMotor</span><span class="o">=</span><span class="mi">108</span><span class="p">,</span> <span class="n">begin_range_botMotor</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end_rangeBotMotor</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span>
-                                                    <span class="n">stepTopmotor</span><span class="o">=</span><span class="mf">0.225</span><span class="p">,</span> <span class="n">stepBotMotor</span><span class="o">=</span><span class="mf">1.8</span><span class="p">,</span> <span class="n">recon_2D</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">normalization</span><span class="o">.</span><span class="n">normalization_LM</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting Normalization&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;________________________________&quot;</span><span class="p">)</span>
+        <span class="n">normalization</span> <span class="o">=</span> <span class="n">DualRotationNormalizationSystem</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="p">)</span>
+        <span class="n">normalization</span><span class="o">.</span><span class="n">printMotorVariables</span><span class="p">()</span>
+        <span class="n">normalization</span><span class="o">.</span><span class="n">setEnergyPeakKey</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">energyRegion</span><span class="p">)</span>
+        <span class="n">listModeForNormalization</span> <span class="o">=</span> <span class="n">normalization</span><span class="o">.</span><span class="n">normalizationLM</span><span class="p">()</span>
 
         <span class="n">systemInfo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">systemInfo</span>
-        <span class="n">systemInfo</span><span class="o">.</span><span class="n">xRayProducer</span><span class="o">.</span><span class="n">setFocalSpotInitialPositionWKSystem</span><span class="p">([</span><span class="mf">12.55</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="c1"># systemInfo.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 0, 0]) #Apagar</span>
         <span class="c1"># nb_eventstest = 2</span>
         <span class="c1"># normalization.reading_data = normalization.reading_data[:nb_eventstest]</span>
         <span class="c1"># normalization.reading_data[:, 0] = np.arange(0,360, 360/nb_eventstest)</span>
         <span class="c1"># normalization.reading_data[:, 1] = np.zeros(nb_eventstest)</span>
         <span class="c1"># normalization.reading_data[:, 2] = 0</span>
-        <span class="n">systemInfo</span><span class="o">.</span><span class="n">sourcePositionAfterMovement</span><span class="p">(</span><span class="n">normalization</span><span class="o">.</span><span class="n">reading_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">normalization</span><span class="o">.</span><span class="n">reading_data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">axialMotorData</span> <span class="o">=</span> <span class="n">listModeForNormalization</span><span class="p">[:,</span><span class="n">normalization</span><span class="o">.</span><span class="n">fieldsListMode</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;AXIAL_MOTOR&quot;</span><span class="p">)]</span>
+        <span class="n">fanMotorData</span> <span class="o">=</span> <span class="n">listModeForNormalization</span><span class="p">[:,</span><span class="n">normalization</span><span class="o">.</span><span class="n">fieldsListMode</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;FAN_MOTOR&quot;</span><span class="p">)]</span>
+        <span class="n">detectorIdData</span> <span class="o">=</span> <span class="n">listModeForNormalization</span><span class="p">[:,</span><span class="n">normalization</span><span class="o">.</span><span class="n">fieldsListMode</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;IDB&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+        <span class="n">systemInfo</span><span class="o">.</span><span class="n">sourcePositionAfterMovement</span><span class="p">(</span><span class="n">axialMotorData</span><span class="p">,</span> <span class="n">fanMotorData</span><span class="p">)</span>
 
-        <span class="n">systemInfo</span><span class="o">.</span><span class="n">detectorSideBCoordinatesAfterMovement</span><span class="p">(</span><span class="n">normalization</span><span class="o">.</span><span class="n">reading_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">normalization</span><span class="o">.</span><span class="n">reading_data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span>
-                                                                <span class="n">normalization</span><span class="o">.</span><span class="n">reading_data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.int32" title="numpy.int32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">np</span><span class="o">.</span><span class="n">int32</span></a><span class="p">))</span>
+        <span class="n">systemInfo</span><span class="o">.</span><span class="n">detectorSideBCoordinatesAfterMovement</span><span class="p">(</span><span class="n">axialMotorData</span><span class="p">,</span> <span class="n">fanMotorData</span><span class="p">,</span>
+                                                                <span class="n">detectorIdData</span><span class="p">)</span>
 
-
-        <span class="c1"># parametric_listMode = parametric_listMode.loc[0]</span>
-        <span class="c1"># self.replacePointsInProjector(parametric_listMode)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">pointCenterList</span> <span class="o">=</span> <span class="n">systemInfo</span><span class="o">.</span><span class="n">sourceCenter</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">pointCorner1List</span> <span class="o">=</span> <span class="n">systemInfo</span><span class="o">.</span><span class="n">verticesB</span><span class="p">[:,</span> <span class="mi">7</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">pointCorner2List</span> <span class="o">=</span> <span class="n">systemInfo</span><span class="o">.</span><span class="n">verticesB</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">pointCorner3List</span> <span class="o">=</span> <span class="n">systemInfo</span><span class="o">.</span><span class="n">verticesB</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">pointCorner4List</span> <span class="o">=</span> <span class="n">systemInfo</span><span class="o">.</span><span class="n">verticesB</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span>
-        <span class="c1"># for i in range(8):</span>
-        <span class="c1">#     # print(systemInfo.verticesB[1, i, 0:2])</span>
-        <span class="c1">#     plt.plot(systemInfo.verticesB[1, i, 1], systemInfo.verticesB[1, i, 2], &quot;o&quot;, label=f&quot;Corner {i}&quot;)</span>
-        <span class="c1">#</span>
-        <span class="c1"># plt.plot(systemInfo.sourceCenter[1, 1],systemInfo.sourceCenter[1, 2] , &#39;ro&#39;, label=&#39;Source Center&#39;)</span>
-        <span class="c1"># plt.legend()</span>
-        <span class="c1"># plt.show()</span>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">setAbsMinMin</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">transformIntoPositivePoints</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">amplifyPointsToGPUCoordinateSystem</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">createVectorialSpace</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">createPlanes</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">setCountsPerPosition</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html#numpy.ones" title="numpy.ones" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">ones</span></a><span class="p">(</span><span class="n">systemInfo</span><span class="o">.</span><span class="n">sourceCenter</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.int32" title="numpy.int32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">np</span><span class="o">.</span><span class="n">int32</span></a><span class="p">))</span>
+        <span class="c1"># self.projector.setCountsPerPosition(np.ones(systemInfo.sourceCenter.shape[0], dtype=np.int32))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">setCountsPerPosition</span><span class="p">((</span><span class="n">normalization</span><span class="o">.</span><span class="n">tiledProbabilityOfDetection</span> <span class="o">*</span> <span class="mi">1000000</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span> <span class="c1"># Maybe convert the GPU entry to float32 to be univer</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Normalization GPU&quot;</span><span class="p">)</span>
         <span class="n">optimizer</span> <span class="o">=</span> <span class="n">GPUSharedMemoryMultipleKernel</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">normalizationFlag</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">number_of_iterations</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">multipleKernel</span><span class="p">()</span>
 
         <span class="n">geometric_normalization</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">im</span>
-        <span class="n">geometric_normalization</span> <span class="o">/=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.sum.html#numpy.sum" title="numpy.sum" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">sum</span></a><span class="p">(</span><span class="n">geometric_normalization</span><span class="p">)</span> <span class="c1">#Comentar se não quiser normalização</span>
+        <span class="n">geometric_normalization</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">geometric_normalization</span><span class="p">)</span> <span class="c1">#Comentar se não quiser normalização</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_normalizationMatrix</span> <span class="o">=</span> <span class="n">geometric_normalization</span>
-        <span class="c1"># self._normalizationMatrix = np.ones_like(geometric_normalization)  # reset normalization matrix</span>
-        <span class="c1"># self._normalizationMatrix *= geometric_normalization #Comentar se não quiser normalização</span>
-        <span class="c1"># self._normalizationMatrix /= np.sum(self._normalizationMatrix)</span>
 
-        <span class="n">folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_path_output</span>
-        <span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;normalization&quot;</span>
+        <span class="n">folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filePathOutput</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;normalization.raw&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fileOutputType</span> <span class="o">==</span> <span class="s2">&quot;raw&quot;</span><span class="p">:</span>
+            <span class="n">rawData</span> <span class="o">=</span> <span class="n">RawDataSetter</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">file_name</span><span class="p">),</span> <span class="n">size_file_m</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_normalizationMatrix</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+            <span class="n">rawData</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_normalizationMatrix</span><span class="p">)</span>
         <span class="c1"># if not os.path.exists(folder):</span>
         <span class="c1">#     os.makedirs(folder)</span>
+
         <span class="c1"># exporter = InterfileWriter(file_name=os.path.join(folder, file_name), data=self._normalizationMatrix)</span>
         <span class="c1"># # exporter.generateInterfileHeader(voxel_size=self.voxelSize, name_subject=1)</span>
         <span class="c1"># exporter.write()</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">generateImage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">listModeBody_read</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">fileBodyData</span>
-        <span class="n">systemInfo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">systemInfo</span>
-        <span class="n">systemInfo</span><span class="o">.</span><span class="n">xRayProducer</span><span class="o">.</span><span class="n">setFocalSpotInitialPositionWKSystem</span><span class="p">([</span><span class="mf">12.55</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-        <span class="n">systemInfo</span><span class="o">.</span><span class="n">sourcePositionAfterMovement</span><span class="p">(</span><span class="n">listModeBody_read</span><span class="p">[</span><span class="s2">&quot;AXIAL_MOTOR&quot;</span><span class="p">],</span> <span class="n">listModeBody_read</span><span class="p">[</span><span class="s2">&quot;FAN_MOTOR&quot;</span><span class="p">])</span>
 
-        <span class="n">systemInfo</span><span class="o">.</span><span class="n">detectorSideBCoordinatesAfterMovement</span><span class="p">(</span><span class="n">listModeBody_read</span><span class="p">[</span><span class="s2">&quot;AXIAL_MOTOR&quot;</span><span class="p">],</span>
-                                                              <span class="n">listModeBody_read</span><span class="p">[</span><span class="s2">&quot;FAN_MOTOR&quot;</span><span class="p">],</span>
-                                                              <span class="n">listModeBody_read</span><span class="p">[</span><span class="s2">&quot;IDB&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.int32" title="numpy.int32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">np</span><span class="o">.</span><span class="n">int32</span></a><span class="p">))</span> <span class="c1">## ID_A está trocado com ID_B</span>
+        <span class="n">axialMotorData</span> <span class="o">=</span> <span class="n">listModeBody_read</span><span class="p">[</span><span class="s2">&quot;AXIAL_MOTOR&quot;</span><span class="p">]</span>
+        <span class="n">fanMotorData</span> <span class="o">=</span> <span class="n">listModeBody_read</span><span class="p">[</span><span class="s2">&quot;FAN_MOTOR&quot;</span><span class="p">]</span>
+        <span class="n">detectorIdData</span> <span class="o">=</span> <span class="n">listModeBody_read</span><span class="p">[</span><span class="s2">&quot;IDB&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+        <span class="c1">#filter in energy</span>
+
+        <span class="n">systemInfo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">systemInfo</span>
+        <span class="c1"># systemInfo.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 0, 0])</span>
+        <span class="n">systemInfo</span><span class="o">.</span><span class="n">sourcePositionAfterMovement</span><span class="p">(</span><span class="n">axialMotorData</span><span class="p">,</span> <span class="n">fanMotorData</span><span class="p">)</span>
+
+        <span class="n">systemInfo</span><span class="o">.</span><span class="n">detectorSideBCoordinatesAfterMovement</span><span class="p">(</span><span class="n">axialMotorData</span><span class="p">,</span>
+                                                              <span class="n">fanMotorData</span><span class="p">,</span>
+                                                              <span class="n">detectorIdData</span><span class="p">)</span> <span class="c1">## ID_A está trocado com ID_B</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">pointCenterList</span> <span class="o">=</span> <span class="n">systemInfo</span><span class="o">.</span><span class="n">sourceCenter</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">pointCorner1List</span> <span class="o">=</span> <span class="n">systemInfo</span><span class="o">.</span><span class="n">verticesB</span><span class="p">[:,</span> <span class="mi">7</span><span class="p">]</span>   <span class="c1">#Só esta ordem funciona</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">pointCorner2List</span> <span class="o">=</span> <span class="n">systemInfo</span><span class="o">.</span><span class="n">verticesB</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">pointCorner3List</span> <span class="o">=</span> <span class="n">systemInfo</span><span class="o">.</span><span class="n">verticesB</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">pointCorner4List</span> <span class="o">=</span> <span class="n">systemInfo</span><span class="o">.</span><span class="n">verticesB</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span>
-        <span class="n">var_1</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">var_2</span> <span class="o">=</span> <span class="mi">1</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">createVectorialSpace</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">transformIntoPositivePoints</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">amplifyPointsToGPUCoordinateSystem</span><span class="p">()</span>
+        <span class="c1"># self.projector.createVectorialSpace()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">createPlanes</span><span class="p">()</span>
         <span class="c1"># self.projector.setCountsPerPosition(np.ones(systemInfo.sourceCenter.shape[0], dtype=np.int32))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">projector</span><span class="o">.</span><span class="n">setCountsPerPosition</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">fileBodyData</span><span class="o">.</span><span class="n">countsPerGlobalID</span><span class="p">)</span>
         <span class="c1"># self._normalizationM atrix = np.ones_like(self.projector.im_index_z)  # apagar depois</span>
         <span class="c1"># self._normalizationMatrix = self._normalizationMatrix.astype(np.float32)  # apagar depois</span>
         <span class="c1"># self._normalizationMatrix /= np.sum(self._normalizationMatrix)</span>
-        <span class="n">optimizer</span> <span class="o">=</span> <span class="n">GPUSharedMemoryMultipleKernel</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">optimizer</span> <span class="o">=</span> <span class="n">GPUSharedMemoryMultipleKernel</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,)</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">normalization_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalizationMatrix</span>
-        <span class="c1"># optimizer.im = np.ascontiguousarray(self._normalizationMatrix * self.projector.countsPerPosition.sum(), dtype=np.float32)</span>
+
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;GPU being use </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">multipleKernel</span><span class="p">()</span>
-
         <span class="bp">self</span><span class="o">.</span><span class="n">lastImageReconstructed</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">im</span>  <span class="c1"># Get the last image reconstructed</span>
+
+        <span class="n">folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filePathOutput</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;wholebody.raw&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fileOutputType</span> <span class="o">==</span> <span class="s2">&quot;raw&quot;</span><span class="p">:</span>
+            <span class="n">rawData</span> <span class="o">=</span> <span class="n">RawDataSetter</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">file_name</span><span class="p">),</span>
+                                    <span class="n">size_file_m</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lastImageReconstructed</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+            <span class="n">rawData</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lastImageReconstructed</span><span class="p">)</span>
         <span class="c1"># generate a folder called whole_body and save the image</span>
         <span class="c1"># folder = os.path.join(os.path.dirname(self.file_path), &quot;whole_body&quot;)</span>
-        <span class="n">folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_path_output</span>
-        <span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;image&quot;</span>
-        <span class="k">if</span> <span class="ow">not</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.exists" title="os.path.exists" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span></a><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
-            <a href="https://docs.python.org/3/library/os.html#os.makedirs" title="os.makedirs" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span></a><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+
         <span class="c1"># exporter = InterfileWriter(file_name=os.path.join(folder, file_name), data=self.lastImageReconstructed,)</span>
         <span class="c1"># # exporter.generateInterfileHeader(voxel_size=self.voxelSize, name_subject=1)</span>
         <span class="c1"># exporter.write()</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">TORFilesReader</span><span class="w"> </span><span class="kn">import</span> <span class="n">ToRFile</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">toor.TORFilesReader</span><span class="w"> </span><span class="kn">import</span> <span class="n">ToRFile</span>
     <span class="c1"># filename = &quot;../../allvalues.npy&quot;</span>
-    <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">filename</span></a> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Ambiente de Trabalho</span><span class="se">\\</span><span class="s2">intelligent_scan-NewGeometries-CT</span><span class="se">\\</span><span class="s2">allvalues.npy&quot;</span>
-    <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a> <span class="o">=</span> <span class="s2">&quot;C:/Users/pedro/OneDrive/Ambiente de Trabalho/Iterations_test&quot;</span>
-    <span class="k">if</span> <span class="ow">not</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.exists" title="os.path.exists" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a><span class="p">):</span>
-        <a href="https://docs.python.org/3/library/os.html#os.makedirs" title="os.makedirs" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a><span class="p">)</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Ambiente de Trabalho</span><span class="se">\\</span><span class="s2">intelligent_scan-NewGeometries-CT</span><span class="se">\\</span><span class="s2">allvalues.npy&quot;</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;E:</span><span class="se">\\</span><span class="s2">easyCT study 1 frontal</span><span class="se">\\</span><span class="s2">simulatedsinogram_matrix.tor&quot;</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">Downloads</span><span class="se">\\</span><span class="s2">simulatedsinogram_matrix.tor&quot;</span>
+    <span class="c1"># output_path = &quot;C:/Users/pedro/OneDrive/Ambiente de Trabalho/Iterations_test&quot;</span>
+    <span class="c1"># if not os.path.exists(output_path):</span>
+    <span class="c1">#     os.makedirs(output_path)</span>
 
-    <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">voxelSize</span></a> <span class="o">=</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">voxelSize</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+    <span class="n">voxelSize</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">energyregion</span> <span class="o">=</span> <span class="s2">&quot;59.6&quot;</span>
     <span class="c1"># voxelSize =[1, 1, 1]</span>
 
+    <span class="c1"># output_path = &quot;C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor&quot;</span>
+    <span class="c1"># output_path = &quot;E:\\simulatedsinogram_matrix.tor&quot;</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Ambiente de Trabalho</span><span class="se">\\</span><span class="s2">all_values.tor&quot;</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">ReconstructionEasyPETCT</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">subsets</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s2">&quot;LM-MLEM&quot;</span><span class="p">,</span>
+                     <span class="n">voxelSize</span><span class="o">=</span><span class="n">voxelSize</span><span class="p">,</span> <span class="n">radial_fov_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energyregion</span><span class="o">=</span><span class="n">energyregion</span><span class="p">,</span> <span class="n">file_path_output</span><span class="o">=</span><span class="n">output_path</span><span class="p">,</span>
+                                <span class="n">algorithm_options</span><span class="o">=</span><span class="p">[</span><span class="mf">0.15</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">saveVariablesTxT</span><span class="p">()</span>
 
-
-    <span class="n">r</span> <span class="o">=</span> <span class="n">ReconstructionEasyPETCT</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">filename</span></a><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">subsets</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s2">&quot;LM-MLEM&quot;</span><span class="p">,</span>
-                     <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">voxelSize</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">voxelSize</span></a><span class="p">,</span> <span class="n">radial_fov_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energyregion</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">file_path_output</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a><span class="p">)</span>
-    <span class="c1"># r.start()</span>
-
-    <span class="c1"># plt.imshow(np.mean(r.lastImageReconstructed, axis=2))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">lastImageReconstructed</span><span class="p">[:,:,</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
     <span class="c1"># plt.show()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.476 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (1 minutes 9.039 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-easypetct-3-easypet-ct-reconstruction-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8b9b85b3f514f6ad3a0f84c8b87651b0/3_EasyPET_CT_reconstruction.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">3_EasyPET_CT_reconstruction.ipynb</span></code></a></p>
@@ -658,7 +1053,7 @@ to download the full example code.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Siemens</p>
+        <p class="prev-next-title">SiemensIntevoBoldSPECTCT</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

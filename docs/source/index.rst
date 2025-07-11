@@ -41,8 +41,8 @@ Getting Started
 
       Browse the module-level API for Infinity’s core components.
 
-   .. grid-item-card:: 🔄 About TOR
-      :link: auto_examples/index
+   .. grid-item-card:: 🔄 Cite
+      :link: references
       :link-type: doc
       :class-card: custom-card
 
@@ -59,13 +59,6 @@ Getting Started
 
    installation
 
-.. toctree::
-   :maxdepth: 1
-   :caption: 🛠 User Guide
-
-   userguide
-
-
 
 .. toctree::
    :maxdepth: 1
@@ -79,6 +72,11 @@ Getting Started
 
    modules
 
+.. toctree::
+   :maxdepth: 1
+   :caption: 🔄 Cite
+
+   references
 
 
 

@@ -1,0 +1,1454 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>toor.GateLink.RootToTor package &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="_static/documentation_options.js?v=38b66d78"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'toor.GateLink.RootToTor';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="toor.GateLink.ToRToGate package" href="toor.GateLink.ToRToGate.html" />
+    <link rel="prev" title="toor.GateLink.GateToTor package" href="toor.GateLink.GateToTor.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Please cite
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Please cite
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="toor.html">toor package</a><input checked class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="toor.AnalyticalReconstruction.html">toor.AnalyticalReconstruction package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.CalibrationWrapper.html">toor.CalibrationWrapper package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.Corrections.html">toor.Corrections package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.CT.html">toor.Corrections.CT package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.CT.Projector.html">toor.Corrections.CT.Projector package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Corrections.Compton.html">toor.Corrections.Compton package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.EasyPET.html">toor.Corrections.EasyPET package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.EasyPET.Normalization.html">toor.Corrections.EasyPET.Normalization package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.EasyPET.SystemFocus.html">toor.Corrections.EasyPET.SystemFocus package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Corrections.General.html">toor.Corrections.General package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.PET.html">toor.Corrections.PET package</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.Attenuation.html">toor.Corrections.PET.Attenuation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.DOI.html">toor.Corrections.PET.DOI package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.DecayCorrection.html">toor.Corrections.PET.DecayCorrection package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.EnergyCorrection.html">toor.Corrections.PET.EnergyCorrection package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.Projector.html">toor.Corrections.PET.Projector package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Designer.html">toor.Designer package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.DetectionLayout.html">toor.DetectionLayout package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Collimators.html">toor.DetectionLayout.Collimators package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Modules.html">toor.DetectionLayout.Modules package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.html">toor.DetectionLayout.Photodetectors package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.Crystals.html">toor.DetectionLayout.Photodetectors.Crystals package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.SiPM.html">toor.DetectionLayout.Photodetectors.SiPM package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.RadiationProducer.html">toor.DetectionLayout.RadiationProducer package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Semicondutors.html">toor.DetectionLayout.Semicondutors package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Device.html">toor.Device package</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="toor.GateLink.html">toor.GateLink package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.GateToTor.html">toor.GateLink.GateToTor package</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">toor.GateLink.RootToTor package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.ToRToGate.html">toor.GateLink.ToRToGate package</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.Geometry.html">toor.Geometry package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.LinearPET.html">toor.Geometry.LinearPET package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.Standard.html">toor.Geometry.Standard package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.easyPETBased.html">toor.Geometry.easyPETBased package</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.ImageReader.html">toor.ImageReader package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.DICOM.html">toor.ImageReader.DICOM package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.Interfile.html">toor.ImageReader.Interfile package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.RawData.html">toor.ImageReader.RawData package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html">toor.Optimizer package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Quantification.html">toor.Quantification package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html">toor.TORFilesReader package</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">API reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="toor.GateLink.html" class="nav-link">toor.GateLink package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">toor.GateLin...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="toor-gatelink-roottotor-package">
+<h1>toor.GateLink.RootToTor package<a class="headerlink" href="#toor-gatelink-roottotor-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-toor.GateLink.RootToTor.addanglestorootfile">
+<span id="toor-gatelink-roottotor-addanglestorootfile-module"></span><h2>toor.GateLink.RootToTor.addanglestorootfile module<a class="headerlink" href="#module-toor.GateLink.RootToTor.addanglestorootfile" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toor.GateLink.RootToTor.addanglestorootfile.</span></span><span class="sig-name descname"><span class="pre">AddMotorInfoToRoot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doubleScannerFormat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_to_macs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/addanglestorootfile.html#AddMotorInfoToRoot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#toor.GateLink.RootToTor.readroot.ReadRootFile" title="toor.GateLink.RootToTor.readroot.ReadRootFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReadRootFile</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot.createMotorArrays">
+<span class="sig-name descname"><span class="pre">createMotorArrays</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/addanglestorootfile.html#AddMotorInfoToRoot.createMotorArrays"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot.createMotorArrays" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot.readMotorFiles">
+<span class="sig-name descname"><span class="pre">readMotorFiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/addanglestorootfile.html#AddMotorInfoToRoot.readMotorFiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot.readMotorFiles" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot.saveMotorArraysIntoRoot">
+<span class="sig-name descname"><span class="pre">saveMotorArraysIntoRoot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array_keys</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/addanglestorootfile.html#AddMotorInfoToRoot.saveMotorArraysIntoRoot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot.saveMotorArraysIntoRoot" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toor.GateLink.RootToTor.findcoincidencesRoot2Numpy">
+<span id="toor-gatelink-roottotor-findcoincidencesroot2numpy-module"></span><h2>toor.GateLink.RootToTor.findcoincidencesRoot2Numpy module<a class="headerlink" href="#module-toor.GateLink.RootToTor.findcoincidencesRoot2Numpy" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.</span></span><span class="sig-name descname"><span class="pre">GenerateCoincidencesAndAnhnilationsPositions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'time_diff'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coincidenceWindow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/findcoincidencesRoot2Numpy.html#GenerateCoincidencesAndAnhnilationsPositions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#toor.GateLink.RootToTor.readroot.ReadRootFile" title="toor.GateLink.RootToTor.readroot.ReadRootFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReadRootFile</span></code></a></p>
+<p>This class is used to generate the coincidences and anhnilations positions from the root file data.
+The coincidences algorithm is based on the time of the events.
+It assumed that GATE digitizer is used to join multiple events that occur the same detector.
+For more information about the GATE digitizer, please refer to the GATE documentation.
+:type filename: 
+:param filename: the path to the root file
+:type method: 
+:param method: the method used to generate the coincidences. The options are:</p>
+<blockquote>
+<div><p>SameID: the coincidence is generated when the events have the same ID
+SameTime: the coincidence is generated when the events have the same time</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coincidenceWindow</strong> – the coincidence window in nano seconds</p></li>
+<li><p><strong>doubleScannerFormat</strong> – if the root file returns two arrays for the singles, one for each scanner</p></li>
+<li><p><strong>_filename</strong> – the path to the root file</p></li>
+<li><p><strong>_method</strong> – the method used to generate the coincidences. The options are:
+SameID: the coincidence is generated when the events have the same ID
+SameTime: the coincidence is generated when the events have the same time</p></li>
+<li><p><strong>_coincidenceWindow</strong> – the coincidence window in nano seconds</p></li>
+<li><p><strong>doubleScannerFormat</strong> – if the root file returns two arrays for the singles, one for each scanner</p></li>
+<li><p><strong>_fileBodyData</strong> – the list mode data</p></li>
+<li><p><strong>_coincidences</strong> – the coincidences data</p></li>
+<li><p><strong>_anhnilations</strong> – the anhnilations data</p></li>
+<li><p><strong>_singlesScanner1</strong> – the singles data for the first module</p></li>
+<li><p><strong>_singlesScanner2</strong> – the singles data for the second module</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.findCoincidences">
+<span class="sig-name descname"><span class="pre">findCoincidences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coincidenceWindow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/findcoincidencesRoot2Numpy.html#GenerateCoincidencesAndAnhnilationsPositions.findCoincidences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.findCoincidences" title="Link to this definition">#</a></dt>
+<dd><p>Slower version: This method is used to find the coincidences in the singles data.
+:type coincidenceWindow: 
+:param coincidenceWindow: the coincidence window in nano seconds</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.findCoincidencesBigArrays">
+<span class="sig-name descname"><span class="pre">findCoincidencesBigArrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coincidenceWindow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/findcoincidencesRoot2Numpy.html#GenerateCoincidencesAndAnhnilationsPositions.findCoincidencesBigArrays"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.findCoincidencesBigArrays" title="Link to this definition">#</a></dt>
+<dd><p>This method is used to find the coincidences in the singles data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.findCoincidencesTrueEventID">
+<span class="sig-name descname"><span class="pre">findCoincidencesTrueEventID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/findcoincidencesRoot2Numpy.html#GenerateCoincidencesAndAnhnilationsPositions.findCoincidencesTrueEventID"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.findCoincidencesTrueEventID" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.printCoincidenceStats">
+<span class="sig-name descname"><span class="pre">printCoincidenceStats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/findcoincidencesRoot2Numpy.html#GenerateCoincidencesAndAnhnilationsPositions.printCoincidenceStats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.printCoincidenceStats" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.readCoincidencesNumpyRecordsArray">
+<span class="sig-name descname"><span class="pre">readCoincidencesNumpyRecordsArray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/findcoincidencesRoot2Numpy.html#GenerateCoincidencesAndAnhnilationsPositions.readCoincidencesNumpyRecordsArray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.readCoincidencesNumpyRecordsArray" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.saveCoincidencesAsNumpyRecordsArray">
+<span class="sig-name descname"><span class="pre">saveCoincidencesAsNumpyRecordsArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/findcoincidencesRoot2Numpy.html#GenerateCoincidencesAndAnhnilationsPositions.saveCoincidencesAsNumpyRecordsArray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.saveCoincidencesAsNumpyRecordsArray" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.saveCoincidencesAsRootFile">
+<span class="sig-name descname"><span class="pre">saveCoincidencesAsRootFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/findcoincidencesRoot2Numpy.html#GenerateCoincidencesAndAnhnilationsPositions.saveCoincidencesAsRootFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.saveCoincidencesAsRootFile" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toor.GateLink.RootToTor.readroot">
+<span id="toor-gatelink-roottotor-readroot-module"></span><h2>toor.GateLink.RootToTor.readroot module<a class="headerlink" href="#module-toor.GateLink.RootToTor.readroot" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.readroot.ReadRootFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toor.GateLink.RootToTor.readroot.</span></span><span class="sig-name descname"><span class="pre">ReadRootFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/readroot.html#ReadRootFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.readroot.ReadRootFile" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class to read root files
+:type filename: 
+:param filename: str</p>
+<blockquote>
+<div><p>Path to the root file</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_filename</strong> – str
+Path to the root file</p></li>
+<li><p><strong>_partNumber</strong> – int
+Part number of the root file</p></li>
+<li><p><strong>_singlesScanner1</strong> – ExtractSingles
+ExtractSingles object for the singles of the first scanner</p></li>
+<li><p><strong>_singlesScanner2</strong> – ExtractSingles
+ExtractSingles object for the singles of the second scanner</p></li>
+<li><p><strong>_singles</strong> – ExtractSingles
+ExtractSingles object for the singles of the single scanner</p></li>
+<li><p><strong>_keysUsed</strong> – list
+List of the keys used to create the singles</p></li>
+<li><p><strong>_doubleScannerFormat</strong> – bool
+True if the root file is in double scanner format</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.readroot.ReadRootFile.doubleScannerFormat">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">doubleScannerFormat</span></span><a class="headerlink" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.doubleScannerFormat" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.readroot.ReadRootFile.partNumber">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">partNumber</span></span><a class="headerlink" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.partNumber" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.readroot.ReadRootFile.readRoot">
+<span class="sig-name descname"><span class="pre">readRoot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/readroot.html#ReadRootFile.readRoot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.readRoot" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.readroot.ReadRootFile.setArraysToConvert">
+<span class="sig-name descname"><span class="pre">setArraysToConvert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/readroot.html#ReadRootFile.setArraysToConvert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.setArraysToConvert" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.readroot.ReadRootFile.setDoubleScannerFormat">
+<span class="sig-name descname"><span class="pre">setDoubleScannerFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/readroot.html#ReadRootFile.setDoubleScannerFormat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.setDoubleScannerFormat" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.readroot.ReadRootFile.setPartNumber">
+<span class="sig-name descname"><span class="pre">setPartNumber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partNumber</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/readroot.html#ReadRootFile.setPartNumber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.setPartNumber" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.readroot.ReadRootFile.singles">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">singles</span></span><a class="headerlink" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.singles" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.readroot.ReadRootFile.singlesScanner1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">singlesScanner1</span></span><a class="headerlink" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.singlesScanner1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.readroot.ReadRootFile.singlesScanner2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">singlesScanner2</span></span><a class="headerlink" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.singlesScanner2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="toor-gatelink-roottotor-recreatedata-module">
+<h2>toor.GateLink.RootToTor.recreatedata module<a class="headerlink" href="#toor-gatelink-roottotor-recreatedata-module" title="Link to this heading">#</a></h2>
+</section>
+<section id="toor-gatelink-roottotor-roottotor-module">
+<h2>toor.GateLink.RootToTor.rootToTor module<a class="headerlink" href="#toor-gatelink-roottotor-roottotor-module" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-toor.GateLink.RootToTor.rootjoiner">
+<span id="toor-gatelink-roottotor-rootjoiner-module"></span><h2>toor.GateLink.RootToTor.rootjoiner module<a class="headerlink" href="#module-toor.GateLink.RootToTor.rootjoiner" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.rootjoiner.RootJoiner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toor.GateLink.RootToTor.rootjoiner.</span></span><span class="sig-name descname"><span class="pre">RootJoiner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_to_save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tree_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Singles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double_scanner_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/rootjoiner.html#RootJoiner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.rootjoiner.RootJoiner.chooseJustFilteredData">
+<span class="sig-name descname"><span class="pre">chooseJustFilteredData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/rootjoiner.html#RootJoiner.chooseJustFilteredData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner.chooseJustFilteredData" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.rootjoiner.RootJoiner.globalArray">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">globalArray</span></span><a class="headerlink" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner.globalArray" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.rootjoiner.RootJoiner.globalArray_scanner1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">globalArray_scanner1</span></span><a class="headerlink" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner.globalArray_scanner1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.rootjoiner.RootJoiner.globalArray_scanner2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">globalArray_scanner2</span></span><a class="headerlink" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner.globalArray_scanner2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.rootjoiner.RootJoiner.join">
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/rootjoiner.html#RootJoiner.join"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner.join" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toor.GateLink.RootToTor.singlesstruct">
+<span id="toor-gatelink-roottotor-singlesstruct-module"></span><h2>toor.GateLink.RootToTor.singlesstruct module<a class="headerlink" href="#module-toor.GateLink.RootToTor.singlesstruct" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toor.GateLink.RootToTor.singlesstruct.</span></span><span class="sig-name descname"><span class="pre">ExtractSingles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/singlesstruct.html#ExtractSingles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>This class is used to extract the singles data from the root file and to convert into numpy array.
+:type parent: 
+:param parent: the uproot object containing the singles data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_parent</strong> – the uproot object containing the singles data</p></li>
+<li><p><strong>_runID</strong> – the run ID</p></li>
+<li><p><strong>_eventID</strong> – the event ID</p></li>
+<li><p><strong>_sourceID</strong> – the source ID</p></li>
+<li><p><strong>_sourcePosX</strong> – the source position in x</p></li>
+<li><p><strong>_sourcePosY</strong> – the source position in y</p></li>
+<li><p><strong>_sourcePosZ</strong> – the source position in z</p></li>
+<li><p><strong>_globalPosX</strong> – the global position in x</p></li>
+<li><p><strong>_globalPosY</strong> – the global position in y</p></li>
+<li><p><strong>_globalPosZ</strong> – the global position in z</p></li>
+<li><p><strong>_time</strong> – the time</p></li>
+<li><p><strong>_energy</strong> – the energy</p></li>
+<li><p><strong>_baseID</strong> – the base ID</p></li>
+<li><p><strong>_level1ID</strong> – the level 1 ID (moduleID)</p></li>
+<li><p><strong>_level2ID</strong> – the level 2 ID (submoduleID)</p></li>
+<li><p><strong>_level3ID</strong> – the level 3 ID (crystalID</p></li>
+<li><p><strong>_level4ID</strong> – the level 4 ID (pixelID)</p></li>
+<li><p><strong>_level5ID</strong> – the level 5 ID (?)</p></li>
+<li><p><strong>_comptonPhantom</strong> – the compton phantom</p></li>
+<li><p><strong>_comptonCrystal</strong> – the compton crystal</p></li>
+<li><p><strong>_comptonDetector</strong> – the compton detector</p></li>
+<li><p><strong>_comptonWorld</strong> – the compton world</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles._createAllTreeArrays">
+<span class="sig-name descname"><span class="pre">_createAllTreeArrays</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles._createAllTreeArrays" title="Link to this definition">#</a></dt>
+<dd><p>create all the tree arrays from the root file to numpy arrays</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.runID">
+<span class="sig-name descname"><span class="pre">runID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.runID" title="Link to this definition">#</a></dt>
+<dd><p>get the run ID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setRunID">
+<span class="sig-name descname"><span class="pre">setRunID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setRunID" title="Link to this definition">#</a></dt>
+<dd><p>set the run ID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.eventID">
+<span class="sig-name descname"><span class="pre">eventID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.eventID" title="Link to this definition">#</a></dt>
+<dd><p>get the event ID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setEventID">
+<span class="sig-name descname"><span class="pre">setEventID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setEventID" title="Link to this definition">#</a></dt>
+<dd><p>set the event ID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourceID">
+<span class="sig-name descname"><span class="pre">sourceID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourceID" title="Link to this definition">#</a></dt>
+<dd><p>get the source ID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourceID">
+<span class="sig-name descname"><span class="pre">setSourceID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourceID" title="Link to this definition">#</a></dt>
+<dd><p>set the source ID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourcePosX">
+<span class="sig-name descname"><span class="pre">sourcePosX</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourcePosX" title="Link to this definition">#</a></dt>
+<dd><p>get the source position in x</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourcePosX">
+<span class="sig-name descname"><span class="pre">setSourcePosX</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourcePosX" title="Link to this definition">#</a></dt>
+<dd><p>set the source position in x</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourcePosY">
+<span class="sig-name descname"><span class="pre">sourcePosY</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourcePosY" title="Link to this definition">#</a></dt>
+<dd><p>get the source position in y</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourcePosY">
+<span class="sig-name descname"><span class="pre">setSourcePosY</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourcePosY" title="Link to this definition">#</a></dt>
+<dd><p>set the source position in y</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourcePosZ">
+<span class="sig-name descname"><span class="pre">sourcePosZ</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourcePosZ" title="Link to this definition">#</a></dt>
+<dd><p>get the source position in z</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourcePosZ">
+<span class="sig-name descname"><span class="pre">setSourcePosZ</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourcePosZ" title="Link to this definition">#</a></dt>
+<dd><p>set the source position in z</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.globalPosX">
+<span class="sig-name descname"><span class="pre">globalPosX</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.globalPosX" title="Link to this definition">#</a></dt>
+<dd><p>get the global position in x</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setGlobalPosX">
+<span class="sig-name descname"><span class="pre">setGlobalPosX</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setGlobalPosX" title="Link to this definition">#</a></dt>
+<dd><p>set the global position in x</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.globalPosY">
+<span class="sig-name descname"><span class="pre">globalPosY</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.globalPosY" title="Link to this definition">#</a></dt>
+<dd><p>get the global position in y</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setGlobalPosY">
+<span class="sig-name descname"><span class="pre">setGlobalPosY</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setGlobalPosY" title="Link to this definition">#</a></dt>
+<dd><p>set the global position in y</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.globalPosZ">
+<span class="sig-name descname"><span class="pre">globalPosZ</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.globalPosZ" title="Link to this definition">#</a></dt>
+<dd><p>get the global position in z</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setGlobalPosZ">
+<span class="sig-name descname"><span class="pre">setGlobalPosZ</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setGlobalPosZ" title="Link to this definition">#</a></dt>
+<dd><p>set the global position in z</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.time">
+<span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.time" title="Link to this definition">#</a></dt>
+<dd><p>get the time</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setTime">
+<span class="sig-name descname"><span class="pre">setTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setTime" title="Link to this definition">#</a></dt>
+<dd><p>set the time</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.energy">
+<span class="sig-name descname"><span class="pre">energy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.energy" title="Link to this definition">#</a></dt>
+<dd><p>get the energy</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setEnergy">
+<span class="sig-name descname"><span class="pre">setEnergy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setEnergy" title="Link to this definition">#</a></dt>
+<dd><p>set the energy</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.baseID">
+<span class="sig-name descname"><span class="pre">baseID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.baseID" title="Link to this definition">#</a></dt>
+<dd><p>get the base ID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setBaseID">
+<span class="sig-name descname"><span class="pre">setBaseID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setBaseID" title="Link to this definition">#</a></dt>
+<dd><p>set the base ID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level1ID">
+<span class="sig-name descname"><span class="pre">level1ID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level1ID" title="Link to this definition">#</a></dt>
+<dd><p>get the level 1 ID (moduleID)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel1ID">
+<span class="sig-name descname"><span class="pre">setLevel1ID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel1ID" title="Link to this definition">#</a></dt>
+<dd><p>set the level 1 ID (moduleID)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level2ID">
+<span class="sig-name descname"><span class="pre">level2ID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level2ID" title="Link to this definition">#</a></dt>
+<dd><p>get the level 2 ID (submoduleID)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel2ID">
+<span class="sig-name descname"><span class="pre">setLevel2ID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel2ID" title="Link to this definition">#</a></dt>
+<dd><p>set the level 2 ID (submoduleID)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level3ID">
+<span class="sig-name descname"><span class="pre">level3ID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level3ID" title="Link to this definition">#</a></dt>
+<dd><p>get the level 3 ID (crystalID)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel3ID">
+<span class="sig-name descname"><span class="pre">setLevel3ID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel3ID" title="Link to this definition">#</a></dt>
+<dd><p>set the level 3 ID (crystalID)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level4ID">
+<span class="sig-name descname"><span class="pre">level4ID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level4ID" title="Link to this definition">#</a></dt>
+<dd><p>get the level 4 ID (pixelID)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel4ID">
+<span class="sig-name descname"><span class="pre">setLevel4ID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel4ID" title="Link to this definition">#</a></dt>
+<dd><p>set the level 4 ID (pixelID)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level5ID">
+<span class="sig-name descname"><span class="pre">level5ID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level5ID" title="Link to this definition">#</a></dt>
+<dd><p>get the level 5 ID (?)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel5ID">
+<span class="sig-name descname"><span class="pre">setLevel5ID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel5ID" title="Link to this definition">#</a></dt>
+<dd><p>set the level 5 ID (?)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonPhantom">
+<span class="sig-name descname"><span class="pre">comptonPhantom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonPhantom" title="Link to this definition">#</a></dt>
+<dd><p>get the compton phantom</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setComptonPhantom">
+<span class="sig-name descname"><span class="pre">setComptonPhantom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setComptonPhantom" title="Link to this definition">#</a></dt>
+<dd><p>set the compton phantom</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonCrystal">
+<span class="sig-name descname"><span class="pre">comptonCrystal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonCrystal" title="Link to this definition">#</a></dt>
+<dd><p>get the compton crystal</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setComptonCrystal">
+<span class="sig-name descname"><span class="pre">setComptonCrystal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setComptonCrystal" title="Link to this definition">#</a></dt>
+<dd><p>set the compton crystal</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonDetector">
+<span class="sig-name descname"><span class="pre">comptonDetector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonDetector" title="Link to this definition">#</a></dt>
+<dd><p>get the compton detector</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setComptonDetector">
+<span class="sig-name descname"><span class="pre">setComptonDetector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setComptonDetector" title="Link to this definition">#</a></dt>
+<dd><p>set the compton detector</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonWorld">
+<span class="sig-name descname"><span class="pre">comptonWorld</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonWorld" title="Link to this definition">#</a></dt>
+<dd><p>get the compton world</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">baseID</span></span><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">comptonCrystal</span></span><a class="headerlink" href="#id1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">comptonPhantom</span></span><a class="headerlink" href="#id2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id3">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">energy</span></span><a class="headerlink" href="#id3" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id4">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eventID</span></span><a class="headerlink" href="#id4" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id5">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">globalPosX</span></span><a class="headerlink" href="#id5" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id6">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">globalPosY</span></span><a class="headerlink" href="#id6" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id7">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">globalPosZ</span></span><a class="headerlink" href="#id7" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id8">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">level1ID</span></span><a class="headerlink" href="#id8" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id9">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">level2ID</span></span><a class="headerlink" href="#id9" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id10">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">level3ID</span></span><a class="headerlink" href="#id10" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id11">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">level4ID</span></span><a class="headerlink" href="#id11" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id12">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">level5ID</span></span><a class="headerlink" href="#id12" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.singlesstruct.ExtractSingles.parent">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parent</span></span><a class="headerlink" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.parent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id13">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">runID</span></span><a class="headerlink" href="#id13" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id14">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setBaseID</span></span><a class="headerlink" href="#id14" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id15">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setComptonCrystal</span></span><a class="headerlink" href="#id15" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id16">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setComptonPhantom</span></span><a class="headerlink" href="#id16" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id17">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setEnergy</span></span><a class="headerlink" href="#id17" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id18">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setEventID</span></span><a class="headerlink" href="#id18" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id19">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setGlobalPosX</span></span><a class="headerlink" href="#id19" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id20">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setGlobalPosY</span></span><a class="headerlink" href="#id20" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id21">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setGlobalPosZ</span></span><a class="headerlink" href="#id21" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id22">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setLevel1ID</span></span><a class="headerlink" href="#id22" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id23">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setLevel2ID</span></span><a class="headerlink" href="#id23" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id24">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setLevel3ID</span></span><a class="headerlink" href="#id24" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id25">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setLevel4ID</span></span><a class="headerlink" href="#id25" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id26">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setLevel5ID</span></span><a class="headerlink" href="#id26" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id27">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setRunID</span></span><a class="headerlink" href="#id27" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id28">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setSourceID</span></span><a class="headerlink" href="#id28" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id29">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setSourcePosX</span></span><a class="headerlink" href="#id29" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id30">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setSourcePosY</span></span><a class="headerlink" href="#id30" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id31">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setSourcePosZ</span></span><a class="headerlink" href="#id31" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id32">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setTime</span></span><a class="headerlink" href="#id32" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id33">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sourceID</span></span><a class="headerlink" href="#id33" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id34">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sourcePosX</span></span><a class="headerlink" href="#id34" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id35">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sourcePosY</span></span><a class="headerlink" href="#id35" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id36">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sourcePosZ</span></span><a class="headerlink" href="#id36" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id37">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#id37" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toor.GateLink.RootToTor.validation_plots">
+<span id="toor-gatelink-roottotor-validation-plots-module"></span><h2>toor.GateLink.RootToTor.validation_plots module<a class="headerlink" href="#module-toor.GateLink.RootToTor.validation_plots" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.validation_plots.CoincidenceValidationPlots">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toor.GateLink.RootToTor.validation_plots.</span></span><span class="sig-name descname"><span class="pre">CoincidenceValidationPlots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listmode_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/validation_plots.html#CoincidenceValidationPlots"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.validation_plots.CoincidenceValidationPlots" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.GateLink.RootToTor.validation_plots.CoincidenceValidationPlots.generateCharts">
+<span class="sig-name descname"><span class="pre">generateCharts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/GateLink/RootToTor/validation_plots.html#CoincidenceValidationPlots.generateCharts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.GateLink.RootToTor.validation_plots.CoincidenceValidationPlots.generateCharts" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toor.GateLink.RootToTor">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-toor.GateLink.RootToTor" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="toor.GateLink.GateToTor.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">toor.GateLink.GateToTor package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="toor.GateLink.ToRToGate.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">toor.GateLink.ToRToGate package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.GateLink.RootToTor.addanglestorootfile">toor.GateLink.RootToTor.addanglestorootfile module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot"><code class="docutils literal notranslate"><span class="pre">AddMotorInfoToRoot</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot.createMotorArrays"><code class="docutils literal notranslate"><span class="pre">AddMotorInfoToRoot.createMotorArrays()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot.readMotorFiles"><code class="docutils literal notranslate"><span class="pre">AddMotorInfoToRoot.readMotorFiles()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.addanglestorootfile.AddMotorInfoToRoot.saveMotorArraysIntoRoot"><code class="docutils literal notranslate"><span class="pre">AddMotorInfoToRoot.saveMotorArraysIntoRoot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.GateLink.RootToTor.findcoincidencesRoot2Numpy">toor.GateLink.RootToTor.findcoincidencesRoot2Numpy module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions"><code class="docutils literal notranslate"><span class="pre">GenerateCoincidencesAndAnhnilationsPositions</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.findCoincidences"><code class="docutils literal notranslate"><span class="pre">GenerateCoincidencesAndAnhnilationsPositions.findCoincidences()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.findCoincidencesBigArrays"><code class="docutils literal notranslate"><span class="pre">GenerateCoincidencesAndAnhnilationsPositions.findCoincidencesBigArrays()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.findCoincidencesTrueEventID"><code class="docutils literal notranslate"><span class="pre">GenerateCoincidencesAndAnhnilationsPositions.findCoincidencesTrueEventID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.printCoincidenceStats"><code class="docutils literal notranslate"><span class="pre">GenerateCoincidencesAndAnhnilationsPositions.printCoincidenceStats()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.readCoincidencesNumpyRecordsArray"><code class="docutils literal notranslate"><span class="pre">GenerateCoincidencesAndAnhnilationsPositions.readCoincidencesNumpyRecordsArray()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.saveCoincidencesAsNumpyRecordsArray"><code class="docutils literal notranslate"><span class="pre">GenerateCoincidencesAndAnhnilationsPositions.saveCoincidencesAsNumpyRecordsArray()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.findcoincidencesRoot2Numpy.GenerateCoincidencesAndAnhnilationsPositions.saveCoincidencesAsRootFile"><code class="docutils literal notranslate"><span class="pre">GenerateCoincidencesAndAnhnilationsPositions.saveCoincidencesAsRootFile()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.GateLink.RootToTor.readroot">toor.GateLink.RootToTor.readroot module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.readroot.ReadRootFile"><code class="docutils literal notranslate"><span class="pre">ReadRootFile</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.doubleScannerFormat"><code class="docutils literal notranslate"><span class="pre">ReadRootFile.doubleScannerFormat</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.partNumber"><code class="docutils literal notranslate"><span class="pre">ReadRootFile.partNumber</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.readRoot"><code class="docutils literal notranslate"><span class="pre">ReadRootFile.readRoot()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.setArraysToConvert"><code class="docutils literal notranslate"><span class="pre">ReadRootFile.setArraysToConvert()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.setDoubleScannerFormat"><code class="docutils literal notranslate"><span class="pre">ReadRootFile.setDoubleScannerFormat()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.setPartNumber"><code class="docutils literal notranslate"><span class="pre">ReadRootFile.setPartNumber()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.singles"><code class="docutils literal notranslate"><span class="pre">ReadRootFile.singles</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.singlesScanner1"><code class="docutils literal notranslate"><span class="pre">ReadRootFile.singlesScanner1</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.readroot.ReadRootFile.singlesScanner2"><code class="docutils literal notranslate"><span class="pre">ReadRootFile.singlesScanner2</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toor-gatelink-roottotor-recreatedata-module">toor.GateLink.RootToTor.recreatedata module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toor-gatelink-roottotor-roottotor-module">toor.GateLink.RootToTor.rootToTor module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.GateLink.RootToTor.rootjoiner">toor.GateLink.RootToTor.rootjoiner module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner"><code class="docutils literal notranslate"><span class="pre">RootJoiner</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner.chooseJustFilteredData"><code class="docutils literal notranslate"><span class="pre">RootJoiner.chooseJustFilteredData()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner.globalArray"><code class="docutils literal notranslate"><span class="pre">RootJoiner.globalArray</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner.globalArray_scanner1"><code class="docutils literal notranslate"><span class="pre">RootJoiner.globalArray_scanner1</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner.globalArray_scanner2"><code class="docutils literal notranslate"><span class="pre">RootJoiner.globalArray_scanner2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.rootjoiner.RootJoiner.join"><code class="docutils literal notranslate"><span class="pre">RootJoiner.join()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.GateLink.RootToTor.singlesstruct">toor.GateLink.RootToTor.singlesstruct module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles"><code class="docutils literal notranslate"><span class="pre">ExtractSingles</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles._createAllTreeArrays"><code class="docutils literal notranslate"><span class="pre">ExtractSingles._createAllTreeArrays()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.runID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.runID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setRunID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setRunID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.eventID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.eventID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setEventID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setEventID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourceID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.sourceID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourceID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setSourceID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourcePosX"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.sourcePosX()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourcePosX"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setSourcePosX()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourcePosY"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.sourcePosY()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourcePosY"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setSourcePosY()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.sourcePosZ"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.sourcePosZ()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setSourcePosZ"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setSourcePosZ()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.globalPosX"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.globalPosX()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setGlobalPosX"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setGlobalPosX()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.globalPosY"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.globalPosY()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setGlobalPosY"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setGlobalPosY()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.globalPosZ"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.globalPosZ()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setGlobalPosZ"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setGlobalPosZ()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.time"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.time()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setTime"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setTime()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.energy"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.energy()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setEnergy"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setEnergy()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.baseID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.baseID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setBaseID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setBaseID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level1ID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.level1ID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel1ID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setLevel1ID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level2ID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.level2ID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel2ID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setLevel2ID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level3ID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.level3ID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel3ID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setLevel3ID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level4ID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.level4ID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel4ID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setLevel4ID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.level5ID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.level5ID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setLevel5ID"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setLevel5ID()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonPhantom"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.comptonPhantom()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setComptonPhantom"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setComptonPhantom()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonCrystal"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.comptonCrystal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setComptonCrystal"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setComptonCrystal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonDetector"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.comptonDetector()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.setComptonDetector"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setComptonDetector()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.comptonWorld"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.comptonWorld()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.baseID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.comptonCrystal</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.comptonPhantom</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.energy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.eventID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.globalPosX</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.globalPosY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.globalPosZ</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.level1ID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.level2ID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.level3ID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.level4ID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.level5ID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.singlesstruct.ExtractSingles.parent"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.parent</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.runID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setBaseID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setComptonCrystal</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setComptonPhantom</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setEnergy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setEventID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setGlobalPosX</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setGlobalPosY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id21"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setGlobalPosZ</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setLevel1ID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id23"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setLevel2ID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id24"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setLevel3ID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id25"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setLevel4ID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setLevel5ID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setRunID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id28"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setSourceID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id29"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setSourcePosX</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id30"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setSourcePosY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id31"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setSourcePosZ</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id32"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.setTime</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id33"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.sourceID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id34"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.sourcePosX</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id35"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.sourcePosY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id36"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.sourcePosZ</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id37"><code class="docutils literal notranslate"><span class="pre">ExtractSingles.time</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.GateLink.RootToTor.validation_plots">toor.GateLink.RootToTor.validation_plots module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.validation_plots.CoincidenceValidationPlots"><code class="docutils literal notranslate"><span class="pre">CoincidenceValidationPlots</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.GateLink.RootToTor.validation_plots.CoincidenceValidationPlots.generateCharts"><code class="docutils literal notranslate"><span class="pre">CoincidenceValidationPlots.generateCharts()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.GateLink.RootToTor">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

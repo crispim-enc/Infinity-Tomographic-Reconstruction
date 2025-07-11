@@ -30,13 +30,13 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6e65f732" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6e65f732" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
@@ -156,13 +156,6 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../userguide.html">
-                        User Guide
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Examples
@@ -172,7 +165,14 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
-                        API Reference
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../references.html">
+                        Please cite
                       </a>
                     </li>
                 
@@ -276,13 +276,6 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../userguide.html">
-                        User Guide
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Examples
@@ -292,7 +285,14 @@ document.write(`
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
-                        API Reference
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../references.html">
+                        Please cite
                       </a>
                     </li>
                 
@@ -347,8 +347,12 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="3_EasyPET_CT_reconstruction.html">Easy_CT Reconstruction</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../SiemensIntevoBoldSPECTCT/index.html">Siemens</a><input checked class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../SiemensIntevoBoldSPECTCT/index.html">SiemensIntevoBoldSPECTCT</a><input checked class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../SiemensIntevoBoldSPECTCT/newdevice_siemens.html">Siemens Intevo Bold SPECT/CT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../iPET/index.html">iPET</a><input checked class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../iPET/1_Device_creation.html">iPET device creation</a></li>
 </ul>
 </li>
 </ul>
@@ -420,135 +424,49 @@ to download the full example code.</p>
 <span id="sphx-glr-auto-examples-easypetct-2-createtorfile-py"></span><h1>TOR FILE<a class="headerlink" href="#tor-file" title="Link to this heading">#</a></h1>
 <p>This is an example how to create a TOR file for easyPETCT
 The file should be run one time to each new acquisition</p>
-<ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_2_createTORFile_001.png" srcset="../../_images/sphx_glr_2_createTORFile_001.png" alt="2 createTORFile" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_2_createTORFile_002.png" srcset="../../_images/sphx_glr_2_createTORFile_002.png" alt="Configuration Source in front module" class = "sphx-glr-multi-img"/></li>
-</ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2.0.2
-C:\Users\pedro\anaconda3\envs\test_env_spect\lib\site-packages\numpy\__init__.py
-&lt;Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry object at 0x00000241D8FA81C0&gt;
-Field: ENERGYA
-...............................
-Mean: 0.0
-Std: 0.0
-Range: 0.0 to 0.0
-Median: 0.0
-Min diff: None
-Number of unique values: 1
--------------------------------
-
-Field: ENERGYB
-...............................
-Mean: 55.3545
-Std: 13.6874
-Range: 2e-05 to 125.29936
-Median: 59.97403
-Min diff: 0.0001
-Number of unique values: 465749
--------------------------------
-
-Field: IDA
-...............................
-Mean: 0.0
-Std: 0.0
-Range: 0.0 to 0.0
-Median: 0.0
-Min diff: None
-Number of unique values: 1
--------------------------------
-
-Field: IDB
-...............................
-Mean: 15.479
-Std: 8.623
-Range: 0.0 to 31.0
-Median: 15.0
-Min diff: 1.0
-Number of unique values: 32
--------------------------------
-
-Field: AXIAL_MOTOR
-...............................
-Mean: -179.4862
-Std: 104.0901
-Range: -358.20001 to -0.0
-Median: -180.0
-Min diff: 1.8
-Number of unique values: 200
--------------------------------
-
-Field: FAN_MOTOR
-...............................
-Mean: -0.0203
-Std: 32.7272
-Range: -54.0 to 54.0
-Median: 0.0
-Min diff: 0.225
-Number of unique values: 481
--------------------------------
-
-Field: TIME
-...............................
-Mean: 1203.3042
-Std: 694.2908
-Range: 0.00028 to 2404.99293
-Median: 1204.52752
-Min diff: 0.0001
-Number of unique values: 7122705
--------------------------------
-
-Number of events: 8884639
-Number of events per second: 3694.2474519394295
-Number of events per frame per second: [np.float64(3989.3916972420348), np.float64(4357.291575446141), np.float64(3095.0522156673755), np.float64(3489.2407769029724)]
-Number of motors: 2
-Global detector ID not set. Automatically setting is going to run. Note that incomplete data could set a wrong global ID leading to incorrect reconstruction
-Number of motors detected:  2
-AXIAL_MOTOR  step 1.7999999999999545
-AXIAL_MOTOR  range 200
-FAN_MOTOR  step 0.22499999999999432
-FAN_MOTOR  range 481
-IDA  number of detectors 1
-IDB  number of detectors 32
-GlobalID_maximum:  3078399
-GlobalID_minimum:  0
-Expected GlobalID maximum:  3078400
-Reading file: C:\Users\pedro\OneDrive\Ambiente de Trabalho\all_values.tor
-&lt;Geometry.easyPETBased.easyct_parametric_points.EasyCTGeometry object at 0x000002419E5633A0&gt;
-Calculating source position for all events detected...
-</pre></div>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">TORFilesReader</span><span class="w"> </span><span class="kn">import</span> <span class="n">ToRFile</span><span class="p">,</span> <span class="n">AnimalType</span><span class="p">,</span> <span class="n">PhantomType</span><span class="p">,</span> <span class="n">AcquisitionInfo</span><span class="p">,</span> <span class="n">ListModeBody</span><span class="p">,</span> <span class="n">RadioisotopeInfo</span><span class="p">,</span> <span class="n">Technician</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">Device</span><span class="w"> </span><span class="kn">import</span> <span class="n">StoreDeviceInFo</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">Phantoms</span><span class="w"> </span><span class="kn">import</span> <span class="n">NEMAIQ2008NU</span>
 
-<span class="nb">print</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">__version__</span></a><span class="p">)</span>
+<span class="c1"># from toor.StandaloneInitializer.angletoparametricMLEM import output_path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toor.TORFilesReader</span><span class="w"> </span><span class="kn">import</span> <span class="n">ToRFile</span><span class="p">,</span> <span class="n">PhantomType</span><span class="p">,</span> <span class="n">AcquisitionInfo</span><span class="p">,</span> <span class="n">ListModeBody</span><span class="p">,</span> <span class="n">RadioisotopeInfo</span><span class="p">,</span> <span class="n">Technician</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toor.Device</span><span class="w"> </span><span class="kn">import</span> <span class="n">StoreDeviceInFo</span>
+<span class="c1"># from toor.Phantoms import NEMAIQ2008NU</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toor.Corrections.General</span><span class="w"> </span><span class="kn">import</span> <span class="n">DetectorSensitivityResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toor.CalibrationWrapper</span><span class="w"> </span><span class="kn">import</span> <span class="n">CalibrationWrapper</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">toor.EasyPETLinkInitializer.EasyPETDataReader</span><span class="w"> </span><span class="kn">import</span> <span class="n">binary_data</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
 
-
 <span class="c1"># filename = &quot;../../allvalues.npy&quot;</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">filename</span></a> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Ambiente de Trabalho</span><span class="se">\\</span><span class="s2">intelligent_scan-NewGeometries-CT</span><span class="se">\\</span><span class="s2">allvalues.npy&quot;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">regina.oliveira</span><span class="se">\\</span><span class="s2">PycharmProjects</span><span class="se">\\</span><span class="s2">EasyPETCT</span><span class="se">\\</span><span class="s2">listmodes</span><span class="se">\\</span><span class="s2">Am_Na.npy&quot;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">Pedro</span><span class="se">\\</span><span class="s2">listmode_wirephantom.npy&quot;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;E:</span><span class="se">\\</span><span class="s2">simulatedsinogram_matrix.npy&quot;</span>
+<span class="c1"># filename = &quot;D:\\Pedro\\sensitivity_sim\\listmode_sensitivity_sim.npy&quot;</span>
+<span class="c1"># filename = &quot;C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\listmodes\\listmode_sensitivity.npy&quot;</span>
 <span class="c1"># filename = &quot;C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1.npy&quot;</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Ambiente de Trabalho</span><span class="se">\\</span><span class="s2">all_values.tor&quot;</span>
+<span class="c1"># output_path = &quot;C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\all_values.tor&quot;</span>
 <span class="c1"># output_path = &quot;C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1 (1).tor&quot;</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">regina.oliveira</span><span class="se">\\</span><span class="s2">PycharmProjects</span><span class="se">\\</span><span class="s2">EasyPETCT</span><span class="se">\\</span><span class="s2">listmodes</span><span class="se">\\</span><span class="s2">listmode_24Mar2025-17h54m00s.tor&quot;</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">Pedro</span><span class="se">\\</span><span class="s2">listmode_wirephantom.tor&quot;</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;E:</span><span class="se">\\</span><span class="s2">simulatedsinogram_matrix.tor&quot;</span>
+<span class="c1"># output_path = &quot;E:\\sensitivity_sim.tor&quot;</span>
+<span class="c1"># output_path = &quot;C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\listmodes\\listmode_sensitivity.tor&quot;</span>
 <span class="c1">#</span>
 <span class="c1"># if not os.path.exists(output_path):</span>
 <span class="c1">#     os.makedirs(output_path)</span>
 
 
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">device_path</span></a> <span class="o">=</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">pedro</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Documentos</span><span class="se">\\</span><span class="s2">GitHub</span><span class="se">\\</span><span class="s2">Infinity-Tomographic-Reconstruction</span><span class="se">\\</span><span class="s2">configurations</span><span class="se">\\</span><span class="s2">08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT&quot;</span>
+<span class="c1"># device_path = &quot;C:\\Users\\regina.oliveira\\PycharmProjects\\EasyPETCT\\.venv\\Lib\\site-packages\\configurations\\fda0f3b2-a0ae-470d-b30a-40e85b741c13_EasyCT&quot;</span>
+<span class="n">device_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\pedro\OneDrive\Documentos\GitHub\Infinity-Tomographic-Reconstruction\configurations\b4593ba9-7193-43c8-abed-7a07eeeabb8d_EasyCT_simulation_16_2&quot;</span>
+<span class="n">device_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\pedro\OneDrive\Documentos\GitHub\Infinity-Tomographic-Reconstruction\configurations\5433bf80-06b5-468f-9692-674f4b007605_EasyCT_simulation_16_2_special&quot;</span>
 
-<span class="n">getDevice</span> <span class="o">=</span> <span class="n">StoreDeviceInFo</span><span class="p">(</span><span class="n">device_directory</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">device_path</span></a><span class="p">)</span>
+<span class="n">getDevice</span> <span class="o">=</span> <span class="n">StoreDeviceInFo</span><span class="p">(</span><span class="n">device_directory</span><span class="o">=</span><span class="n">device_path</span><span class="p">)</span>
 <span class="n">newDevice</span> <span class="o">=</span> <span class="n">getDevice</span><span class="o">.</span><span class="n">readDeviceFromDirectory</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">newDevice</span><span class="p">)</span>
-<span class="c1">#-----------------------------------------</span>
+<span class="c1"># -----------------------------------------</span>
 <span class="c1"># create listMode</span>
 <span class="c1"># IF Animal</span>
 <span class="c1"># subject = AnimalType()</span>
@@ -557,24 +475,23 @@ Calculating source position for all events detected...
 
 <span class="c1"># IF Phantom</span>
 <span class="n">subject</span> <span class="o">=</span> <span class="n">PhantomType</span><span class="p">()</span>
-<span class="n">subject</span><span class="o">.</span><span class="n">setPhantomName</span><span class="p">(</span><span class="s2">&quot;NEMA IQ 2008 NU&quot;</span><span class="p">)</span>
-<span class="n">subject</span><span class="o">.</span><span class="n">setPhantomPurpose</span><span class="p">(</span><span class="s2">&quot;Calibration&quot;</span><span class="p">)</span>
-<span class="n">subject</span><span class="o">.</span><span class="n">setPhantomDescription</span><span class="p">(</span><span class="s2">&quot;NEMA IQ 2008 NU phantom for calibration&quot;</span><span class="p">)</span>
-<span class="n">subject</span><span class="o">.</span><span class="n">setDigitalPhantomCopy</span><span class="p">(</span><span class="n">NEMAIQ2008NU</span><span class="p">())</span>
+<span class="n">subject</span><span class="o">.</span><span class="n">setPhantomName</span><span class="p">(</span><span class="s2">&quot;Na-22 source&quot;</span><span class="p">)</span>
+<span class="n">subject</span><span class="o">.</span><span class="n">setPhantomPurpose</span><span class="p">(</span><span class="s2">&quot;CT scan&quot;</span><span class="p">)</span>
+<span class="n">subject</span><span class="o">.</span><span class="n">setPhantomDescription</span><span class="p">(</span><span class="s2">&quot;CT scan of the Na-22 point source&quot;</span><span class="p">)</span>
+<span class="c1"># subject.setDigitalPhantomCopy(NEMAIQ2008NU())</span>
 
 <span class="c1"># If PET/SPECT/COMPTON</span>
 <span class="n">radioisotope</span> <span class="o">=</span> <span class="n">RadioisotopeInfo</span><span class="p">()</span>
-<span class="n">radioisotope</span><span class="o">.</span><span class="n">setTracers</span><span class="p">([</span><span class="s2">&quot;18F&quot;</span><span class="p">])</span>
-<span class="n">radioisotope</span><span class="o">.</span><span class="n">setHalfLifes</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="mf">109.771</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span> <span class="p">])</span>
+<span class="n">radioisotope</span><span class="o">.</span><span class="n">setTracers</span><span class="p">([</span><span class="s2">&quot;Na22&quot;</span><span class="p">])</span>
+<span class="n">radioisotope</span><span class="o">.</span><span class="n">setHalfLifes</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="mf">2.60</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">3600</span><span class="p">)])</span>
 <span class="n">radioisotope</span><span class="o">.</span><span class="n">setDecayTypes</span><span class="p">([</span><span class="s2">&quot;BetaPlus&quot;</span><span class="p">])</span>
 <span class="n">radioisotope</span><span class="o">.</span><span class="n">setDecayEnergies</span><span class="p">([</span><span class="mi">511</span><span class="p">])</span>
 
 <span class="c1"># Tecnhician</span>
 <span class="n">tecnhician</span> <span class="o">=</span> <span class="n">Technician</span><span class="p">()</span>
-<span class="n">tecnhician</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="s2">&quot;Pedro Encarnação&quot;</span><span class="p">)</span>
+<span class="n">tecnhician</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="s2">&quot;Regina Oliveira&quot;</span><span class="p">)</span>
 <span class="n">tecnhician</span><span class="o">.</span><span class="n">setRole</span><span class="p">(</span><span class="s2">&quot;Researcher&quot;</span><span class="p">)</span>
 <span class="n">tecnhician</span><span class="o">.</span><span class="n">setOrganization</span><span class="p">(</span><span class="s2">&quot;Universidade de Aveiro&quot;</span><span class="p">)</span>
-
 
 <span class="n">scanHeader</span> <span class="o">=</span> <span class="n">AcquisitionInfo</span><span class="p">()</span>
 <span class="n">scanHeader</span><span class="o">.</span><span class="n">setId</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -583,41 +500,76 @@ Calculating source position for all events detected...
 <span class="n">scanHeader</span><span class="o">.</span><span class="n">setSubject</span><span class="p">(</span><span class="n">subject</span><span class="p">)</span>
 <span class="n">scanHeader</span><span class="o">.</span><span class="n">setTecnhician</span><span class="p">(</span><span class="n">tecnhician</span><span class="p">)</span>
 <span class="c1"># scanHeader.setNumberOfFrames(1)</span>
-<span class="n">scanHeader</span><span class="o">.</span><span class="n">setInstanceUID</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><a href="https://docs.python.org/3/library/uuid.html#uuid.uuid4" title="uuid.uuid4" class="sphx-glr-backref-module-uuid sphx-glr-backref-type-py-function"><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span></a><span class="p">()))</span>
-<span class="n">scanHeader</span><span class="o">.</span><span class="n">setStudyInstanceUID</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><a href="https://docs.python.org/3/library/uuid.html#uuid.uuid4" title="uuid.uuid4" class="sphx-glr-backref-module-uuid sphx-glr-backref-type-py-function"><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span></a><span class="p">()))</span>
-<span class="n">scanHeader</span><span class="o">.</span><span class="n">setFrameOfReferenceUID</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><a href="https://docs.python.org/3/library/uuid.html#uuid.uuid4" title="uuid.uuid4" class="sphx-glr-backref-module-uuid sphx-glr-backref-type-py-function"><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span></a><span class="p">()))</span>
-<span class="n">scanHeader</span><span class="o">.</span><span class="n">setDate</span><span class="p">(</span><a href="https://docs.python.org/3/library/time.html#time.strftime" title="time.strftime" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span><span class="o">.</span><span class="n">strftime</span></a><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">))</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setInstanceUID</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()))</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setStudyInstanceUID</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()))</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setFrameOfReferenceUID</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()))</span>
+<span class="n">scanHeader</span><span class="o">.</span><span class="n">setDate</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">))</span>
 <span class="c1"># IF PET/SPECT/COMPTON</span>
 <span class="c1"># scanHeader.setRadioisotope(radioisotope)</span>
 
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.load.html#numpy.load" title="numpy.load" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">load</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">filename</span></a><span class="p">)</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.copy.html#numpy.copy" title="numpy.copy" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">copy</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span><span class="c1"># invert ID_A and ID_B</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.copy.html#numpy.copy" title="numpy.copy" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">copy</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">1000</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">listmode</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">listmode</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">listmode</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># invert ID_A and ID_B</span>
+<span class="n">listmode</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">listmode</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">listmode</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="n">listmode</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">even_mask</span> <span class="o">=</span> <span class="n">listmode</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="n">odd_mask</span> <span class="o">=</span> <span class="n">listmode</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span>
+<span class="n">listmode</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">][</span><span class="n">even_mask</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">listmode</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">][</span><span class="n">odd_mask</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
 
 <span class="n">listModeBody</span> <span class="o">=</span> <span class="n">ListModeBody</span><span class="p">()</span>
-<span class="n">listModeBody</span><span class="o">.</span><span class="n">setListmode</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">listmode</span></a><span class="p">)</span>
+<span class="n">listModeBody</span><span class="o">.</span><span class="n">setListmode</span><span class="p">(</span><span class="n">listmode</span><span class="p">)</span>
 <span class="n">listModeBody</span><span class="o">.</span><span class="n">setListmodeFields</span><span class="p">([</span><span class="s2">&quot;ENERGYA&quot;</span><span class="p">,</span> <span class="s2">&quot;ENERGYB&quot;</span><span class="p">,</span> <span class="s2">&quot;IDA&quot;</span><span class="p">,</span> <span class="s2">&quot;IDB&quot;</span><span class="p">,</span> <span class="s2">&quot;AXIAL_MOTOR&quot;</span><span class="p">,</span> <span class="s2">&quot;FAN_MOTOR&quot;</span><span class="p">,</span> <span class="s2">&quot;TIME&quot;</span><span class="p">])</span>
 <span class="n">listModeBody</span><span class="o">.</span><span class="n">setFrameStartIndexes</span><span class="p">(</span><span class="n">scanHeader</span><span class="o">.</span><span class="n">indexesOfFrames</span><span class="p">)</span>
 <span class="n">listModeBody</span><span class="o">.</span><span class="n">generateStatistics</span><span class="p">()</span>
 <span class="n">listModeBody</span><span class="o">.</span><span class="n">printStatistics</span><span class="p">()</span>
 <span class="n">listModeBody</span><span class="o">.</span><span class="n">setGlobalDetectorID</span><span class="p">()</span>
 <span class="n">listModeBody</span><span class="o">.</span><span class="n">setCountsPerGlobalID</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;C:\Users\pedro\OneDrive\Documentos\GitHub\Infinity-Tomographic-Reconstruction\docs\source\examples\EasyPETCT\2_createTORFile.py&quot;</span>, line <span class="m">100</span>, in <span class="n">&lt;module&gt;</span>
+<span class="w">    </span><span class="n">listmode</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+  File <span class="nb">&quot;C:\Users\pedro\anaconda3\envs\test_env_spect\lib\site-packages\numpy\lib\_npyio_impl.py&quot;</span>, line <span class="m">455</span>, in <span class="n">load</span>
+<span class="w">    </span><span class="n">fid</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">fspath</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span><span class="p">))</span>
+<span class="gr">FileNotFoundError</span>: <span class="n">[Errno 2] No such file or directory: &#39;E:\\simulatedsinogram_matrix.npy&#39;</span>
+</pre></div>
+</div>
+<p>Generate detector sensitivity response (It is necessary to create the device one time first then generate the TOR file for the white scan and then generate the new device)</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">calibrations</span> <span class="o">=</span> <span class="n">CalibrationWrapper</span><span class="p">()</span>
+<span class="c1"># file_white_scan = r&quot;C:\Users\regina.oliveira\PycharmProjects\EasyPETCT\listmodes\listmode_whitescan_32x1 (1).tor&quot;</span>
+<span class="c1"># file_white_scan = r&quot;C:\Users\regina.oliveira\PycharmProjects\EasyPETCT\listmodes\listmode_sensitivity.tor&quot;</span>
+<span class="n">file_white_scan</span> <span class="o">=</span> <span class="s2">&quot;E:</span><span class="se">\\</span><span class="s2">sensitivity_sim.tor&quot;</span>
+<span class="c1"># load FILE</span>
+<span class="n">ToRFile_sensitivity</span> <span class="o">=</span> <span class="n">ToRFile</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">file_white_scan</span><span class="p">)</span>
+<span class="n">ToRFile_sensitivity</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span> <span class="mf">59.6</span><span class="p">,</span> <span class="mi">511</span><span class="p">])</span>
+<span class="n">energy_windows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="mi">511</span><span class="p">,</span> <span class="mi">511</span><span class="p">]])</span>
+<span class="c1"># comment this if the resolutionfucntion was not set</span>
+<span class="n">detector_sensitivity</span> <span class="o">=</span> <span class="n">DetectorSensitivityResponse</span><span class="p">(</span><span class="n">use_detector_energy_resolution</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">detector_sensitivity</span><span class="o">.</span><span class="n">setEnergyPeaks</span><span class="p">(</span><span class="n">energies</span><span class="p">)</span>
+<span class="n">detector_sensitivity</span><span class="o">.</span><span class="n">setEnergyWindows</span><span class="p">(</span><span class="n">energyWindows</span><span class="o">=</span><span class="n">energy_windows</span><span class="p">,</span>
+                                      <span class="n">torFile</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># can set manually the energy windows. Put flag to use_detector_energy_resolution to False</span>
+<span class="n">detector_sensitivity</span><span class="o">.</span><span class="n">setDetectorSensitivity</span><span class="p">(</span><span class="n">torFile</span><span class="o">=</span><span class="n">ToRFile_sensitivity</span><span class="p">)</span>
+<span class="c1"># detector_sensitivity.setDetectorSensitivity(generate_uniform=True, fileBodyData=listModeBody)</span>
+<span class="n">calibrations</span><span class="o">.</span><span class="n">setSystemSensitivity</span><span class="p">(</span><span class="n">detector_sensitivity</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">listModeBody</span><span class="p">[</span><span class="s2">&quot;IDB&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">ToRFile_creator</span> <span class="o">=</span> <span class="n">ToRFile</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a><span class="p">)</span>
+<span class="n">ToRFile_creator</span> <span class="o">=</span> <span class="n">ToRFile</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">output_path</span><span class="p">)</span>
 <span class="n">ToRFile_creator</span><span class="o">.</span><span class="n">setSystemInfo</span><span class="p">(</span><span class="n">newDevice</span><span class="p">)</span>
 <span class="n">ToRFile_creator</span><span class="o">.</span><span class="n">setAcquisitionInfo</span><span class="p">(</span><span class="n">scanHeader</span><span class="p">)</span>
+<span class="n">ToRFile_creator</span><span class="o">.</span><span class="n">setCalibrations</span><span class="p">(</span><span class="n">calibrations</span><span class="p">)</span>
 <span class="n">ToRFile_creator</span><span class="o">.</span><span class="n">setfileBodyData</span><span class="p">(</span><span class="n">listModeBody</span><span class="p">)</span>
 <span class="n">ToRFile_creator</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
 
 <span class="c1">#######CHECK TESTS###################</span>
 <span class="c1">#######UNCOMMENT TO CHECK FILE AND GEOMETRY INTEGRATY############</span>
-<span class="n">ToRFile_reader</span> <span class="o">=</span> <span class="n">ToRFile</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">output_path</span></a><span class="p">)</span>
+<span class="n">ToRFile_reader</span> <span class="o">=</span> <span class="n">ToRFile</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">output_path</span><span class="p">)</span>
 <span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">listModeBody_read</span> <span class="o">=</span> <span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">fileBodyData</span>
 
@@ -630,28 +582,28 @@ Calculating source position for all events detected...
 
 <span class="n">deviceFromTOR</span> <span class="o">=</span> <span class="n">ToRFile_reader</span><span class="o">.</span><span class="n">systemInfo</span>
 
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="n">axial_motor_angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
+<span class="n">fan_motor_angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
 <span class="c1"># repeat the fan motor angles for each axial motor angle</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.repeat.html#numpy.repeat" title="numpy.repeat" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">repeat</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a><span class="p">))</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.tile.html#numpy.tile" title="numpy.tile" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">tile</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a><span class="p">)</span> <span class="o">//</span> <span class="nb">len</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a><span class="p">))</span>
+<span class="n">fan_motor_angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">fan_motor_angles</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axial_motor_angles</span><span class="p">))</span>
+<span class="n">axial_motor_angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">axial_motor_angles</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fan_motor_angles</span><span class="p">)</span> <span class="o">//</span> <span class="nb">len</span><span class="p">(</span><span class="n">axial_motor_angles</span><span class="p">))</span>
 
-<span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">sourcePositionAfterMovement</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axial_motor_angles</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a><span class="p">)</span>
+<span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">sourcePositionAfterMovement</span><span class="p">(</span><span class="n">axial_motor_angles</span><span class="p">,</span> <span class="n">fan_motor_angles</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">originSystemWZ</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">originSystemWZ</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Origin Fan Motor&#39;</span><span class="p">)</span>
 <span class="c1"># plot source center</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">sourceCenter</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">sourceCenter</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Source Center&#39;</span><span class="p">)</span>
 <span class="c1"># plot a line from the origin to the source center at fan motor angle 0</span>
 <span class="c1"># testSourceDistance(deviceFromTOR.xRayProducer.focalSpotInitialPositionWKSystem, deviceFromTOR.sourceCenter,</span>
 <span class="c1">#                    deviceFromTOR.originSystemWZ.T)</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">index_fan_motor_angle_0</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.where.html#numpy.where" title="numpy.where" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">where</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fan_motor_angles</span></a> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">source_center_fan_motor_angle_0</span></a> <span class="o">=</span> <span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">sourceCenter</span><span class="p">[</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">index_fan_motor_angle_0</span></a><span class="p">]</span>
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">origin_fan_motor_angle_0</span></a> <span class="o">=</span> <span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">originSystemWZ</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">index_fan_motor_angle_0</span></a><span class="p">]</span>
+<span class="n">index_fan_motor_angle_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">fan_motor_angles</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">source_center_fan_motor_angle_0</span> <span class="o">=</span> <span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">sourceCenter</span><span class="p">[</span><span class="n">index_fan_motor_angle_0</span><span class="p">]</span>
+<span class="n">origin_fan_motor_angle_0</span> <span class="o">=</span> <span class="n">deviceFromTOR</span><span class="o">.</span><span class="n">originSystemWZ</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">index_fan_motor_angle_0</span><span class="p">]</span>
 
 <span class="c1"># plt.plot(origin_fan_motor_angle_0[0], origin_fan_motor_angle_0[1], &#39;x&#39;)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">source_center_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">source_center_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;gx&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">source_center_fan_motor_angle_0</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">source_center_fan_motor_angle_0</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;gx&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">origin_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">source_center_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">0</span><span class="p">]],</span>
-         <span class="p">[</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">origin_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">source_center_fan_motor_angle_0</span></a><span class="p">[:,</span> <span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">origin_fan_motor_angle_0</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">source_center_fan_motor_angle_0</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]],</span>
+         <span class="p">[</span><span class="n">origin_fan_motor_angle_0</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">source_center_fan_motor_angle_0</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Configuration Source side of detector module A&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Configuration Source in front module&quot;</span><span class="p">)</span>
@@ -666,7 +618,7 @@ Calculating source position for all events detected...
 <span class="c1"># ToRFile_creator.setListMode(listmode)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 9.424 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.013 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-easypetct-2-createtorfile-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/a8faff37c238472d6d8b9c0669116d26/2_createTORFile.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">2_createTORFile.ipynb</span></code></a></p>

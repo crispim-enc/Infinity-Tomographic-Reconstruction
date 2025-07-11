@@ -30,13 +30,13 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6e65f732" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6e65f732" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
@@ -51,7 +51,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="EasyPETCT" href="EasyPETCT/index.html" />
-    <link rel="prev" title="User Guide" href="../userguide.html" />
+    <link rel="prev" title="Installation" href="../installation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,13 +156,6 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../userguide.html">
-                        User Guide
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
                         Examples
@@ -172,7 +165,14 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../modules.html">
-                        API Reference
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../references.html">
+                        Please cite
                       </a>
                     </li>
                 
@@ -280,13 +280,6 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../userguide.html">
-                        User Guide
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
                         Examples
@@ -296,7 +289,14 @@ document.write(`
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../modules.html">
-                        API Reference
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../references.html">
+                        Please cite
                       </a>
                     </li>
                 
@@ -351,8 +351,12 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="EasyPETCT/3_EasyPET_CT_reconstruction.html">Easy_CT Reconstruction</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="SiemensIntevoBoldSPECTCT/index.html">Siemens</a><input checked class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="SiemensIntevoBoldSPECTCT/index.html">SiemensIntevoBoldSPECTCT</a><input checked class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="SiemensIntevoBoldSPECTCT/newdevice_siemens.html">Siemens Intevo Bold SPECT/CT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="iPET/index.html">iPET</a><input checked class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="iPET/1_Device_creation.html">iPET device creation</a></li>
 </ul>
 </li>
 </ul>
@@ -417,6 +421,7 @@ document.write(`
 <ul class="simple">
 <li><p><strong>EasyPETCT</strong>: PET/CT device workflows and reconstructions</p></li>
 <li><p><strong>SiemensIntevoBoldSPECTCT</strong>: Different scanner geometry demonstrations</p></li>
+<li><p><strong>iPET</strong>: SPECT/CT device workflows and reconstructions</p></li>
 </ul>
 <div class="sphx-glr-thumbnails"></div></section>
 <section id="easypetct">
@@ -438,13 +443,21 @@ document.write(`
 <p><a class="reference internal" href="EasyPETCT/3_EasyPET_CT_reconstruction.html#sphx-glr-auto-examples-easypetct-3-easypet-ct-reconstruction-py"><span class="std std-ref">Easy_CT Reconstruction</span></a></p>
   <div class="sphx-glr-thumbnail-title">Easy_CT Reconstruction</div>
 </div></div></section>
-<section id="siemens">
-<h1>Siemens<a class="headerlink" href="#siemens" title="Link to this heading">#</a></h1>
+<section id="siemensintevoboldspectct">
+<h1>SiemensIntevoBoldSPECTCT<a class="headerlink" href="#siemensintevoboldspectct" title="Link to this heading">#</a></h1>
 <p>This section contains usage examples and tutorials for the Infinity Tomographic Reconstruction project.
 Each example demonstrates a specific feature or workflow.</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Siemens Intevo Bold SPECT/CT"><img alt="" src="../_images/sphx_glr_newdevice_siemens_thumb.png" />
 <p><a class="reference internal" href="SiemensIntevoBoldSPECTCT/newdevice_siemens.html#sphx-glr-auto-examples-siemensintevoboldspectct-newdevice-siemens-py"><span class="std std-ref">Siemens Intevo Bold SPECT/CT</span></a></p>
   <div class="sphx-glr-thumbnail-title">Siemens Intevo Bold SPECT/CT</div>
+</div></div></section>
+<section id="ipet">
+<h1>iPET<a class="headerlink" href="#ipet" title="Link to this heading">#</a></h1>
+<p>This section contains usage examples and tutorials for the Infinity Tomographic Reconstruction project.
+Each example demonstrates a specific feature or workflow.</p>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This is an example how to create a new device. In this case a new system for EasyCT The device should be run only one time to create a new device.  A folder with a unique identifier will be created Afterwars the device can be read from the folder and added to the new TOR files created"><img alt="" src="../_images/sphx_glr_1_Device_creation_thumb.png" />
+<p><a class="reference internal" href="iPET/1_Device_creation.html#sphx-glr-auto-examples-ipet-1-device-creation-py"><span class="std std-ref">iPET device creation</span></a></p>
+  <div class="sphx-glr-thumbnail-title">iPET device creation</div>
 </div></div><div class="toctree-wrapper compound">
 </div>
 <div class="sphx-glr-footer sphx-glr-footer-gallery docutils container">
@@ -469,12 +482,12 @@ Each example demonstrates a specific feature or workflow.</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../userguide.html"
+       href="../installation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">User Guide</p>
+        <p class="prev-next-title">Installation</p>
       </div>
     </a>
     <a class="right-next"
@@ -503,7 +516,8 @@ Each example demonstrates a specific feature or workflow.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Examples</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#easypetct">EasyPETCT</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#siemens">Siemens</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#siemensintevoboldspectct">SiemensIntevoBoldSPECTCT</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ipet">iPET</a></li>
 </ul>
 
   </nav></div>

@@ -22,13 +22,15 @@ Afterwars the device can be read from the folder and added to the new TOR files 
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
-from Geometry import EasyCTGeometry
-from DetectionLayout import easyPETModule
-from DetectionLayout import GenericRadiativeSource
-from Designer import DeviceDesignerStandalone
-from Device import StoreDeviceInFo, EnergyResolutionFunction
-from TORFilesReader import ToRFile
-from Corrections import DetectorSensitivityResponse
+
+from toor.Geometry.easyPETBased import EasyCTGeometry
+from toor.DetectionLayout.RadiationProducer import GenericRadiativeSource
+from toor.DetectionLayout.Modules import easyPETModule
+
+from toor.Designer import DeviceDesignerStandalone
+from toor.Device import StoreDeviceInFo, EnergyResolutionFunction
+# from toor.TORFilesReader import ToRFile
+
 
 
 # %% [markdown]
@@ -70,6 +72,7 @@ systemEnergyResolution = EnergyResolutionFunction(p1=fit[0][1], p2=fit[0][2])
 # This object  should entry as  argument in the geometry class type for proper setting. This allows to set multiple
 # cells. Number of modules, rotations and translations are set after the geometry class is created.
 _module = easyPETModule
+# _module = PETModule
 
 # %% [markdown]
 # Setup the x-ray source
@@ -99,7 +102,7 @@ xrayproducer.setMainEmissions({1: {"energy": 59.54, "intensity": 0.36},
 # as well as the initial position of the x-ray source.
 
 newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x_ray_producer=xrayproducer)
-newDevice.setDeviceName("EasyCT")
+newDevice.setDeviceName("EasyCT_simulation_16_2_special")
 newDevice.setDeviceType("CT")
 newDevice.setEnergyResolutionFunction(systemEnergyResolution)  # use to apply energy cuts
 newDevice.setDistanceBetweenMotors(30)  # Distance between the two points of rotation
@@ -107,7 +110,9 @@ newDevice.setDistanceFanMotorToDetectorModulesOnSideA(
     0)  # Distance between the fan motor and the detector modules (closest side)
 newDevice.setDistanceFanMotorToDetectorModulesOnSideB(
     60)  # Distance between the fan motor and the detector modules (far side)
-newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 3, 0])
+newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 3, 0]) # simulation 31 _1
+newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([-2, 0, 0]) # simulation 16_2 e real
+# newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([2.45, 7.7, 0]) # simulation 16_2 special
 newDevice.evaluateInitialSourcePosition()  # evaluate the initial position of the source
 
 # %% [markdown]
@@ -128,7 +133,8 @@ moduleSideA_beta_rotation = np.array([0], dtype=np.float32)
 moduleSideA_sigma_rotation = np.array([0], dtype=np.float32)
 
 for i in range(newDevice.numberOfDetectorModulesSideA):
-    newDevice.detectorModulesSideA[i].model32()
+    # newDevice.detectorModulesSideA[i].model32()
+    newDevice.detectorModulesSideA[i].model16_2()
     newDevice.detectorModulesSideA[i].setXTranslation(moduleSideA_X_translation[i])
     newDevice.detectorModulesSideA[i].setYTranslation(moduleSideA_Y_translation[i])
     newDevice.detectorModulesSideA[i].setZTranslation(moduleSideA_Z_translation[i])
@@ -147,7 +153,8 @@ moduleSideB_beta_rotation = np.array([0], dtype=np.float32)
 moduleSideB_sigma_rotation = np.array([180], dtype=np.float32)
 
 for i in range(newDevice.numberOfDetectorModulesSideB):
-    newDevice.detectorModulesSideB[i].model32()
+    # newDevice.detectorModulesSideB[i].model32()
+    newDevice.detectorModulesSideB[i].model16_2()
     newDevice.detectorModulesSideB[i].setXTranslation(moduleSideB_X_translation[i])
     newDevice.detectorModulesSideB[i].setYTranslation(moduleSideB_Y_translation[i])
     newDevice.detectorModulesSideB[i].setZTranslation(moduleSideB_Z_translation[i])
@@ -165,29 +172,20 @@ for i in range(newDevice.numberOfDetectorModulesSideB):
 newDevice.generateInitialCoordinatesWKSystem()
 newDevice.generateInitialCoordinatesXYSystem()
 
-# %% [markdown]
-# Generate detector sensitivity response (It is necessary to create the device one time first then generate the TOR file for the white scan and then generate the new device)
-file_white_scan = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1 (1).tor"
-# load FILE
-ToRFile_sensitivity = ToRFile(filepath=file_white_scan)
-ToRFile_sensitivity.read()
-
-# comment this if the resolutionfucntion was not set
-detector_sensitivity = DetectorSensitivityResponse(TORFile=ToRFile_sensitivity, use_detector_energy_resolution=True)
-detector_sensitivity.setEnergyPeaks(energies)
-detector_sensitivity.setEnergyWindows()  # can set manually the energy windows. Put flag to use_detector_energy_resolution to False
-detector_sensitivity.setDetectorSensitivity()
 
 # %% [markdown]
 # Save the device in a folder with a unique identifier. The folder will be created in the current directory.
-modifyDevice = False
+modifyDevice = True
 if not modifyDevice:
+    print("Creating new device")
     newDevice.generateDeviceUUID()  # one time only
     newDevice.createDirectory()  # one time only
+    print("Device created in: ", newDevice.deviceDirectory)
     storeDevice = StoreDeviceInFo(device_directory=newDevice.deviceDirectory)  # one time only
     device_path = newDevice.deviceDirectory
 else:
     device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT"
+    device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\5433bf80-06b5-468f-9692-674f4b007605_EasyCT_simulation_16_2_special"
     storeDevice = StoreDeviceInFo(device_directory=device_path)  # one time only
 
 storeDevice.createDeviceInDirectory(object=newDevice)

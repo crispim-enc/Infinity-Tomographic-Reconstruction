@@ -314,11 +314,11 @@ if __name__ == "__main__":
     # output_path = "E:\\simulatedsinogram_matrix.tor"
     output_path = None
 
-    r = ReconstructionEasyPETCT(filename, iterations=25, subsets=1, algorithm="LM-MLEM",
+    r = ReconstructionEasyPETCT(filename, iterations=2, subsets=1, algorithm="LM-MLEM",
                      voxelSize=voxelSize, radial_fov_range=None, energyregion=energyregion, file_path_output=output_path,
                                 algorithm_options=[0.15, 3])
     r.start()
     r.saveVariablesTxT()
 
-    # plt.imshow(np.mean(r.lastImageReconstructed, axis=2))
+    plt.imshow(np.mean(r.lastImageReconstructed[:,:,10:20], axis=2),cmap="gray")
     # plt.show()

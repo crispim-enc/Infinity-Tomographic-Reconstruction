@@ -9,3 +9,4 @@ Sections:
 
 - **EasyPETCT**: PET/CT device workflows and reconstructions
 - **SiemensIntevoBoldSPECTCT**: Different scanner geometry demonstrations
+- **iPET**: SPECT/CT device workflows and reconstructions

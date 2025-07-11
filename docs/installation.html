@@ -30,13 +30,13 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6e65f732" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6e65f732" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
@@ -50,7 +50,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'installation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="User Guide" href="userguide.html" />
+    <link rel="next" title="Examples" href="auto_examples/index.html" />
     <link rel="prev" title="Infinity Tomographic Reconstruction" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -157,13 +157,6 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="userguide.html">
-                        User Guide
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="auto_examples/index.html">
                         Examples
                       </a>
@@ -172,7 +165,14 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="modules.html">
-                        API Reference
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Please cite
                       </a>
                     </li>
                 
@@ -281,13 +281,6 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="userguide.html">
-                        User Guide
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="auto_examples/index.html">
                         Examples
                       </a>
@@ -296,7 +289,14 @@ document.write(`
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="modules.html">
-                        API Reference
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Please cite
                       </a>
                     </li>
                 
@@ -394,6 +394,15 @@ document.write(`
 <p>You can install <strong>Infinity Tomographic Reconstruction</strong> from source using <cite>setuptools</cite>.
 (Still in test)</p>
 <hr class="docutils" />
+<section id="install-directly-from-github">
+<h2>Install Directly from GitHub<a class="headerlink" href="#install-directly-from-github" title="Link to this heading">#</a></h2>
+<p>You can install directly from the GitHub repository without cloning:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/DRIM-UA/infinity-tomographic-reconstruction.git
+</pre></div>
+</div>
+<p>This will fetch the latest <cite>main</cite> branch and install it using <cite>setuptools</cite>.</p>
+</section>
+<hr class="docutils" />
 <section id="install-from-local-source">
 <h2>Install from Local Source<a class="headerlink" href="#install-from-local-source" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
@@ -416,23 +425,26 @@ document.write(`
 <p>This allows live updates to your code without re-installing.</p>
 </section>
 <hr class="docutils" />
-<section id="install-directly-from-github">
-<h2>Install Directly from GitHub<a class="headerlink" href="#install-directly-from-github" title="Link to this heading">#</a></h2>
-<p>You can install directly from the GitHub repository without cloning:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/your-org/infinity-tomographic-reconstruction.git
-</pre></div>
-</div>
-<p>This will fetch the latest <cite>main</cite> branch and install it using <cite>setuptools</cite>.</p>
-</section>
-<hr class="docutils" />
-<section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
+<section id="pre-requirements">
+<h2>Pre-Requirements<a class="headerlink" href="#pre-requirements" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Cuda Toolkit 11.3 or higher,
+Python 3.8, pip, cl compiler.</p>
+</div></blockquote>
 <p>Core dependencies (automatically installed with <cite>pip install</cite>) include:</p>
 <ul class="simple">
 <li><p><cite>numpy&gt;=2.0</cite></p></li>
 <li><p><cite>matplotlib</cite></p></li>
 <li><p><cite>scipy</cite></p></li>
-<li><p><cite>pycuda</cite> (optional, for GPU support)</p></li>
+<li><p><cite>pycuda</cite></p></li>
+<li><p>“vtk”,</p></li>
+<li><p>“pydicom”</p></li>
+<li><p>“pycuda”</p></li>
+<li><p>“json5”,</p></li>
+<li><p>“scikit-image”</p></li>
+<li><p>“pandas”</p></li>
+<li><p>“PyQt6”</p></li>
+<li><p>“uproot”</p></li>
 </ul>
 <p>To install extra dev tools:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>dev<span class="o">]</span>
@@ -463,11 +475,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="userguide.html"
+       href="auto_examples/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">User Guide</p>
+        <p class="prev-next-title">Examples</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -486,9 +498,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-local-source">Install from Local Source</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-directly-from-github">Install Directly from GitHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-from-local-source">Install from Local Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-requirements">Pre-Requirements</a></li>
 </ul>
   </nav></div>
 
