@@ -1,0 +1,860 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>toor.Corrections.General package &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="_static/documentation_options.js?v=38b66d78"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'toor.Corrections.General';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="toor.Corrections.PET package" href="toor.Corrections.PET.html" />
+    <link rel="prev" title="toor.Corrections.EasyPET.SystemFocus package" href="toor.Corrections.EasyPET.SystemFocus.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Please cite
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Please cite
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="toor.html">toor package</a><input checked class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="toor.AnalyticalReconstruction.html">toor.AnalyticalReconstruction package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.CalibrationWrapper.html">toor.CalibrationWrapper package</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="toor.Corrections.html">toor.Corrections package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.CT.html">toor.Corrections.CT package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.CT.Projector.html">toor.Corrections.CT.Projector package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Corrections.Compton.html">toor.Corrections.Compton package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.EasyPET.html">toor.Corrections.EasyPET package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.EasyPET.Normalization.html">toor.Corrections.EasyPET.Normalization package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.EasyPET.SystemFocus.html">toor.Corrections.EasyPET.SystemFocus package</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">toor.Corrections.General package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.PET.html">toor.Corrections.PET package</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.Attenuation.html">toor.Corrections.PET.Attenuation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.DOI.html">toor.Corrections.PET.DOI package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.DecayCorrection.html">toor.Corrections.PET.DecayCorrection package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.EnergyCorrection.html">toor.Corrections.PET.EnergyCorrection package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.Projector.html">toor.Corrections.PET.Projector package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Designer.html">toor.Designer package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.DetectionLayout.html">toor.DetectionLayout package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Collimators.html">toor.DetectionLayout.Collimators package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Modules.html">toor.DetectionLayout.Modules package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.html">toor.DetectionLayout.Photodetectors package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.Crystals.html">toor.DetectionLayout.Photodetectors.Crystals package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.SiPM.html">toor.DetectionLayout.Photodetectors.SiPM package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.RadiationProducer.html">toor.DetectionLayout.RadiationProducer package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Semicondutors.html">toor.DetectionLayout.Semicondutors package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Device.html">toor.Device package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.GateLink.html">toor.GateLink package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.GateToTor.html">toor.GateLink.GateToTor package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.RootToTor.html">toor.GateLink.RootToTor package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.ToRToGate.html">toor.GateLink.ToRToGate package</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.Geometry.html">toor.Geometry package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.LinearPET.html">toor.Geometry.LinearPET package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.Standard.html">toor.Geometry.Standard package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.easyPETBased.html">toor.Geometry.easyPETBased package</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.ImageReader.html">toor.ImageReader package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.DICOM.html">toor.ImageReader.DICOM package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.Interfile.html">toor.ImageReader.Interfile package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.RawData.html">toor.ImageReader.RawData package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html">toor.Optimizer package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Quantification.html">toor.Quantification package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html">toor.TORFilesReader package</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">API reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="toor.Corrections.html" class="nav-link">toor.Corrections package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">toor.Correct...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="toor-corrections-general-package">
+<h1>toor.Corrections.General package<a class="headerlink" href="#toor-corrections-general-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-toor.Corrections.General.EnergyFiltering">
+<span id="toor-corrections-general-energyfiltering-module"></span><h2>toor.Corrections.General.EnergyFiltering module<a class="headerlink" href="#module-toor.Corrections.General.EnergyFiltering" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toor.Corrections.General.EnergyFiltering.</span></span><span class="sig-name descname"><span class="pre">EnergyFiltering</span></span><a class="reference internal" href="_modules/toor/Corrections/General/EnergyFiltering.html#EnergyFiltering"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.allDecayGammas">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">allDecayGammas</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.allDecayGammas" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentBranchID">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentBranchID</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentBranchID" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentHighCutEnergy">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentHighCutEnergy</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentHighCutEnergy" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentLowCutEnergy">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentLowCutEnergy</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentLowCutEnergy" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentNumberOfBranches">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentNumberOfBranches</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentNumberOfBranches" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentNumberOfGammas">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentNumberOfGammas</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentNumberOfGammas" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentPeakEnergy">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentPeakEnergy</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentPeakEnergy" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentPeakID">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentPeakID</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentPeakID" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentPeakName">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentPeakName</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentPeakName" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentProcess">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentProcess</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentProcess" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioIsotopeHalfLife">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentRadioIsotopeHalfLife</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioIsotopeHalfLife" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioisotopeFather">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentRadioisotopeFather</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioisotopeFather" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioisotopeSon">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentRadioisotopeSon</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioisotopeSon" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioisotopeState">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentRadioisotopeState</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioisotopeState" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRatioBranch">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currentRatioBranch</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRatioBranch" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.detectEnergyWindows">
+<span class="sig-name descname"><span class="pre">detectEnergyWindows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radioisotopeParent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Ac-225'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/EnergyFiltering.html#EnergyFiltering.detectEnergyWindows"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.detectEnergyWindows" title="Link to this definition">#</a></dt>
+<dd><p>Detect the energy windows for each gamma peak of the radioisotope
+If the radioisotope son is not stable goes to the rows of the son and join the energy windows of that gammas
+:type radioisotopeParent: 
+:param radioisotopeParent:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.overrideEnergyCut">
+<span class="sig-name descname"><span class="pre">overrideEnergyCut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lowCutEnergy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highCutEnergy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">systemEnergyResolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/EnergyFiltering.html#EnergyFiltering.overrideEnergyCut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.overrideEnergyCut" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.printCurrentInfoCut">
+<span class="sig-name descname"><span class="pre">printCurrentInfoCut</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/EnergyFiltering.html#EnergyFiltering.printCurrentInfoCut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.printCurrentInfoCut" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.setCurrentGammaInformation">
+<span class="sig-name descname"><span class="pre">setCurrentGammaInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/EnergyFiltering.html#EnergyFiltering.setCurrentGammaInformation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.setCurrentGammaInformation" title="Link to this definition">#</a></dt>
+<dd><p>The id is the index of the gamma in the dataframe
+:type id: 
+:param id:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.setEnergyCutToListMode">
+<span class="sig-name descname"><span class="pre">setEnergyCutToListMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listMode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">study_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/EnergyFiltering.html#EnergyFiltering.setEnergyCutToListMode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.setEnergyCutToListMode" title="Link to this definition">#</a></dt>
+<dd><p>Set the energy cut to the list mode
+:type listMode: 
+:param listMode:
+:type save_plot: 
+:param save_plot:
+:return:</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.EnergyFiltering.EnergyFiltering.totalNumberOfGammas">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">totalNumberOfGammas</span></span><a class="headerlink" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.totalNumberOfGammas" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toor.Corrections.General.detector_sensitivity">
+<span id="toor-corrections-general-detector-sensitivity-module"></span><h2>toor.Corrections.General.detector_sensitivity module<a class="headerlink" href="#module-toor.Corrections.General.detector_sensitivity" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toor.Corrections.General.detector_sensitivity.</span></span><span class="sig-name descname"><span class="pre">DetectorSensitivityResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_detector_energy_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/detector_sensitivity.html#DetectorSensitivityResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>This class is used to calculate the detector sensitivity of a system.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.energyPeaks">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">energyPeaks</span></span><a class="headerlink" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.energyPeaks" title="Link to this definition">#</a></dt>
+<dd><p>Get the energy peaks.
+:return: The energy peaks.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.energyWindows">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">energyWindows</span></span><a class="headerlink" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.energyWindows" title="Link to this definition">#</a></dt>
+<dd><p>Get the energy windows.
+:return: The energy windows.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.fields">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fields</span></span><a class="headerlink" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.fields" title="Link to this definition">#</a></dt>
+<dd><p>Get the fields.
+:return: The fields.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.probabilityOfDetection">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">probabilityOfDetection</span></span><a class="headerlink" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.probabilityOfDetection" title="Link to this definition">#</a></dt>
+<dd><p>Get the detector sensitivity.
+:return: The detector sensitivity.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setDetectorSensitivity">
+<span class="sig-name descname"><span class="pre">setDetectorSensitivity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">torFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileBodyData</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate_uniform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/detector_sensitivity.html#DetectorSensitivityResponse.setDetectorSensitivity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setDetectorSensitivity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setEnergyPeaks">
+<span class="sig-name descname"><span class="pre">setEnergyPeaks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energyPeaks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/detector_sensitivity.html#DetectorSensitivityResponse.setEnergyPeaks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setEnergyPeaks" title="Link to this definition">#</a></dt>
+<dd><p>Set the energy peaks for the detector sensitivity.
+:type energyPeaks: 
+:param energyPeaks: The energy peaks to be used for the calculation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setEnergyWindows">
+<span class="sig-name descname"><span class="pre">setEnergyWindows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energyWindows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">torFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/detector_sensitivity.html#DetectorSensitivityResponse.setEnergyWindows"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setEnergyWindows" title="Link to this definition">#</a></dt>
+<dd><p>Set the energy regions for the detector sensitivity.
+:param energyRegions: The energy regions to be used for the calculation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setFields">
+<span class="sig-name descname"><span class="pre">setFields</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/detector_sensitivity.html#DetectorSensitivityResponse.setFields"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setFields" title="Link to this definition">#</a></dt>
+<dd><p>Set the fields for the detector sensitivity.
+:param fields: The fields to be used for the calculation.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toor.Corrections.General.generalprojector">
+<span id="toor-corrections-general-generalprojector-module"></span><h2>toor.Corrections.General.generalprojector module<a class="headerlink" href="#module-toor.Corrections.General.generalprojector" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toor.Corrections.General.generalprojector.GeneralProjector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toor.Corrections.General.generalprojector.</span></span><span class="sig-name descname"><span class="pre">GeneralProjector</span></span><a class="reference internal" href="_modules/toor/Corrections/General/generalprojector.html#GeneralProjector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.generalprojector.GeneralProjector" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.generalprojector.GeneralProjector.amplifyPointsToGPUCoordinateSystem">
+<span class="sig-name descname"><span class="pre">amplifyPointsToGPUCoordinateSystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/generalprojector.html#GeneralProjector.amplifyPointsToGPUCoordinateSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.generalprojector.GeneralProjector.amplifyPointsToGPUCoordinateSystem" title="Link to this definition">#</a></dt>
+<dd><p>Amplify the points to the GPU coordinate system acorddingly to the voxel size
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.generalprojector.GeneralProjector.createVectorialSpace">
+<span class="sig-name descname"><span class="pre">createVectorialSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/generalprojector.html#GeneralProjector.createVectorialSpace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.generalprojector.GeneralProjector.createVectorialSpace" title="Link to this definition">#</a></dt>
+<dd><p>Create the vectorial space
+Needs pointCenterList, pointCorner1List, pointCorner2List, pointCorner3List, pointCorner4List to be
+defined first</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.General.generalprojector.GeneralProjector.transformIntoPositivePoints">
+<span class="sig-name descname"><span class="pre">transformIntoPositivePoints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/General/generalprojector.html#GeneralProjector.transformIntoPositivePoints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.General.generalprojector.GeneralProjector.transformIntoPositivePoints" title="Link to this definition">#</a></dt>
+<dd><p>Transform the points into positive points</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toor.Corrections.General">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-toor.Corrections.General" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="toor.Corrections.EasyPET.SystemFocus.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">toor.Corrections.EasyPET.SystemFocus package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="toor.Corrections.PET.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">toor.Corrections.PET package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.Corrections.General.EnergyFiltering">toor.Corrections.General.EnergyFiltering module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.allDecayGammas"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.allDecayGammas</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentBranchID"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentBranchID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentHighCutEnergy"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentHighCutEnergy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentLowCutEnergy"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentLowCutEnergy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentNumberOfBranches"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentNumberOfBranches</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentNumberOfGammas"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentNumberOfGammas</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentPeakEnergy"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentPeakEnergy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentPeakID"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentPeakID</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentPeakName"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentPeakName</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentProcess"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentProcess</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioIsotopeHalfLife"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentRadioIsotopeHalfLife</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioisotopeFather"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentRadioisotopeFather</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioisotopeSon"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentRadioisotopeSon</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRadioisotopeState"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentRadioisotopeState</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.currentRatioBranch"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.currentRatioBranch</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.detectEnergyWindows"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.detectEnergyWindows()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.overrideEnergyCut"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.overrideEnergyCut()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.printCurrentInfoCut"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.printCurrentInfoCut()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.setCurrentGammaInformation"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.setCurrentGammaInformation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.setEnergyCutToListMode"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.setEnergyCutToListMode()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.EnergyFiltering.EnergyFiltering.totalNumberOfGammas"><code class="docutils literal notranslate"><span class="pre">EnergyFiltering.totalNumberOfGammas</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.Corrections.General.detector_sensitivity">toor.Corrections.General.detector_sensitivity module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse"><code class="docutils literal notranslate"><span class="pre">DetectorSensitivityResponse</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.energyPeaks"><code class="docutils literal notranslate"><span class="pre">DetectorSensitivityResponse.energyPeaks</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.energyWindows"><code class="docutils literal notranslate"><span class="pre">DetectorSensitivityResponse.energyWindows</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.fields"><code class="docutils literal notranslate"><span class="pre">DetectorSensitivityResponse.fields</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.probabilityOfDetection"><code class="docutils literal notranslate"><span class="pre">DetectorSensitivityResponse.probabilityOfDetection</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setDetectorSensitivity"><code class="docutils literal notranslate"><span class="pre">DetectorSensitivityResponse.setDetectorSensitivity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setEnergyPeaks"><code class="docutils literal notranslate"><span class="pre">DetectorSensitivityResponse.setEnergyPeaks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setEnergyWindows"><code class="docutils literal notranslate"><span class="pre">DetectorSensitivityResponse.setEnergyWindows()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.detector_sensitivity.DetectorSensitivityResponse.setFields"><code class="docutils literal notranslate"><span class="pre">DetectorSensitivityResponse.setFields()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.Corrections.General.generalprojector">toor.Corrections.General.generalprojector module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.generalprojector.GeneralProjector"><code class="docutils literal notranslate"><span class="pre">GeneralProjector</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.generalprojector.GeneralProjector.amplifyPointsToGPUCoordinateSystem"><code class="docutils literal notranslate"><span class="pre">GeneralProjector.amplifyPointsToGPUCoordinateSystem()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.generalprojector.GeneralProjector.createVectorialSpace"><code class="docutils literal notranslate"><span class="pre">GeneralProjector.createVectorialSpace()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.General.generalprojector.GeneralProjector.transformIntoPositivePoints"><code class="docutils literal notranslate"><span class="pre">GeneralProjector.transformIntoPositivePoints()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.Corrections.General">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

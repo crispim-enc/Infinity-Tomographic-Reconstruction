@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:13.489** total execution time for 3 files **from auto_examples\EasyPETCT**:
+**01:16.062** total execution time for 3 files **from auto_examples\EasyPETCT**:
 
 .. container::
 
@@ -32,12 +32,12 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
+   * - :ref:`sphx_glr_auto_examples_EasyPETCT_3_EasyPET_CT_reconstruction.py` (``3_EasyPET_CT_reconstruction.py``)
+     - 01:09.039
+     - 0.0
    * - :ref:`sphx_glr_auto_examples_EasyPETCT_1_createNewDevice.py` (``1_createNewDevice.py``)
-     - 00:13.489
+     - 00:07.011
      - 0.0
    * - :ref:`sphx_glr_auto_examples_EasyPETCT_2_createTORFile.py` (``2_createTORFile.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_EasyPETCT_3_EasyPET_CT_reconstruction.py` (``3_EasyPET_CT_reconstruction.py``)
-     - 00:00.000
+     - 00:00.013
      - 0.0

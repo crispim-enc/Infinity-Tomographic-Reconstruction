@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>toor.Corrections.Compton package &#8212; Infinity-Tomographic-Reconstruction 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="_static/documentation_options.js?v=38b66d78"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'toor.Corrections.Compton';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="toor.Corrections.EasyPET package" href="toor.Corrections.EasyPET.html" />
+    <link rel="prev" title="toor.Corrections.CT.Projector package" href="toor.Corrections.CT.Projector.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Infinity-Tomographic-Reconstruction 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Please cite
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Please cite
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/crispim-enc/Infinity-Tomographic-Reconstruction" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="toor.html">toor package</a><input checked class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="toor.AnalyticalReconstruction.html">toor.AnalyticalReconstruction package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.CalibrationWrapper.html">toor.CalibrationWrapper package</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="toor.Corrections.html">toor.Corrections package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.CT.html">toor.Corrections.CT package</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.CT.Projector.html">toor.Corrections.CT.Projector package</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">toor.Corrections.Compton package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.EasyPET.html">toor.Corrections.EasyPET package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.EasyPET.Normalization.html">toor.Corrections.EasyPET.Normalization package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.EasyPET.SystemFocus.html">toor.Corrections.EasyPET.SystemFocus package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Corrections.General.html">toor.Corrections.General package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.Corrections.PET.html">toor.Corrections.PET package</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.Attenuation.html">toor.Corrections.PET.Attenuation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.DOI.html">toor.Corrections.PET.DOI package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.DecayCorrection.html">toor.Corrections.PET.DecayCorrection package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.EnergyCorrection.html">toor.Corrections.PET.EnergyCorrection package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.Corrections.PET.Projector.html">toor.Corrections.PET.Projector package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Designer.html">toor.Designer package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.DetectionLayout.html">toor.DetectionLayout package</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Collimators.html">toor.DetectionLayout.Collimators package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Modules.html">toor.DetectionLayout.Modules package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.html">toor.DetectionLayout.Photodetectors package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.Crystals.html">toor.DetectionLayout.Photodetectors.Crystals package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toor.DetectionLayout.Photodetectors.SiPM.html">toor.DetectionLayout.Photodetectors.SiPM package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.RadiationProducer.html">toor.DetectionLayout.RadiationProducer package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.DetectionLayout.Semicondutors.html">toor.DetectionLayout.Semicondutors package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Device.html">toor.Device package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.GateLink.html">toor.GateLink package</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.GateToTor.html">toor.GateLink.GateToTor package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.RootToTor.html">toor.GateLink.RootToTor package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.GateLink.ToRToGate.html">toor.GateLink.ToRToGate package</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.Geometry.html">toor.Geometry package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.LinearPET.html">toor.Geometry.LinearPET package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.Standard.html">toor.Geometry.Standard package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.Geometry.easyPETBased.html">toor.Geometry.easyPETBased package</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="toor.ImageReader.html">toor.ImageReader package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.DICOM.html">toor.ImageReader.DICOM package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.Interfile.html">toor.ImageReader.Interfile package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toor.ImageReader.RawData.html">toor.ImageReader.RawData package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Optimizer.html">toor.Optimizer package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.Quantification.html">toor.Quantification package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toor.TORFilesReader.html">toor.TORFilesReader package</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">API reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="toor.Corrections.html" class="nav-link">toor.Corrections package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">toor.Correct...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="toor-corrections-compton-package">
+<h1>toor.Corrections.Compton package<a class="headerlink" href="#toor-corrections-compton-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-toor.Corrections.Compton.conicalprojector">
+<span id="toor-corrections-compton-conicalprojector-module"></span><h2>toor.Corrections.Compton.conicalprojector module<a class="headerlink" href="#module-toor.Corrections.Compton.conicalprojector" title="Link to this heading">#</a></h2>
+<p>Brief description of the file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toor.Corrections.Compton.conicalprojector.</span></span><span class="sig-name descname"><span class="pre">ConicalProjector</span></span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>the general quadratic equation of the conic surface in the form:
+Ax^2+By^2+Cz^2+Dxy+Eyz+Fzx+Gx+Hy+Iz+J=0</p>
+<p>The conical projector is a conical surface that is used to project the photons into the detector.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.amplifyPointsToGPUCoordinateSystem">
+<span class="sig-name descname"><span class="pre">amplifyPointsToGPUCoordinateSystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.amplifyPointsToGPUCoordinateSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.amplifyPointsToGPUCoordinateSystem" title="Link to this definition">#</a></dt>
+<dd><p>Amplify the points to the GPU coordinate system acorddingly to the voxel size
+:return:</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.angles">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">angles</span></span><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.angles" title="Link to this definition">#</a></dt>
+<dd><p>Get the angles of the conical projector.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.comptonPointsOfInteraction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">comptonPointsOfInteraction</span></span><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.comptonPointsOfInteraction" title="Link to this definition">#</a></dt>
+<dd><p>Get the compton points of interaction of the conical projector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.createVectorialSpace">
+<span class="sig-name descname"><span class="pre">createVectorialSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.createVectorialSpace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.createVectorialSpace" title="Link to this definition">#</a></dt>
+<dd><p>Create the vectorial space
+Needs pointCenterList, pointCorner1List, pointCorner2List, pointCorner3List, pointCorner4List to be
+defined first</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.energies">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">energies</span></span><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.energies" title="Link to this definition">#</a></dt>
+<dd><p>Get the energies of the conical projector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.normVector">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">normVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.normVector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.normVector" title="Link to this definition">#</a></dt>
+<dd><p>Norm of the vector</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.scatterPointsOfInteraction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scatterPointsOfInteraction</span></span><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.scatterPointsOfInteraction" title="Link to this definition">#</a></dt>
+<dd><p>Get the scatter points of interaction of the conical projector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.setAngles">
+<span class="sig-name descname"><span class="pre">setAngles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.setAngles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setAngles" title="Link to this definition">#</a></dt>
+<dd><p>Set the angles of the conical projector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.setComptonPointsOfInteraction">
+<span class="sig-name descname"><span class="pre">setComptonPointsOfInteraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.setComptonPointsOfInteraction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setComptonPointsOfInteraction" title="Link to this definition">#</a></dt>
+<dd><p>Set the point of interaction of the conical projector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.setConeEquation">
+<span class="sig-name descname"><span class="pre">setConeEquation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.setConeEquation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setConeEquation" title="Link to this definition">#</a></dt>
+<dd><p>Set the conical equation of the outer surface.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.setConicalEquationOut">
+<span class="sig-name descname"><span class="pre">setConicalEquationOut</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.setConicalEquationOut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setConicalEquationOut" title="Link to this definition">#</a></dt>
+<dd><p>Set the conical equation of the outer surface.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.setConicalSurfaceError">
+<span class="sig-name descname"><span class="pre">setConicalSurfaceError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.setConicalSurfaceError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setConicalSurfaceError" title="Link to this definition">#</a></dt>
+<dd><p>Set the error of the conical surface.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.setEnergies">
+<span class="sig-name descname"><span class="pre">setEnergies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energies</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.setEnergies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setEnergies" title="Link to this definition">#</a></dt>
+<dd><p>Set the energies of the conical projector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.setRangeLim">
+<span class="sig-name descname"><span class="pre">setRangeLim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_range_lim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_range_lim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_range_lim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.setRangeLim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setRangeLim" title="Link to this definition">#</a></dt>
+<dd><p>Set the range limit of the conical projector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.setScatterPointsOfInteraction">
+<span class="sig-name descname"><span class="pre">setScatterPointsOfInteraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.setScatterPointsOfInteraction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setScatterPointsOfInteraction" title="Link to this definition">#</a></dt>
+<dd><p>Set the point of interaction of the conical projector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.setVectorComptonScatter">
+<span class="sig-name descname"><span class="pre">setVectorComptonScatter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.setVectorComptonScatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setVectorComptonScatter" title="Link to this definition">#</a></dt>
+<dd><p>Vector of the Compton scatter</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toor.Corrections.Compton.conicalprojector.ConicalProjector.transformIntoPositivePoints">
+<span class="sig-name descname"><span class="pre">transformIntoPositivePoints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/toor/Corrections/Compton/conicalprojector.html#ConicalProjector.transformIntoPositivePoints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.transformIntoPositivePoints" title="Link to this definition">#</a></dt>
+<dd><p>Transform the points into positive points</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toor.Corrections.Compton">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-toor.Corrections.Compton" title="Link to this heading">#</a></h2>
+<p>Brief description of the file.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="toor.Corrections.CT.Projector.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">toor.Corrections.CT.Projector package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="toor.Corrections.EasyPET.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">toor.Corrections.EasyPET package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.Corrections.Compton.conicalprojector">toor.Corrections.Compton.conicalprojector module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector"><code class="docutils literal notranslate"><span class="pre">ConicalProjector</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.amplifyPointsToGPUCoordinateSystem"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.amplifyPointsToGPUCoordinateSystem()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.angles"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.angles</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.comptonPointsOfInteraction"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.comptonPointsOfInteraction</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.createVectorialSpace"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.createVectorialSpace()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.energies"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.energies</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.normVector"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.normVector()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.scatterPointsOfInteraction"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.scatterPointsOfInteraction</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setAngles"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.setAngles()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setComptonPointsOfInteraction"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.setComptonPointsOfInteraction()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setConeEquation"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.setConeEquation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setConicalEquationOut"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.setConicalEquationOut()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setConicalSurfaceError"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.setConicalSurfaceError()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setEnergies"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.setEnergies()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setRangeLim"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.setRangeLim()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setScatterPointsOfInteraction"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.setScatterPointsOfInteraction()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.setVectorComptonScatter"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.setVectorComptonScatter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toor.Corrections.Compton.conicalprojector.ConicalProjector.transformIntoPositivePoints"><code class="docutils literal notranslate"><span class="pre">ConicalProjector.transformIntoPositivePoints()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-toor.Corrections.Compton">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Pedro Encarnação.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

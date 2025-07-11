@@ -31,34 +31,41 @@ Afterwars the device can be read from the folder and added to the new TOR files 
 
 Imports to create the device
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-34
+.. GENERATED FROM PYTHON SOURCE LINES 22-36
 
 .. code-block:: Python
 
     import matplotlib.pyplot as plt
     import numpy as np
     from scipy.optimize import curve_fit
-    from Geometry.easyPETBased import EasyCTGeometry
-    from DetectionLayout.Modules import easyPETModule
-    from DetectionLayout.RadiationProducer import GenericRadiativeSource
-    from Designer import DeviceDesignerStandalone
-    from Device import StoreDeviceInFo, EnergyResolutionFunction
-    from TORFilesReader import ToRFile
-    from Corrections.General import DetectorSensitivityResponse
+
+    from toor.Geometry.easyPETBased import EasyCTGeometry
+    from toor.DetectionLayout.RadiationProducer import GenericRadiativeSource
+    from toor.DetectionLayout.Modules import easyPETModule
+
+    from toor.Designer import DeviceDesignerStandalone
+    from toor.Device import StoreDeviceInFo, EnergyResolutionFunction
+    # from toor.TORFilesReader import ToRFile
 
 
 
 
 
 
+.. image-sg:: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_001.png
+   :alt: 1 createNewDevice
+   :srcset: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_001.png
+   :class: sphx-glr-single-img
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-36
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 37-38
 
 SYSTEM ENERGY RESPONSE FUNCTION (Not mandatory)
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-68
+.. GENERATED FROM PYTHON SOURCE LINES 38-70
 
 .. code-block:: Python
 
@@ -97,9 +104,9 @@ SYSTEM ENERGY RESPONSE FUNCTION (Not mandatory)
 
 
 
-.. image-sg:: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_001.png
+.. image-sg:: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_002.png
    :alt: 1 createNewDevice
-   :srcset: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_001.png
+   :srcset: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_002.png
    :class: sphx-glr-single-img
 
 
@@ -107,23 +114,24 @@ SYSTEM ENERGY RESPONSE FUNCTION (Not mandatory)
 
  .. code-block:: none
 
-    C:\Users\pedro\OneDrive\Documentos\GitHub\Infinity-Tomographic-Reconstruction\docs\source\examples\EasyPETCT\1_createNewDevice.py:49: OptimizeWarning: Covariance of the parameters could not be estimated
+    C:\Users\pedro\OneDrive\Documentos\GitHub\Infinity-Tomographic-Reconstruction\docs\source\examples\EasyPETCT\1_createNewDevice.py:51: OptimizeWarning: Covariance of the parameters could not be estimated
       fit = curve_fit(systemEnergyResponseFunction, energies, energy_resolution)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-72
+.. GENERATED FROM PYTHON SOURCE LINES 71-74
 
 Setup the type of the detector module. You should not call the PETModule class directly.
 This object  should entry as  argument in the geometry class type for proper setting. This allows to set multiple
 cells. Number of modules, rotations and translations are set after the geometry class is created.
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-74
+.. GENERATED FROM PYTHON SOURCE LINES 74-77
 
 .. code-block:: Python
 
     _module = easyPETModule
+    # _module = PETModule
 
 
 
@@ -132,7 +140,7 @@ cells. Number of modules, rotations and translations are set after the geometry 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-81
+.. GENERATED FROM PYTHON SOURCE LINES 78-84
 
 Setup the x-ray source
 
@@ -141,7 +149,7 @@ The source is set to be an Am-241 source with a focal spot diameter of 1 mm, and
 cylinder made of lead with a density of 11.34 g/cm³ and a thickness of 0.5 mm.
 Set x-ray producer object
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-95
+.. GENERATED FROM PYTHON SOURCE LINES 84-98
 
 .. code-block:: Python
 
@@ -166,20 +174,20 @@ Set x-ray producer object
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 96-100
+.. GENERATED FROM PYTHON SOURCE LINES 99-103
 
 The next step  is to choose the geometry type, which is `EasyCTGeometry` in this case. This function is inherited
 from the DualRotationGeometry class which is an Device Object. Here we set the distance between the two points of rotation,
 the distance between the fan motor and the detector modules (closest side) and the distance between the fan motor and the detector modules (far side).
 as well as the initial position of the x-ray source.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-113
+.. GENERATED FROM PYTHON SOURCE LINES 103-118
 
 .. code-block:: Python
 
 
     newDevice = EasyCTGeometry(detector_moduleA=_module, detector_moduleB=_module, x_ray_producer=xrayproducer)
-    newDevice.setDeviceName("EasyCT")
+    newDevice.setDeviceName("EasyCT_simulation_16_2_special")
     newDevice.setDeviceType("CT")
     newDevice.setEnergyResolutionFunction(systemEnergyResolution)  # use to apply energy cuts
     newDevice.setDistanceBetweenMotors(30)  # Distance between the two points of rotation
@@ -187,7 +195,9 @@ as well as the initial position of the x-ray source.
         0)  # Distance between the fan motor and the detector modules (closest side)
     newDevice.setDistanceFanMotorToDetectorModulesOnSideB(
         60)  # Distance between the fan motor and the detector modules (far side)
-    newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 3, 0])
+    newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([12.55, 3, 0]) # simulation 31 _1
+    newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([-2, 0, 0]) # simulation 16_2 e real
+    # newDevice.xRayProducer.setFocalSpotInitialPositionWKSystem([2.45, 7.7, 0]) # simulation 16_2 special
     newDevice.evaluateInitialSourcePosition()  # evaluate the initial position of the source
 
 
@@ -199,12 +209,12 @@ as well as the initial position of the x-ray source.
  .. code-block:: none
 
     Calculating source position for all events detected...
-    Focal spot initial position set to:  [[42.55       2.9999998  0.       ]]
+    Focal spot initial position set to:  [[28.  0.  0.]]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-121
+.. GENERATED FROM PYTHON SOURCE LINES 119-126
 
 Set modules Side A. For each module, should be in the list  the equivalent rotation and translation variables.
 If for example two modules are set, the variables should be in the list as follows:
@@ -214,7 +224,7 @@ If for example two modules are set, the variables should be in the list as follo
   ...
 Very important. The translations are regarding the fan motor center. The rotations are regarding the center of the module.
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-139
+.. GENERATED FROM PYTHON SOURCE LINES 126-145
 
 .. code-block:: Python
 
@@ -228,7 +238,8 @@ Very important. The translations are regarding the fan motor center. The rotatio
     moduleSideA_sigma_rotation = np.array([0], dtype=np.float32)
 
     for i in range(newDevice.numberOfDetectorModulesSideA):
-        newDevice.detectorModulesSideA[i].model32()
+        # newDevice.detectorModulesSideA[i].model32()
+        newDevice.detectorModulesSideA[i].model16_2()
         newDevice.detectorModulesSideA[i].setXTranslation(moduleSideA_X_translation[i])
         newDevice.detectorModulesSideA[i].setYTranslation(moduleSideA_Y_translation[i])
         newDevice.detectorModulesSideA[i].setZTranslation(moduleSideA_Z_translation[i])
@@ -243,11 +254,11 @@ Very important. The translations are regarding the fan motor center. The rotatio
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-141
+.. GENERATED FROM PYTHON SOURCE LINES 146-147
 
 Set modules Side B.
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-158
+.. GENERATED FROM PYTHON SOURCE LINES 147-165
 
 .. code-block:: Python
 
@@ -260,7 +271,8 @@ Set modules Side B.
     moduleSideB_sigma_rotation = np.array([180], dtype=np.float32)
 
     for i in range(newDevice.numberOfDetectorModulesSideB):
-        newDevice.detectorModulesSideB[i].model32()
+        # newDevice.detectorModulesSideB[i].model32()
+        newDevice.detectorModulesSideB[i].model16_2()
         newDevice.detectorModulesSideB[i].setXTranslation(moduleSideB_X_translation[i])
         newDevice.detectorModulesSideB[i].setYTranslation(moduleSideB_Y_translation[i])
         newDevice.detectorModulesSideB[i].setZTranslation(moduleSideB_Z_translation[i])
@@ -275,7 +287,7 @@ Set modules Side B.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 159-165
+.. GENERATED FROM PYTHON SOURCE LINES 166-172
 
 Set the inital coordinates of the system. In both coordinate
 
@@ -284,12 +296,13 @@ Set the inital coordinates of the system. In both coordinate
    :width: 600px
    :align: center
 
-.. GENERATED FROM PYTHON SOURCE LINES 165-168
+.. GENERATED FROM PYTHON SOURCE LINES 172-176
 
 .. code-block:: Python
 
     newDevice.generateInitialCoordinatesWKSystem()
     newDevice.generateInitialCoordinatesXYSystem()
+
 
 
 
@@ -304,59 +317,25 @@ Set the inital coordinates of the system. In both coordinate
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-170
-
-Generate detector sensitivity response (It is necessary to create the device one time first then generate the TOR file for the white scan and then generate the new device)
-
-.. GENERATED FROM PYTHON SOURCE LINES 170-181
-
-.. code-block:: Python
-
-    file_white_scan = "C:\\Users\\pedro\\OneDrive\\Ambiente de Trabalho\\listmode_whitescan_32x1 (1).tor"
-    # load FILE
-    ToRFile_sensitivity = ToRFile(filepath=file_white_scan)
-    ToRFile_sensitivity.read()
-
-    # comment this if the resolutionfucntion was not set
-    detector_sensitivity = DetectorSensitivityResponse(TORFile=ToRFile_sensitivity, use_detector_energy_resolution=True)
-    detector_sensitivity.setEnergyPeaks(energies)
-    detector_sensitivity.setEnergyWindows()  # can set manually the energy windows. Put flag to use_detector_energy_resolution to False
-    detector_sensitivity.setDetectorSensitivity()
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Reading file: C:\Users\pedro\OneDrive\Ambiente de Trabalho\listmode_whitescan_32x1 (1).tor
-    Energy windows:  [[ 10.8  49.2]
-     [ 40.4  78.8]
-     [491.8 530.2]]
-    C:\Users\pedro\anaconda3\envs\test_env_spect\lib\site-packages\numpy\lib\_histograms_impl.py:895: RuntimeWarning: invalid value encountered in divide
-      return n/db/n.sum(), bin_edges
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 182-183
+.. GENERATED FROM PYTHON SOURCE LINES 177-178
 
 Save the device in a folder with a unique identifier. The folder will be created in the current directory.
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-195
+.. GENERATED FROM PYTHON SOURCE LINES 178-193
 
 .. code-block:: Python
 
-    modifyDevice = False
+    modifyDevice = True
     if not modifyDevice:
+        print("Creating new device")
         newDevice.generateDeviceUUID()  # one time only
         newDevice.createDirectory()  # one time only
+        print("Device created in: ", newDevice.deviceDirectory)
         storeDevice = StoreDeviceInFo(device_directory=newDevice.deviceDirectory)  # one time only
         device_path = newDevice.deviceDirectory
     else:
         device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\08d98d7f-a3c1-4cdf-a037-54655c7bdbb7_EasyCT"
+        device_path = "C:\\Users\\pedro\\OneDrive\\Documentos\\GitHub\\Infinity-Tomographic-Reconstruction\\configurations\\5433bf80-06b5-468f-9692-674f4b007605_EasyCT_simulation_16_2_special"
         storeDevice = StoreDeviceInFo(device_directory=device_path)  # one time only
 
     storeDevice.createDeviceInDirectory(object=newDevice)
@@ -374,13 +353,13 @@ Save the device in a folder with a unique identifier. The folder will be created
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 196-199
+.. GENERATED FROM PYTHON SOURCE LINES 194-197
 
 ----------
 TESTS PART
 Design the system at the initial position
 
-.. GENERATED FROM PYTHON SOURCE LINES 199-206
+.. GENERATED FROM PYTHON SOURCE LINES 197-204
 
 .. code-block:: Python
 
@@ -398,18 +377,18 @@ Design the system at the initial position
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 207-211
+.. GENERATED FROM PYTHON SOURCE LINES 205-209
 
 .. image:: ../../images/easyPETCT.png
    :alt: EasyCT Diagram
    :width: 600px
    :align: center
 
-.. GENERATED FROM PYTHON SOURCE LINES 213-214
+.. GENERATED FROM PYTHON SOURCE LINES 211-212
 
 Test some initial positions of the source and the detectors
 
-.. GENERATED FROM PYTHON SOURCE LINES 214-219
+.. GENERATED FROM PYTHON SOURCE LINES 212-217
 
 .. code-block:: Python
 
@@ -425,11 +404,11 @@ Test some initial positions of the source and the detectors
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 220-221
+.. GENERATED FROM PYTHON SOURCE LINES 218-219
 
 Calculate the coordinates for the previous angles
 
-.. GENERATED FROM PYTHON SOURCE LINES 221-253
+.. GENERATED FROM PYTHON SOURCE LINES 219-251
 
 .. code-block:: Python
 
@@ -473,16 +452,16 @@ Calculate the coordinates for the previous angles
 
     *
 
-      .. image-sg:: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_002.png
+      .. image-sg:: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_003.png
          :alt: 1 createNewDevice
-         :srcset: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_002.png
+         :srcset: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_003.png
          :class: sphx-glr-multi-img
 
     *
 
-      .. image-sg:: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_003.png
+      .. image-sg:: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_004.png
          :alt: 1 createNewDevice
-         :srcset: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_003.png
+         :srcset: /auto_examples/EasyPETCT/images/sphx_glr_1_createNewDevice_004.png
          :class: sphx-glr-multi-img
 
 
@@ -500,55 +479,55 @@ Calculate the coordinates for the previous angles
     Vertice 5 calculated for all events...
     Vertice 6 calculated for all events...
     Vertice 7 calculated for all events...
-    [[[ 31.000187    59.999996   -36.48      ]
-      [ 31.00008     90.         -36.48      ]
-      [ 28.999916    90.         -36.48      ]
+    [[[ 29.825       60.         -18.24      ]
+      [ 29.824999    90.         -18.24      ]
+      [ 27.824152    89.99998    -18.24      ]
       ...
-      [ 31.00008     90.         -34.2       ]
-      [ 28.999916    90.         -34.2       ]
-      [ 28.999817    59.999996   -34.2       ]]
+      [ 29.824999    90.         -15.96      ]
+      [ 27.824152    89.99998    -15.96      ]
+      [ 27.823095    59.99993    -15.96      ]]
 
-     [[ 15.436964    58.214413   -36.48      ]
-      [  7.672291    87.19216    -36.48      ]
-      [  5.74028     86.674484   -36.48      ]
+     [[ 14.301821    57.910255   -18.24      ]
+      [  6.5372486   86.88803    -18.24      ]
+      [  4.6045837   86.370155   -18.24      ]
       ...
-      [  7.672291    87.19216    -34.2       ]
-      [  5.74028     86.674484   -34.2       ]
-      [ 13.504755    57.69668    -34.2       ]]
+      [  6.5372486   86.88803    -15.96      ]
+      [  4.6045837   86.370155   -15.96      ]
+      [ 12.368147    57.39206    -15.96      ]]
 
-     [[  0.86618996  52.461613   -36.48      ]
-      [-14.1339035   78.44232    -36.48      ]
-      [-15.8660965   77.442245   -36.48      ]
+     [[ -0.15155411  51.874023   -18.24      ]
+      [-15.151554    77.85478    -18.24      ]
+      [-16.884327    76.85434    -18.24      ]
       ...
-      [-14.1339035   78.44232    -34.2       ]
-      [-15.8660965   77.442245   -34.2       ]
-      [ -0.8661823   51.46143    -34.2       ]]
+      [-15.151554    77.85478    -15.96      ]
+      [-16.884327    76.85434    -15.96      ]
+      [ -1.8852196   50.873013   -15.96      ]]
 
      ...
 
-     [[ -0.86618423 -51.461426    34.2       ]
-      [-15.866093   -77.442245    34.2       ]
-      [-14.1339     -78.44233     34.2       ]
+     [[ -1.8852215  -50.873013    15.96      ]
+      [-16.884327   -76.85435     15.96      ]
+      [-15.151554   -77.85478     15.96      ]
       ...
-      [-15.866093   -77.442245    36.48      ]
-      [-14.1339     -78.44233     36.48      ]
-      [  0.86618614 -52.461613    36.48      ]]
+      [-16.884327   -76.85435     18.24      ]
+      [-15.151554   -77.85478     18.24      ]
+      [ -0.15155602 -51.874023    18.24      ]]
 
-     [[ 13.504753   -57.69668     34.2       ]
-      [  5.740282   -86.674484    34.2       ]
-      [  7.6722927  -87.19216     34.2       ]
+     [[ 12.368145   -57.39206     15.96      ]
+      [  4.6045856  -86.370155    15.96      ]
+      [  6.5372505  -86.88803     15.96      ]
       ...
-      [  5.740282   -86.674484    36.48      ]
-      [  7.6722927  -87.19216     36.48      ]
-      [ 15.436962   -58.214413    36.48      ]]
+      [  4.6045856  -86.370155    18.24      ]
+      [  6.5372505  -86.88803     18.24      ]
+      [ 14.301818   -57.910255    18.24      ]]
 
-     [[ 28.999813   -59.999996    34.2       ]
-      [ 28.99992    -90.          34.2       ]
-      [ 31.000084   -90.          34.2       ]
+     [[ 27.823093   -59.99993     15.96      ]
+      [ 27.824154   -89.99998     15.96      ]
+      [ 29.825      -90.          15.96      ]
       ...
-      [ 28.99992    -90.          36.48      ]
-      [ 31.000084   -90.          36.48      ]
-      [ 31.000183   -59.999996    36.48      ]]]
+      [ 27.824154   -89.99998     18.24      ]
+      [ 29.825      -90.          18.24      ]
+      [ 29.824997   -60.          18.24      ]]]
     Calculating source position for all events detected...
 
 
@@ -557,7 +536,7 @@ Calculate the coordinates for the previous angles
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 13.489 seconds)
+   **Total running time of the script:** (0 minutes 7.011 seconds)
 
 
 .. _sphx_glr_download_auto_examples_EasyPETCT_1_createNewDevice.py:

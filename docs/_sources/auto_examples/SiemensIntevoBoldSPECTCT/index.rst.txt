@@ -2,8 +2,8 @@
 
 .. _sphx_glr_auto_examples_SiemensIntevoBoldSPECTCT:
 
-Siemens
-===============
+SiemensIntevoBoldSPECTCT
+=======================
 
 This section contains usage examples and tutorials for the Infinity Tomographic Reconstruction project.
 Each example demonstrates a specific feature or workflow.

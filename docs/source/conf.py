@@ -48,21 +48,20 @@ extensions = ["sphinx.ext.autodoc", 'sphinx.ext.coverage', 'sphinx.ext.napoleon'
 ]
 # 'examples_dirs': ['examples/EasyPETCT', 'examples/SiemensIntevoBoldSPECTCT'],   # path to your example scripts
 #     'gallery_dirs': ['auto_examples/EasyPETCT', 'auto_examples/SiemensIntevoBoldSPECTCT'],
-sphinx_gallery_conf = [{
+sphinx_gallery_conf = {
     'examples_dirs': 'examples',   # path to your example scripts
     'gallery_dirs': 'auto_examples',  # where to save gallery generated pages
     'filename_pattern': r'.*\.py$',
 'within_subsection_order': FileNameSortKey,
    'backreferences_dir' :None,
-},
-    {
-        'examples_dirs': 'userguide',
-        'gallery_dirs': 'auto_userguide',
-        'filename_pattern': r'.*\.py$',
-        'within_subsection_order': FileNameSortKey,
-
-    }
-    ]
+}
+    # {
+    #     'examples_dirs': 'userguide',
+    #     'gallery_dirs': 'auto_userguide',
+    #     'filename_pattern': r'.*\.py$',
+    #     'within_subsection_order': FileNameSortKey,
+    # }
+    # ]
 # regex to filter which files to include
     # Optional:
     # 'backreferences_dir': 'generated',

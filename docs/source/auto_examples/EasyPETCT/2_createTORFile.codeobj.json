@@ -3,91 +3,156 @@
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "AcquisitionInfo"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "AcquisitionInfo"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo"
+  }
+ ],
+ "CalibrationWrapper": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.CalibrationWrapper.calibration_wrapper",
+   "module_short": "toor.CalibrationWrapper",
+   "name": "CalibrationWrapper"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.CalibrationWrapper",
+   "module_short": "toor.CalibrationWrapper",
+   "name": "CalibrationWrapper"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "CalibrationWrapper"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.CalibrationWrapper",
+   "module_short": "toor.CalibrationWrapper",
+   "name": "CalibrationWrapper"
+  }
+ ],
+ "DetectorSensitivityResponse": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Corrections.General.detector_sensitivity",
+   "module_short": "toor.Corrections.General",
+   "name": "DetectorSensitivityResponse"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Corrections.General",
+   "module_short": "toor.Corrections.General",
+   "name": "DetectorSensitivityResponse"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor.Corrections",
+   "module_short": "toor.Corrections",
+   "name": "DetectorSensitivityResponse"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
+   "name": "DetectorSensitivityResponse"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor.Corrections.General",
+   "module_short": "toor.Corrections.General",
+   "name": "DetectorSensitivityResponse"
   }
  ],
  "ListModeBody": [
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_body",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_body",
+   "module_short": "toor.TORFilesReader",
    "name": "ListModeBody"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "ListModeBody"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "ListModeBody"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
    "name": "ListModeBody"
-  }
- ],
- "NEMAIQ2008NU": [
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "Phantoms.NEMAIQgeometry",
-   "module_short": "Phantoms",
-   "name": "NEMAIQ2008NU"
-  },
-  {
-   "is_class": true,
-   "is_explicit": false,
-   "module": "Phantoms",
-   "module_short": "Phantoms",
-   "name": "NEMAIQ2008NU"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Phantoms",
-   "module_short": "Phantoms",
-   "name": "NEMAIQ2008NU"
   }
  ],
  "PhantomType": [
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader.subject_type",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.subject_type",
+   "module_short": "toor.TORFilesReader",
    "name": "PhantomType"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "PhantomType"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "PhantomType"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
    "name": "PhantomType"
   }
  ],
@@ -95,22 +160,29 @@
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader.Radioisotope",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.Radioisotope",
+   "module_short": "toor.TORFilesReader",
    "name": "RadioisotopeInfo"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "RadioisotopeInfo"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "RadioisotopeInfo"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
    "name": "RadioisotopeInfo"
   }
  ],
@@ -118,22 +190,29 @@
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Device.storedeviceInfo",
-   "module_short": "Device",
+   "module": "toor.Device.storedeviceInfo",
+   "module_short": "toor.Device",
    "name": "StoreDeviceInFo"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "StoreDeviceInFo"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
    "name": "StoreDeviceInFo"
   }
  ],
@@ -141,22 +220,29 @@
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader.technician",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.technician",
+   "module_short": "toor.TORFilesReader",
    "name": "Technician"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "Technician"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Technician"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
    "name": "Technician"
   }
  ],
@@ -164,431 +250,30 @@
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader.torfiles",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.torfiles",
+   "module_short": "toor.TORFilesReader",
    "name": "ToRFile"
   },
   {
    "is_class": true,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "ToRFile"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "ToRFile"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
    "name": "ToRFile"
-  }
- ],
- "ToRFile_creator": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.torfiles",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile"
-  }
- ],
- "ToRFile_creator.setAcquisitionInfo": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.torfiles",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.setAcquisitionInfo"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.setAcquisitionInfo"
-  }
- ],
- "ToRFile_creator.setSystemInfo": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.torfiles",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.setSystemInfo"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.setSystemInfo"
-  }
- ],
- "ToRFile_creator.setfileBodyData": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.torfiles",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.setfileBodyData"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.setfileBodyData"
-  }
- ],
- "ToRFile_creator.write": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.torfiles",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.write"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.write"
-  }
- ],
- "ToRFile_reader": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.torfiles",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile"
-  }
- ],
- "ToRFile_reader.fileBodyData": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.torfiles",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.fileBodyData"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.fileBodyData"
-  }
- ],
- "ToRFile_reader.read": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.torfiles",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.read"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.read"
-  }
- ],
- "ToRFile_reader.systemInfo": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.torfiles",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.systemInfo"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ToRFile.systemInfo"
-  }
- ],
- "axial_motor_angles": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "ndarray"
-  }
- ],
- "deviceFromTOR": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased.easyct_parametric_points",
-   "module_short": "Geometry.easyPETBased",
-   "name": "EasyCTGeometry"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased",
-   "module_short": "Geometry.easyPETBased",
-   "name": "EasyCTGeometry"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
-   "name": "EasyCTGeometry"
-  }
- ],
- "deviceFromTOR.originSystemWZ": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased.easyct_parametric_points",
-   "module_short": "Geometry.easyPETBased",
-   "name": "EasyCTGeometry.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased",
-   "module_short": "Geometry.easyPETBased",
-   "name": "EasyCTGeometry.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
-   "name": "EasyCTGeometry.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased.dualrotationsystem",
-   "module_short": "Geometry.easyPETBased",
-   "name": "DualRotationSystem.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased",
-   "module_short": "Geometry.easyPETBased",
-   "name": "DualRotationSystem.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
-   "name": "DualRotationSystem.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device.device",
-   "name": "Device.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
-   "name": "Device.originSystemWZ"
-  }
- ],
- "deviceFromTOR.originSystemWZ.T": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased.easyct_parametric_points",
-   "module_short": "Geometry.easyPETBased",
-   "name": "EasyCTGeometry.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased",
-   "module_short": "Geometry.easyPETBased",
-   "name": "EasyCTGeometry.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
-   "name": "EasyCTGeometry.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased.dualrotationsystem",
-   "module_short": "Geometry.easyPETBased",
-   "name": "DualRotationSystem.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased",
-   "module_short": "Geometry.easyPETBased",
-   "name": "DualRotationSystem.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
-   "name": "DualRotationSystem.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device.device",
-   "name": "Device.originSystemWZ"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
-   "name": "Device.originSystemWZ"
-  }
- ],
- "deviceFromTOR.sourceCenter": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased.easyct_parametric_points",
-   "module_short": "Geometry.easyPETBased",
-   "name": "EasyCTGeometry.sourceCenter"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased",
-   "module_short": "Geometry.easyPETBased",
-   "name": "EasyCTGeometry.sourceCenter"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
-   "name": "EasyCTGeometry.sourceCenter"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased.dualrotationsystem",
-   "module_short": "Geometry.easyPETBased.dualrotationsystem",
-   "name": "DualRotationSystem.sourceCenter"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased",
-   "module_short": "Geometry.easyPETBased",
-   "name": "DualRotationSystem.sourceCenter"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
-   "name": "DualRotationSystem.sourceCenter"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device.device",
-   "name": "Device.sourceCenter"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
-   "name": "Device.sourceCenter"
-  }
- ],
- "deviceFromTOR.sourcePositionAfterMovement": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased.easyct_parametric_points",
-   "module_short": "Geometry.easyPETBased",
-   "name": "EasyCTGeometry.sourcePositionAfterMovement"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased",
-   "module_short": "Geometry.easyPETBased",
-   "name": "EasyCTGeometry.sourcePositionAfterMovement"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
-   "name": "EasyCTGeometry.sourcePositionAfterMovement"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased.dualrotationsystem",
-   "module_short": "Geometry.easyPETBased.dualrotationsystem",
-   "name": "DualRotationSystem.sourcePositionAfterMovement"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry.easyPETBased",
-   "module_short": "Geometry.easyPETBased",
-   "name": "DualRotationSystem.sourcePositionAfterMovement"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
-   "name": "DualRotationSystem.sourcePositionAfterMovement"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Device.device",
-   "module_short": "Device.device",
-   "name": "Device.sourcePositionAfterMovement"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
-   "name": "Device.sourcePositionAfterMovement"
   }
  ],
  "device_path": [
@@ -598,15 +283,6 @@
    "module": "builtins",
    "module_short": "builtins",
    "name": "str"
-  }
- ],
- "fan_motor_angles": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "ndarray"
   }
  ],
  "filename": [
@@ -622,15 +298,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device.storedeviceInfo",
-   "module_short": "Device",
+   "module": "toor.Device.storedeviceInfo",
+   "module_short": "toor.Device",
    "name": "StoreDeviceInFo"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
+   "name": "StoreDeviceInFo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "StoreDeviceInFo"
   }
  ],
@@ -638,216 +321,52 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device.storedeviceInfo",
-   "module_short": "Device",
+   "module": "toor.Device.storedeviceInfo",
+   "module_short": "toor.Device",
    "name": "StoreDeviceInFo.readDeviceFromDirectory"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Device",
-   "module_short": "Device",
+   "module": "toor.Device",
+   "module_short": "toor.Device",
    "name": "StoreDeviceInFo.readDeviceFromDirectory"
-  }
- ],
- "index_fan_motor_angle_0": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "tuple"
-  }
- ],
- "listModeBody": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.scanning_body",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody"
-  }
- ],
- "listModeBody.generateStatistics": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.scanning_body",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.generateStatistics"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.generateStatistics"
-  }
- ],
- "listModeBody.printStatistics": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.scanning_body",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.printStatistics"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.printStatistics"
-  }
- ],
- "listModeBody.setCountsPerGlobalID": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.scanning_body",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.setCountsPerGlobalID"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.setCountsPerGlobalID"
-  }
- ],
- "listModeBody.setFrameStartIndexes": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.scanning_body",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.setFrameStartIndexes"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.setFrameStartIndexes"
-  }
- ],
- "listModeBody.setGlobalDetectorID": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.scanning_body",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.setGlobalDetectorID"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.setGlobalDetectorID"
-  }
- ],
- "listModeBody.setListmode": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.scanning_body",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.setListmode"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.setListmode"
-  }
- ],
- "listModeBody.setListmodeFields": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.scanning_body",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.setListmodeFields"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.setListmodeFields"
-  }
- ],
- "listModeBody_read": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.scanning_body",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody"
-  }
- ],
- "listModeBody_read.uniqueValuesCount": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.scanning_body",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.uniqueValuesCount"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "ListModeBody.uniqueValuesCount"
-  }
- ],
- "listmode": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "ndarray"
+   "module": "toor",
+   "module_short": "toor",
+   "name": "StoreDeviceInFo.readDeviceFromDirectory"
   }
  ],
  "newDevice": [
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.easyPETBased.easyct_parametric_points",
-   "module_short": "Geometry.easyPETBased",
+   "module": "toor.Geometry.easyPETBased.easyct_parametric_points",
+   "module_short": "toor.Geometry.easyPETBased",
    "name": "EasyCTGeometry"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry.easyPETBased",
-   "module_short": "Geometry.easyPETBased",
+   "module": "toor.Geometry.easyPETBased",
+   "module_short": "toor.Geometry.easyPETBased",
    "name": "EasyCTGeometry"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "Geometry",
-   "module_short": "Geometry",
+   "module": "toor.Geometry",
+   "module_short": "toor.Geometry",
+   "name": "EasyCTGeometry"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "EasyCTGeometry"
   }
  ],
@@ -897,6 +416,22 @@
    "module": "numpy",
    "module_short": "numpy",
    "name": "arange"
+  }
+ ],
+ "np.array": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "array"
   }
  ],
  "np.copy": [
@@ -993,15 +528,6 @@
    "module": "numpy",
    "module_short": "numpy",
    "name": "where"
-  }
- ],
- "origin_fan_motor_angle_0": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "ndarray"
   }
  ],
  "output_path": [
@@ -1129,15 +655,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.Radioisotope",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.Radioisotope",
+   "module_short": "toor.TORFilesReader",
    "name": "RadioisotopeInfo"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "RadioisotopeInfo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "RadioisotopeInfo"
   }
  ],
@@ -1145,15 +678,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.Radioisotope",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.Radioisotope",
+   "module_short": "toor.TORFilesReader",
    "name": "RadioisotopeInfo.setDecayEnergies"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "RadioisotopeInfo.setDecayEnergies"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "RadioisotopeInfo.setDecayEnergies"
   }
  ],
@@ -1161,15 +701,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.Radioisotope",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.Radioisotope",
+   "module_short": "toor.TORFilesReader",
    "name": "RadioisotopeInfo.setDecayTypes"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "RadioisotopeInfo.setDecayTypes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "RadioisotopeInfo.setDecayTypes"
   }
  ],
@@ -1177,15 +724,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.Radioisotope",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.Radioisotope",
+   "module_short": "toor.TORFilesReader",
    "name": "RadioisotopeInfo.setHalfLifes"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "RadioisotopeInfo.setHalfLifes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "RadioisotopeInfo.setHalfLifes"
   }
  ],
@@ -1193,15 +747,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.Radioisotope",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.Radioisotope",
+   "module_short": "toor.TORFilesReader",
    "name": "RadioisotopeInfo.setTracers"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "RadioisotopeInfo.setTracers"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "RadioisotopeInfo.setTracers"
   }
  ],
@@ -1209,15 +770,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "AcquisitionInfo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "AcquisitionInfo"
   }
  ],
@@ -1225,15 +793,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo.indexesOfFrames"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "AcquisitionInfo.indexesOfFrames"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "AcquisitionInfo.indexesOfFrames"
   }
  ],
@@ -1241,15 +816,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo.setDate"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "AcquisitionInfo.setDate"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "AcquisitionInfo.setDate"
   }
  ],
@@ -1257,15 +839,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo.setFrameOfReferenceUID"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "AcquisitionInfo.setFrameOfReferenceUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "AcquisitionInfo.setFrameOfReferenceUID"
   }
  ],
@@ -1273,15 +862,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo.setId"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "AcquisitionInfo.setId"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "AcquisitionInfo.setId"
   }
  ],
@@ -1289,15 +885,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo.setIndexesOfFrames"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "AcquisitionInfo.setIndexesOfFrames"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "AcquisitionInfo.setIndexesOfFrames"
   }
  ],
@@ -1305,15 +908,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo.setInstanceUID"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "AcquisitionInfo.setInstanceUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "AcquisitionInfo.setInstanceUID"
   }
  ],
@@ -1321,15 +931,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo.setScanType"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "AcquisitionInfo.setScanType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "AcquisitionInfo.setScanType"
   }
  ],
@@ -1337,15 +954,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo.setStudyInstanceUID"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "AcquisitionInfo.setStudyInstanceUID"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "AcquisitionInfo.setStudyInstanceUID"
   }
  ],
@@ -1353,15 +977,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo.setSubject"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "AcquisitionInfo.setSubject"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "AcquisitionInfo.setSubject"
   }
  ],
@@ -1369,72 +1000,68 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.scanning_header",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.scanning_header",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo.setTecnhician"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
    "name": "AcquisitionInfo.setTecnhician"
-  }
- ],
- "source_center_fan_motor_angle_0": [
+  },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "ndarray"
+   "module": "toor",
+   "module_short": "toor",
+   "name": "AcquisitionInfo.setTecnhician"
   }
  ],
  "subject": [
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.subject_type",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.subject_type",
+   "module_short": "toor.TORFilesReader",
    "name": "PhantomType"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
    "name": "PhantomType"
-  }
- ],
- "subject.setDigitalPhantomCopy": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "TORFilesReader.subject_type",
-   "module_short": "TORFilesReader",
-   "name": "PhantomType.setDigitalPhantomCopy"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
-   "name": "PhantomType.setDigitalPhantomCopy"
+   "module": "toor",
+   "module_short": "toor",
+   "name": "PhantomType"
   }
  ],
  "subject.setPhantomDescription": [
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.subject_type",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.subject_type",
+   "module_short": "toor.TORFilesReader",
    "name": "PhantomType.setPhantomDescription"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "PhantomType.setPhantomDescription"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "PhantomType.setPhantomDescription"
   }
  ],
@@ -1442,15 +1069,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.subject_type",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.subject_type",
+   "module_short": "toor.TORFilesReader",
    "name": "PhantomType.setPhantomName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "PhantomType.setPhantomName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "PhantomType.setPhantomName"
   }
  ],
@@ -1458,15 +1092,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.subject_type",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.subject_type",
+   "module_short": "toor.TORFilesReader",
    "name": "PhantomType.setPhantomPurpose"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "PhantomType.setPhantomPurpose"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "PhantomType.setPhantomPurpose"
   }
  ],
@@ -1474,15 +1115,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.technician",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.technician",
+   "module_short": "toor.TORFilesReader",
    "name": "Technician"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "Technician"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Technician"
   }
  ],
@@ -1490,15 +1138,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.technician",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.technician",
+   "module_short": "toor.TORFilesReader",
    "name": "Technician.setName"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "Technician.setName"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Technician.setName"
   }
  ],
@@ -1506,15 +1161,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.technician",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.technician",
+   "module_short": "toor.TORFilesReader",
    "name": "Technician.setOrganization"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "Technician.setOrganization"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Technician.setOrganization"
   }
  ],
@@ -1522,15 +1184,22 @@
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader.technician",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader.technician",
+   "module_short": "toor.TORFilesReader",
    "name": "Technician.setRole"
   },
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "TORFilesReader",
-   "module_short": "TORFilesReader",
+   "module": "toor.TORFilesReader",
+   "module_short": "toor.TORFilesReader",
+   "name": "Technician.setRole"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "toor",
+   "module_short": "toor",
    "name": "Technician.setRole"
   }
  ],

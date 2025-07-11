@@ -20,7 +20,7 @@
 Siemens Intevo Bold SPECT/CT
 ================
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-33
+.. GENERATED FROM PYTHON SOURCE LINES 13-29
 
 .. code-block:: Python
 
@@ -29,14 +29,10 @@ Siemens Intevo Bold SPECT/CT
     import matplotlib.pyplot as plt
     import numpy as np
 
-    from skimage.transform import iradon
-
-    from DetectionLayout.Modules import PETModule
-    from DetectionLayout.Modules import easyPETModule
-    from DetectionLayout.Modules.SPECTModuleGeneric import SPECTHeadGeneric
-    from DetectionLayout.Photodetectors.Crystals import GenericCrystal
-    from Geometry.Standard import PlanarGeometry
-    from Designer import DeviceDesignerStandalone
+    from toor.DetectionLayout.Modules import PETModule
+    from toor.DetectionLayout.Photodetectors.Crystals import GenericCrystal
+    from toor.Geometry.Standard import PlanarGeometry
+    from toor.Designer import DeviceDesignerStandalone
 
 
     file_path = "C:\\Users\\pedro\\Downloads\\phase_1_challenge_data_03_05_2025\\NEMA_phantom-20250221T115435Z-001\\NEMA_phantom\\SPECT-projections\\"
@@ -288,7 +284,7 @@ Siemens Intevo Bold SPECT/CT
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-37
+.. GENERATED FROM PYTHON SOURCE LINES 30-33
 
 .. code-block:: Python
 
@@ -302,11 +298,11 @@ Siemens Intevo Bold SPECT/CT
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-39
+.. GENERATED FROM PYTHON SOURCE LINES 34-35
 
 detector information sequence
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-107
+.. GENERATED FROM PYTHON SOURCE LINES 35-103
 
 .. code-block:: Python
 
@@ -341,7 +337,7 @@ detector information sequence
     # module_.setHighEnergyLightDetectorBlock(2)
 
     #
-    newDevice = PlanarGeometry(distance_between_planes=537)
+    newDevice = PlanarGeometry(distance_between_planes=537, detector_module=PETModule)
     newDevice.setDeviceName("Siemens SYmbia Intevo Bold SPEC/CT")
     newDevice.setNumberOfModulesZ(1)
     newDevice.setNumberOfModulesPerSide(1)
@@ -387,19 +383,20 @@ detector information sequence
  .. code-block:: none
 
     Rotation Vector: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    radius:  40
     Number of modules:  2
     Number of high energy light detectors:  16384
     Number of high energy light detectors:  16384
     Adding module
-    <DetectionLayout.Modules.PETModuleGeneric.PETModule object at 0x00000247917F3FA0>
+    <toor.DetectionLayout.Modules.PETModuleGeneric.PETModule object at 0x000001C482777280>
     Adding module
-    <DetectionLayout.Modules.PETModuleGeneric.PETModule object at 0x000002478E76DE50>
+    <toor.DetectionLayout.Modules.PETModuleGeneric.PETModule object at 0x000001C485BA5550>
     Siemens SYmbia Intevo Bold SPEC/CT
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-132
+.. GENERATED FROM PYTHON SOURCE LINES 108-128
 
 .. code-block:: Python
 
@@ -441,11 +438,11 @@ detector information sequence
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-134
+.. GENERATED FROM PYTHON SOURCE LINES 129-130
 
 create a sinogram from the dicom information
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-138
+.. GENERATED FROM PYTHON SOURCE LINES 130-134
 
 .. code-block:: Python
 
@@ -469,7 +466,7 @@ create a sinogram from the dicom information
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (2 minutes 10.327 seconds)
+   **Total running time of the script:** (4 minutes 52.605 seconds)
 
 
 .. _sphx_glr_download_auto_examples_SiemensIntevoBoldSPECTCT_newdevice_siemens.py:
