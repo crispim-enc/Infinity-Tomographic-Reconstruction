@@ -1,6 +1,10 @@
 # Infinity-Tomographic-Reconstruction
+<div align="center">
+<img src="docs/_static/logo.png" alt="toor Logo" width="300"/>
+</div>
 Tomographic reconstruction for diferent imaging modalities (PET, SPECT, CT and Compton)
 Image Reconstruction Framework for PET/CT and SPECT
+
 
 ## 🚀 Overview
 
@@ -117,7 +121,7 @@ nature—derived from the use of this repository.
 
 + Makes no guarantees regarding the accuracy, reliability, or fitness of the code for any specific application.
 
-+ Has not received any financial compensation related to the use or distribution of this repository.
++ Has not received any financial compensation related to the use or distribution of this repository by third parties.
 
 By using this repository, you agree to comply with all applicable license terms, 
-including the CC BY-NC-SA 4.0 license under which this project is distributed.
+including the CC BY-NC-SA 4.0 license under which this project is distributed 

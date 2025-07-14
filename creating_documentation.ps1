@@ -7,7 +7,7 @@ Get-ChildItem -Path .\docs\ -Exclude 'source' | Remove-Item -Recurse -Force -Err
 # Clear sphinx-apidoc generated files but keep important files/folders
 Write-Host "Cleaning old sphinx-apidoc files..." -ForegroundColor Cyan
 $keepFolders = @('_static', '_templates', 'examples', 'images')
-$keepFiles = @('conf.py', 'custom.css', 'index.rst', 'installation.rst', 'modules.rst', 'references.rst', 'userguide.rst')
+$keepFiles = @('conf.py', 'custom.css', 'index.rst', 'installation.rst', 'modules.rst', 'references.rst', 'userguide.rst','.nojekyll')
 
 # Delete folders not in the keep list
 Get-ChildItem -Path .\docs\source\ -Directory | Where-Object { $_.Name -notin $keepFolders } | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
