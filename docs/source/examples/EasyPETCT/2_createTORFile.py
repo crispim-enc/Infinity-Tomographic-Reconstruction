@@ -94,6 +94,7 @@ scanHeader.setInstanceUID(str(uuid.uuid4()))
 scanHeader.setStudyInstanceUID(str(uuid.uuid4()))
 scanHeader.setFrameOfReferenceUID(str(uuid.uuid4()))
 scanHeader.setDate(time.strftime("%Y-%m-%d %H:%M:%S"))
+
 # IF PET/SPECT/COMPTON
 # scanHeader.setRadioisotope(radioisotope)
 
@@ -128,7 +129,7 @@ ToRFile_sensitivity = ToRFile(filepath=file_white_scan)
 ToRFile_sensitivity.read()
 
 energies = np.array([30, 59.6, 511])
-energy_windows = np.array([[10, 40], [45, 80], [511, 511]])
+energy_windows = np.array([[10, 40], [10, 80], [511, 511]])
 # comment this if the resolutionfucntion was not set
 detector_sensitivity = DetectorSensitivityResponse(use_detector_energy_resolution=False)
 detector_sensitivity.setEnergyPeaks(energies)

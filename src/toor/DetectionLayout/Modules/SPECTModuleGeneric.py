@@ -143,7 +143,7 @@ class SPECTHeadGeneric(object):
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
-    from Designer import GeometryDesignerObject
+    from toor.Designer import GeometryDesignerObject
     spectGeometry = SPECTHeadGeneric()
     spectGeometry.calculateInitialGeometry()
     gd = GeometryDesignerObject()

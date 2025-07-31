@@ -16,8 +16,7 @@ You can define the **Device** type
  + PET
  + CT
  + SPECT
- + Compton
-
+ 
 
 **Modules and Submodules**
  + LYSO and SPiM
@@ -36,8 +35,7 @@ You can define the **Device** type
      + Multivariate Gaussian PSF
    + ***SPECT and CT*** 
      + Pyramidal uniform phantom
-   +  ***Compton***
-      + Conical - No GPU optimizer sibling
+
 
 **GPU optimizer - Multiple kernel**
    + LM - MLEM
@@ -50,7 +48,7 @@ You can define the **Device** type
 ## 🛠️ Installation
 Prerequisites:
 + Cuda Toolkit 11.3 or higher, 
-+ Python 3.8, pip, cl compiler.
++ Python 3.8, pip, cl compiler.*
 
 ```bash
     pip install git+https://github.com/DRIM-UA/infinity-tomographic-reconstruction.git
